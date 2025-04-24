@@ -1,0 +1,930 @@
+{
+  "attributes": {
+    "specversion": {
+      "name": "specversion",
+      "type": "string",
+      "readonly": true,
+      "immutable": true,
+      "required": true
+    },
+    "registryid": {
+      "name": "registryid",
+      "type": "string",
+      "immutable": true,
+      "required": true
+    },
+    "self": {
+      "name": "self",
+      "type": "url",
+      "readonly": true,
+      "immutable": true,
+      "required": true
+    },
+    "xid": {
+      "name": "xid",
+      "type": "xid",
+      "readonly": true,
+      "immutable": true,
+      "required": true
+    },
+    "epoch": {
+      "name": "epoch",
+      "type": "uinteger",
+      "required": true
+    },
+    "name": {
+      "name": "name",
+      "type": "string"
+    },
+    "description": {
+      "name": "description",
+      "type": "string"
+    },
+    "documentation": {
+      "name": "documentation",
+      "type": "url"
+    },
+    "labels": {
+      "name": "labels",
+      "type": "map",
+      "item": {
+        "type": "string"
+      }
+    },
+    "createdat": {
+      "name": "createdat",
+      "type": "timestamp",
+      "required": true
+    },
+    "modifiedat": {
+      "name": "modifiedat",
+      "type": "timestamp",
+      "required": true
+    }
+  },
+  "groups": {
+    "mcpproviders": {
+      "plural": "mcpproviders",
+      "singular": "mcpprovider",
+      "attributes": {
+        "mcpproviderid": {
+          "name": "mcpproviderid",
+          "type": "string",
+          "immutable": true,
+          "required": true
+        },
+        "self": {
+          "name": "self",
+          "type": "url",
+          "readonly": true,
+          "immutable": true,
+          "required": true
+        },
+        "xid": {
+          "name": "xid",
+          "type": "xid",
+          "readonly": true,
+          "immutable": true,
+          "required": true
+        },
+        "epoch": {
+          "name": "epoch",
+          "type": "uinteger",
+          "required": true
+        },
+        "name": {
+          "name": "name",
+          "type": "string"
+        },
+        "description": {
+          "name": "description",
+          "type": "string"
+        },
+        "documentation": {
+          "name": "documentation",
+          "type": "url"
+        },
+        "labels": {
+          "name": "labels",
+          "type": "map",
+          "item": {
+            "type": "string"
+          }
+        },
+        "createdat": {
+          "name": "createdat",
+          "type": "timestamp",
+          "required": true
+        },
+        "modifiedat": {
+          "name": "modifiedat",
+          "type": "timestamp",
+          "required": true
+        }
+      },
+      "resources": {
+        "servers": {
+          "plural": "servers",
+          "singular": "server",
+          "maxversions": 1,
+          "setversionid": false,
+          "setdefaultversionsticky": false,
+          "hasdocument": false,
+          "singleversionroot": true,
+          "attributes": {
+            "serverid": {
+              "name": "serverid",
+              "type": "string",
+              "immutable": true,
+              "required": true
+            },
+            "versionid": {
+              "name": "versionid",
+              "type": "string",
+              "immutable": true,
+              "required": true
+            },
+            "self": {
+              "name": "self",
+              "type": "url",
+              "readonly": true,
+              "immutable": true,
+              "required": true
+            },
+            "xid": {
+              "name": "xid",
+              "type": "xid",
+              "readonly": true,
+              "immutable": true,
+              "required": true
+            },
+            "epoch": {
+              "name": "epoch",
+              "type": "uinteger",
+              "required": true
+            },
+            "name": {
+              "name": "name",
+              "type": "string",
+              "description": "Human-readable name of the MCP server.",
+              "required": true
+            },
+            "isdefault": {
+              "name": "isdefault",
+              "type": "boolean",
+              "readonly": true,
+              "required": true,
+              "default": false
+            },
+            "description": {
+              "name": "description",
+              "type": "string",
+              "description": "Short description of the server’s purpose and capabilities."
+            },
+            "documentation": {
+              "name": "documentation",
+              "type": "url"
+            },
+            "labels": {
+              "name": "labels",
+              "type": "map",
+              "item": {
+                "type": "string"
+              }
+            },
+            "createdat": {
+              "name": "createdat",
+              "type": "timestamp",
+              "required": true
+            },
+            "modifiedat": {
+              "name": "modifiedat",
+              "type": "timestamp",
+              "required": true
+            },
+            "ancestor": {
+              "name": "ancestor",
+              "type": "string",
+              "required": true
+            },
+            "contenttype": {
+              "name": "contenttype",
+              "type": "string"
+            },
+            "deployment": {
+              "name": "deployment",
+              "type": "object",
+              "description": "Deployment configurations for running the server in container or sandbox environments.",
+              "required": true,
+              "attributes": {
+                "container": {
+                  "name": "container",
+                  "type": "object",
+                  "attributes": {
+                    "args": {
+                      "name": "args",
+                      "type": "array",
+                      "item": {
+                        "type": "string"
+                      }
+                    },
+                    "env": {
+                      "name": "env",
+                      "type": "array",
+                      "item": {
+                        "type": "object",
+                        "attributes": {
+                          "default": {
+                            "name": "default",
+                            "type": "string"
+                          },
+                          "description": {
+                            "name": "description",
+                            "type": "string"
+                          },
+                          "name": {
+                            "name": "name",
+                            "type": "string"
+                          },
+                          "required": {
+                            "name": "required",
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    },
+                    "image": {
+                      "name": "image",
+                      "type": "string",
+                      "description": "Name (and optionally tag) of the Docker image.",
+                      "required": true
+                    }
+                  }
+                },
+                "sandbox": {
+                  "name": "sandbox",
+                  "type": "object",
+                  "attributes": {
+                    "args": {
+                      "name": "args",
+                      "type": "array",
+                      "item": {
+                        "type": "string"
+                      }
+                    },
+                    "command": {
+                      "name": "command",
+                      "type": "string",
+                      "description": "CLI command to invoke.",
+                      "required": true
+                    },
+                    "env": {
+                      "name": "env",
+                      "type": "array",
+                      "item": {
+                        "type": "object",
+                        "attributes": {
+                          "default": {
+                            "name": "default",
+                            "type": "string"
+                          },
+                          "description": {
+                            "name": "description",
+                            "type": "string"
+                          },
+                          "name": {
+                            "name": "name",
+                            "type": "string"
+                          },
+                          "required": {
+                            "name": "required",
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    },
+                    "package": {
+                      "name": "package",
+                      "type": "string",
+                      "description": "NPM package name.",
+                      "required": true
+                    },
+                    "packageversion": {
+                      "name": "packageversion",
+                      "type": "string",
+                      "description": "Optional fixed version of the NPM package."
+                    },
+                    "runtime": {
+                      "name": "runtime",
+                      "type": "string",
+                      "description": "Type of sandbox runtime.",
+                      "required": true
+                    }
+                  }
+                }
+              }
+            },
+            "docs": {
+              "name": "docs",
+              "type": "uri",
+              "description": "URI pointing to official external documentation for the server."
+            },
+            "endpoints": {
+              "name": "endpoints",
+              "type": "object",
+              "description": "Configuration of transport endpoints for invoking the server over different protocols.",
+              "attributes": {
+                "http": {
+                  "name": "http",
+                  "type": "object",
+                  "description": "Public HTTP transport endpoint configuration.",
+                  "attributes": {
+                    "authorization": {
+                      "name": "authorization",
+                      "type": "object",
+                      "description": "Authorization configuration for HTTP endpoint.",
+                      "required": true,
+                      "attributes": {
+                        "description": {
+                          "name": "description",
+                          "type": "string",
+                          "description": "Explanation of how to provide credentials."
+                        },
+                        "format": {
+                          "name": "format",
+                          "type": "string",
+                          "description": "Template for credential format (e.g., Bearer {token})."
+                        },
+                        "name": {
+                          "name": "name",
+                          "type": "string",
+                          "description": "Name of the header or field carrying credentials."
+                        },
+                        "password": {
+                          "name": "password",
+                          "type": "object",
+                          "description": "Configuration for password in PLAIN auth.",
+                          "attributes": {
+                            "description": {
+                              "name": "description",
+                              "type": "string"
+                            },
+                            "required": {
+                              "name": "required",
+                              "type": "boolean"
+                            }
+                          }
+                        },
+                        "required": {
+                          "name": "required",
+                          "type": "boolean",
+                          "description": "Whether credentials are mandatory for access.",
+                          "required": true
+                        },
+                        "type": {
+                          "name": "type",
+                          "type": "string",
+                          "description": "Authorization scheme type (e.g., header, PLAIN).",
+                          "enum": [
+                            "header",
+                            "PLAIN"
+                          ],
+                          "required": true
+                        },
+                        "username": {
+                          "name": "username",
+                          "type": "object",
+                          "description": "Configuration for username in PLAIN auth.",
+                          "attributes": {
+                            "description": {
+                              "name": "description",
+                              "type": "string"
+                            },
+                            "required": {
+                              "name": "required",
+                              "type": "boolean"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "openapi": {
+                      "name": "openapi",
+                      "type": "object",
+                      "description": "Reference to an OpenAPI specification document.",
+                      "attributes": {
+                        "description": {
+                          "name": "description",
+                          "type": "string",
+                          "description": "Human-readable summary of the OpenAPI document’s coverage."
+                        },
+                        "url": {
+                          "name": "url",
+                          "type": "uri",
+                          "description": "URL where the OpenAPI JSON or YAML can be retrieved.",
+                          "required": true
+                        }
+                      }
+                    },
+                    "uri": {
+                      "name": "uri",
+                      "type": "uri",
+                      "description": "Base URI for HTTP requests.",
+                      "required": true
+                    }
+                  }
+                },
+                "httplocal": {
+                  "name": "httplocal",
+                  "type": "object",
+                  "description": "Local HTTP transport endpoint configuration.",
+                  "attributes": {
+                    "deployment": {
+                      "name": "deployment",
+                      "type": "string",
+                      "description": "Deployment mode for local HTTP (must be 'container').",
+                      "enum": [
+                        "container"
+                      ],
+                      "required": true
+                    },
+                    "host": {
+                      "name": "host",
+                      "type": "string",
+                      "description": "Hostname or IP address for local binding.",
+                      "required": true
+                    },
+                    "port": {
+                      "name": "port",
+                      "type": "integer",
+                      "description": "TCP port on which the server listens locally.",
+                      "required": true
+                    },
+                    "protocol": {
+                      "name": "protocol",
+                      "type": "string",
+                      "description": "Protocol scheme for local HTTP (e.g., 'http').",
+                      "required": true
+                    }
+                  }
+                },
+                "mqtt": {
+                  "name": "mqtt",
+                  "type": "object",
+                  "description": "MQTT transport endpoint configuration.",
+                  "attributes": {
+                    "authorization": {
+                      "name": "authorization",
+                      "type": "object",
+                      "description": "Authorization configuration for MQTT endpoint.",
+                      "required": true,
+                      "attributes": {
+                        "description": {
+                          "name": "description",
+                          "type": "string"
+                        },
+                        "format": {
+                          "name": "format",
+                          "type": "string"
+                        },
+                        "name": {
+                          "name": "name",
+                          "type": "string"
+                        },
+                        "password": {
+                          "name": "password",
+                          "type": "object",
+                          "attributes": {
+                            "description": {
+                              "name": "description",
+                              "type": "string"
+                            },
+                            "required": {
+                              "name": "required",
+                              "type": "boolean"
+                            }
+                          }
+                        },
+                        "required": {
+                          "name": "required",
+                          "type": "boolean",
+                          "required": true
+                        },
+                        "type": {
+                          "name": "type",
+                          "type": "string",
+                          "description": "Authorization scheme type.",
+                          "enum": [
+                            "header",
+                            "PLAIN"
+                          ],
+                          "required": true
+                        },
+                        "username": {
+                          "name": "username",
+                          "type": "object",
+                          "attributes": {
+                            "description": {
+                              "name": "description",
+                              "type": "string"
+                            },
+                            "required": {
+                              "name": "required",
+                              "type": "boolean"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "uri": {
+                      "name": "uri",
+                      "type": "string",
+                      "description": "MQTT broker URI for publish/subscribe.",
+                      "required": true
+                    }
+                  }
+                },
+                "stdio": {
+                  "name": "stdio",
+                  "type": "object",
+                  "description": "STDIO transport endpoint configuration.",
+                  "attributes": {
+                    "deployment": {
+                      "name": "deployment",
+                      "type": "string",
+                      "description": "Deployment mode used for STDIO (must be 'sandbox').",
+                      "enum": [
+                        "sandbox"
+                      ],
+                      "required": true
+                    }
+                  }
+                },
+                "websockets": {
+                  "name": "websockets",
+                  "type": "object",
+                  "description": "WebSocket transport endpoint configuration.",
+                  "attributes": {
+                    "authorization": {
+                      "name": "authorization",
+                      "type": "object",
+                      "description": "Authorization configuration for WebSockets endpoint.",
+                      "required": true,
+                      "attributes": {
+                        "description": {
+                          "name": "description",
+                          "type": "string"
+                        },
+                        "format": {
+                          "name": "format",
+                          "type": "string"
+                        },
+                        "name": {
+                          "name": "name",
+                          "type": "string"
+                        },
+                        "password": {
+                          "name": "password",
+                          "type": "object",
+                          "attributes": {
+                            "description": {
+                              "name": "description",
+                              "type": "string"
+                            },
+                            "required": {
+                              "name": "required",
+                              "type": "boolean"
+                            }
+                          }
+                        },
+                        "required": {
+                          "name": "required",
+                          "type": "boolean",
+                          "required": true
+                        },
+                        "type": {
+                          "name": "type",
+                          "type": "string",
+                          "description": "Authorization scheme type.",
+                          "enum": [
+                            "header",
+                            "PLAIN"
+                          ],
+                          "required": true
+                        },
+                        "username": {
+                          "name": "username",
+                          "type": "object",
+                          "attributes": {
+                            "description": {
+                              "name": "description",
+                              "type": "string"
+                            },
+                            "required": {
+                              "name": "required",
+                              "type": "boolean"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "uri": {
+                      "name": "uri",
+                      "type": "uri",
+                      "description": "WebSocket URI for bidirectional communication.",
+                      "required": true
+                    }
+                  }
+                }
+              }
+            },
+            "mcpversion": {
+              "name": "mcpversion",
+              "type": "string",
+              "description": "The version of the MCP protocol that this server manifest conforms to.",
+              "required": true
+            },
+            "prompts": {
+              "name": "prompts",
+              "type": "array",
+              "description": "List of static, reusable prompt templates available in this server.",
+              "item": {
+                "type": "object",
+                "attributes": {
+                  "arguments": {
+                    "name": "arguments",
+                    "type": "array",
+                    "item": {
+                      "type": "object",
+                      "attributes": {
+                        "description": {
+                          "name": "description",
+                          "type": "string",
+                          "description": "Explanation of what this argument represents."
+                        },
+                        "name": {
+                          "name": "name",
+                          "type": "string",
+                          "description": "Name of the argument.",
+                          "required": true
+                        },
+                        "required": {
+                          "name": "required",
+                          "type": "boolean",
+                          "description": "Whether this argument must be provided when invoking the prompt.",
+                          "required": true,
+                          "default": false
+                        }
+                      }
+                    }
+                  },
+                  "description": {
+                    "name": "description",
+                    "type": "string",
+                    "description": "Detailed explanation of when and how to use this prompt."
+                  },
+                  "name": {
+                    "name": "name",
+                    "type": "string",
+                    "description": "Unique identifier for the prompt template.",
+                    "required": true
+                  }
+                }
+              }
+            },
+            "repository": {
+              "name": "repository",
+              "type": "object",
+              "description": "Definition of the repository containing the server code.",
+              "attributes": {
+                "branch": {
+                  "name": "branch",
+                  "type": "string",
+                  "description": "The branch to use."
+                },
+                "commit": {
+                  "name": "commit",
+                  "type": "string",
+                  "description": "The specific commit hash."
+                },
+                "name": {
+                  "name": "name",
+                  "type": "string",
+                  "description": "The repository name."
+                },
+                "subfolder": {
+                  "name": "subfolder",
+                  "type": "string",
+                  "description": "Subfolder within the repository, if applicable."
+                },
+                "url": {
+                  "name": "url",
+                  "type": "uri",
+                  "description": "The repository URL.",
+                  "required": true
+                }
+              }
+            },
+            "resources": {
+              "name": "resources",
+              "type": "array",
+              "description": "List of data resources the server can expose or subscribe to.",
+              "item": {
+                "type": "object",
+                "attributes": {
+                  "description": {
+                    "name": "description",
+                    "type": "string",
+                    "description": "Explanation of how to fill the template parameters."
+                  },
+                  "mimetype": {
+                    "name": "mimetype",
+                    "type": "string",
+                    "description": "MIME type of the resource payload."
+                  },
+                  "name": {
+                    "name": "name",
+                    "type": "string",
+                    "description": "Logical name for the resource type.",
+                    "required": true
+                  },
+                  "uritemplate": {
+                    "name": "uritemplate",
+                    "type": "string",
+                    "description": "URI template with placeholders (e.g. /resources/{id}).",
+                    "required": true
+                  }
+                }
+              }
+            },
+            "serverversion": {
+              "name": "serverversion",
+              "type": "string",
+              "description": "The version of this server implementation.",
+              "required": true
+            },
+            "tools": {
+              "name": "tools",
+              "type": "array",
+              "description": "List of static tool definitions that can be invoked via the MCP runtime.",
+              "item": {
+                "type": "object",
+                "attributes": {
+                  "annotations": {
+                    "name": "annotations",
+                    "type": "object",
+                    "description": "Optional metadata annotations for tooling or documentation generators."
+                  },
+                  "description": {
+                    "name": "description",
+                    "type": "string",
+                    "description": "Human-readable description of the tool’s purpose."
+                  },
+                  "inputschema": {
+                    "name": "inputschema",
+                    "type": "object",
+                    "description": "JSON Schema defining and validating the tool’s input parameters.",
+                    "required": true,
+                    "attributes": {
+                      "items": {
+                        "name": "items",
+                        "type": "object",
+                        "description": "Schema for items when input is array.",
+                        "attributes": {
+                          "properties": {
+                            "name": "properties",
+                            "type": "object",
+                            "description": "Properties of each array item."
+                          },
+                          "required": {
+                            "name": "required",
+                            "type": "array",
+                            "description": "List of required fields in array items.",
+                            "item": {
+                              "type": "string"
+                            }
+                          },
+                          "type": {
+                            "name": "type",
+                            "type": "string",
+                            "description": "Type of the array items."
+                          }
+                        }
+                      },
+                      "properties": {
+                        "name": "properties",
+                        "type": "any",
+                        "description": "Map of property schemas."
+                      },
+                      "required": {
+                        "name": "required",
+                        "type": "array",
+                        "description": "List of required input fields.",
+                        "item": {
+                          "type": "string"
+                        }
+                      },
+                      "type": {
+                        "name": "type",
+                        "type": "string",
+                        "description": "Schema type of the input definition.",
+                        "required": true
+                      }
+                    }
+                  },
+                  "name": {
+                    "name": "name",
+                    "type": "string",
+                    "description": "Unique identifier for the tool.",
+                    "required": true
+                  }
+                }
+              }
+            }
+          },
+          "metaattributes": {
+            "serverid": {
+              "name": "serverid",
+              "type": "string",
+              "immutable": true,
+              "required": true
+            },
+            "self": {
+              "name": "self",
+              "type": "url",
+              "readonly": true,
+              "immutable": true,
+              "required": true
+            },
+            "xid": {
+              "name": "xid",
+              "type": "xid",
+              "readonly": true,
+              "immutable": true,
+              "required": true
+            },
+            "xref": {
+              "name": "xref",
+              "type": "url"
+            },
+            "epoch": {
+              "name": "epoch",
+              "type": "uinteger",
+              "required": true
+            },
+            "createdat": {
+              "name": "createdat",
+              "type": "timestamp",
+              "required": true
+            },
+            "modifiedat": {
+              "name": "modifiedat",
+              "type": "timestamp",
+              "required": true
+            },
+            "readonly": {
+              "name": "readonly",
+              "type": "boolean",
+              "required": true,
+              "default": false
+            },
+            "compatibility": {
+              "name": "compatibility",
+              "type": "string",
+              "enum": [
+                "none",
+                "backward",
+                "backward_transitive",
+                "forward",
+                "forward_transitive",
+                "full",
+                "full_transitive"
+              ],
+              "strict": false,
+              "required": true,
+              "default": "none"
+            },
+            "defaultversionid": {
+              "name": "defaultversionid",
+              "type": "string",
+              "required": true
+            },
+            "defaultversionurl": {
+              "name": "defaultversionurl",
+              "type": "url",
+              "readonly": true,
+              "required": true
+            },
+            "defaultversionsticky": {
+              "name": "defaultversionsticky",
+              "type": "boolean",
+              "readonly": true,
+              "required": true,
+              "default": false
+            }
+          }
+        }
+      }
+    }
+  }
+}
