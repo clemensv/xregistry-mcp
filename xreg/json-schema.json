@@ -1,0 +1,293 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://xregistry.io/schema/mcpproviders",
+  "properties": {
+    "mcpproviders": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/mcpprovider"
+      }
+    }
+  },
+  "definitions": {
+    "server": {
+      "type": "object",
+      "properties": {
+        "serverid": {
+          "type": "string",
+          "description": "Opaque server instance identifier."
+        },
+        "name": {
+          "type": "string",
+          "description": "Unique reverse-DNS identifier of the repository."
+        },
+        "epoch": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Unix epoch when the manifest was generated."
+        },
+        "self": {
+          "type": "string",
+          "format": "uri",
+          "description": "Canonical URL of this manifest."
+        },
+        "xid": {
+          "type": "string",
+          "description": "Repository-relative path for this manifest."
+        },
+        "description": {
+          "type": "string",
+          "description": "Repository or server overview."
+        },
+        "documentation": {
+          "type": "string",
+          "format": "uri",
+          "description": "Reference documentation URI."
+        },
+        "labels": {
+          "type": "object",
+          "description": "Arbitrary key\u00e2\u20ac\u201cvalue metadata.",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "createdat": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO-8601 creation timestamp."
+        },
+        "modifiedat": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO-8601 last modification timestamp."
+        },
+        "version_detail": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "type": "string",
+              "description": "Semantic version number detail."
+            }
+          }
+        },
+        "registries": {
+          "type": "array",
+          "description": "Package registry metadata blocks.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "package_name": {
+                "type": "string"
+              },
+              "license": {
+                "type": "string"
+              },
+              "command_arguments": {
+                "type": "object",
+                "properties": {
+                  "sub_commands": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "named_arguments": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "positional_arguments": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "environment_variables": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "required": {
+                          "type": "boolean"
+                        }
+                      }
+                    }
+                  },
+                  "named_arguments": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "remotes": {
+          "type": "array",
+          "description": "Source\u00e2\u20ac\u2018code hosting locations.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "transporttype": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        },
+        "prompts": {
+          "type": "array",
+          "description": "Static prompt templates bundled with this server.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "arguments": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "required": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tools": {
+          "type": "array",
+          "description": "Tool definitions invocable via the MCP runtime.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "inputschema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          }
+        },
+        "resources": {
+          "type": "array",
+          "description": "Data resources the server can expose or subscribe to.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "uritemplate": {
+                "type": "string",
+                "format": "uri-template"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "mimetype": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "mcpprovider": {
+      "type": "object",
+      "properties": {
+        "mcpproviderid": {
+          "type": "string",
+          "description": "ID of the mcpprovider object"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the object"
+        },
+        "epoch": {
+          "type": "integer",
+          "description": "Epoch time of the object creation"
+        },
+        "self": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL of the object"
+        },
+        "xid": {
+          "type": "string",
+          "format": "xid",
+          "description": "Relative URL of the object"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the object"
+        },
+        "documentation": {
+          "type": "string",
+          "format": "uri",
+          "description": "URI of the documentation of the object"
+        },
+        "labels": {
+          "type": "object",
+          "description": "Labels for the object"
+        },
+        "createdat": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time of the object creation"
+        },
+        "modifiedat": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Time of the object modification"
+        },
+        "servers": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/server"
+          }
+        }
+      }
+    }
+  }
+}

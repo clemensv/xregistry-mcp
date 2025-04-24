@@ -1,0 +1,76 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:40:57.203588747Z",
+  "deployment": {
+    "sandbox": {
+      "args": [],
+      "command": "node",
+      "env": [
+        {
+          "description": "Pulumi access token environment variable",
+          "name": "PULUMI_ACCESS_TOKEN",
+          "required": true
+        }
+      ],
+      "package": "@modelcontextprotocol/sdk",
+      "runtime": "nodejs"
+    }
+  },
+  "description": "MCP server exposing Pulumi stacks and tooling via Model Context Protocol",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/dogukanakkaya/servers/pulumi-mcp-server/meta",
+  "modifiedat": "2025-04-25T12:40:57.203588747Z",
+  "name": "Pulumi MCP Server",
+  "repository": {
+    "name": "dogukanakkaya/pulumi-mcp-server",
+    "url": "https://github.com/dogukanakkaya/pulumi-mcp-server"
+  },
+  "resources": [
+    {
+      "name": "Pulumi Stacks",
+      "uritemplate": "pulumi://{organization}"
+    }
+  ],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/dogukanakkaya/servers/pulumi-mcp-server",
+  "serverid": "pulumi-mcp-server",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "description": "Create a new Pulumi stack",
+      "inputschema": {
+        "properties": {
+          "organization": {
+            "description": "Organization name to create the stack in",
+            "type": "string"
+          },
+          "project": {
+            "description": "Project name",
+            "type": "string"
+          },
+          "stackName": {
+            "description": "Stack name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "organization",
+          "project",
+          "stackName"
+        ],
+        "type": "object"
+      },
+      "name": "create_pulumi_stack"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/dogukanakkaya/servers/pulumi-mcp-server/versions",
+  "xid": "/mcpproviders/dogukanakkaya/servers/pulumi-mcp-server"
+}

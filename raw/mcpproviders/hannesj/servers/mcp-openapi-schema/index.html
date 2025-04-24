@@ -1,0 +1,106 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:21.521642776Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "-y",
+        "mcp-openapi-schema"
+      ],
+      "command": "npx",
+      "env": [],
+      "package": "mcp-openapi-schema",
+      "runtime": "nodejs"
+    }
+  },
+  "description": "A Model Context Protocol (MCP) server that exposes OpenAPI schema information to Large Language Models (LLMs) like Claude. This server allows an LLM to explore and understand OpenAPI specifications through a set of specialized tools.",
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/hannesj/servers/mcp-openapi-schema/meta",
+  "modifiedat": "2025-04-25T12:41:21.521642776Z",
+  "name": "OpenAPI Schema Model Context Protocol Server",
+  "repository": {
+    "name": "hannesj/mcp-openapi-schema",
+    "url": "https://github.com/hannesj/mcp-openapi-schema"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/hannesj/servers/mcp-openapi-schema",
+  "serverid": "mcp-openapi-schema",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "description": "Lists all API paths and their HTTP methods with summaries in a nested object structure",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list-endpoints"
+    },
+    {
+      "description": "Gets detailed information about a specific endpoint including parameters and responses",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get-endpoint"
+    },
+    {
+      "description": "Gets the request body schema for a specific endpoint and method",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get-request-body"
+    },
+    {
+      "description": "Gets the response schema for a specific endpoint, method, and status code",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get-response-schema"
+    },
+    {
+      "description": "Gets the parameters for a specific path",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get-path-parameters"
+    },
+    {
+      "description": "Lists all schema components (schemas, responses, parameters, etc.)",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list-components"
+    },
+    {
+      "description": "Gets detailed definition for a specific component",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get-component"
+    },
+    {
+      "description": "Lists all available security schemes",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list-security-schemes"
+    },
+    {
+      "description": "Gets examples for a specific component or endpoint",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get-examples"
+    },
+    {
+      "description": "Searches across paths, operations, and schemas",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "search-schema"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/hannesj/servers/mcp-openapi-schema/versions",
+  "xid": "/mcpproviders/hannesj/servers/mcp-openapi-schema"
+}

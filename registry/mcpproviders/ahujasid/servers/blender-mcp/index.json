@@ -1,0 +1,27 @@
+{
+  "repo_ref": "ahujasid/blender-mcp",
+  "name": "io.github.ahujasid/blender-mcp",
+  "description": "BlenderMCP connects Blender to Claude AI through the Model Context Protocol (MCP), allowing Claude to directly interact with and control Blender. This integration enables prompt assisted 3D modeling, scene creation, and manipulation.",
+  "version_detail": {
+    "version": "1.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "blender-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "blender-mcp"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

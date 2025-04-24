@@ -1,0 +1,50 @@
+{
+  "repo_ref": "GongRzhe/Langflow-DOC-QA-SERVER",
+  "name": "io.github.GongRzhe/Langflow-DOC-QA-SERVER",
+  "description": "A Model Context Protocol server for document Q&A powered by Langflow",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@GongRzhe/Langflow-DOC-QA-SERVER",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "/path/to/doc-qa-server/build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "API_ENDPOINT",
+            "description": "The endpoint URL for the Langflow API service.",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "query_docs",
+      "description": "Query the document Q&A system with a prompt",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The query prompt to search for in the documents"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

@@ -1,0 +1,176 @@
+{
+  "repo_ref": "idoru/influxdb-mcp-server",
+  "name": "io.github.idoru/influxdb-mcp-server",
+  "description": "A Model Context Protocol (MCP) server that exposes access to an InfluxDB instance using the InfluxDB OSS API v2.",
+  "version_detail": {
+    "version": "0.1.1"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "influxdb-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "INFLUXDB_TOKEN",
+            "description": "Authentication token for the InfluxDB API",
+            "required": true
+          },
+          {
+            "name": "INFLUXDB_URL",
+            "description": "URL of the InfluxDB instance (defaults to http://localhost:8086)",
+            "required": false
+          },
+          {
+            "name": "INFLUXDB_ORG",
+            "description": "Default organization name for certain operations",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "flux-query-examples",
+      "description": "Common Flux query examples",
+      "arguments": []
+    },
+    {
+      "name": "line-protocol-guide",
+      "description": "Guide to InfluxDB line protocol format",
+      "arguments": []
+    }
+  ],
+  "tools": [
+    {
+      "name": "write-data",
+      "description": "Write time-series data in line protocol format",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "org": {
+            "type": "string",
+            "description": "The organization name"
+          },
+          "bucket": {
+            "type": "string",
+            "description": "The bucket name"
+          },
+          "data": {
+            "type": "string",
+            "description": "Data in InfluxDB line protocol format"
+          },
+          "precision": {
+            "type": "string",
+            "enum": [
+              "ns",
+              "us",
+              "ms",
+              "s"
+            ],
+            "description": "Timestamp precision (ns, us, ms, s)"
+          }
+        },
+        "required": [
+          "org",
+          "bucket",
+          "data"
+        ]
+      }
+    },
+    {
+      "name": "query-data",
+      "description": "Execute Flux queries",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "org": {
+            "type": "string",
+            "description": "The organization name"
+          },
+          "query": {
+            "type": "string",
+            "description": "Flux query string"
+          }
+        },
+        "required": [
+          "org",
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "create-bucket",
+      "description": "Create a new bucket",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The bucket name"
+          },
+          "orgID": {
+            "type": "string",
+            "description": "The organization ID"
+          },
+          "retentionPeriodSeconds": {
+            "type": "number",
+            "description": "Retention period in seconds (optional)"
+          }
+        },
+        "required": [
+          "name",
+          "orgID"
+        ]
+      }
+    },
+    {
+      "name": "create-org",
+      "description": "Create a new organization",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The organization name"
+          },
+          "description": {
+            "type": "string",
+            "description": "Organization description (optional)"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "orgs",
+      "uritemplate": "influxdb://orgs",
+      "description": "Displays all organizations in the InfluxDB instance"
+    },
+    {
+      "name": "buckets",
+      "uritemplate": "influxdb://buckets",
+      "description": "Shows all buckets with their metadata"
+    },
+    {
+      "name": "bucket-measurements",
+      "uritemplate": "influxdb://bucket/{bucketName}/measurements",
+      "description": "Lists all measurements within a specified bucket"
+    },
+    {
+      "name": "query",
+      "uritemplate": "influxdb://query/{orgName}/{fluxQuery}",
+      "description": "Executes a Flux query and returns results as a resource"
+    }
+  ]
+}

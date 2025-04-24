@@ -1,0 +1,117 @@
+{
+  "repo_ref": "hyperbrowserai/mcp",
+  "name": "io.github.hyperbrowserai/mcp",
+  "description": "Hyperbrowser's Model Context Protocol (MCP) Server providing tools to scrape, extract structured data, and crawl webpages, with access to general purpose browser agents.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [
+    {
+      "url": "http://localhost:3001/sse",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "hyperbrowser-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "hyperbrowser-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "HYPERBROWSER_API_KEY",
+            "description": "API key for Hyperbrowser MCP Server",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "scrape_webpage",
+      "description": "Extract formatted (markdown, screenshot etc) content from any webpage",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "crawl_webpages",
+      "description": "Navigate through multiple linked pages and extract LLM-friendly formatted content",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "extract_structured_data",
+      "description": "Convert messy HTML into structured JSON",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "search_with_bing",
+      "description": "Query the web and get results with Bing search",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "browser_use_agent",
+      "description": "Fast, lightweight browser automation with the Browser Use agent",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "openai_computer_use_agent",
+      "description": "General-purpose automation using OpenAI’s CUA model",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "claude_computer_use_agent",
+      "description": "Complex browser tasks using Claude computer use",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_profile",
+      "description": "Creates a new persistent Hyperbrowser profile.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_profile",
+      "description": "Deletes an existing persistent Hyperbrowser profile.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_profiles",
+      "description": "Lists existing persistent Hyperbrowser profiles.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "hyperbrowser://{pathname}",
+      "name": "Hyperbrowser Documentation Resource",
+      "description": "Documentation resources accessible via hyperbrowser:// URI scheme",
+      "mimetype": "text/markdown"
+    }
+  ]
+}

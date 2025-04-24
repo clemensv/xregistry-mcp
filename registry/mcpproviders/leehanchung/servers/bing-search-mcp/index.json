@@ -1,0 +1,122 @@
+{
+  "repo_ref": "leehanchung/bing-search-mcp",
+  "name": "io.github.leehanchung/bing-search-mcp",
+  "description": "A Model Context Protocol (MCP) server for Microsoft Bing Search API integration, allowing AI assistants to perform web, news, and image searches.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "bing-search-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "bing-search-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "BING_API_KEY",
+            "description": "Microsoft Bing Search API key",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "bing_web_search",
+      "description": "General web search for information, websites, and content.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query"
+          },
+          "count": {
+            "type": "integer",
+            "description": "Number of results (1-50)"
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Pagination offset"
+          },
+          "market": {
+            "type": "string",
+            "description": "Market code like en-US, en-GB"
+          }
+        },
+        "required": [
+          "query",
+          "count",
+          "offset",
+          "market"
+        ]
+      }
+    },
+    {
+      "name": "bing_news_search",
+      "description": "Search for news articles and current events.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "News search query"
+          },
+          "count": {
+            "type": "integer",
+            "description": "Number of results (1-50)"
+          },
+          "market": {
+            "type": "string",
+            "description": "Market code like en-US, en-GB"
+          },
+          "freshness": {
+            "type": "string",
+            "description": "Time period of news (Day, Week, Month)"
+          }
+        },
+        "required": [
+          "query",
+          "count",
+          "market",
+          "freshness"
+        ]
+      }
+    },
+    {
+      "name": "bing_image_search",
+      "description": "Search for images.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Image search query"
+          },
+          "count": {
+            "type": "integer",
+            "description": "Number of results (1-50)"
+          },
+          "market": {
+            "type": "string",
+            "description": "Market code like en-US, en-GB"
+          }
+        },
+        "required": [
+          "query",
+          "count",
+          "market"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

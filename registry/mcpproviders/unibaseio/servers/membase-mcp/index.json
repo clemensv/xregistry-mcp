@@ -1,0 +1,106 @@
+{
+  "repo_ref": "unibaseio/membase-mcp",
+  "name": "io.github.unibaseio/membase-mcp",
+  "description": "The membase mcp server enables seamless integration with the membase protocol for decentralized storage. It provides functionality to upload and download memory to/from the Unibase DA network, managing conversations and messages for AI agents.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "membase-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "path/to/membase-mcp",
+          "run",
+          "src/membase_mcp/server.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "MEMBASE_ACCOUNT",
+            "description": "your account to upload",
+            "required": true
+          },
+          {
+            "name": "MEMBASE_CONVERSATION_ID",
+            "description": "your conversation id, should be unique, will preload its history",
+            "required": true
+          },
+          {
+            "name": "MEMBASE_ID",
+            "description": "your instance id",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get_conversation_id",
+      "description": "Get the current conversation id.",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "switch_conversation",
+      "description": "Switch to a different conversation.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "conversation_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "conversation_id"
+        ]
+      }
+    },
+    {
+      "name": "save_message",
+      "description": "Save a message/memory into the current conversation.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "msg_type": {
+            "type": "string",
+            "enum": [
+              "user",
+              "assistant"
+            ]
+          }
+        },
+        "required": [
+          "content"
+        ]
+      }
+    },
+    {
+      "name": "get_messages",
+      "description": "Get the last n messages from the current conversation.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "recent_n": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      }
+    }
+  ],
+  "resources": []
+}

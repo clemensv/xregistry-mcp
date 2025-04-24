@@ -1,0 +1,220 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:43:04.714107697Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "--directory",
+        "/path/to/repo/mcp-server-aws",
+        "run",
+        "mcp-server-aws"
+      ],
+      "command": "mcp-server-aws",
+      "env": [
+        {
+          "description": "AWS access key ID",
+          "name": "AWS_ACCESS_KEY_ID",
+          "required": false
+        },
+        {
+          "description": "AWS secret access key",
+          "name": "AWS_SECRET_ACCESS_KEY",
+          "required": false
+        },
+        {
+          "description": "AWS region, defaults to us-east-1",
+          "name": "AWS_REGION",
+          "required": false
+        }
+      ],
+      "package": "mcp-server-aws",
+      "runtime": "node"
+    }
+  },
+  "description": "A Model Context Protocol server implementation for AWS operations that currently supports S3 and DynamoDB services. All operations are automatically logged and can be accessed through the audit://aws-operations resource endpoint.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "unknown",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/rishikavikondala/servers/mcp-server-aws/meta",
+  "modifiedat": "2025-04-25T12:43:04.714107697Z",
+  "name": "AWS MCP Server",
+  "repository": {
+    "name": "rishikavikondala/mcp-server-aws",
+    "url": "https://github.com/rishikavikondala/mcp-server-aws"
+  },
+  "resources": [
+    {
+      "description": "Access to automatically logged AWS operations.",
+      "name": "aws-operations",
+      "uritemplate": "audit://aws-operations"
+    }
+  ],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/rishikavikondala/servers/mcp-server-aws",
+  "serverid": "mcp-server-aws",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "description": "Create a new S3 bucket",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "s3_bucket_create"
+    },
+    {
+      "description": "List all S3 buckets",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "s3_bucket_list"
+    },
+    {
+      "description": "Delete an S3 bucket",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "s3_bucket_delete"
+    },
+    {
+      "description": "Upload an object to S3",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "s3_object_upload"
+    },
+    {
+      "description": "Delete an object from S3",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "s3_object_delete"
+    },
+    {
+      "description": "List objects in an S3 bucket",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "s3_object_list"
+    },
+    {
+      "description": "Read an object's content from S3",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "s3_object_read"
+    },
+    {
+      "description": "Create a new DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "dynamodb_table_create"
+    },
+    {
+      "description": "Get details about a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "dynamodb_table_describe"
+    },
+    {
+      "description": "Delete a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "dynamodb_table_delete"
+    },
+    {
+      "description": "Update a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "dynamodb_table_update"
+    },
+    {
+      "description": "Put an item into a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "dynamodb_item_put"
+    },
+    {
+      "description": "Get an item from a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "dynamodb_item_get"
+    },
+    {
+      "description": "Update an item in a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "dynamodb_item_update"
+    },
+    {
+      "description": "Delete an item from a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "dynamodb_item_delete"
+    },
+    {
+      "description": "Query items in a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "dynamodb_item_query"
+    },
+    {
+      "description": "Scan items in a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "dynamodb_item_scan"
+    },
+    {
+      "description": "Batch get multiple items from DynamoDB tables",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "dynamodb_batch_get"
+    },
+    {
+      "description": "Batch write operations (put/delete) for DynamoDB items",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "dynamodb_item_batch_write"
+    },
+    {
+      "description": "Execute multiple PartiQL statements in a batch",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "dynamodb_batch_execute"
+    },
+    {
+      "description": "Get the TTL settings for a table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "dynamodb_describe_ttl"
+    },
+    {
+      "description": "Update the TTL settings for a table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "dynamodb_update_ttl"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/rishikavikondala/servers/mcp-server-aws/versions",
+  "xid": "/mcpproviders/rishikavikondala/servers/mcp-server-aws"
+}

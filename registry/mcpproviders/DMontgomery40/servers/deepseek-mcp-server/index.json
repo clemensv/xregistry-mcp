@@ -1,0 +1,197 @@
+{
+  "repo_ref": "DMontgomery40/deepseek-mcp-server",
+  "name": "io.github.DMontgomery40/deepseek-mcp-server",
+  "description": "A Model Context Protocol (MCP) server for the DeepSeek API, allowing seamless integration of DeepSeek's powerful language models with MCP-compatible applications like Claude Desktop.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "deepseek-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "deepseek-mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "DEEPSEEK_API_KEY",
+            "description": "API key for DeepSeek API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "chat_completion",
+      "description": "Chat completion tool for generating responses from DeepSeek models.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "role": {
+                  "type": "string",
+                  "enum": [
+                    "system",
+                    "user",
+                    "assistant"
+                  ]
+                },
+                "content": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "model": {
+            "type": "string"
+          },
+          "temperature": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 2
+          },
+          "max_tokens": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "top_p": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "frequency_penalty": {
+            "type": "number",
+            "minimum": -2,
+            "maximum": 2
+          },
+          "presence_penalty": {
+            "type": "number",
+            "minimum": -2,
+            "maximum": 2
+          }
+        },
+        "required": [
+          "model",
+          "temperature",
+          "max_tokens",
+          "top_p",
+          "frequency_penalty",
+          "presence_penalty"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "multi_turn_chat",
+      "description": "Multi-turn conversation support maintaining message history and context.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "messages": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "role": {
+                      "type": "string",
+                      "enum": [
+                        "system",
+                        "user",
+                        "assistant"
+                      ]
+                    },
+                    "content": {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "const": "text"
+                        },
+                        "text": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "text"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "model": {
+            "type": "string"
+          },
+          "temperature": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 2
+          },
+          "max_tokens": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "top_p": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "frequency_penalty": {
+            "type": "number",
+            "minimum": -2,
+            "maximum": 2
+          },
+          "presence_penalty": {
+            "type": "number",
+            "minimum": -2,
+            "maximum": 2
+          }
+        },
+        "required": [
+          "model",
+          "temperature",
+          "max_tokens",
+          "top_p",
+          "frequency_penalty",
+          "presence_penalty"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "models",
+      "uritemplate": "models://{modelId}",
+      "description": "Resource exposing available models with their capabilities."
+    },
+    {
+      "name": "model-config",
+      "uritemplate": "config://{modelId}",
+      "description": "Resource exposing configuration options for models."
+    }
+  ]
+}

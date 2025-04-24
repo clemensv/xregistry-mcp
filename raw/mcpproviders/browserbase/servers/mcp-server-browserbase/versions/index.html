@@ -1,0 +1,137 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:46.045588398Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "server.js"
+        ],
+        "command": "node",
+        "env": [
+          {
+            "description": "API key for Browserbase",
+            "name": "BROWSERBASE_API_KEY",
+            "required": true
+          },
+          {
+            "description": "Project ID for Browserbase",
+            "name": "BROWSERBASE_PROJECT_ID",
+            "required": true
+          }
+        ],
+        "package": "@browserbasehq/mcp-browserbase",
+        "runtime": "node"
+      }
+    },
+    "description": "This server provides cloud browser automation capabilities using Browserbase, Puppeteer, and Stagehand. It enables LLMs to interact with web pages, take screenshots, and execute JavaScript in a cloud browser environment.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "modifiedat": "2025-04-25T12:40:46.045588398Z",
+    "name": "example-servers/browserbase",
+    "repository": {
+      "name": "browserbase/mcp-server-browserbase",
+      "subfolder": "browserbase",
+      "url": "https://github.com/browserbase/mcp-server-browserbase"
+    },
+    "resources": [
+      {
+        "description": "Screenshot resources identified by name",
+        "mimetype": "image/png",
+        "name": "Screenshot",
+        "uritemplate": "screenshot://{name}"
+      }
+    ],
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/browserbase/servers/mcp-server-browserbase/versions/1",
+    "serverid": "mcp-server-browserbase",
+    "serverversion": "0.1.0",
+    "tools": [
+      {
+        "description": "Create a new cloud browser session using Browserbase",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "browserbase_create_session"
+      },
+      {
+        "description": "Navigate to a URL",
+        "inputschema": {
+          "properties": {
+            "url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "url"
+          ],
+          "type": "object"
+        },
+        "name": "browserbase_navigate"
+      },
+      {
+        "description": "Takes a screenshot of the current page. Use this tool to learn where you are on the page when controlling the browser with Stagehand. Only use this tool when the other tools are not sufficient to get the information you need.",
+        "inputschema": {
+          "properties": {},
+          "type": "object"
+        },
+        "name": "browserbase_screenshot"
+      },
+      {
+        "description": "Click an element on the page",
+        "inputschema": {
+          "properties": {
+            "selector": {
+              "description": "CSS selector for element to click",
+              "type": "string"
+            }
+          },
+          "required": [
+            "selector"
+          ],
+          "type": "object"
+        },
+        "name": "browserbase_click"
+      },
+      {
+        "description": "Fill out an input field",
+        "inputschema": {
+          "properties": {
+            "selector": {
+              "description": "CSS selector for input field",
+              "type": "string"
+            },
+            "value": {
+              "description": "Value to fill",
+              "type": "string"
+            }
+          },
+          "required": [
+            "selector",
+            "value"
+          ],
+          "type": "object"
+        },
+        "name": "browserbase_fill"
+      },
+      {
+        "description": "Extract all text content from the current page",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "browserbase_get_text"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/browserbase/servers/mcp-server-browserbase/versions/1"
+  }
+}

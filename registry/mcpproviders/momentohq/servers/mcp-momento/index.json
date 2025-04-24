@@ -1,0 +1,159 @@
+{
+  "repo_ref": "momentohq/mcp-momento",
+  "name": "io.github.momentohq/mcp-momento",
+  "description": "A simple Model Context Protocol (MCP) server implementation for Momento Cache.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@gomomento/mcp-momento",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@gomomento/mcp-momento"
+        ],
+        "environment_variables": [
+          {
+            "name": "MOMENTO_API_KEY",
+            "description": "API key for Momento Cache",
+            "required": true
+          },
+          {
+            "name": "MOMENTO_CACHE_NAME",
+            "description": "Name of the cache to use",
+            "required": false
+          },
+          {
+            "name": "DEFAULT_TTL_SECONDS",
+            "description": "Default TTL for cache entries in seconds",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get",
+      "description": "get a key-value pair from the cache",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key to get from the cache"
+          },
+          "cacheName": {
+            "type": "string",
+            "description": "The name of the cache to get the value from. Uses the default cache name if not provided."
+          }
+        },
+        "required": [
+          "key"
+        ]
+      }
+    },
+    {
+      "name": "set",
+      "description": "set a key-value pair in the cache",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The key to set in the cache"
+          },
+          "value": {
+            "type": "string",
+            "description": "The value to set in the cache"
+          },
+          "ttl": {
+            "type": "number",
+            "description": "The TTL for the key in seconds"
+          },
+          "cacheName": {
+            "type": "string",
+            "description": "The name of the cache to set the value in. Uses the default cache name if not provided."
+          }
+        },
+        "required": [
+          "key",
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "list-caches",
+      "description": "Lists all cache names in your Momento account",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "create-cache",
+      "description": "Creates a new cache",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the cache to create"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "delete-cache",
+      "description": "Deletes a cache and all contained values from your Momento account",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the cache to delete"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "publish",
+      "description": "publish a value to a topic",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "cacheName": {
+            "type": "string",
+            "description": "The name of the cache to set the value in. Uses the default cache name if not provided."
+          },
+          "topicName": {
+            "type": "string",
+            "description": "The name of the topic to publish the value to. Uses the default topic name if not provided."
+          },
+          "value": {
+            "type": "string",
+            "description": "The value to publish"
+          }
+        },
+        "required": [
+          "value"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:40:40.067657948Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/apify/servers/actors-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:40:40.067657948Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/apify/servers/actors-mcp-server/meta",
+  "serverid": "actors-mcp-server",
+  "xid": "/mcpproviders/apify/servers/actors-mcp-server/meta"
+}

@@ -1,0 +1,183 @@
+{
+  "repo_ref": "ravenwits/mcp-server-arangodb",
+  "name": "io.github.ravenwits/mcp-server-arangodb",
+  "description": "A Model Context Protocol server for ArangoDB providing database interaction capabilities through ArangoDB with core database operations and MCP tool integration.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "arango-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "arango-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "ARANGO_URL",
+            "description": "ArangoDB connection URL",
+            "required": false
+          },
+          {
+            "name": "ARANGO_DB",
+            "description": "ArangoDB database name",
+            "required": false
+          },
+          {
+            "name": "ARANGO_USERNAME",
+            "description": "ArangoDB username",
+            "required": true
+          },
+          {
+            "name": "ARANGO_PASSWORD",
+            "description": "ArangoDB password",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "arango_query",
+      "description": "Execute AQL queries",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "bindVars": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "arango_insert",
+      "description": "Insert documents into collections",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "document": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "collection",
+          "document"
+        ]
+      }
+    },
+    {
+      "name": "arango_update",
+      "description": "Update existing documents",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "update": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "collection",
+          "key",
+          "update"
+        ]
+      }
+    },
+    {
+      "name": "arango_remove",
+      "description": "Remove documents from collections",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection",
+          "key"
+        ]
+      }
+    },
+    {
+      "name": "arango_backup",
+      "description": "Backup all collections to JSON files",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "outputDir": {
+            "type": "string"
+          },
+          "collection": {
+            "type": "string"
+          },
+          "docLimit": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "outputDir"
+        ]
+      }
+    },
+    {
+      "name": "arango_list_collections",
+      "description": "List all collections in the database",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "arango_create_collection",
+      "description": "Create a new collection in the database",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "document",
+              "edge"
+            ]
+          },
+          "waitForSync": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

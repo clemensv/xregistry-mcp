@@ -1,0 +1,94 @@
+{
+  "repo_ref": "gotohuman/gotohuman-mcp-server",
+  "name": "io.github.gotohuman/gotohuman-mcp-server",
+  "description": "gotoHuman makes it easy to add human approvals to AI agents and agentic workflows. A fully-managed async human-in-the-loop workflow with a customizable approval UI. Enjoy built-in auth, webhooks, notifications, team features, and an evolving training dataset.",
+  "version_detail": {
+    "version": "0.1.2"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@gotohuman/mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "/<absolute-path>/build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "GOTOHUMAN_API_KEY",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "list-forms",
+      "description": "List all available review forms. NOTE: You need to fetch the schema for the form fields first using the get-form-schema tool.",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get-form-schema",
+      "description": "Get the schema to use for the 'fields' property when requesting a human review with a form.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "formId": {
+            "type": "string",
+            "description": "The form ID to fetch the schema for"
+          }
+        },
+        "required": [
+          "formId"
+        ]
+      }
+    },
+    {
+      "name": "request-human-review-with-form",
+      "description": "Request a human review with a form. NOTE: If you don't have a form ID yet, list all available forms using the list-forms tool first. To know what to pass for fieldData, you need to fetch the schema for the form fields using the get-form-schema tool.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "formId": {
+            "type": "string",
+            "description": "The form ID to request a human review for"
+          },
+          "fieldData": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "The field data to include in the review request. Note that this is a dynamic schema that you need to fetch first using the get-form-schema tool."
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Optional additional data that will be incl. in the webhook response after form submission. Incl. everything required to proceed with your workflow."
+          },
+          "assignToUsers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Optional list of user emails to assign the review to"
+          }
+        },
+        "required": [
+          "formId",
+          "fieldData"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

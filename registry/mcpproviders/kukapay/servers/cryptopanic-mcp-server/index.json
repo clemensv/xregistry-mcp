@@ -1,0 +1,55 @@
+{
+  "repo_ref": "kukapay/cryptopanic-mcp-server",
+  "name": "io.github.kukapay/cryptopanic-mcp-server",
+  "description": "Provide the latest cryptocurrency news to AI agents, powered by CryptoPanic.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "unspecified",
+      "package_name": "unspecified",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/your/path/to/cryptopanic-mcp-server",
+          "run",
+          "main.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "CRYPTOPANIC_API_KEY",
+            "description": "CryptoPanic API key",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get_crypto_news",
+      "description": "Fetch latest cryptocurrency news, analysis, or videos from CryptoPanic.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "description": "Content type (news, analysis, videos)"
+          },
+          "num_pages": {
+            "type": "integer",
+            "description": "Number of pages to fetch (default: 1, max: 10)"
+          }
+        },
+        "required": []
+      }
+    }
+  ],
+  "resources": []
+}

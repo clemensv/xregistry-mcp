@@ -1,0 +1,80 @@
+{
+  "repo_ref": "GeLi2001/datadog-mcp-server",
+  "name": "io.github.GeLi2001/datadog-mcp-server",
+  "description": "A Model Context Protocol (MCP) server for interacting with the Datadog API.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "datadog-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "DD_API_KEY",
+            "description": "Datadog API key",
+            "required": true
+          },
+          {
+            "name": "DD_APP_KEY",
+            "description": "Datadog Application key",
+            "required": true
+          },
+          {
+            "name": "DD_SITE",
+            "description": "Datadog site domain",
+            "required": false
+          },
+          {
+            "name": "DD_LOGS_SITE",
+            "description": "Datadog logs site domain",
+            "required": false
+          },
+          {
+            "name": "DD_METRICS_SITE",
+            "description": "Datadog metrics site domain",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get-monitors",
+      "description": "Fetch monitors with optional filtering",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-monitor",
+      "description": "Get details of a specific monitor by ID",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-dashboards",
+      "description": "List all dashboards",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-dashboard",
+      "description": "Get a specific dashboard by ID",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

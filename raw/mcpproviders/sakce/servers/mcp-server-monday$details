@@ -1,0 +1,183 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:43:11.099395316Z",
+  "deployment": {
+    "container": {
+      "args": [
+        "run",
+        "--rm",
+        "-i"
+      ],
+      "env": [
+        {
+          "description": "API key for Monday.com",
+          "name": "MONDAY_API_KEY",
+          "required": true
+        },
+        {
+          "description": "Workspace name for Monday.com",
+          "name": "MONDAY_WORKSPACE_NAME",
+          "required": true
+        }
+      ],
+      "image": "sakce/mcp-server-monday"
+    },
+    "sandbox": {
+      "args": [
+        "mcp-server-monday"
+      ],
+      "command": "uvx",
+      "env": [
+        {
+          "description": "API key for Monday.com",
+          "name": "MONDAY_API_KEY",
+          "required": true
+        },
+        {
+          "description": "Workspace name for Monday.com",
+          "name": "MONDAY_WORKSPACE_NAME",
+          "required": true
+        }
+      ],
+      "package": "mcp-server-monday",
+      "runtime": "uvx"
+    }
+  },
+  "description": "MCP Server for monday.com, enabling MCP clients to interact with Monday.com boards, items, updates, and documents.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/sakce/servers/mcp-server-monday/meta",
+  "modifiedat": "2025-04-25T12:43:11.099395316Z",
+  "name": "monday",
+  "repository": {
+    "name": "sakce/mcp-server-monday",
+    "url": "https://github.com/sakce/mcp-server-monday"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/sakce/servers/mcp-server-monday",
+  "serverid": "mcp-server-monday",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "description": "Creates a new item or sub-item in a Monday.com board",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "monday-create-item"
+    },
+    {
+      "description": "Retrieves all groups from a specified Monday.com board",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "monday-get-board-groups"
+    },
+    {
+      "description": "Creates a comment/update on a Monday.com item",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "monday-create-update"
+    },
+    {
+      "description": "Lists all available Monday.com boards",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "monday-list-boards"
+    },
+    {
+      "description": "Lists all items in specified groups of a Monday.com board",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "monday-list-items-in-groups"
+    },
+    {
+      "description": "Lists all sub-items for given Monday.com items",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "monday-list-subitems-in-items"
+    },
+    {
+      "description": "Creates a new Monday.com board",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "monday-create-board"
+    },
+    {
+      "description": "Creates a new group in a Monday.com board",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "monday-create-board-group"
+    },
+    {
+      "description": "Moves a Monday.com item to a different group",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "monday-move-item-to-group"
+    },
+    {
+      "description": "Deletes a Monday.com item",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "monday-delete-item"
+    },
+    {
+      "description": "Archives a Monday.com item",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "monday-archive-item"
+    },
+    {
+      "description": "Retrieves updates/comments for a specific item",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "monday-get-item-updates"
+    },
+    {
+      "description": "Lists documents in Monday.com, optionally filtered by folder",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "monday-get-docs"
+    },
+    {
+      "description": "Retrieves the content of a specific document",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "monday-get-doc-content"
+    },
+    {
+      "description": "Creates a new document in Monday.com",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "monday-create-doc"
+    },
+    {
+      "description": "Adds a block to an existing document",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "monday-add-doc-block"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/sakce/servers/mcp-server-monday/versions",
+  "xid": "/mcpproviders/sakce/servers/mcp-server-monday"
+}

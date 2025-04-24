@@ -1,0 +1,132 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:40:48.244518417Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "-y",
+        "keycloak-model-context-protocol"
+      ],
+      "command": "npx",
+      "env": [
+        {
+          "default": "http://localhost:8080",
+          "description": "URL of the Keycloak server",
+          "name": "KEYCLOAK_URL",
+          "required": false
+        },
+        {
+          "default": "admin",
+          "description": "Keycloak admin username",
+          "name": "KEYCLOAK_ADMIN",
+          "required": false
+        },
+        {
+          "default": "admin",
+          "description": "Keycloak admin password",
+          "name": "KEYCLOAK_ADMIN_PASSWORD",
+          "required": false
+        }
+      ],
+      "package": "keycloak-model-context-protocol",
+      "runtime": "node"
+    }
+  },
+  "description": "A Model Context Protocol server for Keycloak administration, providing tools to manage users and realms.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "modifiedat": "2025-04-25T12:40:48.244518417Z",
+  "name": "keycloak-admin",
+  "repository": {
+    "name": "ChristophEnglisch/keycloak-model-context-protocol",
+    "url": "https://github.com/ChristophEnglisch/keycloak-model-context-protocol"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ChristophEnglisch/servers/keycloak-model-context-protocol/versions/1",
+  "serverid": "keycloak-model-context-protocol",
+  "serverversion": "0.0.1",
+  "tools": [
+    {
+      "description": "Create a new user in a specific realm",
+      "inputschema": {
+        "properties": {
+          "email": {
+            "format": "email",
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "realm": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "realm",
+          "username",
+          "email",
+          "firstName",
+          "lastName"
+        ],
+        "type": "object"
+      },
+      "name": "create-user"
+    },
+    {
+      "description": "Delete a user from a specific realm",
+      "inputschema": {
+        "properties": {
+          "realm": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "realm",
+          "userId"
+        ],
+        "type": "object"
+      },
+      "name": "delete-user"
+    },
+    {
+      "description": "List all available realms",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "list-realms"
+    },
+    {
+      "description": "List users in a specific realm",
+      "inputschema": {
+        "properties": {
+          "realm": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "realm"
+        ],
+        "type": "object"
+      },
+      "name": "list-users"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/ChristophEnglisch/servers/keycloak-model-context-protocol/versions/1"
+}

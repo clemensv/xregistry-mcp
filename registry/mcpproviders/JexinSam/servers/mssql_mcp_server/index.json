@@ -1,0 +1,85 @@
+{
+  "repo_ref": "JexinSam/mssql_mcp_server",
+  "name": "io.github.JexinSam/mssql_mcp_server",
+  "description": "MSSQL MCP Server is a Model Context Protocol (MCP) server that enables secure and structured interaction with Microsoft SQL Server (MSSQL) databases. It allows AI assistants to list available tables, read table contents, and execute SQL queries with controlled access, ensuring safer database exploration, strict permission enforcement, and logging of database interactions.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mssql-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "MSSQL_DRIVER",
+            "description": "MSSQL driver environment variable",
+            "required": true
+          },
+          {
+            "name": "MSSQL_HOST",
+            "description": "MSSQL host environment variable",
+            "required": true
+          },
+          {
+            "name": "MSSQL_USER",
+            "description": "MSSQL user environment variable",
+            "required": true
+          },
+          {
+            "name": "MSSQL_PASSWORD",
+            "description": "MSSQL password environment variable",
+            "required": true
+          },
+          {
+            "name": "MSSQL_DATABASE",
+            "description": "MSSQL database environment variable",
+            "required": true
+          },
+          {
+            "name": "TrustServerCertificate",
+            "description": "Optional TrustServerCertificate environment variable",
+            "required": false
+          },
+          {
+            "name": "Trusted_Connection",
+            "description": "Optional Trusted_Connection environment variable",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "execute_sql",
+      "description": "Execute an SQL query on the MSSQL server",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The SQL query to execute"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "mssql://{table}/data",
+      "name": "Table",
+      "description": "Data in table: {table}",
+      "mimetype": "text/plain"
+    }
+  ]
+}

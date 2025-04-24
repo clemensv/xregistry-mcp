@@ -1,0 +1,68 @@
+{
+  "repo_ref": "GongRzhe/JSON-MCP-Server",
+  "name": "io.github.GongRzhe/JSON-MCP-Server",
+  "description": "A JSON Model Context Protocol (MCP) server implementation for querying and manipulating JSON data. This server enables LLMs to interact with JSON data through a set of standardized tools.",
+  "version_detail": {
+    "version": "1.0.3"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@gongrzhe/server-json-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "query",
+      "description": "Query JSON data using JSONPath syntax with extended operations",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "jsonPath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "jsonPath"
+        ]
+      }
+    },
+    {
+      "name": "filter",
+      "description": "Filter JSON data using conditions",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "jsonPath": {
+            "type": "string"
+          },
+          "condition": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "jsonPath",
+          "condition"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

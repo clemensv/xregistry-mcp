@@ -1,0 +1,89 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:42:45.215273678Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "/path/to/any-chat-completions-mcp/build/index.js"
+        ],
+        "command": "node",
+        "env": [
+          {
+            "description": "API key for the AI chat provider",
+            "name": "AI_CHAT_KEY",
+            "required": true
+          },
+          {
+            "description": "Name of the AI chat provider",
+            "name": "AI_CHAT_NAME",
+            "required": true
+          },
+          {
+            "description": "Model name to use for chat completions",
+            "name": "AI_CHAT_MODEL",
+            "required": true
+          },
+          {
+            "description": "Base URL for the AI chat API",
+            "name": "AI_CHAT_BASE_URL",
+            "required": true
+          },
+          {
+            "description": "Timeout in milliseconds for chat requests",
+            "name": "AI_CHAT_TIMEOUT",
+            "required": false
+          },
+          {
+            "description": "Optional system prompt for chat completions",
+            "name": "AI_CHAT_SYSTEM_PROMPT",
+            "required": false
+          }
+        ],
+        "package": "any-chat-completions-mcp",
+        "runtime": "node"
+      }
+    },
+    "description": "Integrate Claude with Any OpenAI SDK Compatible Chat Completion API - OpenAI, Perplexity, Groq, xAI, PyroPrompts and more. This implements the Model Context Protocol Server.",
+    "docs": "https://modelcontextprotocol.io",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "modifiedat": "2025-04-25T12:42:45.215273678Z",
+    "name": "any-chat-completions-mcp",
+    "prompts": [],
+    "repository": {
+      "name": "pyroprompts/any-chat-completions-mcp",
+      "url": "https://github.com/pyroprompts/any-chat-completions-mcp"
+    },
+    "resources": [],
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/pyroprompts/servers/any-chat-completions-mcp/versions/1",
+    "serverid": "any-chat-completions-mcp",
+    "serverversion": "0.1.0",
+    "tools": [
+      {
+        "description": "Text chat with OpenAI",
+        "inputschema": {
+          "properties": {
+            "content": {
+              "description": "The content of the chat to send to OpenAI",
+              "type": "string"
+            }
+          },
+          "required": [
+            "content"
+          ],
+          "type": "object"
+        },
+        "name": "chat-with-openai"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/pyroprompts/servers/any-chat-completions-mcp/versions/1"
+  }
+}

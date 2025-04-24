@@ -1,0 +1,119 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:51.086387335Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "codelogic-mcp-server@latest"
+        ],
+        "command": "uvx",
+        "env": [
+          {
+            "description": "URL of the CodeLogic server",
+            "name": "CODELOGIC_SERVER_HOST",
+            "required": true
+          },
+          {
+            "description": "Username for authentication",
+            "name": "CODELOGIC_USERNAME",
+            "required": true
+          },
+          {
+            "description": "Password for authentication",
+            "name": "CODELOGIC_PASSWORD",
+            "required": true
+          },
+          {
+            "description": "Workspace name in CodeLogic",
+            "name": "CODELOGIC_WORKSPACE_NAME",
+            "required": true
+          },
+          {
+            "default": "false",
+            "description": "Enable debug mode",
+            "name": "CODELOGIC_DEBUG_MODE",
+            "required": false
+          }
+        ],
+        "package": "codelogic-mcp-server",
+        "packageversion": "latest",
+        "runtime": "astral-uv"
+      }
+    },
+    "description": "An MCP Server to utilize Codelogic's rich software dependency data in your AI programming assistant.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "modifiedat": "2025-04-25T12:40:51.086387335Z",
+    "name": "codelogic-mcp-server",
+    "repository": {
+      "name": "CodeLogicIncEngineering/codelogic-mcp-server",
+      "url": "https://github.com/CodeLogicIncEngineering/codelogic-mcp-server"
+    },
+    "resources": [],
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/CodeLogicIncEngineering/servers/codelogic-mcp-server/versions/1",
+    "serverid": "codelogic-mcp-server",
+    "serverversion": "latest",
+    "tools": [
+      {
+        "description": "Analyze impacts of modifying a specific method within a given class or type.\nRecommended workflow:\n1. Use this tool before implementing code changes\n2. Run the tool against methods or functions that are being modified\n3. Carefully review the impact analysis results to understand potential downstream effects\nParticularly crucial when AI-suggested modifications are being considered.",
+        "inputschema": {
+          "properties": {
+            "class": {
+              "description": "Name of the class containing the method",
+              "type": "string"
+            },
+            "method": {
+              "description": "Name of the method being analyzed",
+              "type": "string"
+            }
+          },
+          "required": [
+            "method",
+            "class"
+          ],
+          "type": "object"
+        },
+        "name": "codelogic-method-impact"
+      },
+      {
+        "description": "Analyze impacts between code and database entities.\nRecommended workflow:\n1. Use this tool before implementing code or database changes\n2. Search for the relevant database entity\n3. Review the impact analysis to understand which code depends on this database object and vice versa\nParticularly crucial when AI-suggested modifications are being considered or when modifying SQL code.",
+        "inputschema": {
+          "properties": {
+            "entity_type": {
+              "description": "Type of database entity to search for (column, table, or view)",
+              "enum": [
+                "column",
+                "table",
+                "view"
+              ],
+              "type": "string"
+            },
+            "name": {
+              "description": "Name of the database entity to search for",
+              "type": "string"
+            },
+            "table_or_view": {
+              "description": "Name of the table or view containing the column (required for columns only)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "entity_type",
+            "name"
+          ],
+          "type": "object"
+        },
+        "name": "codelogic-database-impact"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/CodeLogicIncEngineering/servers/codelogic-mcp-server/versions/1"
+  }
+}

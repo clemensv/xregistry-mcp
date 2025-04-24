@@ -1,0 +1,44 @@
+{
+  "repo_ref": "co-browser/browser-use-mcp-server",
+  "name": "io.github.co-browser/browser-use-mcp-server",
+  "description": "An MCP server that enables AI agents to control web browsers using browser-use.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [
+    {
+      "url": "http://localhost:8000/sse",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "browser-use-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "server",
+          "--port",
+          "8000",
+          "--stdio",
+          "--proxy-port",
+          "9000"
+        ],
+        "environment_variables": [
+          {
+            "name": "OPENAI_API_KEY",
+            "description": "API key for OpenAI",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

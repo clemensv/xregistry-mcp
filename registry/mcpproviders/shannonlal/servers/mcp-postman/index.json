@@ -1,0 +1,56 @@
+{
+  "repo_ref": "shannonlal/mcp-postman",
+  "name": "io.github.shannonlal/mcp-postman",
+  "description": "An MCP (Model Context Protocol) server that enables running Postman collections using Newman. This server allows LLMs to execute API tests and get detailed results through a standardized interface.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@smithery/mcp-postman",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "/absolute/path/to/mcp-postman/build/index.js"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "run-collection",
+      "description": "Run a Postman Collection using Newman",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string",
+            "description": "Path or URL to the Postman collection"
+          },
+          "environment": {
+            "type": "string",
+            "description": "Optional path or URL to environment file"
+          },
+          "globals": {
+            "type": "string",
+            "description": "Optional path or URL to globals file"
+          },
+          "iterationCount": {
+            "type": "number",
+            "description": "Optional number of iterations to run"
+          }
+        },
+        "required": [
+          "collection"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

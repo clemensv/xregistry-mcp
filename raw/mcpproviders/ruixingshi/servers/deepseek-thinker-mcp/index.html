@@ -1,0 +1,73 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:43:07.94197999Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "-y",
+        "deepseek-thinker-mcp"
+      ],
+      "command": "npx",
+      "env": [
+        {
+          "description": "Your OpenAI API Key",
+          "name": "API_KEY",
+          "required": false
+        },
+        {
+          "description": "API Base URL",
+          "name": "BASE_URL",
+          "required": false
+        },
+        {
+          "description": "Set to true to use Ollama mode",
+          "name": "USE_OLLAMA",
+          "required": false
+        }
+      ],
+      "package": "deepseek-thinker-mcp",
+      "runtime": "node"
+    }
+  },
+  "description": "A MCP (Model Context Protocol) provider Deepseek reasoning content to MCP-enabled AI Clients, like Claude Desktop. Supports access to Deepseek's thought processes from the Deepseek API service or from a local Ollama server.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ruixingshi/servers/deepseek-thinker-mcp/meta",
+  "modifiedat": "2025-04-25T12:43:07.94197999Z",
+  "name": "deepseek-thinker",
+  "repository": {
+    "name": "ruixingshi/deepseek-thinker-mcp",
+    "url": "https://github.com/ruixingshi/deepseek-thinker-mcp"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ruixingshi/servers/deepseek-thinker-mcp",
+  "serverid": "deepseek-thinker-mcp",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "description": "Perform reasoning using the Deepseek model",
+      "inputschema": {
+        "properties": {
+          "originPrompt": {
+            "description": "user's original prompt",
+            "type": "string"
+          }
+        },
+        "required": [
+          "originPrompt"
+        ],
+        "type": "object"
+      },
+      "name": "get-deepseek-thinker"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ruixingshi/servers/deepseek-thinker-mcp/versions",
+  "xid": "/mcpproviders/ruixingshi/servers/deepseek-thinker-mcp"
+}

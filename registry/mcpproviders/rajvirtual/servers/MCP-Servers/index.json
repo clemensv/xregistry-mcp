@@ -1,0 +1,136 @@
+{
+  "repo_ref": "rajvirtual/MCP-Servers",
+  "name": "io.github.rajvirtual/MCP-Servers",
+  "description": "MCP server providing tools to read and create Microsoft OneNote content via Microsoft Graph API.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "CLIENT_ID",
+            "description": "Azure AD client ID for authentication",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "Get all notebooks",
+      "description": "List all available OneNote notebooks"
+    },
+    {
+      "name": "Get sections in a notebook",
+      "description": "List all sections in a specific notebook"
+    },
+    {
+      "name": "Get pages in a section",
+      "description": "List all pages in a specific section"
+    },
+    {
+      "name": "Get a specific page",
+      "description": "Get content from a specific page"
+    },
+    {
+      "name": "Create a new notebook",
+      "description": "Create a brand new notebook"
+    },
+    {
+      "name": "Create a section in a notebook",
+      "description": "Create a new section in a specific notebook"
+    },
+    {
+      "name": "Create a page in a section",
+      "description": "Create a new page in a specific section"
+    }
+  ],
+  "tools": [
+    {
+      "name": "onenote-read",
+      "description": "Read content from Microsoft OneNote notebooks, sections, or pages",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "read_content"
+            ]
+          },
+          "pageId": {
+            "type": "string",
+            "description": "ID of the specific page to read"
+          },
+          "sectionId": {
+            "type": "string",
+            "description": "ID of the section to list pages from"
+          },
+          "notebookId": {
+            "type": "string",
+            "description": "ID of the notebook to list sections from"
+          },
+          "includeContent": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether to include the content of the page"
+          },
+          "includeMetadata": {
+            "type": "boolean",
+            "default": false,
+            "description": "Whether to include metadata about the page"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      }
+    },
+    {
+      "name": "onenote-create",
+      "description": "Create new content in Microsoft OneNote",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "create_page",
+              "create_section",
+              "create_notebook"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "description": "Title of the content to create"
+          },
+          "content": {
+            "type": "string",
+            "description": "Content in Markdown format"
+          },
+          "parentId": {
+            "type": "string",
+            "description": "ID of the parent section or notebook"
+          }
+        },
+        "required": [
+          "type",
+          "content"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

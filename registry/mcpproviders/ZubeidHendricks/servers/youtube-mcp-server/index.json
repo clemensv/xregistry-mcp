@@ -1,0 +1,39 @@
+{
+  "repo_ref": "ZubeidHendricks/youtube-mcp-server",
+  "name": "io.github.ZubeidHendricks/youtube-mcp-server",
+  "description": "A Model Context Protocol (MCP) server implementation for YouTube, enabling AI language models to interact with YouTube content through a standardized interface.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/server-youtube",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@modelcontextprotocol/server-youtube"
+        ],
+        "environment_variables": [
+          {
+            "name": "YOUTUBE_API_KEY",
+            "description": "Your YouTube Data API key",
+            "required": true
+          },
+          {
+            "name": "YOUTUBE_TRANSCRIPT_LANG",
+            "description": "Default language for transcripts (optional, defaults to 'en')",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

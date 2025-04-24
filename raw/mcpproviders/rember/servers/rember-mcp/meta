@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:43:01.333958712Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/rember/servers/rember-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:43:01.333958712Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/rember/servers/rember-mcp/meta",
+  "serverid": "rember-mcp",
+  "xid": "/mcpproviders/rember/servers/rember-mcp/meta"
+}

@@ -1,0 +1,1290 @@
+{
+  "repo_ref": "graphlit/graphlit-mcp-server",
+  "name": "io.github.graphlit/graphlit-mcp-server",
+  "description": "The Model Context Protocol (MCP) Server enables integration between MCP clients and the Graphlit service. It acts as a searchable, and RAG-ready knowledge base across developer and product management tools, ingesting data from various sources and providing tools for retrieval, RAG, extraction, publishing, ingestion, data connectors, web operations, notifications, and management operations.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "graphlit-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "GRAPHLIT_ENVIRONMENT_ID",
+            "description": "Your environment ID.",
+            "required": true
+          },
+          {
+            "name": "GRAPHLIT_ORGANIZATION_ID",
+            "description": "Your organization ID.",
+            "required": true
+          },
+          {
+            "name": "GRAPHLIT_JWT_SECRET",
+            "description": "Your JWT secret for signing the JWT token.",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "configureProject",
+      "description": "Configures the default content workflow and conversation specification for the Graphlit project. Only needed if user asks to configure the project defaults. To reset the project configuration to 'factory state', assign False or null to all parameters. Optionally accepts whether to configure the default specification for LLM conversations. Defaults to using OpenAI GPT-4o, if not assigned. Optionally accepts whether to enable high-quality document and web page preparation using a vision LLM. Defaults to using Azure AI Document Intelligence for document preparation, if not assigned. Optionally accepts whether to enable entity extraction using LLM into the knowledge graph. Defaults to no entity extraction, if not assigned. Optionally accepts the preferred model provider service type, i.e. Anthropic, OpenAI, Google. Defaults to Anthropic if not provided. Returns the project identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "modelServiceType": {
+            "type": "string"
+          },
+          "configureConversationSpecification": {
+            "type": "boolean"
+          },
+          "configurePreparationSpecification": {
+            "type": "boolean"
+          },
+          "configureExtractionSpecification": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "modelServiceType"
+        ]
+      }
+    },
+    {
+      "name": "askGraphlit",
+      "description": "Ask questions about using the Graphlit Platform, or specifically about the Graphlit API or SDKs. When the user asks about how to use the Graphlit API or SDKs, use this tool to provide a code sample in Python, TypeScript or C#. Accepts an LLM user prompt. Returns the LLM prompt completion in Markdown format.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "prompt"
+        ]
+      }
+    },
+    {
+      "name": "promptConversation",
+      "description": "Prompts an LLM conversation about your entire Graphlit knowledge base. Uses hybrid vector search based on user prompt for locating relevant content sources. Uses LLM to complete the user prompt with the configured LLM. Maintains conversation history between 'user' and LLM 'assistant'. Prefer 'promptConversation' when the user intends to start or continue an ongoing conversation about the entire Graphlit knowledge base. Similar to 'retrieveSources' but does not perform content metadata filtering. Accepts an LLM user prompt and optional conversation identifier. Will either create a new conversation or continue an existing one. Will use the default specification for LLM conversations, which is optionally configured with the 'configureProject' tool. Returns the conversation identifier, completed LLM message, and any citations from the LLM response.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string"
+          },
+          "conversationId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "prompt"
+        ]
+      }
+    },
+    {
+      "name": "retrieveSources",
+      "description": "Retrieve relevant content sources from Graphlit knowledge base. Do *not* use for retrieving content by content identifier - retrieve content resource instead, with URI 'contents://{id}'. Accepts an LLM user prompt for content retrieval. For best retrieval quality, provide only key words or phrases from the user prompt, which will be used to create text embeddings for a vector search query. Only use when there is a valid LLM user prompt for content retrieval, otherwise use 'queryContents'. For example 'recent content' is not a useful user prompt, since it doesn't reference the text in the content. Only use for 'one shot' retrieval of content sources, i.e. when the user is not interested in having a conversation about the content. Accepts an optional ingestion recency filter (defaults to null, meaning all time), and optional content type and file type filters. Also accepts optional feed and collection identifiers to filter content by. Returns the ranked content sources, including their content resource URI to retrieve the complete Markdown text.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string"
+          },
+          "inLast": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "fileType": {
+            "type": "string"
+          },
+          "feeds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "collections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "prompt"
+        ]
+      }
+    },
+    {
+      "name": "retrieveImages",
+      "description": "Retrieve images from Graphlit knowledge base. Provides image-specific retrieval when image similarity search is desired. Do *not* use for retrieving content by content identifier - retrieve content resource instead, with URI 'contents://{id}'. Accepts image URL. Image will be used for similarity search using image embeddings. Accepts optional geo-location filter for search by latitude, longitude and optional distance radius. Images taken with GPS enabled are searchable by geo-location. Also accepts optional recency filter (defaults to null, meaning all time), and optional feed and collection identifiers to filter images by. Returns the matching images, including their content resource URI to retrieve the complete Markdown text.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "inLast": {
+            "type": "string"
+          },
+          "feeds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "collections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "location": {
+            "type": "object",
+            "properties": {
+              "latitude": {
+                "type": "number"
+              },
+              "longitude": {
+                "type": "number"
+              },
+              "distance": {
+                "type": "number"
+              }
+            }
+          },
+          "limit": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "extractText",
+      "description": "Extracts JSON data from text using LLM. Accepts text to be extracted, and JSON schema which describes the data which will be extracted. JSON schema needs be of type 'object' and include 'properties' and 'required' fields. Optionally accepts text prompt which is provided to LLM to guide data extraction. Defaults to 'Extract data using the tools provided'. Returns extracted JSON from text.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "schema": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "schema"
+        ]
+      }
+    },
+    {
+      "name": "createCollection",
+      "description": "Create a collection. Accepts a collection name, and optional list of content identifiers to add to collection. Returns the collection identifier",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "contents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "addContentsToCollection",
+      "description": "Add contents to a collection. Accepts a collection identifier and a list of content identifiers to add to collection. Returns the collection identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "contents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "contents"
+        ]
+      }
+    },
+    {
+      "name": "removeContentsFromCollection",
+      "description": "Remove contents from collection. Accepts a collection identifier and a list of content identifiers to remove from collection. Returns the collection identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "contents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "contents"
+        ]
+      }
+    },
+    {
+      "name": "deleteContent",
+      "description": "Deletes content from Graphlit knowledge base. Accepts content identifier. Returns the content identifier and content state, i.e. Deleted.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "deleteConversation",
+      "description": "Deletes conversation from Graphlit knowledge base. Accepts conversation identifier. Returns the conversation identifier and content state, i.e. Deleted.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "deleteCollection",
+      "description": "Deletes collection from Graphlit knowledge base. Does *not* delete the contents in the collection, only the collection itself. Accepts collection identifier. Returns the collection identifier and collection state, i.e. Deleted.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "deleteFeed",
+      "description": "Deletes feed from Graphlit knowledge base. *Does* delete the contents in the feed, in addition to the feed itself. Accepts feed identifier. Returns the feed identifier and feed state, i.e. Deleted.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "deleteFeeds",
+      "description": "Deletes feeds from Graphlit knowledge base. *Does* delete the contents in the feed, in addition to the feed itself. Accepts optional feed type filter to limit the feeds which will be deleted. Also accepts optional limit of how many feeds to delete, defaults to 100. Returns the feed identifiers and feed state, i.e. Deleted.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "feedType": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "deleteCollections",
+      "description": "Deletes collections from Graphlit knowledge base. Does *not* delete the contents in the collections, only the collections themselves. Accepts optional limit of how many collections to delete, defaults to 100. Returns the collection identifiers and collection state, i.e. Deleted.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "deleteConversations",
+      "description": "Deletes conversations from Graphlit knowledge base. Accepts optional limit of how many conversations to delete, defaults to 100. Returns the conversation identifiers and conversation state, i.e. Deleted.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "deleteContents",
+      "description": "Deletes contents from Graphlit knowledge base. Accepts optional content type and file type filters to limit the contents which will be deleted. Also accepts optional limit of how many contents to delete, defaults to 1000. Returns the content identifiers and content state, i.e. Deleted.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "contentType": {
+            "type": "string"
+          },
+          "fileType": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "queryContents",
+      "description": "Query contents from Graphlit knowledge base. Do *not* use for retrieving content by content identifier - retrieve content resource instead, with URI 'contents://{id}'. Accepts optional content name, content type and file type for metadata filtering. Accepts optional hybrid vector search query. Accepts optional recency filter (defaults to null, meaning all time), and optional feed and collection identifiers to filter images by. Accepts optional geo-location filter for search by latitude, longitude and optional distance radius. Images and videos taken with GPS enabled are searchable by geo-location. Returns the matching contents, including their content resource URI to retrieve the complete Markdown text.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "fileType": {
+            "type": "string"
+          },
+          "inLast": {
+            "type": "string"
+          },
+          "feeds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "collections": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "location": {
+            "type": "object",
+            "properties": {
+              "latitude": {
+                "type": "number"
+              },
+              "longitude": {
+                "type": "number"
+              },
+              "distance": {
+                "type": "number"
+              }
+            }
+          },
+          "limit": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "queryCollections",
+      "description": "Query collections from Graphlit knowledge base. Do *not* use for retrieving collection by collection identifier - retrieve collection resource instead, with URI 'collections://{id}'. Accepts optional collection name for metadata filtering. Returns the matching collections, including their collection resource URI to retrieve the collection contents.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "queryFeeds",
+      "description": "Query feeds from Graphlit knowledge base. Do *not* use for retrieving feed by feed identifier - retrieve feed resource instead, with URI 'feeds://{id}'. Accepts optional feed name and feed type for metadata filtering. Returns the matching feeds, including their feed resource URI to retrieve the feed contents.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "queryConversations",
+      "description": "Query conversations from Graphlit knowledge base. Do *not* use for retrieving conversation by conversation identifier - retrieve conversation resource instead, with URI 'conversations://{id}'. Accepts optional hybrid vector search query. Accepts optional recency filter (defaults to null, meaning all time). Returns the matching conversations, including their conversation resource URI to retrieve the complete conversation message history.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "inLast": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "isContentDone",
+      "description": "Check if content has completed asynchronous ingestion. Accepts a content identifier which was returned from one of the non-feed ingestion tools, like ingestUrl. Returns whether the content is done or not.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "isFeedDone",
+      "description": "Check if an asynchronous feed has completed ingesting all the available content. Accepts a feed identifier which was returned from one of the ingestion tools, like ingestGoogleDriveFiles. Returns whether the feed is done or not.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "listNotionDatabases",
+      "description": "Lists available Notion databases. Requires environment variable to be configured: NOTION_API_KEY. Returns a list of Notion databases, where the database identifier can be used with ingestNotionPages to ingest pages into Graphlit knowledge base.",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "listLinearProjects",
+      "description": "Lists available Linear projects. Requires environment variable to be configured: LINEAR_API_KEY. Returns a list of Linear projects, where the project name can be used with ingestLinearIssues to ingest issues into Graphlit knowledge base.",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "listSlackChannels",
+      "description": "Lists available Slack channels. Requires environment variable to be configured: SLACK_BOT_TOKEN. Returns a list of Slack channels, where the channel name can be used with ingestSlackMessages to ingest messages into Graphlit knowledge base.",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "listSharePointLibraries",
+      "description": "Lists available SharePoint libraries. Requires environment variables to be configured: SHAREPOINT_CLIENT_ID, SHAREPOINT_CLIENT_SECRET, SHAREPOINT_REFRESH_TOKEN. Returns a list of SharePoint libraries, where the selected libraryId can be used with listSharePointFolders to enumerate SharePoint folders in a library.",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "listSharePointFolders",
+      "description": "Lists available SharePoint folders. Requires environment variables to be configured: SHAREPOINT_CLIENT_ID, SHAREPOINT_CLIENT_SECRET, SHAREPOINT_REFRESH_TOKEN. Returns a list of SharePoint folders, which can be used with ingestSharePointFiles to ingest files into Graphlit knowledge base.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "libraryId": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "ingestSharePointFiles",
+      "description": "Ingests files from SharePoint library into Graphlit knowledge base. Accepts a SharePoint libraryId and an optional folderId to ingest files from a specific SharePoint folder. Libraries can be enumerated with listSharePointLibraries and library folders with listSharePointFolders. Requires environment variables to be configured: SHAREPOINT_ACCOUNT_NAME, SHAREPOINT_CLIENT_ID, SHAREPOINT_CLIENT_SECRET, SHAREPOINT_REFRESH_TOKEN. Accepts an optional read limit for the number of files to ingest. Executes asynchronously, creates SharePoint feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "libraryId": {
+            "type": "string"
+          },
+          "folderId": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "libraryId"
+        ]
+      }
+    },
+    {
+      "name": "ingestOneDriveFiles",
+      "description": "Ingests files from OneDrive into Graphlit knowledge base. Accepts optional OneDrive folder identifier, and an optional read limit for the number of files to ingest. If no folder identifier provided, ingests files from root OneDrive folder. Requires environment variables to be configured: ONEDRIVE_CLIENT_ID, ONEDRIVE_CLIENT_SECRET, ONEDRIVE_REFRESH_TOKEN. Executes asynchronously, creates OneDrive feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "folderId": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "ingestGoogleDriveFiles",
+      "description": "Ingests files from Google Drive into Graphlit knowledge base. Accepts optional Google Drive folder identifier, and an optional read limit for the number of files to ingest. For example, with Google Drive URI (https://drive.google.com/drive/u/0/folders/32tzhRD12KDh2hXABY8OZRFv7Smy8WBkQ), the folder identifier is 32tzhRD12KDh2hXABY8OZRFv7Smy8WBkQ. If no folder identifier provided, ingests files from root Google Drive folder. Requires environment variables to be configured: GOOGLE_DRIVE_SERVICE_ACCOUNT_JSON -or- GOOGLE_DRIVE_CLIENT_ID, GOOGLE_DRIVE_CLIENT_SECRET, GOOGLE_DRIVE_REFRESH_TOKEN. If service account JSON is provided, uses service account authentication. Else, uses user authentication. Executes asynchronously, creates Google Drive feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "folderId": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "ingestDropboxFiles",
+      "description": "Ingests files from Dropbox into Graphlit knowledge base. Accepts optional relative path to Dropbox folder (i.e. /Pictures), and an optional read limit for the number of files to ingest. If no path provided, ingests files from root Dropbox folder. Requires environment variables to be configured: DROPBOX_APP_KEY, DROPBOX_APP_SECRET, DROPBOX_REDIRECT_URI, DROPBOX_REFRESH_TOKEN. Executes asynchronously, creates Dropbox feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "ingestBoxFiles",
+      "description": "Ingests files from Box into Graphlit knowledge base. Accepts optional Box folder identifier, and an optional read limit for the number of files to ingest. If no folder identifier provided, ingests files from root Box folder (i.e. \"0\"). Folder identifier can be inferred from Box URL. https://app.box.com/folder/123456 -> folder identifier is \"123456\". Requires environment variables to be configured: BOX_CLIENT_ID, BOX_CLIENT_SECRET, BOX_REDIRECT_URI, BOX_REFRESH_TOKEN. Executes asynchronously, creates Box feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "folderId": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "ingestGitHubFiles",
+      "description": "Ingests files from GitHub repository into Graphlit knowledge base. Accepts GitHub repository owner and repository name and an optional read limit for the number of files to ingest. For example, for GitHub repository (https://github.com/openai/tiktoken), 'openai' is the repository owner, and 'tiktoken' is the repository name. Requires environment variable to be configured: GITHUB_PERSONAL_ACCESS_TOKEN. Executes asynchronously, creates GitHub feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "repositoryName": {
+            "type": "string"
+          },
+          "repositoryOwner": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "repositoryName",
+          "repositoryOwner"
+        ]
+      }
+    },
+    {
+      "name": "ingestNotionPages",
+      "description": "Ingests pages from Notion database into Graphlit knowledge base. Accepts Notion database identifier and an optional read limit for the number of pages to ingest. You can list the available Notion database identifiers with listNotionDatabases. Or, for a Notion URL, https://www.notion.so/Example/Engineering-Wiki-114abc10cb38487e91ec906fc6c6f350, 'Engineering-Wiki-114abc10cb38487e91ec906fc6c6f350' is an example of a Notion database identifier. Requires environment variable to be configured: NOTION_API_KEY. Executes asynchronously, creates Notion feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "databaseId": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "databaseId"
+        ]
+      }
+    },
+    {
+      "name": "ingestMicrosoftTeamsMessages",
+      "description": "Ingests messages from Microsoft Teams channel into Graphlit knowledge base. Accepts Microsoft Teams team identifier and channel identifier, and an optional read limit for the number of messages to ingest. Requires environment variables to be configured: MICROSOFT_TEAMS_CLIENT_ID, MICROSOFT_TEAMS_CLIENT_SECRET, MICROSOFT_TEAMS_REFRESH_TOKEN. Executes asynchronously, creates Microsoft Teams feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "teamId": {
+            "type": "string"
+          },
+          "channelId": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "teamId",
+          "channelId"
+        ]
+      }
+    },
+    {
+      "name": "ingestSlackMessages",
+      "description": "Ingests messages from Slack channel into Graphlit knowledge base. Accepts Slack channel name and an optional read limit for the number of messages to ingest. Requires environment variable to be configured: SLACK_BOT_TOKEN. Executes asynchronously, creates Slack feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "channelName": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "channelName"
+        ]
+      }
+    },
+    {
+      "name": "ingestDiscordMessages",
+      "description": "Ingests messages from Discord channel into Graphlit knowledge base. Accepts Discord channel name and an optional read limit for the number of messages to ingest. Requires environment variable to be configured: DISCORD_BOT_TOKEN. Executes asynchronously, creates Discord feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "channelName": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "channelName"
+        ]
+      }
+    },
+    {
+      "name": "ingestTwitterPosts",
+      "description": "Ingests posts by user from Twitter/X into Graphlit knowledge base. Accepts Twitter/X user name, without the leading @ symbol, and an optional read limit for the number of posts to ingest. Requires environment variable to be configured: TWITTER_TOKEN. Executes asynchronously, creates Twitter feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "userName"
+        ]
+      }
+    },
+    {
+      "name": "ingestTwitterSearch",
+      "description": "Searches for recent posts from Twitter/X, and ingests them into Graphlit knowledge base. Accepts search query, and an optional read limit for the number of posts to ingest. Requires environment variable to be configured: TWITTER_TOKEN. Executes asynchronously, creates Twitter feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "ingestRedditPosts",
+      "description": "Ingests posts from Reddit subreddit into Graphlit knowledge base. Accepts a subreddit name and an optional read limit for the number of posts to ingest. Executes asynchronously, creates Reddit feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "subredditName": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "subredditName"
+        ]
+      }
+    },
+    {
+      "name": "ingestGoogleEmail",
+      "description": "Ingests emails from Google Email account into Graphlit knowledge base. Accepts an optional read limit for the number of emails to ingest. Requires environment variables to be configured: GOOGLE_EMAIL_CLIENT_ID, GOOGLE_EMAIL_CLIENT_SECRET, GOOGLE_EMAIL_REFRESH_TOKEN. Executes asynchronously, creates Google Email feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "readLimit": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "ingestMicrosoftEmail",
+      "description": "Ingests emails from Microsoft Email account into Graphlit knowledge base. Accepts an optional read limit for the number of emails to ingest. Requires environment variables to be configured: MICROSOFT_EMAIL_CLIENT_ID, MICROSOFT_EMAIL_CLIENT_SECRET, MICROSOFT_EMAIL_REFRESH_TOKEN. Executes asynchronously, creates Microsoft Email feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "readLimit": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    {
+      "name": "ingestLinearIssues",
+      "description": "Ingests issues from Linear project into Graphlit knowledge base. Accepts Linear project name and an optional read limit for the number of issues to ingest. Requires environment variable to be configured: LINEAR_API_KEY. Executes asynchronously, creates Linear issue feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "projectName": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "projectName"
+        ]
+      }
+    },
+    {
+      "name": "ingestGitHubIssues",
+      "description": "Ingests issues from GitHub repository into Graphlit knowledge base. Accepts GitHub repository owner and repository name and an optional read limit for the number of issues to ingest. For example, for GitHub repository (https://github.com/openai/tiktoken), 'openai' is the repository owner, and 'tiktoken' is the repository name. Requires environment variable to be configured: GITHUB_PERSONAL_ACCESS_TOKEN. Executes asynchronously, creates GitHub issue feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "repositoryName": {
+            "type": "string"
+          },
+          "repositoryOwner": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "repositoryName",
+          "repositoryOwner"
+        ]
+      }
+    },
+    {
+      "name": "ingestJiraIssues",
+      "description": "Ingests issues from Atlassian Jira repository into Graphlit knowledge base. Accepts Atlassian Jira server URL and project name, and an optional read limit for the number of issues to ingest. Requires environment variables to be configured: JIRA_EMAIL, JIRA_TOKEN. Executes asynchronously, creates Atlassian Jira issue feed, and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "projectName": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "url",
+          "projectName"
+        ]
+      }
+    },
+    {
+      "name": "webCrawl",
+      "description": "Crawls web pages from web site into Graphlit knowledge base. Accepts a URL and an optional read limit for the number of pages to crawl. Uses sitemap.xml to discover pages to be crawled from website. Executes asynchronously and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "webMap",
+      "description": "Enumerates the web pages at or beneath the provided URL using web sitemap. Does *not* ingest web pages into Graphlit knowledge base. Accepts web site URL as string. Returns list of mapped URIs from web site.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "webSearch",
+      "description": "Performs web or podcast search based on search query. Can search for web pages or anything about podcasts (i.e. episodes, topics, guest appearances). Format the search query as what would be entered into a Google search. You can use site filtering in the search query, like 'site:twitter.com'. Prefer calling this tool over using 'curl' directly for any web search. Use 'PODSCAN' search service type to search podcasts. Does *not* ingest pages or podcast episodes into Graphlit knowledge base. When searching podcasts, *don't* include the term 'podcast' or 'episode' in the search query - that would be redundant. Search service types: Tavily (web pages), Exa (web pages) and Podscan (podcasts). Defaults to Exa. Returns URL, title and relevant Markdown text from resulting web pages or podcast episode descriptions.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "searchService": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "ingestRSS",
+      "description": "Ingests posts from RSS feed into Graphlit knowledge base. For podcast RSS feeds, audio will be downloaded, transcribed and ingested into Graphlit knowledge base. Accepts RSS URL and an optional read limit for the number of posts to read. Executes asynchronously and returns the feed identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "readLimit": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "ingestUrl",
+      "description": "Ingests content from URL into Graphlit knowledge base. Can scrape web pages, and can ingest individual Word documents, PDFs, audio recordings, videos, images, or any other unstructured data. Executes asynchronously and returns the content identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "ingestText",
+      "description": "Ingests text as content into Graphlit knowledge base. Accepts the text itself, and an optional text type (Plain, Markdown, Html). Defaults to Markdown text type. Optionally accepts the content name and an identifier for an existing content object. Will overwrite existing content, if provided. Can use for storing the output from LLM or other tools as content resources, which can be later searched or retrieved. Executes *synchronously* and returns the content identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "textType": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "ingestMemory",
+      "description": "Ingests short-term textual memory as content into Graphlit knowledge base. Accepts an optional text type (Plain, Markdown, Html). Defaults to Markdown text type. Optionally accepts the content name. Will automatically be entity extracted into a knowledge graph. Use for storing short-term memories about the user or agent, which can be later searched or retrieved. Memories are transient and will be deleted after a period of time. Can use 'queryContents' or 'retrieveSources' tools to search for memories, by specifying the 'MEMORY' content type. Executes asynchronously and returns the content identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "textType": {
+            "type": "string"
+          },
+          "timeToLive": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "ingestFile",
+      "description": "Ingests local file into Graphlit knowledge base. Accepts the path to the file in the local filesystem. Can use for storing *large* long-term textual memories or the output from LLM or other tools as content resources, which can be later searched or retrieved. Executes asynchronously and returns the content identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filePath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filePath"
+        ]
+      }
+    },
+    {
+      "name": "screenshotPage",
+      "description": "Screenshots web page from URL. Executes *synchronously* and returns the content identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "describeImageUrl",
+      "description": "Prompts vision LLM and returns completion. Does *not* ingest image into Graphlit knowledge base. Accepts image URL as string. Returns Markdown text from LLM completion.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "describeImageContent",
+      "description": "Prompts vision LLM and returns description of image content. Accepts content identifier as string, and optional prompt for image description. Returns Markdown text from LLM completion.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "publishAudio",
+      "description": "Publishes text as audio format, and ingests into Graphlit knowledge base. Accepts a name for the content object, the text itself, and an optional text type (Plain, Markdown, Html). Defaults to Markdown text type. Optionally accepts an ElevenLabs voice identifier. You *must* retrieve the content resource to get the downloadable audio URL for this published audio. Executes *synchronously* and returns the content identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "textType": {
+            "type": "string"
+          },
+          "voice": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "publishImage",
+      "description": "Publishes text as image format, and ingests into Graphlit knowledge base. Accepts a name for the content object. Also, accepts a prompt for image generation. For example, 'Create a cartoon image of a raccoon, saying \"I Love Graphlit\"'. You *must* retrieve the content resource to get the downloadable image URL for this published image. Executes *synchronously* and returns the content identifier.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "prompt"
+        ]
+      }
+    },
+    {
+      "name": "sendWebHookNotification",
+      "description": "Sends a webhook notification to the provided URL. Accepts the webhook URL. Also accepts the text to be sent with the webhook, and an optional text type (Plain, Markdown, Html). Defaults to Markdown text type. Returns true if the notification was successfully sent, or false otherwise.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "textType": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "sendSlackNotification",
+      "description": "Sends a Slack notification to the provided Slack channel. Accepts the Slack channel name. Also accepts the text for the Slack message, and an optional text type (Plain, Markdown, Html). Defaults to Markdown text type. Hint: In Slack Markdown, images are displayed by simply putting the URL in angle brackets like <https://example.com/image.jpg> instead of using the traditional Markdown image syntax ![alt text](url). Requires environment variable to be configured: SLACK_BOT_TOKEN. Returns true if the notification was successfully sent, or false otherwise.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "channelName": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "textType": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "channelName",
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "sendTwitterNotification",
+      "description": "Posts a tweet from the configured user account. Accepts the plain text for the tweet. Tweet text rules: allowed - plain text, @mentions, #hashtags, URLs (auto-shortened), line breaks (\\n). Not allowed - markdown, HTML tags, rich text, or custom styles. Requires environment variables to be configured: TWITTER_CONSUMER_API_KEY, TWITTER_CONSUMER_API_SECRET, TWITTER_ACCESS_TOKEN_KEY, TWITTER_ACCESS_TOKEN_SECRET. Returns true if the notification was successfully sent, or false otherwise.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "sendEmailNotification",
+      "description": "Sends an email notification to the provided email address(es). Accepts the email subject and a list of email 'to' addresses. Email addresses should be in RFC 5322 format. i.e. Alice Wonderland <alice@wonderland.net>, or alice@wonderland.net Also accepts the text for the email, and an optional text type (Plain, Markdown, Html). Defaults to Markdown text type. Requires environment variable to be configured: FROM_EMAIL_ADDRESS. Returns true if the notification was successfully sent, or false otherwise.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "subject": {
+            "type": "string"
+          },
+          "to": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "textType": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "subject",
+          "to",
+          "text"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "conversations://",
+      "name": "Conversations list",
+      "description": "Returns list of conversation resources."
+    },
+    {
+      "uritemplate": "conversations://{id}",
+      "name": "Conversation",
+      "description": "Returns LLM conversation messages. Accepts conversation resource URI, i.e. conversations://{id}, where 'id' is a conversation identifier."
+    },
+    {
+      "uritemplate": "feeds://",
+      "name": "Feeds",
+      "description": "Returns list of feed resources."
+    },
+    {
+      "uritemplate": "feeds://{id}",
+      "name": "Feed",
+      "description": "Returns feed metadata. Accepts content resource URI, i.e. feeds://{id}, where 'id' is a feed identifier."
+    },
+    {
+      "uritemplate": "collections://",
+      "name": "Collections",
+      "description": "Returns list of collection resources."
+    },
+    {
+      "uritemplate": "collections://{id}",
+      "name": "Collection",
+      "description": "Returns collection metadata and list of content resources. Accepts collection resource URI, i.e. collections://{id}, where 'id' is a collection identifier."
+    },
+    {
+      "uritemplate": "contents://",
+      "name": "Contents list",
+      "description": "Returns list of content resources."
+    },
+    {
+      "uritemplate": "contents://{id}",
+      "name": "Content",
+      "description": "Returns content metadata and complete Markdown text. Accepts content resource URI, i.e. contents://{id}, where 'id' is a content identifier."
+    },
+    {
+      "uritemplate": "workflows://",
+      "name": "Workflows",
+      "description": "Returns list of workflow resources."
+    },
+    {
+      "uritemplate": "workflows://{id}",
+      "name": "Workflow",
+      "description": "Returns workflow metadata. Accepts workflow resource URI, i.e. workflows://{id}, where 'id' is a workflow identifier."
+    },
+    {
+      "uritemplate": "specifications://",
+      "name": "Specifications",
+      "description": "Returns list of specification resources."
+    },
+    {
+      "uritemplate": "specifications://{id}",
+      "name": "Specification",
+      "description": "Returns specification metadata. Accepts specification resource URI, i.e. specifications://{id}, where 'id' is a specification identifier."
+    },
+    {
+      "uritemplate": "projects://",
+      "name": "Projects",
+      "description": "Returns list of project resources."
+    },
+    {
+      "uritemplate": "projects://{id}",
+      "name": "Project",
+      "description": "Returns project metadata including credits used, available quota, and default content workflow. Accepts project resource URI, i.e. projects://{id}, where 'id' is a project identifier."
+    }
+  ],
+  "documentation": "https://www.graphlit.com/blog/graphlit-mcp-server"
+}

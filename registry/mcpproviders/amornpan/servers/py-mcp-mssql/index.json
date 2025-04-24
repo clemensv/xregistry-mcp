@@ -1,0 +1,84 @@
+{
+  "repo_ref": "amornpan/py-mcp-mssql",
+  "name": "io.github.amornpan/py-mcp-mssql",
+  "description": "A Model Context Protocol server implementation in Python that provides access to Microsoft SQL Server databases. This server enables Language Models to inspect table schemas and execute SQL queries through a standardized interface.",
+  "version_detail": {
+    "version": "1.0.1"
+  },
+  "remotes": [
+    {
+      "url": "http://localhost:8000",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "py-mcp-mssql",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "server.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "MSSQL_SERVER",
+            "description": "SQL Server hostname or IP",
+            "required": true
+          },
+          {
+            "name": "MSSQL_DATABASE",
+            "description": "Database name",
+            "required": true
+          },
+          {
+            "name": "MSSQL_USER",
+            "description": "Username for authentication",
+            "required": true
+          },
+          {
+            "name": "MSSQL_PASSWORD",
+            "description": "Password for authentication",
+            "required": true
+          },
+          {
+            "name": "MSSQL_DRIVER",
+            "description": "ODBC Driver 17 for SQL Server",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "call_tool",
+      "description": "Executes SQL queries; supports both SELECT and modification queries; returns results in CSV format for SELECT queries and affected row count for modification queries.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "arguments": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "tables",
+      "uritemplate": "mssql://{table_name}/data",
+      "description": "Lists all available tables in the database with URIs in the format mssql://<table_name>/data; includes table descriptions and MIME types.",
+      "mimetype": "text/csv"
+    }
+  ]
+}

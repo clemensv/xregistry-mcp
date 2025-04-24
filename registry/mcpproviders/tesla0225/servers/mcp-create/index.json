@@ -1,0 +1,137 @@
+{
+  "repo_ref": "tesla0225/mcp-create",
+  "name": "io.github.tesla0225/mcp-create",
+  "description": "A dynamic MCP server management service that creates, runs, and manages Model Context Protocol (MCP) servers dynamically. This service itself functions as an MCP server and launches/manages other MCP servers as child processes, enabling a flexible MCP ecosystem.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "mcp-create",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "-i",
+          "--rm",
+          "mcp-create"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "index.js"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "create-server-from-template",
+      "description": "Create a new MCP server from a template.\n  \n  以下のテンプレートコードをベースに、ユーザーの要求に合わせたサーバーを実装してください。\n  言語に応じて適切なテンプレートを選択し、必要に応じて機能を追加・変更してください。\n  \n  TypeScriptテンプレート:\n  ```typescript\n  import { Server } from \"@modelcontextprotocol/sdk/server/index.js\";\n  import { StdioServerTransport } from \"@modelcontextprotocol/sdk/server/stdio.js\";\n  import { \n    CallToolRequestSchema, \n    ListToolsRequestSchema \n  } from \"@modelcontextprotocol/sdk/types.js\";\n\n  const server = new Server({\n    name: \"dynamic-test-server\",\n    version: \"1.0.0\"\n  }, {\n    capabilities: {\n      tools: {}\n    }\n  });\n\n  // ここでツールを実装してください\n  server.setRequestHandler(ListToolsRequestSchema, async () => {\n    return {\n      tools: [{\n        name: \"echo\",\n        description: \"Echo back a message\",\n        inputSchema: {\n          type: \"object\",\n          properties: {\n            message: { type: \"string\" }\n          },\n          required: [\"message\"]\n        }\n      }]\n    };\n  });\n\n  server.setRequestHandler(CallToolRequestSchema, async (request) => {\n    if (request.params.name === \"echo\") {\n      // TypeScriptの型を適切に扱うため、型アサーションを使用\n      const message = request.params.arguments.message as string;\n      // または any を使う: const message: any = request.params.arguments.message;\n      \n      return {\n        content: [\n          {\n            type: \"text\",\n            text: `Echo: ${message}`\n          }\n        ]\n      };\n    }\n    throw new Error(\"Tool not found\");\n  });\n\n  // Server startup\n  const transport = new StdioServerTransport();\n  server.connect(transport);\n  ```\n  \n  Pythonテンプレート:\n  ```python\n  import asyncio\n  from mcp.server import Server\n  from mcp.server.stdio import stdio_server\n\n  app = Server(\"dynamic-test-server\")\n\n  @app.list_tools()\n  async def list_tools():\n      return [\n          {\n              \"name\": \"echo\",\n              \"description\": \"Echo back a message\",\n              \"inputSchema\": {\n                  \"type\": \"object\",\n                  \"properties\": {\n                      \"message\": {\"type\": \"string\"}\n                  },\n                  \"required\": [\"message\"]\n              }\n          }\n      ]\n\n  @app.call_tool()\n  async def call_tool(name, arguments):\n      if name == \"echo\":\n          return [{\"type\": \"text\", \"text\": f\"Echo: {arguments.get('message')}\"}]\n      raise ValueError(f\"Tool not found: {name}\")\n\n  async def main():\n      async with stdio_server() as streams:\n          await app.run(\n              streams[0],\n              streams[1],\n              app.create_initialization_options()\n          )\n\n  if __name__ == \"__main__\":\n      asyncio.run(main())\n  ```\n  \n  注意事項：\n  - TypeScript実装時は、引数の型を適切に扱うために型アサーション（as string）を使用するか、\n    明示的に型を宣言してください（例：const value: string = request.params.arguments.someValue）。\n  - 複雑な型を扱う場合は、interface や type を定義して型安全性を確保することをお勧めします。\n  \n  ユーザーの要求に応じて上記のテンプレートを参考にカスタマイズしてください。その際、基本的な構造を維持しつつ、ツール名や機能を変更できます。",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string",
+            "enum": [
+              "typescript",
+              "python"
+            ],
+            "description": "The programming language for the template"
+          },
+          "code": {
+            "type": "string",
+            "description": "カスタマイズしたサーバーコード。テンプレートを元に変更したコードを入力してください。省略した場合はデフォルトのテンプレートが使用されます。"
+          },
+          "dependencies": {
+            "type": "object",
+            "description": "使用するライブラリとそのバージョン（例: { \"axios\": \"^1.0.0\" }）"
+          }
+        },
+        "required": [
+          "language"
+        ]
+      }
+    },
+    {
+      "name": "execute-tool",
+      "description": "Execute a tool on a server",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "serverId": {
+            "type": "string",
+            "description": "The ID of the server"
+          },
+          "toolName": {
+            "type": "string",
+            "description": "The name of the tool to execute"
+          },
+          "args": {
+            "type": "object",
+            "description": "The arguments to pass to the tool"
+          }
+        },
+        "required": [
+          "serverId",
+          "toolName"
+        ]
+      }
+    },
+    {
+      "name": "get-server-tools",
+      "description": "Get the tools available on a server",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "serverId": {
+            "type": "string",
+            "description": "The ID of the server"
+          }
+        },
+        "required": [
+          "serverId"
+        ]
+      }
+    },
+    {
+      "name": "delete-server",
+      "description": "Delete a server",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "serverId": {
+            "type": "string",
+            "description": "The ID of the server"
+          }
+        },
+        "required": [
+          "serverId"
+        ]
+      }
+    },
+    {
+      "name": "list-servers",
+      "description": "List all running servers",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  ],
+  "resources": []
+}

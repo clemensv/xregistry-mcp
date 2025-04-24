@@ -1,0 +1,83 @@
+{
+  "repo_ref": "langfuse/mcp-server-langfuse",
+  "name": "io.github.langfuse/mcp-server-langfuse",
+  "description": "Model Context Protocol (MCP) Server for Langfuse Prompt Management. This server allows access and management of Langfuse prompts through the MCP protocol, implementing the MCP Prompts specification for prompt discovery and retrieval.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "langfuse/mcp-server-langfuse",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "LANGFUSE_PUBLIC_KEY",
+            "description": "Your Langfuse public API key",
+            "required": true
+          },
+          {
+            "name": "LANGFUSE_SECRET_KEY",
+            "description": "Your Langfuse secret API key",
+            "required": true
+          },
+          {
+            "name": "LANGFUSE_BASEURL",
+            "description": "Base URL for Langfuse API",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get-prompts",
+      "description": "Get prompts that are stored in Langfuse",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "cursor": {
+            "type": "string",
+            "description": "Cursor to paginate through prompts",
+            "nullable": true
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "get-prompt",
+      "description": "Get a prompt that is stored in Langfuse",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the prompt to retrieve, use get-prompts to get a list of prompts"
+          },
+          "arguments": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Arguments with prompt variables to pass to the prompt template, json object, e.g. {\"<name>\":\"<value>\"}",
+            "nullable": true
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

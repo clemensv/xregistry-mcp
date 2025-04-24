@@ -1,0 +1,363 @@
+{
+  "repo_ref": "alexarevalo9/ticktick-mcp-server",
+  "name": "io.github.alexarevalo9/ticktick-mcp-server",
+  "description": "MCP Server for the TickTick API, enabling task management, project organization, habit tracking, and more.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@alexarevalo9/ticktick-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "DOTENV_CONFIG_PATH",
+            "description": "Path to dotenv config file",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get_user_projects",
+      "description": "Get all user projects",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get_project_by_id",
+      "description": "Get a project by ID",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "projectId"
+        ]
+      }
+    },
+    {
+      "name": "get_project_with_data",
+      "description": "Get a project with its tasks and columns",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "projectId"
+        ]
+      }
+    },
+    {
+      "name": "create_project",
+      "description": "Create a new project",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "favorite": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "update_project",
+      "description": "Update an existing project",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "favorite": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "projectId"
+        ]
+      }
+    },
+    {
+      "name": "delete_project",
+      "description": "Delete a project",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "projectId"
+        ]
+      }
+    },
+    {
+      "name": "get_task_by_ids",
+      "description": "Get a task by ProjectId and TaskId",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "string"
+          },
+          "taskId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "projectId",
+          "taskId"
+        ]
+      }
+    },
+    {
+      "name": "create_task",
+      "description": "Create a new task",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "desc": {
+            "type": "string"
+          },
+          "isAllDay": {
+            "type": "boolean"
+          },
+          "startDate": {
+            "type": "string"
+          },
+          "dueDate": {
+            "type": "string"
+          },
+          "timeZone": {
+            "type": "string"
+          },
+          "reminders": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "repeatFlag": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "number"
+          },
+          "sortOrder": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "startDate": {
+                  "type": "string"
+                },
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "sortOrder": {
+                  "type": "number"
+                },
+                "timeZone": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "number"
+                },
+                "completedTime": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title"
+              ]
+            }
+          }
+        },
+        "required": [
+          "title",
+          "projectId"
+        ]
+      }
+    },
+    {
+      "name": "update_task",
+      "description": "Update an existing task",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "taskId": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "desc": {
+            "type": "string"
+          },
+          "isAllDay": {
+            "type": "boolean"
+          },
+          "startDate": {
+            "type": "string"
+          },
+          "dueDate": {
+            "type": "string"
+          },
+          "timeZone": {
+            "type": "string"
+          },
+          "reminders": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "repeatFlag": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "number"
+          },
+          "sortOrder": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string"
+                },
+                "startDate": {
+                  "type": "string"
+                },
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "sortOrder": {
+                  "type": "number"
+                },
+                "timeZone": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "number"
+                },
+                "completedTime": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "title"
+              ]
+            }
+          }
+        },
+        "required": [
+          "taskId",
+          "id",
+          "projectId"
+        ]
+      }
+    },
+    {
+      "name": "complete_task",
+      "description": "Complete a task",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "taskId": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "taskId",
+          "projectId"
+        ]
+      }
+    },
+    {
+      "name": "delete_task",
+      "description": "Delete a task",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "taskId": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "taskId",
+          "projectId"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

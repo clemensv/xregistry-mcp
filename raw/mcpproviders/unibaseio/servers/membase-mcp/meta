@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:44:08.79105136Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/unibaseio/servers/membase-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:44:08.79105136Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/unibaseio/servers/membase-mcp/meta",
+  "serverid": "membase-mcp",
+  "xid": "/mcpproviders/unibaseio/servers/membase-mcp/meta"
+}

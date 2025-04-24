@@ -1,0 +1,47 @@
+{
+  "repo_ref": "sendaifun/solana-agent-kit",
+  "name": "io.github.sendaifun/solana-agent-kit",
+  "description": "An MCP server exposing Solana Agent Kit actions as MCP tools, enabling onchain interaction via Model Context Protocol.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "solana-agent-kit",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "GROQ_API_KEY",
+            "description": "API key for Groq model access",
+            "required": false
+          },
+          {
+            "name": "OPENAI_API_KEY",
+            "description": "API key for OpenAI access",
+            "required": false
+          },
+          {
+            "name": "SOLANA_PRIVATE_KEY",
+            "description": "Private key for Solana wallet",
+            "required": true
+          },
+          {
+            "name": "RPC_URL",
+            "description": "RPC URL for Solana network",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": [],
+  "documentation": "https://docs.sendai.fun/v0/introduction"
+}

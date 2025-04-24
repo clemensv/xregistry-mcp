@@ -1,0 +1,350 @@
+{
+  "repo_ref": "voska/hass-mcp",
+  "name": "io.github.voska/hass-mcp",
+  "description": "A Model Context Protocol (MCP) server for Home Assistant integration with Claude and other LLMs. Enables AI assistants to query device states, control entities, get summaries, troubleshoot automations, search entities, and create guided conversations.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "voska/hass-mcp:latest",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "-i",
+          "--rm",
+          "-e",
+          "HA_URL",
+          "-e",
+          "HA_TOKEN",
+          "voska/hass-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "HA_URL",
+            "description": "URL of the Home Assistant instance",
+            "required": true
+          },
+          {
+            "name": "HA_TOKEN",
+            "description": "Home Assistant Long-Lived Access Token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "create_automation",
+      "description": "Guide a user through creating a Home Assistant automation",
+      "arguments": [
+        {
+          "name": "trigger_type",
+          "description": "The type of trigger for the automation",
+          "required": true
+        },
+        {
+          "name": "entity_id",
+          "description": "Optional entity to use as the trigger source",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "debug_automation",
+      "description": "Help a user troubleshoot an automation that isn't working",
+      "arguments": [
+        {
+          "name": "automation_id",
+          "description": "The entity ID of the automation to troubleshoot",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "troubleshoot_entity",
+      "description": "Guide a user through troubleshooting issues with an entity",
+      "arguments": [
+        {
+          "name": "entity_id",
+          "description": "The entity ID having issues",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "routine_optimizer",
+      "description": "Analyze usage patterns and suggest optimized routines based on actual behavior",
+      "arguments": []
+    },
+    {
+      "name": "automation_health_check",
+      "description": "Review all automations, find conflicts, redundancies, or improvement opportunities",
+      "arguments": []
+    },
+    {
+      "name": "entity_naming_consistency",
+      "description": "Audit entity names and suggest standardization improvements",
+      "arguments": []
+    },
+    {
+      "name": "dashboard_layout_generator",
+      "description": "Create optimized dashboards based on user preferences and usage patterns",
+      "arguments": []
+    }
+  ],
+  "tools": [
+    {
+      "name": "get_version",
+      "description": "Get the Home Assistant version",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get_entity",
+      "description": "Get the state of a Home Assistant entity with optional field filtering",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "entity_id": {
+            "type": "string",
+            "description": "The entity ID to get (e.g. 'light.living_room')"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Optional list of fields to include"
+          },
+          "detailed": {
+            "type": "boolean",
+            "description": "Return all entity fields without filtering"
+          }
+        },
+        "required": [
+          "entity_id"
+        ]
+      }
+    },
+    {
+      "name": "entity_action",
+      "description": "Perform an action on a Home Assistant entity (on, off, toggle)",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "entity_id": {
+            "type": "string",
+            "description": "The entity ID to control"
+          },
+          "action": {
+            "type": "string",
+            "description": "Action to perform ('on', 'off', 'toggle')"
+          }
+        },
+        "required": [
+          "entity_id",
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "list_entities",
+      "description": "Get a list of Home Assistant entities with optional filtering",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "description": "Optional domain to filter by"
+          },
+          "search_query": {
+            "type": "string",
+            "description": "Optional search term to filter entities"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Maximum number of entities to return"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Optional list of specific fields to include"
+          },
+          "detailed": {
+            "type": "boolean",
+            "description": "Return all entity fields without filtering"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "search_entities_tool",
+      "description": "Search for entities matching a query string",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query to match entity IDs, names, and attributes"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Maximum number of results to return"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "domain_summary",
+      "description": "Get a summary of entities in a specific domain",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "description": "The domain to summarize"
+          },
+          "example_limit": {
+            "type": "integer",
+            "description": "Maximum number of examples to include for each state"
+          }
+        },
+        "required": [
+          "domain"
+        ]
+      }
+    },
+    {
+      "name": "system_overview",
+      "description": "Get a comprehensive overview of the entire Home Assistant system",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "list_automations",
+      "description": "Get a list of all automations from Home Assistant",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "restart_ha",
+      "description": "Restart Home Assistant",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "call_service",
+      "description": "Call any Home Assistant service (low-level API access)",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "domain": {
+            "type": "string",
+            "description": "The domain of the service"
+          },
+          "service": {
+            "type": "string",
+            "description": "The service to call"
+          },
+          "data": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "description": "Optional data to pass to the service"
+          }
+        },
+        "required": [
+          "domain",
+          "service"
+        ]
+      }
+    },
+    {
+      "name": "get_history",
+      "description": "Get the history of an entity's state changes",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "entity_id": {
+            "type": "string",
+            "description": "The entity ID to get history for"
+          },
+          "hours": {
+            "type": "integer",
+            "description": "Number of hours of history to retrieve"
+          }
+        },
+        "required": [
+          "entity_id"
+        ]
+      }
+    },
+    {
+      "name": "get_error_log",
+      "description": "Get the Home Assistant error log for troubleshooting",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "hass://entities/{entity_id}",
+      "name": "entity",
+      "description": "Get the state of a Home Assistant entity as a resource",
+      "mimetype": "text/markdown"
+    },
+    {
+      "uritemplate": "hass://entities",
+      "name": "entities",
+      "description": "Get a list of all Home Assistant entities as a resource",
+      "mimetype": "text/markdown"
+    },
+    {
+      "uritemplate": "hass://search/{query}/{limit}",
+      "name": "search_entities",
+      "description": "Search for entities matching a query string with a specified result limit",
+      "mimetype": "text/markdown"
+    },
+    {
+      "uritemplate": "hass://entities/{entity_id}/detailed",
+      "name": "entity_detailed",
+      "description": "Get detailed information about a Home Assistant entity as a resource",
+      "mimetype": "text/markdown"
+    },
+    {
+      "uritemplate": "hass://entities/domain/{domain}",
+      "name": "entities_by_domain",
+      "description": "Get a list of entities for a specific domain as a resource",
+      "mimetype": "text/markdown"
+    }
+  ]
+}

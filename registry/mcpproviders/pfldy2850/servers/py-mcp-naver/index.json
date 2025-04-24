@@ -1,0 +1,280 @@
+{
+  "repo_ref": "pfldy2850/py-mcp-naver",
+  "name": "io.github.pfldy2850/py-mcp-naver",
+  "description": "A server implementation for Naver OpenAPI using the Model Context Protocol (MCP). This project provides tools to interact with various Naver services, such as searching blogs, news, books, and more.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcp-naver",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "NAVER_CLIENT_ID",
+            "description": "Your Naver client ID",
+            "required": true
+          },
+          {
+            "name": "NAVER_CLIENT_SECRET",
+            "description": "Your Naver client secret",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "search_blog",
+      "description": "Search blog posts on Naver.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "display": {
+            "type": "integer"
+          },
+          "start": {
+            "type": "integer"
+          },
+          "sort": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "search_news",
+      "description": "Search news articles on Naver.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "display": {
+            "type": "integer"
+          },
+          "start": {
+            "type": "integer"
+          },
+          "sort": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "search_book",
+      "description": "Search books on Naver.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "display": {
+            "type": "integer"
+          },
+          "start": {
+            "type": "integer"
+          },
+          "sort": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "get_book_adv",
+      "description": "Get detailed book information using title or ISBN.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "d_titl": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "d_isbn": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "adult_check",
+      "description": "Check if a search term is adult content.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "search_encyc",
+      "description": "Search encyclopedia entries on Naver.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "display": {
+            "type": "integer"
+          },
+          "start": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "search_cafe_article",
+      "description": "Search articles in Naver cafes.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "display": {
+            "type": "integer"
+          },
+          "start": {
+            "type": "integer"
+          },
+          "sort": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "search_kin",
+      "description": "Search questions and answers on Naver.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "display": {
+            "type": "integer"
+          },
+          "start": {
+            "type": "integer"
+          },
+          "sort": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "search_local",
+      "description": "Search local information on Naver.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "display": {
+            "type": "integer"
+          },
+          "start": {
+            "type": "integer"
+          },
+          "sort": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "fix_spelling",
+      "description": "Correct spelling errors in a given text.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "search_webkr",
+      "description": "Search web pages on Naver.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "display": {
+            "type": "integer"
+          },
+          "start": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

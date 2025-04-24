@@ -1,0 +1,59 @@
+{
+  "repo_ref": "zenml-io/mcp-zenml",
+  "name": "io.github.zenml-io/mcp-zenml",
+  "description": "This project implements a Model Context Protocol (MCP) server for interacting with the ZenML API. It provides MCP tools to access core read functionality from the ZenML server, including users, stacks, pipelines, pipeline runs, pipeline steps, services, stack components, flavors, pipeline run templates, schedules, artifacts metadata, service connectors, step code, and step logs. It also allows triggering new pipeline runs if a run template is present.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "uv",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "zenml_server.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "LOGLEVEL",
+            "description": "Log level for server output",
+            "required": false
+          },
+          {
+            "name": "NO_COLOR",
+            "description": "Disable colored output",
+            "required": false
+          },
+          {
+            "name": "PYTHONUNBUFFERED",
+            "description": "Python unbuffered output",
+            "required": false
+          },
+          {
+            "name": "PYTHONIOENCODING",
+            "description": "Python IO encoding",
+            "required": false
+          },
+          {
+            "name": "ZENML_STORE_URL",
+            "description": "URL of the ZenML server",
+            "required": true
+          },
+          {
+            "name": "ZENML_STORE_API_KEY",
+            "description": "API key for ZenML server authentication",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

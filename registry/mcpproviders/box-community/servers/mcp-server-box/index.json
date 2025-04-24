@@ -1,0 +1,255 @@
+{
+  "repo_ref": "box-community/mcp-server-box",
+  "name": "io.github.box-community/mcp-server-box",
+  "description": "MCP Server Box is a Python project that integrates with the Box API to perform various operations such as file search, text extraction, AI-based querying, and data extraction. It leverages the box-sdk-gen library and provides a set of tools to interact with Box files and folders. The Model Context Protocol (MCP) is used to facilitate seamless integration with the Box API, enabling efficient and scalable operations on Box files and folders.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcp-server-box",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "box_who_am_i",
+      "description": "Get your current user information and check connection status.",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "box_authorize_app_tool",
+      "description": "Start the Box application authorization process.",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "box_search_tool",
+      "description": "Search for files in Box.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "file_extensions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "where_to_look_for_query": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "ancestor_folder_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "box_read_tool",
+      "description": "Read the text content of a Box file.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "file_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_id"
+        ]
+      }
+    },
+    {
+      "name": "box_ask_ai_tool",
+      "description": "Ask Box AI about a file.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "file_id": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_id",
+          "prompt"
+        ]
+      }
+    },
+    {
+      "name": "box_search_folder_by_name",
+      "description": "Locate a folder by name.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "folder_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "folder_name"
+        ]
+      }
+    },
+    {
+      "name": "box_ai_extract_data",
+      "description": "Extract data from a file using AI.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "file_id": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_id",
+          "fields"
+        ]
+      }
+    },
+    {
+      "name": "box_list_folder_content_by_folder_id",
+      "description": "List folder contents.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "folder_id": {
+            "type": "string"
+          },
+          "is_recursive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "folder_id",
+          "is_recursive"
+        ]
+      }
+    },
+    {
+      "name": "box_manage_folder_tool",
+      "description": "Create, update, or delete folders in Box.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "folder_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "parent_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "recursive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "box_upload_file_tool",
+      "description": "Upload content as a file to Box.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "file_name": {
+            "type": "string"
+          },
+          "folder_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "content",
+          "file_name"
+        ]
+      }
+    },
+    {
+      "name": "box_download_file_tool",
+      "description": "Download a file from Box and return its content.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "file_id": {
+            "type": "string"
+          },
+          "save_file": {
+            "type": "boolean"
+          },
+          "save_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "file_id"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

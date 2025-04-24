@@ -1,0 +1,60 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:43:22.389372996Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "/absolute/path/to/mcp-postman/build/index.js"
+      ],
+      "command": "node",
+      "env": [],
+      "package": "@smithery/mcp-postman",
+      "runtime": "node"
+    }
+  },
+  "description": "An MCP (Model Context Protocol) server that enables running Postman collections using Newman. This server allows LLMs to execute API tests and get detailed results through a standardized interface.",
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0.0",
+  "modifiedat": "2025-04-25T12:43:22.389372996Z",
+  "name": "postman-runner",
+  "repository": {
+    "name": "shannonlal/mcp-postman",
+    "url": "https://github.com/shannonlal/mcp-postman"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/shannonlal/servers/mcp-postman/versions/1",
+  "serverid": "mcp-postman",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "description": "Run a Postman Collection using Newman",
+      "inputschema": {
+        "properties": {
+          "collection": {
+            "description": "Path or URL to the Postman collection",
+            "type": "string"
+          },
+          "environment": {
+            "description": "Optional path or URL to environment file",
+            "type": "string"
+          },
+          "globals": {
+            "description": "Optional path or URL to globals file",
+            "type": "string"
+          },
+          "iterationCount": {
+            "description": "Optional number of iterations to run",
+            "type": "number"
+          }
+        },
+        "required": [
+          "collection"
+        ],
+        "type": "object"
+      },
+      "name": "run-collection"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/shannonlal/servers/mcp-postman/versions/1"
+}

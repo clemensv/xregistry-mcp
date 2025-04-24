@@ -1,0 +1,76 @@
+{
+  "repo_ref": "riza-io/riza-mcp",
+  "name": "io.github.riza-io/riza-mcp",
+  "description": "The Riza MCP server wraps the Riza API and presents endpoints as individual tools for LLM-generated code execution and management.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@riza-io/riza-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "@riza-io/riza-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "RIZA_API_KEY",
+            "description": "API key for authenticating with Riza API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "create_tool",
+      "description": "Your LLM can write code and save it as a tool using the Riza Tools API.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "fetch_tool",
+      "description": "Your LLM can fetch saved Riza tools, including source code, useful for editing tools.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "execute_tool",
+      "description": "Executes a saved tool securely on Riza's code interpreter API.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "edit_tool",
+      "description": "Edits an existing saved tool.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_tools",
+      "description": "Lists available saved tools.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "execute_code",
+      "description": "Executes arbitrary code safely on Riza's code interpreter API, without saving it as a tool.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:40:38.172950645Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/agentrpc/servers/agentrpc/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:40:38.172950645Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/agentrpc/servers/agentrpc/meta",
+  "serverid": "agentrpc",
+  "xid": "/mcpproviders/agentrpc/servers/agentrpc/meta"
+}

@@ -1,0 +1,132 @@
+{
+  "mcp-neo4j-server": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:53.35698128Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "@alanse/mcp-neo4j-server"
+        ],
+        "command": "npx",
+        "env": [
+          {
+            "description": "Neo4j database URI (default: bolt://localhost:7687)",
+            "name": "NEO4J_URI",
+            "required": false
+          },
+          {
+            "description": "Neo4j username (default: neo4j)",
+            "name": "NEO4J_USERNAME",
+            "required": false
+          },
+          {
+            "description": "Neo4j password (required)",
+            "name": "NEO4J_PASSWORD",
+            "required": true
+          }
+        ],
+        "package": "@alanse/mcp-neo4j-server",
+        "runtime": "node"
+      }
+    },
+    "description": "An MCP server that provides integration between Neo4j graph database and Claude Desktop, enabling graph database operations through natural language interactions.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/da-okazaki/servers/mcp-neo4j-server/meta",
+    "modifiedat": "2025-04-25T12:40:53.35698128Z",
+    "name": "mcp-neo4j-server",
+    "repository": {
+      "name": "da-okazaki/mcp-neo4j-server",
+      "url": "https://github.com/da-okazaki/mcp-neo4j-server"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/da-okazaki/servers/mcp-neo4j-server",
+    "serverid": "mcp-neo4j-server",
+    "serverversion": "1.0.0",
+    "tools": [
+      {
+        "description": "Execute a Cypher query on Neo4j database",
+        "inputschema": {
+          "properties": {
+            "params": {
+              "additionalProperties": true,
+              "description": "Query parameters",
+              "type": "object"
+            },
+            "query": {
+              "description": "Cypher query to execute",
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "execute_query"
+      },
+      {
+        "description": "Create a new node in Neo4j",
+        "inputschema": {
+          "properties": {
+            "label": {
+              "description": "Node label",
+              "type": "string"
+            },
+            "properties": {
+              "additionalProperties": true,
+              "description": "Node properties",
+              "type": "object"
+            }
+          },
+          "required": [
+            "label",
+            "properties"
+          ],
+          "type": "object"
+        },
+        "name": "create_node"
+      },
+      {
+        "description": "Create a relationship between two nodes",
+        "inputschema": {
+          "properties": {
+            "fromNodeId": {
+              "description": "ID of the source node",
+              "type": "number"
+            },
+            "properties": {
+              "additionalProperties": true,
+              "description": "Relationship properties",
+              "type": "object"
+            },
+            "toNodeId": {
+              "description": "ID of the target node",
+              "type": "number"
+            },
+            "type": {
+              "description": "Relationship type",
+              "type": "string"
+            }
+          },
+          "required": [
+            "fromNodeId",
+            "toNodeId",
+            "type"
+          ],
+          "type": "object"
+        },
+        "name": "create_relationship"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/da-okazaki/servers/mcp-neo4j-server/versions",
+    "xid": "/mcpproviders/da-okazaki/servers/mcp-neo4j-server"
+  }
+}

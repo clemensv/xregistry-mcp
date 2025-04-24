@@ -1,0 +1,53 @@
+{
+  "repo_ref": "executeautomation/mcp-playwright",
+  "name": "io.github.executeautomation/mcp-playwright",
+  "description": "A Model Context Protocol server that provides browser automation capabilities using Playwright. This server enables LLMs to interact with web pages, take screenshots, generate test code, web scraps the page and execute JavaScript in a real browser environment.",
+  "version_detail": {
+    "version": "1.0.3"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@executeautomation/playwright-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@executeautomation/playwright-mcp-server"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "(from createToolDefinitions)",
+      "description": "Browser automation tools for interaction, screenshots, test code generation, web scraping, and JS execution",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "(detailed tool definitions not fully extracted)"
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "console://logs",
+      "name": "Browser console logs",
+      "description": "Browser console logs resource",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "screenshot://{name}",
+      "name": "Screenshot resource",
+      "description": "Screenshots of the browser pages",
+      "mimetype": "image/png"
+    }
+  ],
+  "documentation": "https://executeautomation.github.io/mcp-playwright/"
+}

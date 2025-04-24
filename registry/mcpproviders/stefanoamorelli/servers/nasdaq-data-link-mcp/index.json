@@ -1,0 +1,304 @@
+{
+  "repo_ref": "stefanoamorelli/nasdaq-data-link-mcp",
+  "name": "io.github.stefanoamorelli/nasdaq-data-link-mcp",
+  "description": "A community developed and maintained Model Context Protocol (MCP) server that provides access to Nasdaq Data Link financial and economic datasets through natural language interfaces and large language models.",
+  "version_detail": {
+    "version": "0.1.2"
+  },
+  "remotes": [],
+  "registries": [],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get_indicator_value",
+      "description": "Retrieves indicator values from World Bank dataset.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "type": "string"
+          },
+          "indicator": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "country",
+          "indicator"
+        ]
+      }
+    },
+    {
+      "name": "country_code",
+      "description": "Returns country code for a given country name.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "countryName": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "countryName"
+        ]
+      }
+    },
+    {
+      "name": "list_worldbank_indicators",
+      "description": "Lists all available World Bank indicators.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "search_worldbank_indicators",
+      "description": "Searches World Bank indicators by keyword.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "keyword": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "keyword"
+        ]
+      }
+    },
+    {
+      "name": "get_rtat10",
+      "description": "Retrieves Retail Trading Activity Tracker 10 (RTAT10) data for specific dates and optional tickers.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "dates": {
+            "type": "string"
+          },
+          "tickers": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "dates"
+        ]
+      }
+    },
+    {
+      "name": "get_rtat",
+      "description": "Retrieves Retail Trading Activity (RTAT) data for specific dates and optional tickers.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "dates": {
+            "type": "string"
+          },
+          "tickers": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "dates"
+        ]
+      }
+    },
+    {
+      "name": "get_stock_stats",
+      "description": "Retrieves company statistics from Nasdaq Equities 360 database.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          },
+          "figi": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "list_stock_stat_fields",
+      "description": "Lists all available fields in the stock statistics database with descriptions.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_fundamental_data",
+      "description": "Retrieves fundamental financial data from Nasdaq Equities 360 Fundamental Summary database.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          },
+          "figi": {
+            "type": "string"
+          },
+          "calendardate": {
+            "type": "string"
+          },
+          "dimension": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "list_fundamental_fields",
+      "description": "Lists all available fields in the fundamental summary database with descriptions.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_detailed_financials",
+      "description": "Retrieves detailed financial data from Nasdaq Equities 360 Fundamental Details database.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          },
+          "figi": {
+            "type": "string"
+          },
+          "calendardate": {
+            "type": "string"
+          },
+          "dimension": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "list_detailed_financial_fields",
+      "description": "Lists all available fields in the fundamental details database with descriptions.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_balance_sheet_data",
+      "description": "Retrieves balance sheet data from Nasdaq Equities 360 Balance Sheet database.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          },
+          "figi": {
+            "type": "string"
+          },
+          "calendardate": {
+            "type": "string"
+          },
+          "dimension": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "list_balance_sheet_fields",
+      "description": "Lists all available fields in the balance sheet database with descriptions.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_cash_flow_data",
+      "description": "Retrieves cash flow statement data from Nasdaq Equities 360 Cash Flow database.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          },
+          "figi": {
+            "type": "string"
+          },
+          "calendardate": {
+            "type": "string"
+          },
+          "dimension": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "list_cash_flow_fields",
+      "description": "Lists all available fields in the cash flow statement database with descriptions.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_corporate_action_data",
+      "description": "Retrieves corporate actions data from Nasdaq Equities 360 Corporate Actions database.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          },
+          "figi": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "list_corporate_action_fields",
+      "description": "Lists all available fields in the corporate actions database with descriptions.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_company_reference_data",
+      "description": "Retrieves company reference data from Nasdaq Equities 360 Reference Data database.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          },
+          "figi": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "list_reference_data_fields",
+      "description": "Lists all available fields in the company reference database with descriptions.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_trade_summary_data",
+      "description": "Retrieves Trade Summary data from Nasdaq Data Link NDAQ/TS datatable.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

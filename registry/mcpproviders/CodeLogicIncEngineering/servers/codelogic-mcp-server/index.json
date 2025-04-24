@@ -1,0 +1,105 @@
+{
+  "repo_ref": "CodeLogicIncEngineering/codelogic-mcp-server",
+  "name": "io.github.CodeLogicIncEngineering/codelogic-mcp-server",
+  "description": "An MCP Server to utilize Codelogic's rich software dependency data in your AI programming assistant.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "astral-uv",
+      "package_name": "codelogic-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "codelogic-mcp-server@latest"
+        ],
+        "environment_variables": [
+          {
+            "name": "CODELOGIC_SERVER_HOST",
+            "description": "URL of the CodeLogic server",
+            "required": true
+          },
+          {
+            "name": "CODELOGIC_USERNAME",
+            "description": "Username for authentication",
+            "required": true
+          },
+          {
+            "name": "CODELOGIC_PASSWORD",
+            "description": "Password for authentication",
+            "required": true
+          },
+          {
+            "name": "CODELOGIC_WORKSPACE_NAME",
+            "description": "Workspace name in CodeLogic",
+            "required": true
+          },
+          {
+            "name": "CODELOGIC_DEBUG_MODE",
+            "description": "Enable debug mode",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "codelogic-method-impact",
+      "description": "Analyze impacts of modifying a specific method within a given class or type.\nRecommended workflow:\n1. Use this tool before implementing code changes\n2. Run the tool against methods or functions that are being modified\n3. Carefully review the impact analysis results to understand potential downstream effects\nParticularly crucial when AI-suggested modifications are being considered.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "method": {
+            "type": "string",
+            "description": "Name of the method being analyzed"
+          },
+          "class": {
+            "type": "string",
+            "description": "Name of the class containing the method"
+          }
+        },
+        "required": [
+          "method",
+          "class"
+        ]
+      }
+    },
+    {
+      "name": "codelogic-database-impact",
+      "description": "Analyze impacts between code and database entities.\nRecommended workflow:\n1. Use this tool before implementing code or database changes\n2. Search for the relevant database entity\n3. Review the impact analysis to understand which code depends on this database object and vice versa\nParticularly crucial when AI-suggested modifications are being considered or when modifying SQL code.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "entity_type": {
+            "type": "string",
+            "description": "Type of database entity to search for (column, table, or view)",
+            "enum": [
+              "column",
+              "table",
+              "view"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the database entity to search for"
+          },
+          "table_or_view": {
+            "type": "string",
+            "description": "Name of the table or view containing the column (required for columns only)"
+          }
+        },
+        "required": [
+          "entity_type",
+          "name"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

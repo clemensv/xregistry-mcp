@@ -1,0 +1,112 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:05.643209057Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "tool",
+        "run",
+        "fibery-mcp-server",
+        "--fibery-host",
+        "your-domain.fibery.io",
+        "--fibery-api-token",
+        "your-api-token"
+      ],
+      "command": "uv",
+      "env": [
+        {
+          "description": "Fibery host (your-account.fibery.io)",
+          "name": "FIBERY_HOST",
+          "required": true
+        },
+        {
+          "description": "Fibery API Token",
+          "name": "FIBERY_API_TOKEN",
+          "required": true
+        }
+      ],
+      "package": "@Fibery-inc/fibery-mcp-server",
+      "runtime": "node"
+    }
+  },
+  "description": "This MCP (Model Context Protocol) server provides integration between Fibery and any LLM provider supporting the MCP protocol (e.g., Claude for Desktop), allowing you to interact with your Fibery workspace using natural language.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "modifiedat": "2025-04-25T12:41:05.643209057Z",
+  "name": "Fibery MCP",
+  "repository": {
+    "name": "Fibery-inc/fibery-mcp-server",
+    "url": "https://github.com/Fibery-inc/fibery-mcp-server"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/Fibery-inc/servers/fibery-mcp-server/versions/1",
+  "serverid": "fibery-mcp-server",
+  "serverversion": "0.0.1",
+  "tools": [
+    {
+      "description": "Provides the current date.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "current_date"
+    },
+    {
+      "description": "Get Fibery schema information.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "schema"
+    },
+    {
+      "description": "Get list of all fields (in format of 'Title [name]: type') in the selected Fibery database and for all related databases.",
+      "inputschema": {
+        "properties": {
+          "database_name": {
+            "description": "Database name as defined in Fibery schema",
+            "type": "string"
+          }
+        },
+        "required": [
+          "database_name"
+        ],
+        "type": "object"
+      },
+      "name": "describe_database"
+    },
+    {
+      "description": "Offers powerful, flexible access to your Fibery data through the Fibery API.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "query_database"
+    },
+    {
+      "description": "Creates new entities in your Fibery workspace with specified field values.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_entity"
+    },
+    {
+      "description": "Creates multiple new entities in your Fibery workspace with specified field values.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_entities_batch"
+    },
+    {
+      "description": "Updates existing entities in your Fibery workspace with new field values.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "update_entity"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/Fibery-inc/servers/fibery-mcp-server/versions/1"
+}

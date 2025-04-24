@@ -1,0 +1,53 @@
+{
+  "repo_ref": "sparfenyuk/mcp-proxy",
+  "name": "io.github.sparfenyuk/mcp-proxy",
+  "description": "The mcp-proxy is a tool that lets you switch between server transports. It supports proxying MCP server requests between stdio and SSE transports, enabling clients like Claude Desktop to communicate with MCP servers over SSE or stdio.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [
+    {
+      "url": "http://example.io/sse",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "sparfenyuk/mcp-proxy:latest",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "API_ACCESS_TOKEN",
+            "description": "Access token for authorization header",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "python",
+      "package_name": "mcp-proxy",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "API_ACCESS_TOKEN",
+            "description": "Access token for authorization header",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

@@ -1,0 +1,62 @@
+{
+  "repo_ref": "66julienmartin/MCP-server-Qwen_Max",
+  "name": "io.github.66julienmartin/MCP-server-Qwen_Max",
+  "description": "A Model Context Protocol (MCP) server implementation for the Qwen Max language model.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@66julienmartin/mcp-server-qwen_max",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "/path/to/Qwen_Max/build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "DASHSCOPE_API_KEY",
+            "description": "API key for Dashscope",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "qwen_max",
+      "description": "Generate text using Qwen Max model",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "description": "The text prompt to generate content from"
+          },
+          "max_tokens": {
+            "type": "number",
+            "description": "Maximum number of tokens to generate",
+            "default": 8192
+          },
+          "temperature": {
+            "type": "number",
+            "description": "Sampling temperature (0-2)",
+            "default": 0.7,
+            "minimum": 0,
+            "maximum": 2
+          }
+        },
+        "required": [
+          "prompt"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

@@ -1,0 +1,95 @@
+{
+  "repo_ref": "bytebase/dbhub",
+  "name": "io.github.bytebase/dbhub",
+  "description": "DBHub is a universal database gateway implementing the Model Context Protocol (MCP) server interface. This gateway allows MCP-compatible clients to connect to and explore different databases.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "bytebase/dbhub",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--transport",
+          "sse",
+          "--port",
+          "8080",
+          "--dsn",
+          "postgres://user:password@localhost:5432/dbname?sslmode=disable"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "generate_sql",
+      "description": "Generate SQL statements for the database",
+      "arguments": []
+    },
+    {
+      "name": "explain_db",
+      "description": "Explain database elements",
+      "arguments": []
+    }
+  ],
+  "tools": [
+    {
+      "name": "execute_sql",
+      "description": "Execute SQL command on the database",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_connectors",
+      "description": "List available database connectors",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "schemas",
+      "uritemplate": "db://schemas",
+      "description": "Database schemas resource",
+      "mimetype": "application/json"
+    },
+    {
+      "name": "tables_in_schema",
+      "uritemplate": "db://schemas/{schemaName}/tables",
+      "description": "Tables in a given schema",
+      "mimetype": "application/json"
+    },
+    {
+      "name": "table_structure_in_schema",
+      "uritemplate": "db://schemas/{schemaName}/tables/{tableName}",
+      "description": "Structure of a table in a schema",
+      "mimetype": "application/json"
+    },
+    {
+      "name": "indexes_in_table",
+      "uritemplate": "db://schemas/{schemaName}/tables/{tableName}/indexes",
+      "description": "Indexes in a table",
+      "mimetype": "application/json"
+    },
+    {
+      "name": "procedures_in_schema",
+      "uritemplate": "db://schemas/{schemaName}/procedures",
+      "description": "Stored procedures in a schema",
+      "mimetype": "application/json"
+    },
+    {
+      "name": "procedure_details_in_schema",
+      "uritemplate": "db://schemas/{schemaName}/procedures/{procedureName}",
+      "description": "Details of a stored procedure",
+      "mimetype": "application/json"
+    }
+  ]
+}

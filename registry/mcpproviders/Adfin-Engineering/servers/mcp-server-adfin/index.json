@@ -1,0 +1,123 @@
+{
+  "repo_ref": "Adfin-Engineering/mcp-server-adfin",
+  "name": "io.github.Adfin-Engineering/mcp-server-adfin",
+  "description": "MCP server implementation providing tools for filesystem operations and Adfin API interactions, enabling Claude Desktop integration.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "unknown",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "<absolute_path_to_adfin_mcp_folder>",
+          "run",
+          "main_adfin_mcp.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "ADFIN_EMAIL",
+            "description": "User email for Adfin authentication",
+            "required": true
+          },
+          {
+            "name": "ADFIN_PASSWORD",
+            "description": "User password for Adfin authentication",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get_cwd",
+      "description": "Get the current working directory.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_cwd",
+      "description": "Get the files from the current working directory.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "search_for_file",
+      "description": "Search recursively for a file starting from the current working directory given the exact name of the file.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "file_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_name"
+        ]
+      }
+    },
+    {
+      "name": "search_for_file_partial",
+      "description": "Search recursively for a file or folder starting from the current working directory.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "file_or_folder_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_or_folder_name"
+        ]
+      }
+    },
+    {
+      "name": "make_desktop_cwd",
+      "description": "Make the Desktop the current working directory.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "make_folder_cwd",
+      "description": "Make a folder the current working directory. That folder must be present in the previous cwd.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "folder_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "folder_name"
+        ]
+      }
+    },
+    {
+      "name": "upload_invoice_to_adfin",
+      "description": "Upload an invoice to Adfin given its absolute path.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "invoice_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "invoice_path"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

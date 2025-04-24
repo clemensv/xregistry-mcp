@@ -1,0 +1,32 @@
+{
+  "repo_ref": "ergut/mcp-bigquery-server",
+  "name": "io.github.ergut/mcp-bigquery-server",
+  "description": "This is a server that lets your LLMs (like Claude) talk directly to your BigQuery data! Think of it as a friendly translator that sits between your AI assistant and your database, making sure they can chat securely and efficiently.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@ergut/mcp-bigquery-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@ergut/mcp-bigquery-server",
+          "--project-id",
+          "your-project-id",
+          "--location",
+          "us-central1"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

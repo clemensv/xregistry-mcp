@@ -1,0 +1,124 @@
+{
+  "repo_ref": "varunneal/spotify-mcp",
+  "name": "io.github.varunneal/spotify-mcp",
+  "description": "MCP project to connect Claude with Spotify. Built on top of spotipy-dev's API. Supports playback control, search, info retrieval, and queue management.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "@modelcontextprotocol/inspector",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/path/to/spotify_mcp",
+          "run",
+          "spotify-mcp"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "SpotifyPlayback",
+      "description": "Manages the current playback with the following actions: - get: Get information about user's current track. - start: Starts playing new item or resumes current playback if called with no uri. - pause: Pauses current playback. - skip: Skips current track.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "description": "Action to perform: 'get', 'start', 'pause' or 'skip'."
+          },
+          "spotify_uri": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Spotify uri of item to play for 'start' action. If omitted, resumes current playback."
+          },
+          "num_skips": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "description": "Number of tracks to skip for `skip` action."
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "SpotifyQueue",
+      "description": "Manage the playback queue - get the queue or add tracks.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "description": "Action to perform: 'add' or 'get'."
+          },
+          "track_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Track ID to add to queue (required for add action)"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "SpotifyGetInfo",
+      "description": "Get detailed information about a Spotify item (track, album, artist, or playlist).",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "item_uri": {
+            "type": "string",
+            "description": "URI of the item to get information about. If 'playlist' or 'album', returns its tracks. If 'artist', returns albums and top tracks."
+          }
+        },
+        "required": [
+          "item_uri"
+        ]
+      }
+    },
+    {
+      "name": "SpotifySearch",
+      "description": "Search for tracks, albums, artists, or playlists on Spotify.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "query term"
+          },
+          "qtype": {
+            "type": "string",
+            "description": "Type of items to search for (track, album, artist, playlist, or comma-separated combination)"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Maximum number of items to return"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

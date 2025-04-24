@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:40:40.345224415Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/apimatic/servers/apimatic-validator-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:40:40.345224415Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/apimatic/servers/apimatic-validator-mcp/meta",
+  "serverid": "apimatic-validator-mcp",
+  "xid": "/mcpproviders/apimatic/servers/apimatic-validator-mcp/meta"
+}

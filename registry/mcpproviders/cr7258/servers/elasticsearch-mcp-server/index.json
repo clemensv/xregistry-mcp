@@ -1,0 +1,160 @@
+{
+  "repo_ref": "cr7258/elasticsearch-mcp-server",
+  "name": "io.github.cr7258/elasticsearch-mcp-server",
+  "description": "A Model Context Protocol (MCP) server implementation that provides Elasticsearch and OpenSearch interaction. This server enables searching documents, analyzing indices, and managing cluster through a set of tools.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "elasticsearch-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "@smithery/cli",
+          "install",
+          "elasticsearch-mcp-server",
+          "--client",
+          "claude"
+        ],
+        "environment_variables": [
+          {
+            "name": "ELASTICSEARCH_HOSTS",
+            "description": "Elasticsearch hosts URL",
+            "required": true
+          },
+          {
+            "name": "ELASTICSEARCH_USERNAME",
+            "description": "Elasticsearch username",
+            "required": true
+          },
+          {
+            "name": "ELASTICSEARCH_PASSWORD",
+            "description": "Elasticsearch password",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "general_api_request",
+      "description": "Perform a general HTTP API request. Use this tool for any Elasticsearch/OpenSearch API that does not have a dedicated tool.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_indices",
+      "description": "List all indices.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_index",
+      "description": "Returns information (mappings, settings, aliases) about one or more indices.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_index",
+      "description": "Create a new index.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_index",
+      "description": "Delete an index.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "search_documents",
+      "description": "Search for documents.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "index_document",
+      "description": "Creates or updates a document in the index.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_document",
+      "description": "Get a document by ID.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_document",
+      "description": "Delete a document by ID.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_by_query",
+      "description": "Deletes documents matching the provided query.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_cluster_health",
+      "description": "Returns basic information about the health of the cluster.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_cluster_stats",
+      "description": "Returns high-level overview of cluster statistics.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_aliases",
+      "description": "List all aliases.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_alias",
+      "description": "Get alias information for a specific index.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "put_alias",
+      "description": "Create or update an alias for a specific index.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_alias",
+      "description": "Delete an alias for a specific index.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

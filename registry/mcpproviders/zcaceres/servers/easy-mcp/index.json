@@ -1,0 +1,236 @@
+{
+  "repo_ref": "zcaceres/easy-mcp",
+  "name": "io.github.zcaceres/easy-mcp",
+  "description": "EasyMCP is the simplest way to create Model Context Protocol (MCP) servers in TypeScript. It hides the plumbing, formatting, and other boilerplate definitions behind simple declarations. Easy MCP allows you to define the bare minimum of what you need to get started. Or you can define more complex resources, templates, tools, and prompts.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "easy-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "start:decorators"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "greetingPrompt",
+      "description": "",
+      "arguments": [
+        {
+          "name": "name",
+          "description": "",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "simplePrompt",
+      "description": "",
+      "arguments": [
+        {
+          "name": "name",
+          "description": "",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "configured-prompt",
+      "description": "A prompt with a name and description",
+      "arguments": [
+        {
+          "name": "name",
+          "description": "The name of the thing to prompt",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "simplePrompt",
+      "description": "",
+      "arguments": [
+        {
+          "name": "name",
+          "description": "",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "customPrompt",
+      "description": "A custom prompt with multiple parameters",
+      "arguments": [
+        {
+          "name": "name",
+          "description": "User's name",
+          "required": true
+        },
+        {
+          "name": "age",
+          "description": "User's age",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "simpleFunc",
+      "description": "",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "nickname": {
+            "type": "string"
+          },
+          "height": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "nickname",
+          "height"
+        ]
+      }
+    },
+    {
+      "name": "middleFunc",
+      "description": "An optional description",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "active": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {}
+          },
+          "age": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "complexTool",
+      "description": "A function with various parameter types",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string"
+          },
+          "season": {
+            "type": "string"
+          },
+          "year": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "date",
+          "season"
+        ]
+      }
+    },
+    {
+      "name": "processData",
+      "description": "A tool that uses context",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "dataSource": {
+            "type": "string"
+          },
+          "context": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "dataSource",
+          "context"
+        ]
+      }
+    },
+    {
+      "name": "simpleTool",
+      "description": "",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "param1": {
+            "type": "string"
+          },
+          "param2": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "param1",
+          "param2"
+        ]
+      }
+    },
+    {
+      "name": "toolWithOptionals",
+      "description": "A tool with optional parameters",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "requiredParam": {
+            "type": "string"
+          },
+          "optionalParam": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "requiredParam"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "simple-resource",
+      "name": "simpleResource",
+      "description": "",
+      "mimetype": ""
+    },
+    {
+      "uritemplate": "greeting/{name}",
+      "name": "myResourceTemplate",
+      "description": "",
+      "mimetype": ""
+    },
+    {
+      "uritemplate": "test://simple-resource",
+      "name": "simpleResource",
+      "description": "",
+      "mimetype": ""
+    },
+    {
+      "uritemplate": "test://resource/{param}",
+      "name": "resourceWithParam",
+      "description": "",
+      "mimetype": ""
+    }
+  ]
+}

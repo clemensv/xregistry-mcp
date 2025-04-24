@@ -1,0 +1,176 @@
+{
+  "repo_ref": "mark3labs/mcp-filesystem-server",
+  "name": "io.github.mark3labs/mcp-filesystem-server",
+  "description": "Go server implementing Model Context Protocol (MCP) for filesystem operations.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "go",
+      "package_name": "github.com/mark3labs/mcp-filesystem-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "read_file",
+      "description": "Read complete contents of a file",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      }
+    },
+    {
+      "name": "read_multiple_files",
+      "description": "Read multiple files simultaneously",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "paths"
+        ]
+      }
+    },
+    {
+      "name": "write_file",
+      "description": "Create new file or overwrite existing (exercise caution with this)",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "content"
+        ]
+      }
+    },
+    {
+      "name": "create_directory",
+      "description": "Create new directory or ensure it exists",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      }
+    },
+    {
+      "name": "list_directory",
+      "description": "List directory contents with [FILE] or [DIR] prefixes",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      }
+    },
+    {
+      "name": "move_file",
+      "description": "Move or rename files and directories",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "destination": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "source",
+          "destination"
+        ]
+      }
+    },
+    {
+      "name": "search_files",
+      "description": "Recursively search for files/directories",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "pattern": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path",
+          "pattern"
+        ]
+      }
+    },
+    {
+      "name": "get_file_info",
+      "description": "Get detailed file/directory metadata",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      }
+    },
+    {
+      "name": "list_allowed_directories",
+      "description": "List all directories the server is allowed to access",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "file://system",
+      "uritemplate": "file://system",
+      "description": "File system operations interface"
+    }
+  ]
+}

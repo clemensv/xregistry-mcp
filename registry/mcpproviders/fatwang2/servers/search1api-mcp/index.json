@@ -1,0 +1,40 @@
+{
+  "repo_ref": "fatwang2/search1api-mcp",
+  "name": "io.github.fatwang2/search1api-mcp",
+  "description": "A Model Context Protocol (MCP) server that provides search and crawl functionality using Search1API.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "search1api-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "start"
+        ],
+        "environment_variables": [
+          {
+            "name": "SEARCH1API_KEY",
+            "description": "API key for Search1API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": [
+    {
+      "uritemplate": "search1api://info",
+      "name": "Search1API Information",
+      "description": "Basic information about Search1API capabilities",
+      "mimetype": "application/json"
+    }
+  ]
+}

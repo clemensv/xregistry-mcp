@@ -1,0 +1,41 @@
+{
+  "repo_ref": "githejie/mcp-server-calculator",
+  "name": "io.github.githejie/mcp-server-calculator",
+  "description": "A Model Context Protocol server for calculating. This server enables LLMs to use calculator for precise numerical calculations.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uvx",
+      "package_name": "mcp-server-calculator",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "calculate",
+      "description": "Calculates/evaluates the given expression.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "expression": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "expression"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

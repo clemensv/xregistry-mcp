@@ -1,0 +1,39 @@
+{
+  "repo_ref": "quarkiverse/quarkus-mcp-server",
+  "name": "io.github.quarkiverse/quarkus-mcp-server",
+  "description": "This extension provides declarative and programmatic APIs that enable developers to implement the MCP server features easily.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [
+    {
+      "url": "unspecified",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [],
+  "prompts": [
+    {
+      "name": "code_assist",
+      "arguments": [
+        {
+          "name": "lang",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "toLowerCase",
+      "description": "Converts the string value to lower case"
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "file:///project/alpha",
+      "name": "alpha"
+    }
+  ],
+  "documentation": "https://quarkiverse.github.io/quarkiverse-docs/quarkus-mcp-server/dev/index.html"
+}

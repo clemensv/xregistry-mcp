@@ -1,0 +1,35 @@
+{
+  "repo_ref": "agentrpc/agentrpc",
+  "name": "io.github.agentrpc/agentrpc",
+  "description": "Universal RPC layer for AI agents across network boundaries and languages, supporting Model Context Protocol (MCP) and OpenAI-compatible tool definitions.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "agentrpc",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "agentrpc",
+          "mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "AGENTRPC_API_SECRET",
+            "description": "API secret for authentication",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

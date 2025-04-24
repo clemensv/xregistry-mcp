@@ -1,0 +1,135 @@
+{
+  "repo_ref": "domdomegg/airtable-mcp-server",
+  "name": "io.github.domdomegg/airtable-mcp-server",
+  "description": "A Model Context Protocol server that provides read and write access to Airtable databases. This server enables LLMs to inspect database schemas, then read and write records.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "airtable-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "airtable-mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "AIRTABLE_API_KEY",
+            "description": "Airtable personal access token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "list_records",
+      "description": "List records from a table",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "search_records",
+      "description": "Search for records containing specific text",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_bases",
+      "description": "List all accessible Airtable bases",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "list_tables",
+      "description": "List all tables in a specific base",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "describe_table",
+      "description": "Get detailed information about a specific table",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_record",
+      "description": "Get a specific record by ID",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_record",
+      "description": "Create a new record in a table",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "update_records",
+      "description": "Update up to 10 records in a table",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_records",
+      "description": "Delete records from a table",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_table",
+      "description": "Create a new table in a base",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "update_table",
+      "description": "Update a table's name or description",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_field",
+      "description": "Create a new field in a table",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "update_field",
+      "description": "Update a field's name or description",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "airtable://{baseId}/{tableId}/schema",
+      "name": "Airtable Table Schema",
+      "description": "Schema of a specific table in an Airtable base",
+      "mimetype": "application/json"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "repo_ref": "datastax/astra-db-mcp",
+  "name": "io.github.datastax/astra-db-mcp",
+  "description": "A Model Context Protocol (MCP) server for interacting with Astra DB. MCP extends the capabilities of Large Language Models (LLMs) by allowing them to interact with external systems as agents.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@datastax/astra-db-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@datastax/astra-db-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "ASTRA_DB_APPLICATION_TOKEN",
+            "description": "Astra DB Application Token",
+            "required": true
+          },
+          {
+            "name": "ASTRA_DB_API_ENDPOINT",
+            "description": "Astra DB API Endpoint",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "GetCollections",
+      "description": "Get all collections in the database"
+    },
+    {
+      "name": "CreateCollection",
+      "description": "Create a new collection in the database"
+    },
+    {
+      "name": "UpdateCollection",
+      "description": "Update an existing collection in the database"
+    },
+    {
+      "name": "DeleteCollection",
+      "description": "Delete a collection from the database"
+    },
+    {
+      "name": "ListRecords",
+      "description": "List records from a collection in the database"
+    },
+    {
+      "name": "GetRecord",
+      "description": "Get a specific record from a collection by ID"
+    },
+    {
+      "name": "CreateRecord",
+      "description": "Create a new record in a collection"
+    },
+    {
+      "name": "UpdateRecord",
+      "description": "Update an existing record in a collection"
+    },
+    {
+      "name": "DeleteRecord",
+      "description": "Delete a record from a collection"
+    },
+    {
+      "name": "FindRecord",
+      "description": "Find records in a collection by field value"
+    },
+    {
+      "name": "BulkCreateRecords",
+      "description": "Create multiple records in a collection at once"
+    },
+    {
+      "name": "BulkUpdateRecords",
+      "description": "Update multiple records in a collection at once"
+    },
+    {
+      "name": "BulkDeleteRecords",
+      "description": "Delete multiple records from a collection at once"
+    },
+    {
+      "name": "OpenBrowser",
+      "description": "Open a web browser for authentication and setup"
+    },
+    {
+      "name": "HelpAddToClient",
+      "description": "Get assistance with adding Astra DB client to your MCP client"
+    },
+    {
+      "name": "EstimateDocumentCount",
+      "description": "Get estimate of the number of documents in a collection"
+    }
+  ],
+  "resources": []
+}

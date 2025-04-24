@@ -1,0 +1,81 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:42:26.94250566Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "-y",
+        "@gitee/mcp-gitee@latest"
+      ],
+      "command": "npx",
+      "env": [
+        {
+          "default": "https://gitee.com/api/v5",
+          "description": "Gitee API base URL",
+          "name": "GITEE_API_BASE",
+          "required": true
+        },
+        {
+          "description": "Gitee access token",
+          "name": "GITEE_ACCESS_TOKEN",
+          "required": true
+        }
+      ],
+      "package": "@gitee/mcp-gitee",
+      "runtime": "node"
+    }
+  },
+  "description": "Gitee MCP Server is a Model Context Protocol (MCP) server implementation for Gitee. It provides a set of tools for interacting with Gitee's API, allowing AI assistants to manage repositories, issues, pull requests, and more.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/oschina/servers/mcp-gitee/meta",
+  "modifiedat": "2025-04-25T12:42:26.94250566Z",
+  "name": "Gitee MCP Server",
+  "repository": {
+    "name": "oschina/mcp-gitee",
+    "url": "https://github.com/oschina/mcp-gitee"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/oschina/servers/mcp-gitee",
+  "serverid": "mcp-gitee",
+  "serverversion": "latest",
+  "tools": [
+    {
+      "description": "List user authorized repositories",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_user_repos"
+    },
+    {
+      "description": "Get the content of a file in a repository",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_file_content"
+    },
+    {
+      "description": "Create a user repository",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_user_repo"
+    },
+    {
+      "description": "Create an organization repository",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_org_repo"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/oschina/servers/mcp-gitee/versions",
+  "xid": "/mcpproviders/oschina/servers/mcp-gitee"
+}

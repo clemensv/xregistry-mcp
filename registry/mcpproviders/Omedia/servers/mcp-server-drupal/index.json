@@ -1,0 +1,41 @@
+{
+  "repo_ref": "Omedia/mcp-server-drupal",
+  "name": "io.github.Omedia/mcp-server-drupal",
+  "description": "A typescript based companion Model Context Protocol (MCP) server for the Drupal MCP module that works with the STDIO transport.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "ghcr.io/omedia/mcp-server-drupal",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--drupal-url=__DRUPAL_BASE_URL__"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "deno",
+      "package_name": "jsr:@omedia/mcp-server-drupal",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--drupal-url",
+          "__DRUPAL_BASE_URL__"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

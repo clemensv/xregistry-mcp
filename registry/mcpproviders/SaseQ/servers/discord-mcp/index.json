@@ -1,0 +1,189 @@
+{
+  "repo_ref": "SaseQ/discord-mcp",
+  "name": "io.github.SaseQ/discord-mcp",
+  "description": "A Model Context Protocol (MCP) server for the Discord API (JDA), allowing seamless integration of Discord Bot with MCP-compatible applications like Claude Desktop.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "java",
+      "package_name": "@SaseQ/discord-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-jar",
+          "/absolute/path/to/discord-mcp-0.0.1-SNAPSHOT.jar"
+        ],
+        "environment_variables": [
+          {
+            "name": "DISCORD_TOKEN",
+            "description": "Discord bot token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get_server_info",
+      "description": "Get detailed discord server information",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "send_message",
+      "description": "Send a message to a specific channel",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "edit_message",
+      "description": "Edit a message from a specific channel",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_message",
+      "description": "Delete a message from a specific channel",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "read_messages",
+      "description": "Read recent message history from a specific channel",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "send_private_message",
+      "description": "Send a private message to a specific user",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "edit_private_message",
+      "description": "Edit a private message from a specific user",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_private_message",
+      "description": "Delete a private message from a specific user",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "read_private_messages",
+      "description": "Read recent message history from a specific user",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "add_reaction",
+      "description": "Add a reaction (emoji) to a specific message",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "remove_reaction",
+      "description": "Remove a specified reaction (emoji) from a message",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_channel",
+      "description": "Delete a channel",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "find_channel",
+      "description": "Find a channel type and ID using name and server ID",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_channels",
+      "description": "List of all channels",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_category",
+      "description": "Create a new category for channels",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_category",
+      "description": "Delete a category",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "find_category",
+      "description": "Find a category ID using name and server ID",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_channels_in_category",
+      "description": "List of channels in a specific category",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_webhook",
+      "description": "Create a new webhook on a specific channel",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_webhook",
+      "description": "Delete a webhook",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_webhooks",
+      "description": "List of webhooks on a specific channel",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "send_webhook_message",
+      "description": "Send a message via webhook",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

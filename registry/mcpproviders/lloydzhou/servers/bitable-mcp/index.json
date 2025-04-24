@@ -1,0 +1,70 @@
+{
+  "repo_ref": "lloydzhou/bitable-mcp",
+  "name": "io.github.lloydzhou/bitable-mcp",
+  "description": "This MCP server provides access to Lark Bitable through the Model Context Protocol. It allows users to interact with Bitable tables using predefined tools.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uvx",
+      "package_name": "bitable-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "PERSONAL_BASE_TOKEN"
+          },
+          {
+            "name": "APP_TOKEN"
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "list_table",
+      "description": "List tables for the current Bitable.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "describe_table",
+      "description": "Describe a table by its name.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "read_query",
+      "description": "Execute a SQL query to read data from the tables.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "sql": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "sql"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

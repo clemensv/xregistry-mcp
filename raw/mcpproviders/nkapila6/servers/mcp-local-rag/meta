@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:42:14.803888939Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/nkapila6/servers/mcp-local-rag/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:42:14.803888939Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/nkapila6/servers/mcp-local-rag/meta",
+  "serverid": "mcp-local-rag",
+  "xid": "/mcpproviders/nkapila6/servers/mcp-local-rag/meta"
+}

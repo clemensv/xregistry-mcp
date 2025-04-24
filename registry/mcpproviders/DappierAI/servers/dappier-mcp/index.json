@@ -1,0 +1,88 @@
+{
+  "repo_ref": "DappierAI/dappier-mcp",
+  "name": "io.github.DappierAI/dappier-mcp",
+  "description": "A Model Context Protocol (MCP) server that connects any LLM or Agentic AI to real-time, rights-cleared, proprietary data from trusted sources. Dappier enables your AI to become an expert in anything by providing access to specialized models, including Real-Time Web Search, News, Sports, Financial Stock Market Data, Crypto Data, and exclusive content from premium publishers.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "dappier-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "DAPPIER_API_KEY",
+            "description": "API key for accessing Dappier services",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "dappier_real_time_search",
+      "description": "Retrieves direct answers to real-time queries using AI-powered search. This includes web search results, financial information, news, weather, stock market updates, and more.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The user-provided input string for retrieving real-time data."
+          },
+          "ai_model_id": {
+            "type": "string",
+            "description": "The AI model ID to use for the query. Defaults to am_01j06ytn18ejftedz6dyhz2b15 (Real-Time Data)."
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "dappier_ai_recommendations",
+      "description": "Provides AI-powered content recommendations based on structured data models. Returns a list of articles with titles, summaries, images, and source URLs.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The user-provided input string for AI recommendations."
+          },
+          "data_model_id": {
+            "type": "string",
+            "description": "The data model ID to use for recommendations. Defaults to dm_01j0pb465keqmatq9k83dthx34 (Sports News)."
+          },
+          "similarity_top_k": {
+            "type": "integer",
+            "description": "The number of top documents to retrieve based on similarity. Defaults to 9."
+          },
+          "ref": {
+            "type": "string",
+            "description": "The site domain where AI recommendations should be displayed. Defaults to None."
+          },
+          "num_articles_ref": {
+            "type": "integer",
+            "description": "The minimum number of articles to return from the specified reference domain (ref). Defaults to 0."
+          },
+          "search_algorithm": {
+            "type": "string",
+            "description": "The search algorithm to use for retrieving articles. Options: most_recent, semantic, most_recent_semantic, trending. Defaults to most_recent."
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

@@ -1,0 +1,169 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:48.490279944Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "build/index.js"
+      ],
+      "command": "node",
+      "env": [
+        {
+          "description": "Full URL of the n8n API, including /api/v1",
+          "name": "N8N_API_URL",
+          "required": true
+        },
+        {
+          "description": "API key for authenticating with n8n",
+          "name": "N8N_API_KEY",
+          "required": true
+        },
+        {
+          "description": "Username for webhook authentication (optional)",
+          "name": "N8N_WEBHOOK_USERNAME",
+          "required": false
+        },
+        {
+          "description": "Password for webhook authentication (optional)",
+          "name": "N8N_WEBHOOK_PASSWORD",
+          "required": false
+        },
+        {
+          "description": "Enable debug logging (optional)",
+          "name": "DEBUG",
+          "required": false
+        }
+      ],
+      "package": "n8n-mcp-server",
+      "runtime": "node"
+    }
+  },
+  "description": "A Model Context Protocol (MCP) server that allows AI assistants to interact with n8n workflows through natural language. This MCP server provides tools and resources for AI assistants to manage n8n workflows and executions, including listing, creating, updating, deleting, activating, deactivating workflows, executing workflows, monitoring status, and accessing workflow information and execution statistics.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/leonardsellem/servers/n8n-mcp-server/meta",
+  "modifiedat": "2025-04-25T12:41:48.490279944Z",
+  "name": "n8n-mcp-server",
+  "repository": {
+    "name": "leonardsellem/n8n-mcp-server",
+    "url": "https://github.com/leonardsellem/n8n-mcp-server"
+  },
+  "resources": [
+    {
+      "description": "Static resource representing all workflows.",
+      "mimetype": "application/json",
+      "name": "workflows",
+      "uritemplate": "/resources/workflows"
+    },
+    {
+      "description": "Static resource representing execution statistics.",
+      "mimetype": "application/json",
+      "name": "execution_stats",
+      "uritemplate": "/resources/execution-stats"
+    },
+    {
+      "description": "Dynamic resource for a specific workflow identified by ID.",
+      "mimetype": "application/json",
+      "name": "workflow",
+      "uritemplate": "/resources/workflows/{workflowId}"
+    },
+    {
+      "description": "Dynamic resource for a specific execution identified by ID.",
+      "mimetype": "application/json",
+      "name": "execution",
+      "uritemplate": "/resources/executions/{executionId}"
+    }
+  ],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/leonardsellem/servers/n8n-mcp-server",
+  "serverid": "n8n-mcp-server",
+  "serverversion": "0.1.0",
+  "tools": [
+    {
+      "description": "List all workflows available in the n8n instance.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_workflows"
+    },
+    {
+      "description": "Retrieve details of a specific workflow.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_workflow"
+    },
+    {
+      "description": "Create a new workflow in n8n.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_workflow"
+    },
+    {
+      "description": "Update an existing workflow.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "update_workflow"
+    },
+    {
+      "description": "Delete a workflow from n8n.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "delete_workflow"
+    },
+    {
+      "description": "Activate a workflow to enable execution.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "activate_workflow"
+    },
+    {
+      "description": "Deactivate a workflow to disable execution.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "deactivate_workflow"
+    },
+    {
+      "description": "List executions of workflows.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_executions"
+    },
+    {
+      "description": "Get details of a specific execution.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_execution"
+    },
+    {
+      "description": "Delete an execution record.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "delete_execution"
+    },
+    {
+      "description": "Execute a workflow via webhook trigger.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "run_webhook"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/leonardsellem/servers/n8n-mcp-server/versions",
+  "xid": "/mcpproviders/leonardsellem/servers/n8n-mcp-server"
+}

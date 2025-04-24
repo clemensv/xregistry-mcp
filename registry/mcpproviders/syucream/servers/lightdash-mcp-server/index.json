@@ -1,0 +1,131 @@
+{
+  "repo_ref": "syucream/lightdash-mcp-server",
+  "name": "io.github.syucream/lightdash-mcp-server",
+  "description": "A MCP(Model Context Protocol) server that accesses to Lightdash. This server provides MCP-compatible access to Lightdash's API, allowing AI assistants to interact with your Lightdash data through a standardized interface.",
+  "version_detail": {
+    "version": "0.0.1"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "lightdash-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "lightdash-mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "LIGHTDASH_API_KEY",
+            "description": "Your Lightdash PAT",
+            "required": true
+          },
+          {
+            "name": "LIGHTDASH_API_URL",
+            "description": "The API base URL",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "lightdash_list_projects",
+      "description": "List all projects in the Lightdash organization",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "lightdash_get_project",
+      "description": "Get details of a specific project",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "lightdash_list_spaces",
+      "description": "List all spaces in a project",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "lightdash_list_charts",
+      "description": "List all charts in a project",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "lightdash_list_dashboards",
+      "description": "List all dashboards in a project",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "lightdash_get_custom_metrics",
+      "description": "Get custom metrics for a project",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "lightdash_get_catalog",
+      "description": "Get catalog for a project",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "lightdash_get_metrics_catalog",
+      "description": "Get metrics catalog for a project",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "lightdash_get_charts_as_code",
+      "description": "Get charts as code for a project",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "lightdash_get_dashboards_as_code",
+      "description": "Get dashboards as code for a project",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "lightdash_get_metadata",
+      "description": "Get metadata for a specific table in the data catalog",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "lightdash_get_analytics",
+      "description": "Get analytics for a specific table in the data catalog",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "lightdash_get_user_attributes",
+      "description": "Get organization user attributes",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

@@ -1,0 +1,64 @@
+{
+  "repo_ref": "AshikNesin/pushover-mcp",
+  "name": "io.github.AshikNesin/pushover-mcp",
+  "description": "A Model Context Protocol implementation for sending notifications via Pushover.net.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "pushover-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--token",
+          "YOUR_TOKEN",
+          "--user",
+          "YOUR_USER"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "send",
+      "description": "Sends a notification via Pushover.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "number"
+          },
+          "sound": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "url_title": {
+            "type": "string"
+          },
+          "device": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

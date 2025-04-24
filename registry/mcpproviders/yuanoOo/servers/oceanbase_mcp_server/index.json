@@ -1,0 +1,75 @@
+{
+  "repo_ref": "yuanoOo/oceanbase_mcp_server",
+  "name": "io.github.yuanoOo/oceanbase_mcp_server",
+  "description": "A Model Context Protocol (MCP) server that enables secure interaction with OceanBase databases. This server allows AI assistants to list tables, read data, and execute SQL queries through a controlled interface, making database exploration and analysis safer and more structured.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "oceanbase-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "OB_HOST",
+            "description": "Database host",
+            "required": true
+          },
+          {
+            "name": "OB_PORT",
+            "description": "Database port",
+            "required": false
+          },
+          {
+            "name": "OB_USER",
+            "description": "Database username",
+            "required": true
+          },
+          {
+            "name": "OB_PASSWORD",
+            "description": "Database password",
+            "required": true
+          },
+          {
+            "name": "OB_DATABASE",
+            "description": "Database name",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "execute_sql",
+      "description": "Execute an SQL query on the OceanBase server",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The SQL query to execute"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "oceanbase://{table}/data",
+      "name": "Table",
+      "description": "Data in table: {table}",
+      "mimetype": "text/plain"
+    }
+  ]
+}

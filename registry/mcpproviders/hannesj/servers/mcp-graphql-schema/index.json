@@ -1,0 +1,99 @@
+{
+  "repo_ref": "hannesj/mcp-graphql-schema",
+  "name": "io.github.hannesj/mcp-graphql-schema",
+  "description": "A Model Context Protocol (MCP) server that exposes GraphQL schema information to Large Language Models (LLMs) like Claude. This server allows an LLM to explore and understand GraphQL schemas through a set of specialized tools.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "mcp-graphql-schema",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "mcp-graphql-schema"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "list-query-fields",
+      "description": "Lists all available root-level fields for GraphQL queries",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-query-field",
+      "description": "Gets detailed definition for a specific query field in SDL format",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list-mutation-fields",
+      "description": "Lists all available root-level fields for GraphQL mutations",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-mutation-field",
+      "description": "Gets detailed definition for a specific mutation field in SDL format",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list-subscription-fields",
+      "description": "Lists all available root-level fields for GraphQL subscriptions (if present in schema)",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-subscription-field",
+      "description": "Gets detailed definition for a specific subscription field (if present in schema)",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list-types",
+      "description": "Lists all types defined in the GraphQL schema (excluding internal types)",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-type",
+      "description": "Gets detailed definition for a specific GraphQL type in SDL format",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-type-fields",
+      "description": "Gets a simplified list of fields with their types for a specific GraphQL object type",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "search-schema",
+      "description": "Searches for types or fields in the schema by name pattern (case-insensitive regex)",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

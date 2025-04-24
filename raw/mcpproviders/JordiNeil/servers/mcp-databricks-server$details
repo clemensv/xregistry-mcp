@@ -1,0 +1,103 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:37.271630844Z",
+  "deployment": {
+    "sandbox": {
+      "args": [],
+      "command": "python3 main.py",
+      "env": [
+        {
+          "description": "Databricks instance URL",
+          "name": "DATABRICKS_HOST",
+          "required": true
+        },
+        {
+          "description": "Personal access token for Databricks",
+          "name": "DATABRICKS_TOKEN",
+          "required": true
+        },
+        {
+          "description": "HTTP path for Databricks SQL warehouse",
+          "name": "DATABRICKS_HTTP_PATH",
+          "required": true
+        }
+      ],
+      "package": "@modelcontextprotocol/databricks-mcp-server",
+      "runtime": "node"
+    }
+  },
+  "description": "A Model Context Protocol (MCP) server that connects to Databricks API, allowing LLMs to run SQL queries, list jobs, and get job status.",
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/JordiNeil/servers/mcp-databricks-server/meta",
+  "modifiedat": "2025-04-25T12:41:37.271630844Z",
+  "name": "Databricks MCP Server",
+  "repository": {
+    "name": "JordiNeil/mcp-databricks-server",
+    "url": "https://github.com/JordiNeil/mcp-databricks-server"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/JordiNeil/servers/mcp-databricks-server",
+  "serverid": "mcp-databricks-server",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "description": "Execute SQL queries on your Databricks SQL warehouse",
+      "inputschema": {
+        "properties": {
+          "sql": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "sql"
+        ],
+        "type": "object"
+      },
+      "name": "run_sql_query"
+    },
+    {
+      "description": "List all Databricks jobs in your workspace",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "list_jobs"
+    },
+    {
+      "description": "Get the status of a specific Databricks job by ID",
+      "inputschema": {
+        "properties": {
+          "job_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "job_id"
+        ],
+        "type": "object"
+      },
+      "name": "get_job_status"
+    },
+    {
+      "description": "Get detailed information about a specific Databricks job",
+      "inputschema": {
+        "properties": {
+          "job_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "job_id"
+        ],
+        "type": "object"
+      },
+      "name": "get_job_details"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/JordiNeil/servers/mcp-databricks-server/versions",
+  "xid": "/mcpproviders/JordiNeil/servers/mcp-databricks-server"
+}

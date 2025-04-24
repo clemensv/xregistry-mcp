@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:16.864053151Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/google/servers/maps/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:16.864053151Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/google/servers/maps/meta",
+  "serverid": "maps",
+  "xid": "/mcpproviders/google/servers/maps/meta"
+}

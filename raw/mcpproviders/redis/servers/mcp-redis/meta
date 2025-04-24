@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:42:58.355713903Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/redis/servers/mcp-redis/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:42:58.355713903Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/redis/servers/mcp-redis/meta",
+  "serverid": "mcp-redis",
+  "xid": "/mcpproviders/redis/servers/mcp-redis/meta"
+}

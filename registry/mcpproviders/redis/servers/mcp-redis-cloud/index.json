@@ -1,0 +1,39 @@
+{
+  "repo_ref": "redis/mcp-redis-cloud",
+  "name": "io.github.redis/mcp-redis-cloud",
+  "description": "Model Context Protocol (MCP) server for managing Redis Cloud resources via natural language commands.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--experimental-fetch",
+          "<absolute_path_to_project_root>/dist/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "API_KEY",
+            "description": "Redis Cloud API key",
+            "required": true
+          },
+          {
+            "name": "SECRET_KEY",
+            "description": "Redis Cloud API secret key",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

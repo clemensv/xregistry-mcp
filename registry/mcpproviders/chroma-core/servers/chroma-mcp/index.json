@@ -1,0 +1,341 @@
+{
+  "repo_ref": "chroma-core/chroma-mcp",
+  "name": "io.github.chroma-core/chroma-mcp",
+  "description": "This server provides data retrieval capabilities powered by Chroma, enabling AI models to create collections over generated data and user inputs, and retrieve that data using vector search, full text search, metadata filtering, and more.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [
+    {
+      "url": "http://localhost:8000",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@chroma-core/chroma-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--client-type",
+          "ephemeral"
+        ],
+        "environment_variables": [
+          {
+            "name": "CHROMA_CLIENT_TYPE",
+            "description": "Type of Chroma client to use (ephemeral, persistent, http, cloud)",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "chroma_list_collections",
+      "description": "List all collections with pagination support",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "offset": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "name": "chroma_create_collection",
+      "description": "Create a new collection with optional HNSW configuration",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "space": {
+            "type": "string"
+          },
+          "ef_construction": {
+            "type": "integer"
+          },
+          "ef_search": {
+            "type": "integer"
+          },
+          "max_neighbors": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "collection_name"
+        ]
+      }
+    },
+    {
+      "name": "chroma_peek_collection",
+      "description": "View a sample of documents in a collection",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "collection_name"
+        ]
+      }
+    },
+    {
+      "name": "chroma_get_collection_info",
+      "description": "Get detailed information about a collection",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection_name"
+        ]
+      }
+    },
+    {
+      "name": "chroma_get_collection_count",
+      "description": "Get the number of documents in a collection",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection_name"
+        ]
+      }
+    },
+    {
+      "name": "chroma_modify_collection",
+      "description": "Update a collection's name or metadata",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "new_name": {
+            "type": "string"
+          },
+          "new_metadata": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "collection_name"
+        ]
+      }
+    },
+    {
+      "name": "chroma_delete_collection",
+      "description": "Delete a collection",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection_name"
+        ]
+      }
+    },
+    {
+      "name": "chroma_add_documents",
+      "description": "Add documents with optional metadata and custom IDs",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metadatas": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "collection_name",
+          "documents"
+        ]
+      }
+    },
+    {
+      "name": "chroma_query_documents",
+      "description": "Query documents using semantic search with advanced filtering",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "query_texts": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "n_results": {
+            "type": "integer"
+          },
+          "where": {
+            "type": "object"
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "collection_name",
+          "query_texts"
+        ]
+      }
+    },
+    {
+      "name": "chroma_get_documents",
+      "description": "Retrieve documents by IDs or filters with pagination",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "where": {
+            "type": "object"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "integer"
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "collection_name"
+        ]
+      }
+    },
+    {
+      "name": "chroma_update_documents",
+      "description": "Update existing documents' content, metadata, or embeddings",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "documents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "metadatas": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "embeddings": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "required": [
+          "collection_name",
+          "ids"
+        ]
+      }
+    },
+    {
+      "name": "chroma_delete_documents",
+      "description": "Delete specific documents from a collection",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "collection_name",
+          "ids"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

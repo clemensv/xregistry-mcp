@@ -1,0 +1,109 @@
+{
+  "repo_ref": "qdrant/mcp-server-qdrant",
+  "name": "io.github.qdrant/mcp-server-qdrant",
+  "description": "An official Model Context Protocol server for keeping and retrieving memories in the Qdrant vector search engine. It acts as a semantic memory layer on top of the Qdrant database.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcp-server-qdrant",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "QDRANT_URL",
+            "description": "URL of the Qdrant server",
+            "required": false
+          },
+          {
+            "name": "QDRANT_API_KEY",
+            "description": "API key for the Qdrant server",
+            "required": false
+          },
+          {
+            "name": "COLLECTION_NAME",
+            "description": "Name of the default collection to use.",
+            "required": false
+          },
+          {
+            "name": "QDRANT_LOCAL_PATH",
+            "description": "Path to the local Qdrant database (alternative to QDRANT_URL)",
+            "required": false
+          },
+          {
+            "name": "EMBEDDING_PROVIDER",
+            "description": "Embedding provider to use (currently only \"fastembed\" is supported)",
+            "required": false
+          },
+          {
+            "name": "EMBEDDING_MODEL",
+            "description": "Name of the embedding model to use",
+            "required": false
+          },
+          {
+            "name": "TOOL_STORE_DESCRIPTION",
+            "description": "Custom description for the store tool",
+            "required": false
+          },
+          {
+            "name": "TOOL_FIND_DESCRIPTION",
+            "description": "Custom description for the find tool",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "qdrant-store",
+      "description": "Store some information in the Qdrant database",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "information": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "collection_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "information"
+        ]
+      }
+    },
+    {
+      "name": "qdrant-find",
+      "description": "Retrieve relevant information from the Qdrant database",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "collection_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

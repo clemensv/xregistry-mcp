@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:40:49.307214797Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ckreiling/servers/mcp-server-docker/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:40:49.307214797Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ckreiling/servers/mcp-server-docker/meta",
+  "serverid": "mcp-server-docker",
+  "xid": "/mcpproviders/ckreiling/servers/mcp-server-docker/meta"
+}

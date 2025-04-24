@@ -1,0 +1,103 @@
+{
+  "repo_ref": "Fibery-inc/fibery-mcp-server",
+  "name": "io.github.Fibery-inc/fibery-mcp-server",
+  "description": "This MCP (Model Context Protocol) server provides integration between Fibery and any LLM provider supporting the MCP protocol (e.g., Claude for Desktop), allowing you to interact with your Fibery workspace using natural language.",
+  "version_detail": {
+    "version": "0.0.1"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@Fibery-inc/fibery-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "tool",
+          "run",
+          "fibery-mcp-server",
+          "--fibery-host",
+          "your-domain.fibery.io",
+          "--fibery-api-token",
+          "your-api-token"
+        ],
+        "environment_variables": [
+          {
+            "name": "FIBERY_HOST",
+            "description": "Fibery host (your-account.fibery.io)",
+            "required": true
+          },
+          {
+            "name": "FIBERY_API_TOKEN",
+            "description": "Fibery API Token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "current_date",
+      "description": "Provides the current date.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "schema",
+      "description": "Get Fibery schema information.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "describe_database",
+      "description": "Get list of all fields (in format of 'Title [name]: type') in the selected Fibery database and for all related databases.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "database_name": {
+            "type": "string",
+            "description": "Database name as defined in Fibery schema"
+          }
+        },
+        "required": [
+          "database_name"
+        ]
+      }
+    },
+    {
+      "name": "query_database",
+      "description": "Offers powerful, flexible access to your Fibery data through the Fibery API.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_entity",
+      "description": "Creates new entities in your Fibery workspace with specified field values.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_entities_batch",
+      "description": "Creates multiple new entities in your Fibery workspace with specified field values.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "update_entity",
+      "description": "Updates existing entities in your Fibery workspace with new field values.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

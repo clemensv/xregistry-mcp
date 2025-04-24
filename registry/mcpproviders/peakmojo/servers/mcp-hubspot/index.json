@@ -1,0 +1,105 @@
+{
+  "repo_ref": "peakmojo/mcp-hubspot",
+  "name": "io.github.peakmojo/mcp-hubspot",
+  "description": "A Model Context Protocol (MCP) server that enables AI assistants to interact with HubSpot CRM data. This server bridges AI models with your HubSpot account, providing direct access to contacts, companies, and engagement data. Built-in vector storage and caching mechanisms help overcome HubSpot API limitations while improving response times.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "buryhuang/mcp-hubspot:latest",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "HUBSPOT_ACCESS_TOKEN",
+            "description": "HubSpot access token with required scopes",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "npm",
+      "package_name": "@smithery/cli",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@smithery/cli@latest",
+          "install",
+          "mcp-hubspot",
+          "--client",
+          "claude"
+        ],
+        "environment_variables": [
+          {
+            "name": "HUBSPOT_ACCESS_TOKEN",
+            "description": "HubSpot access token with required scopes",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "hubspot_create_contact",
+      "description": "Create contacts with duplicate prevention",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "hubspot_create_company",
+      "description": "Create companies with duplicate prevention",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "hubspot_get_company_activity",
+      "description": "Retrieve activity for specific companies",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "hubspot_get_active_companies",
+      "description": "Retrieve most recently active companies",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "hubspot_get_active_contacts",
+      "description": "Retrieve most recently active contacts",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "hubspot_get_recent_conversations",
+      "description": "Retrieve recent conversation threads with messages",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "hubspot_search_data",
+      "description": "Semantic search across previously retrieved HubSpot data",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

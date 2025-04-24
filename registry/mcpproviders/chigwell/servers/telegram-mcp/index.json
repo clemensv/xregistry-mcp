@@ -1,0 +1,310 @@
+{
+  "repo_ref": "chigwell/telegram-mcp",
+  "name": "io.github.chigwell/telegram-mcp",
+  "description": "A full-featured Telegram integration for Claude, Cursor, and any MCP-compatible client, powered by Telethon and the Model Context Protocol (MCP). This project lets you interact with your Telegram account programmatically, automating everything from messaging to group management.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "unknown",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "unknown",
+      "package_name": "unknown",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get_chats",
+      "description": "Paginated list of chats",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_chats",
+      "description": "List chats with metadata and filtering",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_chat",
+      "description": "Detailed info about a chat",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_group",
+      "description": "Create a new group",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_channel",
+      "description": "Create a channel or supergroup",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "edit_chat_title",
+      "description": "Change chat/group/channel title",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_chat_photo",
+      "description": "Remove chat/group/channel photo",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "leave_chat",
+      "description": "Leave a group or channel",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_participants",
+      "description": "List all participants",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_admins",
+      "description": "List all admins",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_banned_users",
+      "description": "List all banned users",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "promote_admin",
+      "description": "Promote user to admin",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "demote_admin",
+      "description": "Demote admin to user",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "ban_user",
+      "description": "Ban user",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "unban_user",
+      "description": "Unban user",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_invite_link",
+      "description": "Get invite link",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "export_chat_invite",
+      "description": "Export invite link",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "import_chat_invite",
+      "description": "Join chat by invite hash",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "join_chat_by_link",
+      "description": "Join chat by invite link",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_messages",
+      "description": "Paginated messages",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_messages",
+      "description": "Filtered messages",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "send_message",
+      "description": "Send a message",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "reply_to_message",
+      "description": "Reply to a message",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "edit_message",
+      "description": "Edit your message",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_message",
+      "description": "Delete a message",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "forward_message",
+      "description": "Forward a message",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pin_message",
+      "description": "Pin a message",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "unpin_message",
+      "description": "Unpin a message",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "mark_as_read",
+      "description": "Mark all as read",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_message_context",
+      "description": "Context around a message",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_history",
+      "description": "Full chat history",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_pinned_messages",
+      "description": "List pinned messages",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_last_interaction",
+      "description": "Most recent message with a contact",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_contacts",
+      "description": "List all contacts",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "search_contacts",
+      "description": "Search contacts",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "add_contact",
+      "description": "Add a contact",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_contact",
+      "description": "Delete a contact",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "block_user",
+      "description": "Block a user",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "unblock_user",
+      "description": "Unblock a user",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

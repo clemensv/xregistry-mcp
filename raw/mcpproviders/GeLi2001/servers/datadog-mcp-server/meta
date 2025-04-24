@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:10.249911861Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GeLi2001/servers/datadog-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:10.249911861Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GeLi2001/servers/datadog-mcp-server/meta",
+  "serverid": "datadog-mcp-server",
+  "xid": "/mcpproviders/GeLi2001/servers/datadog-mcp-server/meta"
+}

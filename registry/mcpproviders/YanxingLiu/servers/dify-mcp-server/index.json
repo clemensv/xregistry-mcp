@@ -1,0 +1,45 @@
+{
+  "repo_ref": "YanxingLiu/dify-mcp-server",
+  "name": "io.github.YanxingLiu/dify-mcp-server",
+  "description": "A simple implementation of an MCP server for using dify workflows. It achieves the invocation of the Dify workflow by calling the tools of MCP.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uvx",
+      "package_name": "dify-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--from",
+          "git+https://github.com/YanxingLiu/dify-mcp-server",
+          "dify_mcp_server"
+        ],
+        "environment_variables": [
+          {
+            "name": "DIFY_BASE_URL",
+            "description": "The base URL for your Dify API.",
+            "required": false
+          },
+          {
+            "name": "DIFY_APP_SKS",
+            "description": "Comma-separated list of your Dify App Secret Keys (SKs).",
+            "required": false
+          },
+          {
+            "name": "CONFIG_PATH",
+            "description": "Path to config.yaml file.",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

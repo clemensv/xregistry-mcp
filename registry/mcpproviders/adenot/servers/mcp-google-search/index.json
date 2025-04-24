@@ -1,0 +1,78 @@
+{
+  "repo_ref": "adenot/mcp-google-search",
+  "name": "io.github.adenot/mcp-google-search",
+  "description": "A Model Context Protocol server that provides web search capabilities using Google Custom Search API and webpage content extraction functionality.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@adenot/mcp-google-search",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@adenot/mcp-google-search"
+        ],
+        "environment_variables": [
+          {
+            "name": "GOOGLE_API_KEY",
+            "description": "Google API Key for Custom Search",
+            "required": true
+          },
+          {
+            "name": "GOOGLE_SEARCH_ENGINE_ID",
+            "description": "Google Custom Search Engine ID",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "search",
+      "description": "Perform a web search query",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query"
+          },
+          "num": {
+            "type": "number",
+            "description": "Number of results (1-10)",
+            "minimum": 1,
+            "maximum": 10
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "read_webpage",
+      "description": "Fetch and extract text content from a webpage",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL of the webpage to read"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

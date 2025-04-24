@@ -1,0 +1,123 @@
+{
+  "repo_ref": "john-zhang-dev/xero-mcp",
+  "name": "io.github.john-zhang-dev/xero-mcp",
+  "description": "This MCP server allows Clients to interact with Xero Accounting Software.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "xero-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "xero-mcp@latest"
+        ],
+        "environment_variables": [
+          {
+            "name": "XERO_CLIENT_ID"
+          },
+          {
+            "name": "XERO_CLIENT_SECRET"
+          },
+          {
+            "name": "XERO_REDIRECT_URI"
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "authenticate",
+      "description": "Authenticate with Xero using OAuth2",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_bank_transactions",
+      "description": "Creates one or more spent or received money transaction",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_contacts",
+      "description": "Creates one or multiple contacts in a Xero organisation",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_balance_sheet",
+      "description": "Retrieves report for balancesheet",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_accounts",
+      "description": "Retrieves the full chart of accounts",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_bank_transactions",
+      "description": "Retrieves any spent or received money transactions",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_contacts",
+      "description": "Retrieves all contacts in a Xero organisation",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_invoices",
+      "description": "Retrieves sales invoices or purchase bills",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_journals",
+      "description": "Retrieves journals",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_organisations",
+      "description": "Retrieves Xero organisation details",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_payments",
+      "description": "Retrieves payments for invoices and credit notes",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_quotes",
+      "description": "Retrieves sales quotes",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

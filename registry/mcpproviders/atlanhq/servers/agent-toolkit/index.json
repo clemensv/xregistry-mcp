@@ -1,0 +1,203 @@
+{
+  "repo_ref": "atlanhq/agent-toolkit",
+  "name": "io.github.atlanhq/agent-toolkit",
+  "description": "A protocol server that enables interaction with Atlan services through function calling. Provides tools for asset search, and retrieval using pyatlan.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "atlan-agent-toolkit",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "search_assets_tool",
+      "description": "Advanced asset search using FluentSearch with flexible conditions.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "conditions": {
+            "oneOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "negative_conditions": {
+            "type": "object"
+          },
+          "some_conditions": {
+            "type": "object"
+          },
+          "min_somes": {
+            "type": "integer"
+          },
+          "include_attributes": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "asset_type": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object"
+              }
+            ]
+          },
+          "include_archived": {
+            "type": "boolean"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "integer"
+          },
+          "sort_by": {
+            "type": "string"
+          },
+          "sort_order": {
+            "type": "string"
+          },
+          "connection_qualified_name": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "directly_tagged": {
+            "type": "boolean"
+          },
+          "domain_guids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "date_range": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_assets_by_dsl_tool",
+      "description": "Execute the search with the given query",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "dsl_query": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "object"
+              }
+            ]
+          }
+        },
+        "required": [
+          "dsl_query"
+        ]
+      }
+    },
+    {
+      "name": "traverse_lineage_tool",
+      "description": "Traverse asset lineage in specified direction.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "guid": {
+            "type": "string"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "UPSTREAM",
+              "DOWNSTREAM"
+            ]
+          },
+          "depth": {
+            "type": "integer"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "immediate_neighbors": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "guid",
+          "direction"
+        ]
+      }
+    },
+    {
+      "name": "update_assets_tool",
+      "description": "Update one or multiple assets with different values for the same attribute.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "assets": {
+            "oneOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              }
+            ]
+          },
+          "attribute_name": {
+            "type": "string"
+          },
+          "attribute_values": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "assets",
+          "attribute_name",
+          "attribute_values"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

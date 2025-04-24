@@ -1,0 +1,195 @@
+{
+  "repo_ref": "aliyun/alibabacloud-hologres-mcp-server",
+  "name": "io.github.aliyun/alibabacloud-hologres-mcp-server",
+  "description": "Hologres MCP Server serves as a universal interface between AI Agents and Hologres databases. It enables seamless communication between AI Agents and Hologres, helping AI Agents retrieve Hologres database metadata and execute SQL operations.",
+  "version_detail": {
+    "version": "0.1.7"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "hologres-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "--with",
+          "hologres-mcp-server",
+          "hologres-mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "HOLOGRES_HOST",
+            "description": "Host of the Hologres database",
+            "required": true
+          },
+          {
+            "name": "HOLOGRES_PORT",
+            "description": "Port of the Hologres database",
+            "required": true
+          },
+          {
+            "name": "HOLOGRES_USER",
+            "description": "Access ID for Hologres",
+            "required": true
+          },
+          {
+            "name": "HOLOGRES_PASSWORD",
+            "description": "Access key for Hologres",
+            "required": true
+          },
+          {
+            "name": "HOLOGRES_DATABASE",
+            "description": "Database name in Hologres",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "execute_select_sql",
+      "description": "Execute SELECT SQL to query data from Hologres database.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The (SELECT) SQL query to execute"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "execute_dml_sql",
+      "description": "Execute (INSERT, UPDATE, DELETE) SQL to insert, update, and delete data in Hologres databse.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The DML SQL query to execute"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "execute_ddl_sql",
+      "description": "Execute (CREATE, ALTER, DROP) SQL statements to CREATE, ALTER, or DROP tables, views, procedures, GUCs etc. in Hologres databse.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The DDL SQL query to execute"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "gather_table_statistics",
+      "description": "Execute the ANALYZE TABLE command to have Hologres collect table statistics, enabling QO to generate better query plans",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "type": "string",
+            "description": "Schema name"
+          },
+          "table": {
+            "type": "string",
+            "description": "Table name"
+          }
+        },
+        "required": [
+          "schema",
+          "table"
+        ]
+      }
+    },
+    {
+      "name": "get_query_plan",
+      "description": "Get query plan for a SQL query",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The SQL query to analyze"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "get_execution_plan",
+      "description": "Get actual execution plan with runtime statistics for a SQL query",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The SQL query to analyze"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "hologres:///schemas",
+      "name": "All Schemas",
+      "description": "Hologres is a PostgreSQL-compatible OLAP product. List all schemas in Hologres database",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "hologres:///{schema}/tables",
+      "name": "Schema Tables",
+      "description": "List all tables in a specific schema",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "hologres:///{schema}/{table}/ddl",
+      "name": "Table DDL",
+      "description": "Get the DDL script of a table in a specific schema",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "hologres:///{schema}/{table}/statistic",
+      "name": "Table Statistics",
+      "description": "Get statistics information of a table",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "hologres:///{schema}/{table}/partitions",
+      "name": "Table Statistics",
+      "description": "List all partitions of a partitioned table",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "system:///{+system_path}",
+      "name": "System internal Information",
+      "description": "System information in Hologres, following are some common system_paths:\n\n'missing_stats_tables'    Shows the tables that are missing statistics.\n'stat_activity'    Shows the information of current running queries.\n'query_log/latest/<row_limits>'    Get recent query log history with specified number of rows.\n'query_log/user/<user_name>/<row_limits>'    Get query log history for a specific user with row limits.\n'query_log/application/<application_name>/<row_limits>'    Get query log history for a specific application with row limits.\n'query_log/failed/<interval>/<row_limits>' - Get failed query log history with interval and specified number of rows.\n",
+      "mimetype": "text/plain"
+    }
+  ]
+}

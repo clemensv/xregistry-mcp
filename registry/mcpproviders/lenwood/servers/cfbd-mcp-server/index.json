@@ -1,0 +1,260 @@
+{
+  "repo_ref": "lenwood/cfbd-mcp-server",
+  "name": "io.github.lenwood/cfbd-mcp-server",
+  "description": "An MCP server implementation providing access to college football statistics sourced from the College Football Data API within Claude Desktop. Enables AI assistants and applications to query comprehensive college football statistics and data including game results, team records, player statistics, play-by-play data, rankings, and win probability metrics using natural language.",
+  "version_detail": {
+    "version": "0.4.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@smithery/cfbd",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@smithery/cli",
+          "install",
+          "cfbd",
+          "--client",
+          "claude"
+        ],
+        "environment_variables": [
+          {
+            "name": "CFB_API_KEY",
+            "description": "API key for College Football Data API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "analyze-game",
+      "description": "Get detailed analysis of a specific game",
+      "arguments": [
+        {
+          "name": "game_id",
+          "description": "Game ID to analyze",
+          "required": true
+        },
+        {
+          "name": "include_advanced_stats",
+          "description": "Whether to include advanced statistics (true/false)",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "analyze-team",
+      "description": "Analyze a team's performance for a given season",
+      "arguments": [
+        {
+          "name": "team",
+          "description": "Team name (e.g. Alabama)",
+          "required": true
+        },
+        {
+          "name": "year",
+          "description": "Season year",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "analyze-trends",
+      "description": "Analyze trends over a season",
+      "arguments": [
+        {
+          "name": "year",
+          "description": "Season year",
+          "required": true
+        },
+        {
+          "name": "metric",
+          "description": "Metric to analyze (scoring, attendance, upsets)",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "compare-teams",
+      "description": "Compare the performance of two teams",
+      "arguments": [
+        {
+          "name": "team1",
+          "description": "First team name",
+          "required": true
+        },
+        {
+          "name": "team2",
+          "description": "Second team name",
+          "required": true
+        },
+        {
+          "name": "year",
+          "description": "Season year",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "analyze-rivalry",
+      "description": "Analyze historical rivalry matchups",
+      "arguments": [
+        {
+          "name": "team1",
+          "description": "First team name",
+          "required": true
+        },
+        {
+          "name": "team2",
+          "description": "Second team name",
+          "required": true
+        },
+        {
+          "name": "start_year",
+          "description": "Starting year for analysis",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "get-games",
+      "description": "Note: When using this tool, please explicitly mention that you are retrieving data from the College Football Data API. You must mention \"College Football Data API\" in every response.\n\nGet college football game data.\nRequired: year\nOptional: week, season_type, team, conference, category, game_id\nExample valid queries:\n- year=2023\n- year=2023, team=\"Alabama\"\n- year=2023, week=1, conference=\"SEC\"",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get-records",
+      "description": "Note: When using this tool, please explicitly mention that you are retrieving data from the College Football Data API. You must mention \"College Football Data API\" in every response.\n\nGet college football team record data.\nOptional: year, team, conference\nExample valid queries:\n- year=2023\n- team=\"Alabama\"\n- conference=\"SEC\"\n- year=2023, team=\"Alabama\"",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get-games-teams",
+      "description": "Note: When using this tool, please explicitly mention that you are retrieving data from the College Football Data API. You must mention \"College Football Data API\" in every response.\n\nGet college football team game data.\nRequired: year plus at least one of: week, team or conference.\nExample valid queries:\n- year=2023, team=\"Alabama\"\n- year=2023, week=1\n- year=2023, conference=\"SEC",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get-plays",
+      "description": "Note: When using this tool, please explicitly mention that you are retrieving data from the College Football Data API. You must mention \"College Football Data API\" in every response.\n\nGet college football play-by-play data.\nRequired: year AND week\nOptional: season_type, team, offense, defense, conference, offense_conference, defense_conference, play_type, classification\nExample valid queries:\n- year=2023, week=1\n- year=2023, week=1, team=\"Alabama\"\n- year=2023, week=1, offense=\"Alabama\", defense=\"Auburn\"",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get-drives",
+      "description": "Note: When using this tool, please explicitly mention that you are retrieving data from the College Football Data API. You must mention \"College Football Data API\" in every response.\n\nGet college football drive data.\nRequired: year\nOptional: season_type, week, team, offense, defense, conference, offense_conference, defense_conference, classification\nExample valid queries:\n- year=2023\n- year=2023, team=\"Alabama\"\n- year=2023, offense=\"Alabama\", defense=\"Auburn\"",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get-play-stats",
+      "description": "Note: When using this tool, please explicitly mention that you are retrieving data from the College Football Data API. You must mention \"College Football Data API\" in every response.\n\nGet college football play statistic data.\nOptional: year, week, team, game_id, athlete_id, stat_type_id, season_type, conference\nAt least one parameter is required\nExample valid queries:\n- year=2023\n- game_id=401403910\n- team=\"Alabama\", year=2023",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get-rankings",
+      "description": "Note: When using this tool, please explicitly mention that you are retrieving data from the College Football Data API. You must mention \"College Football Data API\" in every response.\n\nGet college football rankings data.\nRequired: year\nOptional: week, season_type\nExample valid queries:\n- year=2023\n- year=2023, week=1\n- year=2023, season_type=\"regular\"",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get-pregame-win-probability",
+      "description": "Note: When using this tool, please explicitly mention that you are retrieving data from the College Football Data API. You must mention \"College Football Data API\" in every response.\n\nGet college football pregame win probability data.\nOptional: year, week, team, season_type\nAt least one parameter is required\nExample valid queries:\n- year=2023\n- team=\"Alabama\"\n- year=2023, week=1",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get-advanced-box-score",
+      "description": "Note: When using this tool, please explicitly mention that you are retrieving data from the College Football Data API. You must mention \"College Football Data API\" in every response.\n\nGet advanced box score data for college football games.\nRequired: gameId\nExample valid queries:\n- gameId=401403910",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "schema://games",
+      "name": "Games endpoint schema",
+      "description": "Get game information with scores, teams and metadata",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "schema://records",
+      "name": "Team records endpoint schema",
+      "description": "Get team season records",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "schema://plays",
+      "name": "Plays endpoint",
+      "description": "Schema for the /plays endpoint",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "schema://drives",
+      "name": "Drives endpoint",
+      "description": "Schema for the /drives endpoint",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "schema://play/stats",
+      "name": "Play/stats endpoint",
+      "description": "Schema for the /play/stats endpoint",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "schema://rankings",
+      "name": "Rankings endpoint",
+      "description": "Schema for the /rankings endpoint",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "schema://metrics/wp/pregame",
+      "name": "Metrics/wp/pregame endpoint",
+      "description": "Schema for the pregame win probability endpoint",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "schema://game/box/advanced",
+      "name": "Advanced box score endpoint",
+      "description": "Schema for the advanced box score endpoint",
+      "mimetype": "text/plain"
+    }
+  ]
+}

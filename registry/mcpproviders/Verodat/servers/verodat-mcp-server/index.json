@@ -1,0 +1,129 @@
+{
+  "repo_ref": "Verodat/verodat-mcp-server",
+  "name": "io.github.Verodat/verodat-mcp-server",
+  "description": "A Model Context Protocol (MCP) server implementation for Verodat, allowing AI models to interact with Verodat's data management capabilities through well-defined tools.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@Verodat/verodat-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "path/to/verodat-mcp-server/build/src/consume.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "VERODAT_AI_API_KEY",
+            "description": "API key for authentication",
+            "required": true
+          },
+          {
+            "name": "VERODAT_API_BASE_URL",
+            "description": "Base URL for Verodat API",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get-accounts",
+      "description": "Retrieve available accounts",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get-workspaces",
+      "description": "List workspaces within an account",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get-datasets",
+      "description": "List datasets in a workspace",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get-dataset-output",
+      "description": "Retrieve actual data from a dataset",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get-dataset-targetfields",
+      "description": "Retrieve field definitions for a dataset",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get-queries",
+      "description": "Retrieve existing AI queries",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get-ai-context",
+      "description": "Get workspace context and data structure",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "execute-ai-query",
+      "description": "Execute AI-powered queries on datasets",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "create-dataset",
+      "description": "Create a new dataset with defined schema",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "upload-dataset-rows",
+      "description": "Upload data rows to existing datasets",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  ],
+  "resources": []
+}

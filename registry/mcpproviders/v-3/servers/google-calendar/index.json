@@ -1,0 +1,181 @@
+{
+  "repo_ref": "v-3/google-calendar",
+  "name": "io.github.v-3/google-calendar",
+  "description": "This MCP server allows Claude to interact with your Google Calendar, enabling capabilities like listing events, creating meetings, and finding free time slots.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/google-calendar-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "GOOGLE_CLIENT_ID",
+            "description": "Google OAuth client ID",
+            "required": true
+          },
+          {
+            "name": "GOOGLE_CLIENT_SECRET",
+            "description": "Google OAuth client secret",
+            "required": true
+          },
+          {
+            "name": "GOOGLE_REDIRECT_URI",
+            "description": "OAuth redirect URI",
+            "required": true
+          },
+          {
+            "name": "GOOGLE_REFRESH_TOKEN",
+            "description": "OAuth refresh token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "list_events",
+      "description": "List calendar events within a specified time range",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "timeMin": {
+            "type": "string",
+            "description": "Start time (ISO string)"
+          },
+          "timeMax": {
+            "type": "string",
+            "description": "End time (ISO string)"
+          },
+          "maxResults": {
+            "type": "number",
+            "description": "Maximum number of events to return"
+          }
+        }
+      }
+    },
+    {
+      "name": "create_event",
+      "description": "Create a new calendar event",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "type": "string",
+            "description": "Event title"
+          },
+          "description": {
+            "type": "string",
+            "description": "Event description"
+          },
+          "startTime": {
+            "type": "string",
+            "description": "Event start time (ISO string)"
+          },
+          "endTime": {
+            "type": "string",
+            "description": "Event end time (ISO string)"
+          },
+          "attendees": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of attendee email addresses"
+          }
+        },
+        "required": [
+          "summary",
+          "startTime",
+          "endTime"
+        ]
+      }
+    },
+    {
+      "name": "update_event",
+      "description": "Update an existing calendar event",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "string",
+            "description": "ID of the event to update"
+          },
+          "summary": {
+            "type": "string",
+            "description": "New event title"
+          },
+          "description": {
+            "type": "string",
+            "description": "New event description"
+          },
+          "startTime": {
+            "type": "string",
+            "description": "New start time (ISO string)"
+          },
+          "endTime": {
+            "type": "string",
+            "description": "New end time (ISO string)"
+          },
+          "required": [
+            "eventId"
+          ]
+        }
+      }
+    },
+    {
+      "name": "delete_event",
+      "description": "Delete a calendar event",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "string",
+            "description": "ID of the event to delete"
+          }
+        },
+        "required": [
+          "eventId"
+        ]
+      }
+    },
+    {
+      "name": "find_free_time",
+      "description": "Find available time slots in the calendar",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "timeMin": {
+            "type": "string",
+            "description": "Start of time range (ISO string)"
+          },
+          "timeMax": {
+            "type": "string",
+            "description": "End of time range (ISO string)"
+          },
+          "duration": {
+            "type": "number",
+            "description": "Desired duration in minutes"
+          }
+        },
+        "required": [
+          "timeMin",
+          "timeMax",
+          "duration"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

@@ -1,0 +1,187 @@
+{
+  "repo_ref": "kenliao94/mcp-server-rabbitmq",
+  "name": "io.github.kenliao94/mcp-server-rabbitmq",
+  "description": "A Model Context Protocol server implementation for RabbitMQ. Enabling MCP client to interact with queues and topics hosted in a RabbitMQ instance.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@kenliao94/mcp-server-rabbitmq",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/path/to/repo/mcp-server-rabbitmq",
+          "run",
+          "mcp-server-rabbitmq",
+          "--rabbitmq-host",
+          "<hostname ex. test.rabbit.com, localhost>",
+          "--port",
+          "<port number ex. 5672>",
+          "--username",
+          "<rabbitmq username>",
+          "--password",
+          "<rabbitmq password>",
+          "--use-tls",
+          "<true if uses amqps, false otherwise>"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "enqueue",
+      "description": "Enqueue a message to a RabbitMQ queue.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "queue": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message",
+          "queue"
+        ]
+      }
+    },
+    {
+      "name": "fanout",
+      "description": "Publish a message to a RabbitMQ exchange with fanout.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "exchange": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message",
+          "exchange"
+        ]
+      }
+    },
+    {
+      "name": "list_queues",
+      "description": "List all RabbitMQ queues.",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "list_exchanges",
+      "description": "List all RabbitMQ exchanges.",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get_queue_info",
+      "description": "Get information about a specific RabbitMQ queue.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "queue": {
+            "type": "string"
+          },
+          "vhost": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "queue"
+        ]
+      }
+    },
+    {
+      "name": "delete_queue",
+      "description": "Delete a specific RabbitMQ queue.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "queue": {
+            "type": "string"
+          },
+          "vhost": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "queue"
+        ]
+      }
+    },
+    {
+      "name": "purge_queue",
+      "description": "Purge messages from a specific RabbitMQ queue.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "queue": {
+            "type": "string"
+          },
+          "vhost": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "queue"
+        ]
+      }
+    },
+    {
+      "name": "delete_exchange",
+      "description": "Delete a specific RabbitMQ exchange.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "exchange": {
+            "type": "string"
+          },
+          "vhost": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "exchange"
+        ]
+      }
+    },
+    {
+      "name": "get_exchange_info",
+      "description": "Get information about a specific RabbitMQ exchange.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "exchange": {
+            "type": "string"
+          },
+          "vhost": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "exchange"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

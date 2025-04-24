@@ -1,0 +1,145 @@
+{
+  "airtable-mcp-server": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:57.643661459Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "-y",
+          "airtable-mcp-server"
+        ],
+        "command": "npx",
+        "env": [
+          {
+            "description": "Airtable personal access token",
+            "name": "AIRTABLE_API_KEY",
+            "required": true
+          }
+        ],
+        "package": "airtable-mcp-server",
+        "runtime": "nodejs"
+      }
+    },
+    "description": "A Model Context Protocol server that provides read and write access to Airtable databases. This server enables LLMs to inspect database schemas, then read and write records.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "unknown",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/domdomegg/servers/airtable-mcp-server/meta",
+    "modifiedat": "2025-04-25T12:40:57.643661459Z",
+    "name": "airtable-mcp-server",
+    "repository": {
+      "name": "domdomegg/airtable-mcp-server",
+      "url": "https://github.com/domdomegg/airtable-mcp-server"
+    },
+    "resources": [
+      {
+        "description": "Schema of a specific table in an Airtable base",
+        "mimetype": "application/json",
+        "name": "Airtable Table Schema",
+        "uritemplate": "airtable://{baseId}/{tableId}/schema"
+      }
+    ],
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/domdomegg/servers/airtable-mcp-server",
+    "serverid": "airtable-mcp-server",
+    "serverversion": "0.1.0",
+    "tools": [
+      {
+        "description": "List records from a table",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_records"
+      },
+      {
+        "description": "Search for records containing specific text",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "search_records"
+      },
+      {
+        "description": "List all accessible Airtable bases",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "list_bases"
+      },
+      {
+        "description": "List all tables in a specific base",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_tables"
+      },
+      {
+        "description": "Get detailed information about a specific table",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "describe_table"
+      },
+      {
+        "description": "Get a specific record by ID",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_record"
+      },
+      {
+        "description": "Create a new record in a table",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "create_record"
+      },
+      {
+        "description": "Update up to 10 records in a table",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "update_records"
+      },
+      {
+        "description": "Delete records from a table",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "delete_records"
+      },
+      {
+        "description": "Create a new table in a base",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "create_table"
+      },
+      {
+        "description": "Update a table's name or description",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "update_table"
+      },
+      {
+        "description": "Create a new field in a table",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "create_field"
+      },
+      {
+        "description": "Update a field's name or description",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "update_field"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/domdomegg/servers/airtable-mcp-server/versions",
+    "xid": "/mcpproviders/domdomegg/servers/airtable-mcp-server"
+  }
+}

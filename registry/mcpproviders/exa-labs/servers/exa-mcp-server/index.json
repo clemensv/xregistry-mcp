@@ -1,0 +1,69 @@
+{
+  "repo_ref": "exa-labs/exa-mcp-server",
+  "name": "io.github.exa-labs/exa-mcp-server",
+  "description": "The Exa MCP server enables AI assistants to perform real-time web searches using Exa's powerful search API, providing structured search results including titles, URLs, and content snippets, caching recent searches as resources, handling rate limiting and errors gracefully, and supporting real-time web crawling for fresh content.",
+  "version_detail": {
+    "version": "0.3.6"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "exa-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "/path/to/exa-mcp-server/build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "EXA_API_KEY",
+            "description": "API key for Exa search API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "web_search",
+      "description": "Performs real-time web searches with optimized results and content extraction",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "research_paper_search",
+      "description": "Specialized search focused on academic papers and research content",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "twitter_search",
+      "description": "Dedicated Twitter/X.com search that finds tweets, profiles, and conversations",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "company_research",
+      "description": "Comprehensive company research tool that crawls company websites to gather detailed information about businesses",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "crawling",
+      "description": "Extracts content from specific URLs, useful for reading articles, PDFs, or any web page when you have the exact URL",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

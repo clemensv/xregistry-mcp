@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:44:43.043973218Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/zcaceres/servers/gtasks-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:44:43.043973218Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/zcaceres/servers/gtasks-mcp/meta",
+  "serverid": "gtasks-mcp",
+  "xid": "/mcpproviders/zcaceres/servers/gtasks-mcp/meta"
+}

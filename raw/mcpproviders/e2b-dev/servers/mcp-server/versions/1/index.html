@@ -1,0 +1,51 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:40:58.970770697Z",
+  "deployment": {
+    "sandbox": {
+      "args": [],
+      "command": "node",
+      "env": [],
+      "package": "@smithery/e2b-mcp-server",
+      "runtime": "nodejs"
+    }
+  },
+  "description": "The E2B MCP server allows you to add code interpreting capabilities to your Claude Desktop app via the E2B Sandbox.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "modifiedat": "2025-04-25T12:40:58.970770697Z",
+  "name": "e2b-mcp-server",
+  "repository": {
+    "name": "e2b-dev/mcp-server",
+    "url": "https://github.com/e2b-dev/mcp-server"
+  },
+  "resources": [],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/e2b-dev/servers/mcp-server/versions/1",
+  "serverid": "mcp-server",
+  "serverversion": "0.1.0",
+  "tools": [
+    {
+      "description": "Run python code in a secure sandbox by E2B. Using the Jupyter Notebook syntax.",
+      "inputschema": {
+        "properties": {
+          "code": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object"
+      },
+      "name": "run_code"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/e2b-dev/servers/mcp-server/versions/1"
+}

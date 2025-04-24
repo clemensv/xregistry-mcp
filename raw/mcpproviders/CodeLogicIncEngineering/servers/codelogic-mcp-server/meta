@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:40:51.086387335Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/CodeLogicIncEngineering/servers/codelogic-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:40:51.086387335Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/CodeLogicIncEngineering/servers/codelogic-mcp-server/meta",
+  "serverid": "codelogic-mcp-server",
+  "xid": "/mcpproviders/CodeLogicIncEngineering/servers/codelogic-mcp-server/meta"
+}

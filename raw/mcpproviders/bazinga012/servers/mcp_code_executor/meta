@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:40:44.476980214Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/bazinga012/servers/mcp_code_executor/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:40:44.476980214Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/bazinga012/servers/mcp_code_executor/meta",
+  "serverid": "mcp_code_executor",
+  "xid": "/mcpproviders/bazinga012/servers/mcp_code_executor/meta"
+}

@@ -1,0 +1,59 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:42:13.472968484Z",
+  "deployment": {
+    "sandbox": {
+      "args": [],
+      "command": "node ./bin/mcp-server-neon.js",
+      "env": [
+        {
+          "description": "API key for Neon authentication",
+          "name": "NEON_API_KEY",
+          "required": true
+        }
+      ],
+      "package": "@neondatabase/mcp-server-neon",
+      "runtime": "node"
+    }
+  },
+  "description": "Neon MCP Server is an open-source tool that lets you interact with your Neon Postgres databases in natural language. It acts as a bridge between natural language requests and the Neon API, built upon the Model Context Protocol (MCP), enabling management of projects, branches, queries, and migrations via conversational commands.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/neondatabase-labs/servers/mcp-server-neon/meta",
+  "modifiedat": "2025-04-25T12:42:13.472968484Z",
+  "name": "Neon MCP Server",
+  "repository": {
+    "name": "neondatabase-labs/mcp-server-neon",
+    "url": "https://github.com/neondatabase-labs/mcp-server-neon"
+  },
+  "resources": [
+    {
+      "description": "Resources exposed by Neon MCP server.",
+      "mimetype": "application/json",
+      "name": "NEON_RESOURCES",
+      "uritemplate": "/resources/{id}"
+    }
+  ],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/neondatabase-labs/servers/mcp-server-neon",
+  "serverid": "mcp-server-neon",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "description": "Tools registered for Neon MCP server to handle various database management tasks via MCP.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "NEON_TOOLS"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/neondatabase-labs/servers/mcp-server-neon/versions",
+  "xid": "/mcpproviders/neondatabase-labs/servers/mcp-server-neon"
+}

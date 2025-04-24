@@ -1,0 +1,17 @@
+{
+    "name": "flexsearch-indexer",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "Static FlexSearch index builder for MCP registries",
+    "main": "build-flexsearch.js",
+    "scripts": {
+      "start": "node build-flexsearch.js"
+    },
+    "dependencies": {
+      "flexsearch": "^0.7.31"
+    },
+    "devDependencies": {
+      "serve": "^14.2.0"
+    }
+  }
+  

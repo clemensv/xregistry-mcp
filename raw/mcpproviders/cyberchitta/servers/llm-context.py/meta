@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:40:53.009598816Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/cyberchitta/servers/llm-context.py/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:40:53.009598816Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/cyberchitta/servers/llm-context.py/meta",
+  "serverid": "llm-context.py",
+  "xid": "/mcpproviders/cyberchitta/servers/llm-context.py/meta"
+}

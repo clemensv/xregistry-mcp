@@ -1,0 +1,203 @@
+{
+  "repo_ref": "keboola/keboola-mcp-server",
+  "name": "io.github.keboola/keboola-mcp-server",
+  "description": "A Model Context Protocol (MCP) server for interacting with Keboola Connection. This server provides tools for listing and accessing data from Keboola Storage API.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [
+    {
+      "url": "https://connection.keboola.com",
+      "transporttype": "https"
+    }
+  ],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "keboola-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--api-url",
+          "https://connection.keboola.com"
+        ],
+        "environment_variables": [
+          {
+            "name": "KBC_STORAGE_TOKEN",
+            "description": "Keboola Storage API token",
+            "required": true
+          },
+          {
+            "name": "KBC_WORKSPACE_SCHEMA",
+            "description": "Snowflake schema or BigQuery dataset of your workspace",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "docs_query",
+      "description": "Answers a question using the Keboola documentation as a source.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Natural language query to search for in the documentation."
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "retrieve_components",
+      "description": "Retrieves components configurations in the project, optionally filtered by component types or specific component IDs",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "component_types": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of component types to filter by. If none, return all components."
+          },
+          "component_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of component IDs to retrieve configurations for. If none, return all components."
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "retrieve_transformations",
+      "description": "Retrieves transformations configurations in the project, optionally filtered by specific transformation IDs.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "transformation_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of transformation component IDs to retrieve configurations for."
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "get_component_details",
+      "description": "Gets detailed information about a specific Keboola component configuration given component/transformation ID and configuration ID.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "component_id": {
+            "type": "string",
+            "description": "Unique identifier of the Keboola component/transformation"
+          },
+          "configuration_id": {
+            "type": "string",
+            "description": "Unique identifier of the Keboola component/transformation configuration you want details about"
+          }
+        },
+        "required": [
+          "component_id",
+          "configuration_id"
+        ]
+      }
+    },
+    {
+      "name": "create_sql_transformation",
+      "description": "Creates an SQL transformation using the specified name, SQL query following the current SQL dialect, a detailed description, and optionally a list of created table names if and only if they are generated within the SQL statements.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "A short, descriptive name summarizing the purpose of the SQL transformation."
+          },
+          "description": {
+            "type": "string",
+            "description": "The detailed description of the SQL transformation capturing the user intent, explaining the SQL query, and the expected output."
+          },
+          "sql_statements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The executable SQL query statements written in the current SQL dialect. Each statement should be a separate item in the list."
+          },
+          "created_table_names": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "An empty list or a list of created table names if and only if they are generated within SQL statements (e.g., using `CREATE TABLE ...`)."
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "sql_statements"
+        ]
+      }
+    },
+    {
+      "name": "get_bucket_detail",
+      "description": "Tool to get details about a bucket."
+    },
+    {
+      "name": "get_job_detail",
+      "description": "Tool to get details about a job."
+    },
+    {
+      "name": "get_sql_dialect",
+      "description": "Tool to get the current SQL dialect."
+    },
+    {
+      "name": "get_table_detail",
+      "description": "Tool to get details about a table."
+    },
+    {
+      "name": "query_table",
+      "description": "Tool to query a table."
+    },
+    {
+      "name": "retrieve_bucket_tables",
+      "description": "Tool to retrieve tables in a bucket."
+    },
+    {
+      "name": "retrieve_buckets",
+      "description": "Tool to retrieve buckets."
+    },
+    {
+      "name": "retrieve_jobs",
+      "description": "Tool to retrieve jobs."
+    },
+    {
+      "name": "start_job",
+      "description": "Tool to start a job."
+    },
+    {
+      "name": "update_bucket_description",
+      "description": "Tool to update a bucket's description."
+    },
+    {
+      "name": "update_table_description",
+      "description": "Tool to update a table's description."
+    }
+  ],
+  "resources": []
+}

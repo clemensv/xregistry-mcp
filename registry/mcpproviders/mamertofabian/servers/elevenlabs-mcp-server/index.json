@@ -1,0 +1,168 @@
+{
+  "repo_ref": "mamertofabian/elevenlabs-mcp-server",
+  "name": "io.github.mamertofabian/elevenlabs-mcp-server",
+  "description": "A Model Context Protocol (MCP) server that integrates with ElevenLabs text-to-speech API, featuring both a server component and a sample web-based MCP Client (SvelteKit) for managing voice generation tasks.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@smithery/elevenlabs-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "elevenlabs-mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "ELEVENLABS_API_KEY",
+            "description": "API key for ElevenLabs",
+            "required": true
+          },
+          {
+            "name": "ELEVENLABS_VOICE_ID",
+            "description": "Default voice ID to use",
+            "required": false
+          },
+          {
+            "name": "ELEVENLABS_MODEL_ID",
+            "description": "Model ID for voice generation",
+            "required": false
+          },
+          {
+            "name": "ELEVENLABS_STABILITY",
+            "description": "Stability parameter for voice synthesis",
+            "required": false
+          },
+          {
+            "name": "ELEVENLABS_SIMILARITY_BOOST",
+            "description": "Similarity boost parameter",
+            "required": false
+          },
+          {
+            "name": "ELEVENLABS_STYLE",
+            "description": "Style parameter for voice",
+            "required": false
+          },
+          {
+            "name": "ELEVENLABS_OUTPUT_DIR",
+            "description": "Output directory for audio files",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "generate_audio_simple",
+      "description": "Generate audio from plain text using default voice settings",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "Plain text to convert to audio"
+          },
+          "voice_id": {
+            "type": "string",
+            "description": "Optional voice ID to use for generation"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "generate_audio_script",
+      "description": "Generate audio from a structured script with multiple voices and actors. \n                    Accepts either:\n                    1. Plain text string\n                    2. JSON string with format: {\n                        \"script\": [\n                            {\n                                \"text\": \"Text to speak\",\n                                \"voice_id\": \"optional-voice-id\",\n                                \"actor\": \"optional-actor-name\"\n                            },\n                            ...\n                        ]\n                    }",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "script": {
+            "type": "string",
+            "description": "JSON string containing script array or plain text. For JSON format, provide an object with a 'script' array containing objects with 'text' (required), 'voice_id' (optional), and 'actor' (optional) fields."
+          }
+        },
+        "required": [
+          "script"
+        ]
+      }
+    },
+    {
+      "name": "delete_job",
+      "description": "Delete a voiceover job and its associated files",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "description": "ID of the job to delete"
+          }
+        },
+        "required": [
+          "job_id"
+        ]
+      }
+    },
+    {
+      "name": "get_audio_file",
+      "description": "Get the audio file content for a specific job",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "description": "ID of the job to get audio file for"
+          }
+        },
+        "required": [
+          "job_id"
+        ]
+      }
+    },
+    {
+      "name": "list_voices",
+      "description": "Get a list of all available ElevenLabs voices with metadata",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get_voiceover_history",
+      "description": "Get voiceover job history. Optionally specify a job ID for a specific job.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "description": "Optional job ID to get details for a specific job"
+          }
+        },
+        "required": []
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "voiceover://history/{job_id}",
+      "name": "Voiceover Job History",
+      "description": "Access voiceover job history. Provide job_id for specific job or omit for all jobs.",
+      "mimetype": "application/json"
+    },
+    {
+      "uritemplate": "voiceover://voices",
+      "name": "Available Voices",
+      "description": "Access list of available ElevenLabs voices with metadata",
+      "mimetype": "application/json"
+    }
+  ]
+}

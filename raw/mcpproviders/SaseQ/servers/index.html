@@ -1,0 +1,199 @@
+{
+  "discord-mcp": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:43:12.633118686Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "-jar",
+          "/absolute/path/to/discord-mcp-0.0.1-SNAPSHOT.jar"
+        ],
+        "command": "java",
+        "env": [
+          {
+            "description": "Discord bot token",
+            "name": "DISCORD_TOKEN",
+            "required": true
+          }
+        ],
+        "package": "@SaseQ/discord-mcp",
+        "runtime": "java"
+      }
+    },
+    "description": "A Model Context Protocol (MCP) server for the Discord API (JDA), allowing seamless integration of Discord Bot with MCP-compatible applications like Claude Desktop.",
+    "docs": "https://github.com/SaseQ/discord-mcp/wiki",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/SaseQ/servers/discord-mcp/meta",
+    "modifiedat": "2025-04-25T12:43:12.633118686Z",
+    "name": "discord-mcp",
+    "repository": {
+      "name": "SaseQ/discord-mcp",
+      "url": "https://github.com/SaseQ/discord-mcp"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/SaseQ/servers/discord-mcp",
+    "serverid": "discord-mcp",
+    "serverversion": "0.0.1-SNAPSHOT",
+    "tools": [
+      {
+        "description": "Get detailed discord server information",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_server_info"
+      },
+      {
+        "description": "Send a message to a specific channel",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "send_message"
+      },
+      {
+        "description": "Edit a message from a specific channel",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "edit_message"
+      },
+      {
+        "description": "Delete a message from a specific channel",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "delete_message"
+      },
+      {
+        "description": "Read recent message history from a specific channel",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "read_messages"
+      },
+      {
+        "description": "Send a private message to a specific user",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "send_private_message"
+      },
+      {
+        "description": "Edit a private message from a specific user",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "edit_private_message"
+      },
+      {
+        "description": "Delete a private message from a specific user",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "delete_private_message"
+      },
+      {
+        "description": "Read recent message history from a specific user",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "read_private_messages"
+      },
+      {
+        "description": "Add a reaction (emoji) to a specific message",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "add_reaction"
+      },
+      {
+        "description": "Remove a specified reaction (emoji) from a message",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "remove_reaction"
+      },
+      {
+        "description": "Delete a channel",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "delete_channel"
+      },
+      {
+        "description": "Find a channel type and ID using name and server ID",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "find_channel"
+      },
+      {
+        "description": "List of all channels",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_channels"
+      },
+      {
+        "description": "Create a new category for channels",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "create_category"
+      },
+      {
+        "description": "Delete a category",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "delete_category"
+      },
+      {
+        "description": "Find a category ID using name and server ID",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "find_category"
+      },
+      {
+        "description": "List of channels in a specific category",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_channels_in_category"
+      },
+      {
+        "description": "Create a new webhook on a specific channel",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "create_webhook"
+      },
+      {
+        "description": "Delete a webhook",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "delete_webhook"
+      },
+      {
+        "description": "List of webhooks on a specific channel",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_webhooks"
+      },
+      {
+        "description": "Send a message via webhook",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "send_webhook_message"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/SaseQ/servers/discord-mcp/versions",
+    "xid": "/mcpproviders/SaseQ/servers/discord-mcp"
+  }
+}

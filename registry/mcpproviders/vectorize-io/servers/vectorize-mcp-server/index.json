@@ -1,0 +1,108 @@
+{
+  "repo_ref": "vectorize-io/vectorize-mcp-server",
+  "name": "io.github.vectorize-io/vectorize-mcp-server",
+  "description": "A Model Context Protocol (MCP) server implementation that integrates with Vectorize for advanced Vector retrieval and text extraction.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@vectorize-io/vectorize-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@vectorize-io/vectorize-mcp-server@latest"
+        ],
+        "environment_variables": [
+          {
+            "name": "VECTORIZE_ORG_ID",
+            "description": "Vectorize Organization ID",
+            "required": true
+          },
+          {
+            "name": "VECTORIZE_TOKEN",
+            "description": "Vectorize Token",
+            "required": true
+          },
+          {
+            "name": "VECTORIZE_PIPELINE_ID",
+            "description": "Vectorize Pipeline ID",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "retrieve",
+      "description": "Retrieve documents from the configured pipeline.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string",
+            "description": "The term to search for."
+          },
+          "k": {
+            "type": "number",
+            "description": "The number of documents to retrieve.",
+            "default": 4
+          }
+        },
+        "required": [
+          "question"
+        ]
+      }
+    },
+    {
+      "name": "deep-research",
+      "description": "Generate a deep research on the configured pipeline.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The deep research query."
+          },
+          "webSearch": {
+            "type": "boolean",
+            "description": "Whether to perform a web search."
+          }
+        },
+        "required": [
+          "query",
+          "webSearch"
+        ]
+      }
+    },
+    {
+      "name": "extract",
+      "description": "Perform text extraction and chunking on a document.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "base64Document": {
+            "type": "string",
+            "description": "Document encoded in base64."
+          },
+          "contentType": {
+            "type": "string",
+            "description": "Document content type."
+          }
+        },
+        "required": [
+          "base64Document",
+          "contentType"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:43:52.08870999Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/tavily-ai/servers/tavily-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:43:52.08870999Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/tavily-ai/servers/tavily-mcp/meta",
+  "serverid": "tavily-mcp",
+  "xid": "/mcpproviders/tavily-ai/servers/tavily-mcp/meta"
+}

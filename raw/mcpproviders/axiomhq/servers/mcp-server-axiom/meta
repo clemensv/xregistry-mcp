@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:40:42.874665564Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/axiomhq/servers/mcp-server-axiom/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:40:42.874665564Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/axiomhq/servers/mcp-server-axiom/meta",
+  "serverid": "mcp-server-axiom",
+  "xid": "/mcpproviders/axiomhq/servers/mcp-server-axiom/meta"
+}

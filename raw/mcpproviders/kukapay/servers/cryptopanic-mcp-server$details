@@ -1,0 +1,62 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:44.197591298Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "--directory",
+        "/your/path/to/cryptopanic-mcp-server",
+        "run",
+        "main.py"
+      ],
+      "command": "uv",
+      "env": [
+        {
+          "description": "CryptoPanic API key",
+          "name": "CRYPTOPANIC_API_KEY",
+          "required": false
+        }
+      ],
+      "package": "unspecified",
+      "runtime": "unspecified"
+    }
+  },
+  "description": "Provide the latest cryptocurrency news to AI agents, powered by CryptoPanic.",
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kukapay/servers/cryptopanic-mcp-server/meta",
+  "modifiedat": "2025-04-25T12:41:44.197591298Z",
+  "name": "cryptopanic-mcp-server",
+  "repository": {
+    "name": "kukapay/cryptopanic-mcp-server",
+    "url": "https://github.com/kukapay/cryptopanic-mcp-server"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kukapay/servers/cryptopanic-mcp-server",
+  "serverid": "cryptopanic-mcp-server",
+  "serverversion": "unspecified",
+  "tools": [
+    {
+      "description": "Fetch latest cryptocurrency news, analysis, or videos from CryptoPanic.",
+      "inputschema": {
+        "properties": {
+          "kind": {
+            "description": "Content type (news, analysis, videos)",
+            "type": "string"
+          },
+          "num_pages": {
+            "description": "Number of pages to fetch (default: 1, max: 10)",
+            "type": "integer"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "name": "get_crypto_news"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kukapay/servers/cryptopanic-mcp-server/versions",
+  "xid": "/mcpproviders/kukapay/servers/cryptopanic-mcp-server"
+}

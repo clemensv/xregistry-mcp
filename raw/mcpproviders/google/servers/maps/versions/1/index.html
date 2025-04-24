@@ -1,0 +1,289 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:16.864053151Z",
+  "deployment": {
+    "container": {
+      "args": [
+        "run",
+        "-i",
+        "--rm"
+      ],
+      "env": [
+        {
+          "description": "Google Maps API key",
+          "name": "GOOGLE_MAPS_API_KEY",
+          "required": true
+        }
+      ],
+      "image": "mcp/google-maps"
+    },
+    "sandbox": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-google-maps"
+      ],
+      "command": "npx",
+      "env": [
+        {
+          "description": "Google Maps API key",
+          "name": "GOOGLE_MAPS_API_KEY",
+          "required": true
+        }
+      ],
+      "package": "@modelcontextprotocol/server-google-maps",
+      "packageversion": "*",
+      "runtime": "npx"
+    }
+  },
+  "description": "Google Maps API integration for geocoding, directions, and more.",
+  "documentation": "https://developers.google.com/maps/documentation",
+  "endpoints": {
+    "http": {
+      "authorization": {
+        "description": "Bearer token for Google Maps API",
+        "format": "Bearer {token}",
+        "name": "Authorization",
+        "required": true,
+        "type": "header"
+      },
+      "openapi": {
+        "description": "OpenAPI specification for Google Maps API MCP",
+        "url": "https://maps.googleapis.com/maps/api/mcp/openapi.json"
+      },
+      "uri": "https://maps.googleapis.com/maps/api/mcp"
+    },
+    "httplocal": {
+      "deployment": "container",
+      "host": "localhost",
+      "port": -1,
+      "protocol": "http"
+    },
+    "mqtt": {
+      "authorization": {
+        "description": "Plain MQTT authentication",
+        "format": "{username}:{password}",
+        "password": {
+          "description": "Google Maps API secret",
+          "required": true
+        },
+        "required": true,
+        "type": "PLAIN",
+        "username": {
+          "description": "Google Maps API key",
+          "required": true
+        }
+      },
+      "uri": "mqtt://maps.googleapis.com/maps/api/mcp"
+    },
+    "stdio": {
+      "deployment": "sandbox"
+    },
+    "websockets": {
+      "authorization": {
+        "description": "Bearer token for Google Maps API",
+        "format": "Bearer {token}",
+        "name": "Authorization",
+        "required": true,
+        "type": "header"
+      },
+      "uri": "wss://maps.googleapis.com/maps/api/mcp"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0.0",
+  "modifiedat": "2025-04-25T12:41:16.864053151Z",
+  "name": "Google Maps",
+  "prompts": [],
+  "resources": [],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/google/servers/maps/versions/1",
+  "serverid": "maps",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "description": "Convert address to coordinates",
+      "inputschema": {
+        "properties": {
+          "address": {
+            "description": "The address to geocode.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "address"
+        ],
+        "type": "object"
+      },
+      "name": "maps_geocode"
+    },
+    {
+      "description": "Convert coordinates to address",
+      "inputschema": {
+        "properties": {
+          "latitude": {
+            "description": "The latitude of the location.",
+            "type": "number"
+          },
+          "longitude": {
+            "description": "The longitude of the location.",
+            "type": "number"
+          }
+        },
+        "required": [
+          "latitude",
+          "longitude"
+        ],
+        "type": "object"
+      },
+      "name": "maps_reverse_geocode"
+    },
+    {
+      "description": "Search for places using text query",
+      "inputschema": {
+        "properties": {
+          "location": {
+            "properties": {
+              "latitude": {
+                "des": "The latitude of the location.",
+                "typ": "number"
+              },
+              "longitude": {
+                "de": "The longitude of the location.",
+                "ty": "number"
+              }
+            },
+            "required": [
+              "latitude",
+              "longitude"
+            ],
+            "type": "object"
+          },
+          "query": {
+            "type": "string"
+          },
+          "radius": {
+            "description": "The radius (in meters) within which to search for places.",
+            "type": "number"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "maps_search_places"
+    },
+    {
+      "description": "Get detailed information about a place",
+      "inputschema": {
+        "properties": {
+          "place_id": {
+            "description": "The unique identifier for the place.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "place_id"
+        ],
+        "type": "object"
+      },
+      "name": "maps_place_details"
+    },
+    {
+      "description": "Calculate distances and times between points",
+      "inputschema": {
+        "properties": {
+          "destinations": {
+            "items": {
+              "description": "The destination locations for the distance matrix.",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "mode": {
+            "description": "The mode of transportation to use for the distance calculation.",
+            "enum": [
+              "driving",
+              "walking",
+              "bicycling",
+              "transit"
+            ],
+            "type": "string"
+          },
+          "origins": {
+            "items": {
+              "description": "The origin locations for the distance matrix.",
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "origins",
+          "destinations"
+        ],
+        "type": "object"
+      },
+      "name": "maps_distance_matrix"
+    },
+    {
+      "description": "Get elevation data for locations",
+      "inputschema": {
+        "properties": {
+          "locations": {
+            "items": {
+              "properties": {
+                "latit": "The latitude of the location.",
+                "longi": "The longitude of the location."
+              },
+              "required": [
+                "latitude",
+                "longitude"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "locations"
+        ],
+        "type": "object"
+      },
+      "name": "maps_elevation"
+    },
+    {
+      "description": "Get directions between points",
+      "inputschema": {
+        "properties": {
+          "destination": {
+            "description": "The endpoint for the directions.",
+            "type": "string"
+          },
+          "mode": {
+            "description": "The mode of transportation to use for the directions.",
+            "enum": [
+              "driving",
+              "walking",
+              "bicycling",
+              "transit"
+            ],
+            "type": "string"
+          },
+          "origin": {
+            "description": "The starting point for the directions.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "origin",
+          "destination"
+        ],
+        "type": "object"
+      },
+      "name": "maps_directions"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/google/servers/maps/versions/1"
+}

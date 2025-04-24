@@ -1,0 +1,85 @@
+{
+  "repo_ref": "apeyroux/mcp-xmind",
+  "name": "io.github.apeyroux/mcp-xmind",
+  "description": "A Model Context Protocol server for analyzing and querying XMind mind maps. This tool provides powerful capabilities for searching, extracting, and analyzing content from XMind files.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@41px/mcp-xmind",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "dist/index.js",
+          "<allowed-directory>"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "read_xmind",
+      "description": "Parse and analyze XMind files\nExtract complete mind map structure",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_todo_tasks",
+      "description": "Extract and analyze TODO tasks\nInclude task context and hierarchy",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_xmind_directory",
+      "description": "Recursively scan for XMind files\nFilter and organize results",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "read_multiple_xmind_files",
+      "description": "Process multiple files simultaneously\nCompare and analyze across files",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "search_xmind_files",
+      "description": "Search files by name patterns\nRecursive directory scanning",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "extract_node",
+      "description": "Smart fuzzy path matching\nRanked search results\nComplete subtree extraction",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "extract_node_by_id",
+      "description": "Direct node access by ID\nFast and precise retrieval",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "search_nodes",
+      "description": "Multi-criteria content search\nConfigurable search fields",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

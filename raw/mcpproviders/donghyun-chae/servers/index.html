@@ -1,0 +1,76 @@
+{
+  "mcp-amadeus": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:58.102855331Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "--directory",
+          "./src/",
+          "run",
+          "--env-file",
+          ".env",
+          "server.py"
+        ],
+        "command": "uv",
+        "env": [
+          {
+            "description": "Amadeus API Client ID",
+            "name": "AMADEUS_CLIENT_ID",
+            "required": true
+          },
+          {
+            "description": "Amadeus API Client Secret",
+            "name": "AMADEUS_CLIENT_SECRET",
+            "required": true
+          }
+        ],
+        "package": "@donghyun-chae/mcp-amadeus",
+        "runtime": "uv"
+      }
+    },
+    "description": "MCP-Amadeus is a community-developed Model Context Protocol (MCP) server that integrates with the Amadeus Flight Offers Search API to provide flight search capabilities through natural language interfaces. Built for use with MCP-compatible clients (e.g., Claude Desktop).",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/donghyun-chae/servers/mcp-amadeus/meta",
+    "modifiedat": "2025-04-25T12:40:58.102855331Z",
+    "name": "Amadeus MCP Server",
+    "repository": {
+      "name": "donghyun-chae/mcp-amadeus",
+      "url": "https://github.com/donghyun-chae/mcp-amadeus"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/donghyun-chae/servers/mcp-amadeus",
+    "serverid": "mcp-amadeus",
+    "serverversion": "unknown",
+    "tools": [
+      {
+        "description": "Retrieves flight offers from the Amadeus Flight Offers Search API.",
+        "inputschema": {
+          "properties": {
+            "departure_date": {
+              "type": "string"
+            },
+            "destination": {
+              "type": "string"
+            },
+            "origin": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "origin",
+            "destination",
+            "departure_date"
+          ],
+          "type": "object"
+        },
+        "name": "get_flight_offers"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/donghyun-chae/servers/mcp-amadeus/versions",
+    "xid": "/mcpproviders/donghyun-chae/servers/mcp-amadeus"
+  }
+}

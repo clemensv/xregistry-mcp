@@ -1,0 +1,169 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:43:52.08870999Z",
+  "deployment": {
+    "sandbox": {
+      "args": [],
+      "command": "node",
+      "env": [
+        {
+          "description": "API key for Tavily service",
+          "name": "TAVILY_API_KEY",
+          "required": true
+        }
+      ],
+      "package": "tavily-mcp",
+      "runtime": "node"
+    }
+  },
+  "description": "The Tavily MCP server provides seamless interaction with the tavily-search and tavily-extract tools, enabling real-time web search and intelligent data extraction capabilities via the Model Context Protocol.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/tavily-ai/servers/tavily-mcp/meta",
+  "modifiedat": "2025-04-25T12:43:52.08870999Z",
+  "name": "tavily-mcp",
+  "repository": {
+    "name": "tavily-ai/tavily-mcp",
+    "url": "https://github.com/tavily-ai/tavily-mcp"
+  },
+  "resources": [],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/tavily-ai/servers/tavily-mcp",
+  "serverid": "tavily-mcp",
+  "serverversion": "0.1.0",
+  "tools": [
+    {
+      "description": "A powerful web search tool that provides comprehensive, real-time results using Tavily's AI search engine. Returns relevant web content with customizable parameters for result count, content type, and domain filtering. Ideal for gathering current information, news, and detailed web content analysis.",
+      "inputschema": {
+        "properties": {
+          "days": {
+            "default": 3,
+            "description": "The number of days back from the current date to include in the search results. This specifies the time frame of data to be retrieved. Please note that this feature is only available when using the 'news' search topic",
+            "type": "number"
+          },
+          "exclude_domains": {
+            "default": [],
+            "description": "List of domains to specifically exclude, if the user asks to exclude a domain set this to the domain of the site",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "include_domains": {
+            "default": [],
+            "description": "A list of domains to specifically include in the search results, if the user asks to search on specific sites set this to the domain of the site",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "include_image_descriptions": {
+            "defau": false,
+            "descr": "Include a list of query-related images and their descriptions in the response",
+            "type": "boolean"
+          },
+          "include_images": {
+            "default": false,
+            "description": "Include a list of query-related images in the response",
+            "type": "boolean"
+          },
+          "include_raw_content": {
+            "default": false,
+            "description": "Include the cleaned and parsed HTML content of each search result",
+            "type": "boolean"
+          },
+          "max_results": {
+            "default": 10,
+            "description": "The maximum number of search results to return",
+            "maximum": 20,
+            "minimum": 5,
+            "type": "number"
+          },
+          "query": {
+            "description": "Search query",
+            "type": "string"
+          },
+          "search_depth": {
+            "default": "basic",
+            "description": "The depth of the search. It can be 'basic' or 'advanced'",
+            "enum": [
+              "basic",
+              "advanced"
+            ],
+            "type": "string"
+          },
+          "time_range": {
+            "description": "The time range back from the current date to include in the search results. This feature is available for both 'general' and 'news' search topics",
+            "enum": [
+              "day",
+              "week",
+              "month",
+              "year",
+              "d",
+              "w",
+              "m",
+              "y"
+            ],
+            "type": "string"
+          },
+          "topic": {
+            "default": "general",
+            "description": "The category of the search. This will determine which of our agents will be used for the search",
+            "enum": [
+              "general",
+              "news"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "tavily-search"
+    },
+    {
+      "description": "A powerful web content extraction tool that retrieves and processes raw content from specified URLs, ideal for data collection, content analysis, and research tasks.",
+      "inputschema": {
+        "properties": {
+          "extract_depth": {
+            "default": "basic",
+            "description": "Depth of extraction - 'basic' or 'advanced', if usrls are linkedin use 'advanced' or if explicitly told to use advanced",
+            "enum": [
+              "basic",
+              "advanced"
+            ],
+            "type": "string"
+          },
+          "include_images": {
+            "default": false,
+            "description": "Include a list of images extracted from the urls in the response",
+            "type": "boolean"
+          },
+          "urls": {
+            "description": "List of URLs to extract content from",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "urls"
+        ],
+        "type": "object"
+      },
+      "name": "tavily-extract"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/tavily-ai/servers/tavily-mcp/versions",
+  "xid": "/mcpproviders/tavily-ai/servers/tavily-mcp"
+}

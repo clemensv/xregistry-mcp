@@ -1,0 +1,13 @@
+{
+  "repo_ref": "stripe/agent-toolkit",
+  "name": "io.github.stripe/agent-toolkit",
+  "description": "Enables integration with Stripe APIs through function calling, supporting multiple agent frameworks including Model Context Protocol (MCP).",
+  "version_detail": {
+    "version": "0.4.0"
+  },
+  "remotes": [],
+  "registries": [],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

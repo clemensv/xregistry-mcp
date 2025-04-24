@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:30.208200783Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/inkeep/servers/mcp-server-python/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:30.208200783Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/inkeep/servers/mcp-server-python/meta",
+  "serverid": "mcp-server-python",
+  "xid": "/mcpproviders/inkeep/servers/mcp-server-python/meta"
+}

@@ -1,0 +1,58 @@
+{
+  "name": "io.github.clemensv/mcp-servers/postgres",
+  "description": "MCP server for resource discovery and metadata publication from PostgreSQL databases",
+  "version_detail": {
+    "version": "1.0.2"
+  },
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "mcp-postgres-server",
+      "license": "MIT",
+      "command_arguments": {
+        "sub_commands": [
+          {
+            "name": "start",
+            "description": "Start the PostgreSQL MCP server",
+            "named_arguments": null
+          }
+        ],
+        "positional_arguments": null,
+        "environment_variables": [
+          {
+            "name": "PGHOST",
+            "description": "PostgreSQL server hostname or IP",
+            "required": true
+          },
+          {
+            "name": "PGPORT",
+            "description": "PostgreSQL server port",
+            "required": false
+          },
+          {
+            "name": "PGUSER",
+            "description": "Username for PostgreSQL authentication",
+            "required": true
+          },
+          {
+            "name": "PGPASSWORD",
+            "description": "Password for PostgreSQL authentication",
+            "required": true
+          },
+          {
+            "name": "PGDATABASE",
+            "description": "Target PostgreSQL database",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "remotes": [
+    {
+      "transporttype": "postgres",
+      "url": "postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}"
+    }
+  ]
+}

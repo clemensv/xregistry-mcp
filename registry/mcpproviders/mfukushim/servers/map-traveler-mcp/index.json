@@ -1,0 +1,244 @@
+{
+  "repo_ref": "mfukushim/map-traveler-mcp",
+  "name": "io.github.mfukushim/map-traveler-mcp",
+  "description": "This is an MCP server that creates an environment for an avatar to virtually travel on Google Maps. From an MCP client such as Claude Desktop, you can give instructions to the avatar and report on the progress of its journey with photos.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get_traveler_view_info",
+      "description": "Gets information about the current travel avatar's location.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "includePhoto": {
+            "type": "boolean",
+            "description": "Gets nearby Google Street View photos. If you have set up an image generation AI, it will synthesize the avatar."
+          },
+          "includeNearbyFacilities": {
+            "type": "boolean",
+            "description": "Gets information about nearby facilities."
+          }
+        },
+        "required": [
+          "includePhoto",
+          "includeNearbyFacilities"
+        ]
+      }
+    },
+    {
+      "name": "get_traveler_location",
+      "description": "Gets information about the current travel avatar's address and nearby facilities.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "reach_a_percentage_of_destination",
+      "description": "Reach a specified percentage of the destination (moveMode=skip only)",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "timeElapsedPercentage": {
+            "type": "integer",
+            "description": "Percent progress towards destination(0~100)"
+          }
+        },
+        "required": [
+          "timeElapsedPercentage"
+        ]
+      }
+    },
+    {
+      "name": "set_traveler_location",
+      "description": "Sets the current travel avatar's location.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "description": "Address information (exact address, or general name that Google Maps or Claude can recognize, etc.)"
+          }
+        },
+        "required": [
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "get_traveler_destination_address",
+      "description": "Get the destination of the travel avatar you set",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "set_traveler_destination_address",
+      "description": "Set the destination of the travel avatar",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "description": "Address information (exact address, or general name that Google Maps or Claude can recognize, etc.)"
+          }
+        },
+        "required": [
+          "address"
+        ]
+      }
+    },
+    {
+      "name": "start_traveler_journey",
+      "description": "Start the journey at the destination.(moveMode=realtime only)",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "stop_traveler_journey",
+      "description": "Stop the journey.(moveMode=realtime only)",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "set_traveler_info",
+      "description": "Set the traveler's attributes. Set the traveler's personality that you want to change dynamically, such as name and personality. However, if you use a role script, the script is more stable.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "settings": {
+            "type": "string",
+            "description": "Setting information such as name and personality."
+          }
+        },
+        "required": [
+          "settings"
+        ]
+      }
+    },
+    {
+      "name": "get_traveler_info",
+      "description": "Get the traveler's attributes. Get the traveler's personality.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "set_avatar_prompt",
+      "description": "Set the prompt when generating the travel avatar image. The default is an anime-style woman. The anime style is enforced to prevent fake images.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "description": "Prompt string"
+          }
+        },
+        "required": [
+          "prompt"
+        ]
+      }
+    },
+    {
+      "name": "reset_avatar_prompt",
+      "description": "Reset avatar generation prompts to default.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_sns_feeds",
+      "description": "Gets Bluesky SNS articles for the specified custom feed (feeds containing a specific tag).",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_sns_mentions",
+      "description": "Gets recent mentions (likes, replies) to Bluesky SNS posts that you made yourself.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "post_sns_writer",
+      "description": "Posts an article to Bluesky SNS with the specified custom feed. Set a specific tag so that it can be determined that the post was generated by the travel bot.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "article"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    },
+    {
+      "name": "reply_sns_writer",
+      "description": "Reply to the article with the specified id. Set a specific tag so that it can be determined that the post was generated by the travel bot.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "reply"
+          },
+          "id": {
+            "type": "string",
+            "description": "The ID of the post to reply to"
+          }
+        },
+        "required": [
+          "message",
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "add_like",
+      "description": "Add a like to the specified post.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the post to like"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "tips",
+      "description": "Guides you on how to set up features that have not yet been set.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_setting",
+      "description": "Get environment and image settings.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "custom_prompt_samples",
+      "description": "Has five custom prompt samples. When you import a prompt with Claude Desktop, Claude will act as a travel",
+      "uritemplate": "/prompts/custom_samples"
+    }
+  ]
+}

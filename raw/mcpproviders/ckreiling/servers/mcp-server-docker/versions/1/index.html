@@ -1,0 +1,211 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:40:49.307214797Z",
+  "deployment": {
+    "container": {
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-v",
+        "/var/run/docker.sock:/var/run/docker.sock",
+        "mcp-server-docker:latest"
+      ],
+      "image": "mcp-server-docker:latest"
+    },
+    "sandbox": {
+      "command": "unknown",
+      "package": "unknown",
+      "runtime": "unknown"
+    }
+  },
+  "description": "An MCP server for managing Docker with natural language! Compose containers, introspect and debug running containers, and manage persistent data with Docker volumes.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "modifiedat": "2025-04-25T12:40:49.307214797Z",
+  "name": "docker-server",
+  "prompts": [
+    {
+      "arguments": [
+        {
+          "description": "Unique name of the project",
+          "name": "name",
+          "required": true
+        },
+        {
+          "description": "Describe containers you want",
+          "name": "containers",
+          "required": true
+        }
+      ],
+      "description": "Treat the LLM like a Docker Compose manager",
+      "name": "docker_compose"
+    }
+  ],
+  "repository": {
+    "name": "ckreiling/mcp-server-docker",
+    "url": "https://github.com/ckreiling/mcp-server-docker"
+  },
+  "resources": [
+    {
+      "description": "Live logs for container {container.name}",
+      "mimetype": "text/plain",
+      "name": "Logs for container",
+      "uritemplate": "docker://containers/{id}/logs"
+    },
+    {
+      "description": "Live resource usage stats for container {container.name}",
+      "mimetype": "application/json",
+      "name": "Stats for container",
+      "uritemplate": "docker://containers/{id}/stats"
+    }
+  ],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ckreiling/servers/mcp-server-docker/versions/1",
+  "serverid": "mcp-server-docker",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "description": "List all Docker containers",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "list_containers"
+    },
+    {
+      "description": "Create a new Docker container",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_container"
+    },
+    {
+      "description": "Run an image in a new Docker container (preferred over `create_container` + `start_container`)",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "run_container"
+    },
+    {
+      "description": "Stop and remove a container, then run a new container. Fails if the container does not exist.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "recreate_container"
+    },
+    {
+      "description": "Start a Docker container",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "start_container"
+    },
+    {
+      "description": "Fetch logs for a Docker container",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "fetch_container_logs"
+    },
+    {
+      "description": "Stop a Docker container",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "stop_container"
+    },
+    {
+      "description": "Remove a Docker container",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "remove_container"
+    },
+    {
+      "description": "List Docker images",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_images"
+    },
+    {
+      "description": "Pull a Docker image",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "pull_image"
+    },
+    {
+      "description": "Push a Docker image",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "push_image"
+    },
+    {
+      "description": "Build a Docker image from a Dockerfile",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "build_image"
+    },
+    {
+      "description": "Remove a Docker image",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "remove_image"
+    },
+    {
+      "description": "List Docker networks",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_networks"
+    },
+    {
+      "description": "Create a Docker network",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_network"
+    },
+    {
+      "description": "Remove a Docker network",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "remove_network"
+    },
+    {
+      "description": "List Docker volumes",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_volumes"
+    },
+    {
+      "description": "Create a Docker volume",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_volume"
+    },
+    {
+      "description": "Remove a Docker volume",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "remove_volume"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/ckreiling/servers/mcp-server-docker/versions/1"
+}

@@ -1,0 +1,240 @@
+{
+    "groups": {
+        "mcpproviders": {
+            "plural": "mcpproviders",
+            "singular": "mcpprovider",
+            "resources": {
+                "servers": {
+                    "plural": "servers",
+                    "singular": "server",
+                    "maxversions": 0,
+                    "setversionid": false,
+                    "setdefaultversionsticky": false,
+                    "hasdocument": false,
+                    "singleversionroot": true,
+                    "labels": {},
+                    "attributes": {
+                        "name": {
+                            "name": "name",
+                            "type": "string",
+                            "description": "Unique reverse-DNS identifier of the repository."
+                        },
+                        "description": {
+                            "name": "description",
+                            "type": "string",
+                            "description": "Repository or server overview."
+                        },
+                        "version_detail": {
+                            "name": "version_detail",
+                            "type": "object",
+                            "attributes": {
+                                "version": {
+                                    "name": "version",
+                                    "type": "string",
+                                    "description": "Semantic version number detail."
+                                }
+                            }
+                        },
+                        "registries": {
+                            "name": "registries",
+                            "type": "array",
+                            "description": "Package registry metadata blocks.",
+                            "item": {
+                                "type": "object",
+                                "attributes": {
+                                    "name": {
+                                        "name": "name",
+                                        "type": "string"
+                                    },
+                                    "package_name": {
+                                        "name": "package_name",
+                                        "type": "string"
+                                    },
+                                    "license": {
+                                        "name": "license",
+                                        "type": "string"
+                                    },
+                                    "command_arguments": {
+                                        "name": "command_arguments",
+                                        "type": "object",
+                                        "attributes": {
+                                            "sub_commands": {
+                                                "name": "sub_commands",
+                                                "type": "array",
+                                                "item": {
+                                                    "type": "object",
+                                                    "attributes": {
+                                                        "name": {
+                                                            "name": "name",
+                                                            "type": "string"
+                                                        },
+                                                        "description": {
+                                                            "name": "description",
+                                                            "type": "string"
+                                                        },
+                                                        "named_arguments": {
+                                                            "name": "named_arguments",
+                                                            "type": "array",
+                                                            "item": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "positional_arguments": {
+                                                "name": "positional_arguments",
+                                                "type": "array",
+                                                "item": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "environment_variables": {
+                                                "name": "environment_variables",
+                                                "type": "array",
+                                                "item": {
+                                                    "type": "object",
+                                                    "attributes": {
+                                                        "name": {
+                                                            "name": "name",
+                                                            "type": "string"
+                                                        },
+                                                        "description": {
+                                                            "name": "description",
+                                                            "type": "string"
+                                                        },
+                                                        "required": {
+                                                            "name": "required",
+                                                            "type": "boolean"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "named_arguments": {
+                                                "name": "named_arguments",
+                                                "type": "array",
+                                                "item": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "repo_ref": {
+                            "name": "repo_ref",
+                            "type": "string",
+                            "description": "Repository reference for the server."
+                        },
+                        "remotes": {
+                            "name": "remotes",
+                            "type": "array",
+                            "description": "Source‑code hosting locations.",
+                            "item": {
+                                "type": "object",
+                                "attributes": {
+                                    "transporttype": {
+                                        "name": "transporttype",
+                                        "type": "string"
+                                    },
+                                    "url": {
+                                        "name": "url",
+                                        "type": "url"
+                                    }
+                                }
+                            }
+                        },
+                        "prompts": {
+                            "name": "prompts",
+                            "type": "array",
+                            "description": "Static prompt templates bundled with this server.",
+                            "item": {
+                                "type": "object",
+                                "attributes": {
+                                    "name": {
+                                        "name": "name",
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "name": "description",
+                                        "type": "string"
+                                    },
+                                    "arguments": {
+                                        "name": "arguments",
+                                        "type": "array",
+                                        "item": {
+                                            "type": "object",
+                                            "attributes": {
+                                                "name": {
+                                                    "name": "name",
+                                                    "type": "string"
+                                                },
+                                                "description": {
+                                                    "name": "description",
+                                                    "type": "string"
+                                                },
+                                                "required": {
+                                                    "name": "required",
+                                                    "type": "boolean"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "tools": {
+                            "name": "tools",
+                            "type": "array",
+                            "description": "Tool definitions invocable via the MCP runtime.",
+                            "item": {
+                                "type": "object",
+                                "attributes": {
+                                    "name": {
+                                        "name": "name",
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "name": "description",
+                                        "type": "string"
+                                    },
+                                    "inputschema": {
+                                        "name": "inputschema",
+                                        "type": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "resources": {
+                            "name": "resources",
+                            "type": "array",
+                            "description": "Data resources the server can expose or subscribe to.",
+                            "item": {
+                                "type": "object",
+                                "attributes": {
+                                    "uritemplate": {
+                                        "name": "uritemplate",
+                                        "type": "uritemplate"
+                                    },
+                                    "name": {
+                                        "name": "name",
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "name": "description",
+                                        "type": "string"
+                                    },
+                                    "mimetype": {
+                                        "name": "mimetype",
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

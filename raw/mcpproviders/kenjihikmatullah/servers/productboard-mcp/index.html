@@ -1,0 +1,124 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:39.246864815Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "-y",
+        "productboard-mcp"
+      ],
+      "command": "npx",
+      "env": [
+        {
+          "description": "Access token for Productboard API",
+          "name": "PRODUCTBOARD_ACCESS_TOKEN",
+          "required": true
+        }
+      ],
+      "package": "productboard-mcp",
+      "runtime": "node"
+    }
+  },
+  "description": "Integrate the Productboard API into agentic workflows via MCP",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "unknown",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kenjihikmatullah/servers/productboard-mcp/meta",
+  "modifiedat": "2025-04-25T12:41:39.246864815Z",
+  "name": "Productboard MCP Server",
+  "repository": {
+    "name": "kenjihikmatullah/productboard-mcp",
+    "url": "https://github.com/kenjihikmatullah/productboard-mcp"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kenjihikmatullah/servers/productboard-mcp",
+  "serverid": "productboard-mcp",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "description": "Tool to get products",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "getProductsTool"
+    },
+    {
+      "description": "Tool to get product detail",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "getProductDetailTool"
+    },
+    {
+      "description": "Tool to get features",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "getFeaturesTool"
+    },
+    {
+      "description": "Tool to get feature detail",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "getFeatureDetailTool"
+    },
+    {
+      "description": "Tool to get components",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "getComponentsTool"
+    },
+    {
+      "description": "Tool to get component detail",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "getComponentDetailTool"
+    },
+    {
+      "description": "Tool to get feature statuses",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "getFeatureStatusesTool"
+    },
+    {
+      "description": "Tool to get notes",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "getNotesTool"
+    },
+    {
+      "description": "Tool to get note detail",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "getNoteDetailTool"
+    },
+    {
+      "description": "Tool to get companies",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "getCompaniesTool"
+    },
+    {
+      "description": "Tool to get company detail",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "getCompanyDetailTool"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kenjihikmatullah/servers/productboard-mcp/versions",
+  "xid": "/mcpproviders/kenjihikmatullah/servers/productboard-mcp"
+}

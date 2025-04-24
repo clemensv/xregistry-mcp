@@ -1,0 +1,80 @@
+{
+  "repo_ref": "iflytek/ifly-workflow-mcp-server",
+  "name": "io.github.iflytek/ifly-workflow-mcp-server",
+  "description": "The fastest way to build workflows with an AI agent platform! This is a simple implementation of an MCP server using iFlytek. It enables calling iFlytek workflows through MCP tools. Supports 14 types of workflow nodes, advanced orchestration modes, multi-model support, and streaming output via hook mechanism.",
+  "version_detail": {
+    "version": "0.0.1"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "ifly-workflow-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-m",
+          "mcp_server.main"
+        ],
+        "environment_variables": [
+          {
+            "name": "CONFIG_PATH",
+            "description": "Path to configuration file",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "SYS_UPLOAD_FILE",
+      "description": "System tool for uploading files.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "file"
+        ]
+      }
+    },
+    {
+      "name": "image_generator",
+      "description": "Tool to generate images based on user input.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "AGENT_USER_INPUT": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "AGENT_USER_INPUT"
+        ]
+      }
+    },
+    {
+      "name": "llm_test",
+      "description": "Tool for testing LLM interactions.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "AGENT_USER_INPUT": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "AGENT_USER_INPUT"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

@@ -1,0 +1,49 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:40:47.524613295Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "build/index.js"
+      ],
+      "command": "node",
+      "env": [
+        {
+          "name": "CHAT_DB_PATH"
+        }
+      ],
+      "package": "@modelcontextprotocol/sdk",
+      "runtime": "node"
+    }
+  },
+  "description": "This MCP Server is used to summarize your chat messages.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "modifiedat": "2025-04-25T12:40:47.524613295Z",
+  "name": "mcp-server-chatsum",
+  "repository": {
+    "name": "chatmcp/mcp-server-chatsum",
+    "url": "https://github.com/chatmcp/mcp-server-chatsum"
+  },
+  "resources": [],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/chatmcp/servers/mcp-server-chatsum/versions/1",
+  "serverid": "mcp-server-chatsum",
+  "serverversion": "0.1.0",
+  "tools": [
+    {
+      "description": "Query chat messages with given parameters and summarize chat messages based on the query prompt.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "query_chat_messages"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/chatmcp/servers/mcp-server-chatsum/versions/1"
+}

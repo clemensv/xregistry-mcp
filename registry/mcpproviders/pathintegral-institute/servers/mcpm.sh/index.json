@@ -1,0 +1,30 @@
+{
+  "repo_ref": "pathintegral-institute/mcpm.sh",
+  "name": "io.github.pathintegral-institute/mcpm",
+  "description": "A router that aggregates multiple MCP servers (SSE/STDIO) and exposes them as a single SSE server.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [
+    {
+      "url": "http://localhost:8080",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcpm",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

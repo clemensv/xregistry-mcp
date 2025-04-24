@@ -1,0 +1,158 @@
+{
+  "repo_ref": "needle-ai/needle-mcp",
+  "name": "io.github.needle-ai/needle-mcp",
+  "description": "MCP (Model Context Protocol) server to manage documents and perform searches using Needle through Claude’s Desktop Application.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@smithery/needle-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/path/to/needle-mcp",
+          "run",
+          "needle-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "NEEDLE_API_KEY",
+            "description": "API key for Needle service",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "needle_list_collections",
+      "description": "Retrieve a complete list of all Needle document collections accessible to your account. Returns detailed information including collection IDs, names, and creation dates. Use this tool when you need to: - Get an overview of available document collections - Find collection IDs for subsequent operations - Verify collection existence before performing operations The response includes metadata that's required for other Needle operations.",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "needle_create_collection",
+      "description": "Create a new document collection in Needle for organizing and searching documents. A collection acts as a container for related documents and enables semantic search across its contents. Use this tool when you need to: - Start a new document organization - Group related documents together - Set up a searchable document repository Returns a collection ID that's required for subsequent operations. Choose a descriptive name that reflects the collection's purpose for better organization.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "A clear, descriptive name for the collection that reflects its purpose and contents"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "needle_get_collection_details",
+      "description": "Fetch comprehensive metadata about a specific Needle collection. Provides detailed information about the collection's configuration, creation date, and current status. Use this tool when you need to: - Verify a collection's existence and configuration - Check collection metadata before operations - Get creation date and other attributes Requires a valid collection ID and returns detailed collection metadata. Will error if collection doesn't exist.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_id": {
+            "type": "string",
+            "description": "The unique collection identifier returned from needle_create_collection or needle_list_collections"
+          }
+        },
+        "required": [
+          "collection_id"
+        ]
+      }
+    },
+    {
+      "name": "needle_get_collection_stats",
+      "description": "Retrieve detailed statistical information about a Needle collection's contents and status. Provides metrics including: - Total number of documents - Processing status of documents - Storage usage and limits - Index status and health Use this tool to: - Monitor collection size and growth - Verify processing completion - Check collection health before operations Essential for ensuring collection readiness before performing searches.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_id": {
+            "type": "string",
+            "description": "The unique collection identifier to get statistics for"
+          }
+        },
+        "required": [
+          "collection_id"
+        ]
+      }
+    },
+    {
+      "name": "needle_list_files",
+      "description": "List all documents stored within a specific Needle collection with their current status. Returns detailed information about each file including: - File ID and name - Processing status (pending, processing, complete, error) - Upload date and metadata Use this tool when you need to: - Inventory available documents - Check processing status of uploads - Get file IDs for reference - Verify document availability before searching Essential for monitoring document processing completion before performing searches.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_id": {
+            "type": "string",
+            "description": "The unique collection identifier to list files from"
+          }
+        },
+        "required": [
+          "collection_id"
+        ]
+      }
+    },
+    {
+      "name": "needle_add_file",
+      "description": "Add a new document to a Needle collection by providing a URL for download. Supports multiple file formats including: - PDF documents - Microsoft Word files (DOC, DOCX) - Plain text files (TXT) - Web pages (HTML) The document will be: 1. Downloaded from the provided URL 2. Processed for text extraction 3. Indexed for semantic search Use this tool when you need to: - Add new documents to a collection - Make documents searchable - Expand your knowledge base Important: Documents require processing time before they're searchable. Check processing status using needle_list_files before searching new content.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_id": {
+            "type": "string",
+            "description": "The unique collection identifier where the file will be added"
+          },
+          "name": {
+            "type": "string",
+            "description": "A descriptive filename that will help identify this document in results"
+          },
+          "url": {
+            "type": "string",
+            "description": "Public URL where the document can be downloaded from"
+          }
+        },
+        "required": [
+          "collection_id",
+          "name",
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "needle_search",
+      "description": "Perform intelligent semantic search across documents in a Needle collection. This tool uses advanced embedding technology to find relevant content based on meaning, not just keywords. The search: - Understands natural language queries - Finds conceptually related content - Returns relevant text passages with source information - Ranks results by semantic relevance Use this tool when you need to: - Find specific information within documents - Answer questions from document content - Research topics across multiple documents - Locate relevant passages and their sources More effective than traditional keyword search for: - Natural language questions - Conceptual queries - Finding related content Returns matching text passages with their source file IDs.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_id": {
+            "type": "string",
+            "description": "The unique collection identifier to search within"
+          },
+          "query": {
+            "type": "string",
+            "description": "Natural language query describing the information you're looking for"
+          }
+        },
+        "required": [
+          "collection_id",
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": [],
+  "documentation": "https://github.com/yourusername/needle-mcp/blob/main/README.md"
+}

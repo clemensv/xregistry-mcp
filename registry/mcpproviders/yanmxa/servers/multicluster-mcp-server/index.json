@@ -1,0 +1,37 @@
+{
+  "repo_ref": "yanmxa/multicluster-mcp-server",
+  "name": "io.github.yanmxa/multicluster-mcp-server",
+  "description": "The Multi-Cluster MCP Server provides a robust gateway for Generative AI (GenAI) systems to interact with multiple Kubernetes clusters through the Model Context Protocol (MCP). It facilitates comprehensive operations on Kubernetes resources, streamlined multi-cluster management, and delivered interactive cluster observability.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "create_note",
+      "description": "Tool to create new notes",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": [
+          "type"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

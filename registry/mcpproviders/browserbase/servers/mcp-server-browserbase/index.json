@@ -1,0 +1,124 @@
+{
+  "repo_ref": "browserbase/mcp-server-browserbase",
+  "name": "io.github.browserbase/mcp-server-browserbase",
+  "description": "This server provides cloud browser automation capabilities using Browserbase, Puppeteer, and Stagehand. It enables LLMs to interact with web pages, take screenshots, and execute JavaScript in a cloud browser environment.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@browserbasehq/mcp-browserbase",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "server.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "BROWSERBASE_API_KEY",
+            "description": "API key for Browserbase",
+            "required": true
+          },
+          {
+            "name": "BROWSERBASE_PROJECT_ID",
+            "description": "Project ID for Browserbase",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "browserbase_create_session",
+      "description": "Create a new cloud browser session using Browserbase",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "browserbase_navigate",
+      "description": "Navigate to a URL",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "browserbase_screenshot",
+      "description": "Takes a screenshot of the current page. Use this tool to learn where you are on the page when controlling the browser with Stagehand. Only use this tool when the other tools are not sufficient to get the information you need.",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "browserbase_click",
+      "description": "Click an element on the page",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "selector": {
+            "type": "string",
+            "description": "CSS selector for element to click"
+          }
+        },
+        "required": [
+          "selector"
+        ]
+      }
+    },
+    {
+      "name": "browserbase_fill",
+      "description": "Fill out an input field",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "selector": {
+            "type": "string",
+            "description": "CSS selector for input field"
+          },
+          "value": {
+            "type": "string",
+            "description": "Value to fill"
+          }
+        },
+        "required": [
+          "selector",
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "browserbase_get_text",
+      "description": "Extract all text content from the current page",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "screenshot://{name}",
+      "name": "Screenshot",
+      "description": "Screenshot resources identified by name",
+      "mimetype": "image/png"
+    }
+  ]
+}

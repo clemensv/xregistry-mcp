@@ -1,0 +1,50 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:44:35.878431516Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "--from",
+          "git+https://github.com/YanxingLiu/dify-mcp-server",
+          "dify_mcp_server"
+        ],
+        "command": "uvx",
+        "env": [
+          {
+            "description": "The base URL for your Dify API.",
+            "name": "DIFY_BASE_URL",
+            "required": false
+          },
+          {
+            "description": "Comma-separated list of your Dify App Secret Keys (SKs).",
+            "name": "DIFY_APP_SKS",
+            "required": false
+          },
+          {
+            "description": "Path to config.yaml file.",
+            "name": "CONFIG_PATH",
+            "required": false
+          }
+        ],
+        "package": "dify-mcp-server",
+        "runtime": "uvx"
+      }
+    },
+    "description": "A simple implementation of an MCP server for using dify workflows. It achieves the invocation of the Dify workflow by calling the tools of MCP.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "unknown",
+    "modifiedat": "2025-04-25T12:44:35.878431516Z",
+    "name": "dify-mcp-server",
+    "repository": {
+      "name": "YanxingLiu/dify-mcp-server",
+      "url": "https://github.com/YanxingLiu/dify-mcp-server"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/YanxingLiu/servers/dify-mcp-server/versions/1",
+    "serverid": "dify-mcp-server",
+    "serverversion": "unknown",
+    "versionid": "1",
+    "xid": "/mcpproviders/YanxingLiu/servers/dify-mcp-server/versions/1"
+  }
+}

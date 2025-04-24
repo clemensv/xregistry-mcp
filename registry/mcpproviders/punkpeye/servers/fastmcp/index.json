@@ -1,0 +1,107 @@
+{
+  "repo_ref": "punkpeye/fastmcp",
+  "name": "io.github.punkpeye/fastmcp",
+  "description": "A TypeScript framework for building MCP servers capable of handling client sessions.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "fastmcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "git-commit",
+      "description": "Generate a Git commit message",
+      "arguments": [
+        {
+          "name": "changes",
+          "description": "Git diff or description of changes",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "countryPoem",
+      "description": "Writes a poem about a country",
+      "arguments": [
+        {
+          "name": "name",
+          "description": "Name of the country",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "add",
+      "description": "Add two numbers",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "number"
+          },
+          "b": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "a",
+          "b"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "fetch-zod",
+      "description": "Fetch the content of a url (using Zod)",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "fetch-arktype",
+      "description": "Fetch the content of a url (using ArkType)",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "Application Logs",
+      "mimetype": "text/plain",
+      "uritemplate": "file:///logs/{name}.log"
+    }
+  ]
+}

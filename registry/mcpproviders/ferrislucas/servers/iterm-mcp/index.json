@@ -1,0 +1,77 @@
+{
+  "repo_ref": "ferrislucas/iterm-mcp",
+  "name": "io.github.ferrislucas/iterm-mcp",
+  "description": "A Model Context Protocol server that provides access to your iTerm session.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "iterm-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "iterm-mcp"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "write_to_terminal",
+      "description": "Writes text to the active iTerm terminal - often used to run a command in the terminal",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "description": "The command to run or text to write to the terminal"
+          }
+        },
+        "required": [
+          "command"
+        ]
+      }
+    },
+    {
+      "name": "read_terminal_output",
+      "description": "Reads the output from the active iTerm terminal",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "linesOfOutput": {
+            "type": "integer",
+            "description": "The number of lines of output to read."
+          }
+        },
+        "required": [
+          "linesOfOutput"
+        ]
+      }
+    },
+    {
+      "name": "send_control_character",
+      "description": "Sends a control character to the active iTerm terminal (e.g., Control-C, or special sequences like ']' for telnet escape)",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "letter": {
+            "type": "string",
+            "description": "The letter corresponding to the control character (e.g., 'C' for Control-C, ']' for telnet escape)"
+          }
+        },
+        "required": [
+          "letter"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

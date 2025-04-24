@@ -1,0 +1,54 @@
+{
+  "repo_ref": "rember/rember-mcp",
+  "name": "io.github.rember/rember-mcp",
+  "description": "Allow Claude to create flashcards for you with the official Model Context Protocol (MCP) for Rember. Rember helps you study and remember anything you care about by scheduling spaced repetition reviews.",
+  "version_detail": {
+    "version": "1.1.3"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@getrember/mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@getrember/mcp",
+          "--api-key=YOUR_REMBER_API_KEY"
+        ],
+        "environment_variables": [
+          {
+            "name": "REMBER_API_KEY",
+            "description": "API key for Rember MCP server",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "create_flashcards",
+      "description": "Create flashcards with AI. This tool takes a list of notes from Claude, it calls the Rember API to generate a few flashcards for each note. After learning something new in your chat with Claude, you can ask \"help me remember this\" or \"create a few flashcards\" or \"add to Rember\".",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "notes"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

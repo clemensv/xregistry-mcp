@@ -1,0 +1,102 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:41.772721121Z",
+  "deployment": {
+    "sandbox": {
+      "args": [],
+      "command": "node",
+      "env": [],
+      "package": "github-actions-mcp-server",
+      "packageversion": "0.0.1",
+      "runtime": "node"
+    }
+  },
+  "description": "MCP Server for the GitHub Actions API, enabling AI assistants to manage and operate GitHub Actions workflows.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ko1ynnky/servers/github-actions-mcp-server/meta",
+  "modifiedat": "2025-04-25T12:41:41.772721121Z",
+  "name": "github-actions-mcp-server",
+  "repository": {
+    "name": "ko1ynnky/github-actions-mcp-server",
+    "url": "https://github.com/ko1ynnky/github-actions-mcp-server"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ko1ynnky/servers/github-actions-mcp-server",
+  "serverid": "github-actions-mcp-server",
+  "serverversion": "0.0.1",
+  "tools": [
+    {
+      "description": "List workflows in a GitHub repository",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_workflows"
+    },
+    {
+      "description": "Get details of a specific workflow",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_workflow"
+    },
+    {
+      "description": "Get usage statistics of a workflow",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_workflow_usage"
+    },
+    {
+      "description": "List all workflow runs for a repository or a specific workflow",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_workflow_runs"
+    },
+    {
+      "description": "Get details of a specific workflow run",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_workflow_run"
+    },
+    {
+      "description": "Get jobs for a specific workflow run",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_workflow_run_jobs"
+    },
+    {
+      "description": "Trigger a workflow run",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "trigger_workflow"
+    },
+    {
+      "description": "Cancel a workflow run",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "cancel_workflow_run"
+    },
+    {
+      "description": "Re-run a workflow run",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "rerun_workflow"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ko1ynnky/servers/github-actions-mcp-server/versions",
+  "xid": "/mcpproviders/ko1ynnky/servers/github-actions-mcp-server"
+}

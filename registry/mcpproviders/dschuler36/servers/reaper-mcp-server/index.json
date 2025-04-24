@@ -1,0 +1,44 @@
+{
+  "repo_ref": "dschuler36/reaper-mcp-server",
+  "name": "io.github.dschuler36/reaper-mcp-server",
+  "description": "A simple MCP server that connects a Reaper project to an MCP client like Claude Desktop and enables you to ask questions about the project.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "unspecified",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "pip",
+          "install",
+          "."
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "find_reaper_projects",
+      "description": "Finds all Reaper projects in the directory you specified in the config.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "parse_reaper_project",
+      "description": "Parses a Reaper project and returns a JSON object.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

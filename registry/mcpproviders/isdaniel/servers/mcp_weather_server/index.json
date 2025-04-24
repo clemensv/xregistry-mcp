@@ -1,0 +1,43 @@
+{
+  "repo_ref": "isdaniel/mcp_weather_server",
+  "name": "io.github.isdaniel/mcp_weather_server",
+  "description": "A Model Context Protocol (MCP) server that provides weather information using the Open-Meteo API.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcp_weather_server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "mcp_weather_server/server.py"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get_weather",
+      "description": "Retrieves the current weather information for a given city.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "city"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

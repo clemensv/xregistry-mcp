@@ -1,0 +1,68 @@
+{
+  "repo_ref": "burningion/video-editing-mcp",
+  "name": "io.github.burningion/video-editing-mcp",
+  "description": "Server to upload, edit, search, and generate videos using Video Jungle and LLM integration with custom vj:// URI scheme and video editing tools.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uvicorn",
+      "package_name": "video-editor-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "YOURAPIKEY"
+        ],
+        "environment_variables": [
+          {
+            "name": "LOAD_PHOTOS_DB",
+            "description": "Enable searching local Photos app videos on MacOS",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "add-video",
+      "description": "Add a video from a URL and returns a vj:// URI to reference the video file.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "search-videos",
+      "description": "Search videos using embeddings and keywords, returning video matches.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "generate-edit-from-videos",
+      "description": "Generate a rendered video edit from a set of video files.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "generate-edit-from-single-video",
+      "description": "Generate an edit from a single input video file.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "videos",
+      "description": "Access individual videos and projects via custom vj:// URI scheme.",
+      "uritemplate": "vj://{video_or_project_id}"
+    }
+  ]
+}

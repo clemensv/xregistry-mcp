@@ -1,0 +1,69 @@
+{
+  "repo_ref": "stefanoamorelli/sec-edgar-mcp",
+  "name": "io.github.stefanoamorelli/sec-edgar-mcp",
+  "description": "SEC EDGAR MCP is an open-source MCP server that connects AI models to the rich dataset of SEC EDGAR filings, enabling AI assistants to query official SEC financial data in real-time.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "sec-edgar-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "SEC_API_USER_AGENT",
+            "description": "User-Agent string required by SEC EDGAR API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get_submissions",
+      "description": "Fetches submissions (filings) for a given company CIK.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "cik": {
+            "type": "string",
+            "description": "Central Index Key of the company"
+          }
+        },
+        "required": [
+          "cik"
+        ]
+      }
+    },
+    {
+      "name": "get_company_concepts",
+      "description": "Fetches specific financial concepts for a company.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "cik": {
+            "type": "string",
+            "description": "Central Index Key of the company"
+          },
+          "concept": {
+            "type": "string",
+            "description": "Financial concept to retrieve"
+          }
+        },
+        "required": [
+          "cik",
+          "concept"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

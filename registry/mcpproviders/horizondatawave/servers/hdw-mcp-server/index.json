@@ -1,0 +1,190 @@
+{
+  "repo_ref": "horizondatawave/hdw-mcp-server",
+  "name": "io.github.horizondatawave/hdw-mcp-server",
+  "description": "A Model Context Protocol (MCP) server that provides comprehensive access to LinkedIn data and functionalities using the HorizonDataWave API, enabling not only data retrieval but also robust management of user accounts.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "search_linkedin_users",
+      "description": "Search for LinkedIn users with various filters.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "keywords": {
+            "type": "string"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "last_name": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "company_keywords": {
+            "type": "string"
+          },
+          "school_keywords": {
+            "type": "string"
+          },
+          "current_company": {
+            "type": "string"
+          },
+          "past_company": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "industry": {
+            "type": "string"
+          },
+          "education": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "timeout": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "get_linkedin_profile",
+      "description": "Retrieve detailed profile information about a LinkedIn user.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "type": "string"
+          },
+          "with_experience": {
+            "type": "boolean"
+          },
+          "with_education": {
+            "type": "boolean"
+          },
+          "with_skills": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "user"
+        ]
+      }
+    },
+    {
+      "name": "get_linkedin_email_user",
+      "description": "Look up LinkedIn user details by email.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "timeout": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "email"
+        ]
+      }
+    },
+    {
+      "name": "get_linkedin_user_posts",
+      "description": "Retrieve posts for a LinkedIn user by URN.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "urn": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "timeout": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "urn"
+        ]
+      }
+    },
+    {
+      "name": "get_linkedin_user_reactions",
+      "description": "Retrieve reactions for a LinkedIn user by URN.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "urn": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "timeout": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "urn"
+        ]
+      }
+    },
+    {
+      "name": "get_linkedin_chat_messages",
+      "description": "Retrieve top chat messages from the LinkedIn management API.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "timeout": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "user"
+        ]
+      }
+    },
+    {
+      "name": "send_linkedin_chat_message",
+      "description": "Send a chat message using the LinkedIn management API.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "user",
+          "text"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

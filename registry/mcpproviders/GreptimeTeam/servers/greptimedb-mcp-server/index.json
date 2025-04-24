@@ -1,0 +1,87 @@
+{
+  "repo_ref": "GreptimeTeam/greptimedb-mcp-server",
+  "name": "io.github.GreptimeTeam/greptimedb-mcp-server",
+  "description": "A Model Context Protocol (MCP) server implementation for GreptimeDB. This server provides AI assistants with a secure and structured way to explore and analyze databases. It enables them to list tables, read data, and execute SQL queries through a controlled interface, ensuring responsible database access.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "greptimedb-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/path/to/greptimedb-mcp-server",
+          "run",
+          "-m",
+          "greptimedb_mcp_server.server"
+        ],
+        "environment_variables": [
+          {
+            "name": "GREPTIMEDB_HOST",
+            "description": "Database host",
+            "required": true
+          },
+          {
+            "name": "GREPTIMEDB_PORT",
+            "description": "Database port",
+            "required": false
+          },
+          {
+            "name": "GREPTIMEDB_USER",
+            "description": "Database username",
+            "required": true
+          },
+          {
+            "name": "GREPTIMEDB_PASSWORD",
+            "description": "Database password",
+            "required": false
+          },
+          {
+            "name": "GREPTIMEDB_DATABASE",
+            "description": "Database name",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "example_prompt",
+      "description": "Detailed explanation of when and how to use this prompt.",
+      "arguments": []
+    }
+  ],
+  "tools": [
+    {
+      "name": "execute_sql",
+      "description": "Execute SQL query against GreptimeDB. Please use MySQL dialect when generating SQL queries.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The SQL query to execute (using MySQL dialect)"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "greptime://{table}/data",
+      "name": "Table",
+      "description": "Data in table: {table}",
+      "mimetype": "text/plain"
+    }
+  ]
+}

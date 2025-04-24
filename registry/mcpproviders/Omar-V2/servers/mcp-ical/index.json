@@ -1,0 +1,85 @@
+{
+  "repo_ref": "Omar-V2/mcp-ical",
+  "name": "io.github.Omar-V2/mcp-ical",
+  "description": "Transform how you interact with your macOS calendar using natural language via the Model Context Protocol (MCP). Provides natural language calendar management including event creation, updates, schedule queries, and calendar management.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "mcp-ical",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/ABSOLUTE/PATH/TO/PARENT/FOLDER/mcp-ical",
+          "run"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "list_calendars",
+      "description": "List all available calendars.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_events",
+      "description": "List calendar events in a date range.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "start_date": {
+            "type": "string",
+            "description": "Start date in ISO8601 format (YYYY-MM-DDT00:00:00)."
+          },
+          "end_date": {
+            "type": "string",
+            "description": "End date in ISO8601 format (YYYY-MM-DDT23:59:59)."
+          },
+          "calendar_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Optional calendar name to filter by"
+          }
+        },
+        "required": [
+          "start_date",
+          "end_date"
+        ]
+      }
+    },
+    {
+      "name": "create_event",
+      "description": "Create a new calendar event with details like title, time, location, notes, reminders, and recurrence.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "update_event",
+      "description": "Update an existing calendar event with new details such as time, location, notes, reminders, and recurrence.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "calendars://list",
+      "uritemplate": "calendars://list",
+      "description": "List all available calendars that can be used with calendar operations."
+    }
+  ]
+}

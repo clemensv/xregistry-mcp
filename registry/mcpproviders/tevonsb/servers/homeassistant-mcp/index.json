@@ -1,0 +1,482 @@
+{
+  "repo_ref": "tevonsb/homeassistant-mcp",
+  "name": "io.github.tevonsb/homeassistant-mcp",
+  "description": "The server uses the MCP protocol to share access to a local Home Assistant instance with an LLM application. A powerful bridge between your Home Assistant instance and Language Learning Models (LLMs), enabling natural language control and monitoring of your smart home devices through the Model Context Protocol (MCP). This server provides a comprehensive API for managing your entire Home Assistant ecosystem, from device control to system administration.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [
+    {
+      "url": "http://localhost:3000",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "not specified",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "npm",
+      "package_name": "litemcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "HASS_HOST",
+            "description": "Home Assistant host URL",
+            "required": false
+          },
+          {
+            "name": "HASS_TOKEN",
+            "description": "Home Assistant access token",
+            "required": true
+          },
+          {
+            "name": "PORT",
+            "description": "Port to run the server on",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "list_devices",
+      "description": "List all available Home Assistant devices",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "control",
+      "description": "Control Home Assistant devices and services",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "enum": [
+              "turn_on",
+              "turn_off",
+              "toggle",
+              "open",
+              "close",
+              "stop",
+              "set_position",
+              "set_tilt_position",
+              "set_temperature",
+              "set_hvac_mode",
+              "set_fan_mode",
+              "set_humidity"
+            ],
+            "description": "The command to execute"
+          },
+          "entity_id": {
+            "type": "string",
+            "description": "The entity ID to control"
+          },
+          "state": {
+            "type": "string",
+            "description": "The desired state for the entity"
+          },
+          "brightness": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 255,
+            "description": "Brightness level for lights (0-255)"
+          },
+          "color_temp": {
+            "type": "number",
+            "description": "Color temperature for lights"
+          },
+          "rgb_color": {
+            "type": "array",
+            "items": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "description": "RGB color values"
+          },
+          "position": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Position for covers (0-100)"
+          },
+          "tilt_position": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Tilt position for covers (0-100)"
+          },
+          "temperature": {
+            "type": "number",
+            "description": "Target temperature for climate devices"
+          },
+          "target_temp_high": {
+            "type": "number",
+            "description": "Target high temperature for climate devices"
+          },
+          "target_temp_low": {
+            "type": "number",
+            "description": "Target low temperature for climate devices"
+          },
+          "hvac_mode": {
+            "type": "string",
+            "enum": [
+              "off",
+              "heat",
+              "cool",
+              "heat_cool",
+              "auto",
+              "dry",
+              "fan_only"
+            ],
+            "description": "HVAC mode for climate devices"
+          },
+          "fan_mode": {
+            "type": "string",
+            "enum": [
+              "auto",
+              "low",
+              "medium",
+              "high"
+            ],
+            "description": "Fan mode for climate devices"
+          },
+          "humidity": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Target humidity for climate devices"
+          }
+        },
+        "required": [
+          "command",
+          "entity_id"
+        ]
+      }
+    },
+    {
+      "name": "get_history",
+      "description": "Get state history for Home Assistant entities",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "entity_id": {
+            "type": "string",
+            "description": "The entity ID to get history for"
+          },
+          "start_time": {
+            "type": "string",
+            "description": "Start time in ISO format. Defaults to 24 hours ago"
+          },
+          "end_time": {
+            "type": "string",
+            "description": "End time in ISO format. Defaults to now"
+          },
+          "minimal_response": {
+            "type": "boolean",
+            "description": "Return minimal response to reduce data size"
+          },
+          "significant_changes_only": {
+            "type": "boolean",
+            "description": "Only return significant state changes"
+          }
+        },
+        "required": [
+          "entity_id"
+        ]
+      }
+    },
+    {
+      "name": "scene",
+      "description": "Manage and activate Home Assistant scenes",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "list",
+              "activate"
+            ],
+            "description": "Action to perform with scenes"
+          },
+          "scene_id": {
+            "type": "string",
+            "description": "Scene ID to activate (required for activate action)"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "notify",
+      "description": "Send notifications through Home Assistant",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "The notification message"
+          },
+          "title": {
+            "type": "string",
+            "description": "The notification title"
+          },
+          "target": {
+            "type": "string",
+            "description": "Specific notification target (e.g., mobile_app_phone)"
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Additional notification data"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    },
+    {
+      "name": "automation",
+      "description": "Manage Home Assistant automations",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "list",
+              "toggle",
+              "trigger"
+            ],
+            "description": "Action to perform with automation"
+          },
+          "automation_id": {
+            "type": "string",
+            "description": "Automation ID (required for toggle and trigger actions)"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "addon",
+      "description": "Manage Home Assistant add-ons",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "list",
+              "info",
+              "install",
+              "uninstall",
+              "start",
+              "stop",
+              "restart"
+            ],
+            "description": "Action to perform with add-on"
+          },
+          "slug": {
+            "type": "string",
+            "description": "Add-on slug (required for all actions except list)"
+          },
+          "version": {
+            "type": "string",
+            "description": "Version to install (only for install action)"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "package",
+      "description": "Manage HACS packages and custom components",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "list",
+              "install",
+              "uninstall",
+              "update"
+            ],
+            "description": "Action to perform with package"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "integration",
+              "plugin",
+              "theme",
+              "python_script",
+              "appdaemon",
+              "netdaemon"
+            ],
+            "description": "Package category"
+          },
+          "repository": {
+            "type": "string",
+            "description": "Repository URL or name (required for install)"
+          },
+          "version": {
+            "type": "string",
+            "description": "Version to install"
+          }
+        },
+        "required": [
+          "action",
+          "category"
+        ]
+      }
+    },
+    {
+      "name": "automation_config",
+      "description": "Advanced automation configuration and management",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "create",
+              "update",
+              "delete",
+              "duplicate"
+            ],
+            "description": "Action to perform with automation config"
+          },
+          "automation_id": {
+            "type": "string",
+            "description": "Automation ID (required for update, delete, and duplicate)"
+          },
+          "config": {
+            "type": "object",
+            "properties": {
+              "alias": {
+                "type": "string",
+                "description": "Friendly name for the automation"
+              },
+              "description": {
+                "type": "string",
+                "description": "Description of what the automation does"
+              },
+              "mode": {
+                "type": "string",
+                "enum": [
+                  "single",
+                  "parallel",
+                  "queued",
+                  "restart"
+                ],
+                "description": "How multiple triggerings are handled"
+              },
+              "trigger": {
+                "type": "array",
+                "items": {},
+                "description": "List of triggers"
+              },
+              "condition": {
+                "type": "array",
+                "items": {},
+                "description": "List of conditions"
+              },
+              "action": {
+                "type": "array",
+                "items": {},
+                "description": "List of actions"
+              }
+            },
+            "description": "Automation configuration (required for create and update)"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "subscribe_events",
+      "description": "Subscribe to Home Assistant events via Server-Sent Events (SSE)",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "description": "Authentication token (required)"
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of event types to subscribe to"
+          },
+          "entity_id": {
+            "type": "string",
+            "description": "Specific entity ID to monitor for state changes"
+          },
+          "domain": {
+            "type": "string",
+            "description": "Domain to monitor (e.g., \"light\", \"switch\", etc.)"
+          }
+        },
+        "required": [
+          "token"
+        ]
+      }
+    },
+    {
+      "name": "get_sse_stats",
+      "description": "Get SSE connection statistics",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "description": "Authentication token (required)"
+          }
+        },
+        "required": [
+          "token"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

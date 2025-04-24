@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:44:01.028309022Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/thirdweb-dev/servers/ai/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:44:01.028309022Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/thirdweb-dev/servers/ai/meta",
+  "serverid": "ai",
+  "xid": "/mcpproviders/thirdweb-dev/servers/ai/meta"
+}

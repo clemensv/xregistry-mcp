@@ -1,0 +1,264 @@
+{
+  "repo_ref": "ivo-toby/contentful-mcp",
+  "name": "io.github.ivo-toby/contentful-mcp",
+  "description": "An MCP server implementation that integrates with Contentful's Content Management API, providing comprehensive content management capabilities.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@ivotoby/contentful-management-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "SPACE_ID",
+            "description": "Contentful Space ID",
+            "required": true
+          },
+          {
+            "name": "ENVIRONMENT_ID",
+            "description": "Contentful Environment ID",
+            "required": false
+          },
+          {
+            "name": "CONTENTFUL_HOST",
+            "description": "Contentful API host",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "create_entry",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_entry",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "update_entry",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_entry",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "publish_entry",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "unpublish_entry",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "search_entries",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "bulk_publish",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "bulk_unpublish",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "bulk_validate",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "upload_asset",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_asset",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "update_asset",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_asset",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "publish_asset",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "unpublish_asset",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_assets",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_spaces",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_space",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_environments",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_environment",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_environment",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_content_types",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_content_type",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_content_type",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "update_content_type",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_content_type",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "publish_content_type",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_ai_actions",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_ai_action",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_ai_action",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "update_ai_action",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_ai_action",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "publish_ai_action",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "unpublish_ai_action",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "invoke_ai_action",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_ai_action_invocation",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

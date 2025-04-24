@@ -1,0 +1,85 @@
+{
+  "repo_ref": "mcpdotdirect/template-mcp-server",
+  "name": "io.github.mcpdotdirect/template-mcp-server",
+  "description": "A CLI tool to quickly get started building your very own MCP (Model Context Protocol) server using FastMCP",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [
+    {
+      "url": "http://localhost:3001/sse",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "bun",
+      "package_name": "@mcpdotdirect/template-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "src/index.ts"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "greeting",
+      "description": "A simple greeting prompt",
+      "arguments": [
+        {
+          "name": "name",
+          "description": "Name to greet",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "hello_world",
+      "description": "A simple hello world tool",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name to greet"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "goodbye",
+      "description": "A simple goodbye tool",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name to bid farewell to"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "example://{id}",
+      "name": "Example Resource",
+      "description": "Resource ID",
+      "mimetype": "text/plain"
+    }
+  ]
+}

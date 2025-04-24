@@ -1,0 +1,70 @@
+{
+  "repo_ref": "kpsunil97/devrev-mcp-server",
+  "name": "io.github.kpsunil97/devrev-mcp-server",
+  "description": "A Model Context Protocol server for DevRev. It is used to search and retrieve information using the DevRev APIs.",
+  "version_detail": {
+    "version": "0.1.1"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "devrev-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "DEVREV_API_KEY",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "search",
+      "description": "Search DevRev using the provided query",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string",
+            "enum": [
+              "article",
+              "issue",
+              "ticket"
+            ]
+          }
+        },
+        "required": [
+          "query",
+          "namespace"
+        ]
+      }
+    },
+    {
+      "name": "get_object",
+      "description": "Get all information about a DevRev object using its ID",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

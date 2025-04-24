@@ -1,0 +1,188 @@
+{
+  "repo_ref": "RamXX/mcp-tavily",
+  "name": "io.github.RamXX/mcp-tavily",
+  "description": "A Model Context Protocol server that provides AI-powered web search capabilities using Tavily's search API. This server enables LLMs to perform sophisticated web searches, get direct answers to questions, and search recent news articles with AI-extracted relevant content.",
+  "version_detail": {
+    "version": "0.1.4"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcp-tavily",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "mcp-tavily"
+        ],
+        "environment_variables": [
+          {
+            "name": "TAVILY_API_KEY",
+            "description": "API key for Tavily service",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "tavily_web_search",
+      "description": "Search the web using Tavily's AI-powered search engine"
+    },
+    {
+      "name": "tavily_answer_search",
+      "description": "Search the web and get an AI-generated answer with supporting evidence"
+    },
+    {
+      "name": "tavily_news_search",
+      "description": "Search recent news articles with Tavily's news search"
+    }
+  ],
+  "tools": [
+    {
+      "name": "tavily_web_search",
+      "description": "Performs comprehensive web searches with AI-powered content extraction.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "max_results": {
+            "type": "integer"
+          },
+          "search_depth": {
+            "type": "string"
+          },
+          "include_domains": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "exclude_domains": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "tavily_answer_search",
+      "description": "Performs web searches and generates direct answers with supporting evidence.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "max_results": {
+            "type": "integer"
+          },
+          "search_depth": {
+            "type": "string"
+          },
+          "include_domains": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "exclude_domains": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "tavily_news_search",
+      "description": "Searches recent news articles with publication dates.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "max_results": {
+            "type": "integer"
+          },
+          "days": {
+            "type": "integer"
+          },
+          "include_domains": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "exclude_domains": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

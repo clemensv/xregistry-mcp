@@ -1,0 +1,140 @@
+{
+  "repo_ref": "Fewsats/fewsats-mcp",
+  "name": "io.github.Fewsats/fewsats-mcp",
+  "description": "This MCP server integrates with Fewsats and allows AI Agents to purchase anything in a secure way.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uvx",
+      "package_name": "fewsats-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "FEWSATS_API_KEY",
+            "description": "API key for Fewsats",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "balance",
+      "description": "Retrieve the balance of the user's wallet",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "payment_methods",
+      "description": "Retrieve the user's payment methods",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "pay_offer",
+      "description": "Pays an offer with the specified ID from the l402_offers",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "offer_id": {
+            "type": "string"
+          },
+          "l402_offer": {
+            "type": "object",
+            "properties": {
+              "offers": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "amount": {
+                      "type": "number"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "amount",
+                    "currency",
+                    "description",
+                    "title"
+                  ]
+                }
+              },
+              "payment_context_token": {
+                "type": "string"
+              },
+              "payment_request_url": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "offers",
+              "payment_context_token",
+              "payment_request_url",
+              "version"
+            ]
+          }
+        },
+        "required": [
+          "offer_id",
+          "l402_offer"
+        ]
+      }
+    },
+    {
+      "name": "payment_info",
+      "description": "Retrieve the details of a payment",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "pid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "pid"
+        ]
+      }
+    },
+    {
+      "name": "billing_info",
+      "description": "Retrieve the user's billing information",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  ],
+  "resources": []
+}

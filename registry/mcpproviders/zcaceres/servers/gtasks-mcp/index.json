@@ -1,0 +1,174 @@
+{
+  "repo_ref": "zcaceres/gtasks-mcp",
+  "name": "io.github.zcaceres/gtasks-mcp",
+  "description": "This MCP server integrates with Google Tasks to allow listing, reading, searching, creating, updating, and deleting tasks.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@zcaceres/gtasks",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "dist/index.js"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "search",
+      "description": "Search for a task in Google Tasks",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "list",
+      "description": "List all tasks in Google Tasks",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "cursor": {
+            "type": "string",
+            "description": "Cursor for pagination"
+          }
+        }
+      }
+    },
+    {
+      "name": "create",
+      "description": "Create a new task in Google Tasks",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "taskListId": {
+            "type": "string",
+            "description": "Task list ID"
+          },
+          "title": {
+            "type": "string",
+            "description": "Task title"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Task notes"
+          },
+          "due": {
+            "type": "string",
+            "description": "Due date"
+          }
+        },
+        "required": [
+          "title"
+        ]
+      }
+    },
+    {
+      "name": "clear",
+      "description": "Clear completed tasks from a Google Tasks task list",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "taskListId": {
+            "type": "string",
+            "description": "Task list ID"
+          }
+        },
+        "required": [
+          "taskListId"
+        ]
+      }
+    },
+    {
+      "name": "delete",
+      "description": "Delete a task in Google Tasks",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "taskListId": {
+            "type": "string",
+            "description": "Task list ID"
+          },
+          "id": {
+            "type": "string",
+            "description": "Task id"
+          }
+        },
+        "required": [
+          "id",
+          "taskListId"
+        ]
+      }
+    },
+    {
+      "name": "update",
+      "description": "Update a task in Google Tasks",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "taskListId": {
+            "type": "string",
+            "description": "Task list ID"
+          },
+          "id": {
+            "type": "string",
+            "description": "Task ID"
+          },
+          "uri": {
+            "type": "string",
+            "description": "Task URI"
+          },
+          "title": {
+            "type": "string",
+            "description": "Task title"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Task notes"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "needsAction",
+              "completed"
+            ],
+            "description": "Task status (needsAction or completed)"
+          },
+          "due": {
+            "type": "string",
+            "description": "Due date"
+          }
+        },
+        "required": [
+          "id",
+          "uri"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "gtasks:///{task_id}",
+      "name": "Tasks",
+      "description": "Represents individual tasks in Google Tasks. Supports reading task details including title, status, due date, notes, and other metadata. Can be listed, read, created, updated, and deleted using the provided tools.",
+      "mimetype": "text/plain"
+    }
+  ]
+}

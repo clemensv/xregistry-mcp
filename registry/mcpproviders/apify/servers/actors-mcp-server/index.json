@@ -1,0 +1,142 @@
+{
+  "repo_ref": "apify/actors-mcp-server",
+  "name": "io.github.apify/actors-mcp-server",
+  "description": "Implementation of an MCP server for all Apify Actors enabling interaction with one or more Apify Actors defined in the MCP Server configuration. Allows AI assistants to use Apify Actors as tools for various scraping and data extraction tasks.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [
+    {
+      "url": "http://localhost:3001",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "apify/actors-mcp-server:latest",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--actors",
+          "apify/rag-web-browser,lukaskrivka/google-maps-with-contact-details"
+        ],
+        "environment_variables": [
+          {
+            "name": "APIFY_TOKEN",
+            "description": "API token for Apify platform",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "npm",
+      "package_name": "@apify/actors-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "dist/stdio.js",
+          "--actors",
+          "apify/rag-web-browser,lukaskrivka/google-maps-with-contact-details"
+        ],
+        "environment_variables": [
+          {
+            "name": "APIFY_TOKEN",
+            "description": "API token for Apify platform",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "apify-slash-rag-web-browser",
+      "description": "Tool wrapping the Apify RAG Web Browser Actor for web search and scraping.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "apify-slash-facebook-posts-scraper",
+      "description": "Tool wrapping the Facebook Posts Scraper Actor to extract data from Facebook posts.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "apify-slash-google-maps-with-contact-details",
+      "description": "Tool wrapping the Google Maps Email Extractor Actor to extract contact details.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "apify-slash-google-search-scraper",
+      "description": "Tool wrapping the Google Search Results Scraper Actor to scrape SERPs.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "apify-slash-instagram-scraper",
+      "description": "Tool wrapping the Instagram Scraper Actor to scrape Instagram data.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "add-tool",
+      "description": "Add a tool, Actor or MCP-Server to available tools by Actor ID or tool full name. Does not execute the tool, only adds it.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "actorName": {
+            "type": "string",
+            "description": "Add a tool, Actor or MCP-Server to available tools by Actor ID or tool full name. Tool name is always composed from `username/name`"
+          }
+        },
+        "required": [
+          "actorName"
+        ]
+      }
+    },
+    {
+      "name": "remove-tool",
+      "description": "Remove a tool, an Actor or MCP-Server by name from available tools.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "toolName": {
+            "type": "string",
+            "description": "Tool name to remove from available tools."
+          }
+        },
+        "required": [
+          "toolName"
+        ]
+      }
+    },
+    {
+      "name": "search-actor",
+      "description": "Helper tool for searching Actors.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-tool-details",
+      "description": "Helper tool for getting tool details.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

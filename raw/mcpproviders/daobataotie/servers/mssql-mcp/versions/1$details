@@ -1,0 +1,146 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:40:53.765571702Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "src/server.py"
+      ],
+      "command": "python",
+      "env": [],
+      "package": "mcp",
+      "runtime": "python"
+    }
+  },
+  "description": "MSSQL MCP Server provides database interaction and business intelligence capabilities, enabling running SQL queries, analyzing business data, and automatically generating business insight memos.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "0.1.0",
+  "modifiedat": "2025-04-25T12:40:53.765571702Z",
+  "name": "mssql-manager",
+  "prompts": [
+    {
+      "arguments": [
+        {
+          "description": "用于生成初始数据的主题",
+          "name": "topic",
+          "required": true
+        }
+      ],
+      "description": "一个用于在 MSSQL 数据库中创建初始数据并演示 MSSQL MCP 服务器功能的提示",
+      "name": "mcp-demo"
+    }
+  ],
+  "repository": {
+    "name": "daobataotie/mssql-mcp",
+    "url": "https://github.com/daobataotie/mssql-mcp"
+  },
+  "resources": [
+    {
+      "description": "一个实时更新的业务洞察文档",
+      "mimetype": "text/plain",
+      "name": "业务洞察备忘录",
+      "uritemplate": "memo://insights"
+    }
+  ],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/daobataotie/servers/mssql-mcp/versions/1",
+  "serverid": "mssql-mcp",
+  "serverversion": "0.1.0",
+  "tools": [
+    {
+      "description": "在 MSSQL 数据库上执行 SELECT 查询",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "要执行的 SELECT SQL 查询",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "read_query"
+    },
+    {
+      "description": "在 MSSQL 数据库上执行 INSERT、UPDATE 或 DELETE 查询",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "要执行的 SQL 查询",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "write_query"
+    },
+    {
+      "description": "在 MSSQL 数据库中创建新表",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "CREATE TABLE SQL 语句",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "create_table"
+    },
+    {
+      "description": "列出 MSSQL 数据库中的所有表",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "list_tables"
+    },
+    {
+      "description": "获取特定表的架构信息",
+      "inputschema": {
+        "properties": {
+          "table_name": {
+            "description": "要描述的表名",
+            "type": "string"
+          }
+        },
+        "required": [
+          "table_name"
+        ],
+        "type": "object"
+      },
+      "name": "describe_table"
+    },
+    {
+      "description": "向备忘录添加业务洞察",
+      "inputschema": {
+        "properties": {
+          "insight": {
+            "description": "从数据分析中发现的业务洞察",
+            "type": "string"
+          }
+        },
+        "required": [
+          "insight"
+        ],
+        "type": "object"
+      },
+      "name": "append_insight"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/daobataotie/servers/mssql-mcp/versions/1"
+}

@@ -1,0 +1,78 @@
+{
+  "repo_ref": "longyi1207/glean-mcp-server",
+  "name": "io.github.longyi1207/glean-mcp-server",
+  "description": "An MCP server implementation that integrates the Glean API, providing the Search and Chat functions.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "glean-server:latest",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "-i",
+          "--rm",
+          "-e",
+          "GLEAN_API_KEY",
+          "-e",
+          "GLEAN_DOMAIN",
+          "glean-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "GLEAN_API_KEY",
+            "description": "API key for Glean",
+            "required": true
+          },
+          {
+            "name": "GLEAN_DOMAIN",
+            "description": "Domain for Glean API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "search",
+      "description": "Tool to perform search queries using Glean API",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The query to perform retrieval on"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "chat",
+      "description": "Tool to interact with ChatGPT using Glean API",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "The message to send to ChatGPT"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

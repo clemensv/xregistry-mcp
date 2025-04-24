@@ -1,0 +1,75 @@
+{
+  "repo_ref": "ChronulusAI/chronulus-mcp",
+  "name": "io.github.ChronulusAI/chronulus-mcp",
+  "description": "Chronulus MCP provides access to the Chronulus AI platform of forecasting and prediction agents.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "chronulus-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "create_chronulus_session",
+      "description": "A tool that creates a new Chronulus Session and returns a session_id"
+    },
+    {
+      "name": "create_forecasting_agent_and_get_forecast",
+      "description": "This tool creates a NormalizedForecaster agent with your session and input data model and then provides a forecast input data to the agent and returns the prediction data and text explanation from the agent."
+    },
+    {
+      "name": "reuse_forecasting_agent_and_get_forecast",
+      "description": "This tool provides a forecast input to a previous created Chronulus NormalizedForecaster agent and returns the prediction data and text explanation from the agent."
+    },
+    {
+      "name": "rescale_forecast",
+      "description": "A tool that rescales the prediction data (values between 0 and 1) from the NormalizedForecaster agent to scale required for a use case"
+    },
+    {
+      "name": "save_forecast",
+      "description": "A tool that saves a Chronulus forecast from NormalizedForecaster to separate CSV and TXT files"
+    },
+    {
+      "name": "create_prediction_agent_and_get_predictions",
+      "description": "This tool creates a BinaryPredictor agent with your session and input data model and then provides prediction input data to the agent and returns the consensus a prediction from a panel of experts along with their individual estimates and text explanations."
+    },
+    {
+      "name": "reuse_prediction_agent_and_get_prediction",
+      "description": "This tool provides prediction input data to a previously created Chronulus BinaryPredictor agent and returns the consensus a prediction from a panel of experts along with their individual estimates and text explanations."
+    },
+    {
+      "name": "save_prediction_analysis_html",
+      "description": "A tool that saves an analysis of a BinaryPredictor prediction to HTML."
+    },
+    {
+      "name": "get_risk_assessment_scorecard",
+      "description": "A tool that retrieves the risk assessment scorecard for the Chronulus Session in Markdown format"
+    }
+  ],
+  "resources": [
+    {
+      "name": "Scorecard React Template",
+      "uritemplate": "chronulus-react://Scorecard.jsx",
+      "description": "Get scorecard.tsx",
+      "mimetype": "text/javascript"
+    },
+    {
+      "name": "Beta Plot",
+      "uritemplate": "chronulus-react://BetaPlot.jsx",
+      "description": "Get BetaPlot.jsx",
+      "mimetype": "text/javascript"
+    }
+  ]
+}

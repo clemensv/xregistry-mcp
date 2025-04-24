@@ -1,0 +1,112 @@
+{
+  "repo_ref": "ClickHouse/mcp-clickhouse",
+  "name": "io.github.ClickHouse/mcp-clickhouse",
+  "description": "An MCP server for ClickHouse.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcp-clickhouse",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "CLICKHOUSE_HOST",
+            "description": "The hostname of your ClickHouse server",
+            "required": true
+          },
+          {
+            "name": "CLICKHOUSE_USER",
+            "description": "The username for authentication",
+            "required": true
+          },
+          {
+            "name": "CLICKHOUSE_PASSWORD",
+            "description": "The password for authentication",
+            "required": true
+          },
+          {
+            "name": "CLICKHOUSE_PORT",
+            "description": "The port of the ClickHouse server",
+            "required": false
+          },
+          {
+            "name": "CLICKHOUSE_SECURE",
+            "description": "Use secure connection",
+            "required": false
+          },
+          {
+            "name": "CLICKHOUSE_VERIFY",
+            "description": "Verify SSL certificates",
+            "required": false
+          },
+          {
+            "name": "CLICKHOUSE_CONNECT_TIMEOUT",
+            "description": "Connection timeout in seconds",
+            "required": false
+          },
+          {
+            "name": "CLICKHOUSE_SEND_RECEIVE_TIMEOUT",
+            "description": "Send/receive timeout in seconds",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "run_select_query",
+      "description": "Run a SELECT query in a ClickHouse database",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The SELECT query to execute"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "list_databases",
+      "description": "List available ClickHouse databases",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "list_tables",
+      "description": "List available ClickHouse tables in a database, including schema, comment, row count, and column count.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "database": {
+            "type": "string",
+            "description": "The name of the database"
+          },
+          "like": {
+            "type": "string",
+            "description": "Optional pattern to filter tables"
+          }
+        },
+        "required": [
+          "database"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

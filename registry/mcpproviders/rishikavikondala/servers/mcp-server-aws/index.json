@@ -1,0 +1,207 @@
+{
+  "repo_ref": "rishikavikondala/mcp-server-aws",
+  "name": "io.github.rishikavikondala/mcp-server-aws",
+  "description": "A Model Context Protocol server implementation for AWS operations that currently supports S3 and DynamoDB services. All operations are automatically logged and can be accessed through the audit://aws-operations resource endpoint.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "mcp-server-aws",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/path/to/repo/mcp-server-aws",
+          "run",
+          "mcp-server-aws"
+        ],
+        "environment_variables": [
+          {
+            "name": "AWS_ACCESS_KEY_ID",
+            "description": "AWS access key ID",
+            "required": false
+          },
+          {
+            "name": "AWS_SECRET_ACCESS_KEY",
+            "description": "AWS secret access key",
+            "required": false
+          },
+          {
+            "name": "AWS_REGION",
+            "description": "AWS region, defaults to us-east-1",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "s3_bucket_create",
+      "description": "Create a new S3 bucket",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "s3_bucket_list",
+      "description": "List all S3 buckets",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "s3_bucket_delete",
+      "description": "Delete an S3 bucket",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "s3_object_upload",
+      "description": "Upload an object to S3",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "s3_object_delete",
+      "description": "Delete an object from S3",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "s3_object_list",
+      "description": "List objects in an S3 bucket",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "s3_object_read",
+      "description": "Read an object's content from S3",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "dynamodb_table_create",
+      "description": "Create a new DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "dynamodb_table_describe",
+      "description": "Get details about a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "dynamodb_table_delete",
+      "description": "Delete a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "dynamodb_table_update",
+      "description": "Update a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "dynamodb_item_put",
+      "description": "Put an item into a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "dynamodb_item_get",
+      "description": "Get an item from a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "dynamodb_item_update",
+      "description": "Update an item in a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "dynamodb_item_delete",
+      "description": "Delete an item from a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "dynamodb_item_query",
+      "description": "Query items in a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "dynamodb_item_scan",
+      "description": "Scan items in a DynamoDB table",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "dynamodb_batch_get",
+      "description": "Batch get multiple items from DynamoDB tables",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "dynamodb_item_batch_write",
+      "description": "Batch write operations (put/delete) for DynamoDB items",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "dynamodb_batch_execute",
+      "description": "Execute multiple PartiQL statements in a batch",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "dynamodb_describe_ttl",
+      "description": "Get the TTL settings for a table",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "dynamodb_update_ttl",
+      "description": "Update the TTL settings for a table",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "aws-operations",
+      "uritemplate": "audit://aws-operations",
+      "description": "Access to automatically logged AWS operations."
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "repo_ref": "pab1it0/prometheus-mcp-server",
+  "name": "io.github.pab1it0/prometheus-mcp-server",
+  "description": "A Model Context Protocol (MCP) server for Prometheus. Provides access to Prometheus metrics and queries through standardized MCP interfaces, allowing AI assistants to execute PromQL queries and analyze metrics data.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "prometheus-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "unspecified",
+      "package_name": "unspecified",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "<full path to prometheus-mcp-server directory>",
+          "run",
+          "src/prometheus_mcp_server/main.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "PROMETHEUS_URL",
+            "description": "URL of the Prometheus server",
+            "required": true
+          },
+          {
+            "name": "PROMETHEUS_USERNAME",
+            "description": "Username for basic authentication",
+            "required": false
+          },
+          {
+            "name": "PROMETHEUS_PASSWORD",
+            "description": "Password for basic authentication",
+            "required": false
+          },
+          {
+            "name": "PROMETHEUS_TOKEN",
+            "description": "Bearer token for authentication",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

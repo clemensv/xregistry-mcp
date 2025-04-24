@@ -1,0 +1,25 @@
+{
+  "repo_ref": "AI-QL/chat-mcp",
+  "name": "io.github.AI-QL/chat-mcp",
+  "description": "A Cross-Platform Interface for LLMs utilizing the MCP (Model Context Protocol) to connect and interact with various Large Language Models (LLMs).",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "unspecified",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

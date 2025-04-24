@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:40:39.272825189Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/aliyun/servers/alibabacloud-hologres-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:40:39.272825189Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/aliyun/servers/alibabacloud-hologres-mcp-server/meta",
+  "serverid": "alibabacloud-hologres-mcp-server",
+  "xid": "/mcpproviders/aliyun/servers/alibabacloud-hologres-mcp-server/meta"
+}

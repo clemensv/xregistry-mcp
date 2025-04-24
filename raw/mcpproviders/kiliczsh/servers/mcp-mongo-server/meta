@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:40.352543573Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kiliczsh/servers/mcp-mongo-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:40.352543573Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kiliczsh/servers/mcp-mongo-server/meta",
+  "serverid": "mcp-mongo-server",
+  "xid": "/mcpproviders/kiliczsh/servers/mcp-mongo-server/meta"
+}

@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:44:15.287817954Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/VectorInstitute/servers/mcp-goodnews/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:44:15.287817954Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/VectorInstitute/servers/mcp-goodnews/meta",
+  "serverid": "mcp-goodnews",
+  "xid": "/mcpproviders/VectorInstitute/servers/mcp-goodnews/meta"
+}

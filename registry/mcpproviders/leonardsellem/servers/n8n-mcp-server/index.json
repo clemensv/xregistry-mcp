@@ -1,0 +1,156 @@
+{
+  "repo_ref": "leonardsellem/n8n-mcp-server",
+  "name": "io.github.leonardsellem/n8n-mcp-server",
+  "description": "A Model Context Protocol (MCP) server that allows AI assistants to interact with n8n workflows through natural language. This MCP server provides tools and resources for AI assistants to manage n8n workflows and executions, including listing, creating, updating, deleting, activating, deactivating workflows, executing workflows, monitoring status, and accessing workflow information and execution statistics.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "n8n-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "N8N_API_URL",
+            "description": "Full URL of the n8n API, including /api/v1",
+            "required": true
+          },
+          {
+            "name": "N8N_API_KEY",
+            "description": "API key for authenticating with n8n",
+            "required": true
+          },
+          {
+            "name": "N8N_WEBHOOK_USERNAME",
+            "description": "Username for webhook authentication (optional)",
+            "required": false
+          },
+          {
+            "name": "N8N_WEBHOOK_PASSWORD",
+            "description": "Password for webhook authentication (optional)",
+            "required": false
+          },
+          {
+            "name": "DEBUG",
+            "description": "Enable debug logging (optional)",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "list_workflows",
+      "description": "List all workflows available in the n8n instance.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_workflow",
+      "description": "Retrieve details of a specific workflow.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_workflow",
+      "description": "Create a new workflow in n8n.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "update_workflow",
+      "description": "Update an existing workflow.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_workflow",
+      "description": "Delete a workflow from n8n.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "activate_workflow",
+      "description": "Activate a workflow to enable execution.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "deactivate_workflow",
+      "description": "Deactivate a workflow to disable execution.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_executions",
+      "description": "List executions of workflows.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_execution",
+      "description": "Get details of a specific execution.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_execution",
+      "description": "Delete an execution record.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "run_webhook",
+      "description": "Execute a workflow via webhook trigger.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "workflows",
+      "description": "Static resource representing all workflows.",
+      "uritemplate": "/resources/workflows",
+      "mimetype": "application/json"
+    },
+    {
+      "name": "execution_stats",
+      "description": "Static resource representing execution statistics.",
+      "uritemplate": "/resources/execution-stats",
+      "mimetype": "application/json"
+    },
+    {
+      "name": "workflow",
+      "description": "Dynamic resource for a specific workflow identified by ID.",
+      "uritemplate": "/resources/workflows/{workflowId}",
+      "mimetype": "application/json"
+    },
+    {
+      "name": "execution",
+      "description": "Dynamic resource for a specific execution identified by ID.",
+      "uritemplate": "/resources/executions/{executionId}",
+      "mimetype": "application/json"
+    }
+  ]
+}

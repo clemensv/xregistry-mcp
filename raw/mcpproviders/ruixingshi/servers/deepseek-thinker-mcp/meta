@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:43:07.94197999Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ruixingshi/servers/deepseek-thinker-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:43:07.94197999Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ruixingshi/servers/deepseek-thinker-mcp/meta",
+  "serverid": "deepseek-thinker-mcp",
+  "xid": "/mcpproviders/ruixingshi/servers/deepseek-thinker-mcp/meta"
+}

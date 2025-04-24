@@ -1,0 +1,297 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:42.350825159Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "dist/index.js"
+        ],
+        "command": "node",
+        "env": [
+          {
+            "description": "Your Kong Konnect API key",
+            "name": "KONNECT_ACCESS_TOKEN",
+            "required": true
+          },
+          {
+            "description": "The API region to use (defaults to US)",
+            "name": "KONNECT_REGION",
+            "required": false
+          }
+        ],
+        "package": "@modelcontextprotocol/sdk",
+        "runtime": "nodejs"
+      }
+    },
+    "description": "Tools for managing and analyzing Kong Konnect API Gateway configurations and traffic",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0.0",
+    "modifiedat": "2025-04-25T12:41:42.350825159Z",
+    "name": "kong-konnect-mcp",
+    "repository": {
+      "name": "Kong/mcp-konnect",
+      "url": "https://github.com/Kong/mcp-konnect"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/Kong/servers/mcp-konnect/versions/1",
+    "serverid": "mcp-konnect",
+    "serverversion": "1.0.0",
+    "tools": [
+      {
+        "description": "Query and analyze Kong API Gateway requests with customizable filters.",
+        "inputschema": {
+          "properties": {
+            "consumerIds": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "excludeStatusCodes": {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            "httpMethods": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "maxResults": {
+              "type": "integer"
+            },
+            "routeIds": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "serviceIds": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "statusCodes": {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            "timeRange": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "timeRange"
+          ],
+          "type": "object"
+        },
+        "name": "query_api_requests"
+      },
+      {
+        "description": "Analyze API requests made by a specific consumer.",
+        "inputschema": {
+          "properties": {
+            "consumerId": {
+              "type": "string"
+            },
+            "failureOnly": {
+              "type": "boolean"
+            },
+            "maxResults": {
+              "type": "integer"
+            },
+            "successOnly": {
+              "type": "boolean"
+            },
+            "timeRange": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "consumerId",
+            "timeRange"
+          ],
+          "type": "object"
+        },
+        "name": "get_consumer_requests"
+      },
+      {
+        "description": "List all services associated with a control plane.",
+        "inputschema": {
+          "properties": {
+            "controlPlaneId": {
+              "type": "string"
+            },
+            "offset": {
+              "type": "string"
+            },
+            "size": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "controlPlaneId"
+          ],
+          "type": "object"
+        },
+        "name": "list_services"
+      },
+      {
+        "description": "List all routes associated with a control plane.",
+        "inputschema": {
+          "properties": {
+            "controlPlaneId": {
+              "type": "string"
+            },
+            "offset": {
+              "type": "string"
+            },
+            "size": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "controlPlaneId"
+          ],
+          "type": "object"
+        },
+        "name": "list_routes"
+      },
+      {
+        "description": "List all consumers associated with a control plane.",
+        "inputschema": {
+          "properties": {
+            "controlPlaneId": {
+              "type": "string"
+            },
+            "offset": {
+              "type": "string"
+            },
+            "size": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "controlPlaneId"
+          ],
+          "type": "object"
+        },
+        "name": "list_consumers"
+      },
+      {
+        "description": "List all plugins associated with a control plane.",
+        "inputschema": {
+          "properties": {
+            "controlPlaneId": {
+              "type": "string"
+            },
+            "offset": {
+              "type": "string"
+            },
+            "size": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "controlPlaneId"
+          ],
+          "type": "object"
+        },
+        "name": "list_plugins"
+      },
+      {
+        "description": "List control planes with filtering and pagination.",
+        "inputschema": {
+          "properties": {
+            "filterCloudGateway": {
+              "type": "boolean"
+            },
+            "filterClusterType": {
+              "type": "string"
+            },
+            "filterName": {
+              "type": "string"
+            },
+            "labels": {
+              "type": "object"
+            },
+            "pageNumber": {
+              "type": "integer"
+            },
+            "pageSize": {
+              "type": "integer"
+            },
+            "sort": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": "list_control_planes"
+      },
+      {
+        "description": "Get details of a specific control plane.",
+        "inputschema": {
+          "properties": {
+            "controlPlaneId": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "controlPlaneId"
+          ],
+          "type": "object"
+        },
+        "name": "get_control_plane"
+      },
+      {
+        "description": "List memberships of a control plane group.",
+        "inputschema": {
+          "properties": {
+            "groupId": {
+              "type": "string"
+            },
+            "pageAfter": {
+              "type": "string"
+            },
+            "pageSize": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "groupId"
+          ],
+          "type": "object"
+        },
+        "name": "list_control_plane_group_memberships"
+      },
+      {
+        "description": "Check membership of a control plane in a group.",
+        "inputschema": {
+          "properties": {
+            "controlPlaneId": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "controlPlaneId"
+          ],
+          "type": "object"
+        },
+        "name": "check_control_plane_group_membership"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/Kong/servers/mcp-konnect/versions/1"
+  }
+}

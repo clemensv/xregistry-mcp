@@ -1,0 +1,106 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:19.943806432Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "--directory",
+        "/path/to/greptimedb-mcp-server",
+        "run",
+        "-m",
+        "greptimedb_mcp_server.server"
+      ],
+      "command": "uv",
+      "env": [
+        {
+          "default": "localhost",
+          "description": "Database host",
+          "name": "GREPTIMEDB_HOST",
+          "required": true
+        },
+        {
+          "default": "4002",
+          "description": "Database port",
+          "name": "GREPTIMEDB_PORT",
+          "required": false
+        },
+        {
+          "default": "root",
+          "description": "Database username",
+          "name": "GREPTIMEDB_USER",
+          "required": true
+        },
+        {
+          "default": "",
+          "description": "Database password",
+          "name": "GREPTIMEDB_PASSWORD",
+          "required": false
+        },
+        {
+          "default": "public",
+          "description": "Database name",
+          "name": "GREPTIMEDB_DATABASE",
+          "required": true
+        }
+      ],
+      "package": "greptimedb-mcp-server",
+      "runtime": "uv"
+    }
+  },
+  "description": "A Model Context Protocol (MCP) server implementation for GreptimeDB. This server provides AI assistants with a secure and structured way to explore and analyze databases. It enables them to list tables, read data, and execute SQL queries through a controlled interface, ensuring responsible database access.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GreptimeTeam/servers/greptimedb-mcp-server/meta",
+  "modifiedat": "2025-04-25T12:41:19.943806432Z",
+  "name": "greptimedb-mcp-server",
+  "prompts": [
+    {
+      "arguments": [],
+      "description": "Detailed explanation of when and how to use this prompt.",
+      "name": "example_prompt"
+    }
+  ],
+  "repository": {
+    "name": "GreptimeTeam/greptimedb-mcp-server",
+    "url": "https://github.com/GreptimeTeam/greptimedb-mcp-server"
+  },
+  "resources": [
+    {
+      "description": "Data in table: {table}",
+      "mimetype": "text/plain",
+      "name": "Table",
+      "uritemplate": "greptime://{table}/data"
+    }
+  ],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GreptimeTeam/servers/greptimedb-mcp-server",
+  "serverid": "greptimedb-mcp-server",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "description": "Execute SQL query against GreptimeDB. Please use MySQL dialect when generating SQL queries.",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "The SQL query to execute (using MySQL dialect)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "execute_sql"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GreptimeTeam/servers/greptimedb-mcp-server/versions",
+  "xid": "/mcpproviders/GreptimeTeam/servers/greptimedb-mcp-server"
+}

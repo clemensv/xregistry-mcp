@@ -1,0 +1,89 @@
+{
+  "repo_ref": "osomai/servicenow-mcp",
+  "name": "io.github.osomai/servicenow-mcp",
+  "description": "A Model Completion Protocol (MCP) server implementation for ServiceNow, allowing Claude to interact with ServiceNow instances.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [
+    {
+      "url": "http://0.0.0.0:8080",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "servicenow-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "SERVICENOW_INSTANCE_URL",
+            "description": "URL of the ServiceNow instance",
+            "required": true
+          },
+          {
+            "name": "SERVICENOW_USERNAME",
+            "description": "Username for authentication",
+            "required": true
+          },
+          {
+            "name": "SERVICENOW_PASSWORD",
+            "description": "Password for authentication",
+            "required": true
+          },
+          {
+            "name": "SERVICENOW_AUTH_TYPE",
+            "description": "Authentication type (basic, oauth, api_key)",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "list_catalog_items",
+      "description": "Tool to list catalog items from ServiceNow.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_catalog_item",
+      "description": "Tool to get details of a specific catalog item from ServiceNow.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_catalog_categories",
+      "description": "Tool to list catalog categories from ServiceNow.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "catalog://items",
+      "name": "catalog_items",
+      "description": "Resource representing catalog items."
+    },
+    {
+      "uritemplate": "catalog://categories",
+      "name": "catalog_categories",
+      "description": "Resource representing catalog categories."
+    },
+    {
+      "uritemplate": "catalog://{item_id}",
+      "name": "catalog_item",
+      "description": "Resource representing a specific catalog item by ID."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:53.093796617Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "src/mailgun-mcp.js"
+      ],
+      "command": "node",
+      "env": [
+        {
+          "description": "API key for Mailgun service",
+          "name": "MAILGUN_API_KEY",
+          "required": true
+        }
+      ],
+      "package": "mailgun-mcp-server",
+      "runtime": "node"
+    }
+  },
+  "description": "A Model Context Protocol (MCP) server implementation for Mailgun, enabling MCP-compatible AI clients like Claude Desktop to interact with the service.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "unknown",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/mailgun/servers/mailgun-mcp-server/meta",
+  "modifiedat": "2025-04-25T12:41:53.093796617Z",
+  "name": "Mailgun MCP Server",
+  "prompts": [
+    {
+      "arguments": [
+        {
+          "description": "Recipient email address",
+          "name": "EMAIL_HERE",
+          "required": true
+        },
+        {
+          "description": "Sending domain",
+          "name": "DOMAIN_HERE",
+          "required": true
+        }
+      ],
+      "description": "Send an email with specified body, sender, and domain.",
+      "name": "send_email"
+    },
+    {
+      "arguments": [],
+      "description": "Fetch and visualize email delivery statistics for the past week.",
+      "name": "fetch_sending_statistics"
+    }
+  ],
+  "repository": {
+    "name": "mailgun/mailgun-mcp-server",
+    "url": "https://github.com/mailgun/mailgun-mcp-server"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/mailgun/servers/mailgun-mcp-server",
+  "serverid": "mailgun-mcp-server",
+  "serverversion": "unknown",
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/mailgun/servers/mailgun-mcp-server/versions",
+  "xid": "/mcpproviders/mailgun/servers/mailgun-mcp-server"
+}

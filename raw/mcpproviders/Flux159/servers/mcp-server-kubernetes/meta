@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:07.387568844Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/Flux159/servers/mcp-server-kubernetes/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:07.387568844Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/Flux159/servers/mcp-server-kubernetes/meta",
+  "serverid": "mcp-server-kubernetes",
+  "xid": "/mcpproviders/Flux159/servers/mcp-server-kubernetes/meta"
+}

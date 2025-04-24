@@ -1,0 +1,190 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:44:11.858007017Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "index.js"
+      ],
+      "command": "node",
+      "env": [
+        {
+          "description": "Google OAuth client ID",
+          "name": "GOOGLE_CLIENT_ID",
+          "required": true
+        },
+        {
+          "description": "Google OAuth client secret",
+          "name": "GOOGLE_CLIENT_SECRET",
+          "required": true
+        },
+        {
+          "description": "OAuth redirect URI",
+          "name": "GOOGLE_REDIRECT_URI",
+          "required": true
+        },
+        {
+          "description": "OAuth refresh token",
+          "name": "GOOGLE_REFRESH_TOKEN",
+          "required": true
+        }
+      ],
+      "package": "@modelcontextprotocol/google-calendar-mcp-server",
+      "runtime": "nodejs"
+    }
+  },
+  "description": "This MCP server allows Claude to interact with your Google Calendar, enabling capabilities like listing events, creating meetings, and finding free time slots.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0.0",
+  "modifiedat": "2025-04-25T12:44:11.858007017Z",
+  "name": "google-calendar-server",
+  "repository": {
+    "name": "v-3/google-calendar",
+    "url": "https://github.com/v-3/google-calendar"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/v-3/servers/google-calendar/versions/1",
+  "serverid": "google-calendar",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "description": "List calendar events within a specified time range",
+      "inputschema": {
+        "properties": {
+          "maxResults": {
+            "description": "Maximum number of events to return",
+            "type": "number"
+          },
+          "timeMax": {
+            "description": "End time (ISO string)",
+            "type": "string"
+          },
+          "timeMin": {
+            "description": "Start time (ISO string)",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "name": "list_events"
+    },
+    {
+      "description": "Create a new calendar event",
+      "inputschema": {
+        "properties": {
+          "attendees": {
+            "description": "List of attendee email addresses",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "description": {
+            "description": "Event description",
+            "type": "string"
+          },
+          "endTime": {
+            "description": "Event end time (ISO string)",
+            "type": "string"
+          },
+          "startTime": {
+            "description": "Event start time (ISO string)",
+            "type": "string"
+          },
+          "summary": {
+            "description": "Event title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "summary",
+          "startTime",
+          "endTime"
+        ],
+        "type": "object"
+      },
+      "name": "create_event"
+    },
+    {
+      "description": "Update an existing calendar event",
+      "inputschema": {
+        "properties": {
+          "description": {
+            "description": "New event description",
+            "type": "string"
+          },
+          "endTime": {
+            "description": "New end time (ISO string)",
+            "type": "string"
+          },
+          "eventId": {
+            "description": "ID of the event to update",
+            "type": "string"
+          },
+          "required": [
+            "eventId"
+          ],
+          "startTime": {
+            "description": "New start time (ISO string)",
+            "type": "string"
+          },
+          "summary": {
+            "description": "New event title",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "name": "update_event"
+    },
+    {
+      "description": "Delete a calendar event",
+      "inputschema": {
+        "properties": {
+          "eventId": {
+            "description": "ID of the event to delete",
+            "type": "string"
+          }
+        },
+        "required": [
+          "eventId"
+        ],
+        "type": "object"
+      },
+      "name": "delete_event"
+    },
+    {
+      "description": "Find available time slots in the calendar",
+      "inputschema": {
+        "properties": {
+          "duration": {
+            "description": "Desired duration in minutes",
+            "type": "number"
+          },
+          "timeMax": {
+            "description": "End of time range (ISO string)",
+            "type": "string"
+          },
+          "timeMin": {
+            "description": "Start of time range (ISO string)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "timeMin",
+          "timeMax",
+          "duration"
+        ],
+        "type": "object"
+      },
+      "name": "find_free_time"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/v-3/servers/google-calendar/versions/1"
+}

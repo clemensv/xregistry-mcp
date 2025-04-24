@@ -1,0 +1,88 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:51.930325221Z",
+  "deployment": {
+    "container": {
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GLEAN_API_KEY",
+        "-e",
+        "GLEAN_DOMAIN",
+        "glean-server"
+      ],
+      "env": [
+        {
+          "description": "API key for Glean",
+          "name": "GLEAN_API_KEY",
+          "required": true
+        },
+        {
+          "description": "Domain for Glean API",
+          "name": "GLEAN_DOMAIN",
+          "required": true
+        }
+      ],
+      "image": "glean-server:latest"
+    }
+  },
+  "description": "An MCP server implementation that integrates the Glean API, providing the Search and Chat functions.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/longyi1207/servers/glean-mcp-server/meta",
+  "modifiedat": "2025-04-25T12:41:51.930325221Z",
+  "name": "glean-server",
+  "repository": {
+    "name": "longyi1207/glean-mcp-server",
+    "url": "https://github.com/longyi1207/glean-mcp-server"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/longyi1207/servers/glean-mcp-server",
+  "serverid": "glean-mcp-server",
+  "serverversion": "0.1.0",
+  "tools": [
+    {
+      "description": "Tool to perform search queries using Glean API",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "The query to perform retrieval on",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "search"
+    },
+    {
+      "description": "Tool to interact with ChatGPT using Glean API",
+      "inputschema": {
+        "properties": {
+          "message": {
+            "description": "The message to send to ChatGPT",
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ],
+        "type": "object"
+      },
+      "name": "chat"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/longyi1207/servers/glean-mcp-server/versions",
+  "xid": "/mcpproviders/longyi1207/servers/glean-mcp-server"
+}

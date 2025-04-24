@@ -1,0 +1,135 @@
+{
+  "repo_ref": "apache/iotdb-mcp-server",
+  "name": "io.github.apache/iotdb-mcp-server",
+  "description": "A Model Context Protocol (MCP) server implementation that provides database interaction and business intelligence capabilities through IoTDB. This server enables running SQL queries.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python-uv",
+      "package_name": "iotdb-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "YOUR_REPO_PATH/src/iotdb_mcp_server",
+          "run",
+          "server.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "IOTDB_HOST",
+            "description": "Host address of the IoTDB server",
+            "required": true
+          },
+          {
+            "name": "IOTDB_PORT",
+            "description": "Port number of the IoTDB server",
+            "required": true
+          },
+          {
+            "name": "IOTDB_USER",
+            "description": "Username for IoTDB authentication",
+            "required": true
+          },
+          {
+            "name": "IOTDB_PASSWORD",
+            "description": "Password for IoTDB authentication",
+            "required": true
+          },
+          {
+            "name": "IOTDB_DATABASE",
+            "description": "Database name to connect to",
+            "required": true
+          },
+          {
+            "name": "IOTDB_SQL_DIALECT",
+            "description": "SQL dialect to use: 'tree' or 'table'",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "metadata_query",
+      "description": "Execute SHOW/COUNT queries to read metadata from the database",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query_sql": {
+            "type": "string",
+            "description": "The SHOW/COUNT SQL query to execute"
+          }
+        },
+        "required": [
+          "query_sql"
+        ]
+      }
+    },
+    {
+      "name": "select_query",
+      "description": "Execute SELECT queries to read data from the database",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query_sql": {
+            "type": "string",
+            "description": "The SELECT SQL query to execute"
+          }
+        },
+        "required": [
+          "query_sql"
+        ]
+      }
+    },
+    {
+      "name": "read_query",
+      "description": "Execute SELECT queries to read data from the database",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The SELECT SQL query to execute"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "list_tables",
+      "description": "Get a list of all tables in the database",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "describe-table",
+      "description": "View schema information for a specific table",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "table_name": {
+            "type": "string",
+            "description": "Name of table to describe"
+          }
+        },
+        "required": [
+          "table_name"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

@@ -1,0 +1,50 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:02.913960104Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "start"
+      ],
+      "command": "npm",
+      "env": [
+        {
+          "description": "API key for Search1API",
+          "name": "SEARCH1API_KEY",
+          "required": true
+        }
+      ],
+      "package": "search1api-mcp",
+      "runtime": "nodejs"
+    }
+  },
+  "description": "A Model Context Protocol (MCP) server that provides search and crawl functionality using Search1API.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0.0",
+  "modifiedat": "2025-04-25T12:41:02.913960104Z",
+  "name": "search1api-server",
+  "repository": {
+    "name": "fatwang2/search1api-mcp",
+    "url": "https://github.com/fatwang2/search1api-mcp"
+  },
+  "resources": [
+    {
+      "description": "Basic information about Search1API capabilities",
+      "mimetype": "application/json",
+      "name": "Search1API Information",
+      "uritemplate": "search1api://info"
+    }
+  ],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/fatwang2/servers/search1api-mcp/versions/1",
+  "serverid": "search1api-mcp",
+  "serverversion": "1.0.0",
+  "tools": [],
+  "versionid": "1",
+  "xid": "/mcpproviders/fatwang2/servers/search1api-mcp/versions/1"
+}

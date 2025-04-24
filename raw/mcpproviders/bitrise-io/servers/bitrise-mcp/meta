@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:40:45.437068592Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/bitrise-io/servers/bitrise-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:40:45.437068592Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/bitrise-io/servers/bitrise-mcp/meta",
+  "serverid": "bitrise-mcp",
+  "xid": "/mcpproviders/bitrise-io/servers/bitrise-mcp/meta"
+}

@@ -1,0 +1,47 @@
+{
+  "mindmap-mcp-server": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:44:39.160746129Z",
+    "deployment": {
+      "container": {
+        "args": [
+          "run",
+          "--rm",
+          "-i",
+          "-v",
+          "/path/to/output/folder:/output",
+          "ychen94/mindmap-converter-mcp:latest"
+        ],
+        "image": "ychen94/mindmap-converter-mcp"
+      },
+      "sandbox": {
+        "args": [
+          "mindmap-mcp-server",
+          "--return-type",
+          "filePath"
+        ],
+        "command": "uvx",
+        "package": "mindmap-mcp-server",
+        "runtime": "nodejs"
+      }
+    },
+    "description": "A Model Context Protocol (MCP) server for converting Markdown content to interactive mindmaps.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/YuChenSSR/servers/mindmap-mcp-server/meta",
+    "modifiedat": "2025-04-25T12:44:39.160746129Z",
+    "name": "Mindmap MCP Server",
+    "repository": {
+      "name": "YuChenSSR/mindmap-mcp-server",
+      "url": "https://github.com/YuChenSSR/mindmap-mcp-server"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/YuChenSSR/servers/mindmap-mcp-server",
+    "serverid": "mindmap-mcp-server",
+    "serverversion": "unknown",
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/YuChenSSR/servers/mindmap-mcp-server/versions",
+    "xid": "/mcpproviders/YuChenSSR/servers/mindmap-mcp-server"
+  }
+}

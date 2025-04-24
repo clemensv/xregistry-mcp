@@ -1,0 +1,189 @@
+{
+  "repo_ref": "lishenxydlgzs/aws-athena-mcp",
+  "name": "io.github.lishenxydlgzs/aws-athena-mcp",
+  "description": "A Model Context Protocol (MCP) server for running AWS Athena queries. This server enables AI assistants to execute SQL queries against your AWS Athena databases and retrieve results.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@lishenxydlgzs/aws-athena-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@lishenxydlgzs/aws-athena-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "OUTPUT_S3_PATH",
+            "description": "S3 bucket path for Athena query results",
+            "required": true
+          },
+          {
+            "name": "AWS_REGION",
+            "description": "AWS region (optional)",
+            "required": false
+          },
+          {
+            "name": "AWS_PROFILE",
+            "description": "AWS profile name (optional)",
+            "required": false
+          },
+          {
+            "name": "AWS_ACCESS_KEY_ID",
+            "description": "AWS access key (optional)",
+            "required": false
+          },
+          {
+            "name": "AWS_SECRET_ACCESS_KEY",
+            "description": "AWS secret key (optional)",
+            "required": false
+          },
+          {
+            "name": "AWS_SESSION_TOKEN",
+            "description": "AWS session token (optional)",
+            "required": false
+          },
+          {
+            "name": "ATHENA_WORKGROUP",
+            "description": "Athena WorkGroup (optional)",
+            "required": false
+          },
+          {
+            "name": "QUERY_TIMEOUT_MS",
+            "description": "Query timeout in milliseconds (optional)",
+            "required": false
+          },
+          {
+            "name": "MAX_RETRIES",
+            "description": "Maximum retry attempts (optional)",
+            "required": false
+          },
+          {
+            "name": "RETRY_DELAY_MS",
+            "description": "Delay between retries in milliseconds (optional)",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "run_query",
+      "description": "Execute a SQL query using AWS Athena. Returns full results if query completes before timeout, otherwise returns queryExecutionId.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "database": {
+            "type": "string",
+            "description": "The Athena database to query"
+          },
+          "query": {
+            "type": "string",
+            "description": "SQL query to execute"
+          },
+          "maxRows": {
+            "type": "number",
+            "description": "Maximum number of rows to return (default: 1000)",
+            "minimum": 1,
+            "maximum": 10000
+          },
+          "timeoutMs": {
+            "type": "number",
+            "description": "Timeout in milliseconds (default: 60000)",
+            "minimum": 1000
+          }
+        },
+        "required": [
+          "database",
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "get_result",
+      "description": "Get results for a completed query. Returns error if query is still running.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "queryExecutionId": {
+            "type": "string",
+            "description": "The query execution ID"
+          },
+          "maxRows": {
+            "type": "number",
+            "description": "Maximum number of rows to return (default: 1000)",
+            "minimum": 1,
+            "maximum": 10000
+          }
+        },
+        "required": [
+          "queryExecutionId"
+        ]
+      }
+    },
+    {
+      "name": "get_status",
+      "description": "Get the current status of a query execution",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "queryExecutionId": {
+            "type": "string",
+            "description": "The query execution ID"
+          }
+        },
+        "required": [
+          "queryExecutionId"
+        ]
+      }
+    },
+    {
+      "name": "run_saved_query",
+      "description": "Execute a saved (named) Athena query by its query ID.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "namedQueryId": {
+            "type": "string",
+            "description": "Athena NamedQueryId"
+          },
+          "databaseOverride": {
+            "type": "string",
+            "description": "Optional database override"
+          },
+          "maxRows": {
+            "type": "number",
+            "description": "Maximum number of rows to return (default: 1000)",
+            "minimum": 1,
+            "maximum": 10000
+          },
+          "timeoutMs": {
+            "type": "number",
+            "description": "Timeout in milliseconds (default: 60000)",
+            "minimum": 1000
+          }
+        },
+        "required": [
+          "namedQueryId"
+        ]
+      }
+    },
+    {
+      "name": "list_saved_queries",
+      "description": "List all saved (named) Athena queries available in your AWS account.",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  ],
+  "resources": []
+}

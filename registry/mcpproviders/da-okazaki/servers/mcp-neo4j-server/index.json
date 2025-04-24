@@ -1,0 +1,118 @@
+{
+  "repo_ref": "da-okazaki/mcp-neo4j-server",
+  "name": "io.github.da-okazaki/mcp-neo4j-server",
+  "description": "An MCP server that provides integration between Neo4j graph database and Claude Desktop, enabling graph database operations through natural language interactions.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@alanse/mcp-neo4j-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "@alanse/mcp-neo4j-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "NEO4J_URI",
+            "description": "Neo4j database URI (default: bolt://localhost:7687)",
+            "required": false
+          },
+          {
+            "name": "NEO4J_USERNAME",
+            "description": "Neo4j username (default: neo4j)",
+            "required": false
+          },
+          {
+            "name": "NEO4J_PASSWORD",
+            "description": "Neo4j password (required)",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "execute_query",
+      "description": "Execute a Cypher query on Neo4j database",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Cypher query to execute"
+          },
+          "params": {
+            "type": "object",
+            "description": "Query parameters",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "create_node",
+      "description": "Create a new node in Neo4j",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "Node label"
+          },
+          "properties": {
+            "type": "object",
+            "description": "Node properties",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "label",
+          "properties"
+        ]
+      }
+    },
+    {
+      "name": "create_relationship",
+      "description": "Create a relationship between two nodes",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "fromNodeId": {
+            "type": "number",
+            "description": "ID of the source node"
+          },
+          "toNodeId": {
+            "type": "number",
+            "description": "ID of the target node"
+          },
+          "type": {
+            "type": "string",
+            "description": "Relationship type"
+          },
+          "properties": {
+            "type": "object",
+            "description": "Relationship properties",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "fromNodeId",
+          "toNodeId",
+          "type"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

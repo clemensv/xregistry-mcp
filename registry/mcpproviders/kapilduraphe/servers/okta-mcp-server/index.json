@@ -1,0 +1,58 @@
+{
+  "repo_ref": "kapilduraphe/okta-mcp-server",
+  "name": "io.github.kapilduraphe/okta-mcp-server",
+  "description": "This MCP server enables Claude to interact with Okta's user management system, providing user and group management capabilities.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "unknown",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "dist/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "OKTA_ORG_URL",
+            "required": true
+          },
+          {
+            "name": "OKTA_API_TOKEN",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get_user",
+      "description": "Retrieves detailed user information from Okta, including user details, account dates, personal information, employment details, contact information, address, and preferences.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_users",
+      "description": "Lists users from Okta with optional filtering and pagination, supporting SCIM filter expressions, free-form text search, sorting options, and pagination support.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_groups",
+      "description": "Lists user groups from Okta with optional filtering and pagination, supporting filter expressions, free-form text search, sorting options, and pagination support.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

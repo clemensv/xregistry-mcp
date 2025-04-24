@@ -1,0 +1,378 @@
+{
+  "firebase-mcp": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:09.440745355Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "-y",
+          "@gannonh/firebase-mcp"
+        ],
+        "command": "npx",
+        "env": [
+          {
+            "description": "Path to Firebase service account JSON key",
+            "name": "SERVICE_ACCOUNT_KEY_PATH",
+            "required": true
+          },
+          {
+            "description": "Firebase storage bucket name",
+            "name": "FIREBASE_STORAGE_BUCKET",
+            "required": true
+          }
+        ],
+        "package": "@gannonh/firebase-mcp",
+        "packageversion": "1.3.3",
+        "runtime": "node"
+      }
+    },
+    "description": "Firebase MCP enables AI assistants to work directly with Firebase services, including Firestore, Storage, and Authentication, through a standardized Model Context Protocol interface.",
+    "docs": "https://glama.ai/mcp/servers/x4i8z2xmrq",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.3.3",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/gannonh/servers/firebase-mcp/meta",
+    "modifiedat": "2025-04-25T12:41:09.440745355Z",
+    "name": "firebase-mcp",
+    "repository": {
+      "name": "gannonh/firebase-mcp",
+      "url": "https://github.com/gannonh/firebase-mcp"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/gannonh/servers/firebase-mcp",
+    "serverid": "firebase-mcp",
+    "serverversion": "1.3.3",
+    "tools": [
+      {
+        "description": "Add a document to a Firestore collection",
+        "inputschema": {
+          "properties": {
+            "collection": {
+              "description": "Collection name",
+              "type": "string"
+            },
+            "data": {
+              "description": "Document data",
+              "type": "object"
+            }
+          },
+          "required": [
+            "collection",
+            "data"
+          ],
+          "type": "object"
+        },
+        "name": "firestore_add_document"
+      },
+      {
+        "description": "List documents from a Firestore collection with filtering and ordering",
+        "inputschema": {
+          "properties": {
+            "collection": {
+              "description": "Collection name",
+              "type": "string"
+            },
+            "filters": {
+              "description": "Array of filter conditions",
+              "items": {
+                "properties": {
+                  "field": {
+                    "d": "Field name to filter",
+                    "t": "string"
+                  },
+                  "operato": "Comparison operator (==, \u003e, \u003c, \u003e=, \u003c=, array-contains, in, array-contains-any)",
+                  "value": {
+                    "d": "Value to compare against (use ISO format for dates)",
+                    "t": "string"
+                  }
+                },
+                "required": [
+                  "field",
+                  "operator",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "limit": {
+              "default": 20,
+              "description": "Number of documents to return",
+              "type": "number"
+            },
+            "orderBy": {
+              "description": "Array of fields to order by",
+              "items": {
+                "properties": {
+                  "directi": "asc",
+                  "field": {
+                    "d": "Field name to order by",
+                    "t": "string"
+                  }
+                },
+                "required": [
+                  "field"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "pageToken": {
+              "description": "Token for pagination to get the next page of results",
+              "type": "string"
+            }
+          },
+          "required": [
+            "collection"
+          ],
+          "type": "object"
+        },
+        "name": "firestore_list_documents"
+      },
+      {
+        "description": "Get a document from a Firestore collection",
+        "inputschema": {
+          "properties": {
+            "collection": {
+              "description": "Collection name",
+              "type": "string"
+            },
+            "id": {
+              "description": "Document ID",
+              "type": "string"
+            }
+          },
+          "required": [
+            "collection",
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "firestore_get_document"
+      },
+      {
+        "description": "Update a document in a Firestore collection",
+        "inputschema": {
+          "properties": {
+            "collection": {
+              "description": "Collection name",
+              "type": "string"
+            },
+            "data": {
+              "description": "Updated document data",
+              "type": "object"
+            },
+            "id": {
+              "description": "Document ID",
+              "type": "string"
+            }
+          },
+          "required": [
+            "collection",
+            "id",
+            "data"
+          ],
+          "type": "object"
+        },
+        "name": "firestore_update_document"
+      },
+      {
+        "description": "Delete a document from a Firestore collection",
+        "inputschema": {
+          "properties": {
+            "collection": {
+              "description": "Collection name",
+              "type": "string"
+            },
+            "id": {
+              "description": "Document ID",
+              "type": "string"
+            }
+          },
+          "required": [
+            "collection",
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "firestore_delete_document"
+      },
+      {
+        "description": "Get a user by ID or email from Firebase Authentication",
+        "inputschema": {
+          "properties": {
+            "identifier": {
+              "description": "User ID or email address",
+              "type": "string"
+            }
+          },
+          "required": [
+            "identifier"
+          ],
+          "type": "object"
+        },
+        "name": "auth_get_user"
+      },
+      {
+        "description": "List files in a given path in Firebase Storage",
+        "inputschema": {
+          "properties": {
+            "directoryPath": {
+              "description": "The optional path to list files from. If not provided, the root is used.",
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "storage_list_files"
+      },
+      {
+        "description": "Get file information including metadata and download URL",
+        "inputschema": {
+          "properties": {
+            "filePath": {
+              "description": "The path of the file to get information for",
+              "type": "string"
+            }
+          },
+          "required": [
+            "filePath"
+          ],
+          "type": "object"
+        },
+        "name": "storage_get_file_info"
+      },
+      {
+        "description": "Upload a file to Firebase Storage. Supports local file paths (preferred for binary files), base64 data, or plain text.",
+        "inputschema": {
+          "properties": {
+            "content": {
+              "description": "Can be: 1) A local file path (e.g., \"/path/to/file.pdf\") - RECOMMENDED for all file types, especially binary files like PDFs and images, 2) A data URL (e.g., \"data:image/png;base64,...\") - may have issues with large files, or 3) Plain text content. Note: Document references are not directly accessible - always use the actual file path instead.",
+              "type": "string"
+            },
+            "contentType": {
+              "description": "Optional MIME type. If not provided, it will be automatically detected",
+              "type": "string"
+            },
+            "filePath": {
+              "description": "The destination path in Firebase Storage (e.g., \"images/logo.png\"). If necessary, rename files for optimal URL compatibility (e.g., \"my-document.pdf\" rather than \"My Document.pdf\").",
+              "type": "string"
+            },
+            "metadata": {
+              "description": "Optional additional metadata",
+              "type": "object"
+            }
+          },
+          "required": [
+            "filePath",
+            "content"
+          ],
+          "type": "object"
+        },
+        "name": "storage_upload"
+      },
+      {
+        "description": "Upload a file to Firebase Storage from an external URL. Perfect for images, documents, or any file accessible via URL.",
+        "inputschema": {
+          "properties": {
+            "contentType": {
+              "description": "Optional MIME type. If not provided, it will be automatically detected from the URL or response headers",
+              "type": "string"
+            },
+            "filePath": {
+              "description": "The destination path in Firebase Storage (e.g., \"images/photo.jpg\"). If necessary, rename files for optimal URL compatibility (e.g., \"my-document.pdf\" rather than \"My Document.pdf\").",
+              "type": "string"
+            },
+            "metadata": {
+              "description": "Optional additional metadata",
+              "type": "object"
+            },
+            "url": {
+              "description": "The source URL to download from (e.g., \"https://example.com/image.jpg\"). For GitHub files, use the raw URL (add ?raw=true)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "filePath",
+            "url"
+          ],
+          "type": "object"
+        },
+        "name": "storage_upload_from_url"
+      },
+      {
+        "description": "List root collections in Firestore",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "firestore_list_collections"
+      },
+      {
+        "description": "Query documents across all subcollections with the same name (collection group query)",
+        "inputschema": {
+          "properties": {
+            "collectionId": {
+              "description": "The collection ID to query across all documents (without parent path)",
+              "type": "string"
+            },
+            "filters": {
+              "description": "Optional filters to apply to the query",
+              "items": {
+                "properties": {
+                  "field": "Field name to filter",
+                  "operat": "Comparison operator (==, !=, \u003c, \u003c=, \u003e, \u003e=, array-contains, array-contains-any, in, not-in)",
+                  "value": "Value to compare against"
+                },
+                "required": [
+                  "field",
+                  "operator",
+                  "value"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "limit": {
+              "description": "Maximum number of documents to return (default: 20, max: 100)",
+              "type": "number"
+            },
+            "orderBy": {
+              "description": "Optional fields to order results by",
+              "items": {
+                "properties": {
+                  "direct": "Sort direction (asc or desc)",
+                  "field": "Field name to order by"
+                },
+                "required": [
+                  "field"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "pageToken": {
+              "description": "Token for pagination (document path to start after)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "collectionId"
+          ],
+          "type": "object"
+        },
+        "name": "firestore_query_collection_group"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/gannonh/servers/firebase-mcp/versions",
+    "xid": "/mcpproviders/gannonh/servers/firebase-mcp"
+  }
+}

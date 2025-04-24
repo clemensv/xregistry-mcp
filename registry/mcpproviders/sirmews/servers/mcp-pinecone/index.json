@@ -1,0 +1,182 @@
+{
+  "repo_ref": "sirmews/mcp-pinecone",
+  "name": "io.github.sirmews/mcp-pinecone",
+  "description": "Pinecone Model Context Protocol Server for Claude Desktop. Implements reading and writing to a Pinecone index with tools for semantic search, document processing, and stats.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "mcp-pinecone",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "{project_dir}",
+          "run",
+          "mcp-pinecone"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "pinecone-query",
+      "description": "Search Pinecone index and construct an answer based on relevant pinecone documents",
+      "arguments": [
+        {
+          "name": "query",
+          "description": "The question to answer, or the context to search for",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "pinecone-store",
+      "description": "Store content as document in Pinecone",
+      "arguments": [
+        {
+          "name": "content",
+          "description": "The content to store as a Pinecone document",
+          "required": true
+        },
+        {
+          "name": "namespace",
+          "description": "The namespace to store the document in",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "semantic-search",
+      "description": "Search pinecone for documents",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "top_k": {
+            "type": "integer",
+            "default": 10
+          },
+          "namespace": {
+            "type": "string",
+            "description": "Optional namespace to search in"
+          },
+          "category": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "date_range": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "string",
+                "format": "date"
+              },
+              "end": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "read-document",
+      "description": "Read a document from pinecone",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "document_id": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string",
+            "description": "Optional namespace to read from"
+          }
+        },
+        "required": [
+          "document_id"
+        ]
+      }
+    },
+    {
+      "name": "process-document",
+      "description": "Process a document. This will optionally chunk, then embed, and upsert the document into pinecone.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "document_id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object"
+          },
+          "namespace": {
+            "type": "string",
+            "description": "Optional namespace to store the document in"
+          }
+        },
+        "required": [
+          "document_id",
+          "text",
+          "metadata"
+        ]
+      }
+    },
+    {
+      "name": "list-documents",
+      "description": "List all documents in the knowledge base by namespace",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "namespace": {
+            "type": "string",
+            "description": "Namespace to list documents in"
+          }
+        },
+        "required": [
+          "namespace"
+        ]
+      }
+    },
+    {
+      "name": "pinecone-stats",
+      "description": "Get stats about the Pinecone index specified in this server",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "pinecone://vectors/{id}",
+      "name": "Pinecone Vector",
+      "description": "Vector resource identified by vector ID in Pinecone index",
+      "mimetype": "text/plain"
+    }
+  ]
+}

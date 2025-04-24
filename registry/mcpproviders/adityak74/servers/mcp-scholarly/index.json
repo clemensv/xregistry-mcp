@@ -1,0 +1,61 @@
+{
+  "repo_ref": "adityak74/mcp-scholarly",
+  "name": "io.github.adityak74/mcp-scholarly",
+  "description": "A MCP server to search for accurate academic articles. More scholarly vendors will be added soon.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "mcp-scholarly",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/Users/adityakarnam/PycharmProjects/mcp-scholarly/mcp-scholarly",
+          "run",
+          "mcp-scholarly"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "search-arxiv",
+      "description": "Search arxiv for articles related to the given keyword.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "keyword": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "keyword"
+        ]
+      }
+    },
+    {
+      "name": "search-google-scholar",
+      "description": "Search google scholar for articles related to the given keyword.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "keyword": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "keyword"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

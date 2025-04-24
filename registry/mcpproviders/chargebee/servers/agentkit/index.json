@@ -1,0 +1,25 @@
+{
+  "repo_ref": "chargebee/agentkit",
+  "name": "io.github.chargebee/agentkit",
+  "description": "MCP server for interacting with Chargebee",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "chargebee-agentkit",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

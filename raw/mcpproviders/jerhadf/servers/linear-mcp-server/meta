@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:35.036385133Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/jerhadf/servers/linear-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:35.036385133Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/jerhadf/servers/linear-mcp-server/meta",
+  "serverid": "linear-mcp-server",
+  "xid": "/mcpproviders/jerhadf/servers/linear-mcp-server/meta"
+}

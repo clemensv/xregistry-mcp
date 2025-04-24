@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:43:12.633118686Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/SaseQ/servers/discord-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:43:12.633118686Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/SaseQ/servers/discord-mcp/meta",
+  "serverid": "discord-mcp",
+  "xid": "/mcpproviders/SaseQ/servers/discord-mcp/meta"
+}

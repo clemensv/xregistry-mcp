@@ -1,0 +1,48 @@
+{
+  "repo_ref": "integration-app/mcp-server",
+  "name": "io.github.integration-app/mcp-server",
+  "description": "Working with HubSpot.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@integration-app/mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@integration-app/mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "INTEGRATION_APP_TOKEN",
+            "description": "token for accessing Integration App API",
+            "required": true
+          },
+          {
+            "name": "INTEGRATION_KEY",
+            "description": "key of the integration you want to use tools for",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "action key placeholder",
+      "description": "action name placeholder",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  ],
+  "resources": []
+}

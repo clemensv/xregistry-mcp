@@ -1,0 +1,91 @@
+{
+  "repo_ref": "chaindead/telegram-mcp",
+  "name": "io.github.chaindead/telegram-mcp",
+  "description": "The server is a bridge between the Telegram API and the AI assistants and is based on the Model Context Protocol. It provides capabilities such as getting current account information, listing dialogs, marking dialogs as read, retrieving messages, and sending draft messages.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@chaindead/telegram-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@chaindead/telegram-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "TG_APP_ID",
+            "description": "Telegram API ID",
+            "required": true
+          },
+          {
+            "name": "TG_API_HASH",
+            "description": "Telegram API hash",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "Message Management",
+      "description": "Prompts for managing messages such as checking unread messages, summarizing, analyzing, and preparing draft responses.",
+      "arguments": []
+    },
+    {
+      "name": "Organization",
+      "description": "Prompts for analyzing dialogs and suggesting folder structures or categorization.",
+      "arguments": []
+    },
+    {
+      "name": "Communication",
+      "description": "Prompts for monitoring chats, drafting responses, and checking unanswered questions.",
+      "arguments": []
+    }
+  ],
+  "tools": [
+    {
+      "name": "tg_me",
+      "description": "Get current account information",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "tg_dialogs",
+      "description": "List dialogs with optional unread filter",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "tg_read",
+      "description": "Mark dialog as read",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "tg_dialog",
+      "description": "Retrieve messages from specific dialog",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "tg_send",
+      "description": "Send draft messages to any dialog",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

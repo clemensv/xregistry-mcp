@@ -1,0 +1,393 @@
+{
+  "repo_ref": "gannonh/firebase-mcp",
+  "name": "io.github.gannonh/firebase-mcp",
+  "description": "Firebase MCP enables AI assistants to work directly with Firebase services, including Firestore, Storage, and Authentication, through a standardized Model Context Protocol interface.",
+  "version_detail": {
+    "version": "1.3.3"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@gannonh/firebase-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@gannonh/firebase-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "SERVICE_ACCOUNT_KEY_PATH",
+            "description": "Path to Firebase service account JSON key",
+            "required": true
+          },
+          {
+            "name": "FIREBASE_STORAGE_BUCKET",
+            "description": "Firebase storage bucket name",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "firestore_add_document",
+      "description": "Add a document to a Firestore collection",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string",
+            "description": "Collection name"
+          },
+          "data": {
+            "type": "object",
+            "description": "Document data"
+          }
+        },
+        "required": [
+          "collection",
+          "data"
+        ]
+      }
+    },
+    {
+      "name": "firestore_list_documents",
+      "description": "List documents from a Firestore collection with filtering and ordering",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string",
+            "description": "Collection name"
+          },
+          "filters": {
+            "type": "array",
+            "description": "Array of filter conditions",
+            "items": {
+              "type": "object",
+              "properties": {
+                "field": {
+                  "type": "string",
+                  "description": "Field name to filter"
+                },
+                "operator": {
+                  "type": "string",
+                  "description": "Comparison operator (==, >, <, >=, <=, array-contains, in, array-contains-any)"
+                },
+                "value": {
+                  "type": "string",
+                  "description": "Value to compare against (use ISO format for dates)"
+                }
+              },
+              "required": [
+                "field",
+                "operator",
+                "value"
+              ]
+            }
+          },
+          "limit": {
+            "type": "number",
+            "description": "Number of documents to return",
+            "default": 20
+          },
+          "pageToken": {
+            "type": "string",
+            "description": "Token for pagination to get the next page of results"
+          },
+          "orderBy": {
+            "type": "array",
+            "description": "Array of fields to order by",
+            "items": {
+              "type": "object",
+              "properties": {
+                "field": {
+                  "type": "string",
+                  "description": "Field name to order by"
+                },
+                "direction": {
+                  "type": "string",
+                  "description": "Sort direction (asc or desc)",
+                  "enum": [
+                    "asc",
+                    "desc"
+                  ],
+                  "default": "asc"
+                }
+              },
+              "required": [
+                "field"
+              ]
+            }
+          }
+        },
+        "required": [
+          "collection"
+        ]
+      }
+    },
+    {
+      "name": "firestore_get_document",
+      "description": "Get a document from a Firestore collection",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string",
+            "description": "Collection name"
+          },
+          "id": {
+            "type": "string",
+            "description": "Document ID"
+          }
+        },
+        "required": [
+          "collection",
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "firestore_update_document",
+      "description": "Update a document in a Firestore collection",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string",
+            "description": "Collection name"
+          },
+          "id": {
+            "type": "string",
+            "description": "Document ID"
+          },
+          "data": {
+            "type": "object",
+            "description": "Updated document data"
+          }
+        },
+        "required": [
+          "collection",
+          "id",
+          "data"
+        ]
+      }
+    },
+    {
+      "name": "firestore_delete_document",
+      "description": "Delete a document from a Firestore collection",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string",
+            "description": "Collection name"
+          },
+          "id": {
+            "type": "string",
+            "description": "Document ID"
+          }
+        },
+        "required": [
+          "collection",
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "auth_get_user",
+      "description": "Get a user by ID or email from Firebase Authentication",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "identifier": {
+            "type": "string",
+            "description": "User ID or email address"
+          }
+        },
+        "required": [
+          "identifier"
+        ]
+      }
+    },
+    {
+      "name": "storage_list_files",
+      "description": "List files in a given path in Firebase Storage",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "directoryPath": {
+            "type": "string",
+            "description": "The optional path to list files from. If not provided, the root is used."
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "storage_get_file_info",
+      "description": "Get file information including metadata and download URL",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filePath": {
+            "type": "string",
+            "description": "The path of the file to get information for"
+          }
+        },
+        "required": [
+          "filePath"
+        ]
+      }
+    },
+    {
+      "name": "storage_upload",
+      "description": "Upload a file to Firebase Storage. Supports local file paths (preferred for binary files), base64 data, or plain text.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filePath": {
+            "type": "string",
+            "description": "The destination path in Firebase Storage (e.g., \"images/logo.png\"). If necessary, rename files for optimal URL compatibility (e.g., \"my-document.pdf\" rather than \"My Document.pdf\")."
+          },
+          "content": {
+            "type": "string",
+            "description": "Can be: 1) A local file path (e.g., \"/path/to/file.pdf\") - RECOMMENDED for all file types, especially binary files like PDFs and images, 2) A data URL (e.g., \"data:image/png;base64,...\") - may have issues with large files, or 3) Plain text content. Note: Document references are not directly accessible - always use the actual file path instead."
+          },
+          "contentType": {
+            "type": "string",
+            "description": "Optional MIME type. If not provided, it will be automatically detected"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Optional additional metadata"
+          }
+        },
+        "required": [
+          "filePath",
+          "content"
+        ]
+      }
+    },
+    {
+      "name": "storage_upload_from_url",
+      "description": "Upload a file to Firebase Storage from an external URL. Perfect for images, documents, or any file accessible via URL.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filePath": {
+            "type": "string",
+            "description": "The destination path in Firebase Storage (e.g., \"images/photo.jpg\"). If necessary, rename files for optimal URL compatibility (e.g., \"my-document.pdf\" rather than \"My Document.pdf\")."
+          },
+          "url": {
+            "type": "string",
+            "description": "The source URL to download from (e.g., \"https://example.com/image.jpg\"). For GitHub files, use the raw URL (add ?raw=true)"
+          },
+          "contentType": {
+            "type": "string",
+            "description": "Optional MIME type. If not provided, it will be automatically detected from the URL or response headers"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "Optional additional metadata"
+          }
+        },
+        "required": [
+          "filePath",
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "firestore_list_collections",
+      "description": "List root collections in Firestore",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "firestore_query_collection_group",
+      "description": "Query documents across all subcollections with the same name (collection group query)",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collectionId": {
+            "type": "string",
+            "description": "The collection ID to query across all documents (without parent path)"
+          },
+          "filters": {
+            "type": "array",
+            "description": "Optional filters to apply to the query",
+            "items": {
+              "type": "object",
+              "properties": {
+                "field": {
+                  "type": "string",
+                  "description": "Field name to filter"
+                },
+                "operator": {
+                  "type": "string",
+                  "description": "Comparison operator (==, !=, <, <=, >, >=, array-contains, array-contains-any, in, not-in)"
+                },
+                "value": {
+                  "type": "string",
+                  "description": "Value to compare against"
+                }
+              },
+              "required": [
+                "field",
+                "operator",
+                "value"
+              ]
+            }
+          },
+          "orderBy": {
+            "type": "array",
+            "description": "Optional fields to order results by",
+            "items": {
+              "type": "object",
+              "properties": {
+                "field": {
+                  "type": "string",
+                  "description": "Field name to order by"
+                },
+                "direction": {
+                  "type": "string",
+                  "enum": [
+                    "asc",
+                    "desc"
+                  ],
+                  "default": "asc",
+                  "description": "Sort direction (asc or desc)"
+                }
+              },
+              "required": [
+                "field"
+              ]
+            }
+          },
+          "limit": {
+            "type": "number",
+            "description": "Maximum number of documents to return (default: 20, max: 100)"
+          },
+          "pageToken": {
+            "type": "string",
+            "description": "Token for pagination (document path to start after)"
+          }
+        },
+        "required": [
+          "collectionId"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

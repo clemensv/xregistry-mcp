@@ -1,0 +1,103 @@
+{
+  "repo_ref": "asusevski/opendota-mcp-server",
+  "name": "io.github.asusevski/opendota-mcp-server",
+  "description": "A Model Context Protocol (MCP) server implementation for accessing OpenDota API data. This server enables LLMs and AI assistants to retrieve real-time Dota 2 statistics, match data, player information, and more through a standard interface.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "opendota-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-m",
+          "src.opendota_server.server"
+        ],
+        "environment_variables": [
+          {
+            "name": "OPENDOTA_API_KEY",
+            "description": "OpenDota API key",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get_player_by_id",
+      "description": "Retrieve player information by account ID"
+    },
+    {
+      "name": "get_player_recent_matches",
+      "description": "Get recent matches for a player"
+    },
+    {
+      "name": "get_match_data",
+      "description": "Get detailed data for a specific match"
+    },
+    {
+      "name": "get_player_win_loss",
+      "description": "Get win/loss statistics for a player"
+    },
+    {
+      "name": "get_player_heroes",
+      "description": "Get a player's most played heroes"
+    },
+    {
+      "name": "get_hero_stats",
+      "description": "Get statistics for heroes"
+    },
+    {
+      "name": "search_player",
+      "description": "Search for players by name"
+    },
+    {
+      "name": "get_pro_players",
+      "description": "Get list of professional players"
+    },
+    {
+      "name": "get_pro_matches",
+      "description": "Get recent professional matches"
+    },
+    {
+      "name": "get_player_peers",
+      "description": "Get players who have played with a specified player"
+    },
+    {
+      "name": "get_heroes",
+      "description": "Get list of all Dota 2 heroes"
+    },
+    {
+      "name": "get_player_totals",
+      "description": "Get player's overall stats totals"
+    },
+    {
+      "name": "get_player_rankings",
+      "description": "Get player hero rankings"
+    },
+    {
+      "name": "get_player_wordcloud",
+      "description": "Get most common words used by player in chat"
+    },
+    {
+      "name": "get_team_info",
+      "description": "Get information about a team"
+    },
+    {
+      "name": "get_public_matches",
+      "description": "Get recent public matches"
+    },
+    {
+      "name": "get_match_heroes",
+      "description": "Get heroes played in a specific match"
+    }
+  ],
+  "resources": []
+}

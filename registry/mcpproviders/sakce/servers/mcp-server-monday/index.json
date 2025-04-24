@@ -1,0 +1,177 @@
+{
+  "repo_ref": "sakce/mcp-server-monday",
+  "name": "io.github.sakce/mcp-server-monday",
+  "description": "MCP Server for monday.com, enabling MCP clients to interact with Monday.com boards, items, updates, and documents.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "sakce/mcp-server-monday",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "--rm",
+          "-i"
+        ],
+        "environment_variables": [
+          {
+            "name": "MONDAY_API_KEY",
+            "description": "API key for Monday.com",
+            "required": true
+          },
+          {
+            "name": "MONDAY_WORKSPACE_NAME",
+            "description": "Workspace name for Monday.com",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "uvx",
+      "package_name": "mcp-server-monday",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "mcp-server-monday"
+        ],
+        "environment_variables": [
+          {
+            "name": "MONDAY_API_KEY",
+            "description": "API key for Monday.com",
+            "required": true
+          },
+          {
+            "name": "MONDAY_WORKSPACE_NAME",
+            "description": "Workspace name for Monday.com",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "monday-create-item",
+      "description": "Creates a new item or sub-item in a Monday.com board",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "monday-get-board-groups",
+      "description": "Retrieves all groups from a specified Monday.com board",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "monday-create-update",
+      "description": "Creates a comment/update on a Monday.com item",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "monday-list-boards",
+      "description": "Lists all available Monday.com boards",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "monday-list-items-in-groups",
+      "description": "Lists all items in specified groups of a Monday.com board",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "monday-list-subitems-in-items",
+      "description": "Lists all sub-items for given Monday.com items",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "monday-create-board",
+      "description": "Creates a new Monday.com board",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "monday-create-board-group",
+      "description": "Creates a new group in a Monday.com board",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "monday-move-item-to-group",
+      "description": "Moves a Monday.com item to a different group",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "monday-delete-item",
+      "description": "Deletes a Monday.com item",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "monday-archive-item",
+      "description": "Archives a Monday.com item",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "monday-get-item-updates",
+      "description": "Retrieves updates/comments for a specific item",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "monday-get-docs",
+      "description": "Lists documents in Monday.com, optionally filtered by folder",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "monday-get-doc-content",
+      "description": "Retrieves the content of a specific document",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "monday-create-doc",
+      "description": "Creates a new document in Monday.com",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "monday-add-doc-block",
+      "description": "Adds a block to an existing document",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

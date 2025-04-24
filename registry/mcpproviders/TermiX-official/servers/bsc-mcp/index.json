@@ -1,0 +1,96 @@
+{
+  "repo_ref": "TermiX-official/bsc-mcp",
+  "name": "io.github.TermiX-official/bsc-mcp",
+  "description": "A plug-and-play MCP tool server to send BNB, transfer BEP-20 tokens, deploy tokens, and interact with smart contracts on the Binance Smart Chain (BSC) — built for Claude Desktop, AI agents, and developers.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "bnbchain-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--init"
+        ],
+        "environment_variables": [
+          {
+            "name": "BSC_WALLET_PRIVATE_KEY",
+            "description": "BSC Wallet Private Key",
+            "required": true
+          },
+          {
+            "name": "WALLET_PASSWORD",
+            "description": "Wallet Password (6 characters)",
+            "required": true
+          },
+          {
+            "name": "CUSTOM_RPC_URL",
+            "description": "Custom RPC URL",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "transferNativeToken",
+      "description": "Send BNB to a wallet"
+    },
+    {
+      "name": "transferBEP20Token",
+      "description": "Transfer BEP-20 token via symbol/address"
+    },
+    {
+      "name": "pancakeSwap",
+      "description": "Swap tokens via PancakeSwap"
+    },
+    {
+      "name": "createFourMeme",
+      "description": "Create meme token on Four.Meme"
+    },
+    {
+      "name": "createBEP20Token",
+      "description": "Deploy a BEP-20 contract"
+    },
+    {
+      "name": "getBalance",
+      "description": "Get token + native balance"
+    },
+    {
+      "name": "callContractFunction",
+      "description": "Custom contract calls via ABI"
+    },
+    {
+      "name": "getWalletInfo",
+      "description": "Get wallet info for an address"
+    },
+    {
+      "name": "securityCheck",
+      "description": "Check token security of BSC tokens"
+    },
+    {
+      "name": "pancakeAddLiquidity",
+      "description": "Add liquidity to PancakeSwap"
+    },
+    {
+      "name": "pancakeMyPosition",
+      "description": "View your PancakeSwap positions"
+    },
+    {
+      "name": "pancakeRemovePosition",
+      "description": "Remove liquidity from PancakeSwap"
+    },
+    {
+      "name": "sellMemeToken",
+      "description": "Sell meme token on Four.Meme"
+    }
+  ],
+  "resources": []
+}

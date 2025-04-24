@@ -1,0 +1,94 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:55.782775414Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "--directory",
+          "path/to/mysql_mcp_server",
+          "run",
+          "mysql_mcp_server"
+        ],
+        "command": "uv",
+        "env": [
+          {
+            "default": "localhost",
+            "description": "Database host",
+            "name": "MYSQL_HOST",
+            "required": true
+          },
+          {
+            "default": "3306",
+            "description": "Database port",
+            "name": "MYSQL_PORT",
+            "required": false
+          },
+          {
+            "description": "Database user",
+            "name": "MYSQL_USER",
+            "required": true
+          },
+          {
+            "description": "Database password",
+            "name": "MYSQL_PASSWORD",
+            "required": true
+          },
+          {
+            "description": "Database name",
+            "name": "MYSQL_DATABASE",
+            "required": true
+          }
+        ],
+        "package": "mysql-mcp-server",
+        "runtime": "node"
+      }
+    },
+    "description": "A Model Context Protocol (MCP) implementation that enables secure interaction with MySQL databases. This server component facilitates communication between AI applications (hosts/clients) and MySQL databases, making database exploration and analysis safer and more structured through a controlled interface.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "modifiedat": "2025-04-25T12:40:55.782775414Z",
+    "name": "MySQL MCP Server",
+    "repository": {
+      "name": "designcomputer/mysql_mcp_server",
+      "url": "https://github.com/designcomputer/mysql_mcp_server"
+    },
+    "resources": [
+      {
+        "description": "Data in table: {table}",
+        "mimetype": "text/plain",
+        "name": "Table",
+        "uritemplate": "mysql://{table}/data"
+      }
+    ],
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/designcomputer/servers/mysql_mcp_server/versions/1",
+    "serverid": "mysql_mcp_server",
+    "serverversion": "unknown",
+    "tools": [
+      {
+        "description": "Execute an SQL query on the MySQL server",
+        "inputschema": {
+          "properties": {
+            "query": {
+              "description": "The SQL query to execute",
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "execute_sql"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/designcomputer/servers/mysql_mcp_server/versions/1"
+  }
+}

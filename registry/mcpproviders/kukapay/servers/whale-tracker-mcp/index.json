@@ -1,0 +1,39 @@
+{
+  "repo_ref": "kukapay/whale-tracker-mcp",
+  "name": "io.github.kukapay/whale-tracker-mcp",
+  "description": "A Model Context Protocol (MCP) server for tracking cryptocurrency whale transactions using the Whale Alert API",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [],
+  "prompts": [
+    {
+      "name": "query_whale_activity",
+      "description": "A reusable template for analyzing whale transaction patterns, optionally filtered by blockchain."
+    }
+  ],
+  "tools": [
+    {
+      "name": "get_recent_transactions",
+      "description": "Fetch recent whale transactions with optional filters for blockchain, minimum value, and limit.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_transaction_details",
+      "description": "Retrieve detailed information about a specific transaction by its ID.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "whale://transactions/{blockchain}",
+      "name": "whale://transactions/{blockchain}",
+      "description": "Expose recent transactions for a specified blockchain as contextual data."
+    }
+  ]
+}

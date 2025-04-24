@@ -1,0 +1,81 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+  # Run after another workflow completes
+  # workflow_run:
+  #   workflows: ["Build static content into static-site branch"]
+  #   types:
+  #     - completed
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout the pre-built static site (branch: static-site) → ./static-site
+      - name: Checkout xRegistry static site
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+          lfs: false
+          ref: static-site
+          path: static-site                                   # <- keep it separate
+
+      # 2. Checkout the Angular SPA repo → ./spa
+      - name: Checkout xregistry-viewer SPA
+        uses: actions/checkout@v3
+        with:
+          repository: clemensv/xregistry-viewer
+          path: spa
+
+      # 3. Build the Angular SPA
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install deps
+        run: npm ci
+        working-directory: spa
+      - name: Build SPA
+        run: npm run build -- --output-path ../site-root      # dist → ./site-root
+        working-directory: spa
+
+      # 4. Copy the pre-built xRegistry site under /registry
+      - name: Merge static content
+        run: |
+          mkdir -p site-root/browser/registry
+          cp -r static-site/* site-root/browser/registry/
+
+      # Add config for proper content types (for GitHub Pages)
+      - name: Add .nojekyll file
+        run: touch site-root/browser/.nojekyll
+
+      # 5. Setup and deploy to GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'site-root/browser'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

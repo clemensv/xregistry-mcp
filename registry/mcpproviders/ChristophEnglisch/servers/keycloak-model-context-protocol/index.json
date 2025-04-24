@@ -1,0 +1,120 @@
+{
+  "repo_ref": "ChristophEnglisch/keycloak-model-context-protocol",
+  "name": "io.github.ChristophEnglisch/keycloak-model-context-protocol",
+  "description": "A Model Context Protocol server for Keycloak administration, providing tools to manage users and realms.",
+  "version_detail": {
+    "version": "0.0.1"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "keycloak-model-context-protocol",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "keycloak-model-context-protocol"
+        ],
+        "environment_variables": [
+          {
+            "name": "KEYCLOAK_URL",
+            "description": "URL of the Keycloak server",
+            "required": false
+          },
+          {
+            "name": "KEYCLOAK_ADMIN",
+            "description": "Keycloak admin username",
+            "required": false
+          },
+          {
+            "name": "KEYCLOAK_ADMIN_PASSWORD",
+            "description": "Keycloak admin password",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "create-user",
+      "description": "Create a new user in a specific realm",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "realm": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "realm",
+          "username",
+          "email",
+          "firstName",
+          "lastName"
+        ]
+      }
+    },
+    {
+      "name": "delete-user",
+      "description": "Delete a user from a specific realm",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "realm": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "realm",
+          "userId"
+        ]
+      }
+    },
+    {
+      "name": "list-realms",
+      "description": "List all available realms",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "list-users",
+      "description": "List users in a specific realm",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "realm": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "realm"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

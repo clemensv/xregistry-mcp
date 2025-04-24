@@ -1,0 +1,112 @@
+{
+  "repo_ref": "kenjihikmatullah/productboard-mcp",
+  "name": "io.github.kenjihikmatullah/productboard-mcp",
+  "description": "Integrate the Productboard API into agentic workflows via MCP",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "productboard-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "productboard-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "PRODUCTBOARD_ACCESS_TOKEN",
+            "description": "Access token for Productboard API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "getProductsTool",
+      "description": "Tool to get products",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "getProductDetailTool",
+      "description": "Tool to get product detail",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "getFeaturesTool",
+      "description": "Tool to get features",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "getFeatureDetailTool",
+      "description": "Tool to get feature detail",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "getComponentsTool",
+      "description": "Tool to get components",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "getComponentDetailTool",
+      "description": "Tool to get component detail",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "getFeatureStatusesTool",
+      "description": "Tool to get feature statuses",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "getNotesTool",
+      "description": "Tool to get notes",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "getNoteDetailTool",
+      "description": "Tool to get note detail",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "getCompaniesTool",
+      "description": "Tool to get companies",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "getCompanyDetailTool",
+      "description": "Tool to get company detail",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

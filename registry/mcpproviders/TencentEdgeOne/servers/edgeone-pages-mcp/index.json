@@ -1,0 +1,32 @@
+{
+  "repo_ref": "TencentEdgeOne/edgeone-pages-mcp",
+  "name": "io.github.TencentEdgeOne/edgeone-pages-mcp",
+  "description": "An MCP service for deploying HTML content to EdgeOne Pages and obtaining a publicly accessible URL.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [
+    {
+      "url": "https://mcp-on-edge.edgeone.site/mcp-server",
+      "transporttype": "https"
+    }
+  ],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "edgeone-pages-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "edgeone-pages-mcp"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

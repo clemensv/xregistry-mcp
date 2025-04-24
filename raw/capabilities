@@ -1,0 +1,18 @@
+{
+  "apis": [
+    "/capabilities",
+    "/export",
+    "/model"
+  ],
+  "flags": null,
+  "mutable": null,
+  "pagination": false,
+  "schemas": [
+    "xregistry-json/1.0-rc1"
+  ],
+  "shortself": false,
+  "specversions": [
+    "1.0-rc1"
+  ],
+  "sticky": true
+}

@@ -1,0 +1,120 @@
+{
+  "repo_ref": "CoderGamester/mcp-unity",
+  "name": "io.github.CoderGamester/mcp-unity",
+  "description": "MCP Unity is an implementation of the Model Context Protocol for Unity Editor, allowing AI assistants to interact with your Unity projects. This package provides a bridge between Unity and a Node.js server that implements the MCP protocol, enabling AI agents like Claude, Windsurf, and Cursor to execute operations within the Unity Editor.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@coderGamester/mcp-unity",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "main.js"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "menuItemTool",
+      "description": "Tool to interact with Unity menu items",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "selectGameObjectTool",
+      "description": "Tool to select a GameObject in Unity",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "addPackageTool",
+      "description": "Tool to add a package to Unity project",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "runTestsTool",
+      "description": "Tool to run Unity tests",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "notifyMessageTool",
+      "description": "Tool to send notification messages",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "updateComponentTool",
+      "description": "Tool to update Unity components",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "addAssetToSceneTool",
+      "description": "Tool to add assets to Unity scene",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "get_tests",
+      "uritemplate": "unity://tests/{testMode}",
+      "description": "Retrieve tests from Unity's Test Runner",
+      "mimetype": "application/json"
+    },
+    {
+      "name": "get_gameobject",
+      "uritemplate": "unity://gameobject/{id}",
+      "description": "Retrieve a GameObject by ID or path",
+      "mimetype": "application/json"
+    },
+    {
+      "name": "get_menuitems",
+      "uritemplate": "unity://menuitems",
+      "description": "Retrieve Unity menu items",
+      "mimetype": "application/json"
+    },
+    {
+      "name": "get_consolelogs",
+      "uritemplate": "unity://consolelogs",
+      "description": "Retrieve Unity console logs",
+      "mimetype": "application/json"
+    },
+    {
+      "name": "get_hierarchy",
+      "uritemplate": "unity://hierarchy",
+      "description": "Retrieve Unity scene hierarchy",
+      "mimetype": "application/json"
+    },
+    {
+      "name": "get_packages",
+      "uritemplate": "unity://packages",
+      "description": "Retrieve Unity project packages",
+      "mimetype": "application/json"
+    },
+    {
+      "name": "get_assets",
+      "uritemplate": "unity://assets",
+      "description": "Retrieve Unity project assets",
+      "mimetype": "application/json"
+    }
+  ]
+}

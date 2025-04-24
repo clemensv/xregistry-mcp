@@ -1,0 +1,76 @@
+{
+  "repo_ref": "Vortiago/mcp-azure-devops",
+  "name": "io.github.Vortiago/mcp-azure-devops",
+  "description": "A Model Context Protocol (MCP) server enabling AI assistants to interact with Azure DevOps services. This server provides a bridge between natural language interactions and the Azure DevOps REST API, supporting work item management, project management, and team management features.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcp-azure-devops",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "AZURE_DEVOPS_PAT",
+            "description": "Personal Access Token for Azure DevOps API access",
+            "required": true
+          },
+          {
+            "name": "AZURE_DEVOPS_ORGANIZATION_URL",
+            "description": "Full URL to the Azure DevOps organization",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "query_work_items",
+      "description": "Searches for work items using Work Item Query Language (WIQL). Use this tool to find work items matching specific criteria, search across projects, create dynamic reports, or identify work items assigned to specific team members.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The WIQL query string (e.g., \"SELECT * FROM workitems WHERE [System.State] = 'Active'\")"
+          },
+          "top": {
+            "type": "integer",
+            "description": "Maximum number of results to return (default: 30)"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "work_items",
+      "uritemplate": "/workitems/{id}",
+      "description": "Work item resources accessible by ID.",
+      "mimetype": "application/json"
+    },
+    {
+      "name": "projects",
+      "uritemplate": "/projects",
+      "description": "List of accessible projects in the organization.",
+      "mimetype": "application/json"
+    },
+    {
+      "name": "teams",
+      "uritemplate": "/teams",
+      "description": "List of teams within the organization.",
+      "mimetype": "application/json"
+    }
+  ]
+}

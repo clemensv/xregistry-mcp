@@ -1,0 +1,77 @@
+{
+  "repo_ref": "v-3/discordmcp",
+  "name": "io.github.v-3/discordmcp",
+  "description": "A Model Context Protocol (MCP) server that enables LLMs to interact with Discord channels, allowing them to send and read messages through Discord's API. Using this server, LLMs like Claude can directly interact with Discord channels while maintaining user control and security.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "discordmcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "DISCORD_TOKEN",
+            "description": "Discord bot token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "send-message",
+      "description": "Sends a message to a specified Discord channel.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "server": {
+            "type": "string"
+          },
+          "channel": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "channel",
+          "message"
+        ]
+      }
+    },
+    {
+      "name": "read-messages",
+      "description": "Reads recent messages from a specified Discord channel.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "server": {
+            "type": "string"
+          },
+          "channel": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "channel"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

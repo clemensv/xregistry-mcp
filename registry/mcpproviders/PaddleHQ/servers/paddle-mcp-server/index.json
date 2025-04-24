@@ -1,0 +1,98 @@
+{
+  "repo_ref": "PaddleHQ/paddle-mcp-server",
+  "name": "io.github.PaddleHQ/paddle-mcp-server",
+  "description": "This is a Model Context Protocol (MCP) server that provides tools for interacting with the Paddle API.",
+  "version_detail": {
+    "version": "0.1.2"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@paddle/paddle-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@paddle/paddle-mcp",
+          "--api-key=PADDLE_API_KEY",
+          "--environment=(sandbox|production)"
+        ],
+        "environment_variables": [
+          {
+            "name": "PADDLE_API_KEY",
+            "description": "API key for Paddle MCP server",
+            "required": true
+          },
+          {
+            "name": "PADDLE_ENVIRONMENT",
+            "description": "Environment to use: sandbox or production",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "listProducts",
+      "description": "List products in your Paddle catalog",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "createProduct",
+      "description": "Create new products",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "listPrices",
+      "description": "List prices for products",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "createPrice",
+      "description": "Create new prices for products",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "listCustomers",
+      "description": "List customers",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "listTransactions",
+      "description": "List transactions",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "listSubscriptions",
+      "description": "List subscriptions",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "createCustomReport",
+      "description": "Create custom reports for financial analysis",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

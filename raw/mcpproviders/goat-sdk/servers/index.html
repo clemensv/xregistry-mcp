@@ -1,0 +1,67 @@
+{
+  "goat": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:12.67695115Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "server.js"
+        ],
+        "command": "node",
+        "env": [
+          {
+            "description": "Private key for wallet authentication",
+            "name": "WALLET_PRIVATE_KEY",
+            "required": true
+          },
+          {
+            "description": "RPC URL for blockchain access",
+            "name": "RPC_PROVIDER_URL",
+            "required": true
+          }
+        ],
+        "package": "@goat-sdk/goat",
+        "runtime": "node"
+      }
+    },
+    "description": "GOAT MCP Server providing on-chain tools for EVM wallets including ETH transfers and ERC20 tokens like USDC.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/goat-sdk/servers/goat/meta",
+    "modifiedat": "2025-04-25T12:41:12.67695115Z",
+    "name": "goat-evm",
+    "repository": {
+      "name": "goat-sdk/goat",
+      "url": "https://github.com/goat-sdk/goat"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/goat-sdk/servers/goat",
+    "serverid": "goat",
+    "serverversion": "1.0.0",
+    "tools": [
+      {
+        "description": "Tool to send ETH tokens",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "sendETH"
+      },
+      {
+        "description": "Tool to interact with ERC20 tokens such as USDC",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "erc20"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/goat-sdk/servers/goat/versions",
+    "xid": "/mcpproviders/goat-sdk/servers/goat"
+  }
+}

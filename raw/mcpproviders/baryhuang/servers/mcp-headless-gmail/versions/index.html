@@ -1,0 +1,128 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:43.78299251Z",
+    "deployment": {
+      "container": {
+        "args": [
+          "-i",
+          "--rm",
+          "buryhuang/mcp-headless-gmail:latest"
+        ],
+        "image": "buryhuang/mcp-headless-gmail"
+      }
+    },
+    "description": "A MCP (Model Context Protocol) server that provides get, send Gmails without local credential or token setup.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "modifiedat": "2025-04-25T12:40:43.78299251Z",
+    "name": "MCP Headless Gmail Server",
+    "repository": {
+      "name": "baryhuang/mcp-headless-gmail",
+      "url": "https://github.com/baryhuang/mcp-headless-gmail"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/baryhuang/servers/mcp-headless-gmail/versions/1",
+    "serverid": "mcp-headless-gmail",
+    "serverversion": "latest",
+    "tools": [
+      {
+        "description": "Get most recent emails from Gmail with the first 1k characters of the body",
+        "inputschema": {
+          "properties": {
+            "access_token": {
+              "type": "string"
+            },
+            "client_id": {
+              "type": "string"
+            },
+            "client_secret": {
+              "type": "string"
+            },
+            "offset": {
+              "type": "integer"
+            },
+            "refresh_token": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "access_token",
+            "refresh_token",
+            "client_id",
+            "client_secret"
+          ],
+          "type": "object"
+        },
+        "name": "gmail_get_emails"
+      },
+      {
+        "description": "Send emails through Gmail",
+        "inputschema": {
+          "properties": {
+            "access_token": {
+              "type": "string"
+            },
+            "client_id": {
+              "type": "string"
+            },
+            "client_secret": {
+              "type": "string"
+            },
+            "email_body": {
+              "type": "string"
+            },
+            "email_recipients": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "email_subject": {
+              "type": "string"
+            },
+            "refresh_token": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "access_token",
+            "refresh_token",
+            "client_id",
+            "client_secret",
+            "email_body",
+            "email_subject",
+            "email_recipients"
+          ],
+          "type": "object"
+        },
+        "name": "gmail_send_email"
+      },
+      {
+        "description": "Refresh access tokens separately with automatic refresh token handling",
+        "inputschema": {
+          "properties": {
+            "client_id": {
+              "type": "string"
+            },
+            "client_secret": {
+              "type": "string"
+            },
+            "refresh_token": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "refresh_token",
+            "client_id",
+            "client_secret"
+          ],
+          "type": "object"
+        },
+        "name": "gmail_refresh_token"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/baryhuang/servers/mcp-headless-gmail/versions/1"
+  }
+}

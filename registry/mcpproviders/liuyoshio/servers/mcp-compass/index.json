@@ -1,0 +1,45 @@
+{
+  "repo_ref": "liuyoshio/mcp-compass",
+  "name": "io.github.liuyoshio/mcp-compass",
+  "description": "MCP Compass is a discovery & recommendation service that helps you explore Model Context Protocol servers. It acts as a smart guide that helps AI assistants find and understand available MCP services out there based on natural language queries, making it easier to discover and utilize the right tools for specific tasks.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@liuyoshio/mcp-compass",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@liuyoshio/mcp-compass"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "recommend-mcp-servers",
+      "description": "Use this tool when there is a need to findn external MCP tools. It explores and recommends existing MCP servers from the internet, based on the description of the MCP Server needed. It returns a list of MCP servers with their IDs, descriptions, GitHub URLs, and similarity scores.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Description for the MCP Server needed. It should be specific and actionable, e.g.: GOOD: - 'MCP Server for AWS Lambda Python3.9 deployment' - 'MCP Server for United Airlines booking API' - 'MCP Server for Stripe refund webhook handling' BAD: - 'MCP Server for cloud' (too vague) - 'MCP Server for booking' (which booking system?) - 'MCP Server for payment' (which payment provider?) Query should explicitly specify: 1. Target platform/vendor (e.g. AWS, Stripe, MongoDB) 2. Exact operation/service (e.g. Lambda deployment, webhook handling) 3. Additional context if applicable (e.g. Python, refund events)"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

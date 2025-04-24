@@ -1,0 +1,209 @@
+{
+  "repo_ref": "ckreiling/mcp-server-docker",
+  "name": "io.github.ckreiling/mcp-server-docker",
+  "description": "An MCP server for managing Docker with natural language! Compose containers, introspect and debug running containers, and manage persistent data with Docker volumes.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "mcp-server-docker:latest",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "-i",
+          "--rm",
+          "-v",
+          "/var/run/docker.sock:/var/run/docker.sock",
+          "mcp-server-docker:latest"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "unknown",
+      "package_name": "unknown",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "docker_compose",
+      "description": "Treat the LLM like a Docker Compose manager",
+      "arguments": [
+        {
+          "name": "name",
+          "description": "Unique name of the project",
+          "required": true
+        },
+        {
+          "name": "containers",
+          "description": "Describe containers you want",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "list_containers",
+      "description": "List all Docker containers",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "create_container",
+      "description": "Create a new Docker container",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "run_container",
+      "description": "Run an image in a new Docker container (preferred over `create_container` + `start_container`)",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "recreate_container",
+      "description": "Stop and remove a container, then run a new container. Fails if the container does not exist.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "start_container",
+      "description": "Start a Docker container",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "fetch_container_logs",
+      "description": "Fetch logs for a Docker container",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "stop_container",
+      "description": "Stop a Docker container",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "remove_container",
+      "description": "Remove a Docker container",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_images",
+      "description": "List Docker images",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pull_image",
+      "description": "Pull a Docker image",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "push_image",
+      "description": "Push a Docker image",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "build_image",
+      "description": "Build a Docker image from a Dockerfile",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "remove_image",
+      "description": "Remove a Docker image",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_networks",
+      "description": "List Docker networks",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_network",
+      "description": "Create a Docker network",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "remove_network",
+      "description": "Remove a Docker network",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_volumes",
+      "description": "List Docker volumes",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_volume",
+      "description": "Create a Docker volume",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "remove_volume",
+      "description": "Remove a Docker volume",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "docker://containers/{id}/logs",
+      "name": "Logs for container",
+      "description": "Live logs for container {container.name}",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "docker://containers/{id}/stats",
+      "name": "Stats for container",
+      "description": "Live resource usage stats for container {container.name}",
+      "mimetype": "application/json"
+    }
+  ]
+}

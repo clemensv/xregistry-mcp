@@ -1,0 +1,47 @@
+{
+  "repo_ref": "YuChenSSR/mindmap-mcp-server",
+  "name": "io.github.YuChenSSR/mindmap-mcp-server",
+  "description": "A Model Context Protocol (MCP) server for converting Markdown content to interactive mindmaps.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "ychen94/mindmap-converter-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "--rm",
+          "-i",
+          "-v",
+          "/path/to/output/folder:/output",
+          "ychen94/mindmap-converter-mcp:latest"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "npm",
+      "package_name": "mindmap-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "mindmap-mcp-server",
+          "--return-type",
+          "filePath"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

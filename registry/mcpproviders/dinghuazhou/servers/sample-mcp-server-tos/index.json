@@ -1,0 +1,129 @@
+{
+  "repo_ref": "dinghuazhou/sample-mcp-server-tos",
+  "name": "io.github.dinghuazhou/sample-mcp-server-tos",
+  "description": "An MCP server implementation for retrieving data from TOS.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "unspecified",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "VOLC_ACCESSKEY",
+            "description": "The access key for the VolcEngine.",
+            "required": true
+          },
+          {
+            "name": "VOLC_SECRETKEY",
+            "description": "The secret key for the VolcEngine.",
+            "required": true
+          },
+          {
+            "name": "REGION",
+            "description": "The region for the TOS service.",
+            "required": true
+          },
+          {
+            "name": "TOS_ENDPOINT",
+            "description": "The endpoint for the TOS service.",
+            "required": true
+          },
+          {
+            "name": "SECURITY_TOKEN",
+            "description": "The security token for the credential.",
+            "required": false
+          },
+          {
+            "name": "TOS_BUCKETS",
+            "description": "If you want to use a specific bucket, you need to set this.",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "list_buckets",
+      "description": "Returns a list of all buckets owned by the authenticated sender of the request",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "list_objects",
+      "description": "Returns some or all (up to 1,000) of the objects in a bucket with each request",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "bucket": {
+            "type": "string"
+          },
+          "prefix": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "start_after": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "continuation_token": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "bucket"
+        ]
+      }
+    },
+    {
+      "name": "get_object",
+      "description": "Retrieves an object from volcengine TOS. In the GetObject request, specify the full key name for the object.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "bucket": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "bucket",
+          "key"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "bucket",
+      "description": "Buckets resource for TOS",
+      "uritemplate": "/buckets/{bucket}"
+    },
+    {
+      "name": "object",
+      "description": "Objects resource for TOS",
+      "uritemplate": "/buckets/{bucket}/objects/{key}"
+    }
+  ]
+}

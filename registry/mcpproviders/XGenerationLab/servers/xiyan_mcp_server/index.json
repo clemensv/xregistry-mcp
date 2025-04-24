@@ -1,0 +1,25 @@
+{
+  "repo_ref": "XGenerationLab/xiyan_mcp_server",
+  "name": "io.github.XGenerationLab/xiyan_mcp_server",
+  "description": "A Model Context Protocol (MCP) server that enables natural language queries to databases powered by XiYan-SQL, SOTA of text-to-sql on open benchmarks",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "xiyan-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

@@ -1,0 +1,979 @@
+{
+  "repo_ref": "furey/mongodb-lens",
+  "name": "io.github.furey/mongodb-lens",
+  "description": "MongoDB MCP server for natural language database interaction",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/mongodb-lens",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "index.js"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "connect-mongodb",
+      "description": "Connect to a different MongoDB URI or alias",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "uri": {
+            "type": "string"
+          },
+          "validateConnection": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "uri",
+          "validateConnection"
+        ]
+      }
+    },
+    {
+      "name": "connect-original",
+      "description": "Connect back to the original MongoDB URI used at startup",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "validateConnection": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "validateConnection"
+        ]
+      }
+    },
+    {
+      "name": "add-connection-alias",
+      "description": "Add a new MongoDB connection alias",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "alias": {
+            "type": "string"
+          },
+          "uri": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "alias",
+          "uri"
+        ]
+      }
+    },
+    {
+      "name": "list-connections",
+      "description": "List all configured MongoDB connection aliases",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "list-databases",
+      "description": "List all accessible MongoDB databases",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "current-database",
+      "description": "Get the name of the current database",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "create-database",
+      "description": "Create a new MongoDB database with option to switch",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "switch": {
+            "type": "string"
+          },
+          "validateName": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "switch",
+          "validateName"
+        ]
+      }
+    },
+    {
+      "name": "use-database",
+      "description": "Switch to a specific database",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "database": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "database"
+        ]
+      }
+    },
+    {
+      "name": "drop-database",
+      "description": "Drop a database (requires confirmation)",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "create-user",
+      "description": "Create a new database user",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "roles": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "username",
+          "password",
+          "roles"
+        ]
+      }
+    },
+    {
+      "name": "drop-user",
+      "description": "Drop an existing database user",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "username"
+        ]
+      }
+    },
+    {
+      "name": "list-collections",
+      "description": "List collections in the current database",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "create-collection",
+      "description": "Create a new collection with options",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "options": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "options"
+        ]
+      }
+    },
+    {
+      "name": "drop-collection",
+      "description": "Drop a collection (requires confirmation)",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "rename-collection",
+      "description": "Rename an existing collection",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "oldName": {
+            "type": "string"
+          },
+          "newName": {
+            "type": "string"
+          },
+          "dropTarget": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "oldName",
+          "newName",
+          "dropTarget"
+        ]
+      }
+    },
+    {
+      "name": "validate-collection",
+      "description": "Run validation on a collection to check for inconsistencies",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "full": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection",
+          "full"
+        ]
+      }
+    },
+    {
+      "name": "distinct-values",
+      "description": "Get unique values for a field",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "field": {
+            "type": "string"
+          },
+          "filter": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection",
+          "field",
+          "filter"
+        ]
+      }
+    },
+    {
+      "name": "find-documents",
+      "description": "Run queries with filters and projections",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "filter": {
+            "type": "string"
+          },
+          "projection": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "skip": {
+            "type": "integer"
+          },
+          "sort": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection",
+          "filter",
+          "limit",
+          "skip"
+        ]
+      }
+    },
+    {
+      "name": "count-documents",
+      "description": "Count documents with optional filter",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "filter": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection",
+          "filter"
+        ]
+      }
+    },
+    {
+      "name": "insert-document",
+      "description": "Insert one or multiple documents into a collection",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "document": {
+            "type": "string"
+          },
+          "options": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection",
+          "document"
+        ]
+      }
+    },
+    {
+      "name": "update-document",
+      "description": "Update specific documents in a collection",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "filter": {
+            "type": "string"
+          },
+          "update": {
+            "type": "string"
+          },
+          "options": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection",
+          "filter",
+          "update"
+        ]
+      }
+    },
+    {
+      "name": "delete-document",
+      "description": "Delete document(s) (requires confirmation)",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "filter": {
+            "type": "string"
+          },
+          "many": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection",
+          "filter",
+          "many"
+        ]
+      }
+    },
+    {
+      "name": "aggregate-data",
+      "description": "Run aggregation pipelines",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "pipeline": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "collection",
+          "pipeline",
+          "limit"
+        ]
+      }
+    },
+    {
+      "name": "create-index",
+      "description": "Create new index on collection",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "keys": {
+            "type": "string"
+          },
+          "options": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection",
+          "keys"
+        ]
+      }
+    },
+    {
+      "name": "drop-index",
+      "description": "Drop an existing index from a collection",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "indexName": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection",
+          "indexName"
+        ]
+      }
+    },
+    {
+      "name": "get-stats",
+      "description": "Get database or collection statistics",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "target"
+        ]
+      }
+    },
+    {
+      "name": "analyze-schema",
+      "description": "Automatically infer schema from collection",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "sampleSize": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "collection",
+          "sampleSize"
+        ]
+      }
+    },
+    {
+      "name": "generate-schema-validator",
+      "description": "Generate a JSON Schema validator for a collection",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "strictness": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection",
+          "strictness"
+        ]
+      }
+    },
+    {
+      "name": "compare-schemas",
+      "description": "Compare schemas between two collections",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "sourceCollection": {
+            "type": "string"
+          },
+          "targetCollection": {
+            "type": "string"
+          },
+          "sampleSize": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "sourceCollection",
+          "targetCollection",
+          "sampleSize"
+        ]
+      }
+    },
+    {
+      "name": "explain-query",
+      "description": "Analyze query performance",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "filter": {
+            "type": "string"
+          },
+          "verbosity": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection",
+          "filter",
+          "verbosity"
+        ]
+      }
+    },
+    {
+      "name": "analyze-query-patterns",
+      "description": "Analyze query patterns and suggest optimizations",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "duration": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "collection",
+          "duration"
+        ]
+      }
+    },
+    {
+      "name": "bulk-operations",
+      "description": "Perform bulk inserts, updates, or deletes",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "operations": {
+            "type": "string"
+          },
+          "ordered": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection",
+          "operations",
+          "ordered"
+        ]
+      }
+    },
+    {
+      "name": "create-timeseries",
+      "description": "Create a time series collection for temporal data",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "timeField": {
+            "type": "string"
+          },
+          "metaField": {
+            "type": "string"
+          },
+          "granularity": {
+            "type": "string"
+          },
+          "expireAfterSeconds": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "name",
+          "timeField",
+          "granularity"
+        ]
+      }
+    },
+    {
+      "name": "collation-query",
+      "description": "Find documents with language-specific collation rules",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "filter": {
+            "type": "string"
+          },
+          "locale": {
+            "type": "string"
+          },
+          "strength": {
+            "type": "integer"
+          },
+          "caseLevel": {
+            "type": "string"
+          },
+          "sort": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection",
+          "filter",
+          "locale",
+          "strength",
+          "caseLevel"
+        ]
+      }
+    },
+    {
+      "name": "text-search",
+      "description": "Perform full-text search across text-indexed fields",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "searchText": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "caseSensitive": {
+            "type": "string"
+          },
+          "diacriticSensitive": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "collection",
+          "searchText",
+          "limit"
+        ]
+      }
+    },
+    {
+      "name": "geo-query",
+      "description": "Run geospatial queries with various operators",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "operator": {
+            "type": "string"
+          },
+          "field": {
+            "type": "string"
+          },
+          "geometry": {
+            "type": "string"
+          },
+          "maxDistance": {
+            "type": "integer"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "collection",
+          "operator",
+          "field",
+          "geometry",
+          "limit"
+        ]
+      }
+    },
+    {
+      "name": "transaction",
+      "description": "Execute multiple operations in a single transaction",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "operations": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "operations"
+        ]
+      }
+    },
+    {
+      "name": "watch-changes",
+      "description": "Watch for changes in a collection using change streams",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "operations": {
+            "type": "array"
+          },
+          "duration": {
+            "type": "integer"
+          },
+          "fullDocument": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection",
+          "operations",
+          "duration",
+          "fullDocument"
+        ]
+      }
+    },
+    {
+      "name": "gridfs-operation",
+      "description": "Manage large files with GridFS",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "operation": {
+            "type": "string"
+          },
+          "bucket": {
+            "type": "string"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "operation",
+          "bucket",
+          "limit"
+        ]
+      }
+    },
+    {
+      "name": "clear-cache",
+      "description": "Clear memory caches to ensure fresh data",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "target"
+        ]
+      }
+    },
+    {
+      "name": "shard-status",
+      "description": "Get sharding status for database or collections",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string"
+          },
+          "collection": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "target"
+        ]
+      }
+    },
+    {
+      "name": "export-data",
+      "description": "Export query results to formatted JSON or CSV",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection": {
+            "type": "string"
+          },
+          "filter": {
+            "type": "string"
+          },
+          "format": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "sort": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection",
+          "filter",
+          "format",
+          "limit"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "databases",
+      "uritemplate": "mongodb://databases",
+      "description": "List of all accessible MongoDB databases"
+    },
+    {
+      "name": "database-users",
+      "uritemplate": "mongodb://database/users",
+      "description": "MongoDB database users and roles"
+    },
+    {
+      "name": "database-triggers",
+      "uritemplate": "mongodb://database/triggers",
+      "description": "Database change streams and event triggers configuration"
+    },
+    {
+      "name": "stored-functions",
+      "uritemplate": "mongodb://database/functions",
+      "description": "MongoDB stored JavaScript functions"
+    },
+    {
+      "name": "collections",
+      "uritemplate": "mongodb://collections",
+      "description": "List of collections in the current database"
+    },
+    {
+      "name": "collection-indexes",
+      "uritemplate": "mongodb://collection/{name}/indexes",
+      "description": "Index information for a MongoDB collection"
+    },
+    {
+      "name": "collection-schema",
+      "uritemplate": "mongodb://collection/{name}/schema",
+      "description": "Schema information for a MongoDB collection"
+    },
+    {
+      "name": "collection-stats",
+      "uritemplate": "mongodb://collection/{name}/stats",
+      "description": "Performance statistics for a MongoDB collection"
+    },
+    {
+      "name": "collection-validation",
+      "uritemplate": "mongodb://collection/{name}/validation",
+      "description": "Validation rules for a MongoDB collection"
+    },
+    {
+      "name": "server-status",
+      "uritemplate": "mongodb://server/status",
+      "description": "MongoDB server status information"
+    },
+    {
+      "name": "replica-status",
+      "uritemplate": "mongodb://server/replica",
+      "description": "MongoDB replica set status and configuration"
+    },
+    {
+      "name": "performance-metrics",
+      "uritemplate": "mongodb://server/metrics",
+      "description": "Real-time MongoDB performance metrics and profiling data"
+    }
+  ]
+}

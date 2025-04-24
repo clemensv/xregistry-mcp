@@ -1,0 +1,116 @@
+{
+  "repo_ref": "deepfates/mcp-replicate",
+  "name": "io.github.deepfates/mcp-replicate",
+  "description": "A Model Context Protocol server implementation for Replicate. Run Replicate models through a simple tool-based interface.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "mcp-replicate",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "REPLICATE_API_TOKEN",
+            "description": "Replicate API token for authentication",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "search_models",
+      "description": "Find models using semantic search",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_models",
+      "description": "Browse available models",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_model",
+      "description": "Get details about a specific model",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_collections",
+      "description": "Browse model collections",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_collection",
+      "description": "Get details about a specific collection",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_prediction",
+      "description": "Run a model with your inputs",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_prediction",
+      "description": "Check a prediction's status",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "cancel_prediction",
+      "description": "Stop a running prediction",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_predictions",
+      "description": "See your recent predictions",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "view_image",
+      "description": "Open an image in your browser",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "clear_image_cache",
+      "description": "Clean up cached images",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_image_cache_stats",
+      "description": "Check cache usage",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

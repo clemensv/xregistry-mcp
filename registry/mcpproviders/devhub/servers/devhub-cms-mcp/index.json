@@ -1,0 +1,81 @@
+{
+  "repo_ref": "devhub/devhub-cms-mcp",
+  "name": "io.github.devhub/devhub-cms-mcp",
+  "description": "Integration with DevHub CMS to manage content",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "devhub-cms-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "devhub-cms-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "DEVHUB_API_KEY",
+            "required": true
+          },
+          {
+            "name": "DEVHUB_API_SECRET",
+            "required": true
+          },
+          {
+            "name": "DEVHUB_BASE_URL",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get_hours_of_operation",
+      "description": "Get the hours of operation for a DevHub location"
+    },
+    {
+      "name": "get_businesses",
+      "description": "Get all businesses within the DevHub account"
+    },
+    {
+      "name": "get_locations",
+      "description": "Get all locations for a business"
+    },
+    {
+      "name": "update_hours",
+      "description": "Update the hours of operation for a DevHub location"
+    },
+    {
+      "name": "site_from_url",
+      "description": "Get the DevHub site ID from a URL."
+    },
+    {
+      "name": "upload_image",
+      "description": "Upload an image to the DevHub media gallery"
+    },
+    {
+      "name": "get_blog_post",
+      "description": "Get a single blog post"
+    },
+    {
+      "name": "create_blog_post",
+      "description": "Create a new blog post"
+    },
+    {
+      "name": "update_blog_post",
+      "description": "Update a single blog post"
+    },
+    {
+      "name": "get_nearest_location",
+      "description": "Get the nearest DevHub location"
+    }
+  ],
+  "resources": []
+}

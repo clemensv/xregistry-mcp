@@ -1,0 +1,83 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:42:24.04226455Z",
+  "deployment": {
+    "sandbox": {
+      "args": [],
+      "command": "python main.py",
+      "env": [],
+      "package": "osp-marketing-tools",
+      "packageversion": "0.1.0",
+      "runtime": "python"
+    }
+  },
+  "description": "A comprehensive suite of tools for technical marketing content creation, optimization, and product positioning based on Open Strategy Partners' proven methodologies. This software is based on the Model Context Protocol (MCP) and is usable by any LLM client that supports MCP.",
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/open-strategy-partners/servers/osp_marketing_tools/meta",
+  "modifiedat": "2025-04-25T12:42:24.04226455Z",
+  "name": "osp_marketing_tools",
+  "repository": {
+    "name": "open-strategy-partners/osp_marketing_tools",
+    "url": "https://github.com/open-strategy-partners/osp_marketing_tools"
+  },
+  "resources": [
+    {
+      "description": "Resource namespace for OSP marketing tools.",
+      "name": "osp://marketing-tools",
+      "uritemplate": "osp://marketing-tools"
+    }
+  ],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/open-strategy-partners/servers/osp_marketing_tools",
+  "serverid": "osp_marketing_tools",
+  "serverversion": "0.1.0",
+  "tools": [
+    {
+      "description": "Check if the server is running and can access its resources.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "health_check"
+    },
+    {
+      "description": "Get the Open Strategy Partners (OSP) editing codes documentation and usage protocol for editing texts.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_editing_codes"
+    },
+    {
+      "description": "Get the Open Strategy Partners (OSP) writing guide and usage protocol for editing texts.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_writing_guide"
+    },
+    {
+      "description": "Get the Open Strategy Partners (OSP) Web Content Meta Information Generation System (titles, meta-titles, slugs).",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_meta_guide"
+    },
+    {
+      "description": "Get the Open Strategy Partners (OSP) Product Communications Value Map Generation System for Product Positioning (value cases, feature extraction, taglines).",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_value_map_positioning_guide"
+    },
+    {
+      "description": "Get the Open Strategy Partners (OSP) On-Page SEO Optimization Guide.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_on_page_seo_guide"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/open-strategy-partners/servers/osp_marketing_tools/versions",
+  "xid": "/mcpproviders/open-strategy-partners/servers/osp_marketing_tools"
+}

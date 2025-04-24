@@ -1,0 +1,91 @@
+{
+  "repo_ref": "Laksh-star/mcp-server-tmdb",
+  "name": "io.github.Laksh-star/mcp-server-tmdb",
+  "description": "This MCP server integrates with The Movie Database (TMDB) API to provide movie information, search capabilities, and recommendations.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@Laksh-star/mcp-server-tmdb",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "TMDB_API_KEY",
+            "description": "API key for TMDB access",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "search_movies",
+      "description": "Search for movies by title or keywords",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query for movie titles"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "get_recommendations",
+      "description": "Get movie recommendations based on a movie ID",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "movieId": {
+            "type": "string",
+            "description": "TMDB movie ID to get recommendations for"
+          }
+        },
+        "required": [
+          "movieId"
+        ]
+      }
+    },
+    {
+      "name": "get_trending",
+      "description": "Get trending movies for a time window",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "timeWindow": {
+            "type": "string",
+            "enum": [
+              "day",
+              "week"
+            ],
+            "description": "Time window for trending movies"
+          }
+        },
+        "required": [
+          "timeWindow"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "tmdb:///movie/{movie_id}",
+      "name": "Movies",
+      "description": "Comprehensive movie details including title, release date, rating, overview, genres, poster URL, cast information (top 5 actors), director, and selected reviews.",
+      "mimetype": "application/json"
+    }
+  ]
+}

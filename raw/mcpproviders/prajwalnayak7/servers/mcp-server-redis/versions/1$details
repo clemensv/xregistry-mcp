@@ -1,0 +1,269 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:42:38.487378144Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "src/server.py"
+      ],
+      "command": "python",
+      "env": [
+        {
+          "description": "Redis server hostname",
+          "name": "REDIS_HOST",
+          "required": true
+        },
+        {
+          "description": "Redis server port",
+          "name": "REDIS_PORT",
+          "required": true
+        }
+      ],
+      "package": "mcp-server-redis",
+      "runtime": "python"
+    }
+  },
+  "description": "This implementation provides a solid foundation for Redis integration through MCP. You can extend it further by adding more Redis commands as needed for your specific use case.",
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "modifiedat": "2025-04-25T12:42:38.487378144Z",
+  "name": "mcp-server-redis",
+  "repository": {
+    "name": "prajwalnayak7/mcp-server-redis",
+    "url": "https://github.com/prajwalnayak7/mcp-server-redis"
+  },
+  "resources": [
+    {
+      "description": "Current connection status",
+      "name": "status",
+      "uritemplate": "redis://status"
+    },
+    {
+      "description": "Redis server information",
+      "name": "info",
+      "uritemplate": "redis://info"
+    },
+    {
+      "description": "List keys matching a pattern",
+      "name": "keys",
+      "uritemplate": "redis://keys/{pattern}"
+    }
+  ],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/prajwalnayak7/servers/mcp-server-redis/versions/1",
+  "serverid": "mcp-server-redis",
+  "serverversion": "unspecified",
+  "tools": [
+    {
+      "description": "Get a value",
+      "inputschema": {
+        "properties": {
+          "key": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key"
+        ],
+        "type": "object"
+      },
+      "name": "get_value"
+    },
+    {
+      "description": "Set a value with optional expiry",
+      "inputschema": {
+        "properties": {
+          "expiry": {
+            "type": "integer"
+          },
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "value"
+        ],
+        "type": "object"
+      },
+      "name": "set_value"
+    },
+    {
+      "description": "Delete a key",
+      "inputschema": {
+        "properties": {
+          "key": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key"
+        ],
+        "type": "object"
+      },
+      "name": "delete_key"
+    },
+    {
+      "description": "Increment a numeric value",
+      "inputschema": {
+        "properties": {
+          "amount": {
+            "type": "integer"
+          },
+          "key": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key"
+        ],
+        "type": "object"
+      },
+      "name": "increment"
+    },
+    {
+      "description": "Push values to a list",
+      "inputschema": {
+        "properties": {
+          "list": {
+            "type": "string"
+          },
+          "values": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "list",
+          "values"
+        ],
+        "type": "object"
+      },
+      "name": "list_push"
+    },
+    {
+      "description": "Get range of list values",
+      "inputschema": {
+        "properties": {
+          "end": {
+            "type": "integer"
+          },
+          "list": {
+            "type": "string"
+          },
+          "start": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "list"
+        ],
+        "type": "object"
+      },
+      "name": "list_range"
+    },
+    {
+      "description": "Set hash fields",
+      "inputschema": {
+        "properties": {
+          "fields": {
+            "type": "object"
+          },
+          "hash": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "hash",
+          "fields"
+        ],
+        "type": "object"
+      },
+      "name": "hash_set"
+    },
+    {
+      "description": "Get hash fields",
+      "inputschema": {
+        "properties": {
+          "fields": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "hash": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "hash"
+        ],
+        "type": "object"
+      },
+      "name": "hash_get"
+    },
+    {
+      "description": "Add to a set",
+      "inputschema": {
+        "properties": {
+          "members": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "set": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "set",
+          "members"
+        ],
+        "type": "object"
+      },
+      "name": "set_add"
+    },
+    {
+      "description": "Get set members",
+      "inputschema": {
+        "properties": {
+          "set": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "set"
+        ],
+        "type": "object"
+      },
+      "name": "set_members"
+    },
+    {
+      "description": "Publish a message",
+      "inputschema": {
+        "properties": {
+          "channel": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "channel",
+          "message"
+        ],
+        "type": "object"
+      },
+      "name": "publish_message"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/prajwalnayak7/servers/mcp-server-redis/versions/1"
+}

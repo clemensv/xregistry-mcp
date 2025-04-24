@@ -1,0 +1,181 @@
+{
+  "repo_ref": "isaacwasserman/mcp-snowflake-server",
+  "name": "io.github.isaacwasserman/mcp-snowflake-server",
+  "description": "A Model Context Protocol (MCP) server implementation that provides database interaction with Snowflake. This server enables running SQL queries via tools and exposes data insights and schema context as resources.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "mcp_snowflake_server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--python=3.12",
+          "mcp_snowflake_server",
+          "--account",
+          "your_account",
+          "--warehouse",
+          "your_warehouse",
+          "--user",
+          "your_user",
+          "--password",
+          "your_password",
+          "--role",
+          "your_role",
+          "--database",
+          "your_database",
+          "--schema",
+          "your_schema"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "list_databases",
+      "description": "List all available databases in Snowflake",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "list_schemas",
+      "description": "List all schemas in a database",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "database": {
+            "type": "string",
+            "description": "Database name to list schemas from"
+          }
+        },
+        "required": [
+          "database"
+        ]
+      }
+    },
+    {
+      "name": "list_tables",
+      "description": "List all tables in a specific database and schema",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "database": {
+            "type": "string",
+            "description": "Database name"
+          },
+          "schema": {
+            "type": "string",
+            "description": "Schema name"
+          }
+        },
+        "required": [
+          "database",
+          "schema"
+        ]
+      }
+    },
+    {
+      "name": "describe_table",
+      "description": "Get the schema information for a specific table",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "table_name": {
+            "type": "string",
+            "description": "Fully qualified table name in the format 'database.schema.table'"
+          }
+        },
+        "required": [
+          "table_name"
+        ]
+      }
+    },
+    {
+      "name": "read_query",
+      "description": "Execute a SELECT query.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "SELECT SQL query to execute"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "append_insight",
+      "description": "Add a data insight to the memo",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "insight": {
+            "type": "string",
+            "description": "Data insight discovered from analysis"
+          }
+        },
+        "required": [
+          "insight"
+        ]
+      }
+    },
+    {
+      "name": "write_query",
+      "description": "Execute an INSERT, UPDATE, or DELETE query on the Snowflake database",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "SQL query to execute"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "create_table",
+      "description": "Create a new table in the Snowflake database",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "CREATE TABLE SQL statement"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "memo://insights",
+      "name": "Data Insights Memo",
+      "description": "A living document of discovered data insights",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "context://table/{table_name}",
+      "name": "{table_name} table",
+      "description": "Description of the {table_name} table",
+      "mimetype": "text/plain"
+    }
+  ]
+}

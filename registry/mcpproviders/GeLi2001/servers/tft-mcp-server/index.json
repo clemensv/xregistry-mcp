@@ -1,0 +1,68 @@
+{
+  "repo_ref": "GeLi2001/tft-mcp-server",
+  "name": "io.github.GeLi2001/tft-mcp-server",
+  "description": "Model Context Protocol (MCP) server for Team Fight Tactics (TFT) that provides access to TFT game data through various tools.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "mcp-server-tft",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "mcp-server-tft",
+          "--apiKey",
+          "<YOUR_RIOT_API_KEY>",
+          "--gameName",
+          "<YOUR_GAME_NAME>",
+          "--tagLine",
+          "<YOUR_TAG_LINE>"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "tft_match_history",
+      "description": "Get TFT match history for the current player.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of matches to retrieve."
+          },
+          "start": {
+            "type": "integer",
+            "description": "Start index for pagination."
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "tft_match_details",
+      "description": "Get detailed information about a specific TFT match.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "matchId": {
+            "type": "string",
+            "description": "The match ID to get details for."
+          }
+        },
+        "required": [
+          "matchId"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

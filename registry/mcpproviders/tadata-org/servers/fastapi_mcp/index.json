@@ -1,0 +1,18 @@
+{
+  "repo_ref": "tadata-org/fastapi_mcp",
+  "name": "io.github.tadata-org/fastapi_mcp",
+  "description": "Expose your FastAPI endpoints as Model Context Protocol (MCP) tools, with Auth!",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [
+    {
+      "url": "http://apiserver/mcp",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

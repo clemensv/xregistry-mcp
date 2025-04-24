@@ -1,0 +1,110 @@
+{
+  "repo_ref": "StevenStavrakis/obsidian-mcp",
+  "name": "io.github.StevenStavrakis/obsidian-mcp",
+  "description": "An MCP (Model Context Protocol) server that enables AI assistants to interact with Obsidian vaults, providing tools for reading, creating, editing and managing notes and tags.",
+  "version_detail": {
+    "version": "1.0.6"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "obsidian-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "read-note",
+      "description": "Read the contents of a note",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create-note",
+      "description": "Create a new note",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "edit-note",
+      "description": "Edit an existing note",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete-note",
+      "description": "Delete a note",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "move-note",
+      "description": "Move a note to a different location",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create-directory",
+      "description": "Create a new directory",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "search-vault",
+      "description": "Search notes in the vault",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "add-tags",
+      "description": "Add tags to a note",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "remove-tags",
+      "description": "Remove tags from a note",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "rename-tag",
+      "description": "Rename a tag across all notes",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "manage-tags",
+      "description": "List and organize tags",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list-available-vaults",
+      "description": "List all available vaults (helps with multi-vault setups)",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

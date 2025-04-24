@@ -1,0 +1,215 @@
+{
+  "repo_ref": "hungryrobot1/MCP-PIF",
+  "name": "io.github.hungryrobot1/MCP-PIF",
+  "description": "This project implements the Model Context Protocol (MCP) as a practical embodiment of the Personal Intelligence Framework (PIF). Through structured tools and progressive interaction patterns, it creates spaces for meaningful development of understanding between humans and AI.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "unspecified",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "path/to/your/mcp-pif/build/index.js"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "read",
+      "description": "Read file contents",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Path to the file to read"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      }
+    },
+    {
+      "name": "write",
+      "description": "Write or modify file content",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Path for the file to write/modify"
+          },
+          "content": {
+            "type": "string",
+            "description": "Content to write"
+          },
+          "operation": {
+            "type": "string",
+            "enum": [
+              "write",
+              "append",
+              "replace",
+              "edit"
+            ],
+            "description": "Type of write operation to perform"
+          },
+          "lineNumber": {
+            "type": "number",
+            "description": "Line number for replace operation"
+          },
+          "edits": {
+            "type": "array",
+            "description": "Array of edits for edit operation",
+            "items": {
+              "type": "object",
+              "properties": {
+                "oldText": {
+                  "type": "string",
+                  "description": "Text to replace"
+                },
+                "newText": {
+                  "type": "string",
+                  "description": "New text to insert"
+                }
+              },
+              "required": [
+                "oldText",
+                "newText"
+              ]
+            }
+          }
+        },
+        "required": [
+          "path",
+          "operation"
+        ]
+      }
+    },
+    {
+      "name": "cd",
+      "description": "Change current directory",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Directory to change to"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      }
+    },
+    {
+      "name": "mkdir",
+      "description": "Create a new directory",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Path of directory to create"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      }
+    },
+    {
+      "name": "ls",
+      "description": "List directory contents",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Optional path to list (defaults to current directory)"
+          }
+        }
+      }
+    },
+    {
+      "name": "pwd",
+      "description": "Print working directory",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "rename",
+      "description": "Rename a file or directory",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "oldPath": {
+            "type": "string",
+            "description": "Current path of the file or directory"
+          },
+          "newPath": {
+            "type": "string",
+            "description": "New path/name for the file or directory"
+          }
+        },
+        "required": [
+          "oldPath",
+          "newPath"
+        ]
+      }
+    },
+    {
+      "name": "move",
+      "description": "Move a file or directory to a new location",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "sourcePath": {
+            "type": "string",
+            "description": "Source path of the file or directory to move"
+          },
+          "targetPath": {
+            "type": "string",
+            "description": "Target path where the file or directory will be moved to"
+          }
+        },
+        "required": [
+          "sourcePath",
+          "targetPath"
+        ]
+      }
+    },
+    {
+      "name": "delete",
+      "description": "Delete a file or directory",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "description": "Path of the file or directory to delete"
+          },
+          "recursive": {
+            "type": "boolean",
+            "description": "If true, recursively delete directories and their contents"
+          }
+        },
+        "required": [
+          "path"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

@@ -1,0 +1,29 @@
+{
+  "repo_ref": "cyberchitta/llm-context.py",
+  "name": "io.github.cyberchitta/llm-context",
+  "description": "A tool that helps developers quickly inject relevant content from code/text projects into Large Language Model chat interfaces, providing direct LLM integration through the Model Context Protocol (MCP).",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "unspecified",
+      "package_name": "llm-context",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--from",
+          "llm-context",
+          "lc-mcp"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

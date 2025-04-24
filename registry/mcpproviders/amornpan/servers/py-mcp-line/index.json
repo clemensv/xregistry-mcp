@@ -1,0 +1,91 @@
+{
+  "repo_ref": "amornpan/py-mcp-line",
+  "name": "io.github.amornpan/py-mcp-line",
+  "description": "A Model Context Protocol server implementation in Python that provides access to LINE Bot messages. This server enables Language Models to read and analyze LINE conversations through a standardized interface.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [
+    {
+      "url": "http://localhost:8000",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "python:3.8-slim",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "uvicorn",
+          "src.line.server:app",
+          "--host",
+          "0.0.0.0",
+          "--port",
+          "8000"
+        ],
+        "environment_variables": [
+          {
+            "name": "LINE_CHANNEL_SECRET",
+            "required": true
+          },
+          {
+            "name": "LINE_ACCESS_TOKEN",
+            "required": true
+          },
+          {
+            "name": "SERVER_PORT",
+            "required": true
+          },
+          {
+            "name": "MESSAGES_FILE",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "python",
+      "package_name": "py-mcp-line",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "src/line/server.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "LINE_CHANNEL_SECRET",
+            "required": true
+          },
+          {
+            "name": "LINE_ACCESS_TOKEN",
+            "required": true
+          },
+          {
+            "name": "SERVER_PORT",
+            "required": true
+          },
+          {
+            "name": "MESSAGES_FILE",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": [
+    {
+      "uritemplate": "line://{message_type}/data",
+      "name": "LINE Bot messages",
+      "description": "Lists available message types from the LINE Bot and provides access to messages such as text, sticker, and image messages in JSON format.",
+      "mimetype": "application/json"
+    }
+  ]
+}

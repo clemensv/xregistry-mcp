@@ -1,0 +1,264 @@
+{
+  "repo_ref": "prajwalnayak7/mcp-server-redis",
+  "name": "io.github.prajwalnayak7/mcp-server-redis",
+  "description": "This implementation provides a solid foundation for Redis integration through MCP. You can extend it further by adding more Redis commands as needed for your specific use case.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcp-server-redis",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "src/server.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "REDIS_HOST",
+            "description": "Redis server hostname",
+            "required": true
+          },
+          {
+            "name": "REDIS_PORT",
+            "description": "Redis server port",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get_value",
+      "description": "Get a value",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key"
+        ]
+      }
+    },
+    {
+      "name": "set_value",
+      "description": "Set a value with optional expiry",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "expiry": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "key",
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "delete_key",
+      "description": "Delete a key",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key"
+        ]
+      }
+    },
+    {
+      "name": "increment",
+      "description": "Increment a numeric value",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "key"
+        ]
+      }
+    },
+    {
+      "name": "list_push",
+      "description": "Push values to a list",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "string"
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "list",
+          "values"
+        ]
+      }
+    },
+    {
+      "name": "list_range",
+      "description": "Get range of list values",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "list": {
+            "type": "string"
+          },
+          "start": {
+            "type": "integer"
+          },
+          "end": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "list"
+        ]
+      }
+    },
+    {
+      "name": "hash_set",
+      "description": "Set hash fields",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "hash": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "hash",
+          "fields"
+        ]
+      }
+    },
+    {
+      "name": "hash_get",
+      "description": "Get hash fields",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "hash": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "hash"
+        ]
+      }
+    },
+    {
+      "name": "set_add",
+      "description": "Add to a set",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "set": {
+            "type": "string"
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "set",
+          "members"
+        ]
+      }
+    },
+    {
+      "name": "set_members",
+      "description": "Get set members",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "set": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "set"
+        ]
+      }
+    },
+    {
+      "name": "publish_message",
+      "description": "Publish a message",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "channel": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "channel",
+          "message"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "redis://status",
+      "name": "status",
+      "description": "Current connection status"
+    },
+    {
+      "uritemplate": "redis://info",
+      "name": "info",
+      "description": "Redis server information"
+    },
+    {
+      "uritemplate": "redis://keys/{pattern}",
+      "name": "keys",
+      "description": "List keys matching a pattern"
+    }
+  ]
+}

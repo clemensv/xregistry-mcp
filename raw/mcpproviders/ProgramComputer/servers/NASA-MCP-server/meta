@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:42:41.43934209Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ProgramComputer/servers/NASA-MCP-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:42:41.43934209Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ProgramComputer/servers/NASA-MCP-server/meta",
+  "serverid": "NASA-MCP-server",
+  "xid": "/mcpproviders/ProgramComputer/servers/NASA-MCP-server/meta"
+}

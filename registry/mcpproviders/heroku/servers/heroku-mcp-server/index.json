@@ -1,0 +1,400 @@
+{
+  "repo_ref": "heroku/heroku-mcp-server",
+  "name": "io.github.heroku/heroku-mcp-server",
+  "description": "The Heroku Platform MCP Server is a specialized Model Context Protocol (MCP) implementation designed to facilitate seamless interaction between large language models (LLMs) and the Heroku Platform. This server provides a robust set of tools and capabilities that enable LLMs to read, manage, and operate Heroku Platform resources.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@heroku/mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@heroku/mcp-server"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "list_apps",
+      "description": "List Heroku apps: owned, collaborator access, team/space filtering",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "all": {
+            "type": "boolean",
+            "description": "Show owned apps and collaborator access. Default: owned only"
+          },
+          "personal": {
+            "type": "boolean",
+            "description": "List personal account apps only, ignoring default team"
+          },
+          "space": {
+            "type": "string",
+            "description": "Filter by private space name. Excludes team param"
+          },
+          "team": {
+            "type": "string",
+            "description": "Filter by team name. Excludes space param"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "get_app_info",
+      "description": "Get app details: config, dynos, addons, access, domains",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "app": {
+            "type": "string",
+            "description": "Target app name. Requires access permissions"
+          },
+          "json": {
+            "type": "boolean",
+            "description": "JSON output with full metadata. Default: text format"
+          }
+        },
+        "required": [
+          "app"
+        ]
+      }
+    },
+    {
+      "name": "create_app",
+      "description": "Create app: custom name, region (US/EU), team, private space",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "app": {
+            "type": "string",
+            "description": "App name. Auto-generated if omitted"
+          },
+          "region": {
+            "type": "string",
+            "enum": [
+              "us",
+              "eu"
+            ],
+            "description": "Region: us/eu. Default: us. Excludes space param"
+          },
+          "space": {
+            "type": "string",
+            "description": "Private space name. Inherits region. Excludes region param"
+          },
+          "team": {
+            "type": "string",
+            "description": "Team name for ownership"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "rename_app",
+      "description": "Rename app: validate and update app name",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "app": {
+            "type": "string",
+            "description": "Current app name. Requires access"
+          },
+          "newName": {
+            "type": "string",
+            "description": "New unique app name"
+          }
+        },
+        "required": [
+          "app",
+          "newName"
+        ]
+      }
+    },
+    {
+      "name": "transfer_app",
+      "description": "Transfer app ownership to user/team",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "app": {
+            "type": "string",
+            "description": "App to transfer. Requires owner/admin access"
+          },
+          "recipient": {
+            "type": "string",
+            "description": "Target user email or team name"
+          }
+        },
+        "required": [
+          "app",
+          "recipient"
+        ]
+      }
+    },
+    {
+      "name": "list_addons",
+      "description": "List add-ons: all apps or specific app, detailed metadata",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "all": {
+            "type": "boolean",
+            "description": "List all add-ons across accessible apps. Overrides app param, shows full status"
+          },
+          "app": {
+            "type": "string",
+            "description": "Filter by app name. Shows add-ons and attachments. Uses Git remote default if omitted"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "get_addon_info",
+      "description": "Get add-on details: plan, state, billing",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "addon": {
+            "type": "string",
+            "description": "Add-on identifier: UUID, name (postgresql-curved-12345), or attachment name (DATABASE)"
+          },
+          "app": {
+            "type": "string",
+            "description": "App context for add-on lookup. Required for attachment names. Uses Git remote default"
+          }
+        },
+        "required": [
+          "addon"
+        ]
+      }
+    },
+    {
+      "name": "create_addon",
+      "description": "Create add-on: specify service, plan, custom names",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "app": {
+            "type": "string",
+            "description": "Target app for add-on. Must have write access. Region/space affects availability"
+          },
+          "as": {
+            "type": "string",
+            "description": "Custom attachment name. Used for config vars prefix. Must be unique in app"
+          },
+          "name": {
+            "type": "string",
+            "description": "Global add-on identifier. Must be unique across all Heroku add-ons"
+          },
+          "serviceAndPlan": {
+            "type": "string",
+            "description": "Format: service_slug:plan_slug (e.g., heroku-postgresql:essential-0)"
+          }
+        },
+        "required": [
+          "serviceAndPlan",
+          "app"
+        ]
+      }
+    },
+    {
+      "name": "list_addon_services",
+      "description": "List available add-on services and features",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "json": {
+            "type": "boolean",
+            "description": "JSON output with sharing options and app generation support. Default: basic text"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "list_addon_plans",
+      "description": "List service plans: features, pricing, availability",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "service": {
+            "type": "string",
+            "description": "Service slug (e.g., heroku-postgresql). Get from list_addon_services"
+          },
+          "json": {
+            "type": "boolean",
+            "description": "JSON output with pricing, features, space compatibility. Default: text format"
+          }
+        },
+        "required": [
+          "service"
+        ]
+      }
+    },
+    {
+      "name": "get_app_logs",
+      "description": "App logs: monitor/debug/filter by dyno/process/source",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "app": {
+            "type": "string",
+            "description": "Heroku app name. Requires: permissions, Cedar-gen"
+          },
+          "dynoName": {
+            "type": "string",
+            "description": "Format: web.1/worker.2. Excludes processType"
+          },
+          "source": {
+            "type": "string",
+            "description": "app=application, heroku=platform. Default: all"
+          },
+          "processType": {
+            "type": "string",
+            "description": "web|worker. All instances. Excludes dynoName"
+          }
+        },
+        "required": [
+          "app"
+        ]
+      }
+    },
+    {
+      "name": "maintenance_on",
+      "description": "Enable maintenance mode and redirect traffic for a Heroku app",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "app": {
+            "type": "string",
+            "description": "Target Heroku app name"
+          }
+        },
+        "required": [
+          "app"
+        ]
+      }
+    },
+    {
+      "name": "maintenance_off",
+      "description": "Disable maintenance mode and restore normal app operations",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "app": {
+            "type": "string",
+            "description": "Target Heroku app name"
+          }
+        },
+        "required": [
+          "app"
+        ]
+      }
+    },
+    {
+      "name": "ps_list",
+      "description": "List and monitor Heroku app dynos. View running dynos, check status/health, monitor process states, verify configurations.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "app": {
+            "type": "string",
+            "description": "App name to list processes for"
+          },
+          "json": {
+            "type": "boolean",
+            "description": "Output process info in JSON format"
+          }
+        },
+        "required": [
+          "app"
+        ]
+      }
+    },
+    {
+      "name": "ps_scale",
+      "description": "Scale Heroku app dynos. Adjust quantities, change sizes, view formation details, manage resources.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "app": {
+            "type": "string",
+            "description": "App name to scale"
+          },
+          "dyno": {
+            "type": "string",
+            "description": "Dyno type and quantity (e.g., web=3:Standard-2X, worker+1). Omit to show current formation"
+          }
+        },
+        "required": [
+          "app"
+        ]
+      }
+    },
+    {
+      "name": "ps_restart",
+      "description": "Restart Heroku app processes. Restart specific dynos, process types, or all dynos. Reset dyno states selectively.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "app": {
+            "type": "string",
+            "description": "App name to restart processes for"
+          },
+          "dyno-name": {
+            "type": "string",
+            "description": "Specific dyno to restart (e.g., web.1). Omit both options to restart all"
+          },
+          "process-type": {
+            "type": "string",
+            "description": "Dyno type to restart (e.g., web). Omit both options to restart all"
+          }
+        },
+        "required": [
+          "app"
+        ]
+      }
+    },
+    {
+      "name": "list_private_spaces",
+      "description": "Lists Heroku Private Spaces with CIDR blocks, regions, compliance and capacity details. JSON output supported.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "json": {
+            "type": "boolean",
+            "description": "JSON output for detailed space metadata, text output if false/omitted"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "list_teams",
+      "description": "Lists accessible Heroku Teams. Use for: viewing teams, checking membership, getting team metadata, and verifying access. JSON output available.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "json": {
+            "type": "boolean",
+            "description": "Output format control - true for detailed JSON with team metadata, false/omitted for simplified text"
+          }
+        },
+        "required": []
+      }
+    }
+  ],
+  "resources": []
+}

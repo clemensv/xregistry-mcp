@@ -1,0 +1,234 @@
+{
+  "repo_ref": "vishalmysore/choturobo",
+  "name": "io.github.vishalmysore/choturobo",
+  "description": "Arduino-based robotics server integrating AI using the MCP (Model Context Protocol) framework from Claude AI by Anthropic. Controls hardware components like LEDs, motors, servos, fans, sensors via MCP tools and prompts.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "server.js"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "move-chotu",
+      "arguments": [
+        {
+          "name": "steps"
+        }
+      ],
+      "description": "Prompt to move Chotu a specified number of steps."
+    },
+    {
+      "name": "start-chotu",
+      "arguments": [],
+      "description": "Prompt to initialize Chotu and prepare for operation."
+    },
+    {
+      "name": "stop-chotu",
+      "arguments": [],
+      "description": "Prompt to stop Chotu safely and shut down operations."
+    },
+    {
+      "name": "turn-chotu",
+      "arguments": [
+        {
+          "name": "direction"
+        }
+      ],
+      "description": "Prompt to turn Chotu left or right."
+    },
+    {
+      "name": "set-chotu-speed",
+      "arguments": [
+        {
+          "name": "speed"
+        }
+      ],
+      "description": "Prompt to set Chotu's speed."
+    }
+  ],
+  "tools": [
+    {
+      "name": "chotuBlinkEyes",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "time"
+        ]
+      },
+      "description": "Blink the eyes of Chotu for a specified time."
+    },
+    {
+      "name": "chotuBuzzSound",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "time": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "time"
+        ]
+      },
+      "description": "Sound a buzzer for a specified time."
+    },
+    {
+      "name": "runMotor",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "speed": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "speed"
+        ]
+      },
+      "description": "Run a motor at a certain speed."
+    },
+    {
+      "name": "moveServo",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "angle": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "angle"
+        ]
+      },
+      "description": "Move a servo motor to a specific angle."
+    },
+    {
+      "name": "controlFan",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "state"
+        ]
+      },
+      "description": "Turn a fan on or off."
+    },
+    {
+      "name": "toggleRelay",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "state"
+        ]
+      },
+      "description": "Switch a relay on or off."
+    },
+    {
+      "name": "readTemperature",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "description": "Read temperature from a sensor."
+    },
+    {
+      "name": "readDistance",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "description": "Measure distance using an ultrasonic sensor."
+    },
+    {
+      "name": "moveBackward",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "steps": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "steps"
+        ]
+      },
+      "description": "Move the motor clockwise for a number of steps."
+    },
+    {
+      "name": "moveForward",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "steps": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "steps"
+        ]
+      },
+      "description": "Move the motor counterclockwise for a number of steps."
+    },
+    {
+      "name": "makeChotuSpeak",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      },
+      "description": "Make Chotu speak a given message."
+    },
+    {
+      "name": "makeChotuSing",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      },
+      "description": "Make Chotu sing a given message."
+    }
+  ],
+  "resources": []
+}

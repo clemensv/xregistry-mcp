@@ -1,0 +1,35 @@
+{
+  "repo_ref": "bitrise-io/bitrise-mcp",
+  "name": "io.github.bitrise-io/bitrise-mcp",
+  "description": "MCP Server for the Bitrise API, enabling app management, build operations, artifact management and more.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "bitrise-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--from",
+          "git+https://github.com/bitrise-io/bitrise-mcp@v1.1.0",
+          "bitrise-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "BITRISE_TOKEN",
+            "description": "Bitrise API token for authentication",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

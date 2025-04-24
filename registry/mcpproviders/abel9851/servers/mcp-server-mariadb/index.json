@@ -1,0 +1,62 @@
+{
+  "repo_ref": "abel9851/mcp-server-mariadb",
+  "name": "io.github.abel9851/mcp-server-mariadb",
+  "description": "An MCP server implementation for retrieving data from mariadb",
+  "remotes": [],
+  "registries": [
+    {
+      "name": "",
+      "package_name": "",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--host",
+          "${DB_HOST}",
+          "--port",
+          "${DB_PORT}",
+          "--user",
+          "${DB_USER}",
+          "--password",
+          "${DB_PASSWORD}",
+          "--database",
+          "${DB_NAME}"
+        ],
+        "environment_variables": [
+          {
+            "name": "MARIADB_HOST"
+          },
+          {
+            "name": "MARIADB_USER"
+          },
+          {
+            "name": "MARIADB_PASSWORD"
+          },
+          {
+            "name": "MARIADB_DATABASE"
+          },
+          {
+            "name": "MARIADB_PORT"
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "query_database",
+      "description": "Execute read-only operations against MariDB",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "schema list",
+      "description": "Expose schema list in database"
+    }
+  ]
+}

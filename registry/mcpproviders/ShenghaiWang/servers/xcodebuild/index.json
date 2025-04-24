@@ -1,0 +1,58 @@
+{
+  "repo_ref": "ShenghaiWang/xcodebuild",
+  "name": "io.github.ShenghaiWang/xcodebuild",
+  "description": "A Model Context Protocol server that builds iOS workspace/project that enables seamless workflow working with iOS projects in Visual Studio Code using extensions like Cline or Roo Code.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "mcpxcodebuild",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "build",
+      "description": "Build iOS Xcode workspace/project",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "folder": {
+            "type": "string",
+            "description": "The full path of the current folder that the iOS Xcode workspace/project sits"
+          }
+        },
+        "required": [
+          "folder"
+        ]
+      }
+    },
+    {
+      "name": "test",
+      "description": "Run test for iOS Xcode workspace/project",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "folder": {
+            "type": "string",
+            "description": "The full path of the current folder that the iOS Xcode workspace/project sits"
+          }
+        },
+        "required": [
+          "folder"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

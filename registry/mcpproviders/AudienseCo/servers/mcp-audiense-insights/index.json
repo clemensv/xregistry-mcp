@@ -1,0 +1,243 @@
+{
+  "repo_ref": "AudienseCo/mcp-audiense-insights",
+  "name": "io.github.AudienseCo/mcp-audiense-insights",
+  "description": "This server, based on the Model Context Protocol (MCP), allows Claude or any other MCP-compatible client to interact with your Audiense Insights account. It extracts marketing insights and audience analysis from Audiense reports, covering demographic, cultural, influencer, and content engagement analysis.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@AudienseCo/mcp-audiense-insights",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "AUDIENSE_CLIENT_ID"
+          },
+          {
+            "name": "AUDIENSE_CLIENT_SECRET"
+          },
+          {
+            "name": "TWITTER_BEARER_TOKEN"
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "audiense-demo",
+      "description": "A prompt to extract marketing insights and audience understanding from Audiense reports through demographic, cultural, influencer, and content analysis.",
+      "arguments": [
+        {
+          "name": "reportName",
+          "description": "The name or id of the Audiense Insights report.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "audiense-demo2",
+      "description": "A prompt to extract marketing insights and audience understanding from Audiense reports through demographic, cultural, influencer, and content analysis.",
+      "arguments": [
+        {
+          "name": "reportName",
+          "description": "The name or id of the Audiense Insights report.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "segment-matching",
+      "description": "A prompt to match and compare audience segments across Audiense reports, identifying similarities, unique traits, and key insights based on demographics, interests, influencers, and engagement patterns.",
+      "arguments": [
+        {
+          "name": "brand1",
+          "description": "The name or ID of the Audiense Insights report for the first brand to analyze.",
+          "required": true
+        },
+        {
+          "name": "brand2",
+          "description": "The name or ID of the Audiense Insights report for the second brand to analyze.",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "get-reports",
+      "description": "Retrieves the list of Audiense insights reports owned by the authenticated user.",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get-report-info",
+      "description": "Retrieves detailed information about a specific intelligence report, including its status, segmentation type, audience size, segments, and access links.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "report_id": {
+            "type": "string",
+            "description": "The ID of the intelligence report."
+          }
+        },
+        "required": [
+          "report_id"
+        ]
+      }
+    },
+    {
+      "name": "get-audience-insights",
+      "description": "Retrieves aggregated insights for a given audience ID, providing statistical distributions across various attributes. Available insights include demographics (e.g., gender, age, country), behavioral traits (e.g., active hours, platform usage), psychographics (e.g., personality traits, interests), and socioeconomic factors (e.g., income, education status).",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "audience_insights_id": {
+            "type": "string",
+            "description": "The ID of the audience insights."
+          },
+          "insights": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Optional list of insight names to filter."
+          }
+        },
+        "required": [
+          "audience_insights_id"
+        ]
+      }
+    },
+    {
+      "name": "get-baselines",
+      "description": "Retrieves available baselines, optionally filtered by country.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "country": {
+            "type": "string",
+            "description": "ISO country code to filter by."
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "get-categories",
+      "description": "Retrieves the list of available affinity categories that can be used as the categories parameter in the compare-audience-influencers tool.",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "compare-audience-influencers",
+      "description": "Compares the influencers of an audience with a baseline audience. The baseline is determined as follows: If the selection was the full audience and a single country represents more than 50% of the audience, that country is used as the baseline. Otherwise, the Global baseline is applied. If the selection was a specific segment, the full audience is used as the baseline. Each influencer comparison includes: - Affinity (%) - The level of alignment between the influencer and the audience. Baseline Affinity (%) - The influencer’s affinity within the baseline audience. Uniqueness Score - A measure of how distinct the influencer is within the selected audience compared to the baseline.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "audience_influencers_id": {
+            "type": "string",
+            "description": "The ID of the audience influencers."
+          },
+          "baseline_audience_influencers_id": {
+            "type": "string",
+            "description": "The ID of the baseline audience influencers."
+          },
+          "cursor": {
+            "type": "number",
+            "description": "Cursor for pagination."
+          },
+          "count": {
+            "type": "number",
+            "description": "Number of items per page (default: 200)."
+          },
+          "bio_keyword": {
+            "type": "string",
+            "description": "Keyword to filter influencers by their biography."
+          },
+          "entity_type": {
+            "type": "string",
+            "enum": [
+              "person",
+              "brand"
+            ],
+            "description": "Filter by entity type (person or brand)."
+          },
+          "followers_min": {
+            "type": "number",
+            "description": "Minimum number of followers."
+          },
+          "followers_max": {
+            "type": "number",
+            "description": "Maximum number of followers."
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Filter influencers by categories."
+          },
+          "countries": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Filter influencers by country ISO codes."
+          }
+        },
+        "required": [
+          "audience_influencers_id",
+          "baseline_audience_influencers_id"
+        ]
+      }
+    },
+    {
+      "name": "get-audience-content",
+      "description": "Retrieves audience content engagement details for a given audience. This tool provides a detailed breakdown of the content an audience interacts with, including: - Liked Content: Popular posts, top domains, top emojis, top hashtags, top links, top media, and a word cloud. - Shared Content: Content that the audience shares, categorized similarly to liked content. - Influential Content: Content from influential accounts that impact the audience, with similar categorization. Each category contains: popularPost, topDomains, topEmojis, topHashtags, topLinks, topMedia, wordcloud.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "audience_content_id": {
+            "type": "string",
+            "description": "The ID of the audience content to retrieve."
+          }
+        },
+        "required": [
+          "audience_content_id"
+        ]
+      }
+    },
+    {
+      "name": "report-summary",
+      "description": "Generates a comprehensive summary of an Audiense report, including segment details, top insights, and influencers.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "report_id": {
+            "type": "string",
+            "description": "The ID of the intelligence report to summarize."
+          }
+        },
+        "required": [
+          "report_id"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

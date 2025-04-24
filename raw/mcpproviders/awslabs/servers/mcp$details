@@ -1,0 +1,758 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:40:42.143563556Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "server.py"
+      ],
+      "command": "python3",
+      "package": "awslabs/mcp",
+      "runtime": "python"
+    }
+  },
+  "description": "A suite of specialized MCP servers that help you get the most out of AWS, wherever you use MCP.",
+  "docs": "https://modelcontextprotocol.io/introduction",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/awslabs/servers/mcp/meta",
+  "modifiedat": "2025-04-25T12:40:42.143563556Z",
+  "name": "AWS MCP Servers",
+  "repository": {
+    "name": "awslabs/mcp",
+    "url": "https://github.com/awslabs/mcp"
+  },
+  "resources": [
+    {
+      "description": "List all available Amazon Bedrock Knowledge Bases and their data sources.",
+      "mimetype": "application/json",
+      "name": "KnowledgeBases",
+      "uritemplate": "resource://knowledgebases"
+    },
+    {
+      "description": "Get all CDK Nag rules for a given rule pack.",
+      "mimetype": "application/json",
+      "name": "CDK Nag Rules",
+      "uritemplate": "cdk-nag://rules/{rule_pack}"
+    },
+    {
+      "description": "Get CDK Nag warnings for a given rule pack.",
+      "mimetype": "application/json",
+      "name": "CDK Nag Warnings",
+      "uritemplate": "cdk-nag://warnings/{rule_pack}"
+    },
+    {
+      "description": "Get CDK Nag errors for a given rule pack.",
+      "mimetype": "application/json",
+      "name": "CDK Nag Errors",
+      "uritemplate": "cdk-nag://errors/{rule_pack}"
+    },
+    {
+      "description": "Get Lambda Powertools guidance for a specific topic.",
+      "mimetype": "application/json",
+      "name": "Lambda Powertools Topic",
+      "uritemplate": "lambda-powertools://{topic}"
+    },
+    {
+      "description": "Get Lambda Powertools index.",
+      "mimetype": "application/json",
+      "name": "Lambda Powertools Index",
+      "uritemplate": "lambda-powertools://"
+    },
+    {
+      "description": "Get AWS Solutions Construct pattern resource.",
+      "mimetype": "application/json",
+      "name": "AWS Solutions Constructs Pattern",
+      "uritemplate": "aws-solutions-constructs://{pattern_name}"
+    },
+    {
+      "description": "Get a section of a GenAI CDK construct.",
+      "mimetype": "application/json",
+      "name": "GenAI CDK Construct Section",
+      "uritemplate": "genai-cdk-constructs://{construct_type}/{construct_name}/{section}"
+    },
+    {
+      "description": "Get a nested section of a GenAI CDK construct.",
+      "mimetype": "application/json",
+      "name": "GenAI CDK Construct Nested Section",
+      "uritemplate": "genai-cdk-constructs://{construct_type}/{construct_name}/{parent}/{child}"
+    },
+    {
+      "description": "Get available sections of a GenAI CDK construct.",
+      "mimetype": "application/json",
+      "name": "GenAI CDK Construct Available Sections",
+      "uritemplate": "genai-cdk-constructs://{construct_type}/{construct_name}/sections"
+    },
+    {
+      "description": "Get a GenAI CDK construct.",
+      "mimetype": "application/json",
+      "name": "GenAI CDK Construct",
+      "uritemplate": "genai-cdk-constructs://{construct_type}/{construct_name}"
+    },
+    {
+      "description": "Get overview of GenAI CDK constructs.",
+      "mimetype": "application/json",
+      "name": "GenAI CDK Construct Overview",
+      "uritemplate": "genai-cdk-constructs://{construct_type}"
+    },
+    {
+      "description": "Terraform Development Workflow Guide with integrated validation and security scanning",
+      "mimetype": "text/markdown",
+      "name": "terraform_development_workflow",
+      "uritemplate": "terraform://development_workflow"
+    },
+    {
+      "description": "Comprehensive listing of AWS provider resources and data sources by service category",
+      "mimetype": "text/markdown",
+      "name": "terraform_aws_provider_resources_listing",
+      "uritemplate": "terraform://aws_provider_resources_listing"
+    },
+    {
+      "description": "Comprehensive listing of AWSCC provider resources and data sources by service category",
+      "mimetype": "text/markdown",
+      "name": "terraform_awscc_provider_resources_listing",
+      "uritemplate": "terraform://awscc_provider_resources_listing"
+    },
+    {
+      "description": "AWS Terraform Provider Best Practices from AWS Prescriptive Guidance",
+      "mimetype": "text/markdown",
+      "name": "terraform_aws_best_practices",
+      "uritemplate": "terraform://aws_best_practices"
+    }
+  ],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/awslabs/servers/mcp",
+  "serverid": "mcp",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "description": "Generate a diagram from Python code using the diagrams package.",
+      "inputschema": {
+        "properties": {
+          "code": {
+            "description": "Python code using the diagrams package DSL. The runtime already imports everything needed so you can start immediately using `with Diagram(`",
+            "type": "string"
+          },
+          "filename": {
+            "description": "The filename to save the diagram to. If not provided, a random name will be generated.",
+            "type": "string"
+          },
+          "timeout": {
+            "description": "The timeout for diagram generation in seconds. Default is 90 seconds.",
+            "type": "integer"
+          },
+          "workspace_dir": {
+            "description": "The user's current workspace directory. CRITICAL: Client must always send the current workspace directory when calling this tool! If provided, diagrams will be saved to a 'generated-diagrams' subdirectory.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code"
+        ],
+        "type": "object"
+      },
+      "name": "generate_diagram"
+    },
+    {
+      "description": "Get example code for different types of diagrams.",
+      "inputschema": {
+        "properties": {
+          "diagram_type": {
+            "description": "Type of diagram example to return. Options: aws, sequence, flow, class, k8s, onprem, custom, all",
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "name": "get_diagram_examples"
+    },
+    {
+      "description": "List all available icons from the diagrams package.",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "list_icons"
+    },
+    {
+      "description": "Fetch and convert an AWS documentation page to markdown format.",
+      "inputschema": {
+        "properties": {
+          "max_length": {
+            "description": "Maximum number of characters to return.",
+            "type": "integer"
+          },
+          "start_index": {
+            "description": "On return output starting at this character index, useful if a previous fetch was truncated and more content is required.",
+            "type": "integer"
+          },
+          "url": {
+            "description": "URL of the AWS documentation page to read",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "read_documentation"
+    },
+    {
+      "description": "Search AWS documentation using the official AWS Documentation Search API.",
+      "inputschema": {
+        "properties": {
+          "limit": {
+            "description": "Maximum number of results to return",
+            "type": "integer"
+          },
+          "search_phrase": {
+            "description": "Search phrase to use",
+            "type": "string"
+          }
+        },
+        "required": [
+          "search_phrase"
+        ],
+        "type": "object"
+      },
+      "name": "search_documentation"
+    },
+    {
+      "description": "Get content recommendations for an AWS documentation page.",
+      "inputschema": {
+        "properties": {
+          "url": {
+            "description": "URL of the AWS documentation page to get recommendations for",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "recommend"
+    },
+    {
+      "description": "Query an Amazon Bedrock Knowledge Base using natural language.",
+      "inputschema": {
+        "properties": {
+          "data_source_ids": {
+            "description": "The data source IDs to filter the knowledge base by. It must be a list of valid data source IDs from the resource://knowledgebases MCP resource",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "knowledge_base_id": {
+            "description": "The knowledge base ID to query. It must be a valid ID from the resource://knowledgebases MCP resource",
+            "type": "string"
+          },
+          "number_of_results": {
+            "description": "The number of results to return. Use smaller values for focused results and larger values for broader coverage.",
+            "type": "integer"
+          },
+          "query": {
+            "description": "A natural language query to search the knowledge base with",
+            "type": "string"
+          },
+          "reranking": {
+            "description": "Whether to rerank the results. Useful for improving relevance and sorting.",
+            "type": "boolean"
+          },
+          "reranking_model_name": {
+            "description": "The name of the reranking model to use. Options: 'COHERE', 'AMAZON'",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query",
+          "knowledge_base_id"
+        ],
+        "type": "object"
+      },
+      "name": "QueryKnowledgeBases"
+    },
+    {
+      "description": "General guidance for AWS CDK usage.",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "CDKGeneralGuidance"
+    },
+    {
+      "description": "Explain a CDK Nag rule.",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "ExplainCDKNagRule"
+    },
+    {
+      "description": "Check CDK Nag suppressions.",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "CheckCDKNagSuppressions"
+    },
+    {
+      "description": "Generate Bedrock Agent schema from file.",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "GenerateBedrockAgentSchema"
+    },
+    {
+      "description": "Get AWS Solutions Construct pattern.",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "GetAwsSolutionsConstructPattern"
+    },
+    {
+      "description": "Search GenAI CDK constructs.",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "SearchGenAICDKConstructs"
+    },
+    {
+      "description": "Provide documentation for Lambda layers.",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "LambdaLayerDocumentationProvider"
+    },
+    {
+      "description": "Analyze a CDK project to identify AWS services used. This tool dynamically extracts service information from CDK constructs without relying on hardcoded service mappings.",
+      "inputschema": {
+        "properties": {
+          "project_path": {
+            "description": "The path to the CDK project",
+            "type": "string"
+          }
+        },
+        "required": [
+          "project_path"
+        ],
+        "type": "object"
+      },
+      "name": "analyze_cdk_project"
+    },
+    {
+      "description": "Get pricing information from AWS pricing webpage. Service codes typically use lowercase with hyphens format (e.g., \"opensearch-service\" for both OpenSearch and OpenSearch Serverless, \"api-gateway\", \"lambda\"). Note that some services like OpenSearch Serverless are part of broader service codes (use \"opensearch-service\" not \"opensearch-serverless\"). Important: Web service codes differ from API service codes (e.g., use \"opensearch-service\" for web but \"AmazonES\" for API). When retrieving foundation model pricing, always use the latest models for comparison rather than specific named ones that may become outdated.",
+      "inputschema": {
+        "properties": {
+          "service_code": {
+            "description": "The service code (e.g., 'opensearch-service' for both OpenSearch and OpenSearch Serverless)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_code"
+        ],
+        "type": "object"
+      },
+      "name": "get_pricing_from_web"
+    },
+    {
+      "description": "Get pricing information from AWS Price List API. Service codes for API often differ from web URLs. (e.g., use \"AmazonES\" for OpenSearch, not \"AmazonOpenSearchService\"). IMPORTANT GUIDELINES: - When retrieving foundation model pricing, always use the latest models for comparison - For database compatibility with services, only include confirmed supported databases - Providing less information is better than giving incorrect information",
+      "inputschema": {
+        "properties": {
+          "region": {
+            "description": "AWS region (e.g., 'us-west-2')",
+            "type": "string"
+          },
+          "service_code": {
+            "description": "The service code (e.g., 'AmazonES' for OpenSearch, 'AmazonS3' for S3)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "service_code",
+          "region"
+        ],
+        "type": "object"
+      },
+      "name": "get_pricing_from_api"
+    },
+    {
+      "description": "Get architecture patterns for Amazon Bedrock applications, including component relationships and cost considerations",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "get_bedrock_patterns"
+    },
+    {
+      "description": "Generate a detailed cost analysis report based on pricing data for one or more AWS services.",
+      "inputschema": {
+        "properties": {
+          "assumptions": {
+            "description": "List of assumptions made for the cost analysis",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "detailed_cost_data": {
+            "description": "Dictionary containing detailed cost information for complex scenarios",
+            "type": "object"
+          },
+          "exclusions": {
+            "description": "List of items excluded from the cost analysis",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "format": {
+            "description": "Output format for the cost analysis report",
+            "type": "string"
+          },
+          "output_file": {
+            "description": "Path to save the report to a file",
+            "type": "string"
+          },
+          "pricing_data": {
+            "description": "Raw pricing data from AWS pricing tools (required)",
+            "type": "object"
+          },
+          "pricing_model": {
+            "description": "The pricing model used (default: \"ON DEMAND\")",
+            "type": "string"
+          },
+          "recommendations": {
+            "description": "Optional dictionary containing recommendations or guidance for generation",
+            "type": "object"
+          },
+          "related_services": {
+            "description": "List of related services to include in the analysis",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "service_name": {
+            "description": "Name of the primary service (required)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "pricing_data",
+          "service_name"
+        ],
+        "type": "object"
+      },
+      "name": "generate_cost_report"
+    },
+    {
+      "description": "Tool that invokes an AWS Lambda function with a JSON payload.",
+      "inputschema": {
+        "properties": {
+          "function_name": {
+            "description": "Name of the AWS Lambda function to invoke",
+            "type": "string"
+          },
+          "parameters": {
+            "description": "JSON payload parameters to pass to the Lambda function",
+            "type": "object"
+          }
+        },
+        "required": [
+          "function_name",
+          "parameters"
+        ],
+        "type": "object"
+      },
+      "name": "invoke_lambda_function_impl"
+    },
+    {
+      "description": "Generate an image using Amazon Nova Canvas with text prompt.",
+      "inputschema": {
+        "properties": {
+          "cfg_scale": {
+            "description": "How strongly the image adheres to the prompt (1.1-10.0)",
+            "type": "number"
+          },
+          "filename": {
+            "description": "The name of the file to save the image to (without extension)",
+            "type": "string"
+          },
+          "height": {
+            "description": "The height of the generated image (320-4096, divisible by 16)",
+            "type": "integer"
+          },
+          "negative_prompt": {
+            "description": "Text to define what not to include in the image (1-1024 characters)",
+            "type": "string"
+          },
+          "number_of_images": {
+            "description": "The number of images to generate (1-5)",
+            "type": "integer"
+          },
+          "prompt": {
+            "description": "The text description of the image to generate (1-1024 characters)",
+            "type": "string"
+          },
+          "quality": {
+            "description": "The quality of the generated image (\"standard\" or \"premium\")",
+            "type": "string"
+          },
+          "seed": {
+            "description": "Seed for generation (0-858,993,459)",
+            "type": "integer"
+          },
+          "width": {
+            "description": "The width of the generated image (320-4096, divisible by 16)",
+            "type": "integer"
+          },
+          "workspace_dir": {
+            "description": "The current workspace directory where the image should be saved.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "prompt"
+        ],
+        "type": "object"
+      },
+      "name": "generate_image"
+    },
+    {
+      "description": "Generate an image using Amazon Nova Canvas with color guidance.",
+      "inputschema": {
+        "properties": {
+          "cfg_scale": {
+            "description": "How strongly the image adheres to the prompt (1.1-10.0)",
+            "type": "number"
+          },
+          "colors": {
+            "description": "List of up to 10 hexadecimal color values (e.g., \"#FF9800\")",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "filename": {
+            "description": "The name of the file to save the image to (without extension)",
+            "type": "string"
+          },
+          "height": {
+            "description": "The height of the generated image (320-4096, divisible by 16)",
+            "type": "integer"
+          },
+          "negative_prompt": {
+            "description": "Text to define what not to include in the image (1-1024 characters)",
+            "type": "string"
+          },
+          "number_of_images": {
+            "description": "The number of images to generate (1-5)",
+            "type": "integer"
+          },
+          "prompt": {
+            "description": "The text description of the image to generate (1-1024 characters)",
+            "type": "string"
+          },
+          "quality": {
+            "description": "The quality of the generated image (\"standard\" or \"premium\")",
+            "type": "string"
+          },
+          "seed": {
+            "description": "Seed for generation (0-858,993,459)",
+            "type": "integer"
+          },
+          "width": {
+            "description": "The width of the generated image (320-4096, divisible by 16)",
+            "type": "integer"
+          },
+          "workspace_dir": {
+            "description": "The current workspace directory where the image should be saved.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "prompt",
+          "colors"
+        ],
+        "type": "object"
+      },
+      "name": "generate_image_with_colors"
+    },
+    {
+      "description": "Execute Terraform workflow commands against an AWS account.",
+      "inputschema": {
+        "properties": {
+          "aws_region": {
+            "description": "AWS region to use",
+            "type": "string"
+          },
+          "command": {
+            "description": "Terraform command to execute",
+            "type": "string"
+          },
+          "strip_ansi": {
+            "description": "Whether to strip ANSI color codes from output",
+            "type": "boolean"
+          },
+          "variables": {
+            "description": "Terraform variables to pass",
+            "type": "object"
+          },
+          "working_directory": {
+            "description": "Directory containing Terraform files",
+            "type": "string"
+          }
+        },
+        "required": [
+          "command",
+          "working_directory"
+        ],
+        "type": "object"
+      },
+      "name": "ExecuteTerraformCommand"
+    },
+    {
+      "description": "Search AWS provider documentation for resources and attributes.",
+      "inputschema": {
+        "properties": {
+          "asset_name": {
+            "description": "Name of the AWS service (asset) to look for (e.g., \"aws_s3_bucket\", \"aws_lambda_function\")",
+            "type": "string"
+          },
+          "asset_type": {
+            "description": "Type of documentation to search - 'resource' (default), 'data_source', or 'both'",
+            "type": "string"
+          }
+        },
+        "required": [
+          "asset_name"
+        ],
+        "type": "object"
+      },
+      "name": "SearchAwsProviderDocs"
+    },
+    {
+      "description": "Search AWSCC provider documentation for resources and attributes.",
+      "inputschema": {
+        "properties": {
+          "asset_name": {
+            "description": "Name of the AWSCC service (asset) to look for (e.g., awscc_s3_bucket, awscc_lambda_function)",
+            "type": "string"
+          },
+          "asset_type": {
+            "description": "Type of documentation to search - 'resource' (default), 'data_source', or 'both'",
+            "type": "string"
+          }
+        },
+        "required": [
+          "asset_name"
+        ],
+        "type": "object"
+      },
+      "name": "SearchAwsccProviderDocs"
+    },
+    {
+      "description": "Search for specific AWS-IA Terraform modules.",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "Optional search term to filter modules (empty returns all four modules)",
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "name": "SearchSpecificAwsIaModules"
+    },
+    {
+      "description": "Run Checkov security scan on Terraform code.",
+      "inputschema": {
+        "properties": {
+          "check_ids": {
+            "description": "Specific check IDs to run",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "framework": {
+            "description": "Framework to scan (terraform, cloudformation, etc.)",
+            "type": "string"
+          },
+          "output_format": {
+            "description": "Output format (json, cli, etc.)",
+            "type": "string"
+          },
+          "skip_check_ids": {
+            "description": "Check IDs to skip",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "working_directory": {
+            "description": "Directory containing Terraform files",
+            "type": "string"
+          }
+        },
+        "required": [
+          "working_directory"
+        ],
+        "type": "object"
+      },
+      "name": "RunCheckovScan"
+    },
+    {
+      "description": "Search for a user-provided Terraform registry module and understand its inputs, outputs, and usage.",
+      "inputschema": {
+        "properties": {
+          "module_url": {
+            "description": "URL or identifier of the Terraform module (e.g., \"hashicorp/consul/aws\")",
+            "type": "string"
+          },
+          "variables": {
+            "description": "Variables to use when analyzing the module",
+            "type": "object"
+          },
+          "version": {
+            "description": "Specific version of the module to analyze",
+            "type": "string"
+          }
+        },
+        "required": [
+          "module_url"
+        ],
+        "type": "object"
+      },
+      "name": "SearchUserProvidedModule"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/awslabs/servers/mcp/versions",
+  "xid": "/mcpproviders/awslabs/servers/mcp"
+}

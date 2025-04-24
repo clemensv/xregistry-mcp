@@ -1,0 +1,96 @@
+{
+  "repo_ref": "JordiNeil/mcp-databricks-server",
+  "name": "io.github.JordiNeil/mcp-databricks-server",
+  "description": "A Model Context Protocol (MCP) server that connects to Databricks API, allowing LLMs to run SQL queries, list jobs, and get job status.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/databricks-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "DATABRICKS_HOST",
+            "description": "Databricks instance URL",
+            "required": true
+          },
+          {
+            "name": "DATABRICKS_TOKEN",
+            "description": "Personal access token for Databricks",
+            "required": true
+          },
+          {
+            "name": "DATABRICKS_HTTP_PATH",
+            "description": "HTTP path for Databricks SQL warehouse",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "run_sql_query",
+      "description": "Execute SQL queries on your Databricks SQL warehouse",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "sql": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "sql"
+        ]
+      }
+    },
+    {
+      "name": "list_jobs",
+      "description": "List all Databricks jobs in your workspace",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get_job_status",
+      "description": "Get the status of a specific Databricks job by ID",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "job_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "job_id"
+        ]
+      }
+    },
+    {
+      "name": "get_job_details",
+      "description": "Get detailed information about a specific Databricks job",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "job_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "job_id"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

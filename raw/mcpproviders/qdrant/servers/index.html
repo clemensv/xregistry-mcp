@@ -1,0 +1,120 @@
+{
+  "mcp-server-qdrant": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:42:46.647405998Z",
+    "deployment": {
+      "sandbox": {
+        "args": [],
+        "command": "python -m mcp_server_qdrant",
+        "env": [
+          {
+            "description": "URL of the Qdrant server",
+            "name": "QDRANT_URL",
+            "required": false
+          },
+          {
+            "description": "API key for the Qdrant server",
+            "name": "QDRANT_API_KEY",
+            "required": false
+          },
+          {
+            "description": "Name of the default collection to use.",
+            "name": "COLLECTION_NAME",
+            "required": false
+          },
+          {
+            "description": "Path to the local Qdrant database (alternative to QDRANT_URL)",
+            "name": "QDRANT_LOCAL_PATH",
+            "required": false
+          },
+          {
+            "default": "fastembed",
+            "description": "Embedding provider to use (currently only \"fastembed\" is supported)",
+            "name": "EMBEDDING_PROVIDER",
+            "required": false
+          },
+          {
+            "default": "sentence-transformers/all-MiniLM-L6-v2",
+            "description": "Name of the embedding model to use",
+            "name": "EMBEDDING_MODEL",
+            "required": false
+          },
+          {
+            "description": "Custom description for the store tool",
+            "name": "TOOL_STORE_DESCRIPTION",
+            "required": false
+          },
+          {
+            "description": "Custom description for the find tool",
+            "name": "TOOL_FIND_DESCRIPTION",
+            "required": false
+          }
+        ],
+        "package": "mcp-server-qdrant",
+        "runtime": "python"
+      }
+    },
+    "description": "An official Model Context Protocol server for keeping and retrieving memories in the Qdrant vector search engine. It acts as a semantic memory layer on top of the Qdrant database.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/qdrant/servers/mcp-server-qdrant/meta",
+    "modifiedat": "2025-04-25T12:42:46.647405998Z",
+    "name": "mcp-server-qdrant",
+    "repository": {
+      "name": "qdrant/mcp-server-qdrant",
+      "url": "https://github.com/qdrant/mcp-server-qdrant"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/qdrant/servers/mcp-server-qdrant",
+    "serverid": "mcp-server-qdrant",
+    "serverversion": "unspecified",
+    "tools": [
+      {
+        "description": "Store some information in the Qdrant database",
+        "inputschema": {
+          "properties": {
+            "collection_name": {
+              "type": "string"
+            },
+            "information": {
+              "type": "string"
+            },
+            "metadata": {
+              "type": [
+                "object",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "information"
+          ],
+          "type": "object"
+        },
+        "name": "qdrant-store"
+      },
+      {
+        "description": "Retrieve relevant information from the Qdrant database",
+        "inputschema": {
+          "properties": {
+            "collection_name": {
+              "type": "string"
+            },
+            "query": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "qdrant-find"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/qdrant/servers/mcp-server-qdrant/versions",
+    "xid": "/mcpproviders/qdrant/servers/mcp-server-qdrant"
+  }
+}

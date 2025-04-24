@@ -1,0 +1,92 @@
+{
+  "repo_ref": "geropl/linear-mcp-go",
+  "name": "io.github.geropl/linear-mcp-go",
+  "description": "A Model Context Protocol (MCP) server for Linear, written in Go. This server provides tools for interacting with the Linear API through the MCP protocol.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "go",
+      "package_name": "linear-mcp-go",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "serve"
+        ],
+        "environment_variables": [
+          {
+            "name": "LINEAR_API_KEY",
+            "description": "Linear API key environment variable",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "linear_create_issue",
+      "description": "Creates a new Linear issue with specified details. Supports creating sub-issues and assigning labels.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "team": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          },
+          "parentIssue": {
+            "type": "string"
+          },
+          "labels": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "team"
+        ]
+      }
+    },
+    {
+      "name": "linear_update_issue",
+      "description": "Updates an existing Linear issue's properties.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

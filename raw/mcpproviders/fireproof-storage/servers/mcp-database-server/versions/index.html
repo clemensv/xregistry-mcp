@@ -1,0 +1,99 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:06.797995789Z",
+    "deployment": {
+      "sandbox": {
+        "command": "/path/to/fireproof-mcp/build/index.js",
+        "package": "fireproof-mcp",
+        "runtime": "node"
+      }
+    },
+    "description": "Simple JSON document server with basic CRUD operations using Fireproof database in a Model Context Protocol server.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "modifiedat": "2025-04-25T12:41:06.797995789Z",
+    "name": "json-doc-server",
+    "repository": {
+      "name": "fireproof-storage/mcp-database-server",
+      "url": "https://github.com/fireproof-storage/mcp-database-server"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/fireproof-storage/servers/mcp-database-server/versions/1",
+    "serverid": "mcp-database-server",
+    "serverversion": "0.1.0",
+    "tools": [
+      {
+        "description": "Save a JSON document",
+        "inputschema": {
+          "properties": {
+            "doc": {
+              "description": "JSON document to save",
+              "type": "object"
+            }
+          },
+          "required": [
+            "doc"
+          ],
+          "type": "object"
+        },
+        "name": "save_json_doc"
+      },
+      {
+        "description": "Load a JSON document by ID",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "description": "ID of document to load",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "load_json_doc"
+      },
+      {
+        "description": "Delete a JSON document by ID",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "description": "ID of document to delete",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "delete_json_doc"
+      },
+      {
+        "description": "Query JSON documents sorted by a field",
+        "inputschema": {
+          "properties": {
+            "sort_field": {
+              "description": "Field to sort results by",
+              "type": "string"
+            }
+          },
+          "required": [
+            "sort_field"
+          ],
+          "type": "object"
+        },
+        "name": "query_json_docs"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/fireproof-storage/servers/mcp-database-server/versions/1"
+  }
+}

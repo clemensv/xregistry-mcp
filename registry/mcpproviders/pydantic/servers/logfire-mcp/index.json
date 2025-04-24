@@ -1,0 +1,99 @@
+{
+  "repo_ref": "pydantic/logfire-mcp",
+  "name": "io.github.pydantic/logfire-mcp",
+  "description": "This repository contains a Model Context Protocol (MCP) server with tools that can access the OpenTelemetry traces and metrics you've sent to Logfire. This MCP server enables LLMs to retrieve your application's telemetry data, analyze distributed traces, and make use of the results of arbitrary SQL queries executed using the Logfire APIs.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "logfire-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "LOGFIRE_READ_TOKEN",
+            "description": "Logfire read token for API access",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "find_exceptions",
+      "description": "Get exception counts from traces grouped by file",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "age": {
+            "type": "integer",
+            "description": "Number of minutes to look back (e.g., 30 for last 30 minutes, max 7 days)"
+          }
+        },
+        "required": [
+          "age"
+        ]
+      }
+    },
+    {
+      "name": "find_exceptions_in_file",
+      "description": "Get detailed trace information about exceptions in a specific file",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filepath": {
+            "type": "string",
+            "description": "Path to the file to analyze"
+          },
+          "age": {
+            "type": "integer",
+            "description": "Number of minutes to look back (max 7 days)"
+          }
+        },
+        "required": [
+          "filepath",
+          "age"
+        ]
+      }
+    },
+    {
+      "name": "arbitrary_query",
+      "description": "Run custom SQL queries on your OpenTelemetry traces and metrics",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "SQL query to execute"
+          },
+          "age": {
+            "type": "integer",
+            "description": "Number of minutes to look back (max 7 days)"
+          }
+        },
+        "required": [
+          "query",
+          "age"
+        ]
+      }
+    },
+    {
+      "name": "get_logfire_records_schema",
+      "description": "Get the OpenTelemetry schema to help with custom queries",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  ],
+  "resources": []
+}

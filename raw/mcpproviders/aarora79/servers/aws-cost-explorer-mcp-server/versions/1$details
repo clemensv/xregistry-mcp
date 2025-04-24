@@ -1,0 +1,58 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:40:37.491144572Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "venv",
+        "--python",
+        "3.12",
+        "\u0026\u0026",
+        "source",
+        ".venv/bin/activate",
+        "\u0026\u0026",
+        "uv",
+        "pip",
+        "install",
+        "--requirement",
+        "pyproject.toml"
+      ],
+      "command": "uv",
+      "env": [
+        {
+          "description": "AWS credentials with Cost Explorer access",
+          "name": "AWS_CREDENTIALS",
+          "required": true
+        }
+      ],
+      "package": "aws-cost-explorer-mcp",
+      "runtime": "python"
+    }
+  },
+  "description": "An MCP server for getting AWS spend data via Cost Explorer and Amazon Bedrock usage data via Model invocation logs in Amazon Cloud Watch through Anthropic's MCP (Model Control Protocol). It exposes AWS Cost Explorer API functionality to Claude Desktop, allowing natural language queries about AWS spend.",
+  "endpoints": {
+    "http": {
+      "authorization": {
+        "description": "Use Bearer token for authentication",
+        "name": "Authorization",
+        "required": true,
+        "type": "header"
+      },
+      "uri": "https://\u003cyour-mcp-server-host\u003e"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "modifiedat": "2025-04-25T12:40:37.491144572Z",
+  "name": "AWS Cost Explorer and Amazon Bedrock Model Invocation Logs MCP Server",
+  "repository": {
+    "name": "aarora79/aws-cost-explorer-mcp-server",
+    "url": "https://github.com/aarora79/aws-cost-explorer-mcp-server"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/aarora79/servers/aws-cost-explorer-mcp-server/versions/1",
+  "serverid": "aws-cost-explorer-mcp-server",
+  "serverversion": "unspecified",
+  "versionid": "1",
+  "xid": "/mcpproviders/aarora79/servers/aws-cost-explorer-mcp-server/versions/1"
+}

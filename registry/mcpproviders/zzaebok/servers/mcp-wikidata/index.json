@@ -1,0 +1,86 @@
+{
+  "repo_ref": "zzaebok/mcp-wikidata",
+  "name": "io.github.zzaebok/mcp-wikidata",
+  "description": "A server implementation for Wikidata API using the Model Context Protocol (MCP). This project provides tools to interact with Wikidata, such as searching identifiers (entity and property), extracting metadata (label and description) and executing sparql query.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "@zzaebok/mcp-wikidata",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "search_entity",
+      "description": "Search for a Wikidata entity ID by its query.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "search_property",
+      "description": "Search for a Wikidata property ID by its query.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "get_properties",
+      "description": "Get the properties associated with a given Wikidata entity ID.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "entity_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity_id"
+        ]
+      }
+    },
+    {
+      "name": "execute_sparql",
+      "description": "Execute a SPARQL query.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "sparql_query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "sparql_query"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

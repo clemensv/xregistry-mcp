@@ -1,0 +1,67 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:40:40.750771712Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "--token",
+        "YOUR_TOKEN",
+        "--user",
+        "YOUR_USER"
+      ],
+      "command": "start",
+      "package": "pushover-mcp",
+      "runtime": "node"
+    }
+  },
+  "description": "A Model Context Protocol implementation for sending notifications via Pushover.net.",
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "modifiedat": "2025-04-25T12:40:40.750771712Z",
+  "name": "Pushover MCP",
+  "repository": {
+    "name": "AshikNesin/pushover-mcp",
+    "url": "https://github.com/AshikNesin/pushover-mcp"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/AshikNesin/servers/pushover-mcp/versions/1",
+  "serverid": "pushover-mcp",
+  "serverversion": "latest",
+  "tools": [
+    {
+      "description": "Sends a notification via Pushover.",
+      "inputschema": {
+        "properties": {
+          "device": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "number"
+          },
+          "sound": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "url_title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ],
+        "type": "object"
+      },
+      "name": "send"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/AshikNesin/servers/pushover-mcp/versions/1"
+}

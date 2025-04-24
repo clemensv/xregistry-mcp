@@ -1,0 +1,104 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:42:33.91514599Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "-y",
+          "@paddle/paddle-mcp",
+          "--api-key=PADDLE_API_KEY",
+          "--environment=(sandbox|production)"
+        ],
+        "command": "npx",
+        "env": [
+          {
+            "description": "API key for Paddle MCP server",
+            "name": "PADDLE_API_KEY",
+            "required": true
+          },
+          {
+            "description": "Environment to use: sandbox or production",
+            "name": "PADDLE_ENVIRONMENT",
+            "required": true
+          }
+        ],
+        "package": "@paddle/paddle-mcp",
+        "runtime": "node"
+      }
+    },
+    "description": "This is a Model Context Protocol (MCP) server that provides tools for interacting with the Paddle API.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "modifiedat": "2025-04-25T12:42:33.91514599Z",
+    "name": "paddle",
+    "repository": {
+      "name": "PaddleHQ/paddle-mcp-server",
+      "url": "https://github.com/PaddleHQ/paddle-mcp-server"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/PaddleHQ/servers/paddle-mcp-server/versions/1",
+    "serverid": "paddle-mcp-server",
+    "serverversion": "0.1.2",
+    "tools": [
+      {
+        "description": "List products in your Paddle catalog",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "listProducts"
+      },
+      {
+        "description": "Create new products",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "createProduct"
+      },
+      {
+        "description": "List prices for products",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "listPrices"
+      },
+      {
+        "description": "Create new prices for products",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "createPrice"
+      },
+      {
+        "description": "List customers",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "listCustomers"
+      },
+      {
+        "description": "List transactions",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "listTransactions"
+      },
+      {
+        "description": "List subscriptions",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "listSubscriptions"
+      },
+      {
+        "description": "Create custom reports for financial analysis",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "createCustomReport"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/PaddleHQ/servers/paddle-mcp-server/versions/1"
+  }
+}

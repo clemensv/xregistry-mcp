@@ -1,0 +1,372 @@
+{
+  "descope-mcp-server-stdio": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:55.215114726Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "/path/to/descope-mcp-server/build/index.js"
+        ],
+        "command": "node",
+        "env": [
+          {
+            "description": "Your Descope Project ID",
+            "name": "DESCOPE_PROJECT_ID",
+            "required": true
+          },
+          {
+            "description": "Your Descope Management Key",
+            "name": "DESCOPE_MANAGEMENT_KEY",
+            "required": true
+          }
+        ],
+        "package": "@descope-sample-apps/descope-mcp-server",
+        "runtime": "node"
+      }
+    },
+    "description": "The Descope Model Context Protocol (MCP) server provides an interface to interact with Descope's Management APIs, enabling the search and retrieval of project-related information.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/descope-sample-apps/servers/descope-mcp-server-stdio/meta",
+    "modifiedat": "2025-04-25T12:40:55.215114726Z",
+    "name": "descope",
+    "repository": {
+      "name": "descope-sample-apps/descope-mcp-server-stdio",
+      "url": "https://github.com/descope-sample-apps/descope-mcp-server-stdio"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/descope-sample-apps/servers/descope-mcp-server-stdio",
+    "serverid": "descope-mcp-server-stdio",
+    "serverversion": "1.0.0",
+    "tools": [
+      {
+        "description": "Search Descope project audit logs",
+        "inputschema": {
+          "properties": {
+            "actions": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "excludedActions": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "geos": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "hoursBack": {
+              "default": 24,
+              "maximum": 720,
+              "minimum": 1,
+              "type": "number"
+            },
+            "limit": {
+              "default": 5,
+              "maximum": 10,
+              "minimum": 1,
+              "type": "number"
+            },
+            "loginIds": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "methods": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "noTenants": {
+              "type": "boolean"
+            },
+            "tenants": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "search-audits"
+      },
+      {
+        "description": "Search for users in Descope project",
+        "inputschema": {
+          "properties": {
+            "emails": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "limit": {
+              "default": 10,
+              "maximum": 100,
+              "minimum": 1,
+              "type": "number"
+            },
+            "loginIds": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "page": {
+              "minimum": 0,
+              "type": "number"
+            },
+            "phones": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "roles": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "ssoAppIds": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "statuses": {
+              "items": {
+                "enum": [
+                  "enabled",
+                  "disabled",
+                  "invited"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "tenantIds": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "testUsersOnly": {
+              "type": "boolean"
+            },
+            "text": {
+              "type": "string"
+            },
+            "withTestUser": {
+              "type": "boolean"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "search-users"
+      },
+      {
+        "description": "Create a new user in Descope project",
+        "inputschema": {
+          "properties": {
+            "additionalLoginIds": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "customAttributes": {
+              "additionalPrope": {},
+              "type": "object"
+            },
+            "displayName": {
+              "type": "string"
+            },
+            "email": {
+              "format": "email",
+              "type": "string"
+            },
+            "familyName": {
+              "type": "string"
+            },
+            "givenName": {
+              "type": "string"
+            },
+            "loginId": {
+              "type": "string"
+            },
+            "middleName": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "picture": {
+              "format": "uri",
+              "type": "string"
+            },
+            "roles": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "ssoAppIds": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "userTenants": {
+              "items": {
+                "properties": {
+                  "rol": "string",
+                  "ten": "string"
+                },
+                "required": [
+                  "tenantId",
+                  "roleNames"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "verifiedEmail": {
+              "type": "boolean"
+            },
+            "verifiedPhone": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "loginId"
+          ],
+          "type": "object"
+        },
+        "name": "create-user"
+      },
+      {
+        "description": "Create and invite a new user to the Descope project",
+        "inputschema": {
+          "properties": {
+            "additionalLoginIds": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "customAttributes": {
+              "additionalPrope": {},
+              "type": "object"
+            },
+            "displayName": {
+              "type": "string"
+            },
+            "email": {
+              "format": "email",
+              "type": "string"
+            },
+            "familyName": {
+              "type": "string"
+            },
+            "givenName": {
+              "type": "string"
+            },
+            "inviteUrl": {
+              "format": "uri",
+              "type": "string"
+            },
+            "loginId": {
+              "type": "string"
+            },
+            "middleName": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "picture": {
+              "format": "uri",
+              "type": "string"
+            },
+            "roles": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "sendMail": {
+              "type": "boolean"
+            },
+            "sendSMS": {
+              "type": "boolean"
+            },
+            "ssoAppIds": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "templateId": {
+              "type": "string"
+            },
+            "templateOptions": {
+              "properties": {
+                "appUr": "uri",
+                "custo": "string",
+                "redir": "uri"
+              },
+              "required": [],
+              "type": "object"
+            },
+            "userTenants": {
+              "items": {
+                "properties": {
+                  "rol": "string",
+                  "ten": "string"
+                },
+                "required": [
+                  "tenantId",
+                  "roleNames"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "verifiedEmail": {
+              "type": "boolean"
+            },
+            "verifiedPhone": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "loginId"
+          ],
+          "type": "object"
+        },
+        "name": "invite-user"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/descope-sample-apps/servers/descope-mcp-server-stdio/versions",
+    "xid": "/mcpproviders/descope-sample-apps/servers/descope-mcp-server-stdio"
+  }
+}

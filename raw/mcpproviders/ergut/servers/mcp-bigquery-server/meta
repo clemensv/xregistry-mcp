@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:00.615271803Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ergut/servers/mcp-bigquery-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:00.615271803Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ergut/servers/mcp-bigquery-server/meta",
+  "serverid": "mcp-bigquery-server",
+  "xid": "/mcpproviders/ergut/servers/mcp-bigquery-server/meta"
+}

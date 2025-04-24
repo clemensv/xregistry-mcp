@@ -1,0 +1,59 @@
+{
+  "repo_ref": "ahnlabio/bicscan-mcp",
+  "name": "io.github.ahnlabio/bicscan-mcp",
+  "description": "A powerful and efficient Blockchain address risk scoring API MCP Server, leveraging the BICScan API to provide comprehensive risk assessments and asset information for blockchain addresses, domains, and decentralized applications (dApps).",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "bicscan-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "--rm",
+          "--interactive",
+          "--env",
+          "BICSCAN_API_KEY=YOUR_BICSCAN_API_KEY_HERE"
+        ],
+        "environment_variables": [
+          {
+            "name": "BICSCAN_API_KEY",
+            "description": "API key for BICScan",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "uv",
+      "package_name": "bicscan-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "YOUR_BICSCAN_REPO_DIR_HERE",
+          "run",
+          "bicscan-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "BICSCAN_API_KEY",
+            "description": "API key for BICScan",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

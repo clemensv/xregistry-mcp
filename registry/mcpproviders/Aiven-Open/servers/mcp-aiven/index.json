@@ -1,0 +1,86 @@
+{
+  "repo_ref": "Aiven-Open/mcp-aiven",
+  "name": "io.github.Aiven-Open/mcp-aiven",
+  "description": "A Model Context Protocol (MCP) server for Aiven providing access to Aiven services such as PostgreSQL, Kafka, ClickHouse, Valkey and OpenSearch, enabling LLMs to build full stack solutions.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcp-aiven",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "dev",
+          "mcp_aiven/mcp_server.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "AIVEN_BASE_URL",
+            "description": "The Aiven API url",
+            "required": true
+          },
+          {
+            "name": "AIVEN_TOKEN",
+            "description": "The authentication token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "list_projects",
+      "description": "List all projects on your Aiven account.",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "list_services",
+      "description": "List all services in a specific Aiven project.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "project_name": {
+            "type": "string",
+            "description": "Name of the Aiven project to list services for."
+          }
+        },
+        "required": [
+          "project_name"
+        ]
+      }
+    },
+    {
+      "name": "get_service_details",
+      "description": "Get the detail of your service in a specific Aiven project.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "project_name": {
+            "type": "string",
+            "description": "Name of the Aiven project."
+          },
+          "service_name": {
+            "type": "string",
+            "description": "Name of the service within the project."
+          }
+        },
+        "required": [
+          "project_name",
+          "service_name"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

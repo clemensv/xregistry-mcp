@@ -1,0 +1,99 @@
+{
+  "repo_ref": "hannesj/mcp-openapi-schema",
+  "name": "io.github.hannesj/mcp-openapi-schema",
+  "description": "A Model Context Protocol (MCP) server that exposes OpenAPI schema information to Large Language Models (LLMs) like Claude. This server allows an LLM to explore and understand OpenAPI specifications through a set of specialized tools.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "mcp-openapi-schema",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "mcp-openapi-schema"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "list-endpoints",
+      "description": "Lists all API paths and their HTTP methods with summaries in a nested object structure",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-endpoint",
+      "description": "Gets detailed information about a specific endpoint including parameters and responses",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-request-body",
+      "description": "Gets the request body schema for a specific endpoint and method",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-response-schema",
+      "description": "Gets the response schema for a specific endpoint, method, and status code",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-path-parameters",
+      "description": "Gets the parameters for a specific path",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list-components",
+      "description": "Lists all schema components (schemas, responses, parameters, etc.)",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-component",
+      "description": "Gets detailed definition for a specific component",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list-security-schemes",
+      "description": "Lists all available security schemes",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-examples",
+      "description": "Gets examples for a specific component or endpoint",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "search-schema",
+      "description": "Searches across paths, operations, and schemas",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

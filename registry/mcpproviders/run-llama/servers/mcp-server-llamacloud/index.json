@@ -1,0 +1,80 @@
+{
+  "repo_ref": "run-llama/mcp-server-llamacloud",
+  "name": "io.github.run-llama/mcp-server-llamacloud",
+  "description": "A MCP server connecting to multiple managed indexes on LlamaCloud. Each index is exposed as a separate tool that allows querying specific LlamaCloud indexes.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@llamaindex/mcp-server-llamacloud",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@llamaindex/mcp-server-llamacloud",
+          "--index",
+          "10k-SEC-Tesla",
+          "--description",
+          "10k SEC documents from 2023 for Tesla",
+          "--index",
+          "10k-SEC-Apple",
+          "--description",
+          "10k SEC documents from 2023 for Apple"
+        ],
+        "environment_variables": [
+          {
+            "name": "LLAMA_CLOUD_PROJECT_NAME",
+            "description": "LlamaCloud project name environment variable",
+            "required": true
+          },
+          {
+            "name": "LLAMA_CLOUD_API_KEY",
+            "description": "LlamaCloud API key environment variable",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get_information_10k_sec_tesla",
+      "description": "Get information from the 10k-SEC-Tesla index. The index contains 10k SEC documents from 2023 for Tesla",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The query used to get information from the 10k-SEC-Tesla index."
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "get_information_10k_sec_apple",
+      "description": "Get information from the 10k-SEC-Apple index. The index contains 10k SEC documents from 2023 for Apple",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The query used to get information from the 10k-SEC-Apple index."
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

@@ -1,0 +1,35 @@
+{
+  "repo_ref": "calvernaz/alphavantage",
+  "name": "io.github.calvernaz/alphavantage",
+  "description": "A MCP server for the stock market data API, Alphavantage API.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "<unknown>",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "<DIRECTORY-OF-CLONED-PROJECT>/alphavantage",
+          "run",
+          "alphavantage"
+        ],
+        "environment_variables": [
+          {
+            "name": "ALPHAVANTAGE_API_KEY",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

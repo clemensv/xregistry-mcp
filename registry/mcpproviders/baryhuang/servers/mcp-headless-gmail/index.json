@@ -1,0 +1,125 @@
+{
+  "repo_ref": "baryhuang/mcp-headless-gmail",
+  "name": "io.github.baryhuang/mcp-headless-gmail",
+  "description": "A MCP (Model Context Protocol) server that provides get, send Gmails without local credential or token setup.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "buryhuang/mcp-headless-gmail",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-i",
+          "--rm",
+          "buryhuang/mcp-headless-gmail:latest"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "gmail_get_emails",
+      "description": "Get most recent emails from Gmail with the first 1k characters of the body",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "access_token": {
+            "type": "string"
+          },
+          "refresh_token": {
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "client_secret": {
+            "type": "string"
+          },
+          "offset": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "access_token",
+          "refresh_token",
+          "client_id",
+          "client_secret"
+        ]
+      }
+    },
+    {
+      "name": "gmail_send_email",
+      "description": "Send emails through Gmail",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "access_token": {
+            "type": "string"
+          },
+          "refresh_token": {
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "client_secret": {
+            "type": "string"
+          },
+          "email_body": {
+            "type": "string"
+          },
+          "email_subject": {
+            "type": "string"
+          },
+          "email_recipients": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "access_token",
+          "refresh_token",
+          "client_id",
+          "client_secret",
+          "email_body",
+          "email_subject",
+          "email_recipients"
+        ]
+      }
+    },
+    {
+      "name": "gmail_refresh_token",
+      "description": "Refresh access tokens separately with automatic refresh token handling",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "refresh_token": {
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "client_secret": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "refresh_token",
+          "client_id",
+          "client_secret"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

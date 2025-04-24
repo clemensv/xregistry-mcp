@@ -1,0 +1,118 @@
+{
+  "repo_ref": "translated/lara-mcp",
+  "name": "io.github.translated/lara-mcp",
+  "description": "A Model Context Protocol (MCP) Server for Lara Translate API, enabling powerful translation capabilities with support for language detection, context-aware translations and translation memories.",
+  "version_detail": {
+    "version": "0.0.10"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@translated/lara-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "LARA_ACCESS_KEY_ID",
+            "description": "Access key ID for Lara Translate API",
+            "required": true
+          },
+          {
+            "name": "LARA_ACCESS_KEY_SECRET",
+            "description": "Access key secret for Lara Translate API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "translate",
+      "description": "Translate text between languages with support for language detection, context-aware translations and translation memories using Lara Translate.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_memory",
+      "description": "Create a translation memory with a custom name in your Lara Translate account. Translation memories store pairs of source and target text segments (translation units) for reuse in future translations.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_memory",
+      "description": "Deletes a translation memory from your Lara Translate account.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "update_memory",
+      "description": "Updates a translation memory in your Lara Translate account.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "add_translation",
+      "description": "Adds a translation to a translation memory in your Lara Translate account.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "delete_translation",
+      "description": "Deletes a translation from a translation memory from your Lara Translate account.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "import_tmx",
+      "description": "Imports a TMX file into a translation memory in your Lara Translate account.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "check_import_status",
+      "description": "Checks the status of a TMX file import job in your Lara Translate account.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_memories",
+      "description": "Lists all translation memories in your Lara Translate account.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_languages",
+      "description": "Lists all supported languages in your Lara Translate account.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "Translation Memories",
+      "description": "List of translation memories in your Lara Translate account.",
+      "uritemplate": "memories://list"
+    },
+    {
+      "name": "Supported Languages",
+      "description": "List of Lara Translate supported languages.",
+      "uritemplate": "languages://list"
+    }
+  ]
+}

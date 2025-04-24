@@ -1,0 +1,61 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:44:01.028309022Z",
+  "deployment": {
+    "sandbox": {
+      "args": [],
+      "command": "thirdweb-mcp",
+      "env": [
+        {
+          "description": "API key for thirdweb services",
+          "name": "THIRDWEB_SECRET_KEY",
+          "required": true
+        }
+      ],
+      "package": "thirdweb-ai",
+      "runtime": "python"
+    }
+  },
+  "description": "MCP server providing blockchain tools via the MCP protocol, enabling compatible LLM clients to interact with blockchain data and AI agents.",
+  "endpoints": {
+    "httplocal": {
+      "deployment": "container",
+      "host": "localhost",
+      "port": 8001,
+      "protocol": "http"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/thirdweb-dev/servers/ai/meta",
+  "modifiedat": "2025-04-25T12:44:01.028309022Z",
+  "name": "Thirdweb MCP",
+  "repository": {
+    "name": "thirdweb-dev/ai",
+    "url": "https://github.com/thirdweb-dev/ai"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/thirdweb-dev/servers/ai",
+  "serverid": "ai",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "description": "Tools for blockchain data intelligence including chains, transactions, blocks, events, prices, and tokens.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "Insight Tools"
+    },
+    {
+      "description": "AI agent blockchain interaction tools enabling natural language powered blockchain tasks.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "Nebula Tools"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/thirdweb-dev/servers/ai/versions",
+  "xid": "/mcpproviders/thirdweb-dev/servers/ai"
+}

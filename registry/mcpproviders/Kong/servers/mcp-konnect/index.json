@@ -1,0 +1,286 @@
+{
+  "repo_ref": "Kong/mcp-konnect",
+  "name": "io.github.Kong/mcp-konnect",
+  "description": "Tools for managing and analyzing Kong Konnect API Gateway configurations and traffic",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "dist/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "KONNECT_ACCESS_TOKEN",
+            "description": "Your Kong Konnect API key",
+            "required": true
+          },
+          {
+            "name": "KONNECT_REGION",
+            "description": "The API region to use (defaults to US)",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "query_api_requests",
+      "description": "Query and analyze Kong API Gateway requests with customizable filters.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "timeRange": {
+            "type": "string"
+          },
+          "statusCodes": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "excludeStatusCodes": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "httpMethods": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "consumerIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "serviceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "routeIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "maxResults": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "timeRange"
+        ]
+      }
+    },
+    {
+      "name": "get_consumer_requests",
+      "description": "Analyze API requests made by a specific consumer.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "consumerId": {
+            "type": "string"
+          },
+          "timeRange": {
+            "type": "string"
+          },
+          "successOnly": {
+            "type": "boolean"
+          },
+          "failureOnly": {
+            "type": "boolean"
+          },
+          "maxResults": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "consumerId",
+          "timeRange"
+        ]
+      }
+    },
+    {
+      "name": "list_services",
+      "description": "List all services associated with a control plane.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "controlPlaneId": {
+            "type": "string"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "controlPlaneId"
+        ]
+      }
+    },
+    {
+      "name": "list_routes",
+      "description": "List all routes associated with a control plane.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "controlPlaneId": {
+            "type": "string"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "controlPlaneId"
+        ]
+      }
+    },
+    {
+      "name": "list_consumers",
+      "description": "List all consumers associated with a control plane.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "controlPlaneId": {
+            "type": "string"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "controlPlaneId"
+        ]
+      }
+    },
+    {
+      "name": "list_plugins",
+      "description": "List all plugins associated with a control plane.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "controlPlaneId": {
+            "type": "string"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "controlPlaneId"
+        ]
+      }
+    },
+    {
+      "name": "list_control_planes",
+      "description": "List control planes with filtering and pagination.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "pageSize": {
+            "type": "integer"
+          },
+          "pageNumber": {
+            "type": "integer"
+          },
+          "filterName": {
+            "type": "string"
+          },
+          "filterClusterType": {
+            "type": "string"
+          },
+          "filterCloudGateway": {
+            "type": "boolean"
+          },
+          "labels": {
+            "type": "object"
+          },
+          "sort": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_control_plane",
+      "description": "Get details of a specific control plane.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "controlPlaneId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "controlPlaneId"
+        ]
+      }
+    },
+    {
+      "name": "list_control_plane_group_memberships",
+      "description": "List memberships of a control plane group.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "groupId": {
+            "type": "string"
+          },
+          "pageSize": {
+            "type": "integer"
+          },
+          "pageAfter": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "groupId"
+        ]
+      }
+    },
+    {
+      "name": "check_control_plane_group_membership",
+      "description": "Check membership of a control plane in a group.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "controlPlaneId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "controlPlaneId"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

@@ -1,0 +1,287 @@
+{
+  "repo_ref": "mobile-next/mobile-mcp",
+  "name": "io.github.mobile-next/mobile-mcp",
+  "description": "This is a Model Context Protocol (MCP) server that enables scalable mobile automation, development through a platform-agnostic interface, eliminating the need for distinct iOS or Android knowledge. You can run it on emulators, simulators, and physical devices (iOS and Android). This server allows Agents and LLMs to interact with native iOS/Android applications and devices through structured accessibility snapshots or coordinate-based taps based on screenshots.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@mobilenext/mobile-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@mobilenext/mobile-mcp@latest"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "mobile_list_available_devices",
+      "description": "List all available devices. This includes both physical devices and simulators. If there is more than one device returned, you need to let the user select one of them.",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "mobile_use_device",
+      "description": "Select a device to use. This can be a simulator or an Android device. Use the list_available_devices tool to get a list of available devices.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "device": {
+            "type": "string",
+            "description": "The name of the device to select"
+          },
+          "deviceType": {
+            "type": "string",
+            "enum": [
+              "simulator",
+              "ios",
+              "android"
+            ],
+            "description": "The type of device to select"
+          }
+        },
+        "required": [
+          "device",
+          "deviceType"
+        ]
+      }
+    },
+    {
+      "name": "mobile_list_apps",
+      "description": "List all the installed apps on the device",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "mobile_launch_app",
+      "description": "Launch an app on mobile device. Use this to open a specific app. You can find the package name of the app by calling list_apps_on_device.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "packageName": {
+            "type": "string",
+            "description": "The package name of the app to launch"
+          }
+        },
+        "required": [
+          "packageName"
+        ]
+      }
+    },
+    {
+      "name": "mobile_terminate_app",
+      "description": "Stop and terminate an app on mobile device",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "packageName": {
+            "type": "string",
+            "description": "The package name of the app to terminate"
+          }
+        },
+        "required": [
+          "packageName"
+        ]
+      }
+    },
+    {
+      "name": "mobile_get_screen_size",
+      "description": "Get the screen size of the mobile device in pixels",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "mobile_click_on_screen_at_coordinates",
+      "description": "Click on the screen at given x,y coordinates",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "x": {
+            "type": "number",
+            "description": "The x coordinate to click on the screen, in pixels"
+          },
+          "y": {
+            "type": "number",
+            "description": "The y coordinate to click on the screen, in pixels"
+          }
+        },
+        "required": [
+          "x",
+          "y"
+        ]
+      }
+    },
+    {
+      "name": "mobile_list_elements_on_screen",
+      "description": "List elements on screen and their coordinates, with display text or accessibility label. Do not cache this result.",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "mobile_press_button",
+      "description": "Press a button on device",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "button": {
+            "type": "string",
+            "description": "The button to press. Supported buttons: BACK (android only), HOME, VOLUME_UP, VOLUME_DOWN, ENTER"
+          }
+        },
+        "required": [
+          "button"
+        ]
+      }
+    },
+    {
+      "name": "mobile_open_url",
+      "description": "Open a URL in browser on device",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "The URL to open"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "swipe_on_screen",
+      "description": "Swipe on the screen",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "direction": {
+            "type": "string",
+            "enum": [
+              "up",
+              "down"
+            ],
+            "description": "The direction to swipe"
+          }
+        },
+        "required": [
+          "direction"
+        ]
+      }
+    },
+    {
+      "name": "mobile_type_keys",
+      "description": "Type text into the focused element",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "The text to type"
+          },
+          "submit": {
+            "type": "boolean",
+            "description": "Whether to submit the text. If true, the text will be submitted as if the user pressed the enter key."
+          }
+        },
+        "required": [
+          "text",
+          "submit"
+        ]
+      }
+    },
+    {
+      "name": "mobile_take_screenshot",
+      "description": "Take a screenshot of the mobile device. Use this to understand what's on screen, if you need to press an element that is available through view hierarchy then you must list elements on screen instead. Do not cache this result.",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "mobile_set_orientation",
+      "description": "Change the screen orientation of the device",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "orientation": {
+            "type": "string",
+            "enum": [
+              "portrait",
+              "landscape"
+            ],
+            "description": "The desired orientation"
+          }
+        },
+        "required": [
+          "orientation"
+        ]
+      }
+    },
+    {
+      "name": "mobile_get_orientation",
+      "description": "Get the current screen orientation of the device",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "tv_dpad_navigate_to_item_with_label",
+      "description": "Navigate to an item on screen with a specific label using D-pad. This is specifically for TV devices which depend on D-pad based traversal.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "The label of the item to navigate to"
+          }
+        },
+        "required": [
+          "label"
+        ]
+      }
+    },
+    {
+      "name": "tv_dpad_press_button",
+      "description": "Press a button on the D-pad. This is specifically for TV Devices which depend on D-pad.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "button": {
+            "type": "string",
+            "description": "The D-pad button to press. Supported buttons: DPAD_CENTER (center), DPAD_UP(up), DPAD_DOWN(down), DPAD_LEFT(left), DPAD_RIGHT(right)"
+          }
+        },
+        "required": [
+          "button"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

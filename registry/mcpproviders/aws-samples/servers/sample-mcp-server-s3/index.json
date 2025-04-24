@@ -1,0 +1,129 @@
+{
+  "repo_ref": "aws-samples/sample-mcp-server-s3",
+  "name": "io.github.aws-samples/sample-mcp-server-s3",
+  "description": "An MCP server implementation for retrieving data such as PDF's from S3.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "s3-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/Users/user/generative_ai/model_context_protocol/s3-mcp-server",
+          "run",
+          "s3-mcp-server"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "ListBuckets",
+      "description": "Returns a list of all buckets owned by the authenticated sender of the request. To grant IAM permission to use this operation, you must add the s3:ListAllMyBuckets policy action.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "ContinuationToken": {
+            "type": "string",
+            "description": "ContinuationToken indicates to Amazon S3 that the list is being continued on this bucket with a token. ContinuationToken is obfuscated and is not a real key. You can use this ContinuationToken for pagination of the list results. Length Constraints: Minimum length of 0. Maximum length of 1024."
+          },
+          "MaxBuckets": {
+            "type": "integer",
+            "description": "Maximum number of buckets to be returned in response. When the number is more than the count of buckets that are owned by an AWS account, return all the buckets in response. Valid Range: Minimum value of 1. Maximum value of 10000."
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "ListObjectsV2",
+      "description": "Returns some or all (up to 1,000) of the objects in a bucket with each request. You can use the request parameters as selection criteria to return a subset of the objects in a bucket. To get a list of your buckets, see ListBuckets.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "Bucket": {
+            "type": "string",
+            "description": "When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format Bucket_name.s3express-az_id.region.amazonaws.com. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format bucket_base_name--az-id--x-s3 (for example, DOC-EXAMPLE-BUCKET--usw2-az1--x-s3)."
+          },
+          "ContinuationToken": {
+            "type": "string",
+            "description": "ContinuationToken indicates to Amazon S3 that the list is being continued on this bucket with a token. ContinuationToken is obfuscated and is not a real key. You can use this ContinuationToken for pagination of the list results."
+          },
+          "EncodingType": {
+            "type": "string",
+            "description": "Encoding type used by Amazon S3 to encode the object keys in the response. Responses are encoded only in UTF-8. An object key can contain any Unicode character. However, the XML 1.0 parser can't parse certain characters, such as characters with an ASCII value from 0 to 10. For characters that aren't supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response."
+          },
+          "FetchOwner": {
+            "type": "boolean",
+            "description": "The owner field is not present in ListObjectsV2 by default. If you want to return the owner field with each key in the result, then set the FetchOwner field to true."
+          },
+          "MaxKeys": {
+            "type": "integer",
+            "description": "Sets the maximum number of keys returned in the response. By default, the action returns up to 1,000 key names. The response might contain fewer keys but will never contain more."
+          },
+          "Prefix": {
+            "type": "string",
+            "description": "Limits the response to keys that begin with the specified prefix."
+          },
+          "StartAfter": {
+            "type": "string",
+            "description": "StartAfter is where you want Amazon S3 to start listing from. Amazon S3 starts listing after this specified key. StartAfter can be any key in the bucket."
+          }
+        },
+        "required": [
+          "Bucket"
+        ]
+      }
+    },
+    {
+      "name": "GetObject",
+      "description": "Retrieves an object from Amazon S3. In the GetObject request, specify the full key name for the object. General purpose buckets - Both the virtual-hosted-style requests and the path-style requests are supported. For a virtual hosted-style request example, if you have the object photos/2006/February/sample.jpg, specify the object key name as /photos/2006/February/sample.jpg. For a path-style request example, if you have the object photos/2006/February/sample.jpg in the bucket named examplebucket, specify the object key name as /examplebucket/photos/2006/February/sample.jpg. Directory buckets - Only virtual-hosted-style requests are supported. For a virtual hosted-style request example, if you have the object photos/2006/February/sample.jpg in the bucket named examplebucket--use1-az5--x-s3, specify the object key name as /photos/2006/February/sample.jpg. Also, when you make requests to this API operation, your requests are sent to the Zonal endpoint. These endpoints support virtual-hosted-style requests in the format https://bucket_name.s3express-az_id.region.amazonaws.com/key-name . Path-style requests are not supported.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "Bucket": {
+            "type": "string",
+            "description": "Directory buckets - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format Bucket_name.s3express-az_id.region.amazonaws.com. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format bucket_base_name--az-id--x-s3 (for example, DOC-EXAMPLE-BUCKET--usw2-az1--x-s3)."
+          },
+          "Key": {
+            "type": "string",
+            "description": "Key of the object to get. Length Constraints: Minimum length of 1."
+          },
+          "Range": {
+            "type": "string",
+            "description": "Downloads the specified byte range of an object."
+          },
+          "VersionId": {
+            "type": "string",
+            "description": "Version ID used to reference a specific version of the object. By default, the GetObject operation returns the current version of an object. To return a different version, use the versionId subresource."
+          },
+          "PartNumber": {
+            "type": "integer",
+            "description": "Part number of the object being read. This is a positive integer between 1 and 10,000. Effectively performs a 'ranged' GET request for the part specified. Useful for downloading just a part of an object."
+          }
+        },
+        "required": [
+          "Bucket",
+          "Key"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "PDF Documents",
+      "description": "Expose AWS S3 Data through Resources. Currently only PDF documents supported and limited to 1000 objects.",
+      "uritemplate": "s3://{bucket}/{object_key}",
+      "mimetype": "application/pdf"
+    }
+  ]
+}

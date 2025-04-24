@@ -1,0 +1,65 @@
+{
+  "repo_ref": "inkeep/mcp-server-python",
+  "name": "io.github.inkeep/mcp-server-python",
+  "description": "Inkeep MCP Server powered by your docs and product content.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "inkeep-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "<YOUR_INKEEP_MCP_SERVER_ABSOLUTE_PATH>",
+          "run",
+          "-m",
+          "inkeep_mcp_server"
+        ],
+        "environment_variables": [
+          {
+            "name": "INKEEP_API_BASE_URL",
+            "description": "Base URL for Inkeep API",
+            "required": true
+          },
+          {
+            "name": "INKEEP_API_KEY",
+            "description": "API key for authentication",
+            "required": true
+          },
+          {
+            "name": "INKEEP_API_MODEL",
+            "description": "Model to use",
+            "required": true
+          },
+          {
+            "name": "INKEEP_MCP_TOOL_NAME",
+            "description": "Name of the MCP tool",
+            "required": true
+          },
+          {
+            "name": "INKEEP_MCP_TOOL_DESCRIPTION",
+            "description": "Description of the MCP tool",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "search-product-content",
+      "description": "Retrieves product documentation about Inkeep. The query should be framed as a conversational question about Inkeep.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

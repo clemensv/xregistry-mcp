@@ -1,0 +1,80 @@
+{
+  "repo_ref": "designcomputer/mysql_mcp_server",
+  "name": "io.github.designcomputer/mysql_mcp_server",
+  "description": "A Model Context Protocol (MCP) implementation that enables secure interaction with MySQL databases. This server component facilitates communication between AI applications (hosts/clients) and MySQL databases, making database exploration and analysis safer and more structured through a controlled interface.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "mysql-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "path/to/mysql_mcp_server",
+          "run",
+          "mysql_mcp_server"
+        ],
+        "environment_variables": [
+          {
+            "name": "MYSQL_HOST",
+            "description": "Database host",
+            "required": true
+          },
+          {
+            "name": "MYSQL_PORT",
+            "description": "Database port",
+            "required": false
+          },
+          {
+            "name": "MYSQL_USER",
+            "description": "Database user",
+            "required": true
+          },
+          {
+            "name": "MYSQL_PASSWORD",
+            "description": "Database password",
+            "required": true
+          },
+          {
+            "name": "MYSQL_DATABASE",
+            "description": "Database name",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "execute_sql",
+      "description": "Execute an SQL query on the MySQL server",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The SQL query to execute"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "mysql://{table}/data",
+      "name": "Table",
+      "description": "Data in table: {table}",
+      "mimetype": "text/plain"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:43:09.614037126Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "-y",
+        "@llamaindex/mcp-server-llamacloud",
+        "--index",
+        "10k-SEC-Tesla",
+        "--description",
+        "10k SEC documents from 2023 for Tesla",
+        "--index",
+        "10k-SEC-Apple",
+        "--description",
+        "10k SEC documents from 2023 for Apple"
+      ],
+      "command": "npx",
+      "env": [
+        {
+          "description": "LlamaCloud project name environment variable",
+          "name": "LLAMA_CLOUD_PROJECT_NAME",
+          "required": true
+        },
+        {
+          "description": "LlamaCloud API key environment variable",
+          "name": "LLAMA_CLOUD_API_KEY",
+          "required": true
+        }
+      ],
+      "package": "@llamaindex/mcp-server-llamacloud",
+      "runtime": "node"
+    }
+  },
+  "description": "A MCP server connecting to multiple managed indexes on LlamaCloud. Each index is exposed as a separate tool that allows querying specific LlamaCloud indexes.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "modifiedat": "2025-04-25T12:43:09.614037126Z",
+  "name": "llamacloud-mcp-server",
+  "repository": {
+    "name": "run-llama/mcp-server-llamacloud",
+    "url": "https://github.com/run-llama/mcp-server-llamacloud"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/run-llama/servers/mcp-server-llamacloud/versions/1",
+  "serverid": "mcp-server-llamacloud",
+  "serverversion": "0.1.0",
+  "tools": [
+    {
+      "description": "Get information from the 10k-SEC-Tesla index. The index contains 10k SEC documents from 2023 for Tesla",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "The query used to get information from the 10k-SEC-Tesla index.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "get_information_10k_sec_tesla"
+    },
+    {
+      "description": "Get information from the 10k-SEC-Apple index. The index contains 10k SEC documents from 2023 for Apple",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "The query used to get information from the 10k-SEC-Apple index.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "get_information_10k_sec_apple"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/run-llama/servers/mcp-server-llamacloud/versions/1"
+}

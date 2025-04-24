@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:44:39.160746129Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/YuChenSSR/servers/mindmap-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:44:39.160746129Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/YuChenSSR/servers/mindmap-mcp-server/meta",
+  "serverid": "mindmap-mcp-server",
+  "xid": "/mcpproviders/YuChenSSR/servers/mindmap-mcp-server/meta"
+}

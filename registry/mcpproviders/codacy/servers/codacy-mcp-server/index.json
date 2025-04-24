@@ -1,0 +1,188 @@
+{
+  "repo_ref": "codacy/codacy-mcp-server",
+  "name": "io.github.codacy/codacy-mcp-server",
+  "description": "MCP Server for the Codacy API, enabling access to repositories, files, quality, coverage, security and more.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@codacy/codacy-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "CODACY_ACCOUNT_TOKEN",
+            "description": "Codacy Account API Token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "codacy_list_organization_repositories",
+      "description": "List repositories in an organization with pagination support.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_search_organization_srm_items",
+      "description": "Primary tool to list security items/issues/vulnerabilities/findings related to organization security and risk management (SRM).",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_search_repository_srm_items",
+      "description": "Tool to search security items in a repository.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_list_repository_issues",
+      "description": "Lists and filters code quality issues in a repository.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_list_repository_pull_requests",
+      "description": "List pull requests from a repository that the user has access to.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_list_files",
+      "description": "List files in a repository with pagination support.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_get_file_issues",
+      "description": "Get the issue list for a file in a repository.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_get_file_coverage",
+      "description": "Get coverage information for a file in the head commit of a repository branch.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_get_pull_request_files_coverage",
+      "description": "Get diff coverage information for all files in a pull request.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_get_pull_request_git_diff",
+      "description": "Returns the human-readable Git diff of a pull request.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_list_pull_request_issues",
+      "description": "Returns a list of issues found in a pull request.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_get_repository_with_analysis",
+      "description": "Get repository with analysis data.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_get_file_with_analysis",
+      "description": "Get file with analysis data.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_get_file_clones",
+      "description": "Get the list of duplication clones for a file in a repository.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_get_repository_pull_request",
+      "description": "Get repository pull request details.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_get_issue",
+      "description": "Get details of a specific issue.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_get_pattern",
+      "description": "Get pattern details.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_list_repository_tool_patterns",
+      "description": "List patterns for repository tools.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_list_tools",
+      "description": "List available tools.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_list_repository_tools",
+      "description": "List tools for a repository.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_list_organizations",
+      "description": "List organizations.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "codacy_cli_analyze",
+      "description": "Uses Codacy's command-line tool to analyze code.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

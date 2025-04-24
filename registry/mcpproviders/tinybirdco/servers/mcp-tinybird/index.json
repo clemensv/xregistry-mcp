@@ -1,0 +1,223 @@
+{
+  "repo_ref": "tinybirdco/mcp-tinybird",
+  "name": "io.github.tinybirdco/mcp-tinybird",
+  "description": "An MCP server to interact with a Tinybird Workspace from any MCP client. Supports querying Tinybird Data Sources, getting results from Tinybird API Endpoints, and pushing Datafiles. Supports both SSE and STDIO modes.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [
+    {
+      "url": "http://localhost:8000",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@tinybirdco/mcp-tinybird",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "mcp-tinybird",
+          "stdio"
+        ],
+        "environment_variables": [
+          {
+            "name": "TB_API_URL",
+            "description": "Tinybird API URL",
+            "required": true
+          },
+          {
+            "name": "TB_ADMIN_TOKEN",
+            "description": "Tinybird Admin Token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "tinybird-default",
+      "description": "A prompt to get insights from the Data Sources and Pipe Endpoints in the Tinybird Workspace",
+      "arguments": [
+        {
+          "name": "topic",
+          "description": "The topic of the data you want to explore",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "list-data-sources",
+      "description": "List all Data Sources in the Tinybird Workspace",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "get-data-source",
+      "description": "Get details of a Data Source in the Tinybird Workspace, such as the schema",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "datasource_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "datasource_id"
+        ]
+      }
+    },
+    {
+      "name": "list-pipes",
+      "description": "List all Pipe Endpoints in the Tinybird Workspace",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "get-pipe",
+      "description": "Get details of a Pipe Endpoint in the Tinybird Workspace, such as the nodes SQLs to understand what they do or what Data Sources they use",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "pipe_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "pipe_id"
+        ]
+      }
+    },
+    {
+      "name": "request-pipe-data",
+      "description": "Requests data from a Pipe Endpoint in the Tinybird Workspace, includes parameters",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "pipe_id": {
+            "type": "string"
+          },
+          "params": {
+            "type": "object",
+            "properties": {}
+          }
+        },
+        "required": [
+          "pipe_id"
+        ]
+      }
+    },
+    {
+      "name": "run-select-query",
+      "description": "Runs a select query to the Tinybird Workspace. It may query Data Sources or Pipe Endpoints",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "select_query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "select_query"
+        ]
+      }
+    },
+    {
+      "name": "append-insight",
+      "description": "Add a business insight to the memo",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "insight": {
+            "type": "string",
+            "description": "Business insight discovered from data analysis"
+          }
+        },
+        "required": [
+          "insight"
+        ]
+      }
+    },
+    {
+      "name": "llms-tinybird-docs",
+      "description": "The Tinybird product description and documentation, including API Reference in LLM friendly format",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "analyze-pipe",
+      "description": "Analyze the Pipe Endpoint SQL",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "pipe_name": {
+            "type": "string",
+            "description": "The Pipe Endpoint name"
+          }
+        },
+        "required": [
+          "pipe_name"
+        ]
+      }
+    },
+    {
+      "name": "push-datafile",
+      "description": "Push a .datasource or .pipe file to the Workspace",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "files": {
+            "type": "string",
+            "description": "The datafile local path"
+          }
+        },
+        "required": [
+          "files"
+        ]
+      }
+    },
+    {
+      "name": "save-event",
+      "description": "Sends an event to a Data Source in Tinybird. The data needs to be in NDJSON format and conform to the Data Source schema in Tinybird",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "datasource_name": {
+            "type": "string",
+            "description": "The name of the Data Source in Tinybird"
+          },
+          "data": {
+            "type": "string",
+            "description": "A JSON object that will be converted to a NDJSON String to save in the Tinybird Data Source via the events API. It should contain one key for each column in the Data Source"
+          }
+        }
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "tinybird://insights",
+      "name": "Insights from Tinybird",
+      "description": "A living document of discovered insights",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "tinybird://datasource-definition-context",
+      "name": "Context for datasource definition",
+      "description": "Syntax and context to build .datasource datafiles",
+      "mimetype": "text/plain"
+    }
+  ]
+}

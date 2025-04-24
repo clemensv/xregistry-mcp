@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:39.771559535Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kenliao94/servers/mcp-server-rabbitmq/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:39.771559535Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kenliao94/servers/mcp-server-rabbitmq/meta",
+  "serverid": "mcp-server-rabbitmq",
+  "xid": "/mcpproviders/kenliao94/servers/mcp-server-rabbitmq/meta"
+}

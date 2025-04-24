@@ -1,0 +1,119 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:44:08.79105136Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "--directory",
+        "path/to/membase-mcp",
+        "run",
+        "src/membase_mcp/server.py"
+      ],
+      "command": "uv",
+      "env": [
+        {
+          "description": "your account to upload",
+          "name": "MEMBASE_ACCOUNT",
+          "required": true
+        },
+        {
+          "description": "your conversation id, should be unique, will preload its history",
+          "name": "MEMBASE_CONVERSATION_ID",
+          "required": true
+        },
+        {
+          "description": "your instance id",
+          "name": "MEMBASE_ID",
+          "required": false
+        }
+      ],
+      "package": "membase-mcp",
+      "runtime": "python"
+    }
+  },
+  "description": "The membase mcp server enables seamless integration with the membase protocol for decentralized storage. It provides functionality to upload and download memory to/from the Unibase DA network, managing conversations and messages for AI agents.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/unibaseio/servers/membase-mcp/meta",
+  "modifiedat": "2025-04-25T12:44:08.79105136Z",
+  "name": "Membase MCP Server",
+  "repository": {
+    "name": "unibaseio/membase-mcp",
+    "subfolder": "src/membase_mcp",
+    "url": "https://github.com/unibaseio/membase-mcp"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/unibaseio/servers/membase-mcp",
+  "serverid": "membase-mcp",
+  "serverversion": "unspecified",
+  "tools": [
+    {
+      "description": "Get the current conversation id.",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "get_conversation_id"
+    },
+    {
+      "description": "Switch to a different conversation.",
+      "inputschema": {
+        "properties": {
+          "conversation_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "conversation_id"
+        ],
+        "type": "object"
+      },
+      "name": "switch_conversation"
+    },
+    {
+      "description": "Save a message/memory into the current conversation.",
+      "inputschema": {
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "msg_type": {
+            "enum": [
+              "user",
+              "assistant"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "type": "object"
+      },
+      "name": "save_message"
+    },
+    {
+      "description": "Get the last n messages from the current conversation.",
+      "inputschema": {
+        "properties": {
+          "recent_n": {
+            "type": "integer"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "name": "get_messages"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/unibaseio/servers/membase-mcp/versions",
+  "xid": "/mcpproviders/unibaseio/servers/membase-mcp"
+}

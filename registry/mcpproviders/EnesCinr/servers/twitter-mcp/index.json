@@ -1,0 +1,90 @@
+{
+  "repo_ref": "EnesCinr/twitter-mcp",
+  "name": "io.github.EnesCinr/twitter-mcp",
+  "description": "This MCP server allows Clients to interact with Twitter, enabling posting tweets and searching Twitter.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@enescinar/twitter-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@enescinar/twitter-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "API_KEY",
+            "description": "Twitter API key",
+            "required": true
+          },
+          {
+            "name": "API_SECRET_KEY",
+            "description": "Twitter API secret key",
+            "required": true
+          },
+          {
+            "name": "ACCESS_TOKEN",
+            "description": "Twitter access token",
+            "required": true
+          },
+          {
+            "name": "ACCESS_TOKEN_SECRET",
+            "description": "Twitter access token secret",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "post_tweet",
+      "description": "Post a new tweet to Twitter",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "The content of your tweet",
+            "maxLength": 280
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "search_tweets",
+      "description": "Search for tweets on Twitter",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query"
+          },
+          "count": {
+            "type": "number",
+            "description": "Number of tweets to return (10-100)",
+            "minimum": 10,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "query",
+          "count"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

@@ -1,0 +1,103 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:40:43.106528536Z",
+  "deployment": {
+    "sandbox": {
+      "args": [],
+      "command": "python app_server.py",
+      "env": [
+        {
+          "description": "AppBuilder API token for authentication",
+          "name": "APPBUILDER_TOKEN",
+          "required": true
+        }
+      ],
+      "package": "appbuilder-sdk",
+      "runtime": "python"
+    }
+  },
+  "description": "This server provides MCP (Model Context Protocol) tools for interacting with Baidu AppBuilder applications. It supports both stdio and SSE (Server-Sent Events) protocols.",
+  "endpoints": {
+    "http": {
+      "authorization": {
+        "description": "Requires an AppBuilder API key in the format 'bce-v3/ALTAK-...'. Get your API key from: https://cloud.baidu.com/doc/AppBuilder/s/klv2eywua",
+        "format": "bce-v3/{token}",
+        "name": "api_key",
+        "required": true,
+        "type": "header"
+      },
+      "uri": "http://appbuilder.baidu.com/v2/ai_search/mcp/sse"
+    },
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "modifiedat": "2025-04-25T12:40:43.106528536Z",
+  "name": "AppBuilder App MCP Server",
+  "repository": {
+    "name": "baidubce/app-builder",
+    "url": "https://github.com/baidubce/app-builder"
+  },
+  "resources": [],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/baidubce/servers/app-builder/versions/1",
+  "serverid": "app-builder",
+  "serverversion": "1.0.5",
+  "tools": [
+    {
+      "description": "Retrieve a list of all available AppBuilder applications.",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "list_apps"
+    },
+    {
+      "description": "Create a new conversation session for a specific AppBuilder application.",
+      "inputschema": {
+        "properties": {
+          "app_id": {
+            "description": "The unique identifier of the target application",
+            "type": "string"
+          }
+        },
+        "required": [
+          "app_id"
+        ],
+        "type": "object"
+      },
+      "name": "create_conversation"
+    },
+    {
+      "description": "Execute a conversation query with a specific AppBuilder application.",
+      "inputschema": {
+        "properties": {
+          "app_id": {
+            "description": "The unique identifier of the target application",
+            "type": "string"
+          },
+          "conversation_id": {
+            "description": "The conversation session identifier",
+            "type": "string"
+          },
+          "query": {
+            "description": "The input text/query to send to the application",
+            "type": "string"
+          }
+        },
+        "required": [
+          "app_id",
+          "conversation_id",
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "run"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/baidubce/servers/app-builder/versions/1"
+}

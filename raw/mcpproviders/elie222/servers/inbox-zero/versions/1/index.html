@@ -1,0 +1,93 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:00.135508497Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "server.js"
+      ],
+      "command": "node",
+      "env": [
+        {
+          "description": "Base URL for Inbox Zero API",
+          "name": "API_BASE",
+          "required": false
+        },
+        {
+          "description": "API key for Inbox Zero API",
+          "name": "API_KEY",
+          "required": true
+        }
+      ],
+      "package": "@modelcontextprotocol/sdk",
+      "runtime": "node"
+    }
+  },
+  "description": "AI email assistant MCP server providing email management tools such as reply tracking and follow-up reminders.",
+  "docs": "https://docs.getinboxzero.com",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "modifiedat": "2025-04-25T12:41:00.135508497Z",
+  "name": "inbox-zero-ai",
+  "repository": {
+    "name": "elie222/inbox-zero",
+    "url": "https://github.com/elie222/inbox-zero"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/elie222/servers/inbox-zero/versions/1",
+  "serverid": "inbox-zero",
+  "serverversion": "0.0.1",
+  "tools": [
+    {
+      "description": "Get emails needing reply",
+      "inputschema": {
+        "properties": {
+          "olderThan": {
+            "description": "Time range to look back",
+            "enum": [
+              "3d",
+              "1w",
+              "2w",
+              "1m"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "olderThan"
+        ],
+        "type": "object"
+      },
+      "name": "get-emails-needing-reply"
+    },
+    {
+      "description": "Get emails needing follow-up",
+      "inputschema": {
+        "properties": {
+          "olderThan": {
+            "description": "Time range to look back",
+            "enum": [
+              "3d",
+              "1w",
+              "2w",
+              "1m"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "olderThan"
+        ],
+        "type": "object"
+      },
+      "name": "get-emails-needing-follow-up"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/elie222/servers/inbox-zero/versions/1"
+}

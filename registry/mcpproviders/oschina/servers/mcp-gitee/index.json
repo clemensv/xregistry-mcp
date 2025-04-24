@@ -1,0 +1,68 @@
+{
+  "repo_ref": "oschina/mcp-gitee",
+  "name": "io.github.oschina/mcp-gitee",
+  "description": "Gitee MCP Server is a Model Context Protocol (MCP) server implementation for Gitee. It provides a set of tools for interacting with Gitee's API, allowing AI assistants to manage repositories, issues, pull requests, and more.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@gitee/mcp-gitee",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@gitee/mcp-gitee@latest"
+        ],
+        "environment_variables": [
+          {
+            "name": "GITEE_API_BASE",
+            "description": "Gitee API base URL",
+            "required": true
+          },
+          {
+            "name": "GITEE_ACCESS_TOKEN",
+            "description": "Gitee access token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "list_user_repos",
+      "description": "List user authorized repositories",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_file_content",
+      "description": "Get the content of a file in a repository",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_user_repo",
+      "description": "Create a user repository",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_org_repo",
+      "description": "Create an organization repository",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

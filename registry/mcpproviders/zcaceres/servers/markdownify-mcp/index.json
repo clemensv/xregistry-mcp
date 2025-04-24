@@ -1,0 +1,184 @@
+{
+  "repo_ref": "zcaceres/markdownify-mcp",
+  "name": "io.github.zcaceres/markdownify-mcp",
+  "description": "Markdownify is a Model Context Protocol (MCP) server that converts various file types and web content to Markdown format. It provides a set of tools to transform PDFs, images, audio files, web pages, and more into easily readable and shareable Markdown text.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/mcp-markdownify-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "dist/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "UV_PATH",
+            "description": "By default, the server will use the default install location of `uv`",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "youtube-to-markdown",
+      "description": "Convert YouTube videos to Markdown",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "pdf-to-markdown",
+      "description": "Convert PDF files to Markdown",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ]
+      }
+    },
+    {
+      "name": "bing-search-to-markdown",
+      "description": "Convert Bing search results to Markdown",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "webpage-to-markdown",
+      "description": "Convert web pages to Markdown",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "image-to-markdown",
+      "description": "Convert images to Markdown with metadata",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ]
+      }
+    },
+    {
+      "name": "audio-to-markdown",
+      "description": "Convert audio files to Markdown with transcription",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ]
+      }
+    },
+    {
+      "name": "docx-to-markdown",
+      "description": "Convert DOCX files to Markdown",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ]
+      }
+    },
+    {
+      "name": "xlsx-to-markdown",
+      "description": "Convert XLSX files to Markdown",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ]
+      }
+    },
+    {
+      "name": "pptx-to-markdown",
+      "description": "Convert PPTX files to Markdown",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ]
+      }
+    },
+    {
+      "name": "get-markdown-file",
+      "description": "Retrieve an existing Markdown file",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

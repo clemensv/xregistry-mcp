@@ -1,0 +1,150 @@
+{
+  "repo_ref": "privetin/chroma",
+  "name": "io.github.privetin/chroma",
+  "description": "A Model Context Protocol (MCP) server implementation that provides vector database capabilities through Chroma. This server enables semantic document search, metadata filtering, and document management with persistent storage.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "uv",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "C:/MCP/server/community/chroma",
+          "run",
+          "chroma"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "create_document",
+      "description": "Create a new document",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "document_id": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "document_id",
+          "content"
+        ]
+      }
+    },
+    {
+      "name": "read_document",
+      "description": "Retrieve a document by ID",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "document_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "document_id"
+        ]
+      }
+    },
+    {
+      "name": "update_document",
+      "description": "Update an existing document",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "document_id": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "document_id",
+          "content"
+        ]
+      }
+    },
+    {
+      "name": "delete_document",
+      "description": "Remove a document",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "document_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "document_id"
+        ]
+      }
+    },
+    {
+      "name": "list_documents",
+      "description": "List all documents",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    {
+      "name": "search_similar",
+      "description": "Find semantically similar documents",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "num_results": {
+            "type": "integer"
+          },
+          "metadata_filter": {
+            "type": "object"
+          },
+          "content_filter": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "documents",
+      "description": "Stores documents with content and metadata",
+      "uritemplate": "/documents/{document_id}"
+    }
+  ]
+}

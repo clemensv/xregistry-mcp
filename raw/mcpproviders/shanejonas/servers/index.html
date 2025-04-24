@@ -1,0 +1,84 @@
+{
+  "openrpc-mpc-server": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:43:20.807646924Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "-y",
+          "openrpc-mcp-server"
+        ],
+        "command": "npx",
+        "package": "openrpc-mcp-server",
+        "runtime": "node"
+      }
+    },
+    "description": "A Model Context Protocol (MCP) server that provides JSON-RPC functionality through OpenRPC.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/shanejonas/servers/openrpc-mpc-server/meta",
+    "modifiedat": "2025-04-25T12:43:20.807646924Z",
+    "name": "openrpc",
+    "repository": {
+      "name": "shanejonas/openrpc-mpc-server",
+      "url": "https://github.com/shanejonas/openrpc-mpc-server"
+    },
+    "resources": [],
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/shanejonas/servers/openrpc-mpc-server",
+    "serverid": "openrpc-mpc-server",
+    "serverversion": "0.1.0",
+    "tools": [
+      {
+        "description": "Call any JSON-RPC method on a server with parameters. A user would prompt: Call method \u003cmethod\u003e on \u003cserver url\u003e with params \u003cparams\u003e",
+        "inputschema": {
+          "properties": {
+            "method": {
+              "description": "JSON-RPC method name to call",
+              "type": "string"
+            },
+            "params": {
+              "description": "Stringified Parameters to pass to the method",
+              "type": "string"
+            },
+            "server": {
+              "description": "Server URL",
+              "type": "string"
+            }
+          },
+          "required": [
+            "server",
+            "method"
+          ],
+          "type": "object"
+        },
+        "name": "rpc_call"
+      },
+      {
+        "description": "This uses JSON-RPC to call `rpc.discover` which is part of the OpenRPC Specification for discovery for JSON-RPC servers. A user would prompt: What JSON-RPC methods does this server have? \u003cserver url\u003e",
+        "inputschema": {
+          "properties": {
+            "server": {
+              "description": "Server URL",
+              "type": "string"
+            }
+          },
+          "required": [
+            "server"
+          ],
+          "type": "object"
+        },
+        "name": "rpc_discover"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/shanejonas/servers/openrpc-mpc-server/versions",
+    "xid": "/mcpproviders/shanejonas/servers/openrpc-mpc-server"
+  }
+}

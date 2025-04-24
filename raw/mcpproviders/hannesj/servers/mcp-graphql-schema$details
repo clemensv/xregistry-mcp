@@ -1,0 +1,106 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:20.722093783Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "-y",
+        "mcp-graphql-schema"
+      ],
+      "command": "npx",
+      "env": [],
+      "package": "mcp-graphql-schema",
+      "runtime": "nodejs"
+    }
+  },
+  "description": "A Model Context Protocol (MCP) server that exposes GraphQL schema information to Large Language Models (LLMs) like Claude. This server allows an LLM to explore and understand GraphQL schemas through a set of specialized tools.",
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/hannesj/servers/mcp-graphql-schema/meta",
+  "modifiedat": "2025-04-25T12:41:20.722093783Z",
+  "name": "GraphQL Schema Model Context Protocol Server",
+  "repository": {
+    "name": "hannesj/mcp-graphql-schema",
+    "url": "https://github.com/hannesj/mcp-graphql-schema"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/hannesj/servers/mcp-graphql-schema",
+  "serverid": "mcp-graphql-schema",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "description": "Lists all available root-level fields for GraphQL queries",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list-query-fields"
+    },
+    {
+      "description": "Gets detailed definition for a specific query field in SDL format",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get-query-field"
+    },
+    {
+      "description": "Lists all available root-level fields for GraphQL mutations",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list-mutation-fields"
+    },
+    {
+      "description": "Gets detailed definition for a specific mutation field in SDL format",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get-mutation-field"
+    },
+    {
+      "description": "Lists all available root-level fields for GraphQL subscriptions (if present in schema)",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list-subscription-fields"
+    },
+    {
+      "description": "Gets detailed definition for a specific subscription field (if present in schema)",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get-subscription-field"
+    },
+    {
+      "description": "Lists all types defined in the GraphQL schema (excluding internal types)",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list-types"
+    },
+    {
+      "description": "Gets detailed definition for a specific GraphQL type in SDL format",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get-type"
+    },
+    {
+      "description": "Gets a simplified list of fields with their types for a specific GraphQL object type",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get-type-fields"
+    },
+    {
+      "description": "Searches for types or fields in the schema by name pattern (case-insensitive regex)",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "search-schema"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/hannesj/servers/mcp-graphql-schema/versions",
+  "xid": "/mcpproviders/hannesj/servers/mcp-graphql-schema"
+}

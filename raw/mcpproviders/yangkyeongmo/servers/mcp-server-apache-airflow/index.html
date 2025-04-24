@@ -1,0 +1,80 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:44:32.606256926Z",
+  "deployment": {
+    "container": {
+      "image": "apache/airflow:latest"
+    }
+  },
+  "description": "A Model Context Protocol (MCP) server implementation for Apache Airflow, enabling seamless integration with MCP clients. This project provides a standardized way to interact with Apache Airflow through the Model Context Protocol.",
+  "endpoints": {
+    "http": {
+      "authorization": {
+        "description": "Bearer token for authentication",
+        "name": "Authorization",
+        "required": true,
+        "type": "header"
+      },
+      "uri": "http://localhost:8080/api/v1"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/yangkyeongmo/servers/mcp-server-apache-airflow/meta",
+  "modifiedat": "2025-04-25T12:44:32.606256926Z",
+  "name": "mcp-server-apache-airflow",
+  "repository": {
+    "name": "yangkyeongmo/mcp-server-apache-airflow",
+    "url": "https://github.com/yangkyeongmo/mcp-server-apache-airflow"
+  },
+  "resources": [
+    {
+      "description": "Endpoints for managing DAGs in Apache Airflow.",
+      "name": "DAG Management",
+      "uritemplate": "/api/v1/dags"
+    },
+    {
+      "description": "Endpoints for managing DAG runs.",
+      "name": "DAG Runs",
+      "uritemplate": "/api/v1/dags/{dag_id}/dagRuns"
+    },
+    {
+      "description": "Endpoints for managing tasks within DAGs.",
+      "name": "Tasks",
+      "uritemplate": "/api/v1/dags/{dag_id}/tasks"
+    },
+    {
+      "description": "Endpoints for managing Airflow variables.",
+      "name": "Variables",
+      "uritemplate": "/api/v1/variables"
+    },
+    {
+      "description": "Endpoints for managing Airflow connections.",
+      "name": "Connections",
+      "uritemplate": "/api/v1/connections"
+    },
+    {
+      "description": "Endpoints for managing Airflow pools.",
+      "name": "Pools",
+      "uritemplate": "/api/v1/pools"
+    },
+    {
+      "description": "Endpoints for managing XCom entries.",
+      "name": "XComs",
+      "uritemplate": "/api/v1/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/xcomEntries"
+    },
+    {
+      "description": "Endpoints for managing datasets.",
+      "name": "Datasets",
+      "uritemplate": "/api/v1/datasets"
+    }
+  ],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/yangkyeongmo/servers/mcp-server-apache-airflow",
+  "serverid": "mcp-server-apache-airflow",
+  "serverversion": "unknown",
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/yangkyeongmo/servers/mcp-server-apache-airflow/versions",
+  "xid": "/mcpproviders/yangkyeongmo/servers/mcp-server-apache-airflow"
+}

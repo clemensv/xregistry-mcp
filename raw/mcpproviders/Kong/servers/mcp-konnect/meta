@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:42.350825159Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/Kong/servers/mcp-konnect/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:42.350825159Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/Kong/servers/mcp-konnect/meta",
+  "serverid": "mcp-konnect",
+  "xid": "/mcpproviders/Kong/servers/mcp-konnect/meta"
+}

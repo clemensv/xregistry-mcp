@@ -1,0 +1,188 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:44:45.092824851Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "dist/index.js"
+      ],
+      "command": "node",
+      "env": [
+        {
+          "description": "By default, the server will use the default install location of `uv`",
+          "name": "UV_PATH",
+          "required": false
+        }
+      ],
+      "package": "@modelcontextprotocol/mcp-markdownify-server",
+      "runtime": "node"
+    }
+  },
+  "description": "Markdownify is a Model Context Protocol (MCP) server that converts various file types and web content to Markdown format. It provides a set of tools to transform PDFs, images, audio files, web pages, and more into easily readable and shareable Markdown text.",
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "modifiedat": "2025-04-25T12:44:45.092824851Z",
+  "name": "mcp-markdownify-server",
+  "repository": {
+    "name": "zcaceres/markdownify-mcp",
+    "url": "https://github.com/zcaceres/markdownify-mcp"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/zcaceres/servers/markdownify-mcp/versions/1",
+  "serverid": "markdownify-mcp",
+  "serverversion": "0.1.0",
+  "tools": [
+    {
+      "description": "Convert YouTube videos to Markdown",
+      "inputschema": {
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "youtube-to-markdown"
+    },
+    {
+      "description": "Convert PDF files to Markdown",
+      "inputschema": {
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ],
+        "type": "object"
+      },
+      "name": "pdf-to-markdown"
+    },
+    {
+      "description": "Convert Bing search results to Markdown",
+      "inputschema": {
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "bing-search-to-markdown"
+    },
+    {
+      "description": "Convert web pages to Markdown",
+      "inputschema": {
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "webpage-to-markdown"
+    },
+    {
+      "description": "Convert images to Markdown with metadata",
+      "inputschema": {
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ],
+        "type": "object"
+      },
+      "name": "image-to-markdown"
+    },
+    {
+      "description": "Convert audio files to Markdown with transcription",
+      "inputschema": {
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ],
+        "type": "object"
+      },
+      "name": "audio-to-markdown"
+    },
+    {
+      "description": "Convert DOCX files to Markdown",
+      "inputschema": {
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ],
+        "type": "object"
+      },
+      "name": "docx-to-markdown"
+    },
+    {
+      "description": "Convert XLSX files to Markdown",
+      "inputschema": {
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ],
+        "type": "object"
+      },
+      "name": "xlsx-to-markdown"
+    },
+    {
+      "description": "Convert PPTX files to Markdown",
+      "inputschema": {
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ],
+        "type": "object"
+      },
+      "name": "pptx-to-markdown"
+    },
+    {
+      "description": "Retrieve an existing Markdown file",
+      "inputschema": {
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ],
+        "type": "object"
+      },
+      "name": "get-markdown-file"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/zcaceres/servers/markdownify-mcp/versions/1"
+}

@@ -1,0 +1,53 @@
+{
+  "repo_ref": "wilsonchenghy/ShaderToy-MCP",
+  "name": "io.github.wilsonchenghy/ShaderToy-MCP",
+  "description": "MCP Server for ShaderToy, connecting LLM like Claude with ShaderToy through Model Context Protocol (MCP), allowing the LLM to query and read the entire web page and generate complex shaders.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "mcp[cli]",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "--with",
+          "mcp[cli]",
+          "mcp",
+          "run",
+          "<path_to_project>/ShaderToy-MCP/src/ShaderToy-MCP/server.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "SHADERTOY_APP_KEY",
+            "description": "API key for ShaderToy access",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get_shader_info",
+      "description": "Retrieve information on any shader on ShaderToy.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "search_shader",
+      "description": "Search for shaders available on ShaderToy through a search prompt.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

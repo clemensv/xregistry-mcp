@@ -1,0 +1,74 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:37.135579963Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "/path/to/deepseek-r1-mcp/build/index.js"
+        ],
+        "command": "node",
+        "env": [
+          {
+            "description": "API key for Deepseek R1 model",
+            "name": "DEEPSEEK_API_KEY",
+            "required": true
+          }
+        ],
+        "package": "@modelcontextprotocol/sdk",
+        "runtime": "node"
+      }
+    },
+    "description": "A Model Context Protocol (MCP) server implementation for the Deepseek R1 language model. Deepseek R1 is a powerful language model optimized for reasoning tasks with a context window of 8192 tokens.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0.0",
+    "modifiedat": "2025-04-25T12:40:37.135579963Z",
+    "name": "Deepseek R1 MCP Server",
+    "repository": {
+      "name": "66julienmartin/MCP-server-Deepseek_R1",
+      "subfolder": "deepseek-r1-mcp",
+      "url": "https://github.com/66julienmartin/MCP-server-Deepseek_R1"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/66julienmartin/servers/MCP-server-Deepseek_R1/versions/1",
+    "serverid": "MCP-server-Deepseek_R1",
+    "serverversion": "1.0.0",
+    "tools": [
+      {
+        "description": "Generate text using DeepSeek R1 model",
+        "inputschema": {
+          "properties": {
+            "max_tokens": {
+              "description": "Maximum tokens to generate (default: 8192)",
+              "maximum": 8192,
+              "minimum": 1,
+              "type": "number"
+            },
+            "prompt": {
+              "description": "Input text for DeepSeek",
+              "type": "string"
+            },
+            "temperature": {
+              "description": "Sampling temperature (default: 0.2)",
+              "maximum": 2,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "prompt"
+          ],
+          "type": "object"
+        },
+        "name": "deepseek_r1"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/66julienmartin/servers/MCP-server-Deepseek_R1/versions/1"
+  }
+}

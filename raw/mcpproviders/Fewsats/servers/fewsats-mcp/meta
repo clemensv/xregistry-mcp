@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:05.084096842Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/Fewsats/servers/fewsats-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:05.084096842Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/Fewsats/servers/fewsats-mcp/meta",
+  "serverid": "fewsats-mcp",
+  "xid": "/mcpproviders/Fewsats/servers/fewsats-mcp/meta"
+}

@@ -1,0 +1,95 @@
+{
+  "repo_ref": "dmayboroda/minima",
+  "name": "io.github.dmayboroda/minima",
+  "description": "Minima is an open source RAG on-premises containers, with ability to integrate with ChatGPT and MCP. Minima can also be used as a fully local RAG.",
+  "version_detail": {
+    "version": "0.0.1"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "minima",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/path_to_cloned_minima_project/mcp-server",
+          "run",
+          "minima"
+        ],
+        "environment_variables": [
+          {
+            "name": "LOCAL_FILES_PATH",
+            "description": "Specify the root folder for indexing (on your cloud or local pc).",
+            "required": true
+          },
+          {
+            "name": "EMBEDDING_MODEL_ID",
+            "description": "Specify the embedding model to use.",
+            "required": true
+          },
+          {
+            "name": "EMBEDDING_SIZE",
+            "description": "Define the embedding dimension provided by the model.",
+            "required": true
+          },
+          {
+            "name": "OLLAMA_MODEL",
+            "description": "Set up the Ollama model.",
+            "required": true
+          },
+          {
+            "name": "RERANKER_MODEL",
+            "description": "Specify the reranker model.",
+            "required": true
+          },
+          {
+            "name": "USER_ID",
+            "description": "Required for ChatGPT integration, just use your email.",
+            "required": false
+          },
+          {
+            "name": "PASSWORD",
+            "description": "Required for ChatGPT integration, just use any password.",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "query",
+      "description": "Find a context in a local files",
+      "arguments": [
+        {
+          "name": "context",
+          "description": "Context to search",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "query",
+      "description": "Find a context in local files (PDF, CSV, DOCX, MD, TXT)",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "context to find"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

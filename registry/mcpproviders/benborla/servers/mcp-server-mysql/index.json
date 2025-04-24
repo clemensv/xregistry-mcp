@@ -1,0 +1,133 @@
+{
+  "repo_ref": "benborla/mcp-server-mysql",
+  "name": "io.github.benborla/mcp-server-mysql",
+  "description": "A Model Context Protocol server that provides access to MySQL databases. This server enables LLMs to inspect database schemas and execute SQL queries.",
+  "version_detail": {
+    "version": "0.1.18"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@benborla29/mcp-server-mysql",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@benborla29/mcp-server-mysql"
+        ],
+        "environment_variables": [
+          {
+            "name": "MYSQL_HOST",
+            "description": "MySQL host address",
+            "required": true
+          },
+          {
+            "name": "MYSQL_PORT",
+            "description": "MySQL port number",
+            "required": true
+          },
+          {
+            "name": "MYSQL_USER",
+            "description": "MySQL username",
+            "required": true
+          },
+          {
+            "name": "MYSQL_PASS",
+            "description": "MySQL password",
+            "required": true
+          },
+          {
+            "name": "MYSQL_DB",
+            "description": "MySQL database name (optional for multi-DB mode)",
+            "required": false
+          },
+          {
+            "name": "ALLOW_INSERT_OPERATION",
+            "description": "Allow INSERT SQL operations",
+            "required": false
+          },
+          {
+            "name": "ALLOW_UPDATE_OPERATION",
+            "description": "Allow UPDATE SQL operations",
+            "required": false
+          },
+          {
+            "name": "ALLOW_DELETE_OPERATION",
+            "description": "Allow DELETE SQL operations",
+            "required": false
+          },
+          {
+            "name": "ALLOW_DDL_OPERATION",
+            "description": "Allow DDL SQL operations",
+            "required": false
+          },
+          {
+            "name": "SCHEMA_INSERT_PERMISSIONS",
+            "description": "Schema-specific permissions for INSERT operations",
+            "required": false
+          },
+          {
+            "name": "SCHEMA_UPDATE_PERMISSIONS",
+            "description": "Schema-specific permissions for UPDATE operations",
+            "required": false
+          },
+          {
+            "name": "SCHEMA_DELETE_PERMISSIONS",
+            "description": "Schema-specific permissions for DELETE operations",
+            "required": false
+          },
+          {
+            "name": "SCHEMA_DDL_PERMISSIONS",
+            "description": "Schema-specific permissions for DDL operations",
+            "required": false
+          },
+          {
+            "name": "MULTI_DB_WRITE_MODE",
+            "description": "Enable write mode in multi-DB mode",
+            "required": false
+          },
+          {
+            "name": "MYSQL_SSL",
+            "description": "Enable SSL for MySQL connection",
+            "required": false
+          },
+          {
+            "name": "MYSQL_SSL_REJECT_UNAUTHORIZED",
+            "description": "Reject unauthorized SSL certificates",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "mysql_query",
+      "description": "Run SQL queries against MySQL database (Multi-DB mode enabled) with support for: INSERT, UPDATE, DELETE, DDL and READ operations (Schema-specific permissions enabled)",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "sql": {
+            "type": "string",
+            "description": "The SQL query to execute"
+          }
+        },
+        "required": [
+          "sql"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "{database}/{table}/schema",
+      "name": "database schema",
+      "description": "Database and table name with schema suffix",
+      "mimetype": "application/json"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:47.741642762Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/lenwood/servers/cfbd-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:47.741642762Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/lenwood/servers/cfbd-mcp-server/meta",
+  "serverid": "cfbd-mcp-server",
+  "xid": "/mcpproviders/lenwood/servers/cfbd-mcp-server/meta"
+}

@@ -1,0 +1,101 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:10.910384038Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "serve"
+      ],
+      "command": "./linear-mcp-go",
+      "env": [
+        {
+          "description": "Linear API key environment variable",
+          "name": "LINEAR_API_KEY",
+          "required": true
+        }
+      ],
+      "package": "linear-mcp-go",
+      "runtime": "go"
+    }
+  },
+  "description": "A Model Context Protocol (MCP) server for Linear, written in Go. This server provides tools for interacting with the Linear API through the MCP protocol.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "modifiedat": "2025-04-25T12:41:10.910384038Z",
+  "name": "Linear MCP Server",
+  "repository": {
+    "name": "geropl/linear-mcp-go",
+    "url": "https://github.com/geropl/linear-mcp-go"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/geropl/servers/linear-mcp-go/versions/1",
+  "serverid": "linear-mcp-go",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "description": "Creates a new Linear issue with specified details. Supports creating sub-issues and assigning labels.",
+      "inputschema": {
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "labels": {
+            "type": "string"
+          },
+          "parentIssue": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string"
+          },
+          "team": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "team"
+        ],
+        "type": "object"
+      },
+      "name": "linear_create_issue"
+    },
+    {
+      "description": "Updates an existing Linear issue's properties.",
+      "inputschema": {
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "name": "linear_update_issue"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/geropl/servers/linear-mcp-go/versions/1"
+}

@@ -1,0 +1,121 @@
+{
+  "repo_ref": "singlestore-labs/mcp-server-singlestore",
+  "name": "io.github.singlestore-labs/mcp-server-singlestore",
+  "description": "MCP server for SingleStore enabling integration with LLM clients like Claude Desktop and Cursor to perform operations using natural language.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "singlestore-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "workspace_groups_info",
+      "description": "Retrieve details about the workspace groups accessible to the user",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "workspaces_info",
+      "description": "Retrieve details about the workspaces in a specific workspace group",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "workspaceGroupID": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "workspaceGroupID"
+        ]
+      }
+    },
+    {
+      "name": "organization_info",
+      "description": "Retrieve details about the user's current organization",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "list_of_regions",
+      "description": "Retrieve a list of all regions that support workspaces for the user",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "execute_sql",
+      "description": "Execute SQL operations on a connected workspace",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "workspace_group_identifier": {
+            "type": "string"
+          },
+          "workspace_identifier": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "database": {
+            "type": "string"
+          },
+          "sql_query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "workspace_group_identifier",
+          "workspace_identifier",
+          "username",
+          "password",
+          "database",
+          "sql_query"
+        ]
+      }
+    },
+    {
+      "name": "list_virtual_workspaces",
+      "description": "List all starter workspaces accessible to the user",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "create_virtual_workspace",
+      "description": "Create a new starter workspace",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  ],
+  "resources": []
+}

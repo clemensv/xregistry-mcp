@@ -1,0 +1,10 @@
+{
+  "repo_ref": "wildfly-extras/wildfly-mcp",
+  "name": "io.github.wildfly-extras/wildfly-mcp",
+  "description": "A WildFly MCP server to integrate with your AI chatbot in order to interact with WildFly server using natural language.",
+  "remotes": [],
+  "registries": [],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

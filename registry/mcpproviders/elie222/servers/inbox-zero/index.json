@@ -1,0 +1,83 @@
+{
+  "repo_ref": "elie222/inbox-zero",
+  "name": "io.github.elie222/inbox-zero",
+  "description": "AI email assistant MCP server providing email management tools such as reply tracking and follow-up reminders.",
+  "version_detail": {
+    "version": "0.0.1"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "server.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "API_BASE",
+            "description": "Base URL for Inbox Zero API",
+            "required": false
+          },
+          {
+            "name": "API_KEY",
+            "description": "API key for Inbox Zero API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get-emails-needing-reply",
+      "description": "Get emails needing reply",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "olderThan": {
+            "type": "string",
+            "enum": [
+              "3d",
+              "1w",
+              "2w",
+              "1m"
+            ],
+            "description": "Time range to look back"
+          }
+        },
+        "required": [
+          "olderThan"
+        ]
+      }
+    },
+    {
+      "name": "get-emails-needing-follow-up",
+      "description": "Get emails needing follow-up",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "olderThan": {
+            "type": "string",
+            "enum": [
+              "3d",
+              "1w",
+              "2w",
+              "1m"
+            ],
+            "description": "Time range to look back"
+          }
+        },
+        "required": [
+          "olderThan"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

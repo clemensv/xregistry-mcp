@@ -1,0 +1,30 @@
+{
+  "repo_ref": "zilliztech/mcp-server-milvus",
+  "name": "io.github.zilliztech/mcp-server-milvus",
+  "description": "This MCP server provides access to Milvus vector database functionality, enabling integration between LLM applications and external data sources via the Model Context Protocol.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcp-server-milvus",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "src/mcp_server_milvus/server.py",
+          "--milvus-uri",
+          "http://localhost:19530"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
+}

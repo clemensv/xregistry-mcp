@@ -1,0 +1,122 @@
+{
+  "repo_ref": "redis/mcp-redis",
+  "name": "io.github.redis/mcp-redis",
+  "description": "The Redis MCP Server is a natural language interface designed for agentic applications to efficiently manage and search data in Redis. It integrates seamlessly with MCP (Model Content Protocol) clients, enabling AI-driven workflows to interact with structured and unstructured data in Redis.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcp-redis",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "REDIS_HOST",
+            "description": "Redis IP or hostname",
+            "required": false
+          },
+          {
+            "name": "REDIS_PORT",
+            "description": "Redis port",
+            "required": false
+          },
+          {
+            "name": "REDIS_USERNAME",
+            "description": "Default database username",
+            "required": false
+          },
+          {
+            "name": "REDIS_PWD",
+            "description": "Default database password",
+            "required": false
+          },
+          {
+            "name": "REDIS_SSL",
+            "description": "Enables or disables SSL/TLS",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "string",
+      "description": "Tools to set, get strings with expiration. Useful for storing simple configuration values, session data, or caching responses.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "hash",
+      "description": "Tools to store field-value pairs within a single key. The hash can store vector embeddings. Useful for representing objects with multiple attributes, user profiles, or product information where fields can be accessed individually.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list",
+      "description": "Tools with common operations to append and pop items. Useful for queues, message brokers, or maintaining a list of most recent actions.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "set",
+      "description": "Tools to add, remove and list set members. Useful for tracking unique values like user IDs or tags, and for performing set operations like intersection.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "sorted set",
+      "description": "Tools to manage data for e.g. leaderboards, priority queues, or time-based analytics with score-based ordering.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "pub/sub",
+      "description": "Functionality to publish messages to channels and subscribe to receive them. Useful for real-time notifications, chat applications, or distributing updates to multiple clients.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "streams",
+      "description": "Tools to add, read, and delete from data streams. Useful for event sourcing, activity feeds, or sensor data logging with consumer groups support.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "JSON",
+      "description": "Tools to store, retrieve, and manipulate JSON documents in Redis. Useful for complex nested data structures, document databases, or configuration management with path-based access.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "query engine",
+      "description": "Tools to manage vector indexes and perform vector search",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "server management",
+      "description": "Tool to retrieve information about the database",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

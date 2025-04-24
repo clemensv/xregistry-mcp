@@ -1,0 +1,59 @@
+{
+  "repo_ref": "kapilduraphe/webflow-mcp-server",
+  "name": "io.github.kapilduraphe/webflow-mcp-server",
+  "description": "This MCP server enables Claude to interact with Webflow's APIs.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@kapilduraphe/webflow-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "/ABSOLUTE/PATH/TO/YOUR/build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "WEBFLOW_API_TOKEN",
+            "description": "Webflow API token environment variable",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "get_site",
+      "description": "Retrieve detailed information about a specific Webflow site by ID, including workspace, creation date, display name, and publishing details",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "siteId": {
+            "type": "string",
+            "description": "The unique identifier of the Webflow site"
+          }
+        },
+        "required": [
+          "siteId"
+        ]
+      }
+    },
+    {
+      "name": "get_sites",
+      "description": "Retrieve a list of all Webflow sites accessible to the authenticated user",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  ],
+  "resources": []
+}

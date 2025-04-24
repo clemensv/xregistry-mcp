@@ -1,0 +1,78 @@
+{
+  "repo_ref": "pab1it0/adx-mcp-server",
+  "name": "io.github.pab1it0/adx-mcp-server",
+  "description": "A Model Context Protocol (MCP) server for Azure Data Explorer/Eventhouse in Microsoft Fabric. Provides access to Azure Data Explorer/Eventhouse clusters and databases through standardized MCP interfaces, allowing AI assistants to execute KQL queries and explore data.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "adx-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "ADX_CLUSTER_URL",
+            "description": "URL of the Azure Data Explorer cluster",
+            "required": true
+          },
+          {
+            "name": "ADX_DATABASE",
+            "description": "Name of the Azure Data Explorer database",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "execute_kql_query",
+      "description": "Execute KQL queries against Azure Data Explorer."
+    },
+    {
+      "name": "list_tables",
+      "description": "List tables in the configured database."
+    },
+    {
+      "name": "view_table_schema",
+      "description": "View table schemas."
+    },
+    {
+      "name": "sample_table_data",
+      "description": "Sample data from tables."
+    },
+    {
+      "name": "get_table_statistics",
+      "description": "Get table statistics and details."
+    }
+  ],
+  "resources": [
+    {
+      "name": "tables",
+      "description": "Tables in the configured Azure Data Explorer database.",
+      "uritemplate": "/tables/{tableName}"
+    },
+    {
+      "name": "schemas",
+      "description": "Schemas of tables in the database.",
+      "uritemplate": "/schemas/{tableName}"
+    },
+    {
+      "name": "samples",
+      "description": "Sample data from tables.",
+      "uritemplate": "/samples/{tableName}"
+    },
+    {
+      "name": "statistics",
+      "description": "Statistics and details of tables.",
+      "uritemplate": "/statistics/{tableName}"
+    }
+  ]
+}

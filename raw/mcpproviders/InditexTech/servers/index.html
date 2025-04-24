@@ -1,0 +1,87 @@
+{
+  "mcp-server-simulator-ios-idb": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:28.574341122Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "/path/to/mcp-server-simulator-ios-idb/dist/index.js"
+        ],
+        "command": "node",
+        "env": [],
+        "package": "mcp-server-simulator-ios-idb",
+        "runtime": "node"
+      }
+    },
+    "description": "A Model Context Protocol (MCP) server that enables LLMs to interact with iOS simulators through natural language commands.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0.1",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/InditexTech/servers/mcp-server-simulator-ios-idb/meta",
+    "modifiedat": "2025-04-25T12:41:28.574341122Z",
+    "name": "iOS Simulator MCP Server",
+    "repository": {
+      "name": "InditexTech/mcp-server-simulator-ios-idb",
+      "url": "https://github.com/InditexTech/mcp-server-simulator-ios-idb"
+    },
+    "resources": [],
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/InditexTech/servers/mcp-server-simulator-ios-idb",
+    "serverid": "mcp-server-simulator-ios-idb",
+    "serverversion": "1.0.1",
+    "tools": [
+      {
+        "annotations": {},
+        "description": "Main tool for processing natural language instructions",
+        "inputschema": {
+          "properties": {
+            "instruction": {
+              "description": "Text instruction to process",
+              "type": "string"
+            }
+          },
+          "required": [
+            "instruction"
+          ],
+          "type": "object"
+        },
+        "name": "process-instruction"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/InditexTech/servers/mcp-server-simulator-ios-idb/versions",
+    "xid": "/mcpproviders/InditexTech/servers/mcp-server-simulator-ios-idb"
+  },
+  "mcp-teams-server": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:29.383312505Z",
+    "deployment": {
+      "container": {
+        "image": "ghcr.io/inditextech/mcp-teams-server:latest"
+      }
+    },
+    "description": "An MCP (Model Context Protocol) server implementation for Microsoft Teams integration, providing capabilities to read messages, create messages, reply to messages, mention members.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/InditexTech/servers/mcp-teams-server/meta",
+    "modifiedat": "2025-04-25T12:41:29.383312505Z",
+    "name": "MCP Teams Server",
+    "repository": {
+      "name": "InditexTech/mcp-teams-server",
+      "url": "https://github.com/InditexTech/mcp-teams-server"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/InditexTech/servers/mcp-teams-server",
+    "serverid": "mcp-teams-server",
+    "serverversion": "latest",
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/InditexTech/servers/mcp-teams-server/versions",
+    "xid": "/mcpproviders/InditexTech/servers/mcp-teams-server"
+  }
+}

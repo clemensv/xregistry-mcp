@@ -1,0 +1,491 @@
+{
+  "repo_ref": "cloudflare/mcp-server-cloudflare",
+  "name": "io.github.cloudflare/mcp-server-cloudflare",
+  "description": "Model Context Protocol (MCP) server for Cloudflare's API enabling natural language interaction with Cloudflare account resources such as Workers, KV namespaces, R2 buckets, and D1 databases.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [
+    {
+      "url": "https://observability.mcp.cloudflare.com/sse",
+      "transporttype": "https"
+    }
+  ],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@cloudflare/mcp-server-cloudflare",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "mcp-remote",
+          "https://observability.mcp.cloudflare.com/sse"
+        ],
+        "environment_variables": [
+          {
+            "name": "MCP_SERVER_NAME",
+            "description": "Name of the MCP server",
+            "required": false
+          },
+          {
+            "name": "MCP_SERVER_VERSION",
+            "description": "Version of the MCP server",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "worker_list",
+      "description": "List all Workers in your account",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "worker_get_worker",
+      "description": "Get a Worker's script content",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "scriptName": {
+            "type": "string",
+            "description": "The name of the worker script to retrieve"
+          }
+        },
+        "required": [
+          "scriptName"
+        ]
+      }
+    },
+    {
+      "name": "worker_logs_by_worker_name",
+      "description": "Analyze recent logs for a Cloudflare Worker by worker name",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "worker_logs_by_ray_id",
+      "description": "Analyze recent logs across all workers for a specific request by Cloudflare Ray ID",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "worker_logs_keys",
+      "description": "Get available telemetry keys for a Cloudflare Worker",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "accounts_list",
+      "description": "List all accounts in your Cloudflare account",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "set_active_account",
+      "description": "Set active account to be used for tool calls that require accountId",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "activeAccountIdParam": {
+            "type": "string",
+            "description": "The accountId present in the users Cloudflare account, that should be the active accountId."
+          }
+        },
+        "required": [
+          "activeAccountIdParam"
+        ]
+      }
+    },
+    {
+      "name": "d1_databases_list",
+      "description": "List all of the D1 databases in your Cloudflare account",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Optional database name filter"
+          },
+          "page": {
+            "type": "number"
+          },
+          "per_page": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "page",
+          "per_page"
+        ]
+      }
+    },
+    {
+      "name": "d1_database_create",
+      "description": "Create a new D1 database in your Cloudflare account",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "primary_location_hint": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Optional primary location hint"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "d1_database_delete",
+      "description": "Delete a d1 database in your Cloudflare account",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "database_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "database_id"
+        ]
+      }
+    },
+    {
+      "name": "d1_database_get",
+      "description": "Get a D1 database in your Cloudflare account",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "database_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "database_id"
+        ]
+      }
+    },
+    {
+      "name": "d1_database_query",
+      "description": "Query a D1 database in your Cloudflare account",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "database_id": {
+            "type": "string"
+          },
+          "sql": {
+            "type": "string"
+          },
+          "params": {
+            "type": [
+              "object",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "database_id",
+          "sql"
+        ]
+      }
+    },
+    {
+      "name": "kv_namespaces_list",
+      "description": "List all of the kv namespaces in your Cloudflare account",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "params": {
+            "type": "object",
+            "optional": true
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "kv_namespace_create",
+      "description": "Create a new kv namespace in your Cloudflare account",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title"
+        ]
+      }
+    },
+    {
+      "name": "kv_namespace_delete",
+      "description": "Delete a kv namespace in your Cloudflare account",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "namespace_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "namespace_id"
+        ]
+      }
+    },
+    {
+      "name": "kv_namespace_get",
+      "description": "Get details of a kv namespace in your Cloudflare account",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "namespace_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "namespace_id"
+        ]
+      }
+    },
+    {
+      "name": "kv_namespace_update",
+      "description": "Update the title of a kv namespace in your Cloudflare account",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "namespace_id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "namespace_id",
+          "title"
+        ]
+      }
+    },
+    {
+      "name": "r2_buckets_list",
+      "description": "List r2 buckets in your Cloudflare account",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "cursor": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "direction": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name_contains": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "per_page": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "start_after": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "r2_bucket_create",
+      "description": "Create a new r2 bucket in your Cloudflare account",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "r2_bucket_get",
+      "description": "Get details about a specific R2 bucket",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "r2_bucket_delete",
+      "description": "Delete an R2 bucket",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "container_initialize",
+      "description": "Start or reset the container",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "container_ping",
+      "description": "Ping the container for liveliness",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "container_exec",
+      "description": "Run a command in a container and return the results from stdout",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "args": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "args"
+        ]
+      }
+    },
+    {
+      "name": "container_file_delete",
+      "description": "Delete file and its contents",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "args": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        },
+        "required": [
+          "args"
+        ]
+      }
+    },
+    {
+      "name": "container_file_write",
+      "description": "Create a new file with the provided contents, overwriting the file if it already exists",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "args": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "args"
+        ]
+      }
+    },
+    {
+      "name": "container_files_list",
+      "description": "List working directory file tree",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "container_file_read",
+      "description": "Read a specific file or directory",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "args": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          }
+        },
+        "required": [
+          "args"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

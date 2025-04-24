@@ -1,0 +1,61 @@
+{
+  "bicscan-mcp": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:38.330253421Z",
+    "deployment": {
+      "container": {
+        "args": [
+          "run",
+          "--rm",
+          "--interactive",
+          "--env",
+          "BICSCAN_API_KEY=YOUR_BICSCAN_API_KEY_HERE"
+        ],
+        "env": [
+          {
+            "description": "API key for BICScan",
+            "name": "BICSCAN_API_KEY",
+            "required": true
+          }
+        ],
+        "image": "bicscan-mcp"
+      },
+      "sandbox": {
+        "args": [
+          "--directory",
+          "YOUR_BICSCAN_REPO_DIR_HERE",
+          "run",
+          "bicscan-mcp"
+        ],
+        "command": "uv",
+        "env": [
+          {
+            "description": "API key for BICScan",
+            "name": "BICSCAN_API_KEY",
+            "required": true
+          }
+        ],
+        "package": "bicscan-mcp",
+        "runtime": "uv"
+      }
+    },
+    "description": "A powerful and efficient Blockchain address risk scoring API MCP Server, leveraging the BICScan API to provide comprehensive risk assessments and asset information for blockchain addresses, domains, and decentralized applications (dApps).",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "unspecified",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ahnlabio/servers/bicscan-mcp/meta",
+    "modifiedat": "2025-04-25T12:40:38.330253421Z",
+    "name": "BICScan MCP Server",
+    "repository": {
+      "name": "ahnlabio/bicscan-mcp",
+      "url": "https://github.com/ahnlabio/bicscan-mcp"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ahnlabio/servers/bicscan-mcp",
+    "serverid": "bicscan-mcp",
+    "serverversion": "unspecified",
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ahnlabio/servers/bicscan-mcp/versions",
+    "xid": "/mcpproviders/ahnlabio/servers/bicscan-mcp"
+  }
+}

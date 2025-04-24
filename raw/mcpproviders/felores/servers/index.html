@@ -1,0 +1,466 @@
+{
+  "airtable-mcp": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:03.386583023Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "@felores/airtable-mcp-server"
+        ],
+        "command": "npx",
+        "env": [
+          {
+            "description": "Airtable API key for authentication",
+            "name": "AIRTABLE_API_KEY",
+            "required": true
+          }
+        ],
+        "package": "@felores/airtable-mcp-server",
+        "runtime": "node"
+      }
+    },
+    "description": "A Model Context Protocol server that provides tools for interacting with Airtable's API. This server enables programmatic management of Airtable bases, tables, fields, and records through Claude Desktop or other MCP clients.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/felores/servers/airtable-mcp/meta",
+    "modifiedat": "2025-04-25T12:41:03.386583023Z",
+    "name": "airtable-server",
+    "repository": {
+      "name": "felores/airtable-mcp",
+      "url": "https://github.com/felores/airtable-mcp"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/felores/servers/airtable-mcp",
+    "serverid": "airtable-mcp",
+    "serverversion": "0.2.0",
+    "tools": [
+      {
+        "description": "List all accessible Airtable bases",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "list_bases"
+      },
+      {
+        "description": "List all tables in a base",
+        "inputschema": {
+          "properties": {
+            "base_id": {
+              "description": "ID of the base",
+              "type": "string"
+            }
+          },
+          "required": [
+            "base_id"
+          ],
+          "type": "object"
+        },
+        "name": "list_tables"
+      },
+      {
+        "description": "Create a new table in a base",
+        "inputschema": {
+          "properties": {
+            "base_id": {
+              "description": "ID of the base",
+              "type": "string"
+            },
+            "description": {
+              "description": "Description of the table",
+              "type": "string"
+            },
+            "fields": {
+              "description": "Initial fields for the table",
+              "items": {
+                "properties": {
+                  "descript": "Description of the field",
+                  "name": {
+                    "des": "Name of the field",
+                    "typ": "string"
+                  },
+                  "options": "object",
+                  "type": {
+                    "des": "Type of the field (e.g., singleLineText, multilineText, number, etc.)",
+                    "typ": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "type"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "table_name": {
+              "description": "Name of the new table",
+              "type": "string"
+            }
+          },
+          "required": [
+            "base_id",
+            "table_name"
+          ],
+          "type": "object"
+        },
+        "name": "create_table"
+      },
+      {
+        "description": "Update a table's schema",
+        "inputschema": {
+          "properties": {
+            "base_id": {
+              "description": "ID of the base",
+              "type": "string"
+            },
+            "description": {
+              "description": "New description for the table",
+              "type": "string"
+            },
+            "name": {
+              "description": "New name for the table",
+              "type": "string"
+            },
+            "table_id": {
+              "description": "ID of the table to update",
+              "type": "string"
+            }
+          },
+          "required": [
+            "base_id",
+            "table_id"
+          ],
+          "type": "object"
+        },
+        "name": "update_table"
+      },
+      {
+        "description": "Create a new field in a table",
+        "inputschema": {
+          "properties": {
+            "base_id": {
+              "description": "ID of the base",
+              "type": "string"
+            },
+            "field": {
+              "properties": {
+                "description": {
+                  "des": "Description of the field",
+                  "typ": "string"
+                },
+                "name": {
+                  "descriptio": "Name of the field",
+                  "type": "string"
+                },
+                "options": {
+                  "descrip": "Field-specific options",
+                  "type": "object"
+                },
+                "type": {
+                  "descriptio": "Type of the field",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "type"
+              ],
+              "type": "object"
+            },
+            "table_id": {
+              "description": "ID of the table",
+              "type": "string"
+            }
+          },
+          "required": [
+            "base_id",
+            "table_id",
+            "field"
+          ],
+          "type": "object"
+        },
+        "name": "create_field"
+      },
+      {
+        "description": "Update a field in a table",
+        "inputschema": {
+          "properties": {
+            "base_id": {
+              "description": "ID of the base",
+              "type": "string"
+            },
+            "field_id": {
+              "description": "ID of the field to update",
+              "type": "string"
+            },
+            "table_id": {
+              "description": "ID of the table",
+              "type": "string"
+            },
+            "updates": {
+              "properties": {
+                "description": {
+                  "d": "New description for the field",
+                  "t": "string"
+                },
+                "name": {
+                  "descript": "New name for the field",
+                  "type": "string"
+                },
+                "options": {
+                  "descr": "New field-specific options",
+                  "type": "object"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "base_id",
+            "table_id",
+            "field_id",
+            "updates"
+          ],
+          "type": "object"
+        },
+        "name": "update_field"
+      },
+      {
+        "description": "List records in a table",
+        "inputschema": {
+          "properties": {
+            "base_id": {
+              "description": "ID of the base",
+              "type": "string"
+            },
+            "max_records": {
+              "description": "Maximum number of records to return",
+              "type": "number"
+            },
+            "table_name": {
+              "description": "Name of the table",
+              "type": "string"
+            }
+          },
+          "required": [
+            "base_id",
+            "table_name"
+          ],
+          "type": "object"
+        },
+        "name": "list_records"
+      },
+      {
+        "description": "Create a new record in a table",
+        "inputschema": {
+          "properties": {
+            "base_id": {
+              "description": "ID of the base",
+              "type": "string"
+            },
+            "fields": {
+              "description": "Record fields as key-value pairs",
+              "type": "object"
+            },
+            "table_name": {
+              "description": "Name of the table",
+              "type": "string"
+            }
+          },
+          "required": [
+            "base_id",
+            "table_name",
+            "fields"
+          ],
+          "type": "object"
+        },
+        "name": "create_record"
+      },
+      {
+        "description": "Update an existing record in a table",
+        "inputschema": {
+          "properties": {
+            "base_id": {
+              "description": "ID of the base",
+              "type": "string"
+            },
+            "fields": {
+              "description": "Record fields to update as key-value pairs",
+              "type": "object"
+            },
+            "record_id": {
+              "description": "ID of the record to update",
+              "type": "string"
+            },
+            "table_name": {
+              "description": "Name of the table",
+              "type": "string"
+            }
+          },
+          "required": [
+            "base_id",
+            "table_name",
+            "record_id",
+            "fields"
+          ],
+          "type": "object"
+        },
+        "name": "update_record"
+      },
+      {
+        "description": "Delete a record from a table",
+        "inputschema": {
+          "properties": {
+            "base_id": {
+              "description": "ID of the base",
+              "type": "string"
+            },
+            "record_id": {
+              "description": "ID of the record to delete",
+              "type": "string"
+            },
+            "table_name": {
+              "description": "Name of the table",
+              "type": "string"
+            }
+          },
+          "required": [
+            "base_id",
+            "table_name",
+            "record_id"
+          ],
+          "type": "object"
+        },
+        "name": "delete_record"
+      },
+      {
+        "description": "Search for records in a table",
+        "inputschema": {
+          "properties": {
+            "base_id": {
+              "description": "ID of the base",
+              "type": "string"
+            },
+            "field_name": {
+              "description": "Name of the field to search in",
+              "type": "string"
+            },
+            "table_name": {
+              "description": "Name of the table",
+              "type": "string"
+            },
+            "value": {
+              "description": "Value to search for",
+              "type": "string"
+            }
+          },
+          "required": [
+            "base_id",
+            "table_name",
+            "field_name",
+            "value"
+          ],
+          "type": "object"
+        },
+        "name": "search_records"
+      },
+      {
+        "description": "Get a single record by its ID",
+        "inputschema": {
+          "properties": {
+            "base_id": {
+              "description": "ID of the base",
+              "type": "string"
+            },
+            "record_id": {
+              "description": "ID of the record to retrieve",
+              "type": "string"
+            },
+            "table_name": {
+              "description": "Name of the table",
+              "type": "string"
+            }
+          },
+          "required": [
+            "base_id",
+            "table_name",
+            "record_id"
+          ],
+          "type": "object"
+        },
+        "name": "get_record"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/felores/servers/airtable-mcp/versions",
+    "xid": "/mcpproviders/felores/servers/airtable-mcp"
+  },
+  "placid-mcp-server": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:04.079972791Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "@felores/placid-mcp-server"
+        ],
+        "command": "npx",
+        "env": [
+          {
+            "description": "API token for Placid.app",
+            "name": "PLACID_API_TOKEN",
+            "required": true
+          }
+        ],
+        "package": "@felores/placid-mcp-server",
+        "runtime": "nodejs"
+      }
+    },
+    "description": "An MCP server implementation for integrating with Placid.app's API. This server provides tools for listing templates and generating images and videos through the Model Context Protocol.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/felores/servers/placid-mcp-server/meta",
+    "modifiedat": "2025-04-25T12:41:04.079972791Z",
+    "name": "placid-server",
+    "repository": {
+      "name": "felores/placid-mcp-server",
+      "url": "https://github.com/felores/placid-mcp-server"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/felores/servers/placid-mcp-server",
+    "serverid": "placid-mcp-server",
+    "serverversion": "1.0.0",
+    "tools": [
+      {
+        "description": "Lists available Placid templates with filtering options. Each template includes its title, ID, preview image URL, available layers, and tags.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "placid_list_templates"
+      },
+      {
+        "description": "Generate videos by combining Placid templates with dynamic content like videos, images, and text.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "placid_generate_video"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/felores/servers/placid-mcp-server/versions",
+    "xid": "/mcpproviders/felores/servers/placid-mcp-server"
+  }
+}

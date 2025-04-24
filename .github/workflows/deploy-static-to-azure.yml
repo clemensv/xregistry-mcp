@@ -1,0 +1,58 @@
+name: Deploy directly to Azure Static Site
+
+on:
+  workflow_dispatch:
+  
+  workflow_run:
+    workflows: ["Build static content into static-site branch"]
+    types:
+      - completed
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 2. Checkout the Angular SPA repo → ./spa
+      - name: Checkout xregistry-viewer SPA
+        uses: actions/checkout@v3
+        with:
+          repository: clemensv/xregistry-viewer
+      
+      # 1. Checkout the pre-built static site (branch: static-site) → ./static-site
+      - name: Checkout xRegistry static site
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+          lfs: false
+          ref: static-site
+          path: public/registry
+          
+      - name: Checkout xRegistry static site
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+          lfs: false
+          ref: master
+          path: repo
+
+      # 4. Copy the pre-built xRegistry site under /registry
+      - name: Merge static content
+        run: |
+          cp -r repo/xreg/registry-staticwebapp.config.json public/registry/staticwebapp.config.json
+          cp -r repo/xreg/root-staticwebapp.config.json public/staticwebapp.config.json
+    
+      # 5. Upload everything in ./site-root
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_CALM_OCEAN_02B9B4103 }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: upload
+          app_build_command: "npm run build-prod"
+          app_location: "/"
+          output_location: "dist/xregistry-viewer"

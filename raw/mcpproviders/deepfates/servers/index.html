@@ -1,0 +1,130 @@
+{
+  "mcp-replicate": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:54.802124298Z",
+    "deployment": {
+      "sandbox": {
+        "args": [],
+        "command": "mcp-replicate",
+        "env": [
+          {
+            "description": "Replicate API token for authentication",
+            "name": "REPLICATE_API_TOKEN",
+            "required": true
+          }
+        ],
+        "package": "mcp-replicate",
+        "runtime": "node"
+      }
+    },
+    "description": "A Model Context Protocol server implementation for Replicate. Run Replicate models through a simple tool-based interface.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/deepfates/servers/mcp-replicate/meta",
+    "modifiedat": "2025-04-25T12:40:54.802124298Z",
+    "name": "replicate",
+    "repository": {
+      "name": "deepfates/mcp-replicate",
+      "url": "https://github.com/deepfates/mcp-replicate"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/deepfates/servers/mcp-replicate",
+    "serverid": "mcp-replicate",
+    "serverversion": "0.1.0",
+    "tools": [
+      {
+        "description": "Find models using semantic search",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "search_models"
+      },
+      {
+        "description": "Browse available models",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_models"
+      },
+      {
+        "description": "Get details about a specific model",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_model"
+      },
+      {
+        "description": "Browse model collections",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_collections"
+      },
+      {
+        "description": "Get details about a specific collection",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_collection"
+      },
+      {
+        "description": "Run a model with your inputs",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "create_prediction"
+      },
+      {
+        "description": "Check a prediction's status",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_prediction"
+      },
+      {
+        "description": "Stop a running prediction",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "cancel_prediction"
+      },
+      {
+        "description": "See your recent predictions",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_predictions"
+      },
+      {
+        "description": "Open an image in your browser",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "view_image"
+      },
+      {
+        "description": "Clean up cached images",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "clear_image_cache"
+      },
+      {
+        "description": "Check cache usage",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_image_cache_stats"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/deepfates/servers/mcp-replicate/versions",
+    "xid": "/mcpproviders/deepfates/servers/mcp-replicate"
+  }
+}

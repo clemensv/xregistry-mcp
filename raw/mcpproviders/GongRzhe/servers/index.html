@@ -1,0 +1,402 @@
+{
+  "Gmail-MCP-Server": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:13.330035802Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "@gongrzhe/server-gmail-autoauth-mcp"
+        ],
+        "command": "npx",
+        "env": [],
+        "package": "@gongrzhe/server-gmail-autoauth-mcp",
+        "runtime": "nodejs"
+      }
+    },
+    "description": "A Model Context Protocol (MCP) server for Gmail integration in Claude Desktop with auto authentication support. This server enables AI assistants to manage Gmail through natural language interactions.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/Gmail-MCP-Server/meta",
+    "modifiedat": "2025-04-25T12:41:13.330035802Z",
+    "name": "Gmail AutoAuth MCP Server",
+    "repository": {
+      "name": "GongRzhe/Gmail-MCP-Server",
+      "url": "https://github.com/GongRzhe/Gmail-MCP-Server"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/Gmail-MCP-Server",
+    "serverid": "Gmail-MCP-Server",
+    "serverversion": "unknown",
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/Gmail-MCP-Server/versions",
+    "xid": "/mcpproviders/GongRzhe/servers/Gmail-MCP-Server"
+  },
+  "JSON-MCP-Server": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:13.978325143Z",
+    "deployment": {
+      "sandbox": {
+        "args": [],
+        "command": "npx @gongrzhe/server-json-mcp@1.0.3",
+        "package": "@gongrzhe/server-json-mcp",
+        "packageversion": "1.0.3",
+        "runtime": "node"
+      }
+    },
+    "description": "A JSON Model Context Protocol (MCP) server implementation for querying and manipulating JSON data. This server enables LLMs to interact with JSON data through a set of standardized tools.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0.3",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/JSON-MCP-Server/meta",
+    "modifiedat": "2025-04-25T12:41:13.978325143Z",
+    "name": "JSON MCP Server",
+    "repository": {
+      "name": "GongRzhe/JSON-MCP-Server",
+      "url": "https://github.com/GongRzhe/JSON-MCP-Server"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/JSON-MCP-Server",
+    "serverid": "JSON-MCP-Server",
+    "serverversion": "1.0.3",
+    "tools": [
+      {
+        "description": "Query JSON data using JSONPath syntax with extended operations",
+        "inputschema": {
+          "properties": {
+            "jsonPath": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "url",
+            "jsonPath"
+          ],
+          "type": "object"
+        },
+        "name": "query"
+      },
+      {
+        "description": "Filter JSON data using conditions",
+        "inputschema": {
+          "properties": {
+            "condition": {
+              "type": "string"
+            },
+            "jsonPath": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "url",
+            "jsonPath",
+            "condition"
+          ],
+          "type": "object"
+        },
+        "name": "filter"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/JSON-MCP-Server/versions",
+    "xid": "/mcpproviders/GongRzhe/servers/JSON-MCP-Server"
+  },
+  "Langflow-DOC-QA-SERVER": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:14.635273193Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "/path/to/doc-qa-server/build/index.js"
+        ],
+        "command": "node",
+        "env": [
+          {
+            "default": "http://127.0.0.1:7860/api/v1/run/480ec7b3-29d2-4caa-b03b-e74118f35fac",
+            "description": "The endpoint URL for the Langflow API service.",
+            "name": "API_ENDPOINT",
+            "required": false
+          }
+        ],
+        "package": "@GongRzhe/Langflow-DOC-QA-SERVER",
+        "runtime": "node"
+      }
+    },
+    "description": "A Model Context Protocol server for document Q\u0026A powered by Langflow",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/Langflow-DOC-QA-SERVER/meta",
+    "modifiedat": "2025-04-25T12:41:14.635273193Z",
+    "name": "doc-qa-server",
+    "repository": {
+      "name": "GongRzhe/Langflow-DOC-QA-SERVER",
+      "url": "https://github.com/GongRzhe/Langflow-DOC-QA-SERVER"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/Langflow-DOC-QA-SERVER",
+    "serverid": "Langflow-DOC-QA-SERVER",
+    "serverversion": "0.1.0",
+    "tools": [
+      {
+        "description": "Query the document Q\u0026A system with a prompt",
+        "inputschema": {
+          "properties": {
+            "query": {
+              "description": "The query prompt to search for in the documents",
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "query_docs"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/Langflow-DOC-QA-SERVER/versions",
+    "xid": "/mcpproviders/GongRzhe/servers/Langflow-DOC-QA-SERVER"
+  },
+  "Quickchart-MCP-Server": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:15.329702961Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "/path/to/quickchart-server/build/index.js"
+        ],
+        "command": "node",
+        "package": "@gongrzhe/quickchart-mcp-server",
+        "runtime": "node"
+      }
+    },
+    "description": "A Model Context Protocol server for generating charts using QuickChart.io",
+    "documentation": "https://quickchart.io/documentation/",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/Quickchart-MCP-Server/meta",
+    "modifiedat": "2025-04-25T12:41:15.329702961Z",
+    "name": "quickchart-server",
+    "repository": {
+      "name": "GongRzhe/Quickchart-MCP-Server",
+      "url": "https://github.com/GongRzhe/Quickchart-MCP-Server"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/Quickchart-MCP-Server",
+    "serverid": "Quickchart-MCP-Server",
+    "serverversion": "1.0.0",
+    "tools": [
+      {
+        "description": "Generate a chart using QuickChart",
+        "inputschema": {
+          "properties": {
+            "datasets": {
+              "items": {
+                "properties": {
+                  "additi": "object",
+                  "backgr": "string",
+                  "border": "string",
+                  "data": {
+                    "t": "array"
+                  },
+                  "label": "string"
+                },
+                "required": [
+                  "data"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "labels": {
+              "description": "Labels for data points",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "options": {
+              "type": "object"
+            },
+            "title": {
+              "type": "string"
+            },
+            "type": {
+              "description": "Chart type (bar, line, pie, doughnut, radar, polarArea, scatter, bubble, radialGauge, speedometer)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "datasets"
+          ],
+          "type": "object"
+        },
+        "name": "generate_chart"
+      },
+      {
+        "description": "Download a chart image to a local file",
+        "inputschema": {
+          "properties": {
+            "config": {
+              "description": "Chart configuration object",
+              "type": "object"
+            },
+            "outputPath": {
+              "description": "Path where the chart image should be saved. If not provided, the chart will be saved to Desktop or home directory.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "config"
+          ],
+          "type": "object"
+        },
+        "name": "download_chart"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/Quickchart-MCP-Server/versions",
+    "xid": "/mcpproviders/GongRzhe/servers/Quickchart-MCP-Server"
+  },
+  "REDIS-MCP-Server": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:16.11181819Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "@gongrzhe/server-redis-mcp@1.0.0",
+          "redis://localhost:6379"
+        ],
+        "command": "npx",
+        "package": "@gongrzhe/server-redis-mcp",
+        "packageversion": "1.0.0",
+        "runtime": "node"
+      }
+    },
+    "description": "A Redis Model Context Protocol (MCP) server implementation for interacting with Redis databases. This server enables LLMs to interact with Redis key-value stores through a set of standardized tools.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/REDIS-MCP-Server/meta",
+    "modifiedat": "2025-04-25T12:41:16.11181819Z",
+    "name": "redis",
+    "repository": {
+      "name": "GongRzhe/REDIS-MCP-Server",
+      "url": "https://github.com/GongRzhe/REDIS-MCP-Server"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/REDIS-MCP-Server",
+    "serverid": "REDIS-MCP-Server",
+    "serverversion": "1.0.0",
+    "tools": [
+      {
+        "description": "Set a Redis key-value pair with optional expiration",
+        "inputschema": {
+          "properties": {
+            "expireSeconds": {
+              "description": "Optional expiration time in seconds",
+              "type": "number"
+            },
+            "key": {
+              "description": "Redis key",
+              "type": "string"
+            },
+            "value": {
+              "description": "Value to store",
+              "type": "string"
+            }
+          },
+          "required": [
+            "key",
+            "value"
+          ],
+          "type": "object"
+        },
+        "name": "set"
+      },
+      {
+        "description": "Get value by key from Redis",
+        "inputschema": {
+          "properties": {
+            "key": {
+              "description": "Redis key to retrieve",
+              "type": "string"
+            }
+          },
+          "required": [
+            "key"
+          ],
+          "type": "object"
+        },
+        "name": "get"
+      },
+      {
+        "description": "Delete one or more keys from Redis",
+        "inputschema": {
+          "properties": {
+            "key": {
+              "description": "Key or array of keys to delete",
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              ]
+            }
+          },
+          "required": [
+            "key"
+          ],
+          "type": "object"
+        },
+        "name": "delete"
+      },
+      {
+        "description": "List Redis keys matching a pattern",
+        "inputschema": {
+          "properties": {
+            "pattern": {
+              "description": "Pattern to match keys (default: *)",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": "list"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/REDIS-MCP-Server/versions",
+    "xid": "/mcpproviders/GongRzhe/servers/REDIS-MCP-Server"
+  }
+}

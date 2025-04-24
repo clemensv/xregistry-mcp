@@ -1,0 +1,75 @@
+{
+  "repo_ref": "pyroprompts/any-chat-completions-mcp",
+  "name": "io.github.pyroprompts/any-chat-completions-mcp",
+  "description": "Integrate Claude with Any OpenAI SDK Compatible Chat Completion API - OpenAI, Perplexity, Groq, xAI, PyroPrompts and more. This implements the Model Context Protocol Server.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "any-chat-completions-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "/path/to/any-chat-completions-mcp/build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "AI_CHAT_KEY",
+            "description": "API key for the AI chat provider",
+            "required": true
+          },
+          {
+            "name": "AI_CHAT_NAME",
+            "description": "Name of the AI chat provider",
+            "required": true
+          },
+          {
+            "name": "AI_CHAT_MODEL",
+            "description": "Model name to use for chat completions",
+            "required": true
+          },
+          {
+            "name": "AI_CHAT_BASE_URL",
+            "description": "Base URL for the AI chat API",
+            "required": true
+          },
+          {
+            "name": "AI_CHAT_TIMEOUT",
+            "description": "Timeout in milliseconds for chat requests",
+            "required": false
+          },
+          {
+            "name": "AI_CHAT_SYSTEM_PROMPT",
+            "description": "Optional system prompt for chat completions",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "chat-with-openai",
+      "description": "Text chat with OpenAI",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "description": "The content of the chat to send to OpenAI"
+          }
+        },
+        "required": [
+          "content"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

@@ -1,0 +1,90 @@
+{
+  "repo_ref": "fireproof-storage/mcp-database-server",
+  "name": "io.github.fireproof-storage/mcp-database-server",
+  "description": "Simple JSON document server with basic CRUD operations using Fireproof database in a Model Context Protocol server.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "fireproof-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "save_json_doc",
+      "description": "Save a JSON document",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "doc": {
+            "type": "object",
+            "description": "JSON document to save"
+          }
+        },
+        "required": [
+          "doc"
+        ]
+      }
+    },
+    {
+      "name": "load_json_doc",
+      "description": "Load a JSON document by ID",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID of document to load"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "delete_json_doc",
+      "description": "Delete a JSON document by ID",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID of document to delete"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "query_json_docs",
+      "description": "Query JSON documents sorted by a field",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "sort_field": {
+            "type": "string",
+            "description": "Field to sort results by"
+          }
+        },
+        "required": [
+          "sort_field"
+        ]
+      }
+    }
+  ],
+  "resources": []
+}

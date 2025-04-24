@@ -1,0 +1,61 @@
+{
+  "repo_ref": "AI-Agent-Hub/ai-agent-marketplace-index-mcp",
+  "name": "io.github.AI-Agent-Hub/ai-agent-marketplace-index-mcp",
+  "description": "MCP Server for AI Agent Marketplace Index from DeepNLP, allowing AI assistants to search available AI agents by keywords or category, including tools for searching AI agents and listing AI agents to the marketplace.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "ai-agent-marketplace-index-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "-m",
+          "ai-agent-marketplace-index-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "BING_SEARCH_API_KEY",
+            "description": "Microsoft Bing Search API key",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "search_ai_agent",
+      "description": "General search of AI Agents for information, websites, content and metric statistic of web traffic, etc.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "q": {
+            "type": "string",
+            "description": "Query string to search AI agents."
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Maximum number of results to return."
+          },
+          "timeout": {
+            "type": "integer",
+            "description": "Timeout in seconds for the API call."
+          }
+        },
+        "required": [
+          "q"
+        ]
+      }
+    }
+  ],
+  "resources": [],
+  "serverid": "ai-agent-marketplace-index-mcp"
+}

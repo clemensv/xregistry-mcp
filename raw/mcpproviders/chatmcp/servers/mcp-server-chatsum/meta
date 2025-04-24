@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:40:47.524613295Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/chatmcp/servers/mcp-server-chatsum/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:40:47.524613295Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/chatmcp/servers/mcp-server-chatsum/meta",
+  "serverid": "mcp-server-chatsum",
+  "xid": "/mcpproviders/chatmcp/servers/mcp-server-chatsum/meta"
+}

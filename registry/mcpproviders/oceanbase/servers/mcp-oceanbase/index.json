@@ -1,0 +1,76 @@
+{
+  "repo_ref": "oceanbase/mcp-oceanbase",
+  "name": "io.github.oceanbase/mcp-oceanbase",
+  "description": "A Model Context Protocol (MCP) server that enables secure interaction with OceanBase databases.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcp-oceanbase",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "OB_HOST",
+            "description": "OceanBase database host",
+            "required": false
+          },
+          {
+            "name": "OB_PORT",
+            "description": "OceanBase database port",
+            "required": false
+          },
+          {
+            "name": "OB_USER",
+            "description": "OceanBase database user",
+            "required": true
+          },
+          {
+            "name": "OB_PASSWORD",
+            "description": "OceanBase database password",
+            "required": true
+          },
+          {
+            "name": "OB_DATABASE",
+            "description": "OceanBase database name",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "execute_sql",
+      "description": "Execute a SQL query on the OceanBase server",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The SQL query to execute"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "oceanbase://{table}/data",
+      "name": "Table",
+      "description": "Data in table: {table}",
+      "mimetype": "text/plain"
+    }
+  ],
+  "documentation": "doc/oceanbase_mcp_server.md"
+}

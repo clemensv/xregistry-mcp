@@ -1,0 +1,135 @@
+{
+  "repo_ref": "daobataotie/mssql-mcp",
+  "name": "io.github.daobataotie/mssql-mcp",
+  "description": "MSSQL MCP Server provides database interaction and business intelligence capabilities, enabling running SQL queries, analyzing business data, and automatically generating business insight memos.",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "src/server.py"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "mcp-demo",
+      "description": "一个用于在 MSSQL 数据库中创建初始数据并演示 MSSQL MCP 服务器功能的提示",
+      "arguments": [
+        {
+          "name": "topic",
+          "description": "用于生成初始数据的主题",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "read_query",
+      "description": "在 MSSQL 数据库上执行 SELECT 查询",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "要执行的 SELECT SQL 查询"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "write_query",
+      "description": "在 MSSQL 数据库上执行 INSERT、UPDATE 或 DELETE 查询",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "要执行的 SQL 查询"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "create_table",
+      "description": "在 MSSQL 数据库中创建新表",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "CREATE TABLE SQL 语句"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "list_tables",
+      "description": "列出 MSSQL 数据库中的所有表",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "describe_table",
+      "description": "获取特定表的架构信息",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "table_name": {
+            "type": "string",
+            "description": "要描述的表名"
+          }
+        },
+        "required": [
+          "table_name"
+        ]
+      }
+    },
+    {
+      "name": "append_insight",
+      "description": "向备忘录添加业务洞察",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "insight": {
+            "type": "string",
+            "description": "从数据分析中发现的业务洞察"
+          }
+        },
+        "required": [
+          "insight"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "业务洞察备忘录",
+      "description": "一个实时更新的业务洞察文档",
+      "mimetype": "text/plain",
+      "uritemplate": "memo://insights"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+name: Build static content into static-site branch
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main", "master"]
+
+  workflow_run:
+    workflows: ["Ingest from remote repo via issue"]
+    types:
+      - completed
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: "azure-static-site"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Set up Git
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git config --global credential.helper store
+          echo "https://${{ secrets.GITHUB_TOKEN }}@github.com" > ~/.git-credentials
+            
+      - name: Build Registry
+        run: bash $GITHUB_WORKSPACE/xreg/build_registry.sh
+
+      - name: Set Fallback Repo Variables
+        if: env.GITHUB_SERVER_URL == '' || env.GITHUB_REPOSITORY == ''
+        run: |
+          export GITHUB_SERVER_URL="https://github.com"
+          export GITHUB_REPOSITORY="${{ github.repository }}"
+
+      - name: Prepare temporary directory for static-site branch
+        run: |
+          TEMP_DIR=$(mktemp -d)
+          echo "Temporary directory: $TEMP_DIR"
+          mkdir -p $TEMP_DIR
+          cd $TEMP_DIR
+          git init
+          git remote add origin $GITHUB_SERVER_URL/$GITHUB_REPOSITORY
+          if git ls-remote --exit-code origin static-site; then
+            echo "Checking out existing static-site branch."
+            git fetch origin static-site
+            git switch static-site
+            if ! git rev-parse --verify origin/static-site > /dev/null 2>&1; then
+              echo "ERROR: Remote branch origin/static-site not found. Aborting."
+              exit 1
+            fi
+            git branch --set-upstream-to=origin/static-site static-site
+          else
+            echo "Creating new orphan static-site branch."
+            git switch --create static-site
+            touch .gitkeep
+            git add .gitkeep
+            git commit -m "Initial commit for static-site"
+            git remote set-url --push origin https://clemensv:${{ secrets.GITHUB_TOKEN }}@github.com/clemensv/xregistry-mcp
+            git push -u origin static-site
+          fi
+          echo "TEMP_DIR=$TEMP_DIR" >> $GITHUB_ENV
+
+      - name: Sync /live to static-site branch
+        run: |
+          cd $TEMP_DIR
+          rsync -av --filter="P /.git" --delete $GITHUB_WORKSPACE/live/ .
+          git add .
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update static-site with latest build"
+            git remote set-url --push origin https://clemensv:${{ secrets.GITHUB_TOKEN }}@github.com/clemensv/xregistry-mcp
+            git push origin static-site
+          fi
+

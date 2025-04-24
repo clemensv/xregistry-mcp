@@ -1,0 +1,131 @@
+{
+  "repo_ref": "syucream/holaspirit-mcp-server",
+  "name": "io.github.syucream/holaspirit-mcp-server",
+  "description": "A MCP(Model Context Protocol) server that accesses to Holaspirit API. This server provides MCP-compatible access to Holaspirit's API, allowing AI assistants to interact with your Holaspirit data through a standardized interface.",
+  "version_detail": {
+    "version": "0.0.1"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "holaspirit-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "holaspirit-mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "HOLASPIRIT_API_TOKEN",
+            "description": "Your Holaspirit API token",
+            "required": true
+          },
+          {
+            "name": "HOLASPIRIT_ORGANIZATION_ID",
+            "description": "Your Holaspirit organization ID",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "holaspirit_list_tasks",
+      "description": "List all tasks in the organization",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "holaspirit_list_metrics",
+      "description": "List all metrics in the organization",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "holaspirit_list_circles",
+      "description": "List all circles in the organization",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "holaspirit_get_circle",
+      "description": "Get details of a specific circle",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "holaspirit_list_roles",
+      "description": "List all roles in the organization",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "holaspirit_get_role",
+      "description": "Get details of a specific role",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "holaspirit_list_domains",
+      "description": "List all domains in the organization",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "holaspirit_list_policies",
+      "description": "List all policies in the organization",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "holaspirit_list_meetings",
+      "description": "List all meetings in the organization",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "holaspirit_get_meeting",
+      "description": "Get details of a specific meeting",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "holaspirit_get_member_feed",
+      "description": "Get member feed",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "holaspirit_get_tensions",
+      "description": "Get tensions for a meeting or meetings",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "holaspirit_search_member",
+      "description": "Search for a member by email",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

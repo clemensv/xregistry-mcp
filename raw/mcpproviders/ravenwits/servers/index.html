@@ -1,0 +1,199 @@
+{
+  "mcp-server-arangodb": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:42:55.312764061Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "arango-server"
+        ],
+        "command": "npx",
+        "env": [
+          {
+            "default": "http://localhost:8529",
+            "description": "ArangoDB connection URL",
+            "name": "ARANGO_URL",
+            "required": false
+          },
+          {
+            "default": "_system",
+            "description": "ArangoDB database name",
+            "name": "ARANGO_DB",
+            "required": false
+          },
+          {
+            "description": "ArangoDB username",
+            "name": "ARANGO_USERNAME",
+            "required": true
+          },
+          {
+            "description": "ArangoDB password",
+            "name": "ARANGO_PASSWORD",
+            "required": true
+          }
+        ],
+        "package": "arango-server",
+        "runtime": "nodejs"
+      }
+    },
+    "description": "A Model Context Protocol server for ArangoDB providing database interaction capabilities through ArangoDB with core database operations and MCP tool integration.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ravenwits/servers/mcp-server-arangodb/meta",
+    "modifiedat": "2025-04-25T12:42:55.312764061Z",
+    "name": "arango-server",
+    "repository": {
+      "name": "ravenwits/mcp-server-arangodb",
+      "url": "https://github.com/ravenwits/mcp-server-arangodb"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ravenwits/servers/mcp-server-arangodb",
+    "serverid": "mcp-server-arangodb",
+    "serverversion": "unknown",
+    "tools": [
+      {
+        "description": "Execute AQL queries",
+        "inputschema": {
+          "properties": {
+            "bindVars": {
+              "type": "object"
+            },
+            "query": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "arango_query"
+      },
+      {
+        "description": "Insert documents into collections",
+        "inputschema": {
+          "properties": {
+            "collection": {
+              "type": "string"
+            },
+            "document": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "collection",
+            "document"
+          ],
+          "type": "object"
+        },
+        "name": "arango_insert"
+      },
+      {
+        "description": "Update existing documents",
+        "inputschema": {
+          "properties": {
+            "collection": {
+              "type": "string"
+            },
+            "key": {
+              "type": "string"
+            },
+            "update": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "collection",
+            "key",
+            "update"
+          ],
+          "type": "object"
+        },
+        "name": "arango_update"
+      },
+      {
+        "description": "Remove documents from collections",
+        "inputschema": {
+          "properties": {
+            "collection": {
+              "type": "string"
+            },
+            "key": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "collection",
+            "key"
+          ],
+          "type": "object"
+        },
+        "name": "arango_remove"
+      },
+      {
+        "description": "Backup all collections to JSON files",
+        "inputschema": {
+          "properties": {
+            "collection": {
+              "type": "string"
+            },
+            "docLimit": {
+              "type": "integer"
+            },
+            "outputDir": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "outputDir"
+          ],
+          "type": "object"
+        },
+        "name": "arango_backup"
+      },
+      {
+        "description": "List all collections in the database",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "arango_list_collections"
+      },
+      {
+        "description": "Create a new collection in the database",
+        "inputschema": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "type": {
+              "enum": [
+                "document",
+                "edge"
+              ],
+              "type": "string"
+            },
+            "waitForSync": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        },
+        "name": "arango_create_collection"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ravenwits/servers/mcp-server-arangodb/versions",
+    "xid": "/mcpproviders/ravenwits/servers/mcp-server-arangodb"
+  }
+}

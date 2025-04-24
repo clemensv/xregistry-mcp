@@ -1,0 +1,52 @@
+{
+  "repo_ref": "jjsantos01/qgis_mcp",
+  "name": "io.github.jjsantos01/qgis_mcp",
+  "description": "QGISMCP connects QGIS to Claude AI through the Model Context Protocol (MCP), allowing Claude to directly interact with and control QGIS. This integration enables prompt assisted project creation, layer loading, code execution and more.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "uv",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/ABSOLUTE/PATH/TO/PARENT/REPO/FOLDER/qgis_mcp/src/qgis_mcp",
+          "run",
+          "qgis_mcp_server.py"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "ping",
+      "description": "Simple ping command to check server connectivity",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_qgis_info",
+      "description": "Get QGIS information about the current installation",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "load_project",
+      "description": "Load a QGIS project",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

@@ -1,0 +1,122 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:05.084096842Z",
+  "deployment": {
+    "sandbox": {
+      "args": [],
+      "command": "fewsats-mcp",
+      "env": [
+        {
+          "description": "API key for Fewsats",
+          "name": "FEWSATS_API_KEY",
+          "required": true
+        }
+      ],
+      "package": "fewsats-mcp",
+      "runtime": "uvx"
+    }
+  },
+  "description": "This MCP server integrates with Fewsats and allows AI Agents to purchase anything in a secure way.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "0.2.2",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/Fewsats/servers/fewsats-mcp/meta",
+  "modifiedat": "2025-04-25T12:41:05.084096842Z",
+  "name": "Fewsats MCP Server",
+  "repository": {
+    "name": "Fewsats/fewsats-mcp",
+    "url": "https://github.com/Fewsats/fewsats-mcp"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/Fewsats/servers/fewsats-mcp",
+  "serverid": "fewsats-mcp",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "description": "Retrieve the balance of the user's wallet",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "balance"
+    },
+    {
+      "description": "Retrieve the user's payment methods",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "payment_methods"
+    },
+    {
+      "description": "Pays an offer with the specified ID from the l402_offers",
+      "inputschema": {
+        "properties": {
+          "l402_offer": {
+            "properties": {
+              "offers": {
+                "ite": "title",
+                "typ": "array"
+              },
+              "payment_co": "string",
+              "payment_re": "string",
+              "version": {
+                "ty": "string"
+              }
+            },
+            "required": [
+              "offers",
+              "payment_context_token",
+              "payment_request_url",
+              "version"
+            ],
+            "type": "object"
+          },
+          "offer_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "offer_id",
+          "l402_offer"
+        ],
+        "type": "object"
+      },
+      "name": "pay_offer"
+    },
+    {
+      "description": "Retrieve the details of a payment",
+      "inputschema": {
+        "properties": {
+          "pid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "pid"
+        ],
+        "type": "object"
+      },
+      "name": "payment_info"
+    },
+    {
+      "description": "Retrieve the user's billing information",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "billing_info"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/Fewsats/servers/fewsats-mcp/versions",
+  "xid": "/mcpproviders/Fewsats/servers/fewsats-mcp"
+}

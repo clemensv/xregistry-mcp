@@ -1,0 +1,70 @@
+{
+  "repo_ref": "starwind-ui/starwind-ui-mcp",
+  "name": "io.github.starwind-ui/starwind-ui-mcp",
+  "description": "A TypeScript implementation of a Model Context Protocol (MCP) server for Starwind UI, providing tools to help developers work with Starwind UI components.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "dist/server.js"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "init_project",
+      "description": "Initializes a new Starwind UI project",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "install_component",
+      "description": "Generates installation commands for Starwind UI components",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "update_component",
+      "description": "Generates update commands for Starwind UI components",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_documentation",
+      "description": "Returns documentation links for Starwind UI components and guides",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "fetch_llm_data",
+      "description": "Fetches LLM data from starwind.dev (rate limited, with caching)",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_package_manager",
+      "description": "Detects and returns the current package manager information",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": []
+}

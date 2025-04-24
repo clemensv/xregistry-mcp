@@ -1,0 +1,48 @@
+{
+  "repo_ref": "21st-dev/magic-mcp",
+  "name": "io.github.21st-dev/magic-mcp",
+  "description": "Magic Component Platform (MCP) is a powerful AI-driven tool that helps developers create beautiful, modern UI components instantly through natural language descriptions. It integrates seamlessly with popular IDEs and provides a streamlined workflow for UI development.",
+  "version_detail": {
+    "version": "0.0.46"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@21st-dev/magic",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@21st-dev/magic@latest",
+          "API_KEY=\"your-api-key\""
+        ],
+        "environment_variables": [
+          {
+            "name": "API_KEY",
+            "description": "API key for authentication",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [
+    {
+      "name": "CreateUiTool"
+    },
+    {
+      "name": "LogoSearchTool"
+    },
+    {
+      "name": "FetchUiTool"
+    },
+    {
+      "name": "RefineUiTool"
+    }
+  ],
+  "resources": []
+}
