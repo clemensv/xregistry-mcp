@@ -161,7 +161,48 @@
               "inputschema": {
                 "type": "object",
                 "description": "JSON Schema defining and validating the tool\u00e2\u20ac\u2122s input parameters.",
-                "properties": {}
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Schema type of the input definition."
+                  },
+                  "properties": {
+                    "type": "object",
+                    "description": "Map of property schemas."
+                  },
+                  "required": {
+                    "type": "array",
+                    "description": "List of required input fields.",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "items": {
+                    "type": "object",
+                    "description": "Schema for items when input is array.",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "description": "Type of the array items."
+                      },
+                      "properties": {
+                        "type": "object",
+                        "description": "Properties of each array item.",
+                        "properties": {}
+                      },
+                      "required": {
+                        "type": "array",
+                        "description": "List of required fields in array items.",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "type"
+                ]
               },
               "annotations": {
                 "type": "object",
@@ -320,7 +361,50 @@
                 "authorization": {
                   "type": "object",
                   "description": "Authorization configuration for WebSockets endpoint.",
-                  "properties": {}
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "description": "Authorization scheme type."
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "required": {
+                      "type": "boolean"
+                    },
+                    "format": {
+                      "type": "string"
+                    },
+                    "username": {
+                      "type": "object",
+                      "properties": {
+                        "description": {
+                          "type": "string"
+                        },
+                        "required": {
+                          "type": "boolean"
+                        }
+                      }
+                    },
+                    "password": {
+                      "type": "object",
+                      "properties": {
+                        "description": {
+                          "type": "string"
+                        },
+                        "required": {
+                          "type": "boolean"
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "required"
+                  ]
                 }
               },
               "required": [
@@ -339,7 +423,50 @@
                 "authorization": {
                   "type": "object",
                   "description": "Authorization configuration for MQTT endpoint.",
-                  "properties": {}
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "description": "Authorization scheme type."
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "required": {
+                      "type": "boolean"
+                    },
+                    "format": {
+                      "type": "string"
+                    },
+                    "username": {
+                      "type": "object",
+                      "properties": {
+                        "description": {
+                          "type": "string"
+                        },
+                        "required": {
+                          "type": "boolean"
+                        }
+                      }
+                    },
+                    "password": {
+                      "type": "object",
+                      "properties": {
+                        "description": {
+                          "type": "string"
+                        },
+                        "required": {
+                          "type": "boolean"
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "type",
+                    "required"
+                  ]
                 }
               },
               "required": [
