@@ -2,7 +2,7 @@
 
 ## Abstract
 
-This specification defines an MCP (Model Composition Proxy) Providers registry
+This specification defines an MCP (Model Context Protocol) Providers registry
 extension to the xRegistry document format and API
 [specification](../core/spec.md).
 
