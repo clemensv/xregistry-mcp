@@ -1,0 +1,28 @@
+{
+  "name": "google-calendar",
+  "description": "This is a Model Context Protocol (MCP) server that provides integration with Google Calendar. It allows LLMs to read, create, update and search for calendar events through a standardized interface.",
+  "mcpversion": "1.0.0",
+  "serverversion": "1.0.0",
+  "tools": [],
+  "resources": [],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "nodejs",
+      "package": "@modelcontextprotocol/google-calendar-mcp-server",
+      "command": "node",
+      "args": [
+        "build/index.js"
+      ],
+      "env": []
+    }
+  },
+  "repository": {
+    "url": "https://github.com/nspady/google-calendar-mcp",
+    "name": "nspady/google-calendar-mcp"
+  }
+}

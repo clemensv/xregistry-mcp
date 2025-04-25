@@ -1,0 +1,26 @@
+{
+  "name": "BigQuery MCP Server",
+  "description": "This is a server that lets your LLMs (like Claude) talk directly to your BigQuery data! Think of it as a friendly translator that sits between your AI assistant and your database, making sure they can chat securely and efficiently.",
+  "mcpversion": "developer preview",
+  "serverversion": "unspecified",
+  "repository": {
+    "url": "https://github.com/ergut/mcp-bigquery-server",
+    "name": "ergut/mcp-bigquery-server"
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "nodejs",
+      "package": "@ergut/mcp-bigquery-server",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@ergut/mcp-bigquery-server",
+        "--project-id",
+        "your-project-id",
+        "--location",
+        "us-central1"
+      ],
+      "env": []
+    }
+  }
+}

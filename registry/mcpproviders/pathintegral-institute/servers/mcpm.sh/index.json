@@ -1,0 +1,38 @@
+{
+  "name": "mcpm-router",
+  "description": "A router that aggregates multiple MCP servers (SSE/STDIO) and exposes them as a single SSE server.",
+  "mcpversion": "1.0.0",
+  "serverversion": "1.0.0",
+  "deployment": {
+    "sandbox": {
+      "runtime": "python",
+      "package": "mcpm",
+      "command": "mcpm-router",
+      "args": [],
+      "env": []
+    }
+  },
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    },
+    "http": {
+      "uri": "http://localhost:8080",
+      "authorization": {
+        "type": "none",
+        "required": false
+      }
+    },
+    "websockets": {
+      "uri": "ws://localhost:8080/messages/",
+      "authorization": {
+        "type": "none",
+        "required": false
+      }
+    }
+  },
+  "repository": {
+    "url": "https://github.com/pathintegral-institute/mcpm.sh",
+    "name": "pathintegral-institute/mcpm.sh"
+  }
+}

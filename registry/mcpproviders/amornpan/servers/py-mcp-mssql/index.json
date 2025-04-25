@@ -1,0 +1,84 @@
+{
+  "name": "Python MSSQL MCP Server",
+  "description": "A Model Context Protocol server implementation in Python that provides access to Microsoft SQL Server databases. This server enables Language Models to inspect table schemas and execute SQL queries through a standardized interface.",
+  "mcpversion": "1.2.0",
+  "serverversion": "1.0.1",
+  "repository": {
+    "url": "https://github.com/amornpan/py-mcp-mssql",
+    "name": "amornpan/py-mcp-mssql"
+  },
+  "tools": [
+    {
+      "name": "call_tool",
+      "description": "Executes SQL queries; supports both SELECT and modification queries; returns results in CSV format for SELECT queries and affected row count for modification queries.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "arguments": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "tables",
+      "uritemplate": "mssql://{table_name}/data",
+      "description": "Lists all available tables in the database with URIs in the format mssql://<table_name>/data; includes table descriptions and MIME types.",
+      "mimetype": "text/csv"
+    }
+  ],
+  "endpoints": {
+    "http": {
+      "uri": "http://localhost:8000",
+      "authorization": {
+        "type": "none",
+        "required": false
+      }
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "python",
+      "package": "py-mcp-mssql",
+      "command": "python",
+      "args": [
+        "server.py"
+      ],
+      "env": [
+        {
+          "name": "MSSQL_SERVER",
+          "description": "SQL Server hostname or IP",
+          "required": true
+        },
+        {
+          "name": "MSSQL_DATABASE",
+          "description": "Database name",
+          "required": true
+        },
+        {
+          "name": "MSSQL_USER",
+          "description": "Username for authentication",
+          "required": true
+        },
+        {
+          "name": "MSSQL_PASSWORD",
+          "description": "Password for authentication",
+          "required": true
+        },
+        {
+          "name": "MSSQL_DRIVER",
+          "description": "ODBC Driver 17 for SQL Server",
+          "required": true
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "name": "World Bank MCP Server",
+  "description": "A Model Context Protocol (MCP) server that enables interaction with the open World Bank data API. This server allows AI assistants to list indicators and analyse those indicators for the countries that are available with the World Bank.",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/anshumax/world_bank_mcp_server",
+    "name": "anshumax/world_bank_mcp_server"
+  },
+  "tools": [
+    {
+      "name": "get_indicator_for_country",
+      "description": "Get values for an indicator for a specific country from the World Bank API",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "country_id": {
+            "type": "string",
+            "description": "The ID of the country for which the indicator is to be queried"
+          },
+          "indicator_id": {
+            "type": "string",
+            "description": "The ID of the indicator to be queried"
+          }
+        },
+        "required": [
+          "country_id",
+          "indicator_id"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "https://api.worldbank.org/v2/country?format=json&per_page=1000",
+      "name": "Countries list",
+      "description": "List of countries in the World Bank database",
+      "mimetype": "application/json"
+    },
+    {
+      "uritemplate": "https://api.worldbank.org/v2/indicator?format=json&per_page=50000",
+      "name": "Indicators list",
+      "description": "List of indicators in the World Bank database",
+      "mimetype": "application/json"
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@anshumax/world_bank_mcp_server",
+      "command": "uv",
+      "args": [
+        "--directory",
+        "path/to/world_bank_mcp_server",
+        "run",
+        "world_bank_mcp_server"
+      ]
+    }
+  }
+}

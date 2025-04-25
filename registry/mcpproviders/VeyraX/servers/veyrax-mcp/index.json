@@ -1,0 +1,45 @@
+{
+  "name": "veyrax-mcp",
+  "description": "VeyraX MCP is an MCP server providing a unified connection to access all your tools in any MCP-compatible environment.",
+  "mcpversion": "unknown",
+  "serverversion": "0.0.1",
+  "repository": {
+    "url": "https://github.com/VeyraX/veyrax-mcp",
+    "name": "VeyraX/veyrax-mcp"
+  },
+  "docs": "https://docs.veyrax.com/mcp",
+  "tools": [
+    {
+      "name": "GetToolsTool",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "ToolCallTool",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "GetFlowTool",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "nodejs",
+      "package": "@modelcontextprotocol/sdk",
+      "command": "node",
+      "args": [],
+      "env": []
+    }
+  }
+}

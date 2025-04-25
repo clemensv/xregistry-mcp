@@ -1,0 +1,27 @@
+{
+  "name": "ntfy-mcp",
+  "description": "The MCP server that keeps you caffeinated and informed by sending ntfy notifications whenever your AI assistant completes a task.",
+  "mcpversion": "unspecified",
+  "serverversion": "unspecified",
+  "repository": {
+    "url": "https://github.com/teddyzxcv/ntfy-mcp",
+    "name": "teddyzxcv/ntfy-mcp"
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@modelcontextprotocol/sdk",
+      "command": "node",
+      "args": [
+        "/path/to/ntfy-mcp/build/index.js"
+      ],
+      "env": [
+        {
+          "name": "NTFY_TOPIC",
+          "description": "Topic name for ntfy notifications",
+          "required": false
+        }
+      ]
+    }
+  }
+}

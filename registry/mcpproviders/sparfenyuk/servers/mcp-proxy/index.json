@@ -1,0 +1,59 @@
+{
+  "name": "mcp-proxy",
+  "description": "The mcp-proxy is a tool that lets you switch between server transports. It supports proxying MCP server requests between stdio and SSE transports, enabling clients like Claude Desktop to communicate with MCP servers over SSE or stdio.",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/sparfenyuk/mcp-proxy",
+    "name": "sparfenyuk/mcp-proxy"
+  },
+  "tools": [],
+  "resources": [],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    },
+    "http": {
+      "uri": "http://example.io/sse",
+      "authorization": {
+        "type": "header",
+        "name": "Authorization",
+        "description": "Authorization header with Bearer token",
+        "required": false,
+        "format": "Bearer {token}"
+      }
+    },
+    "httplocal": {
+      "deployment": "container",
+      "port": 0,
+      "host": "0.0.0.0",
+      "protocol": "http"
+    }
+  },
+  "deployment": {
+    "container": {
+      "image": "sparfenyuk/mcp-proxy:latest",
+      "args": [],
+      "env": [
+        {
+          "name": "API_ACCESS_TOKEN",
+          "description": "Access token for authorization header",
+          "required": false
+        }
+      ]
+    },
+    "sandbox": {
+      "runtime": "python",
+      "package": "mcp-proxy",
+      "command": "mcp-proxy",
+      "args": [],
+      "env": [
+        {
+          "name": "API_ACCESS_TOKEN",
+          "description": "Access token for authorization header",
+          "required": false
+        }
+      ]
+    }
+  }
+}

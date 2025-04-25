@@ -1,0 +1,45 @@
+{
+  "name": "attestable-mcp-server",
+  "description": "remotely attestable MCP server that uses a trusted execution environment and RA-TLS for remote attestation between MCP clients and servers.",
+  "mcpversion": "2024-11-05",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/co-browser/attestable-mcp-server",
+    "name": "co-browser/attestable-mcp-server"
+  },
+  "tools": [
+    {
+      "name": "fetch",
+      "description": "Fetches a website and returns its content",
+      "inputschema": {
+        "type": "object",
+        "required": [
+          "url"
+        ],
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL to fetch"
+          }
+        }
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    },
+    "http": {
+      "uri": "http://0.0.0.0:8000",
+      "authorization": {
+        "type": "none",
+        "required": false
+      }
+    }
+  },
+  "deployment": {
+    "container": {
+      "image": "gsc-attestable-mcp-server"
+    }
+  }
+}

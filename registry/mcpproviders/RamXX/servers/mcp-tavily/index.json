@@ -1,0 +1,184 @@
+{
+  "name": "Tavily MCP Server",
+  "description": "A Model Context Protocol server that provides AI-powered web search capabilities using Tavily's search API. This server enables LLMs to perform sophisticated web searches, get direct answers to questions, and search recent news articles with AI-extracted relevant content.",
+  "mcpversion": "1.0.0",
+  "serverversion": "0.1.4",
+  "repository": {
+    "url": "https://github.com/RamXX/mcp-tavily",
+    "name": "RamXX/mcp-tavily"
+  },
+  "tools": [
+    {
+      "name": "tavily_web_search",
+      "description": "Performs comprehensive web searches with AI-powered content extraction.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "max_results": {
+            "type": "integer"
+          },
+          "search_depth": {
+            "type": "string"
+          },
+          "include_domains": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "exclude_domains": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "tavily_answer_search",
+      "description": "Performs web searches and generates direct answers with supporting evidence.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "max_results": {
+            "type": "integer"
+          },
+          "search_depth": {
+            "type": "string"
+          },
+          "include_domains": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "exclude_domains": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "tavily_news_search",
+      "description": "Searches recent news articles with publication dates.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "max_results": {
+            "type": "integer"
+          },
+          "days": {
+            "type": "integer"
+          },
+          "include_domains": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "exclude_domains": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "tavily_web_search",
+      "description": "Search the web using Tavily's AI-powered search engine"
+    },
+    {
+      "name": "tavily_answer_search",
+      "description": "Search the web and get an AI-generated answer with supporting evidence"
+    },
+    {
+      "name": "tavily_news_search",
+      "description": "Search recent news articles with Tavily's news search"
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "python",
+      "package": "mcp-tavily",
+      "command": "uvx",
+      "args": [
+        "mcp-tavily"
+      ],
+      "env": [
+        {
+          "name": "TAVILY_API_KEY",
+          "description": "API key for Tavily service",
+          "required": true
+        }
+      ]
+    }
+  }
+}

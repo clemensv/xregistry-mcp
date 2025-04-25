@@ -1,0 +1,49 @@
+{
+  "name": "Thirdweb MCP",
+  "description": "MCP server providing blockchain tools via the MCP protocol, enabling compatible LLM clients to interact with blockchain data and AI agents.",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "deployment": {
+    "sandbox": {
+      "runtime": "python",
+      "package": "thirdweb-ai",
+      "command": "thirdweb-mcp",
+      "args": [],
+      "env": [
+        {
+          "name": "THIRDWEB_SECRET_KEY",
+          "description": "API key for thirdweb services",
+          "required": true
+        }
+      ]
+    }
+  },
+  "tools": [
+    {
+      "name": "Insight Tools",
+      "description": "Tools for blockchain data intelligence including chains, transactions, blocks, events, prices, and tokens.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "Nebula Tools",
+      "description": "AI agent blockchain interaction tools enabling natural language powered blockchain tasks.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "endpoints": {
+    "httplocal": {
+      "deployment": "container",
+      "port": 8001,
+      "host": "localhost",
+      "protocol": "http"
+    }
+  },
+  "repository": {
+    "url": "https://github.com/thirdweb-dev/ai",
+    "name": "thirdweb-dev/ai"
+  }
+}

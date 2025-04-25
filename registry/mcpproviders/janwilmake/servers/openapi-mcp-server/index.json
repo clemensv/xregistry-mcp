@@ -1,0 +1,19 @@
+{
+  "name": "OpenAPI MCP Server",
+  "description": "A Model Context Protocol (MCP) server for Claude/Cursor that enables searching and exploring OpenAPI specifications through oapis.org.",
+  "mcpversion": "v2",
+  "serverversion": "v2 (Work In Progress)",
+  "repository": {
+    "url": "https://github.com/janwilmake/openapi-mcp-server",
+    "name": "janwilmake/openapi-mcp-server"
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "nodejs",
+      "package": "openapi-mcp-server",
+      "command": "npx openapi-mcp-server@latest init",
+      "args": [],
+      "env": []
+    }
+  }
+}

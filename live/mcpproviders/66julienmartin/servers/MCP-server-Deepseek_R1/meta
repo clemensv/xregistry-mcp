@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:40:37.135579963Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://clemensv.github.io/xregistry-mcp/mcpproviders/66julienmartin/servers/MCP-server-Deepseek_R1/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:40:37.135579963Z",
+  "readonly": false,
+  "self": "https://clemensv.github.io/xregistry-mcp/mcpproviders/66julienmartin/servers/MCP-server-Deepseek_R1/meta",
+  "serverid": "MCP-server-Deepseek_R1",
+  "xid": "/mcpproviders/66julienmartin/servers/MCP-server-Deepseek_R1/meta"
+}

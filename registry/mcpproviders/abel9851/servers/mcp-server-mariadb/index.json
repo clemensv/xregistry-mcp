@@ -1,0 +1,61 @@
+{
+  "name": "mcp-server-mariadb",
+  "description": "An MCP server implementation for retrieving data from mariadb",
+  "mcpversion": "",
+  "serverversion": "",
+  "tools": [
+    {
+      "name": "query_database",
+      "description": "Execute read-only operations against MariDB",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "schema list",
+      "description": "Expose schema list in database"
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "",
+      "package": "",
+      "command": "mcp-server-mariadb",
+      "args": [
+        "--host",
+        "${DB_HOST}",
+        "--port",
+        "${DB_PORT}",
+        "--user",
+        "${DB_USER}",
+        "--password",
+        "${DB_PASSWORD}",
+        "--database",
+        "${DB_NAME}"
+      ],
+      "env": [
+        {
+          "name": "MARIADB_HOST"
+        },
+        {
+          "name": "MARIADB_USER"
+        },
+        {
+          "name": "MARIADB_PASSWORD"
+        },
+        {
+          "name": "MARIADB_DATABASE"
+        },
+        {
+          "name": "MARIADB_PORT"
+        }
+      ]
+    }
+  },
+  "repository": {
+    "url": "https://github.com/abel9851/mcp-server-mariadb",
+    "name": "abel9851/mcp-server-mariadb"
+  }
+}

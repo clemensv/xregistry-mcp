@@ -1,0 +1,63 @@
+{
+  "name": "JSON MCP Server",
+  "description": "A JSON Model Context Protocol (MCP) server implementation for querying and manipulating JSON data. This server enables LLMs to interact with JSON data through a set of standardized tools.",
+  "mcpversion": "1.0.3",
+  "serverversion": "1.0.3",
+  "tools": [
+    {
+      "name": "query",
+      "description": "Query JSON data using JSONPath syntax with extended operations",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "jsonPath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "jsonPath"
+        ]
+      }
+    },
+    {
+      "name": "filter",
+      "description": "Filter JSON data using conditions",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "jsonPath": {
+            "type": "string"
+          },
+          "condition": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "jsonPath",
+          "condition"
+        ]
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@gongrzhe/server-json-mcp",
+      "packageversion": "1.0.3",
+      "command": "npx @gongrzhe/server-json-mcp@1.0.3",
+      "args": []
+    }
+  },
+  "repository": {
+    "url": "https://github.com/GongRzhe/JSON-MCP-Server",
+    "name": "GongRzhe/JSON-MCP-Server"
+  }
+}

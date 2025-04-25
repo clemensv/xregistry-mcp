@@ -1,0 +1,58 @@
+{
+  "name": "Pushover MCP",
+  "description": "A Model Context Protocol implementation for sending notifications via Pushover.net.",
+  "mcpversion": "1.0",
+  "serverversion": "latest",
+  "tools": [
+    {
+      "name": "send",
+      "description": "Sends a notification via Pushover.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "number"
+          },
+          "sound": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "url_title": {
+            "type": "string"
+          },
+          "device": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "message"
+        ]
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "pushover-mcp",
+      "command": "start",
+      "args": [
+        "--token",
+        "YOUR_TOKEN",
+        "--user",
+        "YOUR_USER"
+      ]
+    }
+  },
+  "repository": {
+    "url": "https://github.com/AshikNesin/pushover-mcp",
+    "name": "AshikNesin/pushover-mcp"
+  }
+}

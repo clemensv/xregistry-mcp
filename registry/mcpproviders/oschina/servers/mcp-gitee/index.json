@@ -1,0 +1,69 @@
+{
+  "name": "Gitee MCP Server",
+  "description": "Gitee MCP Server is a Model Context Protocol (MCP) server implementation for Gitee. It provides a set of tools for interacting with Gitee's API, allowing AI assistants to manage repositories, issues, pull requests, and more.",
+  "mcpversion": "1.0",
+  "serverversion": "latest",
+  "repository": {
+    "url": "https://github.com/oschina/mcp-gitee",
+    "name": "oschina/mcp-gitee"
+  },
+  "tools": [
+    {
+      "name": "list_user_repos",
+      "description": "List user authorized repositories",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_file_content",
+      "description": "Get the content of a file in a repository",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_user_repo",
+      "description": "Create a user repository",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "create_org_repo",
+      "description": "Create an organization repository",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@gitee/mcp-gitee",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@gitee/mcp-gitee@latest"
+      ],
+      "env": [
+        {
+          "name": "GITEE_API_BASE",
+          "description": "Gitee API base URL",
+          "required": true,
+          "default": "https://gitee.com/api/v5"
+        },
+        {
+          "name": "GITEE_ACCESS_TOKEN",
+          "description": "Gitee access token",
+          "required": true
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "name": "github-actions-mcp-server",
+  "description": "MCP Server for the GitHub Actions API, enabling AI assistants to manage and operate GitHub Actions workflows.",
+  "mcpversion": "1.0.0",
+  "serverversion": "0.0.1",
+  "tools": [
+    {
+      "name": "list_workflows",
+      "description": "List workflows in a GitHub repository",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_workflow",
+      "description": "Get details of a specific workflow",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_workflow_usage",
+      "description": "Get usage statistics of a workflow",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_workflow_runs",
+      "description": "List all workflow runs for a repository or a specific workflow",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_workflow_run",
+      "description": "Get details of a specific workflow run",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_workflow_run_jobs",
+      "description": "Get jobs for a specific workflow run",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "trigger_workflow",
+      "description": "Trigger a workflow run",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "cancel_workflow_run",
+      "description": "Cancel a workflow run",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "rerun_workflow",
+      "description": "Re-run a workflow run",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "github-actions-mcp-server",
+      "packageversion": "0.0.1",
+      "command": "node",
+      "args": [],
+      "env": []
+    }
+  },
+  "repository": {
+    "url": "https://github.com/ko1ynnky/github-actions-mcp-server",
+    "name": "ko1ynnky/github-actions-mcp-server"
+  }
+}

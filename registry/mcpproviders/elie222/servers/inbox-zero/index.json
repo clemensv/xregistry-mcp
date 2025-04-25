@@ -1,0 +1,84 @@
+{
+  "name": "inbox-zero-ai",
+  "description": "AI email assistant MCP server providing email management tools such as reply tracking and follow-up reminders.",
+  "mcpversion": "1.0",
+  "serverversion": "0.0.1",
+  "repository": {
+    "url": "https://github.com/elie222/inbox-zero",
+    "name": "elie222/inbox-zero"
+  },
+  "docs": "https://docs.getinboxzero.com",
+  "tools": [
+    {
+      "name": "get-emails-needing-reply",
+      "description": "Get emails needing reply",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "olderThan": {
+            "type": "string",
+            "enum": [
+              "3d",
+              "1w",
+              "2w",
+              "1m"
+            ],
+            "description": "Time range to look back"
+          }
+        },
+        "required": [
+          "olderThan"
+        ]
+      }
+    },
+    {
+      "name": "get-emails-needing-follow-up",
+      "description": "Get emails needing follow-up",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "olderThan": {
+            "type": "string",
+            "enum": [
+              "3d",
+              "1w",
+              "2w",
+              "1m"
+            ],
+            "description": "Time range to look back"
+          }
+        },
+        "required": [
+          "olderThan"
+        ]
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@modelcontextprotocol/sdk",
+      "command": "node",
+      "args": [
+        "server.js"
+      ],
+      "env": [
+        {
+          "name": "API_BASE",
+          "description": "Base URL for Inbox Zero API",
+          "required": false
+        },
+        {
+          "name": "API_KEY",
+          "description": "API key for Inbox Zero API",
+          "required": true
+        }
+      ]
+    }
+  }
+}

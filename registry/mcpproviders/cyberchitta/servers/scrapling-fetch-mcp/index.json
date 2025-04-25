@@ -1,0 +1,81 @@
+{
+  "name": "Scrapling Fetch MCP",
+  "description": "An MCP server that helps AI assistants access text content from websites that implement bot detection, bridging the gap between what you can see in your browser and what the AI can access.",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/cyberchitta/scrapling-fetch-mcp",
+    "name": "cyberchitta/scrapling-fetch-mcp"
+  },
+  "tools": [
+    {
+      "name": "s-fetch-page",
+      "description": "Retrieves complete web pages with pagination support",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "start_index": {
+            "type": "integer"
+          },
+          "max_length": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "url",
+          "mode"
+        ]
+      }
+    },
+    {
+      "name": "s-fetch-pattern",
+      "description": "Extracts content matching regex patterns with surrounding context",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "search_pattern": {
+            "type": "string"
+          },
+          "context_chars": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "url",
+          "mode",
+          "search_pattern",
+          "context_chars"
+        ]
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "python",
+      "package": "scrapling-fetch-mcp",
+      "packageversion": null,
+      "command": "uvx",
+      "args": [
+        "scrapling-fetch-mcp"
+      ],
+      "env": []
+    }
+  }
+}

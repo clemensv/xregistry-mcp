@@ -1,0 +1,75 @@
+{
+  "name": "Datadog MCP Server",
+  "description": "A Model Context Protocol (MCP) server for interacting with the Datadog API.",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/GeLi2001/datadog-mcp-server",
+    "name": "GeLi2001/datadog-mcp-server"
+  },
+  "tools": [
+    {
+      "name": "get-monitors",
+      "description": "Fetch monitors with optional filtering",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-monitor",
+      "description": "Get details of a specific monitor by ID",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-dashboards",
+      "description": "List all dashboards",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get-dashboard",
+      "description": "Get a specific dashboard by ID",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "nodejs",
+      "package": "datadog-mcp-server",
+      "command": "datadog-mcp-server",
+      "args": [],
+      "env": [
+        {
+          "name": "DD_API_KEY",
+          "description": "Datadog API key",
+          "required": true
+        },
+        {
+          "name": "DD_APP_KEY",
+          "description": "Datadog Application key",
+          "required": true
+        },
+        {
+          "name": "DD_SITE",
+          "description": "Datadog site domain",
+          "required": false
+        },
+        {
+          "name": "DD_LOGS_SITE",
+          "description": "Datadog logs site domain",
+          "required": false
+        },
+        {
+          "name": "DD_METRICS_SITE",
+          "description": "Datadog metrics site domain",
+          "required": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Lingo.dev",
+  "description": "Lingo.dev MCP Server providing AI-powered localization tools via Model Context Protocol.",
+  "mcpversion": "1.0.0",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "name": "translate",
+      "description": "Detect language and translate text with Lingo.dev.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "targetLocale": {
+            "type": "string",
+            "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+          }
+        },
+        "required": [
+          "text",
+          "targetLocale"
+        ]
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@lingo.dev/cli",
+      "command": "npx lingo.dev mcp",
+      "args": [],
+      "env": []
+    }
+  },
+  "repository": {
+    "url": "https://github.com/lingodotdev/lingo.dev",
+    "name": "lingodotdev/lingo.dev"
+  }
+}

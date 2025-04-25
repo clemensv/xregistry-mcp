@@ -1,0 +1,68 @@
+{
+  "name": "discourse",
+  "description": "Node.js server implementing Model Context Protocol (MCP) for Discourse search operation.",
+  "mcpversion": "1.0.0",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "name": "search_posts",
+      "description": "Search Discourse posts",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 5,
+            "description": "Query"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "nodejs",
+      "package": "@ashdev/discourse-mcp-server",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@ashdev/discourse-mcp-server"
+      ],
+      "env": [
+        {
+          "name": "DISCOURSE_API_URL",
+          "required": true
+        },
+        {
+          "name": "DISCOURSE_API_KEY",
+          "required": false
+        },
+        {
+          "name": "DISCOURSE_API_USERNAME",
+          "required": false
+        }
+      ]
+    },
+    "container": {
+      "image": "ashdev/discourse-mcp-server",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "DISCOURSE_API_URL=https://try.discourse.org",
+        "-e",
+        "DISCOURSE_API_KEY=1234",
+        "-e",
+        "DISCOURSE_API_USERNAME=ash"
+      ]
+    }
+  },
+  "repository": {
+    "url": "https://github.com/AshDevFr/discourse-mcp-server",
+    "name": "AshDevFr/discourse-mcp-server"
+  }
+}

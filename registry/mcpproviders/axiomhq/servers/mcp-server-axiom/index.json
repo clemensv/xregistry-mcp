@@ -1,0 +1,60 @@
+{
+  "name": "mcp-server-axiom",
+  "description": "A Model Context Protocol server implementation for Axiom that enables AI agents to query your data using Axiom Processing Language (APL). Works with Claude desktop app. Implements two MCP tools: queryApl and listDatasets. No support for MCP resources or prompts yet.",
+  "mcpversion": "1.0",
+  "serverversion": "latest",
+  "repository": {
+    "url": "https://github.com/axiomhq/mcp-server-axiom",
+    "name": "axiomhq/mcp-server-axiom"
+  },
+  "tools": [
+    {
+      "name": "queryApl",
+      "description": "Execute APL queries against Axiom datasets",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "listDatasets",
+      "description": "List available Axiom datasets",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "cli",
+      "package": "github.com/axiomhq/axiom-mcp",
+      "command": "axiom-mcp",
+      "args": [
+        "--config",
+        "/path/to/your/config.txt"
+      ],
+      "env": [
+        {
+          "name": "AXIOM_TOKEN"
+        },
+        {
+          "name": "AXIOM_URL"
+        },
+        {
+          "name": "AXIOM_ORG_ID"
+        },
+        {
+          "name": "AXIOM_QUERY_RATE"
+        },
+        {
+          "name": "AXIOM_QUERY_BURST"
+        },
+        {
+          "name": "AXIOM_DATASETS_RATE"
+        },
+        {
+          "name": "AXIOM_DATASETS_BURST"
+        }
+      ]
+    }
+  }
+}

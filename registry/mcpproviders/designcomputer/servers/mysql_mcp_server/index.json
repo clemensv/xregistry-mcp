@@ -1,0 +1,83 @@
+{
+  "name": "MySQL MCP Server",
+  "description": "A Model Context Protocol (MCP) implementation that enables secure interaction with MySQL databases. This server component facilitates communication between AI applications (hosts/clients) and MySQL databases, making database exploration and analysis safer and more structured through a controlled interface.",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/designcomputer/mysql_mcp_server",
+    "name": "designcomputer/mysql_mcp_server"
+  },
+  "tools": [
+    {
+      "name": "execute_sql",
+      "description": "Execute an SQL query on the MySQL server",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The SQL query to execute"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "mysql://{table}/data",
+      "name": "Table",
+      "description": "Data in table: {table}",
+      "mimetype": "text/plain"
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "mysql-mcp-server",
+      "command": "uv",
+      "args": [
+        "--directory",
+        "path/to/mysql_mcp_server",
+        "run",
+        "mysql_mcp_server"
+      ],
+      "env": [
+        {
+          "name": "MYSQL_HOST",
+          "description": "Database host",
+          "required": true,
+          "default": "localhost"
+        },
+        {
+          "name": "MYSQL_PORT",
+          "description": "Database port",
+          "required": false,
+          "default": "3306"
+        },
+        {
+          "name": "MYSQL_USER",
+          "description": "Database user",
+          "required": true
+        },
+        {
+          "name": "MYSQL_PASSWORD",
+          "description": "Database password",
+          "required": true
+        },
+        {
+          "name": "MYSQL_DATABASE",
+          "description": "Database name",
+          "required": true
+        }
+      ]
+    }
+  }
+}

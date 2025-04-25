@@ -1,0 +1,60 @@
+{
+  "name": "Basic Memory",
+  "description": "Basic Memory lets you build persistent knowledge through natural conversations with Large Language Models (LLMs) like Claude, while keeping everything in simple Markdown files on your computer. It uses the Model Context Protocol (MCP) to enable any compatible LLM to read and write to your local knowledge base.",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/basicmachines-co/basic-memory",
+    "name": "basicmachines-co/basic-memory"
+  },
+  "docs": "https://memory.basicmachines.co",
+  "tools": [
+    {
+      "name": "recent_activity",
+      "description": "Get recent activity from across the knowledge base.\n\nTimeframe supports natural language formats like:\n- \"2 days ago\"  \n- \"last week\"\n- \"yesterday\" \n- \"today\"\n- \"3 weeks ago\"\nOr standard formats like \"7d\"",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "depth": {
+            "type": "integer"
+          },
+          "timeframe": {
+            "type": "string"
+          },
+          "page": {
+            "type": "integer"
+          },
+          "page_size": {
+            "type": "integer"
+          },
+          "max_related": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "python",
+      "package": "basic-memory",
+      "command": "basic-memory",
+      "args": [
+        "mcp"
+      ],
+      "env": []
+    }
+  }
+}

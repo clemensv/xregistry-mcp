@@ -1,0 +1,82 @@
+{
+  "name": "mcp-aiven",
+  "description": "A Model Context Protocol (MCP) server for Aiven providing access to Aiven services such as PostgreSQL, Kafka, ClickHouse, Valkey and OpenSearch, enabling LLMs to build full stack solutions.",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/Aiven-Open/mcp-aiven",
+    "name": "Aiven-Open/mcp-aiven"
+  },
+  "tools": [
+    {
+      "name": "list_projects",
+      "description": "List all projects on your Aiven account.",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "list_services",
+      "description": "List all services in a specific Aiven project.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "project_name": {
+            "type": "string",
+            "description": "Name of the Aiven project to list services for."
+          }
+        },
+        "required": [
+          "project_name"
+        ]
+      }
+    },
+    {
+      "name": "get_service_details",
+      "description": "Get the detail of your service in a specific Aiven project.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "project_name": {
+            "type": "string",
+            "description": "Name of the Aiven project."
+          },
+          "service_name": {
+            "type": "string",
+            "description": "Name of the service within the project."
+          }
+        },
+        "required": [
+          "project_name",
+          "service_name"
+        ]
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "python",
+      "package": "mcp-aiven",
+      "command": "mcp",
+      "args": [
+        "dev",
+        "mcp_aiven/mcp_server.py"
+      ],
+      "env": [
+        {
+          "name": "AIVEN_BASE_URL",
+          "description": "The Aiven API url",
+          "required": true,
+          "default": "https://api.aiven.io"
+        },
+        {
+          "name": "AIVEN_TOKEN",
+          "description": "The authentication token",
+          "required": true
+        }
+      ]
+    }
+  }
+}

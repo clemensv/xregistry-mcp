@@ -1,0 +1,109 @@
+{
+  "name": "redis",
+  "description": "A Redis Model Context Protocol (MCP) server implementation for interacting with Redis databases. This server enables LLMs to interact with Redis key-value stores through a set of standardized tools.",
+  "mcpversion": "1.0.0",
+  "serverversion": "1.0.0",
+  "repository": {
+    "url": "https://github.com/GongRzhe/REDIS-MCP-Server",
+    "name": "GongRzhe/REDIS-MCP-Server"
+  },
+  "tools": [
+    {
+      "name": "set",
+      "description": "Set a Redis key-value pair with optional expiration",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Redis key"
+          },
+          "value": {
+            "type": "string",
+            "description": "Value to store"
+          },
+          "expireSeconds": {
+            "type": "number",
+            "description": "Optional expiration time in seconds"
+          }
+        },
+        "required": [
+          "key",
+          "value"
+        ]
+      }
+    },
+    {
+      "name": "get",
+      "description": "Get value by key from Redis",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "Redis key to retrieve"
+          }
+        },
+        "required": [
+          "key"
+        ]
+      }
+    },
+    {
+      "name": "delete",
+      "description": "Delete one or more keys from Redis",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "description": "Key or array of keys to delete"
+          }
+        },
+        "required": [
+          "key"
+        ]
+      }
+    },
+    {
+      "name": "list",
+      "description": "List Redis keys matching a pattern",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "pattern": {
+            "type": "string",
+            "description": "Pattern to match keys (default: *)"
+          }
+        }
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@gongrzhe/server-redis-mcp",
+      "packageversion": "1.0.0",
+      "command": "npx",
+      "args": [
+        "@gongrzhe/server-redis-mcp@1.0.0",
+        "redis://localhost:6379"
+      ]
+    }
+  }
+}

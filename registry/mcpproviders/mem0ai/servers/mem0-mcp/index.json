@@ -1,0 +1,87 @@
+{
+  "name": "mem0",
+  "description": "This demonstrates a structured approach for using an MCP server with mem0 to manage coding preferences efficiently. The server provides tools for storing, retrieving, and searching coding preferences and exposes an SSE endpoint for MCP clients.",
+  "mcpversion": "1.0.0",
+  "serverversion": "1.0.0",
+  "repository": {
+    "url": "https://github.com/mem0ai/mem0-mcp",
+    "name": "mem0ai/mem0-mcp"
+  },
+  "tools": [
+    {
+      "name": "add-memory",
+      "description": "Add a new memory. This method is called everytime the user informs anything about themselves, their preferences, or anything that has any relevent information whcih can be useful in the future conversation. This can also be called when the user asks you to remember something.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "description": "The content to store in memory"
+          },
+          "userId": {
+            "type": "string",
+            "description": "User ID for memory storage. If not provided explicitly, use a generic user ID like, 'mem0-mcp-user'"
+          }
+        },
+        "required": [
+          "content",
+          "userId"
+        ]
+      },
+      "annotations": {}
+    },
+    {
+      "name": "search-memories",
+      "description": "Search through stored memories. This method is called ANYTIME the user asks anything.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The search query. This is the query that the user has asked for. Example: 'What did I tell you about the weather last week?' or 'What did I tell you about my friend John?'"
+          },
+          "userId": {
+            "type": "string",
+            "description": "User ID for memory storage. If not provided explicitly, use a generic user ID like, 'mem0-mcp-user\""
+          }
+        },
+        "required": [
+          "query",
+          "userId"
+        ]
+      },
+      "annotations": {}
+    }
+  ],
+  "resources": [],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    },
+    "http": {
+      "uri": "http://0.0.0.0:8080/sse",
+      "authorization": {
+        "type": "none",
+        "required": false
+      }
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "nodejs",
+      "package": "@modelcontextprotocol/sdk",
+      "command": "uv",
+      "args": [
+        "run",
+        "main.py"
+      ],
+      "env": [
+        {
+          "name": "MEM0_API_KEY",
+          "description": "API key for mem0 client",
+          "required": true
+        }
+      ]
+    }
+  }
+}

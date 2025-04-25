@@ -1,0 +1,78 @@
+{
+  "name": "search-server",
+  "description": "A Model Context Protocol server that provides web search capabilities using Google Custom Search API and webpage content extraction functionality.",
+  "mcpversion": "1.0",
+  "serverversion": "0.1.0",
+  "tools": [
+    {
+      "name": "search",
+      "description": "Perform a web search query",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query"
+          },
+          "num": {
+            "type": "number",
+            "description": "Number of results (1-10)",
+            "minimum": 1,
+            "maximum": 10
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "read_webpage",
+      "description": "Fetch and extract text content from a webpage",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL of the webpage to read"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@adenot/mcp-google-search",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@adenot/mcp-google-search"
+      ],
+      "env": [
+        {
+          "name": "GOOGLE_API_KEY",
+          "description": "Google API Key for Custom Search",
+          "required": true
+        },
+        {
+          "name": "GOOGLE_SEARCH_ENGINE_ID",
+          "description": "Google Custom Search Engine ID",
+          "required": true
+        }
+      ]
+    }
+  },
+  "repository": {
+    "url": "https://github.com/adenot/mcp-google-search",
+    "name": "adenot/mcp-google-search"
+  }
+}

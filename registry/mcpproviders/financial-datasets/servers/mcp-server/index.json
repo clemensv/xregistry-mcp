@@ -1,0 +1,239 @@
+{
+  "name": "Financial Datasets MCP Server",
+  "description": "This is a Model Context Protocol (MCP) server that provides access to stock market data from Financial Datasets. It allows Claude and other AI assistants to retrieve income statements, balance sheets, cash flow statements, stock prices, and market news directly through the MCP interface.",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/financial-datasets/mcp-server",
+    "name": "financial-datasets/mcp-server"
+  },
+  "tools": [
+    {
+      "name": "get_income_statements",
+      "description": "Get income statements for a company.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string"
+          },
+          "period": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ticker"
+        ]
+      }
+    },
+    {
+      "name": "get_balance_sheets",
+      "description": "Get balance sheets for a company.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string"
+          },
+          "period": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ticker"
+        ]
+      }
+    },
+    {
+      "name": "get_cash_flow_statements",
+      "description": "Get cash flow statements for a company.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string"
+          },
+          "period": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ticker"
+        ]
+      }
+    },
+    {
+      "name": "get_current_stock_price",
+      "description": "Get the current / latest price of a company.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticker"
+        ]
+      }
+    },
+    {
+      "name": "get_historical_stock_prices",
+      "description": "Gets historical stock prices for a company.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string"
+          },
+          "start_date": {
+            "type": "string"
+          },
+          "end_date": {
+            "type": "string"
+          },
+          "interval": {
+            "type": "string"
+          },
+          "interval_multiplier": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ticker",
+          "start_date",
+          "end_date"
+        ]
+      }
+    },
+    {
+      "name": "get_company_news",
+      "description": "Get news for a company.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticker"
+        ]
+      }
+    },
+    {
+      "name": "get_available_crypto_tickers",
+      "description": "Gets all available crypto tickers.",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "get_crypto_prices",
+      "description": "Gets historical prices for a crypto currency.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string"
+          },
+          "start_date": {
+            "type": "string"
+          },
+          "end_date": {
+            "type": "string"
+          },
+          "interval": {
+            "type": "string"
+          },
+          "interval_multiplier": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ticker",
+          "start_date",
+          "end_date"
+        ]
+      }
+    },
+    {
+      "name": "get_historical_crypto_prices",
+      "description": "Gets historical prices for a crypto currency.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string"
+          },
+          "start_date": {
+            "type": "string"
+          },
+          "end_date": {
+            "type": "string"
+          },
+          "interval": {
+            "type": "string"
+          },
+          "interval_multiplier": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "ticker",
+          "start_date",
+          "end_date"
+        ]
+      }
+    },
+    {
+      "name": "get_current_crypto_price",
+      "description": "Get the current / latest price of a crypto currency.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticker"
+        ]
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "python",
+      "package": "financial-datasets-mcp-server",
+      "command": "uv",
+      "args": [
+        "run",
+        "server.py"
+      ],
+      "env": [
+        {
+          "name": "FINANCIAL_DATASETS_API_KEY",
+          "description": "API key for Financial Datasets API",
+          "required": true
+        }
+      ]
+    }
+  }
+}

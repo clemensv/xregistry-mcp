@@ -1,0 +1,93 @@
+{
+  "name": "paddle",
+  "description": "This is a Model Context Protocol (MCP) server that provides tools for interacting with the Paddle API.",
+  "mcpversion": "1.0",
+  "serverversion": "0.1.2",
+  "repository": {
+    "url": "https://github.com/PaddleHQ/paddle-mcp-server",
+    "name": "PaddleHQ/paddle-mcp-server"
+  },
+  "tools": [
+    {
+      "name": "listProducts",
+      "description": "List products in your Paddle catalog",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "createProduct",
+      "description": "Create new products",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "listPrices",
+      "description": "List prices for products",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "createPrice",
+      "description": "Create new prices for products",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "listCustomers",
+      "description": "List customers",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "listTransactions",
+      "description": "List transactions",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "listSubscriptions",
+      "description": "List subscriptions",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "createCustomReport",
+      "description": "Create custom reports for financial analysis",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@paddle/paddle-mcp",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@paddle/paddle-mcp",
+        "--api-key=PADDLE_API_KEY",
+        "--environment=(sandbox|production)"
+      ],
+      "env": [
+        {
+          "name": "PADDLE_API_KEY",
+          "description": "API key for Paddle MCP server",
+          "required": true
+        },
+        {
+          "name": "PADDLE_ENVIRONMENT",
+          "description": "Environment to use: sandbox or production",
+          "required": true
+        }
+      ]
+    }
+  }
+}

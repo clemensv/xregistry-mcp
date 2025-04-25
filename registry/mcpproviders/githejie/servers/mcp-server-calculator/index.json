@@ -1,0 +1,36 @@
+{
+  "name": "Calculator MCP Server",
+  "description": "A Model Context Protocol server for calculating. This server enables LLMs to use calculator for precise numerical calculations.",
+  "mcpversion": "unknown",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "name": "calculate",
+      "description": "Calculates/evaluates the given expression.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "expression": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "expression"
+        ]
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "uvx",
+      "package": "mcp-server-calculator",
+      "command": "mcp-server-calculator",
+      "args": [],
+      "env": []
+    }
+  },
+  "repository": {
+    "url": "https://github.com/githejie/mcp-server-calculator",
+    "name": "githejie/mcp-server-calculator"
+  }
+}

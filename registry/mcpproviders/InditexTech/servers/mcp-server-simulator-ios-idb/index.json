@@ -1,0 +1,46 @@
+{
+  "name": "iOS Simulator MCP Server",
+  "description": "A Model Context Protocol (MCP) server that enables LLMs to interact with iOS simulators through natural language commands.",
+  "mcpversion": "1.0.1",
+  "serverversion": "1.0.1",
+  "repository": {
+    "url": "https://github.com/InditexTech/mcp-server-simulator-ios-idb",
+    "name": "InditexTech/mcp-server-simulator-ios-idb"
+  },
+  "tools": [
+    {
+      "name": "process-instruction",
+      "description": "Main tool for processing natural language instructions",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "instruction": {
+            "type": "string",
+            "description": "Text instruction to process"
+          }
+        },
+        "required": [
+          "instruction"
+        ]
+      },
+      "annotations": {}
+    }
+  ],
+  "resources": [],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "mcp-server-simulator-ios-idb",
+      "command": "node",
+      "args": [
+        "/path/to/mcp-server-simulator-ios-idb/dist/index.js"
+      ],
+      "env": []
+    }
+  }
+}

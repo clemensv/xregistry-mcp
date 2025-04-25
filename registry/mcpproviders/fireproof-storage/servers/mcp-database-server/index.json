@@ -1,0 +1,88 @@
+{
+  "name": "json-doc-server",
+  "description": "Simple JSON document server with basic CRUD operations using Fireproof database in a Model Context Protocol server.",
+  "mcpversion": "1.0",
+  "serverversion": "0.1.0",
+  "tools": [
+    {
+      "name": "save_json_doc",
+      "description": "Save a JSON document",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "doc": {
+            "type": "object",
+            "description": "JSON document to save"
+          }
+        },
+        "required": [
+          "doc"
+        ]
+      }
+    },
+    {
+      "name": "load_json_doc",
+      "description": "Load a JSON document by ID",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID of document to load"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "delete_json_doc",
+      "description": "Delete a JSON document by ID",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID of document to delete"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      }
+    },
+    {
+      "name": "query_json_docs",
+      "description": "Query JSON documents sorted by a field",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "sort_field": {
+            "type": "string",
+            "description": "Field to sort results by"
+          }
+        },
+        "required": [
+          "sort_field"
+        ]
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "fireproof-mcp",
+      "command": "/path/to/fireproof-mcp/build/index.js"
+    }
+  },
+  "repository": {
+    "url": "https://github.com/fireproof-storage/mcp-database-server",
+    "name": "fireproof-storage/mcp-database-server"
+  }
+}

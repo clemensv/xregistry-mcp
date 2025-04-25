@@ -1,0 +1,89 @@
+{
+  "name": "Python LINE MCP Server",
+  "description": "A Model Context Protocol server implementation in Python that provides access to LINE Bot messages. This server enables Language Models to read and analyze LINE conversations through a standardized interface.",
+  "mcpversion": "1.2.0",
+  "serverversion": "1.0.0",
+  "repository": {
+    "url": "https://github.com/amornpan/py-mcp-line",
+    "name": "amornpan/py-mcp-line"
+  },
+  "resources": [
+    {
+      "uritemplate": "line://{message_type}/data",
+      "name": "LINE Bot messages",
+      "description": "Lists available message types from the LINE Bot and provides access to messages such as text, sticker, and image messages in JSON format.",
+      "mimetype": "application/json"
+    }
+  ],
+  "tools": [],
+  "endpoints": {
+    "http": {
+      "uri": "http://localhost:8000",
+      "authorization": {
+        "type": "none",
+        "required": false
+      }
+    }
+  },
+  "deployment": {
+    "container": {
+      "image": "python:3.8-slim",
+      "args": [
+        "uvicorn",
+        "src.line.server:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000"
+      ],
+      "env": [
+        {
+          "name": "LINE_CHANNEL_SECRET",
+          "required": true
+        },
+        {
+          "name": "LINE_ACCESS_TOKEN",
+          "required": true
+        },
+        {
+          "name": "SERVER_PORT",
+          "required": true,
+          "default": "8000"
+        },
+        {
+          "name": "MESSAGES_FILE",
+          "required": true,
+          "default": "data/messages.json"
+        }
+      ]
+    },
+    "sandbox": {
+      "runtime": "python",
+      "package": "py-mcp-line",
+      "command": "python",
+      "args": [
+        "src/line/server.py"
+      ],
+      "env": [
+        {
+          "name": "LINE_CHANNEL_SECRET",
+          "required": true
+        },
+        {
+          "name": "LINE_ACCESS_TOKEN",
+          "required": true
+        },
+        {
+          "name": "SERVER_PORT",
+          "required": true,
+          "default": "8000"
+        },
+        {
+          "name": "MESSAGES_FILE",
+          "required": true,
+          "default": "data/messages.json"
+        }
+      ]
+    }
+  }
+}

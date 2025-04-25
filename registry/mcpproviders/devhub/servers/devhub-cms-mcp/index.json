@@ -1,0 +1,81 @@
+{
+  "name": "DevHub CMS MCP",
+  "description": "Integration with DevHub CMS to manage content",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/devhub/devhub-cms-mcp",
+    "name": "devhub/devhub-cms-mcp"
+  },
+  "tools": [
+    {
+      "name": "get_hours_of_operation",
+      "description": "Get the hours of operation for a DevHub location"
+    },
+    {
+      "name": "get_businesses",
+      "description": "Get all businesses within the DevHub account"
+    },
+    {
+      "name": "get_locations",
+      "description": "Get all locations for a business"
+    },
+    {
+      "name": "update_hours",
+      "description": "Update the hours of operation for a DevHub location"
+    },
+    {
+      "name": "site_from_url",
+      "description": "Get the DevHub site ID from a URL."
+    },
+    {
+      "name": "upload_image",
+      "description": "Upload an image to the DevHub media gallery"
+    },
+    {
+      "name": "get_blog_post",
+      "description": "Get a single blog post"
+    },
+    {
+      "name": "create_blog_post",
+      "description": "Create a new blog post"
+    },
+    {
+      "name": "update_blog_post",
+      "description": "Update a single blog post"
+    },
+    {
+      "name": "get_nearest_location",
+      "description": "Get the nearest DevHub location"
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "uv",
+      "package": "devhub-cms-mcp",
+      "command": "uvx",
+      "args": [
+        "devhub-cms-mcp"
+      ],
+      "env": [
+        {
+          "name": "DEVHUB_API_KEY",
+          "required": true
+        },
+        {
+          "name": "DEVHUB_API_SECRET",
+          "required": true
+        },
+        {
+          "name": "DEVHUB_BASE_URL",
+          "required": true
+        }
+      ]
+    }
+  }
+}

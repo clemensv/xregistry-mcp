@@ -1,0 +1,25 @@
+{
+  "name": "Chargebee MCP Server",
+  "description": "MCP server for interacting with Chargebee",
+  "mcpversion": "unknown",
+  "serverversion": "unknown",
+  "tools": [],
+  "deployment": {
+    "sandbox": {
+      "runtime": "nodejs",
+      "package": "chargebee-agentkit",
+      "command": "chargebee-mcp",
+      "args": [],
+      "env": []
+    }
+  },
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "repository": {
+    "url": "https://github.com/chargebee/agentkit",
+    "name": "chargebee/agentkit"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "integration-app-hubspot",
+  "description": "Working with HubSpot.",
+  "mcpversion": "1.0.0",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "name": "action key placeholder",
+      "description": "action name placeholder",
+      "inputschema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@integration-app/mcp-server",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@integration-app/mcp-server"
+      ],
+      "env": [
+        {
+          "name": "INTEGRATION_APP_TOKEN",
+          "description": "token for accessing Integration App API",
+          "required": true
+        },
+        {
+          "name": "INTEGRATION_KEY",
+          "description": "key of the integration you want to use tools for",
+          "required": true
+        }
+      ]
+    }
+  },
+  "repository": {
+    "url": "https://github.com/integration-app/mcp-server",
+    "name": "integration-app/mcp-server"
+  }
+}

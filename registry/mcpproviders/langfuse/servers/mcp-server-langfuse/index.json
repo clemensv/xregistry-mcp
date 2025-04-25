@@ -1,0 +1,84 @@
+{
+  "name": "langfuse-prompts",
+  "description": "Model Context Protocol (MCP) Server for Langfuse Prompt Management. This server allows access and management of Langfuse prompts through the MCP protocol, implementing the MCP Prompts specification for prompt discovery and retrieval.",
+  "mcpversion": "1.0.0",
+  "serverversion": "1.0.0",
+  "repository": {
+    "url": "https://github.com/langfuse/mcp-server-langfuse",
+    "name": "langfuse/mcp-server-langfuse"
+  },
+  "tools": [
+    {
+      "name": "get-prompts",
+      "description": "Get prompts that are stored in Langfuse",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "cursor": {
+            "type": "string",
+            "description": "Cursor to paginate through prompts",
+            "nullable": true
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "get-prompt",
+      "description": "Get a prompt that is stored in Langfuse",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the prompt to retrieve, use get-prompts to get a list of prompts"
+          },
+          "arguments": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Arguments with prompt variables to pass to the prompt template, json object, e.g. {\"<name>\":\"<value>\"}",
+            "nullable": true
+          }
+        },
+        "required": [
+          "name"
+        ]
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "langfuse/mcp-server-langfuse",
+      "command": "node",
+      "args": [
+        "build/index.js"
+      ],
+      "env": [
+        {
+          "name": "LANGFUSE_PUBLIC_KEY",
+          "description": "Your Langfuse public API key",
+          "required": true
+        },
+        {
+          "name": "LANGFUSE_SECRET_KEY",
+          "description": "Your Langfuse secret API key",
+          "required": true
+        },
+        {
+          "name": "LANGFUSE_BASEURL",
+          "description": "Base URL for Langfuse API",
+          "required": false,
+          "default": "https://cloud.langfuse.com"
+        }
+      ]
+    }
+  }
+}

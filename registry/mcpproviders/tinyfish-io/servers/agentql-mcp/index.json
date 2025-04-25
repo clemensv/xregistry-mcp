@@ -1,0 +1,55 @@
+{
+  "name": "agentql-mcp",
+  "description": "This is a Model Context Protocol (MCP) server that integrates AgentQL's data extraction capabilities.",
+  "mcpversion": "1.0.0",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "name": "extract-web-data",
+      "description": "Extracts structured data as JSON from a web page given a URL using a Natural Language description of the data.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "The URL of the public webpage to extract data from"
+          },
+          "prompt": {
+            "type": "string",
+            "description": "Natural Language description of the data to extract from the page"
+          }
+        },
+        "required": [
+          "url",
+          "prompt"
+        ]
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "nodejs",
+      "package": "agentql-mcp",
+      "command": "npx",
+      "args": [
+        "-y",
+        "agentql-mcp"
+      ],
+      "env": [
+        {
+          "name": "AGENTQL_API_KEY",
+          "required": true
+        }
+      ]
+    }
+  },
+  "repository": {
+    "url": "https://github.com/tinyfish-io/agentql-mcp",
+    "name": "tinyfish-io/agentql-mcp"
+  }
+}

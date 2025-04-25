@@ -1,0 +1,21 @@
+{
+  "name": "Ableton Live MCP Server",
+  "description": "The Ableton Live MCP Server is a server implementing the Model Context Protocol (MCP) to facilitate communication between LLMs and Ableton Live using OSC (Open Sound Control). It provides an MCP-compatible API for controlling Ableton Live from MCP clients.",
+  "mcpversion": "unspecified",
+  "serverversion": "unspecified",
+  "repository": {
+    "url": "https://github.com/Simon-Kansara/ableton-live-mcp-server",
+    "name": "Simon-Kansara/ableton-live-mcp-server"
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "python",
+      "package": "fastmcp",
+      "command": "uv run osc_daemon.py",
+      "args": [
+        "osc_daemon.py"
+      ],
+      "env": []
+    }
+  }
+}

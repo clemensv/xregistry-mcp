@@ -1,0 +1,55 @@
+{
+  "name": "APIMatic Validator MCP",
+  "description": "This repository provides a Model Context Protocol (MCP) Server for validating OpenAPI specifications using APIMatic. The server processes OpenAPI files and returns validation summaries by leveraging APIMatic\u2019s API.",
+  "mcpversion": "1.0.0",
+  "serverversion": "1.0.0",
+  "repository": {
+    "url": "https://github.com/apimatic/apimatic-validator-mcp",
+    "name": "apimatic/apimatic-validator-mcp"
+  },
+  "tools": [
+    {
+      "name": "validate-openapi-using-apimatic",
+      "description": "Get validation summary for your OpenAPI spec using APIMatic",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "openApiFile": {
+            "type": "string",
+            "description": "The OpenAPI file content as a string"
+          },
+          "isYaml": {
+            "type": "boolean",
+            "description": "Whether the OpenAPI file is in YAML format"
+          }
+        },
+        "required": [
+          "openApiFile",
+          "isYaml"
+        ]
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "nodejs",
+      "package": "apimatic-validator-mcp",
+      "command": "node",
+      "args": [
+        "build/index.js"
+      ],
+      "env": [
+        {
+          "name": "APIMATIC_API_KEY",
+          "description": "API key for APIMatic validation",
+          "required": true
+        }
+      ]
+    }
+  }
+}

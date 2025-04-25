@@ -1,0 +1,28 @@
+{
+  "name": "Mesh Agent MCP Server",
+  "description": "A Model Context Protocol (MCP) server that connects to Heurist Mesh APIs, providing Claude with access to various blockchain and web3 tools.",
+  "mcpversion": "unknown",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/heurist-network/heurist-mesh-mcp-server",
+    "name": "heurist-network/heurist-mesh-mcp-server"
+  },
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    },
+    "httplocal": {
+      "deployment": "container",
+      "port": 8000,
+      "host": "0.0.0.0",
+      "protocol": "http"
+    }
+  },
+  "deployment": {
+    "container": {
+      "image": "mesh-tool-server"
+    }
+  },
+  "tools": [],
+  "resources": []
+}

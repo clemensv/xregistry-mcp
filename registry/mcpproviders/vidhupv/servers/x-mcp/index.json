@@ -1,0 +1,128 @@
+{
+  "name": "x_mcp",
+  "description": "An MCP server to create, manage and publish X/Twitter posts directly through Claude chat.",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/vidhupv/x-mcp",
+    "name": "vidhupv/x-mcp"
+  },
+  "tools": [
+    {
+      "name": "create_draft_tweet",
+      "description": "Create a draft tweet",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "description": "The content of the tweet"
+          }
+        },
+        "required": [
+          "content"
+        ]
+      }
+    },
+    {
+      "name": "create_draft_thread",
+      "description": "Create a draft tweet thread",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "contents": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "An array of tweet contents for the thread"
+          }
+        },
+        "required": [
+          "contents"
+        ]
+      }
+    },
+    {
+      "name": "list_drafts",
+      "description": "List all draft tweets and threads",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "publish_draft",
+      "description": "Publish a draft tweet or thread",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "draft_id": {
+            "type": "string",
+            "description": "ID of the draft to publish"
+          }
+        },
+        "required": [
+          "draft_id"
+        ]
+      }
+    },
+    {
+      "name": "delete_draft",
+      "description": "Delete a draft tweet or thread",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "draft_id": {
+            "type": "string",
+            "description": "ID of the draft to delete"
+          }
+        },
+        "required": [
+          "draft_id"
+        ]
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "x-mcp",
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/path/to/x-mcp",
+        "run",
+        "x-mcp"
+      ],
+      "env": [
+        {
+          "name": "TWITTER_API_KEY",
+          "description": "Twitter API key",
+          "required": true
+        },
+        {
+          "name": "TWITTER_API_SECRET",
+          "description": "Twitter API secret",
+          "required": true
+        },
+        {
+          "name": "TWITTER_ACCESS_TOKEN",
+          "description": "Twitter access token",
+          "required": true
+        },
+        {
+          "name": "TWITTER_ACCESS_TOKEN_SECRET",
+          "description": "Twitter access token secret",
+          "required": true
+        }
+      ]
+    }
+  },
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  }
+}

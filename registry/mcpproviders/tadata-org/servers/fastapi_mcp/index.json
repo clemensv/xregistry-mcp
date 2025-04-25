@@ -1,0 +1,31 @@
+{
+  "name": "FastAPI MCP",
+  "description": "Expose your FastAPI endpoints as Model Context Protocol (MCP) tools, with Auth!",
+  "mcpversion": "2025-03-26",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/tadata-org/fastapi_mcp",
+    "name": "tadata-org/fastapi_mcp"
+  },
+  "docs": "https://fastapi-mcp.tadata.com/",
+  "tools": [],
+  "resources": [],
+  "endpoints": {
+    "http": {
+      "uri": "http://apiserver/mcp",
+      "authorization": {
+        "type": "header",
+        "required": true
+      },
+      "openapi": {
+        "url": "http://apiserver/openapi.json",
+        "description": "OpenAPI schema for FastAPI app"
+      }
+    },
+    "websockets": null,
+    "mqtt": null,
+    "httplocal": null,
+    "stdio": null
+  },
+  "deployment": {}
+}

@@ -1,0 +1,64 @@
+{
+  "name": "nationalparks-mcp-server",
+  "description": "MCP Server for the National Park Service (NPS) API, providing real-time information about U.S. National Parks, including park details, alerts, and activities.",
+  "mcpversion": "unknown",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "name": "findParks",
+      "description": "Search for national parks based on state, name, activities, or other criteria",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "getParkDetails",
+      "description": "Get detailed information about a specific national park",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "getAlerts",
+      "description": "Get current alerts for national parks including closures, hazards, and important information",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "getVisitorCenters",
+      "description": "Get information about visitor centers and their operating hours",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "getCampgrounds",
+      "description": "Get information about available campgrounds and their amenities",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "getEvents",
+      "description": "Find upcoming events at parks",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@KyrieTangSheng/mcp-server-nationalparks",
+      "packageversion": null,
+      "command": "node",
+      "args": [],
+      "env": []
+    }
+  },
+  "repository": {
+    "url": "https://github.com/KyrieTangSheng/mcp-server-nationalparks",
+    "name": "KyrieTangSheng/mcp-server-nationalparks"
+  }
+}

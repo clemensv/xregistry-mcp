@@ -1,0 +1,81 @@
+{
+  "name": "flightradar24-server",
+  "description": "A Claude Desktop MCP server that helps you track flights in real-time using Flightradar24 data. Perfect for aviation enthusiasts, travel planners, or anyone curious about flights overhead!",
+  "mcpversion": "1.0.0",
+  "serverversion": "1.0.0",
+  "repository": {
+    "url": "https://github.com/sunsetcoder/flightradar24-mcp-server",
+    "name": "sunsetcoder/flightradar24-mcp-server"
+  },
+  "tools": [
+    {
+      "name": "get_flight_positions",
+      "description": "Get real-time flight positions with various filtering options",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "airports": {
+            "type": "string",
+            "description": "Comma-separated list of airport ICAO codes"
+          },
+          "bounds": {
+            "type": "string",
+            "description": "Geographical bounds (lat1,lon1,lat2,lon2)"
+          },
+          "categories": {
+            "type": "string",
+            "description": "Aircraft categories (P,C,J)"
+          },
+          "limit": {
+            "type": "number",
+            "description": "Maximum number of results"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_flight_eta",
+      "description": "Get estimated arrival time for a specific flight",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "flightNumber": {
+            "type": "string",
+            "description": "Flight number (e.g., UA123)",
+            "pattern": "^[A-Z0-9]{2,8}$"
+          }
+        },
+        "required": [
+          "flightNumber"
+        ]
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@modelcontextprotocol/sdk",
+      "command": "node",
+      "args": [
+        "/Users/<username>/<FULL_PATH...>/flightradar24-mcp-server/dist/index.js"
+      ],
+      "env": [
+        {
+          "name": "FR24_API_KEY",
+          "description": "Flightradar24 API key",
+          "required": true
+        },
+        {
+          "name": "FR24_API_URL",
+          "description": "Flightradar24 API base URL",
+          "required": true
+        }
+      ]
+    }
+  }
+}

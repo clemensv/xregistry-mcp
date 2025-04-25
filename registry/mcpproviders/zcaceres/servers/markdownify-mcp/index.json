@@ -1,0 +1,179 @@
+{
+  "name": "mcp-markdownify-server",
+  "description": "Markdownify is a Model Context Protocol (MCP) server that converts various file types and web content to Markdown format. It provides a set of tools to transform PDFs, images, audio files, web pages, and more into easily readable and shareable Markdown text.",
+  "mcpversion": "1.0",
+  "serverversion": "0.1.0",
+  "tools": [
+    {
+      "name": "youtube-to-markdown",
+      "description": "Convert YouTube videos to Markdown",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "pdf-to-markdown",
+      "description": "Convert PDF files to Markdown",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ]
+      }
+    },
+    {
+      "name": "bing-search-to-markdown",
+      "description": "Convert Bing search results to Markdown",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "webpage-to-markdown",
+      "description": "Convert web pages to Markdown",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "image-to-markdown",
+      "description": "Convert images to Markdown with metadata",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ]
+      }
+    },
+    {
+      "name": "audio-to-markdown",
+      "description": "Convert audio files to Markdown with transcription",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ]
+      }
+    },
+    {
+      "name": "docx-to-markdown",
+      "description": "Convert DOCX files to Markdown",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ]
+      }
+    },
+    {
+      "name": "xlsx-to-markdown",
+      "description": "Convert XLSX files to Markdown",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ]
+      }
+    },
+    {
+      "name": "pptx-to-markdown",
+      "description": "Convert PPTX files to Markdown",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ]
+      }
+    },
+    {
+      "name": "get-markdown-file",
+      "description": "Retrieve an existing Markdown file",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "filepath": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath"
+        ]
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@modelcontextprotocol/mcp-markdownify-server",
+      "command": "node",
+      "args": [
+        "dist/index.js"
+      ],
+      "env": [
+        {
+          "name": "UV_PATH",
+          "description": "By default, the server will use the default install location of `uv`",
+          "required": false
+        }
+      ]
+    }
+  },
+  "repository": {
+    "url": "https://github.com/zcaceres/markdownify-mcp",
+    "name": "zcaceres/markdownify-mcp"
+  }
+}

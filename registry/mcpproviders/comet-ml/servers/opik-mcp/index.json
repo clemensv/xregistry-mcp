@@ -1,0 +1,72 @@
+{
+  "name": "Opik MCP",
+  "description": "A Model Context Protocol (MCP) implementation for the Opik platform. It provides a unified interface for interacting with Opik's capabilities, supporting multiple transport mechanisms for flexible integration into various environments.",
+  "mcpversion": "0.0.1",
+  "serverversion": "0.0.1",
+  "repository": {
+    "url": "https://github.com/comet-ml/opik-mcp",
+    "name": "comet-ml/opik-mcp"
+  },
+  "docs": "https://www.comet.com/docs/opik/?from=llm&utm_source=opik&utm_medium=github&utm_content=docs_button&utm_campaign=opik",
+  "tools": [
+    {
+      "name": "get_server_info",
+      "description": "Get information about the Opik server configuration",
+      "inputschema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "random_string": {
+            "type": "string",
+            "description": "Dummy parameter for no-parameter tools"
+          }
+        }
+      }
+    },
+    {
+      "name": "mcp__get_server_info",
+      "description": "Get information about the Opik server configuration",
+      "inputschema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "random_string": {
+            "type": "string",
+            "description": "Dummy parameter for no-parameter tools"
+          }
+        }
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    },
+    "http": {
+      "uri": "http://localhost:3001",
+      "authorization": {
+        "type": "none",
+        "required": false
+      }
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@comet-ml/opik-mcp",
+      "command": "node",
+      "args": [
+        "build/index.js",
+        "--debug",
+        "true"
+      ],
+      "env": [
+        {
+          "name": ".env",
+          "description": "Environment variables from .env file",
+          "required": false
+        }
+      ]
+    }
+  }
+}

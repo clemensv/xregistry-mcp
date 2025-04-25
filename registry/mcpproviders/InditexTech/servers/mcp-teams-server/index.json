@@ -1,0 +1,15 @@
+{
+  "name": "MCP Teams Server",
+  "description": "An MCP (Model Context Protocol) server implementation for Microsoft Teams integration, providing capabilities to read messages, create messages, reply to messages, mention members.",
+  "mcpversion": "1.0",
+  "serverversion": "latest",
+  "repository": {
+    "url": "https://github.com/InditexTech/mcp-teams-server",
+    "name": "InditexTech/mcp-teams-server"
+  },
+  "deployment": {
+    "container": {
+      "image": "ghcr.io/inditextech/mcp-teams-server:latest"
+    }
+  }
+}

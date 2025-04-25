@@ -1,0 +1,62 @@
+{
+  "name": "Amadeus MCP Server",
+  "description": "MCP-Amadeus is a community-developed Model Context Protocol (MCP) server that integrates with the Amadeus Flight Offers Search API to provide flight search capabilities through natural language interfaces. Built for use with MCP-compatible clients (e.g., Claude Desktop).",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/donghyun-chae/mcp-amadeus",
+    "name": "donghyun-chae/mcp-amadeus"
+  },
+  "tools": [
+    {
+      "name": "get_flight_offers",
+      "description": "Retrieves flight offers from the Amadeus Flight Offers Search API.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "origin": {
+            "type": "string"
+          },
+          "destination": {
+            "type": "string"
+          },
+          "departure_date": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "origin",
+          "destination",
+          "departure_date"
+        ]
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "uv",
+      "package": "@donghyun-chae/mcp-amadeus",
+      "command": "uv",
+      "args": [
+        "--directory",
+        "./src/",
+        "run",
+        "--env-file",
+        ".env",
+        "server.py"
+      ],
+      "env": [
+        {
+          "name": "AMADEUS_CLIENT_ID",
+          "description": "Amadeus API Client ID",
+          "required": true
+        },
+        {
+          "name": "AMADEUS_CLIENT_SECRET",
+          "description": "Amadeus API Client Secret",
+          "required": true
+        }
+      ]
+    }
+  }
+}

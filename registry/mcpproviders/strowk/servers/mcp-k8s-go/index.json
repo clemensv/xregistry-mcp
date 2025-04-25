@@ -1,0 +1,26 @@
+{
+  "name": "MCP K8S Go",
+  "description": "Golang-based MCP server connecting to Kubernetes. Provides listing and retrieval of Kubernetes contexts, namespaces, resources, nodes, pods, events, pod logs, and running commands in pods.",
+  "mcpversion": "unspecified",
+  "serverversion": "unspecified",
+  "repository": {
+    "url": "https://github.com/strowk/mcp-k8s-go",
+    "name": "strowk/mcp-k8s-go"
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@strowk/mcp-k8s",
+      "command": "npx",
+      "args": [
+        "@strowk/mcp-k8s"
+      ],
+      "env": []
+    },
+    "container": {
+      "image": "unspecified",
+      "args": [],
+      "env": []
+    }
+  }
+}

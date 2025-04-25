@@ -1,0 +1,76 @@
+{
+  "name": "hyperliquid",
+  "description": "An MCP server implementation that integrates the Hyperliquid SDK.",
+  "mcpversion": "0.0.1",
+  "serverversion": "0.0.1",
+  "tools": [
+    {
+      "name": "get_all_mids",
+      "description": "Retrieve mid prices for all coins on Hyperliquid",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_candle_snapshot",
+      "description": "Get historical candlestick data for any token",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "coin": {
+            "type": "string"
+          },
+          "interval": {
+            "type": "string"
+          },
+          "startTime": {
+            "type": "number"
+          },
+          "endTime": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "coin",
+          "interval",
+          "startTime"
+        ]
+      }
+    },
+    {
+      "name": "get_l2_book",
+      "description": "Access the L2 order book for any token",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@mektigboy/server-hyperliquid",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@mektigboy/server-hyperliquid"
+      ]
+    }
+  },
+  "repository": {
+    "url": "https://github.com/mektigboy/server-hyperliquid",
+    "name": "mektigboy/server-hyperliquid"
+  }
+}

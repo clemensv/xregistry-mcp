@@ -1,0 +1,63 @@
+{
+  "name": "qwen_max",
+  "description": "A Model Context Protocol (MCP) server implementation for the Qwen Max language model.",
+  "mcpversion": "1.0.0",
+  "serverversion": "1.0.0",
+  "repository": {
+    "url": "https://github.com/66julienmartin/MCP-server-Qwen_Max",
+    "name": "66julienmartin/MCP-server-Qwen_Max",
+    "subfolder": "Qwen_Max"
+  },
+  "tools": [
+    {
+      "name": "qwen_max",
+      "description": "Generate text using Qwen Max model",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "description": "The text prompt to generate content from"
+          },
+          "max_tokens": {
+            "type": "number",
+            "description": "Maximum number of tokens to generate",
+            "default": 8192
+          },
+          "temperature": {
+            "type": "number",
+            "description": "Sampling temperature (0-2)",
+            "default": 0.7,
+            "minimum": 0,
+            "maximum": 2
+          }
+        },
+        "required": [
+          "prompt"
+        ]
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "nodejs",
+      "package": "@66julienmartin/mcp-server-qwen_max",
+      "command": "node",
+      "args": [
+        "/path/to/Qwen_Max/build/index.js"
+      ],
+      "env": [
+        {
+          "name": "DASHSCOPE_API_KEY",
+          "description": "API key for Dashscope",
+          "required": true
+        }
+      ]
+    }
+  }
+}

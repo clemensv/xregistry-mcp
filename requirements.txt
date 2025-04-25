@@ -1,0 +1,4 @@
+azure-identity
+azure-ai-resources
+azure-ai-inference
+azure-mgmt-resource

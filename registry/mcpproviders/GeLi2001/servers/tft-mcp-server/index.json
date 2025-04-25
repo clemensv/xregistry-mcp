@@ -1,0 +1,68 @@
+{
+  "name": "tft",
+  "description": "Model Context Protocol (MCP) server for Team Fight Tactics (TFT) that provides access to TFT game data through various tools.",
+  "mcpversion": "1.0",
+  "serverversion": "0.1.0",
+  "tools": [
+    {
+      "name": "tft_match_history",
+      "description": "Get TFT match history for the current player.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of matches to retrieve."
+          },
+          "start": {
+            "type": "integer",
+            "description": "Start index for pagination."
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "tft_match_details",
+      "description": "Get detailed information about a specific TFT match.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "matchId": {
+            "type": "string",
+            "description": "The match ID to get details for."
+          }
+        },
+        "required": [
+          "matchId"
+        ]
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "mcp-server-tft",
+      "command": "npx",
+      "args": [
+        "mcp-server-tft",
+        "--apiKey",
+        "<YOUR_RIOT_API_KEY>",
+        "--gameName",
+        "<YOUR_GAME_NAME>",
+        "--tagLine",
+        "<YOUR_TAG_LINE>"
+      ],
+      "env": []
+    }
+  },
+  "repository": {
+    "url": "https://github.com/GeLi2001/tft-mcp-server",
+    "name": "GeLi2001/tft-mcp-server"
+  }
+}

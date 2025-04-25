@@ -1,0 +1,41 @@
+{
+  "name": "mcp-server-circleci",
+  "description": "Model Context Protocol (MCP) Server for CircleCI enabling natural language interaction with CircleCI pipelines and logs.",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/CircleCI-Public/mcp-server-circleci",
+    "name": "CircleCI-Public/mcp-server-circleci"
+  },
+  "tools": [],
+  "resources": [],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@circleci/mcp-server-circleci",
+      "packageversion": null,
+      "command": "npx",
+      "args": [
+        "-y",
+        "@circleci/mcp-server-circleci"
+      ],
+      "env": [
+        {
+          "name": "CIRCLECI_TOKEN",
+          "description": "CircleCI API token for authentication",
+          "required": true
+        },
+        {
+          "name": "CIRCLECI_BASE_URL",
+          "description": "Optional base URL for CircleCI on-prem customers",
+          "required": false
+        }
+      ]
+    }
+  }
+}

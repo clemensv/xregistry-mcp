@@ -1,0 +1,123 @@
+{
+  "name": "keycloak-admin",
+  "description": "A Model Context Protocol server for Keycloak administration, providing tools to manage users and realms.",
+  "mcpversion": "1.0",
+  "serverversion": "0.0.1",
+  "repository": {
+    "url": "https://github.com/ChristophEnglisch/keycloak-model-context-protocol",
+    "name": "ChristophEnglisch/keycloak-model-context-protocol"
+  },
+  "tools": [
+    {
+      "name": "create-user",
+      "description": "Create a new user in a specific realm",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "realm": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "realm",
+          "username",
+          "email",
+          "firstName",
+          "lastName"
+        ]
+      }
+    },
+    {
+      "name": "delete-user",
+      "description": "Delete a user from a specific realm",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "realm": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "realm",
+          "userId"
+        ]
+      }
+    },
+    {
+      "name": "list-realms",
+      "description": "List all available realms",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "list-users",
+      "description": "List users in a specific realm",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "realm": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "realm"
+        ]
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "keycloak-model-context-protocol",
+      "command": "npx",
+      "args": [
+        "-y",
+        "keycloak-model-context-protocol"
+      ],
+      "env": [
+        {
+          "name": "KEYCLOAK_URL",
+          "description": "URL of the Keycloak server",
+          "required": false,
+          "default": "http://localhost:8080"
+        },
+        {
+          "name": "KEYCLOAK_ADMIN",
+          "description": "Keycloak admin username",
+          "required": false,
+          "default": "admin"
+        },
+        {
+          "name": "KEYCLOAK_ADMIN_PASSWORD",
+          "description": "Keycloak admin password",
+          "required": false,
+          "default": "admin"
+        }
+      ]
+    }
+  }
+}

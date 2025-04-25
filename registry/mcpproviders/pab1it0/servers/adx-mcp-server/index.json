@@ -1,0 +1,77 @@
+{
+  "name": "Azure Data Explorer MCP Server",
+  "description": "A Model Context Protocol (MCP) server for Azure Data Explorer/Eventhouse in Microsoft Fabric. Provides access to Azure Data Explorer/Eventhouse clusters and databases through standardized MCP interfaces, allowing AI assistants to execute KQL queries and explore data.",
+  "mcpversion": "1.0",
+  "serverversion": "0.1.0",
+  "repository": {
+    "url": "https://github.com/pab1it0/adx-mcp-server",
+    "name": "pab1it0/adx-mcp-server"
+  },
+  "tools": [
+    {
+      "name": "execute_kql_query",
+      "description": "Execute KQL queries against Azure Data Explorer."
+    },
+    {
+      "name": "list_tables",
+      "description": "List tables in the configured database."
+    },
+    {
+      "name": "view_table_schema",
+      "description": "View table schemas."
+    },
+    {
+      "name": "sample_table_data",
+      "description": "Sample data from tables."
+    },
+    {
+      "name": "get_table_statistics",
+      "description": "Get table statistics and details."
+    }
+  ],
+  "resources": [
+    {
+      "name": "tables",
+      "description": "Tables in the configured Azure Data Explorer database.",
+      "uritemplate": "/tables/{tableName}"
+    },
+    {
+      "name": "schemas",
+      "description": "Schemas of tables in the database.",
+      "uritemplate": "/schemas/{tableName}"
+    },
+    {
+      "name": "samples",
+      "description": "Sample data from tables.",
+      "uritemplate": "/samples/{tableName}"
+    },
+    {
+      "name": "statistics",
+      "description": "Statistics and details of tables.",
+      "uritemplate": "/statistics/{tableName}"
+    }
+  ],
+  "deployment": {
+    "container": {
+      "image": "adx-mcp-server",
+      "args": [],
+      "env": [
+        {
+          "name": "ADX_CLUSTER_URL",
+          "description": "URL of the Azure Data Explorer cluster",
+          "required": true
+        },
+        {
+          "name": "ADX_DATABASE",
+          "description": "Name of the Azure Data Explorer database",
+          "required": true
+        }
+      ]
+    }
+  },
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  }
+}

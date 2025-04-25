@@ -1,0 +1,79 @@
+{
+  "name": "Wikidata MCP Server",
+  "description": "A server implementation for Wikidata API using the Model Context Protocol (MCP). This project provides tools to interact with Wikidata, such as searching identifiers (entity and property), extracting metadata (label and description) and executing sparql query.",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/zzaebok/mcp-wikidata",
+    "name": "zzaebok/mcp-wikidata"
+  },
+  "tools": [
+    {
+      "name": "search_entity",
+      "description": "Search for a Wikidata entity ID by its query.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "search_property",
+      "description": "Search for a Wikidata property ID by its query.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "get_properties",
+      "description": "Get the properties associated with a given Wikidata entity ID.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "entity_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity_id"
+        ]
+      }
+    },
+    {
+      "name": "execute_sparql",
+      "description": "Execute a SPARQL query.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "sparql_query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "sparql_query"
+        ]
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "uv",
+      "package": "@zzaebok/mcp-wikidata",
+      "command": "uv run src/server.py"
+    }
+  }
+}

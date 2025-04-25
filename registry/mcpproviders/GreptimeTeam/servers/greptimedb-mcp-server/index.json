@@ -1,0 +1,94 @@
+{
+  "name": "greptimedb-mcp-server",
+  "description": "A Model Context Protocol (MCP) server implementation for GreptimeDB. This server provides AI assistants with a secure and structured way to explore and analyze databases. It enables them to list tables, read data, and execute SQL queries through a controlled interface, ensuring responsible database access.",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/GreptimeTeam/greptimedb-mcp-server",
+    "name": "GreptimeTeam/greptimedb-mcp-server"
+  },
+  "prompts": [
+    {
+      "name": "example_prompt",
+      "description": "Detailed explanation of when and how to use this prompt.",
+      "arguments": []
+    }
+  ],
+  "tools": [
+    {
+      "name": "execute_sql",
+      "description": "Execute SQL query against GreptimeDB. Please use MySQL dialect when generating SQL queries.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The SQL query to execute (using MySQL dialect)"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "greptime://{table}/data",
+      "name": "Table",
+      "description": "Data in table: {table}",
+      "mimetype": "text/plain"
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "uv",
+      "package": "greptimedb-mcp-server",
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/path/to/greptimedb-mcp-server",
+        "run",
+        "-m",
+        "greptimedb_mcp_server.server"
+      ],
+      "env": [
+        {
+          "name": "GREPTIMEDB_HOST",
+          "description": "Database host",
+          "required": true,
+          "default": "localhost"
+        },
+        {
+          "name": "GREPTIMEDB_PORT",
+          "description": "Database port",
+          "required": false,
+          "default": "4002"
+        },
+        {
+          "name": "GREPTIMEDB_USER",
+          "description": "Database username",
+          "required": true,
+          "default": "root"
+        },
+        {
+          "name": "GREPTIMEDB_PASSWORD",
+          "description": "Database password",
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "GREPTIMEDB_DATABASE",
+          "description": "Database name",
+          "required": true,
+          "default": "public"
+        }
+      ]
+    }
+  }
+}

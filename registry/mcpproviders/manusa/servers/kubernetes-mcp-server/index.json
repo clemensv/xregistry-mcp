@@ -1,0 +1,22 @@
+{
+  "name": "Kubernetes MCP Server",
+  "description": "A powerful and flexible Kubernetes Model Context Protocol (MCP) server implementation with support for Kubernetes and OpenShift.",
+  "mcpversion": "unspecified",
+  "serverversion": "latest",
+  "repository": {
+    "url": "https://github.com/manusa/kubernetes-mcp-server",
+    "name": "manusa/kubernetes-mcp-server"
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "kubernetes-mcp-server",
+      "packageversion": "latest",
+      "command": "npx",
+      "args": [
+        "-y",
+        "kubernetes-mcp-server@latest"
+      ]
+    }
+  }
+}

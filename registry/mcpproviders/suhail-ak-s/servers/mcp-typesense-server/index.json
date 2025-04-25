@@ -1,0 +1,141 @@
+{
+  "name": "Typesense MCP Server",
+  "description": "A Model Context Protocol (MCP) server implementation that provides AI models with access to Typesense search capabilities. This server enables LLMs to discover, search, and analyze data stored in Typesense collections.",
+  "mcpversion": "1.0",
+  "serverversion": "not explicitly stated",
+  "repository": {
+    "url": "https://github.com/suhail-ak-s/mcp-typesense-server",
+    "name": "suhail-ak-s/mcp-typesense-server"
+  },
+  "tools": [
+    {
+      "name": "typesense_query",
+      "description": "Search for documents in Typesense collections with powerful filtering",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query_text": {
+            "type": "string"
+          },
+          "collection_name": {
+            "type": "string"
+          },
+          "search_fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "filters": {
+            "type": "string"
+          },
+          "sort_options": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "query_text",
+          "collection_name"
+        ]
+      }
+    },
+    {
+      "name": "typesense_get_document",
+      "description": "Retrieve specific documents by ID from collections",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "document_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection_name",
+          "document_id"
+        ]
+      }
+    },
+    {
+      "name": "typesense_collection_stats",
+      "description": "Get statistics about a Typesense collection",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection_name"
+        ]
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "analyze_collection",
+      "description": "Analyze collection structure and contents",
+      "arguments": [
+        {
+          "name": "collection_name",
+          "description": "Name of the collection to analyze",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "search_suggestions",
+      "description": "Get suggestions for effective search queries for a collection",
+      "arguments": [
+        {
+          "name": "collection_name",
+          "description": "Name of the collection for search suggestions",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "name": "Collection Schemas",
+      "uritemplate": "typesense://collections/{collection}",
+      "description": "JSON schema information for each collection including field names and data types and sample documents",
+      "mimetype": "application/json"
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    },
+    "httplocal": {
+      "deployment": "container",
+      "host": "localhost",
+      "port": 8108,
+      "protocol": "http"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "typesense-mcp-server",
+      "command": "node",
+      "args": [
+        "dist/index.js",
+        "--host",
+        "your-typesense-host",
+        "--port",
+        "8108",
+        "--protocol",
+        "http",
+        "--api-key",
+        "your-api-key"
+      ]
+    }
+  }
+}

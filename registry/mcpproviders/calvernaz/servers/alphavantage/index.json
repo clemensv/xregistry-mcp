@@ -1,0 +1,29 @@
+{
+  "name": "Official Alpha Vantage MCP Server",
+  "description": "A MCP server for the stock market data API, Alphavantage API.",
+  "repository": {
+    "url": "https://github.com/calvernaz/alphavantage",
+    "name": "calvernaz/alphavantage"
+  },
+  "deployment": {
+    "sandbox": {
+      "command": "alphavantage",
+      "args": [
+        "--directory",
+        "<DIRECTORY-OF-CLONED-PROJECT>/alphavantage",
+        "run",
+        "alphavantage"
+      ],
+      "runtime": "uv",
+      "package": "<unknown>",
+      "env": [
+        {
+          "name": "ALPHAVANTAGE_API_KEY",
+          "required": true
+        }
+      ]
+    }
+  },
+  "mcpversion": "<unknown>",
+  "serverversion": "<unknown>"
+}

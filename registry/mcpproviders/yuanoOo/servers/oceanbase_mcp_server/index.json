@@ -1,0 +1,78 @@
+{
+  "name": "OceanBase MCP Server",
+  "description": "A Model Context Protocol (MCP) server that enables secure interaction with OceanBase databases. This server allows AI assistants to list tables, read data, and execute SQL queries through a controlled interface, making database exploration and analysis safer and more structured.",
+  "mcpversion": "1.0",
+  "serverversion": "unspecified",
+  "repository": {
+    "url": "https://github.com/yuanoOo/oceanbase_mcp_server",
+    "name": "yuanoOo/oceanbase_mcp_server"
+  },
+  "tools": [
+    {
+      "name": "execute_sql",
+      "description": "Execute an SQL query on the OceanBase server",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The SQL query to execute"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "oceanbase://{table}/data",
+      "name": "Table",
+      "description": "Data in table: {table}",
+      "mimetype": "text/plain"
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "python",
+      "package": "oceanbase-mcp-server",
+      "command": "python -m oceanbase_mcp_server",
+      "args": [],
+      "env": [
+        {
+          "name": "OB_HOST",
+          "description": "Database host",
+          "required": true,
+          "default": "localhost"
+        },
+        {
+          "name": "OB_PORT",
+          "description": "Database port",
+          "required": false,
+          "default": "2881"
+        },
+        {
+          "name": "OB_USER",
+          "description": "Database username",
+          "required": true
+        },
+        {
+          "name": "OB_PASSWORD",
+          "description": "Database password",
+          "required": true
+        },
+        {
+          "name": "OB_DATABASE",
+          "description": "Database name",
+          "required": true
+        }
+      ]
+    }
+  }
+}

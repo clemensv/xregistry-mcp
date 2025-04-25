@@ -1,0 +1,97 @@
+{
+  "name": "AppBuilder App MCP Server",
+  "description": "This server provides MCP (Model Context Protocol) tools for interacting with Baidu AppBuilder applications. It supports both stdio and SSE (Server-Sent Events) protocols.",
+  "mcpversion": "1.0",
+  "serverversion": "1.0.5",
+  "repository": {
+    "url": "https://github.com/baidubce/app-builder",
+    "name": "baidubce/app-builder"
+  },
+  "tools": [
+    {
+      "name": "list_apps",
+      "description": "Retrieve a list of all available AppBuilder applications.",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "create_conversation",
+      "description": "Create a new conversation session for a specific AppBuilder application.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "app_id": {
+            "type": "string",
+            "description": "The unique identifier of the target application"
+          }
+        },
+        "required": [
+          "app_id"
+        ]
+      }
+    },
+    {
+      "name": "run",
+      "description": "Execute a conversation query with a specific AppBuilder application.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "app_id": {
+            "type": "string",
+            "description": "The unique identifier of the target application"
+          },
+          "conversation_id": {
+            "type": "string",
+            "description": "The conversation session identifier"
+          },
+          "query": {
+            "type": "string",
+            "description": "The input text/query to send to the application"
+          }
+        },
+        "required": [
+          "app_id",
+          "conversation_id",
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": [],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    },
+    "http": {
+      "uri": "http://appbuilder.baidu.com/v2/ai_search/mcp/sse",
+      "authorization": {
+        "type": "header",
+        "name": "api_key",
+        "description": "Requires an AppBuilder API key in the format 'bce-v3/ALTAK-...'. Get your API key from: https://cloud.baidu.com/doc/AppBuilder/s/klv2eywua",
+        "required": true,
+        "format": "bce-v3/{token}"
+      }
+    },
+    "websockets": null,
+    "mqtt": null,
+    "httplocal": null
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "python",
+      "package": "appbuilder-sdk",
+      "command": "python app_server.py",
+      "args": [],
+      "env": [
+        {
+          "name": "APPBUILDER_TOKEN",
+          "description": "AppBuilder API token for authentication",
+          "required": true
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "name": "zcaceres/fetch",
+  "description": "This MCP server provides functionality to fetch web content in various formats, including HTML, JSON, plain text, and Markdown.",
+  "mcpversion": "1.0",
+  "serverversion": "0.1.0",
+  "tools": [
+    {
+      "name": "fetch_html",
+      "description": "Fetch a website and return the content as HTML",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL of the website to fetch"
+          },
+          "headers": {
+            "type": "object",
+            "description": "Optional headers to include in the request"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "fetch_markdown",
+      "description": "Fetch a website and return the content as Markdown",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL of the website to fetch"
+          },
+          "headers": {
+            "type": "object",
+            "description": "Optional headers to include in the request"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "fetch_txt",
+      "description": "Fetch a website, return the content as plain text (no HTML)",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL of the website to fetch"
+          },
+          "headers": {
+            "type": "object",
+            "description": "Optional headers to include in the request"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    },
+    {
+      "name": "fetch_json",
+      "description": "Fetch a JSON file from a URL",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL of the JSON to fetch"
+          },
+          "headers": {
+            "type": "object",
+            "description": "Optional headers to include in the request"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    }
+  ],
+  "resources": [],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@modelcontextprotocol/sdk",
+      "command": "node",
+      "args": [
+        "dist/index.js"
+      ]
+    }
+  },
+  "repository": {
+    "url": "https://github.com/zcaceres/fetch-mcp",
+    "name": "zcaceres/fetch-mcp"
+  }
+}

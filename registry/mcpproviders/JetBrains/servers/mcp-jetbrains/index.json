@@ -1,0 +1,39 @@
+{
+  "name": "jetbrains/proxy",
+  "description": "You can interact with an JetBrains IntelliJ IDE and its features through this MCP (Model Context Protocol) server. The server provides access to various IDE tools and functionalities. All requests should be formatted as JSON objects according to the Model Context Protocol specification.",
+  "mcpversion": "unknown",
+  "serverversion": "0.1.0",
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@jetbrains/mcp-proxy",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@jetbrains/mcp-proxy"
+      ],
+      "env": [
+        {
+          "name": "IDE_PORT"
+        },
+        {
+          "name": "HOST"
+        },
+        {
+          "name": "LOG_ENABLED"
+        }
+      ]
+    }
+  },
+  "tools": [],
+  "resources": [],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "repository": {
+    "url": "https://github.com/JetBrains/mcp-jetbrains",
+    "name": "JetBrains/mcp-jetbrains"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:24.577124861Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://clemensv.github.io/xregistry-mcp/mcpproviders/horizondatawave/servers/hdw-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:24.577124861Z",
+  "readonly": false,
+  "self": "https://clemensv.github.io/xregistry-mcp/mcpproviders/horizondatawave/servers/hdw-mcp-server/meta",
+  "serverid": "hdw-mcp-server",
+  "xid": "/mcpproviders/horizondatawave/servers/hdw-mcp-server/meta"
+}

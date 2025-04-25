@@ -1,0 +1,81 @@
+{
+  "name": "Everything Search MCP Server",
+  "description": "An MCP server that provides fast file searching capabilities across Windows, macOS, and Linux. On Windows, it uses the Everything SDK. On macOS, it uses the built-in mdfind command. On Linux, it uses the locate/plocate command.",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/mamertofabian/mcp-everything-search",
+    "name": "mamertofabian/mcp-everything-search"
+  },
+  "tools": [
+    {
+      "name": "search",
+      "description": "Universal file search tool for Windows, macOS, and Linux. Supports platform-specific search capabilities using Everything SDK on Windows, mdfind on macOS, and locate on Linux.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query string. See the search syntax guide for details."
+          },
+          "max_results": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000,
+            "default": 100,
+            "description": "Maximum number of results to return (1-1000)"
+          },
+          "match_path": {
+            "type": "boolean",
+            "default": false,
+            "description": "Match against full path instead of filename only"
+          },
+          "match_case": {
+            "type": "boolean",
+            "default": false,
+            "description": "Enable case-sensitive search"
+          },
+          "match_whole_word": {
+            "type": "boolean",
+            "default": false,
+            "description": "Match whole words only"
+          },
+          "match_regex": {
+            "type": "boolean",
+            "default": false,
+            "description": "Enable regex search"
+          },
+          "sort_by": {
+            "type": "integer",
+            "default": 1,
+            "description": "Sort order for results (Note: Not all sort options available on all platforms)"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": [],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "python",
+      "package": "mcp-server-everything-search",
+      "command": "python -m mcp_server_everything_search",
+      "args": [],
+      "env": [
+        {
+          "name": "EVERYTHING_SDK_PATH",
+          "description": "Path to Everything SDK DLL on Windows",
+          "required": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "name": "Crypto Fear & Greed Index MCP Server",
+  "description": "A mcp server that provides real-time and historical Crypto Fear & Greed Index data, powered by the Alternative.me.",
+  "mcpversion": "unknown",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/kukapay/crypto-feargreed-mcp",
+    "name": "kukapay/crypto-feargreed-mcp"
+  },
+  "tools": [
+    {
+      "name": "get_current_fng_tool",
+      "description": "Current Index. Same as fng://current",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_historical_fng_tool",
+      "description": "Historical Index Data. Same as fng://history/{days}",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "days": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "days"
+        ]
+      }
+    },
+    {
+      "name": "analyze_fng_trend",
+      "description": "Index trend Analysis.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "days": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "days"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "fng://current",
+      "name": "current",
+      "description": "Current crypto Fear & Greed Index."
+    },
+    {
+      "uritemplate": "fng://history/{days}",
+      "name": "history",
+      "description": "Historical Data of Crypto Fear & Greed Index for specified number of days."
+    }
+  ],
+  "prompts": [
+    {
+      "name": "interpret_fng",
+      "description": "Index Data Interpretation.",
+      "arguments": [
+        {
+          "name": "value",
+          "description": "Crypto Fear & Greed Index value to interpret",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "python",
+      "package": "crypto-feargreed-mcp",
+      "command": "mcp",
+      "args": [
+        "install",
+        "main.py",
+        "--name",
+        "CryptoFearGreed"
+      ],
+      "env": []
+    }
+  }
+}

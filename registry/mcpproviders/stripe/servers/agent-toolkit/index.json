@@ -1,0 +1,12 @@
+{
+  "name": "Stripe",
+  "serverversion": "0.4.0",
+  "mcpversion": "modelcontextprotocol",
+  "description": "Enables integration with Stripe APIs through function calling, supporting multiple agent frameworks including Model Context Protocol (MCP).",
+  "deployment": {},
+  "tools": [],
+  "repository": {
+    "url": "https://github.com/stripe/agent-toolkit",
+    "name": "stripe/agent-toolkit"
+  }
+}

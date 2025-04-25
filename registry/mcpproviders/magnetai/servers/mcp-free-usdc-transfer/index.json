@@ -1,0 +1,31 @@
+{
+  "name": "Free USDC Transfer MCP Server",
+  "description": "An MCP server implementation enabling free USDC transfers on Base with Coinbase CDP MPC Wallet integration.",
+  "mcpversion": "unknown",
+  "serverversion": "unknown",
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@magnetai/free-usdc-transfer",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@magnetai/free-usdc-transfer"
+      ],
+      "env": [
+        {
+          "name": "COINBASE_CDP_API_KEY_NAME",
+          "required": true
+        },
+        {
+          "name": "COINBASE_CDP_PRIVATE_KEY",
+          "required": true
+        }
+      ]
+    }
+  },
+  "repository": {
+    "url": "https://github.com/magnetai/mcp-free-usdc-transfer",
+    "name": "magnetai/mcp-free-usdc-transfer"
+  }
+}

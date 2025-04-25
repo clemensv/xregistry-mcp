@@ -1,0 +1,17 @@
+{
+  "name": "Wanaku MCP Router",
+  "description": "The Wanaku MCP Router is a router for AI-enabled applications powered by the Model Context Protocol (MCP). This protocol is an open protocol that standardizes how applications provide context to LLMs.",
+  "mcpversion": "unknown",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/wanaku-ai/wanaku",
+    "name": "wanaku-ai/wanaku"
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "unknown",
+      "package": "unknown",
+      "command": "unknown"
+    }
+  }
+}

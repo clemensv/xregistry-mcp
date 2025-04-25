@@ -1,0 +1,47 @@
+{
+  "name": "MotherDuck's DuckDB MCP Server",
+  "description": "An MCP server implementation that interacts with DuckDB and MotherDuck databases, providing SQL analytics capabilities to AI Assistants and IDEs.",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "prompts": [
+    {
+      "name": "duckdb-motherduck-initial-prompt",
+      "description": "A prompt to initialize a connection to DuckDB or MotherDuck and start working with it"
+    }
+  ],
+  "tools": [
+    {
+      "name": "query",
+      "description": "Execute a SQL query on the DuckDB or MotherDuck database",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "unknown",
+      "package": "unknown",
+      "command": "mcp-server-motherduck",
+      "args": [
+        "--db-path",
+        "md:",
+        "--motherduck-token",
+        "<YOUR_MOTHERDUCK_TOKEN_HERE>"
+      ],
+      "env": []
+    }
+  },
+  "repository": {
+    "url": "https://github.com/motherduckdb/mcp-server-motherduck",
+    "name": "motherduckdb/mcp-server-motherduck"
+  }
+}

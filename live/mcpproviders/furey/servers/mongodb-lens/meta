@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:08.416131089Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://clemensv.github.io/xregistry-mcp/mcpproviders/furey/servers/mongodb-lens/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:08.416131089Z",
+  "readonly": false,
+  "self": "https://clemensv.github.io/xregistry-mcp/mcpproviders/furey/servers/mongodb-lens/meta",
+  "serverid": "mongodb-lens",
+  "xid": "/mcpproviders/furey/servers/mongodb-lens/meta"
+}

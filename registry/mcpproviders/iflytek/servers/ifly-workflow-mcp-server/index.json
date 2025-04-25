@@ -1,0 +1,82 @@
+{
+  "name": "iFlytek Workflow MCP Server",
+  "description": "The fastest way to build workflows with an AI agent platform! This is a simple implementation of an MCP server using iFlytek. It enables calling iFlytek workflows through MCP tools. Supports 14 types of workflow nodes, advanced orchestration modes, multi-model support, and streaming output via hook mechanism.",
+  "mcpversion": "1.0",
+  "serverversion": "0.0.1",
+  "repository": {
+    "url": "https://github.com/iflytek/ifly-workflow-mcp-server",
+    "name": "iflytek/ifly-workflow-mcp-server"
+  },
+  "docs": "https://xinghuo.xfyun.cn/botcenter/createbot",
+  "tools": [
+    {
+      "name": "SYS_UPLOAD_FILE",
+      "description": "System tool for uploading files.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "file"
+        ]
+      }
+    },
+    {
+      "name": "image_generator",
+      "description": "Tool to generate images based on user input.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "AGENT_USER_INPUT": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "AGENT_USER_INPUT"
+        ]
+      }
+    },
+    {
+      "name": "llm_test",
+      "description": "Tool for testing LLM interactions.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "AGENT_USER_INPUT": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "AGENT_USER_INPUT"
+        ]
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "python",
+      "package": "ifly-workflow-mcp-server",
+      "command": "python",
+      "args": [
+        "-m",
+        "mcp_server.main"
+      ],
+      "env": [
+        {
+          "name": "CONFIG_PATH",
+          "description": "Path to configuration file",
+          "required": false,
+          "default": "../../config.yaml"
+        }
+      ]
+    }
+  }
+}

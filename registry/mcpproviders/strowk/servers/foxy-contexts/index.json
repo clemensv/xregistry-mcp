@@ -1,0 +1,19 @@
+{
+  "name": "Foxy Contexts",
+  "description": "Foxy contexts is a Golang library for building context servers supporting Model Context Protocol. This library only supports server side of the protocol. Using it you can build context servers using declarative approach, by defining tools, resources and prompts and then registering them with your app.Builder.",
+  "mcpversion": "unspecified",
+  "serverversion": "unspecified",
+  "repository": {
+    "url": "https://github.com/strowk/foxy-contexts",
+    "name": "strowk/foxy-contexts"
+  },
+  "docs": "https://foxy-contexts.str4.io/",
+  "tools": [],
+  "resources": [],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {}
+}

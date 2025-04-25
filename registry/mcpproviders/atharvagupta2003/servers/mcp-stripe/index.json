@@ -1,0 +1,134 @@
+{
+  "name": "MCP Stripe Server",
+  "description": "A Model Context Protocol (MCP) server implementation that integrates with Stripe for handling payments, customers, and refunds. This server provides a structured API to manage financial transactions securely.",
+  "mcpversion": "0.1.0+",
+  "serverversion": "unspecified",
+  "repository": {
+    "url": "https://github.com/atharvagupta2003/mcp-stripe",
+    "name": "atharvagupta2003/mcp-stripe"
+  },
+  "tools": [
+    {
+      "name": "customer_create",
+      "description": "Create a new customer",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "email",
+          "name"
+        ]
+      }
+    },
+    {
+      "name": "customer_retrieve",
+      "description": "Retrieve a customer's details",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "customer_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "customer_id"
+        ]
+      }
+    },
+    {
+      "name": "customer_update",
+      "description": "Update customer information",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "payment_intent_create",
+      "description": "Create a payment intent for processing payments",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "integer"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "customer": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "amount",
+          "currency",
+          "customer"
+        ]
+      }
+    },
+    {
+      "name": "charge_list",
+      "description": "List recent charges",
+      "inputschema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "refund_create",
+      "description": "Create a refund for a charge",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "charge_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "charge_id"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "audit_logs",
+      "description": "Stores audit logs of customer, payment, and refund operations; supports structured logging for better traceability; uses MCP resource endpoints to retrieve audit data",
+      "uritemplate": "/audit/logs"
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "uv",
+      "package": "@atharvagupta2003/mcp-stripe",
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/ABSOLUTE/PATH/TO/PARENT/FOLDER/src",
+        "run",
+        "server.py"
+      ],
+      "env": [
+        {
+          "name": "STRIPE_API_KEY",
+          "description": "Stripe secret API key",
+          "required": true
+        }
+      ]
+    }
+  }
+}

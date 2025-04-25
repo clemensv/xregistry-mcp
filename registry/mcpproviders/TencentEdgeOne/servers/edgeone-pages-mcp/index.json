@@ -1,0 +1,29 @@
+{
+  "name": "EdgeOne Pages MCP",
+  "description": "An MCP service for deploying HTML content to EdgeOne Pages and obtaining a publicly accessible URL.",
+  "docs": "https://edgeone.ai/document/162227908259442688",
+  "mcpversion": "unspecified",
+  "serverversion": "unspecified",
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "edgeone-pages-mcp",
+      "command": "npx",
+      "args": [
+        "edgeone-pages-mcp"
+      ]
+    }
+  },
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    },
+    "http": {
+      "uri": "https://mcp-on-edge.edgeone.site/mcp-server"
+    }
+  },
+  "repository": {
+    "url": "https://github.com/TencentEdgeOne/edgeone-pages-mcp",
+    "name": "TencentEdgeOne/edgeone-pages-mcp"
+  }
+}

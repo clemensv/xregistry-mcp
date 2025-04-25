@@ -1,0 +1,92 @@
+{
+  "name": "Telegram MCP server",
+  "description": "The server is a bridge between the Telegram API and the AI assistants and is based on the Model Context Protocol. It provides capabilities such as getting current account information, listing dialogs, marking dialogs as read, retrieving messages, and sending draft messages.",
+  "mcpversion": "unspecified",
+  "serverversion": "unspecified",
+  "repository": {
+    "url": "https://github.com/chaindead/telegram-mcp",
+    "name": "chaindead/telegram-mcp"
+  },
+  "tools": [
+    {
+      "name": "tg_me",
+      "description": "Get current account information",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "tg_dialogs",
+      "description": "List dialogs with optional unread filter",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "tg_read",
+      "description": "Mark dialog as read",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "tg_dialog",
+      "description": "Retrieve messages from specific dialog",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "tg_send",
+      "description": "Send draft messages to any dialog",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "Message Management",
+      "description": "Prompts for managing messages such as checking unread messages, summarizing, analyzing, and preparing draft responses.",
+      "arguments": []
+    },
+    {
+      "name": "Organization",
+      "description": "Prompts for analyzing dialogs and suggesting folder structures or categorization.",
+      "arguments": []
+    },
+    {
+      "name": "Communication",
+      "description": "Prompts for monitoring chats, drafting responses, and checking unanswered questions.",
+      "arguments": []
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@chaindead/telegram-mcp",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@chaindead/telegram-mcp"
+      ],
+      "env": [
+        {
+          "name": "TG_APP_ID",
+          "description": "Telegram API ID",
+          "required": true
+        },
+        {
+          "name": "TG_API_HASH",
+          "description": "Telegram API hash",
+          "required": true
+        }
+      ]
+    }
+  },
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  }
+}

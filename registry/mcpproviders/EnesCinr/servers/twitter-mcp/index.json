@@ -1,0 +1,90 @@
+{
+  "name": "twitter-mcp",
+  "description": "This MCP server allows Clients to interact with Twitter, enabling posting tweets and searching Twitter.",
+  "mcpversion": "1.0.0",
+  "serverversion": "1.0.0",
+  "repository": {
+    "url": "https://github.com/EnesCinr/twitter-mcp",
+    "name": "EnesCinr/twitter-mcp"
+  },
+  "tools": [
+    {
+      "name": "post_tweet",
+      "description": "Post a new tweet to Twitter",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "The content of your tweet",
+            "maxLength": 280
+          }
+        },
+        "required": [
+          "text"
+        ]
+      }
+    },
+    {
+      "name": "search_tweets",
+      "description": "Search for tweets on Twitter",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query"
+          },
+          "count": {
+            "type": "number",
+            "description": "Number of tweets to return (10-100)",
+            "minimum": 10,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "query",
+          "count"
+        ]
+      }
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@enescinar/twitter-mcp",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@enescinar/twitter-mcp"
+      ],
+      "env": [
+        {
+          "name": "API_KEY",
+          "description": "Twitter API key",
+          "required": true
+        },
+        {
+          "name": "API_SECRET_KEY",
+          "description": "Twitter API secret key",
+          "required": true
+        },
+        {
+          "name": "ACCESS_TOKEN",
+          "description": "Twitter access token",
+          "required": true
+        },
+        {
+          "name": "ACCESS_TOKEN_SECRET",
+          "description": "Twitter access token secret",
+          "required": true
+        }
+      ]
+    }
+  }
+}

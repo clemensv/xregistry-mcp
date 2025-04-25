@@ -1,0 +1,79 @@
+{
+  "name": "OceanBase MCP Server",
+  "description": "A Model Context Protocol (MCP) server that enables secure interaction with OceanBase databases.",
+  "documentation": "doc/oceanbase_mcp_server.md",
+  "tools": [
+    {
+      "name": "execute_sql",
+      "description": "Execute a SQL query on the OceanBase server",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The SQL query to execute"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  ],
+  "resources": [
+    {
+      "uritemplate": "oceanbase://{table}/data",
+      "name": "Table",
+      "description": "Data in table: {table}",
+      "mimetype": "text/plain"
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "python",
+      "package": "mcp-oceanbase",
+      "command": "python main.py",
+      "args": [],
+      "env": [
+        {
+          "name": "OB_HOST",
+          "description": "OceanBase database host",
+          "required": false,
+          "default": "localhost"
+        },
+        {
+          "name": "OB_PORT",
+          "description": "OceanBase database port",
+          "required": false,
+          "default": "2881"
+        },
+        {
+          "name": "OB_USER",
+          "description": "OceanBase database user",
+          "required": true
+        },
+        {
+          "name": "OB_PASSWORD",
+          "description": "OceanBase database password",
+          "required": true
+        },
+        {
+          "name": "OB_DATABASE",
+          "description": "OceanBase database name",
+          "required": true
+        }
+      ]
+    }
+  },
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/oceanbase/mcp-oceanbase",
+    "name": "oceanbase/mcp-oceanbase"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "Prometheus MCP Server",
+  "description": "A Model Context Protocol (MCP) server for Prometheus. Provides access to Prometheus metrics and queries through standardized MCP interfaces, allowing AI assistants to execute PromQL queries and analyze metrics data.",
+  "mcpversion": "1.0",
+  "serverversion": "unspecified",
+  "deployment": {
+    "container": {
+      "image": "prometheus-mcp-server"
+    },
+    "sandbox": {
+      "runtime": "unspecified",
+      "package": "unspecified",
+      "command": "uv",
+      "args": [
+        "--directory",
+        "<full path to prometheus-mcp-server directory>",
+        "run",
+        "src/prometheus_mcp_server/main.py"
+      ],
+      "env": [
+        {
+          "name": "PROMETHEUS_URL",
+          "description": "URL of the Prometheus server",
+          "required": true
+        },
+        {
+          "name": "PROMETHEUS_USERNAME",
+          "description": "Username for basic authentication",
+          "required": false
+        },
+        {
+          "name": "PROMETHEUS_PASSWORD",
+          "description": "Password for basic authentication",
+          "required": false
+        },
+        {
+          "name": "PROMETHEUS_TOKEN",
+          "description": "Bearer token for authentication",
+          "required": false
+        }
+      ]
+    }
+  },
+  "repository": {
+    "url": "https://github.com/pab1it0/prometheus-mcp-server",
+    "name": "pab1it0/prometheus-mcp-server"
+  }
+}

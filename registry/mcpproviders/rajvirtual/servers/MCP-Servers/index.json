@@ -1,0 +1,144 @@
+{
+  "name": "onenote-mcp-server",
+  "description": "MCP server providing tools to read and create Microsoft OneNote content via Microsoft Graph API.",
+  "mcpversion": "1.0.0",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "name": "onenote-read",
+      "description": "Read content from Microsoft OneNote notebooks, sections, or pages",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "read_content"
+            ]
+          },
+          "pageId": {
+            "type": "string",
+            "description": "ID of the specific page to read"
+          },
+          "sectionId": {
+            "type": "string",
+            "description": "ID of the section to list pages from"
+          },
+          "notebookId": {
+            "type": "string",
+            "description": "ID of the notebook to list sections from"
+          },
+          "includeContent": {
+            "type": "boolean",
+            "default": true,
+            "description": "Whether to include the content of the page"
+          },
+          "includeMetadata": {
+            "type": "boolean",
+            "default": false,
+            "description": "Whether to include metadata about the page"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      }
+    },
+    {
+      "name": "onenote-create",
+      "description": "Create new content in Microsoft OneNote",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "create_page",
+              "create_section",
+              "create_notebook"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "description": "Title of the content to create"
+          },
+          "content": {
+            "type": "string",
+            "description": "Content in Markdown format"
+          },
+          "parentId": {
+            "type": "string",
+            "description": "ID of the parent section or notebook"
+          }
+        },
+        "required": [
+          "type",
+          "content"
+        ]
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "id": "get-notebooks",
+      "name": "Get all notebooks",
+      "description": "List all available OneNote notebooks"
+    },
+    {
+      "id": "get-sections",
+      "name": "Get sections in a notebook",
+      "description": "List all sections in a specific notebook"
+    },
+    {
+      "id": "get-pages",
+      "name": "Get pages in a section",
+      "description": "List all pages in a specific section"
+    },
+    {
+      "id": "get-page",
+      "name": "Get a specific page",
+      "description": "Get content from a specific page"
+    },
+    {
+      "id": "create-notebook",
+      "name": "Create a new notebook",
+      "description": "Create a brand new notebook"
+    },
+    {
+      "id": "create-section",
+      "name": "Create a section in a notebook",
+      "description": "Create a new section in a specific notebook"
+    },
+    {
+      "id": "create-page",
+      "name": "Create a page in a section",
+      "description": "Create a new page in a specific section"
+    }
+  ],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "nodejs",
+      "package": "@modelcontextprotocol/sdk",
+      "command": "node",
+      "args": [
+        "index.js"
+      ],
+      "env": [
+        {
+          "name": "CLIENT_ID",
+          "description": "Azure AD client ID for authentication",
+          "required": false
+        }
+      ]
+    }
+  },
+  "repository": {
+    "url": "https://github.com/rajvirtual/MCP-Servers",
+    "name": "rajvirtual/MCP-Servers"
+  }
+}

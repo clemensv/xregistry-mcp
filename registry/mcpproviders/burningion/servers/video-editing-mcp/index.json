@@ -1,0 +1,65 @@
+{
+  "name": "Video Editor MCP server",
+  "description": "Server to upload, edit, search, and generate videos using Video Jungle and LLM integration with custom vj:// URI scheme and video editing tools.",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/burningion/video-editing-mcp",
+    "name": "burningion/video-editing-mcp"
+  },
+  "tools": [
+    {
+      "name": "add-video",
+      "description": "Add a video from a URL and returns a vj:// URI to reference the video file.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "search-videos",
+      "description": "Search videos using embeddings and keywords, returning video matches.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "generate-edit-from-videos",
+      "description": "Generate a rendered video edit from a set of video files.",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "generate-edit-from-single-video",
+      "description": "Generate an edit from a single input video file.",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [
+    {
+      "name": "videos",
+      "description": "Access individual videos and projects via custom vj:// URI scheme.",
+      "uritemplate": "vj://{video_or_project_id}"
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "uvicorn",
+      "package": "video-editor-mcp",
+      "command": "uv run video-editor-mcp",
+      "args": [
+        "YOURAPIKEY"
+      ],
+      "env": [
+        {
+          "name": "LOAD_PHOTOS_DB",
+          "description": "Enable searching local Photos app videos on MacOS",
+          "required": false
+        }
+      ]
+    }
+  },
+  "docs": "https://www.video-jungle.com"
+}

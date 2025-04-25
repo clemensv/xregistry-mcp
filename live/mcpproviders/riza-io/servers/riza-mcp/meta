@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:43:06.273844628Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://clemensv.github.io/xregistry-mcp/mcpproviders/riza-io/servers/riza-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:43:06.273844628Z",
+  "readonly": false,
+  "self": "https://clemensv.github.io/xregistry-mcp/mcpproviders/riza-io/servers/riza-mcp/meta",
+  "serverid": "riza-mcp",
+  "xid": "/mcpproviders/riza-io/servers/riza-mcp/meta"
+}

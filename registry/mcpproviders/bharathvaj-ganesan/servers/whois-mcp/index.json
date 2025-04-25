@@ -1,0 +1,47 @@
+{
+  "name": "Whois MCP",
+  "description": "Model Context Protocol server for whois lookups allowing AI agents to perform WHOIS lookups and retrieve domain details.",
+  "tools": [
+    {
+      "name": "whois_domain",
+      "description": "Looksup whois information about the domain",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "whois_tld",
+      "description": "Looksup whois information about the Top Level Domain (TLD)",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "whois_ip",
+      "description": "Looksup whois information about the IP",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "whois_as",
+      "description": "Looksup whois information about the Autonomous System Number (ASN)",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@bharathvaj/whois-mcp",
+      "command": "npx -y @bharathvaj/whois-mcp@latest"
+    }
+  },
+  "mcpversion": "unknown",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/bharathvaj-ganesan/whois-mcp",
+    "name": "bharathvaj-ganesan/whois-mcp"
+  }
+}

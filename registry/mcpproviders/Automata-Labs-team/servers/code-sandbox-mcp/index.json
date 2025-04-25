@@ -1,0 +1,141 @@
+{
+  "name": "Code Sandbox MCP",
+  "description": "A secure sandbox environment for executing code within Docker containers. This MCP server provides AI applications with a safe and isolated environment for running code while maintaining security through containerization.",
+  "mcpversion": "1.0",
+  "serverversion": "unspecified",
+  "repository": {
+    "url": "https://github.com/Automata-Labs-team/code-sandbox-mcp",
+    "name": "Automata-Labs-team/code-sandbox-mcp"
+  },
+  "tools": [
+    {
+      "name": "sandbox_initialize",
+      "description": "Initialize a new compute environment for code execution. Creates a container based on the specified Docker image.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "image": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "copy_project",
+      "description": "Copy a directory to the sandboxed filesystem.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "container_id": {
+            "type": "string"
+          },
+          "local_src_dir": {
+            "type": "string"
+          },
+          "dest_dir": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "container_id",
+          "local_src_dir"
+        ]
+      }
+    },
+    {
+      "name": "write_file",
+      "description": "Write a file to the sandboxed filesystem.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "container_id": {
+            "type": "string"
+          },
+          "file_name": {
+            "type": "string"
+          },
+          "file_contents": {
+            "type": "string"
+          },
+          "dest_dir": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "container_id",
+          "file_name",
+          "file_contents"
+        ]
+      }
+    },
+    {
+      "name": "sandbox_exec",
+      "description": "Execute commands in the sandboxed environment.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "container_id": {
+            "type": "string"
+          },
+          "commands": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "container_id",
+          "commands"
+        ]
+      }
+    },
+    {
+      "name": "copy_file",
+      "description": "Copy a single file to the sandboxed filesystem.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "container_id": {
+            "type": "string"
+          },
+          "local_src_file": {
+            "type": "string"
+          },
+          "dest_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "container_id",
+          "local_src_file"
+        ]
+      }
+    },
+    {
+      "name": "sandbox_stop",
+      "description": "Stop and remove a running container sandbox.",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "container_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "container_id"
+        ]
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "docker",
+      "package": "code-sandbox-mcp",
+      "command": "code-sandbox-mcp",
+      "args": [],
+      "env": []
+    }
+  }
+}

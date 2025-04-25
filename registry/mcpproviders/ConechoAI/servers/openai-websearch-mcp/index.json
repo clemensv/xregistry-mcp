@@ -1,0 +1,86 @@
+{
+  "name": "OpenAI Web Search",
+  "description": "This MCP server provides access to OpenAI's websearch functionality through the Model Context Protocol. It allows AI assistants to search the web during conversations with users, providing up-to-date information that may not be available in the assistant's training data.",
+  "mcpversion": "1.0",
+  "serverversion": "unknown",
+  "repository": {
+    "url": "https://github.com/ConechoAI/openai-websearch-mcp",
+    "name": "ConechoAI/openai-websearch-mcp"
+  },
+  "tools": [
+    {
+      "name": "web_search",
+      "description": "It allows AI assistants to search the web during conversations with users",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "input": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string",
+            "enum": [
+              "gpt-4o",
+              "gpt-4o-mini"
+            ]
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "web_search_preview",
+              "web_search_preview_2025_03_11"
+            ]
+          },
+          "search_context_size": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "user_location": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "region": {
+                "type": "string"
+              },
+              "timezone": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "required": [
+          "input",
+          "type"
+        ]
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "runtime": "uvx",
+      "package": "openai-websearch-mcp",
+      "command": "uvx",
+      "args": [
+        "openai-websearch-mcp"
+      ],
+      "env": [
+        {
+          "name": "OPENAI_API_KEY",
+          "required": true
+        }
+      ]
+    }
+  }
+}

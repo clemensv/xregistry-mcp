@@ -1,0 +1,33 @@
+{
+  "name": "Notion MCP Server",
+  "description": "MCP Server for the Notion API, enabling LLM to interact with Notion workspaces. Additionally, it employs Markdown conversion to reduce context size when communicating with LLMs, optimizing token usage and making interactions more efficient.",
+  "mcpversion": "1.0.0",
+  "serverversion": "1.0.0",
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@suekou/mcp-notion-server",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@suekou/mcp-notion-server"
+      ],
+      "env": [
+        {
+          "name": "NOTION_API_TOKEN",
+          "description": "Your Notion API integration token.",
+          "required": true
+        },
+        {
+          "name": "NOTION_MARKDOWN_CONVERSION",
+          "description": "Set to \"true\" to enable experimental Markdown conversion.",
+          "required": false
+        }
+      ]
+    }
+  },
+  "repository": {
+    "url": "https://github.com/suekou/mcp-notion-server",
+    "name": "suekou/mcp-notion-server"
+  }
+}

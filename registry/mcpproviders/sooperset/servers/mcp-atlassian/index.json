@@ -1,0 +1,19 @@
+{
+  "name": "MCP Atlassian",
+  "description": "Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). This integration supports both Confluence & Jira Cloud and Server/Data Center deployments.",
+  "mcpversion": "1.0",
+  "serverversion": "latest",
+  "repository": {
+    "url": "https://github.com/sooperset/mcp-atlassian",
+    "name": "sooperset/mcp-atlassian"
+  },
+  "deployment": {
+    "container": {
+      "image": "ghcr.io/sooperset/mcp-atlassian:latest"
+    }
+  },
+  "endpoints": {},
+  "tools": [],
+  "resources": [],
+  "prompts": []
+}

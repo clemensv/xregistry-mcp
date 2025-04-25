@@ -1,0 +1,64 @@
+{
+  "name": "Data Visualization MCP Server",
+  "description": "A Model Context Protocol (MCP) server implementation that provides the LLM an interface for visualizing data using Vega-Lite syntax.",
+  "mcpversion": "unknown",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "name": "save_data",
+      "description": "Save a table of data agregations to the server for later visualization",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "required": [
+          "name",
+          "data"
+        ]
+      }
+    },
+    {
+      "name": "visualize_data",
+      "description": "Visualize a table of data using Vega-Lite syntax",
+      "inputschema": {
+        "type": "object",
+        "properties": {
+          "data_name": {
+            "type": "string"
+          },
+          "vegalite_specification": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "data_name",
+          "vegalite_specification"
+        ]
+      }
+    }
+  ],
+  "deployment": {
+    "sandbox": {
+      "command": "mcp_server_datavis",
+      "args": [
+        "--output_type",
+        "png"
+      ],
+      "runtime": "unknown",
+      "package": "unknown"
+    }
+  },
+  "repository": {
+    "url": "https://github.com/isaacwasserman/mcp-vegalite-server",
+    "name": "isaacwasserman/mcp-vegalite-server"
+  }
+}

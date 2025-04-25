@@ -1,0 +1,72 @@
+{
+  "name": "Starwind UI MCP Server",
+  "description": "A TypeScript implementation of a Model Context Protocol (MCP) server for Starwind UI, providing tools to help developers work with Starwind UI components.",
+  "docs": "https://modelcontextprotocol.io/",
+  "mcpversion": "unknown",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "name": "init_project",
+      "description": "Initializes a new Starwind UI project",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "install_component",
+      "description": "Generates installation commands for Starwind UI components",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "update_component",
+      "description": "Generates update commands for Starwind UI components",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_documentation",
+      "description": "Returns documentation links for Starwind UI components and guides",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "fetch_llm_data",
+      "description": "Fetches LLM data from starwind.dev (rate limited, with caching)",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "get_package_manager",
+      "description": "Detects and returns the current package manager information",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
+  "resources": [],
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "deployment": {
+    "sandbox": {
+      "runtime": "node",
+      "package": "@modelcontextprotocol/sdk",
+      "command": "node",
+      "args": [
+        "dist/server.js"
+      ],
+      "env": []
+    }
+  },
+  "repository": {
+    "url": "https://github.com/starwind-ui/starwind-ui-mcp",
+    "name": "starwind-ui/starwind-ui-mcp"
+  }
+}
