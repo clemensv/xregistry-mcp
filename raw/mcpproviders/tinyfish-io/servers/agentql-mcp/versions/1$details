@@ -1,0 +1,64 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:44:03.954399515Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "-y",
+        "agentql-mcp"
+      ],
+      "command": "npx",
+      "env": [
+        {
+          "name": "AGENTQL_API_KEY",
+          "required": true
+        }
+      ],
+      "package": "agentql-mcp",
+      "runtime": "nodejs"
+    }
+  },
+  "description": "This is a Model Context Protocol (MCP) server that integrates AgentQL's data extraction capabilities.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0.0",
+  "modifiedat": "2025-04-25T12:44:03.954399515Z",
+  "name": "agentql-mcp",
+  "repository": {
+    "name": "tinyfish-io/agentql-mcp",
+    "url": "https://github.com/tinyfish-io/agentql-mcp"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/tinyfish-io/servers/agentql-mcp/versions/1",
+  "serverid": "agentql-mcp",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "description": "Extracts structured data as JSON from a web page given a URL using a Natural Language description of the data.",
+      "inputschema": {
+        "properties": {
+          "prompt": {
+            "description": "Natural Language description of the data to extract from the page",
+            "type": "string"
+          },
+          "url": {
+            "description": "The URL of the public webpage to extract data from",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "prompt"
+        ],
+        "type": "object"
+      },
+      "name": "extract-web-data"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/tinyfish-io/servers/agentql-mcp/versions/1"
+}

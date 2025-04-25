@@ -1,0 +1,112 @@
+{
+  "dbhub": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:46.373341199Z",
+    "deployment": {
+      "container": {
+        "args": [
+          "--transport",
+          "sse",
+          "--port",
+          "8080",
+          "--dsn",
+          "postgres://user:password@localhost:5432/dbname?sslmode=disable"
+        ],
+        "env": [],
+        "image": "bytebase/dbhub"
+      }
+    },
+    "description": "DBHub is a universal database gateway implementing the Model Context Protocol (MCP) server interface. This gateway allows MCP-compatible clients to connect to and explore different databases.",
+    "endpoints": {
+      "httplocal": {
+        "deployment": "container",
+        "host": "0.0.0.0",
+        "port": 8080,
+        "protocol": "http"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "unspecified",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/bytebase/servers/dbhub/meta",
+    "modifiedat": "2025-04-25T12:40:46.373341199Z",
+    "name": "DBHub",
+    "prompts": [
+      {
+        "arguments": [],
+        "description": "Generate SQL statements for the database",
+        "name": "generate_sql"
+      },
+      {
+        "arguments": [],
+        "description": "Explain database elements",
+        "name": "explain_db"
+      }
+    ],
+    "repository": {
+      "name": "bytebase/dbhub",
+      "url": "https://github.com/bytebase/dbhub"
+    },
+    "resources": [
+      {
+        "description": "Database schemas resource",
+        "mimetype": "application/json",
+        "name": "schemas",
+        "uritemplate": "db://schemas"
+      },
+      {
+        "description": "Tables in a given schema",
+        "mimetype": "application/json",
+        "name": "tables_in_schema",
+        "uritemplate": "db://schemas/{schemaName}/tables"
+      },
+      {
+        "description": "Structure of a table in a schema",
+        "mimetype": "application/json",
+        "name": "table_structure_in_schema",
+        "uritemplate": "db://schemas/{schemaName}/tables/{tableName}"
+      },
+      {
+        "description": "Indexes in a table",
+        "mimetype": "application/json",
+        "name": "indexes_in_table",
+        "uritemplate": "db://schemas/{schemaName}/tables/{tableName}/indexes"
+      },
+      {
+        "description": "Stored procedures in a schema",
+        "mimetype": "application/json",
+        "name": "procedures_in_schema",
+        "uritemplate": "db://schemas/{schemaName}/procedures"
+      },
+      {
+        "description": "Details of a stored procedure",
+        "mimetype": "application/json",
+        "name": "procedure_details_in_schema",
+        "uritemplate": "db://schemas/{schemaName}/procedures/{procedureName}"
+      }
+    ],
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/bytebase/servers/dbhub",
+    "serverid": "dbhub",
+    "serverversion": "unspecified",
+    "tools": [
+      {
+        "description": "Execute SQL command on the database",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "execute_sql"
+      },
+      {
+        "description": "List available database connectors",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_connectors"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/bytebase/servers/dbhub/versions",
+    "xid": "/mcpproviders/bytebase/servers/dbhub"
+  }
+}

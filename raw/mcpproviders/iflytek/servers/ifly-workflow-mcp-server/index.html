@@ -1,0 +1,94 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:27.648977884Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "-m",
+        "mcp_server.main"
+      ],
+      "command": "python",
+      "env": [
+        {
+          "default": "../../config.yaml",
+          "description": "Path to configuration file",
+          "name": "CONFIG_PATH",
+          "required": false
+        }
+      ],
+      "package": "ifly-workflow-mcp-server",
+      "runtime": "python"
+    }
+  },
+  "description": "The fastest way to build workflows with an AI agent platform! This is a simple implementation of an MCP server using iFlytek. It enables calling iFlytek workflows through MCP tools. Supports 14 types of workflow nodes, advanced orchestration modes, multi-model support, and streaming output via hook mechanism.",
+  "docs": "https://xinghuo.xfyun.cn/botcenter/createbot",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/iflytek/servers/ifly-workflow-mcp-server/meta",
+  "modifiedat": "2025-04-25T12:41:27.648977884Z",
+  "name": "iFlytek Workflow MCP Server",
+  "repository": {
+    "name": "iflytek/ifly-workflow-mcp-server",
+    "url": "https://github.com/iflytek/ifly-workflow-mcp-server"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/iflytek/servers/ifly-workflow-mcp-server",
+  "serverid": "ifly-workflow-mcp-server",
+  "serverversion": "0.0.1",
+  "tools": [
+    {
+      "description": "System tool for uploading files.",
+      "inputschema": {
+        "properties": {
+          "file": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "file"
+        ],
+        "type": "object"
+      },
+      "name": "SYS_UPLOAD_FILE"
+    },
+    {
+      "description": "Tool to generate images based on user input.",
+      "inputschema": {
+        "properties": {
+          "AGENT_USER_INPUT": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "AGENT_USER_INPUT"
+        ],
+        "type": "object"
+      },
+      "name": "image_generator"
+    },
+    {
+      "description": "Tool for testing LLM interactions.",
+      "inputschema": {
+        "properties": {
+          "AGENT_USER_INPUT": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "AGENT_USER_INPUT"
+        ],
+        "type": "object"
+      },
+      "name": "llm_test"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/iflytek/servers/ifly-workflow-mcp-server/versions",
+  "xid": "/mcpproviders/iflytek/servers/ifly-workflow-mcp-server"
+}

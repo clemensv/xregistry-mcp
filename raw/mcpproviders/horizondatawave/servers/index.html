@@ -1,0 +1,203 @@
+{
+  "hdw-mcp-server": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:24.577124861Z",
+    "deployment": {},
+    "description": "A Model Context Protocol (MCP) server that provides comprehensive access to LinkedIn data and functionalities using the HorizonDataWave API, enabling not only data retrieval but also robust management of user accounts.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/horizondatawave/servers/hdw-mcp-server/meta",
+    "modifiedat": "2025-04-25T12:41:24.577124861Z",
+    "name": "HDW MCP Server",
+    "repository": {
+      "name": "horizondatawave/hdw-mcp-server",
+      "url": "https://github.com/horizondatawave/hdw-mcp-server"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/horizondatawave/servers/hdw-mcp-server",
+    "serverid": "hdw-mcp-server",
+    "serverversion": "unknown",
+    "tools": [
+      {
+        "description": "Search for LinkedIn users with various filters.",
+        "inputschema": {
+          "properties": {
+            "company_keywords": {
+              "type": "string"
+            },
+            "count": {
+              "type": "integer"
+            },
+            "current_company": {
+              "type": "string"
+            },
+            "education": {
+              "type": "string"
+            },
+            "first_name": {
+              "type": "string"
+            },
+            "industry": {
+              "type": "string"
+            },
+            "keywords": {
+              "type": "string"
+            },
+            "last_name": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "past_company": {
+              "type": "string"
+            },
+            "school_keywords": {
+              "type": "string"
+            },
+            "timeout": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "search_linkedin_users"
+      },
+      {
+        "description": "Retrieve detailed profile information about a LinkedIn user.",
+        "inputschema": {
+          "properties": {
+            "user": {
+              "type": "string"
+            },
+            "with_education": {
+              "type": "boolean"
+            },
+            "with_experience": {
+              "type": "boolean"
+            },
+            "with_skills": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "user"
+          ],
+          "type": "object"
+        },
+        "name": "get_linkedin_profile"
+      },
+      {
+        "description": "Look up LinkedIn user details by email.",
+        "inputschema": {
+          "properties": {
+            "count": {
+              "type": "integer"
+            },
+            "email": {
+              "type": "string"
+            },
+            "timeout": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "email"
+          ],
+          "type": "object"
+        },
+        "name": "get_linkedin_email_user"
+      },
+      {
+        "description": "Retrieve posts for a LinkedIn user by URN.",
+        "inputschema": {
+          "properties": {
+            "count": {
+              "type": "integer"
+            },
+            "timeout": {
+              "type": "integer"
+            },
+            "urn": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "urn"
+          ],
+          "type": "object"
+        },
+        "name": "get_linkedin_user_posts"
+      },
+      {
+        "description": "Retrieve reactions for a LinkedIn user by URN.",
+        "inputschema": {
+          "properties": {
+            "count": {
+              "type": "integer"
+            },
+            "timeout": {
+              "type": "integer"
+            },
+            "urn": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "urn"
+          ],
+          "type": "object"
+        },
+        "name": "get_linkedin_user_reactions"
+      },
+      {
+        "description": "Retrieve top chat messages from the LinkedIn management API.",
+        "inputschema": {
+          "properties": {
+            "count": {
+              "type": "integer"
+            },
+            "timeout": {
+              "type": "integer"
+            },
+            "user": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "user"
+          ],
+          "type": "object"
+        },
+        "name": "get_linkedin_chat_messages"
+      },
+      {
+        "description": "Send a chat message using the LinkedIn management API.",
+        "inputschema": {
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "user": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "user",
+            "text"
+          ],
+          "type": "object"
+        },
+        "name": "send_linkedin_chat_message"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/horizondatawave/servers/hdw-mcp-server/versions",
+    "xid": "/mcpproviders/horizondatawave/servers/hdw-mcp-server"
+  }
+}

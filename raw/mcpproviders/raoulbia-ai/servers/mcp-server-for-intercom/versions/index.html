@@ -1,0 +1,175 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:42:53.904454796Z",
+    "deployment": {
+      "container": {
+        "env": [
+          {
+            "description": "Your Intercom API token",
+            "name": "INTERCOM_ACCESS_TOKEN",
+            "required": true
+          }
+        ],
+        "image": "mcp-intercom:latest"
+      },
+      "sandbox": {
+        "command": "intercom-mcp",
+        "env": [
+          {
+            "description": "Your Intercom API token",
+            "name": "INTERCOM_ACCESS_TOKEN",
+            "required": true
+          }
+        ],
+        "package": "mcp-server-for-intercom",
+        "runtime": "nodejs"
+      }
+    },
+    "description": "An MCP-compliant server that enables AI assistants to access and analyze customer support data from Intercom.",
+    "endpoints": {
+      "http": {
+        "authorization": {
+          "description": "Use the INTERCOM_ACCESS_TOKEN as Bearer token in Authorization header",
+          "format": "Bearer {token}",
+          "name": "Authorization",
+          "required": true,
+          "type": "header"
+        },
+        "uri": "http://localhost:8080"
+      },
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0.0",
+    "modifiedat": "2025-04-25T12:42:53.904454796Z",
+    "name": "mcp-server-for-intercom",
+    "repository": {
+      "name": "raoulbia-ai/mcp-server-for-intercom",
+      "url": "https://github.com/raoulbia-ai/mcp-server-for-intercom"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/raoulbia-ai/servers/mcp-server-for-intercom/versions/1",
+    "serverid": "mcp-server-for-intercom",
+    "serverversion": "1.0.0",
+    "tools": [
+      {
+        "description": "Searches for conversations by customer email or ID with optional date filtering.",
+        "inputschema": {
+          "properties": {
+            "customerIdentifier": {
+              "description": "Customer email or ID to search for",
+              "type": "string"
+            },
+            "endDate": {
+              "description": "Optional end date in DD/MM/YYYY format (e.g., '21/01/2025')",
+              "type": "string"
+            },
+            "keywords": {
+              "description": "Optional keywords to filter conversations by content",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "startDate": {
+              "description": "Optional start date in DD/MM/YYYY format (e.g., '15/01/2025')",
+              "type": "string"
+            }
+          },
+          "required": [
+            "customerIdentifier"
+          ],
+          "type": "object"
+        },
+        "name": "search_conversations_by_customer"
+      },
+      {
+        "description": "Searches for tickets by status with optional date filtering.",
+        "inputschema": {
+          "properties": {
+            "endDate": {
+              "description": "Optional end date in DD/MM/YYYY format (e.g., '21/01/2025')",
+              "type": "string"
+            },
+            "startDate": {
+              "description": "Optional start date in DD/MM/YYYY format (e.g., '15/01/2025')",
+              "type": "string"
+            },
+            "status": {
+              "description": "Ticket status to search for (open, pending, or resolved)",
+              "enum": [
+                "open",
+                "pending",
+                "resolved"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "status"
+          ],
+          "type": "object"
+        },
+        "name": "search_tickets_by_status"
+      },
+      {
+        "description": "Retrieves Intercom conversations within a specific date range (max 7 days).",
+        "inputschema": {
+          "properties": {
+            "endDate": {
+              "description": "End date in DD/MM/YYYY format (e.g., '21/01/2025'). Required.",
+              "type": "string"
+            },
+            "exclude": {
+              "description": "Optional exclusion filter for conversation content.",
+              "type": "string"
+            },
+            "keyword": {
+              "description": "Optional keyword to filter conversations by content.",
+              "type": "string"
+            },
+            "startDate": {
+              "description": "Start date in DD/MM/YYYY format (e.g., '15/01/2025'). Required.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "startDate",
+            "endDate"
+          ],
+          "type": "object"
+        },
+        "name": "list_conversations"
+      },
+      {
+        "description": "Searches for tickets by customer email or ID with optional date filtering.",
+        "inputschema": {
+          "properties": {
+            "customerIdentifier": {
+              "description": "Customer email or ID to search for",
+              "type": "string"
+            },
+            "endDate": {
+              "description": "Optional end date in DD/MM/YYYY format (e.g., '21/01/2025')",
+              "type": "string"
+            },
+            "startDate": {
+              "description": "Optional start date in DD/MM/YYYY format (e.g., '15/01/2025')",
+              "type": "string"
+            }
+          },
+          "required": [
+            "customerIdentifier"
+          ],
+          "type": "object"
+        },
+        "name": "search_tickets_by_customer"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/raoulbia-ai/servers/mcp-server-for-intercom/versions/1"
+  }
+}

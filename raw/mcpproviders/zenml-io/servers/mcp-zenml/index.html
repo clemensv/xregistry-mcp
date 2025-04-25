@@ -1,0 +1,69 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:44:47.546760728Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "run",
+        "zenml_server.py"
+      ],
+      "command": "uv",
+      "env": [
+        {
+          "default": "INFO",
+          "description": "Log level for server output",
+          "name": "LOGLEVEL",
+          "required": false
+        },
+        {
+          "default": "1",
+          "description": "Disable colored output",
+          "name": "NO_COLOR",
+          "required": false
+        },
+        {
+          "default": "1",
+          "description": "Python unbuffered output",
+          "name": "PYTHONUNBUFFERED",
+          "required": false
+        },
+        {
+          "default": "UTF-8",
+          "description": "Python IO encoding",
+          "name": "PYTHONIOENCODING",
+          "required": false
+        },
+        {
+          "description": "URL of the ZenML server",
+          "name": "ZENML_STORE_URL",
+          "required": true
+        },
+        {
+          "description": "API key for ZenML server authentication",
+          "name": "ZENML_STORE_API_KEY",
+          "required": true
+        }
+      ],
+      "package": "uv",
+      "runtime": "uv"
+    }
+  },
+  "description": "This project implements a Model Context Protocol (MCP) server for interacting with the ZenML API. It provides MCP tools to access core read functionality from the ZenML server, including users, stacks, pipelines, pipeline runs, pipeline steps, services, stack components, flavors, pipeline run templates, schedules, artifacts metadata, service connectors, step code, and step logs. It also allows triggering new pipeline runs if a run template is present.",
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/zenml-io/servers/mcp-zenml/meta",
+  "modifiedat": "2025-04-25T12:44:47.546760728Z",
+  "name": "MCP Server for ZenML",
+  "repository": {
+    "name": "zenml-io/mcp-zenml",
+    "url": "https://github.com/zenml-io/mcp-zenml"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/zenml-io/servers/mcp-zenml",
+  "serverid": "mcp-zenml",
+  "serverversion": "beta/experimental",
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/zenml-io/servers/mcp-zenml/versions",
+  "xid": "/mcpproviders/zenml-io/servers/mcp-zenml"
+}

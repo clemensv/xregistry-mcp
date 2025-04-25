@@ -1,0 +1,286 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:42:36.940348129Z",
+    "deployment": {
+      "sandbox": {
+        "args": [],
+        "command": "python -m mcp-naver.hosts.claude_desktop",
+        "env": [
+          {
+            "description": "Your Naver client ID",
+            "name": "NAVER_CLIENT_ID",
+            "required": true
+          },
+          {
+            "description": "Your Naver client secret",
+            "name": "NAVER_CLIENT_SECRET",
+            "required": true
+          }
+        ],
+        "package": "mcp-naver",
+        "runtime": "python"
+      }
+    },
+    "description": "A server implementation for Naver OpenAPI using the Model Context Protocol (MCP). This project provides tools to interact with various Naver services, such as searching blogs, news, books, and more.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "modifiedat": "2025-04-25T12:42:36.940348129Z",
+    "name": "Naver MCP Server",
+    "repository": {
+      "name": "pfldy2850/py-mcp-naver",
+      "url": "https://github.com/pfldy2850/py-mcp-naver"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/pfldy2850/servers/py-mcp-naver/versions/1",
+    "serverid": "py-mcp-naver",
+    "serverversion": "unknown",
+    "tools": [
+      {
+        "description": "Search blog posts on Naver.",
+        "inputschema": {
+          "properties": {
+            "display": {
+              "type": "integer"
+            },
+            "query": {
+              "type": "string"
+            },
+            "sort": {
+              "type": "string"
+            },
+            "start": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search_blog"
+      },
+      {
+        "description": "Search news articles on Naver.",
+        "inputschema": {
+          "properties": {
+            "display": {
+              "type": "integer"
+            },
+            "query": {
+              "type": "string"
+            },
+            "sort": {
+              "type": "string"
+            },
+            "start": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search_news"
+      },
+      {
+        "description": "Search books on Naver.",
+        "inputschema": {
+          "properties": {
+            "display": {
+              "type": "integer"
+            },
+            "query": {
+              "type": "string"
+            },
+            "sort": {
+              "type": "string"
+            },
+            "start": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search_book"
+      },
+      {
+        "description": "Get detailed book information using title or ISBN.",
+        "inputschema": {
+          "properties": {
+            "d_isbn": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "d_titl": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "query": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "name": "get_book_adv"
+      },
+      {
+        "description": "Check if a search term is adult content.",
+        "inputschema": {
+          "properties": {
+            "query": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "adult_check"
+      },
+      {
+        "description": "Search encyclopedia entries on Naver.",
+        "inputschema": {
+          "properties": {
+            "display": {
+              "type": "integer"
+            },
+            "query": {
+              "type": "string"
+            },
+            "start": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search_encyc"
+      },
+      {
+        "description": "Search articles in Naver cafes.",
+        "inputschema": {
+          "properties": {
+            "display": {
+              "type": "integer"
+            },
+            "query": {
+              "type": "string"
+            },
+            "sort": {
+              "type": "string"
+            },
+            "start": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search_cafe_article"
+      },
+      {
+        "description": "Search questions and answers on Naver.",
+        "inputschema": {
+          "properties": {
+            "display": {
+              "type": "integer"
+            },
+            "query": {
+              "type": "string"
+            },
+            "sort": {
+              "type": "string"
+            },
+            "start": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search_kin"
+      },
+      {
+        "description": "Search local information on Naver.",
+        "inputschema": {
+          "properties": {
+            "display": {
+              "type": "integer"
+            },
+            "query": {
+              "type": "string"
+            },
+            "sort": {
+              "type": "string"
+            },
+            "start": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search_local"
+      },
+      {
+        "description": "Correct spelling errors in a given text.",
+        "inputschema": {
+          "properties": {
+            "query": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "fix_spelling"
+      },
+      {
+        "description": "Search web pages on Naver.",
+        "inputschema": {
+          "properties": {
+            "display": {
+              "type": "integer"
+            },
+            "query": {
+              "type": "string"
+            },
+            "start": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search_webkr"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/pfldy2850/servers/py-mcp-naver/versions/1"
+  }
+}

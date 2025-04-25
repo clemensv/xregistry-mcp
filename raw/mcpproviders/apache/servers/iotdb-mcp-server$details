@@ -1,0 +1,152 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:40:39.795426453Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "--directory",
+        "YOUR_REPO_PATH/src/iotdb_mcp_server",
+        "run",
+        "server.py"
+      ],
+      "command": "uv",
+      "env": [
+        {
+          "default": "127.0.0.1",
+          "description": "Host address of the IoTDB server",
+          "name": "IOTDB_HOST",
+          "required": true
+        },
+        {
+          "default": "6667",
+          "description": "Port number of the IoTDB server",
+          "name": "IOTDB_PORT",
+          "required": true
+        },
+        {
+          "default": "root",
+          "description": "Username for IoTDB authentication",
+          "name": "IOTDB_USER",
+          "required": true
+        },
+        {
+          "default": "root",
+          "description": "Password for IoTDB authentication",
+          "name": "IOTDB_PASSWORD",
+          "required": true
+        },
+        {
+          "default": "test",
+          "description": "Database name to connect to",
+          "name": "IOTDB_DATABASE",
+          "required": true
+        },
+        {
+          "default": "table",
+          "description": "SQL dialect to use: 'tree' or 'table'",
+          "name": "IOTDB_SQL_DIALECT",
+          "required": true
+        }
+      ],
+      "package": "iotdb-mcp-server",
+      "packageversion": "unknown",
+      "runtime": "python-uv"
+    }
+  },
+  "description": "A Model Context Protocol (MCP) server implementation that provides database interaction and business intelligence capabilities through IoTDB. This server enables running SQL queries.",
+  "endpoints": {},
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/apache/servers/iotdb-mcp-server/meta",
+  "modifiedat": "2025-04-25T12:40:39.795426453Z",
+  "name": "IoTDB MCP Server",
+  "prompts": [],
+  "repository": {
+    "name": "apache/iotdb-mcp-server",
+    "url": "https://github.com/apache/iotdb-mcp-server"
+  },
+  "resources": [],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/apache/servers/iotdb-mcp-server",
+  "serverid": "iotdb-mcp-server",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "description": "Execute SHOW/COUNT queries to read metadata from the database",
+      "inputschema": {
+        "properties": {
+          "query_sql": {
+            "description": "The SHOW/COUNT SQL query to execute",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query_sql"
+        ],
+        "type": "object"
+      },
+      "name": "metadata_query"
+    },
+    {
+      "description": "Execute SELECT queries to read data from the database",
+      "inputschema": {
+        "properties": {
+          "query_sql": {
+            "description": "The SELECT SQL query to execute",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query_sql"
+        ],
+        "type": "object"
+      },
+      "name": "select_query"
+    },
+    {
+      "description": "Execute SELECT queries to read data from the database",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "The SELECT SQL query to execute",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "read_query"
+    },
+    {
+      "description": "Get a list of all tables in the database",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "list_tables"
+    },
+    {
+      "description": "View schema information for a specific table",
+      "inputschema": {
+        "properties": {
+          "table_name": {
+            "description": "Name of table to describe",
+            "type": "string"
+          }
+        },
+        "required": [
+          "table_name"
+        ],
+        "type": "object"
+      },
+      "name": "describe-table"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/apache/servers/iotdb-mcp-server/versions",
+  "xid": "/mcpproviders/apache/servers/iotdb-mcp-server"
+}

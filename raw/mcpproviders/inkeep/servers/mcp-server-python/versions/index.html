@@ -1,0 +1,80 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:30.208200783Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "--directory",
+          "\u003cYOUR_INKEEP_MCP_SERVER_ABSOLUTE_PATH\u003e",
+          "run",
+          "-m",
+          "inkeep_mcp_server"
+        ],
+        "command": "uv",
+        "env": [
+          {
+            "default": "https://api.inkeep.com/v1",
+            "description": "Base URL for Inkeep API",
+            "name": "INKEEP_API_BASE_URL",
+            "required": true
+          },
+          {
+            "description": "API key for authentication",
+            "name": "INKEEP_API_KEY",
+            "required": true
+          },
+          {
+            "default": "inkeep-rag",
+            "description": "Model to use",
+            "name": "INKEEP_API_MODEL",
+            "required": true
+          },
+          {
+            "default": "search-product-content",
+            "description": "Name of the MCP tool",
+            "name": "INKEEP_MCP_TOOL_NAME",
+            "required": true
+          },
+          {
+            "default": "Retrieves product documentation about Inkeep. The query should be framed as a conversational question about Inkeep.",
+            "description": "Description of the MCP tool",
+            "name": "INKEEP_MCP_TOOL_DESCRIPTION",
+            "required": true
+          }
+        ],
+        "package": "inkeep-mcp-server",
+        "runtime": "python"
+      }
+    },
+    "description": "Inkeep MCP Server powered by your docs and product content.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "modifiedat": "2025-04-25T12:41:30.208200783Z",
+    "name": "inkeep-mcp-server",
+    "repository": {
+      "name": "inkeep/mcp-server-python",
+      "url": "https://github.com/inkeep/mcp-server-python"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/inkeep/servers/mcp-server-python/versions/1",
+    "serverid": "mcp-server-python",
+    "serverversion": "unknown",
+    "tools": [
+      {
+        "description": "Retrieves product documentation about Inkeep. The query should be framed as a conversational question about Inkeep.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "search-product-content"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/inkeep/servers/mcp-server-python/versions/1"
+  }
+}

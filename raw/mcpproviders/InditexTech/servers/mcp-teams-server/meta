@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:29.383312505Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/InditexTech/servers/mcp-teams-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:29.383312505Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/InditexTech/servers/mcp-teams-server/meta",
+  "serverid": "mcp-teams-server",
+  "xid": "/mcpproviders/InditexTech/servers/mcp-teams-server/meta"
+}

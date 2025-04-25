@@ -1,0 +1,69 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:44.737418271Z",
+  "deployment": {
+    "sandbox": {
+      "args": [],
+      "command": "mcp dev main.py",
+      "env": [
+        {
+          "description": "API key for Dune Analytics",
+          "name": "DUNE_API_KEY",
+          "required": true
+        }
+      ],
+      "package": "dune-analytics-mcp",
+      "runtime": "python"
+    }
+  },
+  "description": "Dune Analytics tools",
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kukapay/servers/dune-analytics-mcp/meta",
+  "modifiedat": "2025-04-25T12:41:44.737418271Z",
+  "name": "Dune Analytics MCP Server",
+  "repository": {
+    "name": "kukapay/dune-analytics-mcp",
+    "url": "https://github.com/kukapay/dune-analytics-mcp"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kukapay/servers/dune-analytics-mcp",
+  "serverid": "dune-analytics-mcp",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "description": "Get the latest results for a specific query ID as a CSV string on dune analytics",
+      "inputschema": {
+        "properties": {
+          "query_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "query_id"
+        ],
+        "type": "object"
+      },
+      "name": "get_latest_result"
+    },
+    {
+      "description": "Run a query by ID and return results as a CSV string on dune analytics",
+      "inputschema": {
+        "properties": {
+          "query_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "query_id"
+        ],
+        "type": "object"
+      },
+      "name": "run_query"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kukapay/servers/dune-analytics-mcp/versions",
+  "xid": "/mcpproviders/kukapay/servers/dune-analytics-mcp"
+}

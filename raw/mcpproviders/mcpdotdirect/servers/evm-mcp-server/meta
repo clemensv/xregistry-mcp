@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:57.014680998Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/mcpdotdirect/servers/evm-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:57.014680998Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/mcpdotdirect/servers/evm-mcp-server/meta",
+  "serverid": "evm-mcp-server",
+  "xid": "/mcpproviders/mcpdotdirect/servers/evm-mcp-server/meta"
+}

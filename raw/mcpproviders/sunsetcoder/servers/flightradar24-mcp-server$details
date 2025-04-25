@@ -1,0 +1,93 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:43:47.219146808Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "/Users/\u003cusername\u003e/\u003cFULL_PATH...\u003e/flightradar24-mcp-server/dist/index.js"
+      ],
+      "command": "node",
+      "env": [
+        {
+          "description": "Flightradar24 API key",
+          "name": "FR24_API_KEY",
+          "required": true
+        },
+        {
+          "description": "Flightradar24 API base URL",
+          "name": "FR24_API_URL",
+          "required": true
+        }
+      ],
+      "package": "@modelcontextprotocol/sdk",
+      "runtime": "node"
+    }
+  },
+  "description": "A Claude Desktop MCP server that helps you track flights in real-time using Flightradar24 data. Perfect for aviation enthusiasts, travel planners, or anyone curious about flights overhead!",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/sunsetcoder/servers/flightradar24-mcp-server/meta",
+  "modifiedat": "2025-04-25T12:43:47.219146808Z",
+  "name": "flightradar24-server",
+  "repository": {
+    "name": "sunsetcoder/flightradar24-mcp-server",
+    "url": "https://github.com/sunsetcoder/flightradar24-mcp-server"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/sunsetcoder/servers/flightradar24-mcp-server",
+  "serverid": "flightradar24-mcp-server",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "description": "Get real-time flight positions with various filtering options",
+      "inputschema": {
+        "properties": {
+          "airports": {
+            "description": "Comma-separated list of airport ICAO codes",
+            "type": "string"
+          },
+          "bounds": {
+            "description": "Geographical bounds (lat1,lon1,lat2,lon2)",
+            "type": "string"
+          },
+          "categories": {
+            "description": "Aircraft categories (P,C,J)",
+            "type": "string"
+          },
+          "limit": {
+            "description": "Maximum number of results",
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "name": "get_flight_positions"
+    },
+    {
+      "description": "Get estimated arrival time for a specific flight",
+      "inputschema": {
+        "properties": {
+          "flightNumber": {
+            "description": "Flight number (e.g., UA123)",
+            "pattern": "^[A-Z0-9]{2,8}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "flightNumber"
+        ],
+        "type": "object"
+      },
+      "name": "get_flight_eta"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/sunsetcoder/servers/flightradar24-mcp-server/versions",
+  "xid": "/mcpproviders/sunsetcoder/servers/flightradar24-mcp-server"
+}

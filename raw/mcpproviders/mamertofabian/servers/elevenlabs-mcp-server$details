@@ -1,0 +1,186 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:53.814902879Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "elevenlabs-mcp-server"
+      ],
+      "command": "elevenlabs-mcp-server",
+      "env": [
+        {
+          "description": "API key for ElevenLabs",
+          "name": "ELEVENLABS_API_KEY",
+          "required": true
+        },
+        {
+          "description": "Default voice ID to use",
+          "name": "ELEVENLABS_VOICE_ID",
+          "required": false
+        },
+        {
+          "default": "eleven_flash_v2",
+          "description": "Model ID for voice generation",
+          "name": "ELEVENLABS_MODEL_ID",
+          "required": false
+        },
+        {
+          "default": "0.5",
+          "description": "Stability parameter for voice synthesis",
+          "name": "ELEVENLABS_STABILITY",
+          "required": false
+        },
+        {
+          "default": "0.75",
+          "description": "Similarity boost parameter",
+          "name": "ELEVENLABS_SIMILARITY_BOOST",
+          "required": false
+        },
+        {
+          "default": "0.1",
+          "description": "Style parameter for voice",
+          "name": "ELEVENLABS_STYLE",
+          "required": false
+        },
+        {
+          "default": "output",
+          "description": "Output directory for audio files",
+          "name": "ELEVENLABS_OUTPUT_DIR",
+          "required": false
+        }
+      ],
+      "package": "@smithery/elevenlabs-mcp-server",
+      "runtime": "node"
+    }
+  },
+  "description": "A Model Context Protocol (MCP) server that integrates with ElevenLabs text-to-speech API, featuring both a server component and a sample web-based MCP Client (SvelteKit) for managing voice generation tasks.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/mamertofabian/servers/elevenlabs-mcp-server/meta",
+  "modifiedat": "2025-04-25T12:41:53.814902879Z",
+  "name": "ElevenLabs MCP Server",
+  "repository": {
+    "name": "mamertofabian/elevenlabs-mcp-server",
+    "url": "https://github.com/mamertofabian/elevenlabs-mcp-server"
+  },
+  "resources": [
+    {
+      "description": "Access voiceover job history. Provide job_id for specific job or omit for all jobs.",
+      "mimetype": "application/json",
+      "name": "Voiceover Job History",
+      "uritemplate": "voiceover://history/{job_id}"
+    },
+    {
+      "description": "Access list of available ElevenLabs voices with metadata",
+      "mimetype": "application/json",
+      "name": "Available Voices",
+      "uritemplate": "voiceover://voices"
+    }
+  ],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/mamertofabian/servers/elevenlabs-mcp-server",
+  "serverid": "elevenlabs-mcp-server",
+  "serverversion": "0.1.0",
+  "tools": [
+    {
+      "description": "Generate audio from plain text using default voice settings",
+      "inputschema": {
+        "properties": {
+          "text": {
+            "description": "Plain text to convert to audio",
+            "type": "string"
+          },
+          "voice_id": {
+            "description": "Optional voice ID to use for generation",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "type": "object"
+      },
+      "name": "generate_audio_simple"
+    },
+    {
+      "description": "Generate audio from a structured script with multiple voices and actors. \n                    Accepts either:\n                    1. Plain text string\n                    2. JSON string with format: {\n                        \"script\": [\n                            {\n                                \"text\": \"Text to speak\",\n                                \"voice_id\": \"optional-voice-id\",\n                                \"actor\": \"optional-actor-name\"\n                            },\n                            ...\n                        ]\n                    }",
+      "inputschema": {
+        "properties": {
+          "script": {
+            "description": "JSON string containing script array or plain text. For JSON format, provide an object with a 'script' array containing objects with 'text' (required), 'voice_id' (optional), and 'actor' (optional) fields.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "script"
+        ],
+        "type": "object"
+      },
+      "name": "generate_audio_script"
+    },
+    {
+      "description": "Delete a voiceover job and its associated files",
+      "inputschema": {
+        "properties": {
+          "job_id": {
+            "description": "ID of the job to delete",
+            "type": "string"
+          }
+        },
+        "required": [
+          "job_id"
+        ],
+        "type": "object"
+      },
+      "name": "delete_job"
+    },
+    {
+      "description": "Get the audio file content for a specific job",
+      "inputschema": {
+        "properties": {
+          "job_id": {
+            "description": "ID of the job to get audio file for",
+            "type": "string"
+          }
+        },
+        "required": [
+          "job_id"
+        ],
+        "type": "object"
+      },
+      "name": "get_audio_file"
+    },
+    {
+      "description": "Get a list of all available ElevenLabs voices with metadata",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "list_voices"
+    },
+    {
+      "description": "Get voiceover job history. Optionally specify a job ID for a specific job.",
+      "inputschema": {
+        "properties": {
+          "job_id": {
+            "description": "Optional job ID to get details for a specific job",
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "name": "get_voiceover_history"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/mamertofabian/servers/elevenlabs-mcp-server/versions",
+  "xid": "/mcpproviders/mamertofabian/servers/elevenlabs-mcp-server"
+}

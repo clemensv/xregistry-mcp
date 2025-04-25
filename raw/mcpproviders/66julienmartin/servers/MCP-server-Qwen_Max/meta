@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:40:37.320797286Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/66julienmartin/servers/MCP-server-Qwen_Max/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:40:37.320797286Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/66julienmartin/servers/MCP-server-Qwen_Max/meta",
+  "serverid": "MCP-server-Qwen_Max",
+  "xid": "/mcpproviders/66julienmartin/servers/MCP-server-Qwen_Max/meta"
+}

@@ -1,0 +1,233 @@
+{
+  "crypto-feargreed-mcp": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:43.630015293Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "install",
+          "main.py",
+          "--name",
+          "CryptoFearGreed"
+        ],
+        "command": "mcp",
+        "env": [],
+        "package": "crypto-feargreed-mcp",
+        "runtime": "python"
+      }
+    },
+    "description": "A mcp server that provides real-time and historical Crypto Fear \u0026 Greed Index data, powered by the Alternative.me.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "unknown",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kukapay/servers/crypto-feargreed-mcp/meta",
+    "modifiedat": "2025-04-25T12:41:43.630015293Z",
+    "name": "Crypto Fear \u0026 Greed Index MCP Server",
+    "prompts": [
+      {
+        "arguments": [
+          {
+            "description": "Crypto Fear \u0026 Greed Index value to interpret",
+            "name": "value",
+            "required": true
+          }
+        ],
+        "description": "Index Data Interpretation.",
+        "name": "interpret_fng"
+      }
+    ],
+    "repository": {
+      "name": "kukapay/crypto-feargreed-mcp",
+      "url": "https://github.com/kukapay/crypto-feargreed-mcp"
+    },
+    "resources": [
+      {
+        "description": "Current crypto Fear \u0026 Greed Index.",
+        "name": "current",
+        "uritemplate": "fng://current"
+      },
+      {
+        "description": "Historical Data of Crypto Fear \u0026 Greed Index for specified number of days.",
+        "name": "history",
+        "uritemplate": "fng://history/{days}"
+      }
+    ],
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kukapay/servers/crypto-feargreed-mcp",
+    "serverid": "crypto-feargreed-mcp",
+    "serverversion": "unknown",
+    "tools": [
+      {
+        "description": "Current Index. Same as fng://current",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_current_fng_tool"
+      },
+      {
+        "description": "Historical Index Data. Same as fng://history/{days}",
+        "inputschema": {
+          "properties": {
+            "days": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "days"
+          ],
+          "type": "object"
+        },
+        "name": "get_historical_fng_tool"
+      },
+      {
+        "description": "Index trend Analysis.",
+        "inputschema": {
+          "properties": {
+            "days": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "days"
+          ],
+          "type": "object"
+        },
+        "name": "analyze_fng_trend"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kukapay/servers/crypto-feargreed-mcp/versions",
+    "xid": "/mcpproviders/kukapay/servers/crypto-feargreed-mcp"
+  },
+  "cryptopanic-mcp-server": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:44.197591298Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "--directory",
+          "/your/path/to/cryptopanic-mcp-server",
+          "run",
+          "main.py"
+        ],
+        "command": "uv",
+        "env": [
+          {
+            "description": "CryptoPanic API key",
+            "name": "CRYPTOPANIC_API_KEY",
+            "required": false
+          }
+        ],
+        "package": "unspecified",
+        "runtime": "unspecified"
+      }
+    },
+    "description": "Provide the latest cryptocurrency news to AI agents, powered by CryptoPanic.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kukapay/servers/cryptopanic-mcp-server/meta",
+    "modifiedat": "2025-04-25T12:41:44.197591298Z",
+    "name": "cryptopanic-mcp-server",
+    "repository": {
+      "name": "kukapay/cryptopanic-mcp-server",
+      "url": "https://github.com/kukapay/cryptopanic-mcp-server"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kukapay/servers/cryptopanic-mcp-server",
+    "serverid": "cryptopanic-mcp-server",
+    "serverversion": "unspecified",
+    "tools": [
+      {
+        "description": "Fetch latest cryptocurrency news, analysis, or videos from CryptoPanic.",
+        "inputschema": {
+          "properties": {
+            "kind": {
+              "description": "Content type (news, analysis, videos)",
+              "type": "string"
+            },
+            "num_pages": {
+              "description": "Number of pages to fetch (default: 1, max: 10)",
+              "type": "integer"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "get_crypto_news"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kukapay/servers/cryptopanic-mcp-server/versions",
+    "xid": "/mcpproviders/kukapay/servers/cryptopanic-mcp-server"
+  },
+  "dune-analytics-mcp": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:44.737418271Z",
+    "deployment": {
+      "sandbox": {
+        "args": [],
+        "command": "mcp dev main.py",
+        "env": [
+          {
+            "description": "API key for Dune Analytics",
+            "name": "DUNE_API_KEY",
+            "required": true
+          }
+        ],
+        "package": "dune-analytics-mcp",
+        "runtime": "python"
+      }
+    },
+    "description": "Dune Analytics tools",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kukapay/servers/dune-analytics-mcp/meta",
+    "modifiedat": "2025-04-25T12:41:44.737418271Z",
+    "name": "Dune Analytics MCP Server",
+    "repository": {
+      "name": "kukapay/dune-analytics-mcp",
+      "url": "https://github.com/kukapay/dune-analytics-mcp"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kukapay/servers/dune-analytics-mcp",
+    "serverid": "dune-analytics-mcp",
+    "serverversion": "unknown",
+    "tools": [
+      {
+        "description": "Get the latest results for a specific query ID as a CSV string on dune analytics",
+        "inputschema": {
+          "properties": {
+            "query_id": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "query_id"
+          ],
+          "type": "object"
+        },
+        "name": "get_latest_result"
+      },
+      {
+        "description": "Run a query by ID and return results as a CSV string on dune analytics",
+        "inputschema": {
+          "properties": {
+            "query_id": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "query_id"
+          ],
+          "type": "object"
+        },
+        "name": "run_query"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kukapay/servers/dune-analytics-mcp/versions",
+    "xid": "/mcpproviders/kukapay/servers/dune-analytics-mcp"
+  }
+}

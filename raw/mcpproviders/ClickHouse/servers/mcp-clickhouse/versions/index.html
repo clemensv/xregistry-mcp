@@ -1,0 +1,118 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:49.709420223Z",
+    "deployment": {
+      "sandbox": {
+        "args": [],
+        "command": "mcp dev mcp_clickhouse/mcp_server.py",
+        "env": [
+          {
+            "description": "The hostname of your ClickHouse server",
+            "name": "CLICKHOUSE_HOST",
+            "required": true
+          },
+          {
+            "description": "The username for authentication",
+            "name": "CLICKHOUSE_USER",
+            "required": true
+          },
+          {
+            "description": "The password for authentication",
+            "name": "CLICKHOUSE_PASSWORD",
+            "required": true
+          },
+          {
+            "description": "The port of the ClickHouse server",
+            "name": "CLICKHOUSE_PORT",
+            "required": false
+          },
+          {
+            "description": "Use secure connection",
+            "name": "CLICKHOUSE_SECURE",
+            "required": false
+          },
+          {
+            "description": "Verify SSL certificates",
+            "name": "CLICKHOUSE_VERIFY",
+            "required": false
+          },
+          {
+            "description": "Connection timeout in seconds",
+            "name": "CLICKHOUSE_CONNECT_TIMEOUT",
+            "required": false
+          },
+          {
+            "description": "Send/receive timeout in seconds",
+            "name": "CLICKHOUSE_SEND_RECEIVE_TIMEOUT",
+            "required": false
+          }
+        ],
+        "package": "mcp-clickhouse",
+        "runtime": "python"
+      }
+    },
+    "description": "An MCP server for ClickHouse.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "modifiedat": "2025-04-25T12:40:49.709420223Z",
+    "name": "mcp-clickhouse",
+    "repository": {
+      "name": "ClickHouse/mcp-clickhouse",
+      "url": "https://github.com/ClickHouse/mcp-clickhouse"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ClickHouse/servers/mcp-clickhouse/versions/1",
+    "serverid": "mcp-clickhouse",
+    "serverversion": "unknown",
+    "tools": [
+      {
+        "description": "Run a SELECT query in a ClickHouse database",
+        "inputschema": {
+          "properties": {
+            "query": {
+              "description": "The SELECT query to execute",
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "run_select_query"
+      },
+      {
+        "description": "List available ClickHouse databases",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "list_databases"
+      },
+      {
+        "description": "List available ClickHouse tables in a database, including schema, comment, row count, and column count.",
+        "inputschema": {
+          "properties": {
+            "database": {
+              "description": "The name of the database",
+              "type": "string"
+            },
+            "like": {
+              "description": "Optional pattern to filter tables",
+              "type": "string"
+            }
+          },
+          "required": [
+            "database"
+          ],
+          "type": "object"
+        },
+        "name": "list_tables"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/ClickHouse/servers/mcp-clickhouse/versions/1"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:52.514456436Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/magnetai/servers/mcp-free-usdc-transfer/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:52.514456436Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/magnetai/servers/mcp-free-usdc-transfer/meta",
+  "serverid": "mcp-free-usdc-transfer",
+  "xid": "/mcpproviders/magnetai/servers/mcp-free-usdc-transfer/meta"
+}

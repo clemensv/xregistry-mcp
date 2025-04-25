@@ -1,0 +1,52 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:42:59.8603053Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "--experimental-fetch",
+        "\u003cabsolute_path_to_project_root\u003e/dist/index.js"
+      ],
+      "command": "node",
+      "env": [
+        {
+          "description": "Redis Cloud API key",
+          "name": "API_KEY",
+          "required": true
+        },
+        {
+          "description": "Redis Cloud API secret key",
+          "name": "SECRET_KEY",
+          "required": true
+        }
+      ],
+      "package": "@modelcontextprotocol/sdk",
+      "runtime": "node"
+    }
+  },
+  "description": "Model Context Protocol (MCP) server for managing Redis Cloud resources via natural language commands.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "unknown",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/redis/servers/mcp-redis-cloud/meta",
+  "modifiedat": "2025-04-25T12:42:59.8603053Z",
+  "name": "mcp-redis-cloud",
+  "repository": {
+    "name": "redis/mcp-redis-cloud",
+    "url": "https://github.com/redis/mcp-redis-cloud"
+  },
+  "resources": [],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/redis/servers/mcp-redis-cloud",
+  "serverid": "mcp-redis-cloud",
+  "serverversion": "unknown",
+  "tools": [],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/redis/servers/mcp-redis-cloud/versions",
+  "xid": "/mcpproviders/redis/servers/mcp-redis-cloud"
+}

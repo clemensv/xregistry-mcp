@@ -1,0 +1,77 @@
+{
+  "ai-agent-marketplace-index-mcp": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:38.692416391Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "run",
+          "-m",
+          "ai-agent-marketplace-index-mcp"
+        ],
+        "command": "uv",
+        "env": [
+          {
+            "description": "Microsoft Bing Search API key",
+            "name": "BING_SEARCH_API_KEY",
+            "required": true
+          }
+        ],
+        "package": "ai-agent-marketplace-index-mcp",
+        "runtime": "python"
+      }
+    },
+    "description": "MCP Server for AI Agent Marketplace Index from DeepNLP, allowing AI assistants to search available AI agents by keywords or category, including tools for searching AI agents and listing AI agents to the marketplace.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/AI-Agent-Hub/servers/ai-agent-marketplace-index-mcp/meta",
+    "modifiedat": "2025-04-25T12:40:38.692416391Z",
+    "name": "AI Agent Marketplace Index MCP Server",
+    "repository": {
+      "branch": "main",
+      "name": "AI-Agent-Hub/ai-agent-marketplace-index-mcp",
+      "subfolder": "src/ai-agent-marketplace-index",
+      "url": "https://github.com/AI-Agent-Hub/ai-agent-marketplace-index-mcp"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/AI-Agent-Hub/servers/ai-agent-marketplace-index-mcp",
+    "serverid": "ai-agent-marketplace-index-mcp",
+    "serverversion": "1.0",
+    "tools": [
+      {
+        "annotations": {},
+        "description": "General search of AI Agents for information, websites, content and metric statistic of web traffic, etc.",
+        "inputschema": {
+          "properties": {
+            "limit": {
+              "description": "Maximum number of results to return.",
+              "type": "integer"
+            },
+            "q": {
+              "description": "Query string to search AI agents.",
+              "type": "string"
+            },
+            "timeout": {
+              "description": "Timeout in seconds for the API call.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "q"
+          ],
+          "type": "object"
+        },
+        "name": "search_ai_agent"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/AI-Agent-Hub/servers/ai-agent-marketplace-index-mcp/versions",
+    "xid": "/mcpproviders/AI-Agent-Hub/servers/ai-agent-marketplace-index-mcp"
+  }
+}

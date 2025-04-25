@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:40:53.35698128Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/da-okazaki/servers/mcp-neo4j-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:40:53.35698128Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/da-okazaki/servers/mcp-neo4j-server/meta",
+  "serverid": "mcp-neo4j-server",
+  "xid": "/mcpproviders/da-okazaki/servers/mcp-neo4j-server/meta"
+}

@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:18.453647848Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/grafana/servers/mcp-grafana/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:18.453647848Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/grafana/servers/mcp-grafana/meta",
+  "serverid": "mcp-grafana",
+  "xid": "/mcpproviders/grafana/servers/mcp-grafana/meta"
+}

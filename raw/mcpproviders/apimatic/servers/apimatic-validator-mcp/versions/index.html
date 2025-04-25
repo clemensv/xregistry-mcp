@@ -1,0 +1,66 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:40.345224415Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "build/index.js"
+        ],
+        "command": "node",
+        "env": [
+          {
+            "description": "API key for APIMatic validation",
+            "name": "APIMATIC_API_KEY",
+            "required": true
+          }
+        ],
+        "package": "apimatic-validator-mcp",
+        "runtime": "nodejs"
+      }
+    },
+    "description": "This repository provides a Model Context Protocol (MCP) Server for validating OpenAPI specifications using APIMatic. The server processes OpenAPI files and returns validation summaries by leveraging APIMatic’s API.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0.0",
+    "modifiedat": "2025-04-25T12:40:40.345224415Z",
+    "name": "APIMatic Validator MCP",
+    "repository": {
+      "name": "apimatic/apimatic-validator-mcp",
+      "url": "https://github.com/apimatic/apimatic-validator-mcp"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/apimatic/servers/apimatic-validator-mcp/versions/1",
+    "serverid": "apimatic-validator-mcp",
+    "serverversion": "1.0.0",
+    "tools": [
+      {
+        "description": "Get validation summary for your OpenAPI spec using APIMatic",
+        "inputschema": {
+          "properties": {
+            "isYaml": {
+              "description": "Whether the OpenAPI file is in YAML format",
+              "type": "boolean"
+            },
+            "openApiFile": {
+              "description": "The OpenAPI file content as a string",
+              "type": "string"
+            }
+          },
+          "required": [
+            "openApiFile",
+            "isYaml"
+          ],
+          "type": "object"
+        },
+        "name": "validate-openapi-using-apimatic"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/apimatic/servers/apimatic-validator-mcp/versions/1"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:44:34.318390399Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/yanmxa/servers/multicluster-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:44:34.318390399Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/yanmxa/servers/multicluster-mcp-server/meta",
+  "serverid": "multicluster-mcp-server",
+  "xid": "/mcpproviders/yanmxa/servers/multicluster-mcp-server/meta"
+}

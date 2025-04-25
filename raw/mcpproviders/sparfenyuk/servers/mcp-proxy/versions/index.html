@@ -1,0 +1,70 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:43:33.5439193Z",
+    "deployment": {
+      "container": {
+        "args": [],
+        "env": [
+          {
+            "description": "Access token for authorization header",
+            "name": "API_ACCESS_TOKEN",
+            "required": false
+          }
+        ],
+        "image": "sparfenyuk/mcp-proxy:latest"
+      },
+      "sandbox": {
+        "args": [],
+        "command": "mcp-proxy",
+        "env": [
+          {
+            "description": "Access token for authorization header",
+            "name": "API_ACCESS_TOKEN",
+            "required": false
+          }
+        ],
+        "package": "mcp-proxy",
+        "runtime": "python"
+      }
+    },
+    "description": "The mcp-proxy is a tool that lets you switch between server transports. It supports proxying MCP server requests between stdio and SSE transports, enabling clients like Claude Desktop to communicate with MCP servers over SSE or stdio.",
+    "endpoints": {
+      "http": {
+        "authorization": {
+          "description": "Authorization header with Bearer token",
+          "format": "Bearer {token}",
+          "name": "Authorization",
+          "required": false,
+          "type": "header"
+        },
+        "uri": "http://example.io/sse"
+      },
+      "httplocal": {
+        "deployment": "container",
+        "host": "0.0.0.0",
+        "port": 0,
+        "protocol": "http"
+      },
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "modifiedat": "2025-04-25T12:43:33.5439193Z",
+    "name": "mcp-proxy",
+    "repository": {
+      "name": "sparfenyuk/mcp-proxy",
+      "url": "https://github.com/sparfenyuk/mcp-proxy"
+    },
+    "resources": [],
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/sparfenyuk/servers/mcp-proxy/versions/1",
+    "serverid": "mcp-proxy",
+    "serverversion": "unknown",
+    "tools": [],
+    "versionid": "1",
+    "xid": "/mcpproviders/sparfenyuk/servers/mcp-proxy/versions/1"
+  }
+}

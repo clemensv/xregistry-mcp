@@ -1,0 +1,51 @@
+{
+  "mcp": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:43:15.63329477Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "build/index.js"
+        ],
+        "command": "node",
+        "env": [
+          {
+            "description": "API key for ScreenshotOne service",
+            "name": "SCREENSHOTONE_API_KEY",
+            "required": true
+          }
+        ],
+        "package": "screenshotone-mcp",
+        "runtime": "node"
+      }
+    },
+    "description": "An official implementation of an MCP (Model Context Protocol) server for ScreenshotOne that provides a tool to render a screenshot of a website and returns it as an image.",
+    "documentation": "https://screenshotone.com/blog/mcp-server/",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "unknown",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/screenshotone/servers/mcp/meta",
+    "modifiedat": "2025-04-25T12:43:15.63329477Z",
+    "name": "ScreenshotOne MCP Server",
+    "repository": {
+      "name": "screenshotone/mcp",
+      "url": "https://github.com/screenshotone/mcp"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/screenshotone/servers/mcp",
+    "serverid": "mcp",
+    "serverversion": "unknown",
+    "tools": [
+      {
+        "description": "Render a screenshot of a website and returns it as an image.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "render-website-screenshot"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/screenshotone/servers/mcp/versions",
+    "xid": "/mcpproviders/screenshotone/servers/mcp"
+  }
+}

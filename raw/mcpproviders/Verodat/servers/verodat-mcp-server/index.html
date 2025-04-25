@@ -1,0 +1,141 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:44:18.370755539Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "path/to/verodat-mcp-server/build/src/consume.js"
+      ],
+      "command": "node",
+      "env": [
+        {
+          "description": "API key for authentication",
+          "name": "VERODAT_AI_API_KEY",
+          "required": true
+        },
+        {
+          "description": "Base URL for Verodat API",
+          "name": "VERODAT_API_BASE_URL",
+          "required": false
+        }
+      ],
+      "package": "@Verodat/verodat-mcp-server",
+      "runtime": "node"
+    }
+  },
+  "description": "A Model Context Protocol (MCP) server implementation for Verodat, allowing AI models to interact with Verodat's data management capabilities through well-defined tools.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/Verodat/servers/verodat-mcp-server/meta",
+  "modifiedat": "2025-04-25T12:44:18.370755539Z",
+  "name": "Verodat MCP Server",
+  "repository": {
+    "name": "Verodat/verodat-mcp-server",
+    "url": "https://github.com/Verodat/verodat-mcp-server"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/Verodat/servers/verodat-mcp-server",
+  "serverid": "verodat-mcp-server",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "description": "Retrieve available accounts",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "get-accounts"
+    },
+    {
+      "description": "List workspaces within an account",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "get-workspaces"
+    },
+    {
+      "description": "List datasets in a workspace",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "get-datasets"
+    },
+    {
+      "description": "Retrieve actual data from a dataset",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "get-dataset-output"
+    },
+    {
+      "description": "Retrieve field definitions for a dataset",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "get-dataset-targetfields"
+    },
+    {
+      "description": "Retrieve existing AI queries",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "get-queries"
+    },
+    {
+      "description": "Get workspace context and data structure",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "get-ai-context"
+    },
+    {
+      "description": "Execute AI-powered queries on datasets",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "execute-ai-query"
+    },
+    {
+      "description": "Create a new dataset with defined schema",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "create-dataset"
+    },
+    {
+      "description": "Upload data rows to existing datasets",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "upload-dataset-rows"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/Verodat/servers/verodat-mcp-server/versions",
+  "xid": "/mcpproviders/Verodat/servers/verodat-mcp-server"
+}

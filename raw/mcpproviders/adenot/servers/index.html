@@ -1,0 +1,92 @@
+{
+  "mcp-google-search": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:37.794620047Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "-y",
+          "@adenot/mcp-google-search"
+        ],
+        "command": "npx",
+        "env": [
+          {
+            "description": "Google API Key for Custom Search",
+            "name": "GOOGLE_API_KEY",
+            "required": true
+          },
+          {
+            "description": "Google Custom Search Engine ID",
+            "name": "GOOGLE_SEARCH_ENGINE_ID",
+            "required": true
+          }
+        ],
+        "package": "@adenot/mcp-google-search",
+        "runtime": "node"
+      }
+    },
+    "description": "A Model Context Protocol server that provides web search capabilities using Google Custom Search API and webpage content extraction functionality.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/adenot/servers/mcp-google-search/meta",
+    "modifiedat": "2025-04-25T12:40:37.794620047Z",
+    "name": "search-server",
+    "repository": {
+      "name": "adenot/mcp-google-search",
+      "url": "https://github.com/adenot/mcp-google-search"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/adenot/servers/mcp-google-search",
+    "serverid": "mcp-google-search",
+    "serverversion": "0.1.0",
+    "tools": [
+      {
+        "description": "Perform a web search query",
+        "inputschema": {
+          "properties": {
+            "num": {
+              "description": "Number of results (1-10)",
+              "maximum": 10,
+              "minimum": 1,
+              "type": "number"
+            },
+            "query": {
+              "description": "Search query",
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search"
+      },
+      {
+        "description": "Fetch and extract text content from a webpage",
+        "inputschema": {
+          "properties": {
+            "url": {
+              "description": "URL of the webpage to read",
+              "type": "string"
+            }
+          },
+          "required": [
+            "url"
+          ],
+          "type": "object"
+        },
+        "name": "read_webpage"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/adenot/servers/mcp-google-search/versions",
+    "xid": "/mcpproviders/adenot/servers/mcp-google-search"
+  }
+}

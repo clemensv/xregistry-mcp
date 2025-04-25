@@ -1,0 +1,40 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:45.437068592Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "--from",
+          "git+https://github.com/bitrise-io/bitrise-mcp@v1.1.0",
+          "bitrise-mcp"
+        ],
+        "command": "uvx",
+        "env": [
+          {
+            "description": "Bitrise API token for authentication",
+            "name": "BITRISE_TOKEN",
+            "required": true
+          }
+        ],
+        "package": "bitrise-mcp",
+        "runtime": "uv"
+      }
+    },
+    "description": "MCP Server for the Bitrise API, enabling app management, build operations, artifact management and more.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "modifiedat": "2025-04-25T12:40:45.437068592Z",
+    "name": "Bitrise MCP Server",
+    "repository": {
+      "name": "bitrise-io/bitrise-mcp",
+      "url": "https://github.com/bitrise-io/bitrise-mcp"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/bitrise-io/servers/bitrise-mcp/versions/1",
+    "serverid": "bitrise-mcp",
+    "serverversion": "1.0",
+    "versionid": "1",
+    "xid": "/mcpproviders/bitrise-io/servers/bitrise-mcp/versions/1"
+  }
+}

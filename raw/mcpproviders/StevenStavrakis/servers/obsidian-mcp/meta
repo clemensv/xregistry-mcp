@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:43:39.515015759Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/StevenStavrakis/servers/obsidian-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:43:39.515015759Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/StevenStavrakis/servers/obsidian-mcp/meta",
+  "serverid": "obsidian-mcp",
+  "xid": "/mcpproviders/StevenStavrakis/servers/obsidian-mcp/meta"
+}

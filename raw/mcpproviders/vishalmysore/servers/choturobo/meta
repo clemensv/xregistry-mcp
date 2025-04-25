@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:44:21.48817215Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/vishalmysore/servers/choturobo/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:44:21.48817215Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/vishalmysore/servers/choturobo/meta",
+  "serverid": "choturobo",
+  "xid": "/mcpproviders/vishalmysore/servers/choturobo/meta"
+}

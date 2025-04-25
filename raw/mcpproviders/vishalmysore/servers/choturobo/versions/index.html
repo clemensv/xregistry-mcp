@@ -1,0 +1,249 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:44:21.48817215Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "server.js"
+        ],
+        "command": "node",
+        "env": [],
+        "package": "@modelcontextprotocol/sdk",
+        "runtime": "node"
+      }
+    },
+    "description": "Arduino-based robotics server integrating AI using the MCP (Model Context Protocol) framework from Claude AI by Anthropic. Controls hardware components like LEDs, motors, servos, fans, sensors via MCP tools and prompts.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "unknown",
+    "modifiedat": "2025-04-25T12:44:21.48817215Z",
+    "name": "ChotuRoboServer",
+    "prompts": [
+      {
+        "arguments": [
+          {
+            "name": "steps",
+            "required": false
+          }
+        ],
+        "description": "Prompt to move Chotu a specified number of steps.",
+        "name": "move-chotu"
+      },
+      {
+        "arguments": [],
+        "description": "Prompt to initialize Chotu and prepare for operation.",
+        "name": "start-chotu"
+      },
+      {
+        "arguments": [],
+        "description": "Prompt to stop Chotu safely and shut down operations.",
+        "name": "stop-chotu"
+      },
+      {
+        "arguments": [
+          {
+            "name": "direction",
+            "required": false
+          }
+        ],
+        "description": "Prompt to turn Chotu left or right.",
+        "name": "turn-chotu"
+      },
+      {
+        "arguments": [
+          {
+            "name": "speed",
+            "required": false
+          }
+        ],
+        "description": "Prompt to set Chotu's speed.",
+        "name": "set-chotu-speed"
+      }
+    ],
+    "repository": {
+      "name": "vishalmysore/choturobo",
+      "url": "https://github.com/vishalmysore/choturobo"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/vishalmysore/servers/choturobo/versions/1",
+    "serverid": "choturobo",
+    "serverversion": "1.0.0",
+    "tools": [
+      {
+        "description": "Blink the eyes of Chotu for a specified time.",
+        "inputschema": {
+          "properties": {
+            "time": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "time"
+          ],
+          "type": "object"
+        },
+        "name": "chotuBlinkEyes"
+      },
+      {
+        "description": "Sound a buzzer for a specified time.",
+        "inputschema": {
+          "properties": {
+            "time": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "time"
+          ],
+          "type": "object"
+        },
+        "name": "chotuBuzzSound"
+      },
+      {
+        "description": "Run a motor at a certain speed.",
+        "inputschema": {
+          "properties": {
+            "speed": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "speed"
+          ],
+          "type": "object"
+        },
+        "name": "runMotor"
+      },
+      {
+        "description": "Move a servo motor to a specific angle.",
+        "inputschema": {
+          "properties": {
+            "angle": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "angle"
+          ],
+          "type": "object"
+        },
+        "name": "moveServo"
+      },
+      {
+        "description": "Turn a fan on or off.",
+        "inputschema": {
+          "properties": {
+            "state": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "state"
+          ],
+          "type": "object"
+        },
+        "name": "controlFan"
+      },
+      {
+        "description": "Switch a relay on or off.",
+        "inputschema": {
+          "properties": {
+            "state": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "state"
+          ],
+          "type": "object"
+        },
+        "name": "toggleRelay"
+      },
+      {
+        "description": "Read temperature from a sensor.",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "readTemperature"
+      },
+      {
+        "description": "Measure distance using an ultrasonic sensor.",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "readDistance"
+      },
+      {
+        "description": "Move the motor clockwise for a number of steps.",
+        "inputschema": {
+          "properties": {
+            "steps": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "steps"
+          ],
+          "type": "object"
+        },
+        "name": "moveBackward"
+      },
+      {
+        "description": "Move the motor counterclockwise for a number of steps.",
+        "inputschema": {
+          "properties": {
+            "steps": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "steps"
+          ],
+          "type": "object"
+        },
+        "name": "moveForward"
+      },
+      {
+        "description": "Make Chotu speak a given message.",
+        "inputschema": {
+          "properties": {
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "message"
+          ],
+          "type": "object"
+        },
+        "name": "makeChotuSpeak"
+      },
+      {
+        "description": "Make Chotu sing a given message.",
+        "inputschema": {
+          "properties": {
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "message"
+          ],
+          "type": "object"
+        },
+        "name": "makeChotuSing"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/vishalmysore/servers/choturobo/versions/1"
+  }
+}

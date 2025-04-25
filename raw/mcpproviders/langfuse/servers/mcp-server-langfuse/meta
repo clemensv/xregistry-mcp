@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:46.541854035Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/langfuse/servers/mcp-server-langfuse/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:46.541854035Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/langfuse/servers/mcp-server-langfuse/meta",
+  "serverid": "mcp-server-langfuse",
+  "xid": "/mcpproviders/langfuse/servers/mcp-server-langfuse/meta"
+}

@@ -1,0 +1,96 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:40:54.169537795Z",
+  "deployment": {
+    "sandbox": {
+      "args": [],
+      "command": "dappier-mcp",
+      "env": [
+        {
+          "description": "API key for accessing Dappier services",
+          "name": "DAPPIER_API_KEY",
+          "required": true
+        }
+      ],
+      "package": "dappier-mcp",
+      "runtime": "node"
+    }
+  },
+  "description": "A Model Context Protocol (MCP) server that connects any LLM or Agentic AI to real-time, rights-cleared, proprietary data from trusted sources. Dappier enables your AI to become an expert in anything by providing access to specialized models, including Real-Time Web Search, News, Sports, Financial Stock Market Data, Crypto Data, and exclusive content from premium publishers.",
+  "docs": "https://marketplace.dappier.com/marketplace",
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/DappierAI/servers/dappier-mcp/meta",
+  "modifiedat": "2025-04-25T12:40:54.169537795Z",
+  "name": "Dappier MCP Server",
+  "repository": {
+    "name": "DappierAI/dappier-mcp",
+    "url": "https://github.com/DappierAI/dappier-mcp"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/DappierAI/servers/dappier-mcp",
+  "serverid": "dappier-mcp",
+  "serverversion": "unknown",
+  "tools": [
+    {
+      "description": "Retrieves direct answers to real-time queries using AI-powered search. This includes web search results, financial information, news, weather, stock market updates, and more.",
+      "inputschema": {
+        "properties": {
+          "ai_model_id": {
+            "description": "The AI model ID to use for the query. Defaults to am_01j06ytn18ejftedz6dyhz2b15 (Real-Time Data).",
+            "type": "string"
+          },
+          "query": {
+            "description": "The user-provided input string for retrieving real-time data.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "dappier_real_time_search"
+    },
+    {
+      "description": "Provides AI-powered content recommendations based on structured data models. Returns a list of articles with titles, summaries, images, and source URLs.",
+      "inputschema": {
+        "properties": {
+          "data_model_id": {
+            "description": "The data model ID to use for recommendations. Defaults to dm_01j0pb465keqmatq9k83dthx34 (Sports News).",
+            "type": "string"
+          },
+          "num_articles_ref": {
+            "description": "The minimum number of articles to return from the specified reference domain (ref). Defaults to 0.",
+            "type": "integer"
+          },
+          "query": {
+            "description": "The user-provided input string for AI recommendations.",
+            "type": "string"
+          },
+          "ref": {
+            "description": "The site domain where AI recommendations should be displayed. Defaults to None.",
+            "type": "string"
+          },
+          "search_algorithm": {
+            "description": "The search algorithm to use for retrieving articles. Options: most_recent, semantic, most_recent_semantic, trending. Defaults to most_recent.",
+            "type": "string"
+          },
+          "similarity_top_k": {
+            "description": "The number of top documents to retrieve based on similarity. Defaults to 9.",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "dappier_ai_recommendations"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/DappierAI/servers/dappier-mcp/versions",
+  "xid": "/mcpproviders/DappierAI/servers/dappier-mcp"
+}

@@ -1,0 +1,120 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:44:41.069707793Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "dist/index.js"
+      ],
+      "command": "node",
+      "package": "@modelcontextprotocol/sdk",
+      "runtime": "node"
+    }
+  },
+  "description": "This MCP server provides functionality to fetch web content in various formats, including HTML, JSON, plain text, and Markdown.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/zcaceres/servers/fetch-mcp/meta",
+  "modifiedat": "2025-04-25T12:44:41.069707793Z",
+  "name": "zcaceres/fetch",
+  "repository": {
+    "name": "zcaceres/fetch-mcp",
+    "url": "https://github.com/zcaceres/fetch-mcp"
+  },
+  "resources": [],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/zcaceres/servers/fetch-mcp",
+  "serverid": "fetch-mcp",
+  "serverversion": "0.1.0",
+  "tools": [
+    {
+      "description": "Fetch a website and return the content as HTML",
+      "inputschema": {
+        "properties": {
+          "headers": {
+            "description": "Optional headers to include in the request",
+            "type": "object"
+          },
+          "url": {
+            "description": "URL of the website to fetch",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "fetch_html"
+    },
+    {
+      "description": "Fetch a website and return the content as Markdown",
+      "inputschema": {
+        "properties": {
+          "headers": {
+            "description": "Optional headers to include in the request",
+            "type": "object"
+          },
+          "url": {
+            "description": "URL of the website to fetch",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "fetch_markdown"
+    },
+    {
+      "description": "Fetch a website, return the content as plain text (no HTML)",
+      "inputschema": {
+        "properties": {
+          "headers": {
+            "description": "Optional headers to include in the request",
+            "type": "object"
+          },
+          "url": {
+            "description": "URL of the website to fetch",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "fetch_txt"
+    },
+    {
+      "description": "Fetch a JSON file from a URL",
+      "inputschema": {
+        "properties": {
+          "headers": {
+            "description": "Optional headers to include in the request",
+            "type": "object"
+          },
+          "url": {
+            "description": "URL of the JSON to fetch",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "fetch_json"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/zcaceres/servers/fetch-mcp/versions",
+  "xid": "/mcpproviders/zcaceres/servers/fetch-mcp"
+}

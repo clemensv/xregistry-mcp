@@ -1,0 +1,56 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:50.382092706Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "-y",
+        "@liuyoshio/mcp-compass"
+      ],
+      "command": "npx",
+      "package": "@liuyoshio/mcp-compass",
+      "runtime": "node"
+    }
+  },
+  "description": "MCP Compass is a discovery \u0026 recommendation service that helps you explore Model Context Protocol servers. It acts as a smart guide that helps AI assistants find and understand available MCP services out there based on natural language queries, making it easier to discover and utilize the right tools for specific tasks.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/liuyoshio/servers/mcp-compass/meta",
+  "modifiedat": "2025-04-25T12:41:50.382092706Z",
+  "name": "mcp-compass",
+  "repository": {
+    "name": "liuyoshio/mcp-compass",
+    "url": "https://github.com/liuyoshio/mcp-compass"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/liuyoshio/servers/mcp-compass",
+  "serverid": "mcp-compass",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "description": "Use this tool when there is a need to findn external MCP tools. It explores and recommends existing MCP servers from the internet, based on the description of the MCP Server needed. It returns a list of MCP servers with their IDs, descriptions, GitHub URLs, and similarity scores.",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "Description for the MCP Server needed. It should be specific and actionable, e.g.: GOOD: - 'MCP Server for AWS Lambda Python3.9 deployment' - 'MCP Server for United Airlines booking API' - 'MCP Server for Stripe refund webhook handling' BAD: - 'MCP Server for cloud' (too vague) - 'MCP Server for booking' (which booking system?) - 'MCP Server for payment' (which payment provider?) Query should explicitly specify: 1. Target platform/vendor (e.g. AWS, Stripe, MongoDB) 2. Exact operation/service (e.g. Lambda deployment, webhook handling) 3. Additional context if applicable (e.g. Python, refund events)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "recommend-mcp-servers"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/liuyoshio/servers/mcp-compass/versions",
+  "xid": "/mcpproviders/liuyoshio/servers/mcp-compass"
+}

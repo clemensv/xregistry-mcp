@@ -1,0 +1,364 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:44:13.556187429Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "/absolute/path/to/notion-server/build/index.js"
+      ],
+      "command": "node",
+      "env": [
+        {
+          "description": "Notion API key environment variable",
+          "name": "NOTION_API_KEY",
+          "required": true
+        }
+      ],
+      "package": "@modelcontextprotocol/sdk",
+      "runtime": "node"
+    }
+  },
+  "description": "A Model Context Protocol (MCP) server that provides seamless integration with Notion. This server enables Language Models to interact with your Notion workspace through standardized tools for searching, reading, creating, and updating pages and databases.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0.0",
+  "modifiedat": "2025-04-25T12:44:13.556187429Z",
+  "name": "notion-server",
+  "repository": {
+    "name": "v-3/notion-server",
+    "url": "https://github.com/v-3/notion-server"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/v-3/servers/notion-server/versions/1",
+  "serverid": "notion-server",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "description": "Search through Notion pages",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "Search query",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "search_pages"
+    },
+    {
+      "description": "Read a regular page's content (not for databases - use retrieve_database for databases). Shows block IDs with their types (needed for block operations)",
+      "inputschema": {
+        "properties": {
+          "pageId": {
+            "description": "ID of the page to read",
+            "type": "string"
+          }
+        },
+        "required": [
+          "pageId"
+        ],
+        "type": "object"
+      },
+      "name": "read_page"
+    },
+    {
+      "description": "Create a new page or database item. For database items, include 'properties' matching database schema. For pages, use 'title' and 'content'",
+      "inputschema": {
+        "properties": {
+          "content": {
+            "description": "Page content in markdown format (optional)",
+            "type": "string"
+          },
+          "parentPageId": {
+            "description": "ID of the parent page where this page will be created",
+            "type": "string"
+          },
+          "properties": {
+            "description": "Additional properties for database items (optional)",
+            "type": "object"
+          },
+          "title": {
+            "description": "Page title (optional)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "parentPageId"
+        ],
+        "type": "object"
+      },
+      "name": "create_page"
+    },
+    {
+      "description": "Update an existing Notion page",
+      "inputschema": {
+        "properties": {
+          "content": {
+            "description": "New content to append",
+            "type": "string"
+          },
+          "mode": {
+            "description": "Update mode: replace all content, append to existing, or merge",
+            "enum": [
+              "replace",
+              "append",
+              "merge"
+            ],
+            "optional": true,
+            "type": "string"
+          },
+          "pageId": {
+            "description": "ID of the page to update",
+            "type": "string"
+          },
+          "position": {
+            "description": "Position for merge mode: start or end",
+            "enum": [
+              "start",
+              "end"
+            ],
+            "optional": true,
+            "type": "string"
+          },
+          "type": {
+            "description": "Type of content to append",
+            "enum": [
+              "paragraph",
+              "task",
+              "todo",
+              "heading",
+              "image"
+            ],
+            "optional": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "pageId",
+          "content"
+        ],
+        "type": "object"
+      },
+      "name": "update_page"
+    },
+    {
+      "description": "Get all comments from a page",
+      "inputschema": {
+        "properties": {
+          "pageId": {
+            "description": "ID of the page",
+            "type": "string"
+          },
+          "pageSize": {
+            "description": "Number of comments to retrieve (max 100)",
+            "type": "number"
+          },
+          "startCursor": {
+            "description": "Pagination cursor",
+            "type": "string"
+          }
+        },
+        "required": [
+          "pageId"
+        ],
+        "type": "object"
+      },
+      "name": "retrieve_comments"
+    },
+    {
+      "description": "Add a comment to a page",
+      "inputschema": {
+        "properties": {
+          "content": {
+            "description": "Comment text",
+            "type": "string"
+          },
+          "pageId": {
+            "description": "ID of the page to comment on",
+            "type": "string"
+          }
+        },
+        "required": [
+          "pageId",
+          "content"
+        ],
+        "type": "object"
+      },
+      "name": "add_comment"
+    },
+    {
+      "description": "Create a new database in a page",
+      "inputschema": {
+        "properties": {
+          "parentPageId": {
+            "description": "ID of the parent page",
+            "type": "string"
+          },
+          "properties": {
+            "description": "Database schema properties",
+            "type": "object"
+          },
+          "title": {
+            "description": "Database title",
+            "type": "string"
+          }
+        },
+        "required": [
+          "parentPageId",
+          "title",
+          "properties"
+        ],
+        "type": "object"
+      },
+      "name": "create_database"
+    },
+    {
+      "description": "Query a database",
+      "inputschema": {
+        "properties": {
+          "databaseId": {
+            "description": "ID of the database",
+            "type": "string"
+          },
+          "filter": {
+            "description": "Filter conditions",
+            "type": "object"
+          },
+          "sort": {
+            "description": "Sort conditions",
+            "type": "object"
+          }
+        },
+        "required": [
+          "databaseId"
+        ],
+        "type": "object"
+      },
+      "name": "query_database"
+    },
+    {
+      "description": "Update a block's content (must use same type as original block, use read_page first to get block IDs and types)",
+      "inputschema": {
+        "properties": {
+          "blockId": {
+            "description": "ID of the block to update",
+            "type": "string"
+          },
+          "content": {
+            "description": "New content for the block",
+            "type": "string"
+          },
+          "type": {
+            "description": "Type of block",
+            "enum": [
+              "paragraph",
+              "heading_1",
+              "heading_2",
+              "heading_3",
+              "bulleted_list_item",
+              "numbered_list_item"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "blockId",
+          "content"
+        ],
+        "type": "object"
+      },
+      "name": "update_block"
+    },
+    {
+      "description": "Delete a specific block from a page",
+      "inputschema": {
+        "properties": {
+          "blockId": {
+            "description": "ID of the block to delete",
+            "type": "string"
+          }
+        },
+        "required": [
+          "blockId"
+        ],
+        "type": "object"
+      },
+      "name": "delete_block"
+    },
+    {
+      "description": "Update a database item's properties (use query_database first to see required property structure)",
+      "inputschema": {
+        "properties": {
+          "pageId": {
+            "description": "ID of the database item (page) to update",
+            "type": "string"
+          },
+          "properties": {
+            "description": "Properties to update",
+            "type": "object"
+          }
+        },
+        "required": [
+          "pageId",
+          "properties"
+        ],
+        "type": "object"
+      },
+      "name": "update_database_item"
+    },
+    {
+      "description": "Retrieve a database's metadata",
+      "inputschema": {
+        "properties": {
+          "databaseId": {
+            "description": "ID of the database to retrieve",
+            "type": "string"
+          }
+        },
+        "required": [
+          "databaseId"
+        ],
+        "type": "object"
+      },
+      "name": "retrieve_database"
+    },
+    {
+      "description": "Update a database's properties",
+      "inputschema": {
+        "properties": {
+          "databaseId": {
+            "description": "ID of the database to update",
+            "type": "string"
+          },
+          "description": {
+            "description": "New description for the database",
+            "type": "string"
+          },
+          "properties": {
+            "description": "Properties schema to update",
+            "type": "object"
+          },
+          "title": {
+            "description": "New title for the database",
+            "type": "string"
+          }
+        },
+        "required": [
+          "databaseId"
+        ],
+        "type": "object"
+      },
+      "name": "update_database"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/v-3/servers/notion-server/versions/1"
+}

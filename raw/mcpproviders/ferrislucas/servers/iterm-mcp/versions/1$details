@@ -1,0 +1,87 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:04.569278247Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "-y",
+        "iterm-mcp"
+      ],
+      "command": "npx",
+      "env": [],
+      "package": "iterm-mcp",
+      "packageversion": "0.1.0",
+      "runtime": "node"
+    }
+  },
+  "description": "A Model Context Protocol server that provides access to your iTerm session.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "modifiedat": "2025-04-25T12:41:04.569278247Z",
+  "name": "iterm-mcp",
+  "repository": {
+    "name": "ferrislucas/iterm-mcp",
+    "url": "https://github.com/ferrislucas/iterm-mcp"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/ferrislucas/servers/iterm-mcp/versions/1",
+  "serverid": "iterm-mcp",
+  "serverversion": "0.1.0",
+  "tools": [
+    {
+      "description": "Writes text to the active iTerm terminal - often used to run a command in the terminal",
+      "inputschema": {
+        "properties": {
+          "command": {
+            "description": "The command to run or text to write to the terminal",
+            "type": "string"
+          }
+        },
+        "required": [
+          "command"
+        ],
+        "type": "object"
+      },
+      "name": "write_to_terminal"
+    },
+    {
+      "description": "Reads the output from the active iTerm terminal",
+      "inputschema": {
+        "properties": {
+          "linesOfOutput": {
+            "description": "The number of lines of output to read.",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "linesOfOutput"
+        ],
+        "type": "object"
+      },
+      "name": "read_terminal_output"
+    },
+    {
+      "description": "Sends a control character to the active iTerm terminal (e.g., Control-C, or special sequences like ']' for telnet escape)",
+      "inputschema": {
+        "properties": {
+          "letter": {
+            "description": "The letter corresponding to the control character (e.g., 'C' for Control-C, ']' for telnet escape)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "letter"
+        ],
+        "type": "object"
+      },
+      "name": "send_control_character"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/ferrislucas/servers/iterm-mcp/versions/1"
+}

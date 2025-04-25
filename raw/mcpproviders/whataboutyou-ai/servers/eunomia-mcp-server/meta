@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:44:27.793146987Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/whataboutyou-ai/servers/eunomia-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:44:27.793146987Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/whataboutyou-ai/servers/eunomia-mcp-server/meta",
+  "serverid": "eunomia-mcp-server",
+  "xid": "/mcpproviders/whataboutyou-ai/servers/eunomia-mcp-server/meta"
+}

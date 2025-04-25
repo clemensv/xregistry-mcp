@@ -1,0 +1,75 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:40:37.320797286Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "/path/to/Qwen_Max/build/index.js"
+      ],
+      "command": "node",
+      "env": [
+        {
+          "description": "API key for Dashscope",
+          "name": "DASHSCOPE_API_KEY",
+          "required": true
+        }
+      ],
+      "package": "@66julienmartin/mcp-server-qwen_max",
+      "runtime": "nodejs"
+    }
+  },
+  "description": "A Model Context Protocol (MCP) server implementation for the Qwen Max language model.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/66julienmartin/servers/MCP-server-Qwen_Max/meta",
+  "modifiedat": "2025-04-25T12:40:37.320797286Z",
+  "name": "qwen_max",
+  "repository": {
+    "name": "66julienmartin/MCP-server-Qwen_Max",
+    "subfolder": "Qwen_Max",
+    "url": "https://github.com/66julienmartin/MCP-server-Qwen_Max"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/66julienmartin/servers/MCP-server-Qwen_Max",
+  "serverid": "MCP-server-Qwen_Max",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "description": "Generate text using Qwen Max model",
+      "inputschema": {
+        "properties": {
+          "max_tokens": {
+            "default": 8192,
+            "description": "Maximum number of tokens to generate",
+            "type": "number"
+          },
+          "prompt": {
+            "description": "The text prompt to generate content from",
+            "type": "string"
+          },
+          "temperature": {
+            "default": 0.7,
+            "description": "Sampling temperature (0-2)",
+            "maximum": 2,
+            "minimum": 0,
+            "type": "number"
+          }
+        },
+        "required": [
+          "prompt"
+        ],
+        "type": "object"
+      },
+      "name": "qwen_max"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/66julienmartin/servers/MCP-server-Qwen_Max/versions",
+  "xid": "/mcpproviders/66julienmartin/servers/MCP-server-Qwen_Max"
+}

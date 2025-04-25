@@ -1,0 +1,121 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:16.11181819Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "@gongrzhe/server-redis-mcp@1.0.0",
+        "redis://localhost:6379"
+      ],
+      "command": "npx",
+      "package": "@gongrzhe/server-redis-mcp",
+      "packageversion": "1.0.0",
+      "runtime": "node"
+    }
+  },
+  "description": "A Redis Model Context Protocol (MCP) server implementation for interacting with Redis databases. This server enables LLMs to interact with Redis key-value stores through a set of standardized tools.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/REDIS-MCP-Server/meta",
+  "modifiedat": "2025-04-25T12:41:16.11181819Z",
+  "name": "redis",
+  "repository": {
+    "name": "GongRzhe/REDIS-MCP-Server",
+    "url": "https://github.com/GongRzhe/REDIS-MCP-Server"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/REDIS-MCP-Server",
+  "serverid": "REDIS-MCP-Server",
+  "serverversion": "1.0.0",
+  "tools": [
+    {
+      "description": "Set a Redis key-value pair with optional expiration",
+      "inputschema": {
+        "properties": {
+          "expireSeconds": {
+            "description": "Optional expiration time in seconds",
+            "type": "number"
+          },
+          "key": {
+            "description": "Redis key",
+            "type": "string"
+          },
+          "value": {
+            "description": "Value to store",
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "value"
+        ],
+        "type": "object"
+      },
+      "name": "set"
+    },
+    {
+      "description": "Get value by key from Redis",
+      "inputschema": {
+        "properties": {
+          "key": {
+            "description": "Redis key to retrieve",
+            "type": "string"
+          }
+        },
+        "required": [
+          "key"
+        ],
+        "type": "object"
+      },
+      "name": "get"
+    },
+    {
+      "description": "Delete one or more keys from Redis",
+      "inputschema": {
+        "properties": {
+          "key": {
+            "description": "Key or array of keys to delete",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            ]
+          }
+        },
+        "required": [
+          "key"
+        ],
+        "type": "object"
+      },
+      "name": "delete"
+    },
+    {
+      "description": "List Redis keys matching a pattern",
+      "inputschema": {
+        "properties": {
+          "pattern": {
+            "description": "Pattern to match keys (default: *)",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "name": "list"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/REDIS-MCP-Server/versions",
+  "xid": "/mcpproviders/GongRzhe/servers/REDIS-MCP-Server"
+}

@@ -1,0 +1,988 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:42:03.10509088Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "-y",
+          "@fanyangmeng/ghost-mcp"
+        ],
+        "command": "npx",
+        "env": [
+          {
+            "description": "URL of your Ghost blog",
+            "name": "GHOST_API_URL",
+            "required": true
+          },
+          {
+            "description": "Admin API key for Ghost",
+            "name": "GHOST_ADMIN_API_KEY",
+            "required": true
+          },
+          {
+            "description": "Ghost API version, e.g. v5.0",
+            "name": "GHOST_API_VERSION",
+            "required": false
+          }
+        ],
+        "package": "@fanyangmeng/ghost-mcp",
+        "runtime": "nodejs"
+      }
+    },
+    "description": "A Model Context Protocol (MCP) server for interacting with Ghost CMS through LLM interfaces like Claude. This server provides secure and comprehensive access to your Ghost blog, leveraging JWT authentication and a rich set of MCP tools for managing posts, users, members, tiers, offers, and newsletters.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "modifiedat": "2025-04-25T12:42:03.10509088Z",
+    "name": "ghost-mcp-ts",
+    "repository": {
+      "name": "MFYDev/ghost-mcp",
+      "url": "https://github.com/MFYDev/ghost-mcp"
+    },
+    "resources": [
+      {
+        "description": "User resource identified by user_id.",
+        "name": "user",
+        "uritemplate": "user://{user_id}"
+      },
+      {
+        "description": "Member resource identified by member_id.",
+        "name": "member",
+        "uritemplate": "member://{member_id}"
+      },
+      {
+        "description": "Tier resource identified by tier_id.",
+        "name": "tier",
+        "uritemplate": "tier://{tier_id}"
+      },
+      {
+        "description": "Offer resource identified by offer_id.",
+        "name": "offer",
+        "uritemplate": "offer://{offer_id}"
+      },
+      {
+        "description": "Newsletter resource identified by newsletter_id.",
+        "name": "newsletter",
+        "uritemplate": "newsletter://{newsletter_id}"
+      },
+      {
+        "description": "Post resource identified by post_id.",
+        "name": "post",
+        "uritemplate": "post://{post_id}"
+      },
+      {
+        "description": "Blog information resource.",
+        "name": "blog-info",
+        "uritemplate": "blog://info"
+      }
+    ],
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/MFYDev/servers/ghost-mcp/versions/1",
+    "serverid": "ghost-mcp",
+    "serverversion": "1.0.0",
+    "tools": [
+      {
+        "description": "Browse invites with optional filters and pagination.",
+        "inputschema": {
+          "properties": {
+            "filter": {
+              "type": "string"
+            },
+            "limit": {
+              "type": "number"
+            },
+            "order": {
+              "type": "string"
+            },
+            "page": {
+              "type": "number"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "invites_browse"
+      },
+      {
+        "description": "Add a new invite with role_id and email.",
+        "inputschema": {
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "role_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "role_id",
+            "email"
+          ],
+          "type": "object"
+        },
+        "name": "invites_add"
+      },
+      {
+        "description": "Delete an invite by id.",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "invites_delete"
+      },
+      {
+        "description": "Browse members with optional filters and pagination.",
+        "inputschema": {
+          "properties": {
+            "filter": {
+              "type": "string"
+            },
+            "limit": {
+              "type": "number"
+            },
+            "order": {
+              "type": "string"
+            },
+            "page": {
+              "type": "number"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "members_browse"
+      },
+      {
+        "description": "Read a member by id or email.",
+        "inputschema": {
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "members_read"
+      },
+      {
+        "description": "Add a new member with email and optional details.",
+        "inputschema": {
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "labels": {
+              "items": {
+                "properties": {
+                  "name": {
+                    "typ": "string"
+                  },
+                  "slug": {
+                    "typ": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "name": {
+              "type": "string"
+            },
+            "newsletters": {
+              "items": {
+                "properties": {
+                  "id": "string"
+                },
+                "required": [
+                  "id"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "email"
+          ],
+          "type": "object"
+        },
+        "name": "members_add"
+      },
+      {
+        "description": "Edit member details by id.",
+        "inputschema": {
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "labels": {
+              "items": {
+                "properties": {
+                  "name": {
+                    "typ": "string"
+                  },
+                  "slug": {
+                    "typ": "string"
+                  }
+                },
+                "required": [
+                  "name"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "name": {
+              "type": "string"
+            },
+            "newsletters": {
+              "items": {
+                "properties": {
+                  "id": "string"
+                },
+                "required": [
+                  "id"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "members_edit"
+      },
+      {
+        "description": "Delete a member by id.",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "members_delete"
+      },
+      {
+        "description": "Browse offers with optional filters and pagination.",
+        "inputschema": {
+          "properties": {
+            "filter": {
+              "type": "string"
+            },
+            "limit": {
+              "type": "number"
+            },
+            "order": {
+              "type": "string"
+            },
+            "page": {
+              "type": "number"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "offers_browse"
+      },
+      {
+        "description": "Read an offer by id or code.",
+        "inputschema": {
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "offers_read"
+      },
+      {
+        "description": "Add a new offer with required fields.",
+        "inputschema": {
+          "properties": {
+            "amount": {
+              "type": "number"
+            },
+            "cadence": {
+              "type": "string"
+            },
+            "code": {
+              "type": "string"
+            },
+            "currency": {
+              "type": "string"
+            },
+            "display_description": {
+              "type": "string"
+            },
+            "display_title": {
+              "type": "string"
+            },
+            "duration": {
+              "type": "string"
+            },
+            "duration_in_months": {
+              "type": "number"
+            },
+            "name": {
+              "type": "string"
+            },
+            "tier_id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "code",
+            "cadence",
+            "duration",
+            "amount",
+            "tier_id",
+            "type"
+          ],
+          "type": "object"
+        },
+        "name": "offers_add"
+      },
+      {
+        "description": "Edit an offer by id with optional fields.",
+        "inputschema": {
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "display_description": {
+              "type": "string"
+            },
+            "display_title": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "offers_edit"
+      },
+      {
+        "description": "Delete an offer by id.",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "offers_delete"
+      },
+      {
+        "description": "Browse posts with optional filters and pagination.",
+        "inputschema": {
+          "properties": {
+            "filter": {
+              "type": "string"
+            },
+            "limit": {
+              "type": "number"
+            },
+            "order": {
+              "type": "string"
+            },
+            "page": {
+              "type": "number"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "posts_browse"
+      },
+      {
+        "description": "Read a post by id or slug.",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "slug": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "posts_read"
+      },
+      {
+        "description": "Add a new post with title and optional content.",
+        "inputschema": {
+          "properties": {
+            "html": {
+              "type": "string"
+            },
+            "lexical": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "title"
+          ],
+          "type": "object"
+        },
+        "name": "posts_add"
+      },
+      {
+        "description": "Edit a post by id with optional fields.",
+        "inputschema": {
+          "properties": {
+            "html": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "lexical": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "updated_at": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "updated_at"
+          ],
+          "type": "object"
+        },
+        "name": "posts_edit"
+      },
+      {
+        "description": "Delete a post by id.",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "posts_delete"
+      },
+      {
+        "description": "Browse roles with optional filters and pagination.",
+        "inputschema": {
+          "properties": {
+            "filter": {
+              "type": "string"
+            },
+            "limit": {
+              "type": "number"
+            },
+            "order": {
+              "type": "string"
+            },
+            "page": {
+              "type": "number"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "roles_browse"
+      },
+      {
+        "description": "Read a role by id or name.",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "roles_read"
+      },
+      {
+        "description": "Browse tags with optional filters and pagination.",
+        "inputschema": {
+          "properties": {
+            "filter": {
+              "type": "string"
+            },
+            "limit": {
+              "type": "number"
+            },
+            "order": {
+              "type": "string"
+            },
+            "page": {
+              "type": "number"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "tags_browse"
+      },
+      {
+        "description": "Read a tag by id or slug.",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "slug": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "tags_read"
+      },
+      {
+        "description": "Add a new tag with name and optional fields.",
+        "inputschema": {
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "slug": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        },
+        "name": "tags_add"
+      },
+      {
+        "description": "Edit a tag by id with optional fields.",
+        "inputschema": {
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "slug": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "tags_edit"
+      },
+      {
+        "description": "Delete a tag by id.",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "tags_delete"
+      },
+      {
+        "description": "Browse tiers with optional filters and pagination.",
+        "inputschema": {
+          "properties": {
+            "filter": {
+              "type": "string"
+            },
+            "include": {
+              "type": "string"
+            },
+            "limit": {
+              "type": "number"
+            },
+            "order": {
+              "type": "string"
+            },
+            "page": {
+              "type": "number"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "tiers_browse"
+      },
+      {
+        "description": "Read a tier by id or slug.",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "include": {
+              "type": "string"
+            },
+            "slug": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "tiers_read"
+      },
+      {
+        "description": "Add a new tier with required name and optional details.",
+        "inputschema": {
+          "properties": {
+            "benefits": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "currency": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "monthly_price": {
+              "type": "number"
+            },
+            "name": {
+              "type": "string"
+            },
+            "visibility": {
+              "type": "string"
+            },
+            "welcome_page_url": {
+              "type": "string"
+            },
+            "yearly_price": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        },
+        "name": "tiers_add"
+      },
+      {
+        "description": "Edit a tier by id with optional fields.",
+        "inputschema": {
+          "properties": {
+            "benefits": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "currency": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "monthly_price": {
+              "type": "number"
+            },
+            "name": {
+              "type": "string"
+            },
+            "visibility": {
+              "type": "string"
+            },
+            "welcome_page_url": {
+              "type": "string"
+            },
+            "yearly_price": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "tiers_edit"
+      },
+      {
+        "description": "Delete a tier by id.",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "tiers_delete"
+      },
+      {
+        "description": "Browse users with optional filters and pagination.",
+        "inputschema": {
+          "properties": {
+            "filter": {
+              "type": "string"
+            },
+            "limit": {
+              "type": "number"
+            },
+            "order": {
+              "type": "string"
+            },
+            "page": {
+              "type": "number"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "users_browse"
+      },
+      {
+        "description": "Read a user by id, email, or slug.",
+        "inputschema": {
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "slug": {
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "users_read"
+      },
+      {
+        "description": "Edit a user by id with optional fields.",
+        "inputschema": {
+          "properties": {
+            "bio": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "facebook": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "slug": {
+              "type": "string"
+            },
+            "twitter": {
+              "type": "string"
+            },
+            "website": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "users_edit"
+      },
+      {
+        "description": "Delete a user by id.",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "users_delete"
+      },
+      {
+        "description": "Add a webhook with event and target_url.",
+        "inputschema": {
+          "properties": {
+            "api_version": {
+              "type": "string"
+            },
+            "event": {
+              "type": "string"
+            },
+            "integration_id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "secret": {
+              "type": "string"
+            },
+            "target_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "event",
+            "target_url"
+          ],
+          "type": "object"
+        },
+        "name": "webhooks_add"
+      },
+      {
+        "description": "Edit a webhook by id with optional fields.",
+        "inputschema": {
+          "properties": {
+            "api_version": {
+              "type": "string"
+            },
+            "event": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "target_url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "webhooks_edit"
+      },
+      {
+        "description": "Delete a webhook by id.",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "webhooks_delete"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/MFYDev/servers/ghost-mcp/versions/1"
+  }
+}

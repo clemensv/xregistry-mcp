@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:43:25.587316974Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/singlestore-labs/servers/mcp-server-singlestore/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:43:25.587316974Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/singlestore-labs/servers/mcp-server-singlestore/meta",
+  "serverid": "mcp-server-singlestore",
+  "xid": "/mcpproviders/singlestore-labs/servers/mcp-server-singlestore/meta"
+}

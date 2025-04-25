@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:49.717339572Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/lishenxydlgzs/servers/aws-athena-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:49.717339572Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/lishenxydlgzs/servers/aws-athena-mcp/meta",
+  "serverid": "aws-athena-mcp",
+  "xid": "/mcpproviders/lishenxydlgzs/servers/aws-athena-mcp/meta"
+}

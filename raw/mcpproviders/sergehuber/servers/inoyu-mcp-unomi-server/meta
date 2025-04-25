@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:43:18.847313576Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/sergehuber/servers/inoyu-mcp-unomi-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:43:18.847313576Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/sergehuber/servers/inoyu-mcp-unomi-server/meta",
+  "serverid": "inoyu-mcp-unomi-server",
+  "xid": "/mcpproviders/sergehuber/servers/inoyu-mcp-unomi-server/meta"
+}

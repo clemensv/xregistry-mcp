@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:40:39.795426453Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/apache/servers/iotdb-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:40:39.795426453Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/apache/servers/iotdb-mcp-server/meta",
+  "serverid": "iotdb-mcp-server",
+  "xid": "/mcpproviders/apache/servers/iotdb-mcp-server/meta"
+}

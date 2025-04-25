@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:23.78501461Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/heurist-network/servers/heurist-mesh-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:23.78501461Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/heurist-network/servers/heurist-mesh-mcp-server/meta",
+  "serverid": "heurist-mesh-mcp-server",
+  "xid": "/mcpproviders/heurist-network/servers/heurist-mesh-mcp-server/meta"
+}

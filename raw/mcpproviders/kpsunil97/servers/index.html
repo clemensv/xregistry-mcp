@@ -1,0 +1,79 @@
+{
+  "devrev-mcp-server": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:43.037583959Z",
+    "deployment": {
+      "sandbox": {
+        "args": [],
+        "command": "devrev-mcp",
+        "env": [
+          {
+            "name": "DEVREV_API_KEY",
+            "required": false
+          }
+        ],
+        "package": "devrev-mcp",
+        "runtime": "nodejs"
+      }
+    },
+    "description": "A Model Context Protocol server for DevRev. It is used to search and retrieve information using the DevRev APIs.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kpsunil97/servers/devrev-mcp-server/meta",
+    "modifiedat": "2025-04-25T12:41:43.037583959Z",
+    "name": "devrev_mcp",
+    "repository": {
+      "name": "kpsunil97/devrev-mcp-server",
+      "url": "https://github.com/kpsunil97/devrev-mcp-server"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kpsunil97/servers/devrev-mcp-server",
+    "serverid": "devrev-mcp-server",
+    "serverversion": "0.1.1",
+    "tools": [
+      {
+        "description": "Search DevRev using the provided query",
+        "inputschema": {
+          "properties": {
+            "namespace": {
+              "enum": [
+                "article",
+                "issue",
+                "ticket"
+              ],
+              "type": "string"
+            },
+            "query": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "query",
+            "namespace"
+          ],
+          "type": "object"
+        },
+        "name": "search"
+      },
+      {
+        "description": "Get all information about a DevRev object using its ID",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "get_object"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/kpsunil97/servers/devrev-mcp-server/versions",
+    "xid": "/mcpproviders/kpsunil97/servers/devrev-mcp-server"
+  }
+}

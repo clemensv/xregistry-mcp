@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:41:47.124560551Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/leehanchung/servers/bing-search-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:41:47.124560551Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/leehanchung/servers/bing-search-mcp/meta",
+  "serverid": "bing-search-mcp",
+  "xid": "/mcpproviders/leehanchung/servers/bing-search-mcp/meta"
+}

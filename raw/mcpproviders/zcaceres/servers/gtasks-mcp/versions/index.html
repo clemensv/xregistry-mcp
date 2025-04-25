@@ -1,0 +1,187 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:44:43.043973218Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "dist/index.js"
+        ],
+        "command": "node",
+        "env": [],
+        "package": "@zcaceres/gtasks",
+        "packageversion": "0.1.0",
+        "runtime": "node"
+      }
+    },
+    "description": "This MCP server integrates with Google Tasks to allow listing, reading, searching, creating, updating, and deleting tasks.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "unspecified",
+    "modifiedat": "2025-04-25T12:44:43.043973218Z",
+    "name": "example-servers/gtasks",
+    "repository": {
+      "name": "zcaceres/gtasks-mcp",
+      "url": "https://github.com/zcaceres/gtasks-mcp"
+    },
+    "resources": [
+      {
+        "description": "Represents individual tasks in Google Tasks. Supports reading task details including title, status, due date, notes, and other metadata. Can be listed, read, created, updated, and deleted using the provided tools.",
+        "mimetype": "text/plain",
+        "name": "Tasks",
+        "uritemplate": "gtasks:///{task_id}"
+      }
+    ],
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/zcaceres/servers/gtasks-mcp/versions/1",
+    "serverid": "gtasks-mcp",
+    "serverversion": "0.1.0",
+    "tools": [
+      {
+        "description": "Search for a task in Google Tasks",
+        "inputschema": {
+          "properties": {
+            "query": {
+              "description": "Search query",
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search"
+      },
+      {
+        "description": "List all tasks in Google Tasks",
+        "inputschema": {
+          "properties": {
+            "cursor": {
+              "description": "Cursor for pagination",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": "list"
+      },
+      {
+        "description": "Create a new task in Google Tasks",
+        "inputschema": {
+          "properties": {
+            "due": {
+              "description": "Due date",
+              "type": "string"
+            },
+            "notes": {
+              "description": "Task notes",
+              "type": "string"
+            },
+            "taskListId": {
+              "description": "Task list ID",
+              "type": "string"
+            },
+            "title": {
+              "description": "Task title",
+              "type": "string"
+            }
+          },
+          "required": [
+            "title"
+          ],
+          "type": "object"
+        },
+        "name": "create"
+      },
+      {
+        "description": "Clear completed tasks from a Google Tasks task list",
+        "inputschema": {
+          "properties": {
+            "taskListId": {
+              "description": "Task list ID",
+              "type": "string"
+            }
+          },
+          "required": [
+            "taskListId"
+          ],
+          "type": "object"
+        },
+        "name": "clear"
+      },
+      {
+        "description": "Delete a task in Google Tasks",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "description": "Task id",
+              "type": "string"
+            },
+            "taskListId": {
+              "description": "Task list ID",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "taskListId"
+          ],
+          "type": "object"
+        },
+        "name": "delete"
+      },
+      {
+        "description": "Update a task in Google Tasks",
+        "inputschema": {
+          "properties": {
+            "due": {
+              "description": "Due date",
+              "type": "string"
+            },
+            "id": {
+              "description": "Task ID",
+              "type": "string"
+            },
+            "notes": {
+              "description": "Task notes",
+              "type": "string"
+            },
+            "status": {
+              "description": "Task status (needsAction or completed)",
+              "enum": [
+                "needsAction",
+                "completed"
+              ],
+              "type": "string"
+            },
+            "taskListId": {
+              "description": "Task list ID",
+              "type": "string"
+            },
+            "title": {
+              "description": "Task title",
+              "type": "string"
+            },
+            "uri": {
+              "description": "Task URI",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "uri"
+          ],
+          "type": "object"
+        },
+        "name": "update"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/zcaceres/servers/gtasks-mcp/versions/1"
+  }
+}

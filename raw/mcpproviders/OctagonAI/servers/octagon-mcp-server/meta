@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:42:19.954627069Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/OctagonAI/servers/octagon-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:42:19.954627069Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/OctagonAI/servers/octagon-mcp-server/meta",
+  "serverid": "octagon-mcp-server",
+  "xid": "/mcpproviders/OctagonAI/servers/octagon-mcp-server/meta"
+}

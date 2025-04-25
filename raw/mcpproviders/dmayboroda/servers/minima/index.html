@@ -1,0 +1,108 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:40:56.49403449Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "--directory",
+        "/path_to_cloned_minima_project/mcp-server",
+        "run",
+        "minima"
+      ],
+      "command": "uv",
+      "env": [
+        {
+          "description": "Specify the root folder for indexing (on your cloud or local pc).",
+          "name": "LOCAL_FILES_PATH",
+          "required": true
+        },
+        {
+          "description": "Specify the embedding model to use.",
+          "name": "EMBEDDING_MODEL_ID",
+          "required": true
+        },
+        {
+          "description": "Define the embedding dimension provided by the model.",
+          "name": "EMBEDDING_SIZE",
+          "required": true
+        },
+        {
+          "description": "Set up the Ollama model.",
+          "name": "OLLAMA_MODEL",
+          "required": true
+        },
+        {
+          "description": "Specify the reranker model.",
+          "name": "RERANKER_MODEL",
+          "required": true
+        },
+        {
+          "description": "Required for ChatGPT integration, just use your email.",
+          "name": "USER_ID",
+          "required": false
+        },
+        {
+          "description": "Required for ChatGPT integration, just use any password.",
+          "name": "PASSWORD",
+          "required": false
+        }
+      ],
+      "package": "minima",
+      "runtime": "node"
+    }
+  },
+  "description": "Minima is an open source RAG on-premises containers, with ability to integrate with ChatGPT and MCP. Minima can also be used as a fully local RAG.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/dmayboroda/servers/minima/meta",
+  "modifiedat": "2025-04-25T12:40:56.49403449Z",
+  "name": "minima",
+  "prompts": [
+    {
+      "arguments": [
+        {
+          "description": "Context to search",
+          "name": "context",
+          "required": true
+        }
+      ],
+      "description": "Find a context in a local files",
+      "name": "query"
+    }
+  ],
+  "repository": {
+    "name": "dmayboroda/minima",
+    "url": "https://github.com/dmayboroda/minima"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/dmayboroda/servers/minima",
+  "serverid": "minima",
+  "serverversion": "0.0.1",
+  "tools": [
+    {
+      "description": "Find a context in local files (PDF, CSV, DOCX, MD, TXT)",
+      "inputschema": {
+        "properties": {
+          "text": {
+            "description": "context to find",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "type": "object"
+      },
+      "name": "query"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/dmayboroda/servers/minima/versions",
+  "xid": "/mcpproviders/dmayboroda/servers/minima"
+}

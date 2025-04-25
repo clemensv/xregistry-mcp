@@ -1,0 +1,75 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:41:13.978325143Z",
+  "deployment": {
+    "sandbox": {
+      "args": [],
+      "command": "npx @gongrzhe/server-json-mcp@1.0.3",
+      "package": "@gongrzhe/server-json-mcp",
+      "packageversion": "1.0.3",
+      "runtime": "node"
+    }
+  },
+  "description": "A JSON Model Context Protocol (MCP) server implementation for querying and manipulating JSON data. This server enables LLMs to interact with JSON data through a set of standardized tools.",
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0.3",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/JSON-MCP-Server/meta",
+  "modifiedat": "2025-04-25T12:41:13.978325143Z",
+  "name": "JSON MCP Server",
+  "repository": {
+    "name": "GongRzhe/JSON-MCP-Server",
+    "url": "https://github.com/GongRzhe/JSON-MCP-Server"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/JSON-MCP-Server",
+  "serverid": "JSON-MCP-Server",
+  "serverversion": "1.0.3",
+  "tools": [
+    {
+      "description": "Query JSON data using JSONPath syntax with extended operations",
+      "inputschema": {
+        "properties": {
+          "jsonPath": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "jsonPath"
+        ],
+        "type": "object"
+      },
+      "name": "query"
+    },
+    {
+      "description": "Filter JSON data using conditions",
+      "inputschema": {
+        "properties": {
+          "condition": {
+            "type": "string"
+          },
+          "jsonPath": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "jsonPath",
+          "condition"
+        ],
+        "type": "object"
+      },
+      "name": "filter"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/GongRzhe/servers/JSON-MCP-Server/versions",
+  "xid": "/mcpproviders/GongRzhe/servers/JSON-MCP-Server"
+}

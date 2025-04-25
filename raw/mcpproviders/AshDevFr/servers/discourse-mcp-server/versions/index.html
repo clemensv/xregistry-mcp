@@ -1,0 +1,79 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:40.547490728Z",
+    "deployment": {
+      "container": {
+        "args": [
+          "run",
+          "-i",
+          "--rm",
+          "-e",
+          "DISCOURSE_API_URL=https://try.discourse.org",
+          "-e",
+          "DISCOURSE_API_KEY=1234",
+          "-e",
+          "DISCOURSE_API_USERNAME=ash"
+        ],
+        "image": "ashdev/discourse-mcp-server"
+      },
+      "sandbox": {
+        "args": [
+          "-y",
+          "@ashdev/discourse-mcp-server"
+        ],
+        "command": "npx",
+        "env": [
+          {
+            "name": "DISCOURSE_API_URL",
+            "required": true
+          },
+          {
+            "name": "DISCOURSE_API_KEY",
+            "required": false
+          },
+          {
+            "name": "DISCOURSE_API_USERNAME",
+            "required": false
+          }
+        ],
+        "package": "@ashdev/discourse-mcp-server",
+        "runtime": "nodejs"
+      }
+    },
+    "description": "Node.js server implementing Model Context Protocol (MCP) for Discourse search operation.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0.0",
+    "modifiedat": "2025-04-25T12:40:40.547490728Z",
+    "name": "discourse",
+    "repository": {
+      "name": "AshDevFr/discourse-mcp-server",
+      "url": "https://github.com/AshDevFr/discourse-mcp-server"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/AshDevFr/servers/discourse-mcp-server/versions/1",
+    "serverid": "discourse-mcp-server",
+    "serverversion": "1.0.0",
+    "tools": [
+      {
+        "description": "Search Discourse posts",
+        "inputschema": {
+          "properties": {
+            "query": {
+              "description": "Query",
+              "minLength": 5,
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search_posts"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/AshDevFr/servers/discourse-mcp-server/versions/1"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:44:24.564102959Z",
+  "deployment": {
+    "sandbox": {
+      "args": [],
+      "command": "mcp dev src/mcp_azure_devops/server.py",
+      "env": [
+        {
+          "description": "Personal Access Token for Azure DevOps API access",
+          "name": "AZURE_DEVOPS_PAT",
+          "required": true
+        },
+        {
+          "description": "Full URL to the Azure DevOps organization",
+          "name": "AZURE_DEVOPS_ORGANIZATION_URL",
+          "required": true
+        }
+      ],
+      "package": "mcp-azure-devops",
+      "runtime": "python"
+    }
+  },
+  "description": "A Model Context Protocol (MCP) server enabling AI assistants to interact with Azure DevOps services. This server provides a bridge between natural language interactions and the Azure DevOps REST API, supporting work item management, project management, and team management features.",
+  "endpoints": {
+    "stdio": {
+      "deployment": "sandbox"
+    }
+  },
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "modifiedat": "2025-04-25T12:44:24.564102959Z",
+  "name": "Azure DevOps",
+  "repository": {
+    "name": "Vortiago/mcp-azure-devops",
+    "url": "https://github.com/Vortiago/mcp-azure-devops"
+  },
+  "resources": [
+    {
+      "description": "Work item resources accessible by ID.",
+      "mimetype": "application/json",
+      "name": "work_items",
+      "uritemplate": "/workitems/{id}"
+    },
+    {
+      "description": "List of accessible projects in the organization.",
+      "mimetype": "application/json",
+      "name": "projects",
+      "uritemplate": "/projects"
+    },
+    {
+      "description": "List of teams within the organization.",
+      "mimetype": "application/json",
+      "name": "teams",
+      "uritemplate": "/teams"
+    }
+  ],
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/Vortiago/servers/mcp-azure-devops/versions/1",
+  "serverid": "mcp-azure-devops",
+  "serverversion": "unspecified",
+  "tools": [
+    {
+      "description": "Searches for work items using Work Item Query Language (WIQL). Use this tool to find work items matching specific criteria, search across projects, create dynamic reports, or identify work items assigned to specific team members.",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "The WIQL query string (e.g., \"SELECT * FROM workitems WHERE [System.State] = 'Active'\")",
+            "type": "string"
+          },
+          "top": {
+            "description": "Maximum number of results to return (default: 30)",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "query_work_items"
+    }
+  ],
+  "versionid": "1",
+  "xid": "/mcpproviders/Vortiago/servers/mcp-azure-devops/versions/1"
+}

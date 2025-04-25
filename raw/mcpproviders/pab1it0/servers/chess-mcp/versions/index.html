@@ -1,0 +1,113 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:42:30.935849493Z",
+    "deployment": {
+      "container": {
+        "args": [
+          "run",
+          "--rm",
+          "-i",
+          "pab1it0/chess-mcp"
+        ],
+        "image": "pab1it0/chess-mcp"
+      },
+      "sandbox": {
+        "args": [
+          "run"
+        ],
+        "command": "src/chess_mcp/main.py",
+        "env": [],
+        "package": "chess-mcp",
+        "runtime": "uv"
+      }
+    },
+    "description": "A Model Context Protocol (MCP) server for Chess.com's Published Data API providing access to player data, game records, and other public information through standardized MCP interfaces.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "modifiedat": "2025-04-25T12:42:30.935849493Z",
+    "name": "Chess.com MCP Server",
+    "repository": {
+      "name": "pab1it0/chess-mcp",
+      "url": "https://github.com/pab1it0/chess-mcp"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/pab1it0/servers/chess-mcp/versions/1",
+    "serverid": "chess-mcp",
+    "serverversion": "0.1.0",
+    "tools": [
+      {
+        "description": "Get a player's profile from Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_player_profile"
+      },
+      {
+        "description": "Get a player's stats from Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_player_stats"
+      },
+      {
+        "description": "Check if a player is currently online on Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "is_player_online"
+      },
+      {
+        "description": "Get a list of titled players from Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_titled_players"
+      },
+      {
+        "description": "Get a player's ongoing games on Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_player_current_games"
+      },
+      {
+        "description": "Get a player's games for a specific month from Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_player_games_by_month"
+      },
+      {
+        "description": "Get a list of available monthly game archives for a player on Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_player_game_archives"
+      },
+      {
+        "description": "Download PGN files for all games in a specific month from Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "download_player_games_pgn"
+      },
+      {
+        "description": "Get information about a club on Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_club_profile"
+      },
+      {
+        "description": "Get members of a club on Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_club_members"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/pab1it0/servers/chess-mcp/versions/1"
+  }
+}

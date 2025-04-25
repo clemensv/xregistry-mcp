@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-04-25T12:43:20.807646924Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/shanejonas/servers/openrpc-mpc-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-04-25T12:43:20.807646924Z",
+  "readonly": false,
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/shanejonas/servers/openrpc-mpc-server/meta",
+  "serverid": "openrpc-mpc-server",
+  "xid": "/mcpproviders/shanejonas/servers/openrpc-mpc-server/meta"
+}

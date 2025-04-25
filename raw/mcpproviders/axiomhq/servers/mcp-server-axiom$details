@@ -1,0 +1,72 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-04-25T12:40:42.874665564Z",
+  "deployment": {
+    "sandbox": {
+      "args": [
+        "--config",
+        "/path/to/your/config.txt"
+      ],
+      "command": "axiom-mcp",
+      "env": [
+        {
+          "name": "AXIOM_TOKEN"
+        },
+        {
+          "name": "AXIOM_URL"
+        },
+        {
+          "name": "AXIOM_ORG_ID"
+        },
+        {
+          "name": "AXIOM_QUERY_RATE"
+        },
+        {
+          "name": "AXIOM_QUERY_BURST"
+        },
+        {
+          "name": "AXIOM_DATASETS_RATE"
+        },
+        {
+          "name": "AXIOM_DATASETS_BURST"
+        }
+      ],
+      "package": "github.com/axiomhq/axiom-mcp",
+      "runtime": "cli"
+    }
+  },
+  "description": "A Model Context Protocol server implementation for Axiom that enables AI agents to query your data using Axiom Processing Language (APL). Works with Claude desktop app. Implements two MCP tools: queryApl and listDatasets. No support for MCP resources or prompts yet.",
+  "epoch": 1,
+  "isdefault": true,
+  "mcpversion": "1.0",
+  "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/axiomhq/servers/mcp-server-axiom/meta",
+  "modifiedat": "2025-04-25T12:40:42.874665564Z",
+  "name": "mcp-server-axiom",
+  "repository": {
+    "name": "axiomhq/mcp-server-axiom",
+    "url": "https://github.com/axiomhq/mcp-server-axiom"
+  },
+  "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/axiomhq/servers/mcp-server-axiom",
+  "serverid": "mcp-server-axiom",
+  "serverversion": "latest",
+  "tools": [
+    {
+      "description": "Execute APL queries against Axiom datasets",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "queryApl"
+    },
+    {
+      "description": "List available Axiom datasets",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "listDatasets"
+    }
+  ],
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/axiomhq/servers/mcp-server-axiom/versions",
+  "xid": "/mcpproviders/axiomhq/servers/mcp-server-axiom"
+}

@@ -1,0 +1,344 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:51.473271447Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "index.js"
+        ],
+        "command": "node",
+        "env": [
+          {
+            "default": "false",
+            "description": "Enable debug mode (set to 'true' to enable)",
+            "name": "DEBUG",
+            "required": false
+          },
+          {
+            "description": "Path to the Godot executable",
+            "name": "GODOT_PATH",
+            "required": false
+          }
+        ],
+        "package": "@modelcontextprotocol/godot-mcp",
+        "runtime": "nodejs"
+      }
+    },
+    "description": "A Model Context Protocol (MCP) server for interacting with the Godot game engine. It enables AI assistants to launch the Godot editor, run Godot projects, capture debug output, and control project execution.",
+    "docs": "https://modelcontextprotocol.io/introduction",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "modifiedat": "2025-04-25T12:40:51.473271447Z",
+    "name": "godot-mcp",
+    "repository": {
+      "branch": "main",
+      "name": "Coding-Solo/godot-mcp",
+      "url": "https://github.com/Coding-Solo/godot-mcp"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/Coding-Solo/servers/godot-mcp/versions/1",
+    "serverid": "godot-mcp",
+    "serverversion": "0.1.0",
+    "tools": [
+      {
+        "description": "Launch Godot editor for a specific project",
+        "inputschema": {
+          "properties": {
+            "projectPath": {
+              "description": "Path to the Godot project directory",
+              "type": "string"
+            }
+          },
+          "required": [
+            "projectPath"
+          ],
+          "type": "object"
+        },
+        "name": "launch_editor"
+      },
+      {
+        "description": "Run the Godot project and capture output",
+        "inputschema": {
+          "properties": {
+            "projectPath": {
+              "description": "Path to the Godot project directory",
+              "type": "string"
+            },
+            "scene": {
+              "description": "Optional: Specific scene to run",
+              "type": "string"
+            }
+          },
+          "required": [
+            "projectPath"
+          ],
+          "type": "object"
+        },
+        "name": "run_project"
+      },
+      {
+        "description": "Get the current debug output and errors",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "get_debug_output"
+      },
+      {
+        "description": "Stop the currently running Godot project",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "stop_project"
+      },
+      {
+        "description": "Get the installed Godot version",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "get_godot_version"
+      },
+      {
+        "description": "List Godot projects in a directory",
+        "inputschema": {
+          "properties": {
+            "directory": {
+              "description": "Directory to search for Godot projects",
+              "type": "string"
+            },
+            "recursive": {
+              "description": "Whether to search recursively (default: false)",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "directory"
+          ],
+          "type": "object"
+        },
+        "name": "list_projects"
+      },
+      {
+        "description": "Retrieve metadata about a Godot project",
+        "inputschema": {
+          "properties": {
+            "projectPath": {
+              "description": "Path to the Godot project directory",
+              "type": "string"
+            }
+          },
+          "required": [
+            "projectPath"
+          ],
+          "type": "object"
+        },
+        "name": "get_project_info"
+      },
+      {
+        "description": "Create a new Godot scene file",
+        "inputschema": {
+          "properties": {
+            "projectPath": {
+              "description": "Path to the Godot project directory",
+              "type": "string"
+            },
+            "rootNodeType": {
+              "default": "Node2D",
+              "description": "Type of the root node (e.g., Node2D, Node3D)",
+              "type": "string"
+            },
+            "scenePath": {
+              "description": "Path where the scene file will be saved (relative to project)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "projectPath",
+            "scenePath"
+          ],
+          "type": "object"
+        },
+        "name": "create_scene"
+      },
+      {
+        "description": "Add a node to an existing scene",
+        "inputschema": {
+          "properties": {
+            "nodeName": {
+              "description": "Name for the new node",
+              "type": "string"
+            },
+            "nodeType": {
+              "description": "Type of node to add (e.g., Sprite2D, CollisionShape2D)",
+              "type": "string"
+            },
+            "parentNodePath": {
+              "default": "root",
+              "description": "Path to the parent node (e.g., \"root\" or \"root/Player\")",
+              "type": "string"
+            },
+            "projectPath": {
+              "description": "Path to the Godot project directory",
+              "type": "string"
+            },
+            "properties": {
+              "description": "Optional properties to set on the node",
+              "type": "object"
+            },
+            "scenePath": {
+              "description": "Path to the scene file (relative to project)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "projectPath",
+            "scenePath",
+            "nodeType",
+            "nodeName"
+          ],
+          "type": "object"
+        },
+        "name": "add_node"
+      },
+      {
+        "description": "Load a sprite into a Sprite2D node",
+        "inputschema": {
+          "properties": {
+            "nodePath": {
+              "description": "Path to the Sprite2D node (e.g., \"root/Player/Sprite2D\")",
+              "type": "string"
+            },
+            "projectPath": {
+              "description": "Path to the Godot project directory",
+              "type": "string"
+            },
+            "scenePath": {
+              "description": "Path to the scene file (relative to project)",
+              "type": "string"
+            },
+            "texturePath": {
+              "description": "Path to the texture file (relative to project)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "projectPath",
+            "scenePath",
+            "nodePath",
+            "texturePath"
+          ],
+          "type": "object"
+        },
+        "name": "load_sprite"
+      },
+      {
+        "description": "Export a scene as a MeshLibrary resource",
+        "inputschema": {
+          "properties": {
+            "meshItemNames": {
+              "description": "Optional: Names of specific mesh items to include (defaults to all)",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "outputPath": {
+              "description": "Path where the mesh library (.res) will be saved",
+              "type": "string"
+            },
+            "projectPath": {
+              "description": "Path to the Godot project directory",
+              "type": "string"
+            },
+            "scenePath": {
+              "description": "Path to the scene file (.tscn) to export",
+              "type": "string"
+            }
+          },
+          "required": [
+            "projectPath",
+            "scenePath",
+            "outputPath"
+          ],
+          "type": "object"
+        },
+        "name": "export_mesh_library"
+      },
+      {
+        "description": "Save changes to a scene file",
+        "inputschema": {
+          "properties": {
+            "newPath": {
+              "description": "Optional: New path to save the scene to (for creating variants)",
+              "type": "string"
+            },
+            "projectPath": {
+              "description": "Path to the Godot project directory",
+              "type": "string"
+            },
+            "scenePath": {
+              "description": "Path to the scene file (relative to project)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "projectPath",
+            "scenePath"
+          ],
+          "type": "object"
+        },
+        "name": "save_scene"
+      },
+      {
+        "description": "Get the UID for a specific file in a Godot project (for Godot 4.4+)",
+        "inputschema": {
+          "properties": {
+            "filePath": {
+              "description": "Path to the file (relative to project) for which to get the UID",
+              "type": "string"
+            },
+            "projectPath": {
+              "description": "Path to the Godot project directory",
+              "type": "string"
+            }
+          },
+          "required": [
+            "projectPath",
+            "filePath"
+          ],
+          "type": "object"
+        },
+        "name": "get_uid"
+      },
+      {
+        "description": "Update UID references in a Godot project by resaving resources (for Godot 4.4+)",
+        "inputschema": {
+          "properties": {
+            "projectPath": {
+              "description": "Path to the Godot project directory",
+              "type": "string"
+            }
+          },
+          "required": [
+            "projectPath"
+          ],
+          "type": "object"
+        },
+        "name": "update_project_uids"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/Coding-Solo/servers/godot-mcp/versions/1"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "mcp-server-langfuse": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:41:46.541854035Z",
+    "deployment": {
+      "sandbox": {
+        "args": [
+          "build/index.js"
+        ],
+        "command": "node",
+        "env": [
+          {
+            "description": "Your Langfuse public API key",
+            "name": "LANGFUSE_PUBLIC_KEY",
+            "required": true
+          },
+          {
+            "description": "Your Langfuse secret API key",
+            "name": "LANGFUSE_SECRET_KEY",
+            "required": true
+          },
+          {
+            "default": "https://cloud.langfuse.com",
+            "description": "Base URL for Langfuse API",
+            "name": "LANGFUSE_BASEURL",
+            "required": false
+          }
+        ],
+        "package": "langfuse/mcp-server-langfuse",
+        "runtime": "node"
+      }
+    },
+    "description": "Model Context Protocol (MCP) Server for Langfuse Prompt Management. This server allows access and management of Langfuse prompts through the MCP protocol, implementing the MCP Prompts specification for prompt discovery and retrieval.",
+    "endpoints": {
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/langfuse/servers/mcp-server-langfuse/meta",
+    "modifiedat": "2025-04-25T12:41:46.541854035Z",
+    "name": "langfuse-prompts",
+    "repository": {
+      "name": "langfuse/mcp-server-langfuse",
+      "url": "https://github.com/langfuse/mcp-server-langfuse"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/langfuse/servers/mcp-server-langfuse",
+    "serverid": "mcp-server-langfuse",
+    "serverversion": "1.0.0",
+    "tools": [
+      {
+        "description": "Get prompts that are stored in Langfuse",
+        "inputschema": {
+          "properties": {
+            "cursor": {
+              "description": "Cursor to paginate through prompts",
+              "nullable": true,
+              "type": "string"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "get-prompts"
+      },
+      {
+        "description": "Get a prompt that is stored in Langfuse",
+        "inputschema": {
+          "properties": {
+            "arguments": {
+              "additionalProperties": {
+                "t": "string"
+              },
+              "description": "Arguments with prompt variables to pass to the prompt template, json object, e.g. {\"\u003cname\u003e\":\"\u003cvalue\u003e\"}",
+              "nullable": true,
+              "type": "object"
+            },
+            "name": {
+              "description": "Name of the prompt to retrieve, use get-prompts to get a list of prompts",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        },
+        "name": "get-prompt"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/langfuse/servers/mcp-server-langfuse/versions",
+    "xid": "/mcpproviders/langfuse/servers/mcp-server-langfuse"
+  }
+}

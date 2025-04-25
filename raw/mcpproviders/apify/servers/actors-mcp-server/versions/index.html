@@ -1,0 +1,164 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:40:40.067657948Z",
+    "deployment": {
+      "container": {
+        "args": [
+          "--actors",
+          "apify/rag-web-browser,lukaskrivka/google-maps-with-contact-details"
+        ],
+        "env": [
+          {
+            "description": "API token for Apify platform",
+            "name": "APIFY_TOKEN",
+            "required": true
+          }
+        ],
+        "image": "apify/actors-mcp-server:latest"
+      },
+      "sandbox": {
+        "args": [
+          "dist/stdio.js",
+          "--actors",
+          "apify/rag-web-browser,lukaskrivka/google-maps-with-contact-details"
+        ],
+        "command": "node",
+        "env": [
+          {
+            "description": "API token for Apify platform",
+            "name": "APIFY_TOKEN",
+            "required": true
+          }
+        ],
+        "package": "@apify/actors-mcp-server",
+        "runtime": "nodejs"
+      }
+    },
+    "description": "Implementation of an MCP server for all Apify Actors enabling interaction with one or more Apify Actors defined in the MCP Server configuration. Allows AI assistants to use Apify Actors as tools for various scraping and data extraction tasks.",
+    "docs": "https://modelcontextprotocol.org/",
+    "endpoints": {
+      "http": {
+        "authorization": {
+          "description": "Provide your APIFY_TOKEN as Bearer token in the Authorization header.",
+          "format": "Bearer {token}",
+          "name": "authorization",
+          "required": true,
+          "type": "header"
+        },
+        "openapi": {
+          "description": "OpenAPI specification for the MCP server HTTP API",
+          "url": "https://actors-mcp-server.apify.actor/openapi.json"
+        },
+        "uri": "http://localhost:3001"
+      },
+      "httplocal": {
+        "deployment": "container",
+        "host": "localhost",
+        "port": 3001,
+        "protocol": "http"
+      },
+      "stdio": {
+        "deployment": "sandbox"
+      }
+    },
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "modifiedat": "2025-04-25T12:40:40.067657948Z",
+    "name": "Apify Model Context Protocol (MCP) Server",
+    "repository": {
+      "name": "apify/actors-mcp-server",
+      "url": "https://github.com/apify/actors-mcp-server"
+    },
+    "resources": [],
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/apify/servers/actors-mcp-server/versions/1",
+    "serverid": "actors-mcp-server",
+    "serverversion": "unspecified",
+    "tools": [
+      {
+        "description": "Tool wrapping the Apify RAG Web Browser Actor for web search and scraping.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "apify-slash-rag-web-browser"
+      },
+      {
+        "description": "Tool wrapping the Facebook Posts Scraper Actor to extract data from Facebook posts.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "apify-slash-facebook-posts-scraper"
+      },
+      {
+        "description": "Tool wrapping the Google Maps Email Extractor Actor to extract contact details.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "apify-slash-google-maps-with-contact-details"
+      },
+      {
+        "description": "Tool wrapping the Google Search Results Scraper Actor to scrape SERPs.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "apify-slash-google-search-scraper"
+      },
+      {
+        "description": "Tool wrapping the Instagram Scraper Actor to scrape Instagram data.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "apify-slash-instagram-scraper"
+      },
+      {
+        "description": "Add a tool, Actor or MCP-Server to available tools by Actor ID or tool full name. Does not execute the tool, only adds it.",
+        "inputschema": {
+          "properties": {
+            "actorName": {
+              "description": "Add a tool, Actor or MCP-Server to available tools by Actor ID or tool full name. Tool name is always composed from `username/name`",
+              "type": "string"
+            }
+          },
+          "required": [
+            "actorName"
+          ],
+          "type": "object"
+        },
+        "name": "add-tool"
+      },
+      {
+        "description": "Remove a tool, an Actor or MCP-Server by name from available tools.",
+        "inputschema": {
+          "properties": {
+            "toolName": {
+              "description": "Tool name to remove from available tools.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "toolName"
+          ],
+          "type": "object"
+        },
+        "name": "remove-tool"
+      },
+      {
+        "description": "Helper tool for searching Actors.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "search-actor"
+      },
+      {
+        "description": "Helper tool for getting tool details.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get-tool-details"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/apify/servers/actors-mcp-server/versions/1"
+  }
+}

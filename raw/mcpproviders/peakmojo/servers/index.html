@@ -1,0 +1,109 @@
+{
+  "mcp-hubspot": {
+    "ancestor": "1",
+    "createdat": "2025-04-25T12:42:35.353097717Z",
+    "deployment": {
+      "container": {
+        "args": [],
+        "env": [
+          {
+            "description": "HubSpot access token with required scopes",
+            "name": "HUBSPOT_ACCESS_TOKEN",
+            "required": true
+          }
+        ],
+        "image": "buryhuang/mcp-hubspot:latest"
+      },
+      "sandbox": {
+        "args": [
+          "-y",
+          "@smithery/cli@latest",
+          "install",
+          "mcp-hubspot",
+          "--client",
+          "claude"
+        ],
+        "command": "npx",
+        "env": [
+          {
+            "description": "HubSpot access token with required scopes",
+            "name": "HUBSPOT_ACCESS_TOKEN",
+            "required": true
+          }
+        ],
+        "package": "@smithery/cli",
+        "packageversion": "latest",
+        "runtime": "node"
+      }
+    },
+    "description": "A Model Context Protocol (MCP) server that enables AI assistants to interact with HubSpot CRM data. This server bridges AI models with your HubSpot account, providing direct access to contacts, companies, and engagement data. Built-in vector storage and caching mechanisms help overcome HubSpot API limitations while improving response times.",
+    "epoch": 1,
+    "isdefault": true,
+    "mcpversion": "1.0",
+    "metaurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/peakmojo/servers/mcp-hubspot/meta",
+    "modifiedat": "2025-04-25T12:42:35.353097717Z",
+    "name": "HubSpot MCP Server",
+    "repository": {
+      "name": "peakmojo/mcp-hubspot",
+      "url": "https://github.com/peakmojo/mcp-hubspot"
+    },
+    "self": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/peakmojo/servers/mcp-hubspot",
+    "serverid": "mcp-hubspot",
+    "serverversion": "latest",
+    "tools": [
+      {
+        "description": "Create contacts with duplicate prevention",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "hubspot_create_contact"
+      },
+      {
+        "description": "Create companies with duplicate prevention",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "hubspot_create_company"
+      },
+      {
+        "description": "Retrieve activity for specific companies",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "hubspot_get_company_activity"
+      },
+      {
+        "description": "Retrieve most recently active companies",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "hubspot_get_active_companies"
+      },
+      {
+        "description": "Retrieve most recently active contacts",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "hubspot_get_active_contacts"
+      },
+      {
+        "description": "Retrieve recent conversation threads with messages",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "hubspot_get_recent_conversations"
+      },
+      {
+        "description": "Semantic search across previously retrieved HubSpot data",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "hubspot_search_data"
+      }
+    ],
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://raw.githubusercontent.com/clemensv/xregistry-mcp/refs/heads/master/raw/mcpproviders/peakmojo/servers/mcp-hubspot/versions",
+    "xid": "/mcpproviders/peakmojo/servers/mcp-hubspot"
+  }
+}
