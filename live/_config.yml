@@ -1,0 +1,6 @@
+defaults:
+  - scope:
+      path: ""      # all files
+      ext: "html"   # with .json extension
+    values:
+      layout: null
