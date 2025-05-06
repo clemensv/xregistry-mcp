@@ -82,7 +82,7 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
     process.exit(0);
   }
 
-  const { repo: repoUrl, path = '', branch = 'main' } = config;
+  const { repo: repoUrl, path = '', branch = 'main', mcpprovider = '', server='' } = config;
 
   if (!repoUrl) {
     await octokit.rest.issues.createComment({
