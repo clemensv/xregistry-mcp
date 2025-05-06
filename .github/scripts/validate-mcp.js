@@ -105,6 +105,34 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
       ? repoUrl
       : `https://github.com/${repoUrl.replace(/^https?:\/\/github.com\//, '')}`;
 
+    let ghOwner, ghRepo;
+    if (repoUrl.startsWith('http')) {
+      const m = repoUrl.match(/github\.com\/([^/]+)\/([^/]+)(\.git)?/);
+      if (!m) {
+        await octokit.rest.issues.createComment({
+          owner,
+          repo,
+          issue_number,
+          body: '❌ Invalid GitHub repo URL.'
+        });
+        process.exit(0);
+      }
+      [, ghOwner, ghRepo] = m;
+    } else {
+      const m = repoUrl.match(/^([^/]+)\/([^/]+)$/);
+      if (!m) {
+        await octokit.rest.issues.createComment({
+          owner,
+          repo,
+          issue_number,
+          body: '❌ Invalid relative repo format. Use `owner/repo`.'
+        });
+        process.exit(0);
+      }
+      [, ghOwner, ghRepo] = m;
+    }
+
+
     execSync(`git clone --depth 1 --branch ${branch} ${repoClone} ${tempDir}`, { stdio: 'ignore' });
 
     const absMcpPath = pathModule.join(tempDir, mcpFilePath);
@@ -138,7 +166,9 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
     execSync(`git config user.email "github-actions[bot]@users.noreply.github.com"`, { cwd: tempDir });
     execSync(`git add "${absIndexPath}"`, { cwd: tempDir });
     execSync(`git commit -m "Add index.json for ${mcpprovider}/${server}"`, { cwd: tempDir });
-    execSync(`git push origin ${branch}`, { cwd: tempDir });
+    const remoteUrl = `https://x-access-token:${process.env.GH_TOKEN}@github.com/${ghOwner}/${ghRepo}.git`;
+    execSync(`git push "${remoteUrl}" ${branch}`, { cwd: tempDir, stdio: 'inherit' });
+
 
     // Close issue
     await octokit.rest.issues.update({
