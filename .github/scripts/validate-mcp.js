@@ -1,18 +1,18 @@
 /**
- * Validate YAML in GitHub issue body and check existence of mcp.json file
+ * Validate YAML in GitHub issue body or author comment and check existence of mcp.json file
  * Requires env: GH_TOKEN
  */
 const { Octokit } = require("@octokit/rest");
 const axios = require("axios");
 const yaml = require("js-yaml");
+const fs = require("fs");
 
 const octokit = new Octokit({ auth: process.env.GH_TOKEN });
 
 (async () => {
   const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
-  const issue_number = process.env.GITHUB_EVENT_PATH
-    ? require(process.env.GITHUB_EVENT_PATH).issue.number
-    : null;
+  const event = JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, "utf8"));
+  const issue_number = event.issue?.number;
 
   if (!issue_number) {
     console.error('❌ Could not determine issue number.');
@@ -20,22 +20,45 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
   }
 
   const { data: issue } = await octokit.rest.issues.get({ owner, repo, issue_number });
-  const body = issue.body;
+  const issueAuthor = issue.user.login;
 
-  const match = body.match(/```yaml\s+([\s\S]+?)```/i);
-  if (!match) {
+  // Helper to extract YAML fenced block
+  const extractYamlBlock = (text) => {
+    const match = text?.match(/```yaml\s+([\s\S]+?)```/i);
+    return match ? match[1] : null;
+  };
+
+  let yamlSource = extractYamlBlock(issue.body);
+
+  if (!yamlSource) {
+    // Fallback: scan comments by issue author
+    const comments = await octokit.paginate(octokit.rest.issues.listComments, {
+      owner,
+      repo,
+      issue_number
+    });
+
+    for (const comment of comments) {
+      if (comment.user.login === issueAuthor) {
+        yamlSource = extractYamlBlock(comment.body);
+        if (yamlSource) break;
+      }
+    }
+  }
+
+  if (!yamlSource) {
     await octokit.rest.issues.createComment({
       owner,
       repo,
       issue_number,
-      body: '❌ No valid YAML block found in the issue. Expected fenced block like ```yaml ... ```.'
+      body: '❌ No valid YAML block found in the issue body or comments by the author. Expected fenced block like ```yaml ... ```.'
     });
     process.exit(0);
   }
 
   let config;
   try {
-    config = yaml.load(match[1]);
+    config = yaml.load(yamlSource);
   } catch (err) {
     await octokit.rest.issues.createComment({
       owner,
