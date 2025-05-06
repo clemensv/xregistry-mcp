@@ -26,8 +26,21 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
   const issueAuthor = issue.user.login;
 
   const extractYamlBlock = (text) => {
-    const match = text?.match(/```yaml\s+([\s\S]+?)```/i);
-    return match ? match[1] : null;
+    if (!text) return null;
+  
+    // Match blocks like ```yaml ... ```, ~~~yaml ... ~~~, --- ... ---
+    const patterns = [
+      /```(?:yaml)?\s*([\s\S]+?)```/i,
+      /~~~(?:yaml)?\s*([\s\S]+?)~~~/i,
+      /---\s*([\s\S]+?)---/i
+    ];
+  
+    for (const pattern of patterns) {
+      const match = text.match(pattern);
+      if (match) return match[1];
+    }
+  
+    return null;
   };
 
   let yamlSource = extractYamlBlock(issue.body);
