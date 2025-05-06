@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install js-yaml axios
+          npm install js-yaml axios @octokit/rest
 
       - name: Validate issue YAML and check MCP file
         env:
