@@ -227,7 +227,7 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
     });
     process.exit(1);
   } finally {
-    rmSync(workspaceDir, { recursive: true, force: true });
-    rmSync(sourceDir, { recursive: true, force: true });
+    fs.rmSync(workspaceDir, { recursive: true, force: true });
+    fs.rmSync(sourceDir, { recursive: true, force: true });
   }
 })();
