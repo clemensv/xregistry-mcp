@@ -1,0 +1,94 @@
+name: Validate MCP JSON
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  validate-mcp:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Extract YAML and validate MCP file
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const yaml = require('js-yaml');
+            const axios = require('axios');
+
+            const issueBody = context.payload.issue.body;
+
+            // Extract YAML block (assumes fenced by triple backticks and yaml)
+            const match = issueBody.match(/```yaml\n([\s\S]+?)```/);
+            if (!match) {
+              github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: '❌ No valid YAML block found in the issue. Please include a valid YAML section with repo, path, and branch.'
+              });
+              return;
+            }
+
+            let config;
+            try {
+              config = yaml.load(match[1]);
+            } catch (err) {
+              github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: `❌ YAML parsing failed: \`${err.message}\``
+              });
+              return;
+            }
+
+            const repoUrl = config.repo;
+            const path = config.path || '';
+            const branch = config.branch || 'main';
+
+            if (!repoUrl) {
+              github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: '❌ `repo:` field is missing in the YAML block.'
+              });
+              return;
+            }
+
+            let fileUrl;
+            if (repoUrl.includes('github.com')) {
+              // GitHub: Construct raw URL
+              const m = repoUrl.match(/github\.com\/([^/]+)\/([^/]+)/);
+              if (!m) {
+                github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: context.issue.number,
+                  body: '❌ Could not parse GitHub repo URL.'
+                });
+                return;
+              }
+              const [_, ghOwner, ghRepo] = m;
+              fileUrl = `https://raw.githubusercontent.com/${ghOwner}/${ghRepo}/${branch}/${path ? path.replace(/\/$/, '') + '/' : ''}mcp.json`;
+            } else {
+              // External repo: assume it serves raw files like GitHub
+              fileUrl = `${repoUrl.replace(/\/$/, '')}/${path ? path.replace(/\/$/, '') + '/' : ''}mcp.json`;
+            }
+
+            try {
+              const res = await axios.get(fileUrl);
+              if (res.status === 200) {
+                return;
+              }
+            } catch (e) {
+              // File not found or other error
+              github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: `❌ Could not find \`mcp.json\` at the specified location: \`${fileUrl}\``
+              });
+            }
