@@ -6,6 +6,9 @@ const { Octokit } = require("@octokit/rest");
 const axios = require("axios");
 const yaml = require("js-yaml");
 const fs = require("fs");
+const os = require("os");
+const pathModule = require("path");
+const { execSync, rmSync } = require("child_process");
 
 const octokit = new Octokit({ auth: process.env.GH_TOKEN });
 
@@ -22,7 +25,6 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
   const { data: issue } = await octokit.rest.issues.get({ owner, repo, issue_number });
   const issueAuthor = issue.user.login;
 
-  // Helper to extract YAML fenced block
   const extractYamlBlock = (text) => {
     const match = text?.match(/```yaml\s+([\s\S]+?)```/i);
     return match ? match[1] : null;
@@ -31,13 +33,11 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
   let yamlSource = extractYamlBlock(issue.body);
 
   if (!yamlSource) {
-    // Fallback: scan comments by issue author
     const comments = await octokit.paginate(octokit.rest.issues.listComments, {
       owner,
       repo,
       issue_number
     });
-
     for (const comment of comments) {
       if (comment.user.login === issueAuthor) {
         yamlSource = extractYamlBlock(comment.body);
@@ -81,34 +81,78 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
     process.exit(0);
   }
 
-  let fileUrl;
-  if (/github\.com/.test(repoUrl)) {
-    const m = repoUrl.match(/github\.com\/([^/]+)\/([^/]+)/);
-    if (!m) {
+  const normalizedPath = path.replace(/\/$/, '');
+  let filePath = normalizedPath ? `${normalizedPath}/mcp.json` : 'mcp.json';
+
+  // GitHub repo - raw fetch
+  if (!repoUrl.startsWith('http') || repoUrl.includes('github.com')) {
+    let ghOwner, ghRepo;
+    if (repoUrl.startsWith('http')) {
+      const m = repoUrl.match(/github\.com\/([^/]+)\/([^/]+)/);
+      if (!m) {
+        await octokit.rest.issues.createComment({
+          owner,
+          repo,
+          issue_number,
+          body: '❌ Invalid GitHub repo URL format.'
+        });
+        process.exit(0);
+      }
+      [_, ghOwner, ghRepo] = m;
+    } else {
+      const m = repoUrl.match(/^([^/]+)\/([^/]+)$/);
+      if (!m) {
+        await octokit.rest.issues.createComment({
+          owner,
+          repo,
+          issue_number,
+          body: '❌ Invalid relative repo format. Expected `owner/repo`.'
+        });
+        process.exit(0);
+      }
+      [_, ghOwner, ghRepo] = m;
+    }
+
+    const fileUrl = `https://raw.githubusercontent.com/${ghOwner}/${ghRepo}/${branch}/${filePath}`;
+
+    try {
+      const res = await axios.get(fileUrl, { timeout: 5000 });
+      if (res.status === 200) return; // ✅ Found
+    } catch {
       await octokit.rest.issues.createComment({
         owner,
         repo,
         issue_number,
-        body: '❌ Invalid GitHub repo URL format.'
+        body: `❌ \`mcp.json\` not found at: \`${fileUrl}\``
       });
       process.exit(0);
     }
-    const [_, ghOwner, ghRepo] = m;
-    fileUrl = `https://raw.githubusercontent.com/${ghOwner}/${ghRepo}/${branch}/${path ? path.replace(/\/$/, '') + '/' : ''}mcp.json`;
   } else {
-    fileUrl = `${repoUrl.replace(/\/$/, '')}/${path ? path.replace(/\/$/, '') + '/' : ''}mcp.json`;
-  }
+    // Clone and inspect non-GitHub repo
+    const tempDir = fs.mkdtempSync(pathModule.join(os.tmpdir(), 'mcp-check-'));
+    try {
+      execSync(`git clone --depth 1 --branch ${branch} ${repoUrl} ${tempDir}`, { stdio: 'ignore' });
 
-  try {
-    const res = await axios.get(fileUrl, { timeout: 5000 });
-    if (res.status !== 200) throw new Error();
-  } catch {
-    await octokit.rest.issues.createComment({
-      owner,
-      repo,
-      issue_number,
-      body: `❌ \`mcp.json\` not found at: \`${fileUrl}\``
-    });
-    process.exit(0);
+      const target = pathModule.join(tempDir, filePath);
+      if (!fs.existsSync(target)) {
+        await octokit.rest.issues.createComment({
+          owner,
+          repo,
+          issue_number,
+          body: `❌ \`mcp.json\` not found in cloned repo at path: \`${filePath}\``
+        });
+        process.exit(0);
+      }
+    } catch (err) {
+      await octokit.rest.issues.createComment({
+        owner,
+        repo,
+        issue_number,
+        body: `❌ Failed to clone repo or locate \`mcp.json\`: \`${err.message}\``
+      });
+      process.exit(0);
+    } finally {
+      rmSync(tempDir, { recursive: true, force: true });
+    }
   }
 })();
