@@ -166,9 +166,9 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
     execSync(`git config user.email "github-actions[bot]@users.noreply.github.com"`, { cwd: tempDir });
     execSync(`git add "${absIndexPath}"`, { cwd: tempDir });
     execSync(`git commit -m "Add index.json for ${mcpprovider}/${server}"`, { cwd: tempDir });
-    const remoteUrl = `https://x-access-token:${process.env.GH_TOKEN}@github.com/${ghOwner}/${ghRepo}.git`;
-    execSync(`git push "${remoteUrl}" ${branch}`, { cwd: tempDir, stdio: 'inherit' });
-
+    execSync(`git remote set-url origin https://github.com/${ghOwner}/${ghRepo}.git`, { cwd: tempDir });
+    execSync(`git config --local credential.helper "!f() { echo username=x-access-token; echo password=${process.env.GH_TOKEN}; }; f"`, { cwd: tempDir });
+    execSync(`git push origin ${branch}`, { cwd: tempDir, stdio: 'ignore' });
 
     // Close issue
     await octokit.rest.issues.update({
