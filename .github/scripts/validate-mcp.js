@@ -91,6 +91,26 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
     process.exit(0);
   }
 
+  // Normalize repo URL
+  let normalizedRepoUrl = repoUrl;
+  let isGitHub = false;
+  if (!repoUrl.startsWith('http')) {
+    const m = repoUrl.match(/^([^/]+)\/([^/]+)$/);
+    if (!m) {
+      await octokit.rest.issues.createComment({
+        owner,
+        repo,
+        issue_number,
+        body: '❌ Invalid relative repo format. Expected `owner/repo`.'
+      });
+      process.exit(0);
+    }
+    normalizedRepoUrl = `https://github.com/${m[1]}/${m[2]}`;
+    isGitHub = true;
+  } else if (/^https:\/\/github\.com/.test(repoUrl)) {
+    isGitHub = true;
+  }
+
   const normalizedPath = path.replace(/\/$/, '');
   const filePath = normalizedPath ? `${normalizedPath}/mcp.json` : 'mcp.json';
   const indexRelPath = pathModule.join('registry', 'mcpproviders', mcpprovider, 'servers', server, 'index.json');
@@ -101,11 +121,12 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
   let absMcpPath;
 
   try {
-    // Try HTTP fetch first
+    // Attempt HTTP GET if GitHub
     let fileUrl;
-    if (repoUrl.startsWith('http')) {
-      const rawBase = repoUrl.replace(/^https:\/\/github\.com/, 'https://raw.githubusercontent.com');
-      fileUrl = `${rawBase}/${branch}/${filePath}`;
+    if (isGitHub) {
+      fileUrl = normalizedRepoUrl
+        .replace(/^https:\/\/github\.com/, 'https://raw.githubusercontent.com')
+        + `/${branch}/${filePath}`;
       try {
         const res = await axios.get(fileUrl, { timeout: 5000 });
         const dest = pathModule.join(sourceDir, 'mcp.json');
@@ -116,9 +137,20 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
       }
     }
 
-    // If HTTP fetch failed or not GitHub
+    // Fallback: clone the repo
     if (!absMcpPath) {
-      execSync(`git clone --depth 1 --branch ${branch} ${repoUrl} ${sourceDir}`, { stdio: 'ignore' });
+      try {
+        execSync(`git clone --depth 1 --branch ${branch} ${normalizedRepoUrl} ${sourceDir}`, { stdio: 'ignore' });
+      } catch (err) {
+        await octokit.rest.issues.createComment({
+          owner,
+          repo,
+          issue_number,
+          body: `❌ Failed to clone repo: \`${normalizedRepoUrl}@${branch}\`\n\`\`\`\n${err.message}\n\`\`\``
+        });
+        process.exit(1);
+      }
+
       absMcpPath = pathModule.join(sourceDir, filePath);
       if (!fs.existsSync(absMcpPath)) {
         await octokit.rest.issues.createComment({
@@ -127,7 +159,7 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
           issue_number,
           body: `❌ \`mcp.json\` not found in cloned repo at path: \`${filePath}\``
         });
-        process.exit(0);
+        process.exit(1);
       }
     }
 
@@ -142,7 +174,7 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
       process.exit(0);
     }
 
-    // Copy to registry path
+    // Write index.json to workspace
     fs.mkdirSync(pathModule.dirname(absIndexPath), { recursive: true });
     fs.copyFileSync(absMcpPath, absIndexPath);
 
@@ -155,10 +187,8 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
     execSync(`git checkout -b ${branch}`, { cwd: workspaceDir });
     execSync(`git pull origin ${branch}`, { cwd: workspaceDir });
 
-    execSync(`cp -r ${absIndexPath} ${pathModule.join(workspaceDir, indexRelPath)}`, { cwd: workspaceDir });
     execSync(`git add "${indexRelPath}"`, { cwd: workspaceDir });
     execSync(`git commit -m "Add index.json for ${mcpprovider}/${server}"`, { cwd: workspaceDir });
-
     execSync(`git config --local credential.helper "!f() { echo username=x-access-token; echo password=${process.env.GH_TOKEN}; }; f"`, { cwd: workspaceDir });
     execSync(`git push origin ${branch}`, { cwd: workspaceDir, stdio: 'ignore' });
 
