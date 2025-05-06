@@ -2,7 +2,7 @@ name: Validate MCP JSON
 
 on:
   issues:
-    types: [opened]
+    types: [opened, edited]
 
 jobs:
   validate-mcp:
