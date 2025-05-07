@@ -48,14 +48,15 @@ done
 
 mkdir -p $REPO_ROOT/live
 # Download entire live directory using the xr docker container
-docker run --rm --network host -v "$REPO_ROOT":/workspace ghcr.io/xregistry/xr download -s localhost:8080 $REPO_ROOT/live -u https://clemensv.github.io/xregistry-mcp/
+docker run --rm --network host -v "$REPO_ROOT":/workspace ghcr.io/xregistry/xr download -s localhost:8080 /workspace/live -u https://clemensv.github.io/xregistry-mcp/
 
 docker stop "${CONTAINER_ID}"
 docker rm "${CONTAINER_ID}"
 
+pip install pandas
 python "$REPO_ROOT/index/build_index.py"
 cp $REPO_ROOT/index/flex/*.flex.json $REPO_ROOT/live
 
-cp $REPO_ROOT/xreg/staticwebapp.conmfig.json $REPO_ROOT/live/staticwebapp.config.json
+cp $REPO_ROOT/xreg/staticwebapp.config.json $REPO_ROOT/live/staticwebapp.config.json
 
 echo "xregistry server stopped and removed."
