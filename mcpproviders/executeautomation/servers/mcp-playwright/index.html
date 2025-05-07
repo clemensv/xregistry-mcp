@@ -1,0 +1,64 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:11:36.099419988Z",
+  "description": "A Model Context Protocol server that provides browser automation capabilities using Playwright. This server enables LLMs to interact with web pages, take screenshots, generate test code, web scraps the page and execute JavaScript in a real browser environment.",
+  "documentation": "https://executeautomation.github.io/mcp-playwright/",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/executeautomation/servers/mcp-playwright/meta",
+  "modifiedat": "2025-05-07T20:11:36.099419988Z",
+  "name": "io.github.executeautomation/mcp-playwright",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "-y",
+          "@executeautomation/playwright-mcp-server"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@executeautomation/playwright-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "executeautomation/mcp-playwright",
+  "resources": [
+    {
+      "description": "Browser console logs resource",
+      "mimetype": "text/plain",
+      "name": "Browser console logs",
+      "uritemplate": "console://logs"
+    },
+    {
+      "description": "Screenshots of the browser pages",
+      "mimetype": "image/png",
+      "name": "Screenshot resource",
+      "uritemplate": "screenshot://{name}"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/executeautomation/servers/mcp-playwright",
+  "serverid": "mcp-playwright",
+  "tools": [
+    {
+      "description": "Browser automation tools for interaction, screenshots, test code generation, web scraping, and JS execution",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "(from createToolDefinitions)"
+    },
+    {
+      "name": "(detailed tool definitions not fully extracted)"
+    }
+  ],
+  "version_detail": {
+    "version": "1.0.3"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/executeautomation/servers/mcp-playwright/versions",
+  "xid": "/mcpproviders/executeautomation/servers/mcp-playwright"
+}

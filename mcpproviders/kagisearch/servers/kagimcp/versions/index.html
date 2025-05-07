@@ -1,0 +1,86 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:09:40.566027815Z",
+    "description": "An MCP server implementation providing tools for web search and summarization using the Kagi Search and Summarizer APIs.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:09:40.566027815Z",
+    "name": "io.github.kagisearch/kagimcp",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "uv",
+        "package_name": "kagimcp"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "kagisearch/kagimcp",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/kagisearch/servers/kagimcp/versions/1",
+    "serverid": "kagimcp",
+    "tools": [
+      {
+        "description": "Fetch web results based on one or more queries using the Kagi Search API. Use for general search and when the user explicitly tells you to 'fetch' results/information. Results are from all queries given. They are numbered continuously, so that a user may be able to refer to a result by a specific number.",
+        "inputschema": {
+          "properties": {
+            "queries": {
+              "description": "One or more concise, keyword-focused search queries. Include essential context within each query for standalone use.",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "queries"
+          ],
+          "type": "object"
+        },
+        "name": "kagi_search_fetch"
+      },
+      {
+        "description": "Summarize content from a URL using the Kagi Summarizer API. The Summarizer can summarize any document type (text webpage, video, audio, etc.)",
+        "inputschema": {
+          "properties": {
+            "summary_type": {
+              "description": "Type of summary to produce. Options are 'summary' for paragraph prose and 'takeaway' for a bulleted list of key points.",
+              "enum": [
+                "summary",
+                "takeaway"
+              ],
+              "type": "string"
+            },
+            "target_language": {
+              "description": "Desired output language using language codes (e.g., 'EN' for English). If not specified, the document's original language influences the output.",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "url": {
+              "description": "A URL to a document to summarize.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "url"
+          ],
+          "type": "object"
+        },
+        "name": "kagi_summarizer"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/kagisearch/servers/kagimcp/versions/1"
+  }
+}

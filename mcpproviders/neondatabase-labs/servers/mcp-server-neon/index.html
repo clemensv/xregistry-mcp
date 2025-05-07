@@ -1,0 +1,57 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:18:11.187202762Z",
+  "description": "Neon MCP Server is an open-source tool that lets you interact with your Neon Postgres databases in natural language. It acts as a bridge between natural language requests and the Neon API, built upon the Model Context Protocol (MCP), enabling management of projects, branches, queries, and migrations via conversational commands.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/neondatabase-labs/servers/mcp-server-neon/meta",
+  "modifiedat": "2025-05-07T20:18:11.187202762Z",
+  "name": "io.github.neondatabase-labs/mcp-server-neon",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "API key for Neon authentication",
+            "name": "NEON_API_KEY",
+            "require": true
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@neondatabase/mcp-server-neon"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "neondatabase-labs/mcp-server-neon",
+  "resources": [
+    {
+      "description": "Resources exposed by Neon MCP server.",
+      "mimetype": "application/json",
+      "name": "NEON_RESOURCES",
+      "uritemplate": "/resources/{id}"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/neondatabase-labs/servers/mcp-server-neon",
+  "serverid": "mcp-server-neon",
+  "tools": [
+    {
+      "description": "Tools registered for Neon MCP server to handle various database management tasks via MCP.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "NEON_TOOLS"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/neondatabase-labs/servers/mcp-server-neon/versions",
+  "xid": "/mcpproviders/neondatabase-labs/servers/mcp-server-neon"
+}

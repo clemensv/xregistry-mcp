@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:15:48.809187405Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/Gmail-MCP-Server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:15:48.809187405Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/Gmail-MCP-Server/meta",
+  "serverid": "Gmail-MCP-Server",
+  "xid": "/mcpproviders/GongRzhe/servers/Gmail-MCP-Server/meta"
+}

@@ -1,0 +1,269 @@
+{
+  "opencti-mcp": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:07:35.095125074Z",
+    "description": "OpenCTI MCP Server is a Model Context Protocol (MCP) server that provides seamless integration with OpenCTI (Open Cyber Threat Intelligence) platform. It enables querying and retrieving threat intelligence data through a standardized interface.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/Spathodea-Network/servers/opencti-mcp/meta",
+    "modifiedat": "2025-05-07T20:07:35.095125074Z",
+    "name": "io.github.Spathodea-Network/opencti-mcp",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Your OpenCTI instance URL",
+              "name": "OPENCTI_URL",
+              "require": true
+            },
+            {
+              "descrip": "Your OpenCTI API token",
+              "name": "OPENCTI_TOKEN",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "path/to/opencti-server/build/index.js"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "opencti-server"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "Spathodea-Network/opencti-mcp",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/Spathodea-Network/servers/opencti-mcp",
+    "serverid": "opencti-mcp",
+    "tools": [
+      {
+        "description": "獲取最新的OpenCTI報告",
+        "inputschema": {
+          "properties": {
+            "first": {
+              "default": 10,
+              "description": "返回結果數量限制",
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "name": "get_latest_reports"
+      },
+      {
+        "description": "根據ID獲取OpenCTI報告",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "description": "報告ID",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "get_report_by_id"
+      },
+      {
+        "description": "搜尋OpenCTI中的指標",
+        "inputschema": {
+          "properties": {
+            "first": {
+              "default": 10,
+              "description": "返回結果數量限制",
+              "type": "number"
+            },
+            "query": {
+              "description": "搜尋關鍵字",
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search_indicators"
+      },
+      {
+        "description": "搜尋OpenCTI中的惡意程式",
+        "inputschema": {
+          "properties": {
+            "first": {
+              "default": 10,
+              "description": "返回結果數量限制",
+              "type": "number"
+            },
+            "query": {
+              "description": "搜尋關鍵字",
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search_malware"
+      },
+      {
+        "description": "搜尋OpenCTI中的威脅行為者",
+        "inputschema": {
+          "properties": {
+            "first": {
+              "default": 10,
+              "description": "返回結果數量限制",
+              "type": "number"
+            },
+            "query": {
+              "description": "搜尋關鍵字",
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search_threat_actors"
+      },
+      {
+        "description": "根據ID獲取使用者資訊",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "description": "使用者ID",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "get_user_by_id"
+      },
+      {
+        "description": "列出所有使用者",
+        "inputschema": {
+          "properties": {},
+          "type": "object"
+        },
+        "name": "list_users"
+      },
+      {
+        "description": "列出所有群組",
+        "inputschema": {
+          "properties": {
+            "first": {
+              "default": 10,
+              "description": "返回結果數量限制",
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "name": "list_groups"
+      },
+      {
+        "description": "列出所有攻擊模式",
+        "inputschema": {
+          "properties": {
+            "first": {
+              "default": 10,
+              "description": "返回結果數量限制",
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "name": "list_attack_patterns"
+      },
+      {
+        "description": "根據名稱獲取行動資訊",
+        "inputschema": {
+          "properties": {
+            "name": {
+              "description": "行動名稱",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        },
+        "name": "get_campaign_by_name"
+      },
+      {
+        "description": "列出所有連接器",
+        "inputschema": {
+          "properties": {},
+          "type": "object"
+        },
+        "name": "list_connectors"
+      },
+      {
+        "description": "列出所有狀態模板",
+        "inputschema": {
+          "properties": {},
+          "type": "object"
+        },
+        "name": "list_status_templates"
+      },
+      {
+        "description": "根據ID獲取檔案資訊",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "description": "檔案ID",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "get_file_by_id"
+      },
+      {
+        "description": "列出所有檔案",
+        "inputschema": {
+          "properties": {},
+          "type": "object"
+        },
+        "name": "list_files"
+      },
+      {
+        "description": "列出所有標記定義",
+        "inputschema": {
+          "properties": {},
+          "type": "object"
+        },
+        "name": "list_marking_definitions"
+      },
+      {
+        "description": "列出所有標籤",
+        "inputschema": {
+          "properties": {},
+          "type": "object"
+        },
+        "name": "list_labels"
+      }
+    ],
+    "version_detail": {
+      "version": "0.1.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/Spathodea-Network/servers/opencti-mcp/versions",
+    "xid": "/mcpproviders/Spathodea-Network/servers/opencti-mcp"
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:16:02.077529253Z",
+    "description": "A Travel Planner Model Context Protocol (MCP) server implementation for interacting with Google Maps and travel planning services. This server enables LLMs to perform travel-related tasks such as location search, place details lookup, and travel time calculations.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:16:02.077529253Z",
+    "name": "io.github.GongRzhe/TRAVEL-PLANNER-MCP-Server",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Your Google Maps API key with Places, Directions, Geocoding, and Time Zone APIs enabled",
+              "name": "GOOGLE_MAPS_API_KEY",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "@gongrzhe/server-travelplanner-mcp"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@gongrzhe/server-travelplanner-mcp"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "GongRzhe/TRAVEL-PLANNER-MCP-Server",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/TRAVEL-PLANNER-MCP-Server/versions/1",
+    "serverid": "TRAVEL-PLANNER-MCP-Server",
+    "tools": [
+      {
+        "description": "Creates a personalized travel itinerary based on user preferences",
+        "inputschema": {
+          "properties": {
+            "budget": {
+              "description": "Budget in USD",
+              "type": "number"
+            },
+            "destination": {
+              "description": "Destination location",
+              "type": "string"
+            },
+            "endDate": {
+              "description": "End date (YYYY-MM-DD)",
+              "type": "string"
+            },
+            "origin": {
+              "description": "Starting location",
+              "type": "string"
+            },
+            "preferences": {
+              "description": "Travel preferences",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "startDate": {
+              "description": "Start date (YYYY-MM-DD)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "origin",
+            "destination",
+            "startDate",
+            "endDate"
+          ],
+          "type": "object"
+        },
+        "name": "create_itinerary"
+      },
+      {
+        "description": "Optimizes an existing itinerary based on specified criteria",
+        "inputschema": {
+          "properties": {
+            "itineraryId": {
+              "description": "ID of the itinerary to optimize",
+              "type": "string"
+            },
+            "optimizationCriteria": {
+              "description": "Criteria for optimization (time, cost, etc.)",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "itineraryId",
+            "optimizationCriteria"
+          ],
+          "type": "object"
+        },
+        "name": "optimize_itinerary"
+      },
+      {
+        "description": "Searches for attractions and points of interest in a specified location",
+        "inputschema": {
+          "properties": {
+            "categories": {
+              "description": "Categories of attractions",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "location": {
+              "description": "Location to search attractions",
+              "type": "string"
+            },
+            "radius": {
+              "description": "Search radius in meters",
+              "type": "number"
+            }
+          },
+          "required": [
+            "location"
+          ],
+          "type": "object"
+        },
+        "name": "search_attractions"
+      },
+      {
+        "description": "Retrieves available transportation options between two points",
+        "inputschema": {
+          "properties": {
+            "date": {
+              "description": "Travel date (YYYY-MM-DD)",
+              "type": "string"
+            },
+            "destination": {
+              "description": "Destination point",
+              "type": "string"
+            },
+            "origin": {
+              "description": "Starting point",
+              "type": "string"
+            }
+          },
+          "required": [
+            "origin",
+            "destination",
+            "date"
+          ],
+          "type": "object"
+        },
+        "name": "get_transport_options"
+      },
+      {
+        "description": "Searches for accommodation options in a specified location",
+        "inputschema": {
+          "properties": {
+            "budget": {
+              "description": "Maximum price per night",
+              "type": "number"
+            },
+            "checkIn": {
+              "description": "Check-in date (YYYY-MM-DD)",
+              "type": "string"
+            },
+            "checkOut": {
+              "description": "Check-out date (YYYY-MM-DD)",
+              "type": "string"
+            },
+            "location": {
+              "description": "Location to search",
+              "type": "string"
+            }
+          },
+          "required": [
+            "location",
+            "checkIn",
+            "checkOut"
+          ],
+          "type": "object"
+        },
+        "name": "get_accommodations"
+      }
+    ],
+    "version_detail": {
+      "version": "0.1.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/GongRzhe/servers/TRAVEL-PLANNER-MCP-Server/versions/1"
+  }
+}

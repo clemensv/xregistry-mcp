@@ -1,0 +1,202 @@
+{
+  "aws-athena-mcp": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:14:26.119371541Z",
+    "description": "A Model Context Protocol (MCP) server for running AWS Athena queries. This server enables AI assistants to execute SQL queries against your AWS Athena databases and retrieve results.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/lishenxydlgzs/servers/aws-athena-mcp/meta",
+    "modifiedat": "2025-05-07T20:14:26.119371541Z",
+    "name": "io.github.lishenxydlgzs/aws-athena-mcp",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "S3 bucket path for Athena query results",
+              "name": "OUTPUT_S3_PATH",
+              "require": true
+            },
+            {
+              "descrip": "AWS region (optional)",
+              "name": "AWS_REGION",
+              "require": false
+            },
+            {
+              "descrip": "AWS profile name (optional)",
+              "name": "AWS_PROFILE",
+              "require": false
+            },
+            {
+              "descrip": "AWS access key (optional)",
+              "name": "AWS_ACCESS_KEY_ID",
+              "require": false
+            },
+            {
+              "descrip": "AWS secret key (optional)",
+              "name": "AWS_SECRET_ACCESS_KEY",
+              "require": false
+            },
+            {
+              "descrip": "AWS session token (optional)",
+              "name": "AWS_SESSION_TOKEN",
+              "require": false
+            },
+            {
+              "descrip": "Athena WorkGroup (optional)",
+              "name": "ATHENA_WORKGROUP",
+              "require": false
+            },
+            {
+              "descrip": "Query timeout in milliseconds (optional)",
+              "name": "QUERY_TIMEOUT_MS",
+              "require": false
+            },
+            {
+              "descrip": "Maximum retry attempts (optional)",
+              "name": "MAX_RETRIES",
+              "require": false
+            },
+            {
+              "descrip": "Delay between retries in milliseconds (optional)",
+              "name": "RETRY_DELAY_MS",
+              "require": false
+            }
+          ],
+          "positional_arguments": [
+            "-y",
+            "@lishenxydlgzs/aws-athena-mcp"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@lishenxydlgzs/aws-athena-mcp"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "lishenxydlgzs/aws-athena-mcp",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/lishenxydlgzs/servers/aws-athena-mcp",
+    "serverid": "aws-athena-mcp",
+    "tools": [
+      {
+        "description": "Execute a SQL query using AWS Athena. Returns full results if query completes before timeout, otherwise returns queryExecutionId.",
+        "inputschema": {
+          "properties": {
+            "database": {
+              "description": "The Athena database to query",
+              "type": "string"
+            },
+            "maxRows": {
+              "description": "Maximum number of rows to return (default: 1000)",
+              "maximum": 10000,
+              "minimum": 1,
+              "type": "number"
+            },
+            "query": {
+              "description": "SQL query to execute",
+              "type": "string"
+            },
+            "timeoutMs": {
+              "description": "Timeout in milliseconds (default: 60000)",
+              "minimum": 1000,
+              "type": "number"
+            }
+          },
+          "required": [
+            "database",
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "run_query"
+      },
+      {
+        "description": "Get results for a completed query. Returns error if query is still running.",
+        "inputschema": {
+          "properties": {
+            "maxRows": {
+              "description": "Maximum number of rows to return (default: 1000)",
+              "maximum": 10000,
+              "minimum": 1,
+              "type": "number"
+            },
+            "queryExecutionId": {
+              "description": "The query execution ID",
+              "type": "string"
+            }
+          },
+          "required": [
+            "queryExecutionId"
+          ],
+          "type": "object"
+        },
+        "name": "get_result"
+      },
+      {
+        "description": "Get the current status of a query execution",
+        "inputschema": {
+          "properties": {
+            "queryExecutionId": {
+              "description": "The query execution ID",
+              "type": "string"
+            }
+          },
+          "required": [
+            "queryExecutionId"
+          ],
+          "type": "object"
+        },
+        "name": "get_status"
+      },
+      {
+        "description": "Execute a saved (named) Athena query by its query ID.",
+        "inputschema": {
+          "properties": {
+            "databaseOverride": {
+              "description": "Optional database override",
+              "type": "string"
+            },
+            "maxRows": {
+              "description": "Maximum number of rows to return (default: 1000)",
+              "maximum": 10000,
+              "minimum": 1,
+              "type": "number"
+            },
+            "namedQueryId": {
+              "description": "Athena NamedQueryId",
+              "type": "string"
+            },
+            "timeoutMs": {
+              "description": "Timeout in milliseconds (default: 60000)",
+              "minimum": 1000,
+              "type": "number"
+            }
+          },
+          "required": [
+            "namedQueryId"
+          ],
+          "type": "object"
+        },
+        "name": "run_saved_query"
+      },
+      {
+        "description": "List all saved (named) Athena queries available in your AWS account.",
+        "inputschema": {
+          "properties": {},
+          "type": "object"
+        },
+        "name": "list_saved_queries"
+      }
+    ],
+    "version_detail": {
+      "version": "0.1.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/lishenxydlgzs/servers/aws-athena-mcp/versions",
+    "xid": "/mcpproviders/lishenxydlgzs/servers/aws-athena-mcp"
+  }
+}

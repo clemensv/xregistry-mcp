@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:13:38.33668432Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/hannesj/servers/mcp-openapi-schema/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:13:38.33668432Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/hannesj/servers/mcp-openapi-schema/meta",
+  "serverid": "mcp-openapi-schema",
+  "xid": "/mcpproviders/hannesj/servers/mcp-openapi-schema/meta"
+}

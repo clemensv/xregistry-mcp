@@ -1,0 +1,157 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:14:11.025392764Z",
+  "description": "A secure sandbox environment for executing code within Docker containers. This MCP server provides AI applications with a safe and isolated environment for running code while maintaining security through containerization.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/Automata-Labs-team/servers/code-sandbox-mcp/meta",
+  "modifiedat": "2025-05-07T20:14:11.025392764Z",
+  "name": "io.github.Automata-Labs-team/code-sandbox-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "docker",
+      "package_name": "code-sandbox-mcp"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "Automata-Labs-team/code-sandbox-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/Automata-Labs-team/servers/code-sandbox-mcp",
+  "serverid": "code-sandbox-mcp",
+  "tools": [
+    {
+      "description": "Initialize a new compute environment for code execution. Creates a container based on the specified Docker image.",
+      "inputschema": {
+        "properties": {
+          "image": {
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "name": "sandbox_initialize"
+    },
+    {
+      "description": "Copy a directory to the sandboxed filesystem.",
+      "inputschema": {
+        "properties": {
+          "container_id": {
+            "type": "string"
+          },
+          "dest_dir": {
+            "type": "string"
+          },
+          "local_src_dir": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "container_id",
+          "local_src_dir"
+        ],
+        "type": "object"
+      },
+      "name": "copy_project"
+    },
+    {
+      "description": "Write a file to the sandboxed filesystem.",
+      "inputschema": {
+        "properties": {
+          "container_id": {
+            "type": "string"
+          },
+          "dest_dir": {
+            "type": "string"
+          },
+          "file_contents": {
+            "type": "string"
+          },
+          "file_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "container_id",
+          "file_name",
+          "file_contents"
+        ],
+        "type": "object"
+      },
+      "name": "write_file"
+    },
+    {
+      "description": "Execute commands in the sandboxed environment.",
+      "inputschema": {
+        "properties": {
+          "commands": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "container_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "container_id",
+          "commands"
+        ],
+        "type": "object"
+      },
+      "name": "sandbox_exec"
+    },
+    {
+      "description": "Copy a single file to the sandboxed filesystem.",
+      "inputschema": {
+        "properties": {
+          "container_id": {
+            "type": "string"
+          },
+          "dest_path": {
+            "type": "string"
+          },
+          "local_src_file": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "container_id",
+          "local_src_file"
+        ],
+        "type": "object"
+      },
+      "name": "copy_file"
+    },
+    {
+      "description": "Stop and remove a running container sandbox.",
+      "inputschema": {
+        "properties": {
+          "container_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "container_id"
+        ],
+        "type": "object"
+      },
+      "name": "sandbox_stop"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/Automata-Labs-team/servers/code-sandbox-mcp/versions",
+  "xid": "/mcpproviders/Automata-Labs-team/servers/code-sandbox-mcp"
+}

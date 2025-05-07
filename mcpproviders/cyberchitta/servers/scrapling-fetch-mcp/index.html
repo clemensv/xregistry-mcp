@@ -1,0 +1,91 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:55.903667666Z",
+  "description": "An MCP server that helps AI assistants access text content from websites that implement bot detection, bridging the gap between what you can see in your browser and what the AI can access.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/cyberchitta/servers/scrapling-fetch-mcp/meta",
+  "modifiedat": "2025-05-07T20:07:55.903667666Z",
+  "name": "io.github.cyberchitta/scrapling-fetch-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "scrapling-fetch-mcp"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "python",
+      "package_name": "scrapling-fetch-mcp"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "cyberchitta/scrapling-fetch-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/cyberchitta/servers/scrapling-fetch-mcp",
+  "serverid": "scrapling-fetch-mcp",
+  "tools": [
+    {
+      "description": "Retrieves complete web pages with pagination support",
+      "inputschema": {
+        "properties": {
+          "max_length": {
+            "type": "integer"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "start_index": {
+            "type": "integer"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "mode"
+        ],
+        "type": "object"
+      },
+      "name": "s-fetch-page"
+    },
+    {
+      "description": "Extracts content matching regex patterns with surrounding context",
+      "inputschema": {
+        "properties": {
+          "context_chars": {
+            "type": "integer"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "search_pattern": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "mode",
+          "search_pattern",
+          "context_chars"
+        ],
+        "type": "object"
+      },
+      "name": "s-fetch-pattern"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/cyberchitta/servers/scrapling-fetch-mcp/versions",
+  "xid": "/mcpproviders/cyberchitta/servers/scrapling-fetch-mcp"
+}

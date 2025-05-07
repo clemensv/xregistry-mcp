@@ -1,0 +1,173 @@
+{
+  "gh1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:13:07.480658735Z",
+    "description": "GitHub integration MCP server providing tooling and resource discovery via GitHub APIs",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/clemensv/servers/gh1/meta",
+    "modifiedat": "2025-05-07T20:13:07.480658735Z",
+    "name": "io.github.clemensv/mcp-servers",
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Port to run the server on",
+              "name": "PORT",
+              "require": false
+            },
+            {
+              "descrip": "Personal access token or GitHub App token for API access",
+              "name": "GITHUB_TOKEN",
+              "require": true
+            }
+          ],
+          "sub_commands": [
+            {
+              "description": "Start the GitHub MCP server",
+              "name": "start"
+            }
+          ]
+        },
+        "license": "MIT",
+        "name": "npm",
+        "package_name": "mcp-github-server"
+      }
+    ],
+    "remotes": [
+      {
+        "transporttype": "http",
+        "url": "https://api.github.com"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/clemensv/servers/gh1",
+    "serverid": "gh1",
+    "version_detail": {
+      "version": "1.0.2"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/clemensv/servers/gh1/versions",
+    "xid": "/mcpproviders/clemensv/servers/gh1"
+  },
+  "google-maps": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:13:14.14235871Z",
+    "description": "Google Maps integration MCP server providing geospatial tooling and data access using the Google Maps Platform APIs",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/clemensv/servers/google-maps/meta",
+    "modifiedat": "2025-05-07T20:13:14.14235871Z",
+    "name": "io.github.clemensv/mcp-servers/google-maps",
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Port to run the server on",
+              "name": "PORT",
+              "require": false
+            },
+            {
+              "descrip": "API key for accessing Google Maps Platform services",
+              "name": "GOOGLE_MAPS_API_KEY",
+              "require": true
+            }
+          ],
+          "sub_commands": [
+            {
+              "description": "Start the Google Maps MCP server",
+              "name": "start"
+            }
+          ]
+        },
+        "license": "MIT",
+        "name": "npm",
+        "package_name": "mcp-google-maps-server"
+      }
+    ],
+    "remotes": [
+      {
+        "transporttype": "http",
+        "url": "https://maps.googleapis.com"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/clemensv/servers/google-maps",
+    "serverid": "google-maps",
+    "version_detail": {
+      "version": "1.0.2"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/clemensv/servers/google-maps/versions",
+    "xid": "/mcpproviders/clemensv/servers/google-maps"
+  },
+  "postgres": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:13:10.80416561Z",
+    "description": "MCP server for resource discovery and metadata publication from PostgreSQL databases",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/clemensv/servers/postgres/meta",
+    "modifiedat": "2025-05-07T20:13:10.80416561Z",
+    "name": "io.github.clemensv/mcp-servers/postgres",
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "PostgreSQL server hostname or IP",
+              "name": "PGHOST",
+              "require": true
+            },
+            {
+              "descrip": "PostgreSQL server port",
+              "name": "PGPORT",
+              "require": false
+            },
+            {
+              "descrip": "Username for PostgreSQL authentication",
+              "name": "PGUSER",
+              "require": true
+            },
+            {
+              "descrip": "Password for PostgreSQL authentication",
+              "name": "PGPASSWORD",
+              "require": true
+            },
+            {
+              "descrip": "Target PostgreSQL database",
+              "name": "PGDATABASE",
+              "require": true
+            }
+          ],
+          "sub_commands": [
+            {
+              "description": "Start the PostgreSQL MCP server",
+              "name": "start"
+            }
+          ]
+        },
+        "license": "MIT",
+        "name": "npm",
+        "package_name": "mcp-postgres-server"
+      }
+    ],
+    "remotes": [
+      {
+        "transporttype": "postgres",
+        "url": "postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/clemensv/servers/postgres",
+    "serverid": "postgres",
+    "version_detail": {
+      "version": "1.0.2"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/clemensv/servers/postgres/versions",
+    "xid": "/mcpproviders/clemensv/servers/postgres"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:13:52.60528994Z",
+  "description": "This repository contains a Model Context Protocol (MCP) server with tools that can access the OpenTelemetry traces and metrics you've sent to Logfire. This MCP server enables LLMs to retrieve your application's telemetry data, analyze distributed traces, and make use of the results of arbitrary SQL queries executed using the Logfire APIs.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/pydantic/servers/logfire-mcp/meta",
+  "modifiedat": "2025-05-07T20:13:52.60528994Z",
+  "name": "io.github.pydantic/logfire-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Logfire read token for API access",
+            "name": "LOGFIRE_READ_TOKEN",
+            "require": true
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "logfire-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "pydantic/logfire-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/pydantic/servers/logfire-mcp",
+  "serverid": "logfire-mcp",
+  "tools": [
+    {
+      "description": "Get exception counts from traces grouped by file",
+      "inputschema": {
+        "properties": {
+          "age": {
+            "description": "Number of minutes to look back (e.g., 30 for last 30 minutes, max 7 days)",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "age"
+        ],
+        "type": "object"
+      },
+      "name": "find_exceptions"
+    },
+    {
+      "description": "Get detailed trace information about exceptions in a specific file",
+      "inputschema": {
+        "properties": {
+          "age": {
+            "description": "Number of minutes to look back (max 7 days)",
+            "type": "integer"
+          },
+          "filepath": {
+            "description": "Path to the file to analyze",
+            "type": "string"
+          }
+        },
+        "required": [
+          "filepath",
+          "age"
+        ],
+        "type": "object"
+      },
+      "name": "find_exceptions_in_file"
+    },
+    {
+      "description": "Run custom SQL queries on your OpenTelemetry traces and metrics",
+      "inputschema": {
+        "properties": {
+          "age": {
+            "description": "Number of minutes to look back (max 7 days)",
+            "type": "integer"
+          },
+          "query": {
+            "description": "SQL query to execute",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query",
+          "age"
+        ],
+        "type": "object"
+      },
+      "name": "arbitrary_query"
+    },
+    {
+      "description": "Get the OpenTelemetry schema to help with custom queries",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "get_logfire_records_schema"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/pydantic/servers/logfire-mcp/versions",
+  "xid": "/mcpproviders/pydantic/servers/logfire-mcp"
+}

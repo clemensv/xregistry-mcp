@@ -1,0 +1,61 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:12:02.684747266Z",
+    "description": "An MCP server implementation that interacts with DuckDB and MotherDuck databases, providing SQL analytics capabilities to AI Assistants and IDEs.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:12:02.684747266Z",
+    "name": "io.github.motherduckdb/mcp-server-motherduck",
+    "prompts": [
+      {
+        "description": "A prompt to initialize a connection to DuckDB or MotherDuck and start working with it",
+        "name": "duckdb-motherduck-initial-prompt"
+      }
+    ],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [
+            "--db-path",
+            "md:",
+            "--motherduck-token",
+            "\u003cYOUR_MOTHERDUCK_TOKEN_HERE\u003e"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "unknown",
+        "package_name": "unknown"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "motherduckdb/mcp-server-motherduck",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/motherduckdb/servers/mcp-server-motherduck/versions/1",
+    "serverid": "mcp-server-motherduck",
+    "tools": [
+      {
+        "description": "Execute a SQL query on the DuckDB or MotherDuck database",
+        "inputschema": {
+          "properties": {
+            "query": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "query"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/motherduckdb/servers/mcp-server-motherduck/versions/1"
+  }
+}

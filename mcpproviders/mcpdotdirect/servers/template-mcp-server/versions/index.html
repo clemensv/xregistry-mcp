@@ -1,0 +1,95 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:08:41.255855054Z",
+    "description": "A CLI tool to quickly get started building your very own MCP (Model Context Protocol) server using FastMCP",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:08:41.255855054Z",
+    "name": "io.github.mcpdotdirect/template-mcp-server",
+    "prompts": [
+      {
+        "arguments": [
+          {
+            "description": "Name to greet",
+            "name": "name",
+            "required": true
+          }
+        ],
+        "description": "A simple greeting prompt",
+        "name": "greeting"
+      }
+    ],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [
+            "run",
+            "src/index.ts"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "bun",
+        "package_name": "@mcpdotdirect/template-mcp-server"
+      }
+    ],
+    "remotes": [
+      {
+        "transporttype": "http",
+        "url": "http://localhost:3001/sse"
+      }
+    ],
+    "repo_ref": "mcpdotdirect/template-mcp-server",
+    "resources": [
+      {
+        "description": "Resource ID",
+        "mimetype": "text/plain",
+        "name": "Example Resource",
+        "uritemplate": "example://{id}"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/mcpdotdirect/servers/template-mcp-server/versions/1",
+    "serverid": "template-mcp-server",
+    "tools": [
+      {
+        "description": "A simple hello world tool",
+        "inputschema": {
+          "properties": {
+            "name": {
+              "description": "Name to greet",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        },
+        "name": "hello_world"
+      },
+      {
+        "description": "A simple goodbye tool",
+        "inputschema": {
+          "properties": {
+            "name": {
+              "description": "Name to bid farewell to",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        },
+        "name": "goodbye"
+      }
+    ],
+    "version_detail": {
+      "version": "1.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/mcpdotdirect/servers/template-mcp-server/versions/1"
+  }
+}

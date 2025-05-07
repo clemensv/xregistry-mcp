@@ -1,0 +1,55 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:09:51.410278715Z",
+  "description": "A Model Context Protocol (MCP) server that enables LLMs to interact with iOS simulators through natural language commands.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/InditexTech/servers/mcp-server-simulator-ios-idb/meta",
+  "modifiedat": "2025-05-07T20:09:51.410278715Z",
+  "name": "io.github.InditexTech/mcp-server-simulator-ios-idb",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "/path/to/mcp-server-simulator-ios-idb/dist/index.js"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "mcp-server-simulator-ios-idb"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "InditexTech/mcp-server-simulator-ios-idb",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/InditexTech/servers/mcp-server-simulator-ios-idb",
+  "serverid": "mcp-server-simulator-ios-idb",
+  "tools": [
+    {
+      "description": "Main tool for processing natural language instructions",
+      "inputschema": {
+        "properties": {
+          "instruction": {
+            "description": "Text instruction to process",
+            "type": "string"
+          }
+        },
+        "required": [
+          "instruction"
+        ],
+        "type": "object"
+      },
+      "name": "process-instruction"
+    }
+  ],
+  "version_detail": {
+    "version": "1.0.1"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/InditexTech/servers/mcp-server-simulator-ios-idb/versions",
+  "xid": "/mcpproviders/InditexTech/servers/mcp-server-simulator-ios-idb"
+}

@@ -1,0 +1,101 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:15:05.697279414Z",
+    "description": "This MCP server integrates with The Movie Database (TMDB) API to provide movie information, search capabilities, and recommendations.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:15:05.697279414Z",
+    "name": "io.github.Laksh-star/mcp-server-tmdb",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "API key for TMDB access",
+              "name": "TMDB_API_KEY",
+              "require": true
+            }
+          ],
+          "positional_arguments": [],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@Laksh-star/mcp-server-tmdb"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "Laksh-star/mcp-server-tmdb",
+    "resources": [
+      {
+        "description": "Comprehensive movie details including title, release date, rating, overview, genres, poster URL, cast information (top 5 actors), director, and selected reviews.",
+        "mimetype": "application/json",
+        "name": "Movies",
+        "uritemplate": "tmdb:///movie/{movie_id}"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/Laksh-star/servers/mcp-server-tmdb/versions/1",
+    "serverid": "mcp-server-tmdb",
+    "tools": [
+      {
+        "description": "Search for movies by title or keywords",
+        "inputschema": {
+          "properties": {
+            "query": {
+              "description": "Search query for movie titles",
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search_movies"
+      },
+      {
+        "description": "Get movie recommendations based on a movie ID",
+        "inputschema": {
+          "properties": {
+            "movieId": {
+              "description": "TMDB movie ID to get recommendations for",
+              "type": "string"
+            }
+          },
+          "required": [
+            "movieId"
+          ],
+          "type": "object"
+        },
+        "name": "get_recommendations"
+      },
+      {
+        "description": "Get trending movies for a time window",
+        "inputschema": {
+          "properties": {
+            "timeWindow": {
+              "description": "Time window for trending movies",
+              "enum": [
+                "day",
+                "week"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "timeWindow"
+          ],
+          "type": "object"
+        },
+        "name": "get_trending"
+      }
+    ],
+    "version_detail": {
+      "version": "0.1.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/Laksh-star/servers/mcp-server-tmdb/versions/1"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:10:51.953265289Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/alexarevalo9/servers/ticktick-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:10:51.953265289Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/alexarevalo9/servers/ticktick-mcp-server/meta",
+  "serverid": "ticktick-mcp-server",
+  "xid": "/mcpproviders/alexarevalo9/servers/ticktick-mcp-server/meta"
+}

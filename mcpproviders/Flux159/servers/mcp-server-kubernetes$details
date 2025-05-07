@@ -1,0 +1,1010 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:15:01.362123108Z",
+  "description": "MCP Server that can connect to a Kubernetes cluster and manage it.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/Flux159/servers/mcp-server-kubernetes/meta",
+  "modifiedat": "2025-05-07T20:15:01.362123108Z",
+  "name": "io.github.Flux159/mcp-server-kubernetes",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "mcp-server-kubernetes"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "bun",
+      "package_name": "mcp-server-kubernetes"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "Flux159/mcp-server-kubernetes",
+  "resources": [
+    {
+      "description": "List of pods in the default namespace",
+      "mimetype": "application/json",
+      "name": "Kubernetes Pods",
+      "uritemplate": "k8s://default/pods"
+    },
+    {
+      "description": "List of deployments in the default namespace",
+      "mimetype": "application/json",
+      "name": "Kubernetes Deployments",
+      "uritemplate": "k8s://default/deployments"
+    },
+    {
+      "description": "List of services in the default namespace",
+      "mimetype": "application/json",
+      "name": "Kubernetes Services",
+      "uritemplate": "k8s://default/services"
+    },
+    {
+      "description": "List of all namespaces",
+      "mimetype": "application/json",
+      "name": "Kubernetes Namespaces",
+      "uritemplate": "k8s://namespaces"
+    },
+    {
+      "description": "List of all nodes in the cluster",
+      "mimetype": "application/json",
+      "name": "Kubernetes Nodes",
+      "uritemplate": "k8s://nodes"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/Flux159/servers/mcp-server-kubernetes",
+  "serverid": "mcp-server-kubernetes",
+  "tools": [
+    {
+      "description": "Cleanup resources in the Kubernetes cluster.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "cleanup"
+    },
+    {
+      "description": "Create a Kubernetes namespace.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "name": "create_namespace"
+    },
+    {
+      "description": "Create a Kubernetes pod.",
+      "inputschema": {
+        "properties": {
+          "command": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "template": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "namespace",
+          "template"
+        ],
+        "type": "object"
+      },
+      "name": "create_pod"
+    },
+    {
+      "description": "Create a Kubernetes cronjob.",
+      "inputschema": {
+        "properties": {
+          "command": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "image": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "schedule": {
+            "type": "string"
+          },
+          "suspend": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name",
+          "namespace",
+          "schedule",
+          "image"
+        ],
+        "type": "object"
+      },
+      "name": "create_cronjob"
+    },
+    {
+      "description": "Delete a Kubernetes cronjob.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "namespace"
+        ],
+        "type": "object"
+      },
+      "name": "delete_cronjob"
+    },
+    {
+      "description": "Delete a Kubernetes pod.",
+      "inputschema": {
+        "properties": {
+          "ignoreNotFound": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "namespace"
+        ],
+        "type": "object"
+      },
+      "name": "delete_pod"
+    },
+    {
+      "description": "Describe a Kubernetes pod.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "namespace"
+        ],
+        "type": "object"
+      },
+      "name": "describe_pod"
+    },
+    {
+      "description": "Describe a Kubernetes node.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "name": "describe_node"
+    },
+    {
+      "description": "Explain a Kubernetes resource.",
+      "inputschema": {
+        "properties": {
+          "apiVersion": {
+            "type": "string"
+          },
+          "output": {
+            "enum": [
+              "plaintext",
+              "plaintext-openapiv2"
+            ],
+            "type": "string"
+          },
+          "recursive": {
+            "type": "boolean"
+          },
+          "resource": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "resource"
+        ],
+        "type": "object"
+      },
+      "name": "explain_resource"
+    },
+    {
+      "description": "Get Kubernetes events.",
+      "inputschema": {
+        "properties": {
+          "fieldSelector": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "name": "get_events"
+    },
+    {
+      "description": "Get logs from Kubernetes resources.",
+      "inputschema": {
+        "properties": {
+          "container": {
+            "type": "string"
+          },
+          "follow": {
+            "type": "boolean"
+          },
+          "labelSelector": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "pretty": {
+            "type": "boolean"
+          },
+          "resourceType": {
+            "type": "string"
+          },
+          "sinceSeconds": {
+            "type": "integer"
+          },
+          "tail": {
+            "type": "integer"
+          },
+          "timestamps": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "resourceType"
+        ],
+        "type": "object"
+      },
+      "name": "get_logs"
+    },
+    {
+      "description": "Install a Helm chart.",
+      "inputschema": {
+        "properties": {
+          "chart": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "repo": {
+            "type": "string"
+          },
+          "values": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "name",
+          "chart",
+          "repo",
+          "namespace"
+        ],
+        "type": "object"
+      },
+      "name": "install_helm_chart"
+    },
+    {
+      "description": "List Kubernetes API resources.",
+      "inputschema": {
+        "properties": {
+          "apiGroup": {
+            "type": "string"
+          },
+          "namespaced": {
+            "type": "boolean"
+          },
+          "output": {
+            "enum": [
+              "wide",
+              "name",
+              "no-headers"
+            ],
+            "type": "string"
+          },
+          "verbs": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "name": "list_api_resources"
+    },
+    {
+      "description": "List Kubernetes deployments.",
+      "inputschema": {
+        "properties": {
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "name": "list_deployments"
+    },
+    {
+      "description": "List Kubernetes namespaces.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_namespaces"
+    },
+    {
+      "description": "List Kubernetes nodes.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_nodes"
+    },
+    {
+      "description": "List Kubernetes pods.",
+      "inputschema": {
+        "properties": {
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "name": "list_pods"
+    },
+    {
+      "description": "List Kubernetes services.",
+      "inputschema": {
+        "properties": {
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "name": "list_services"
+    },
+    {
+      "description": "List Kubernetes cronjobs.",
+      "inputschema": {
+        "properties": {
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "name": "list_cronjobs"
+    },
+    {
+      "description": "List Kubernetes contexts.",
+      "inputschema": {
+        "properties": {
+          "showCurrent": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "name": "list_contexts"
+    },
+    {
+      "description": "Get current Kubernetes context.",
+      "inputschema": {
+        "properties": {
+          "detailed": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "name": "get_current_context"
+    },
+    {
+      "description": "Set current Kubernetes context.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "name": "set_current_context"
+    },
+    {
+      "description": "Describe a Kubernetes cronjob.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "namespace"
+        ],
+        "type": "object"
+      },
+      "name": "describe_cronjob"
+    },
+    {
+      "description": "List Kubernetes jobs.",
+      "inputschema": {
+        "properties": {
+          "cronJobName": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "namespace"
+        ],
+        "type": "object"
+      },
+      "name": "list_jobs"
+    },
+    {
+      "description": "Get logs from Kubernetes jobs.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "tail": {
+            "type": "integer"
+          },
+          "timestamps": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "name",
+          "namespace"
+        ],
+        "type": "object"
+      },
+      "name": "get_job_logs"
+    },
+    {
+      "description": "Uninstall a Helm chart.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "namespace"
+        ],
+        "type": "object"
+      },
+      "name": "uninstall_helm_chart"
+    },
+    {
+      "description": "Upgrade a Helm chart.",
+      "inputschema": {
+        "properties": {
+          "chart": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "repo": {
+            "type": "string"
+          },
+          "values": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "name",
+          "chart",
+          "repo",
+          "namespace"
+        ],
+        "type": "object"
+      },
+      "name": "upgrade_helm_chart"
+    },
+    {
+      "description": "Start port forwarding to a Kubernetes resource.",
+      "inputschema": {
+        "properties": {
+          "localPort": {
+            "type": "integer"
+          },
+          "resourceName": {
+            "type": "string"
+          },
+          "resourceType": {
+            "type": "string"
+          },
+          "targetPort": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "resourceType",
+          "resourceName",
+          "localPort",
+          "targetPort"
+        ],
+        "type": "object"
+      },
+      "name": "port_forward"
+    },
+    {
+      "description": "Stop port forwarding.",
+      "inputschema": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "name": "stop_port_forward"
+    },
+    {
+      "description": "Delete a Kubernetes namespace.",
+      "inputschema": {
+        "properties": {
+          "ignoreNotFound": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "name": "delete_namespace"
+    },
+    {
+      "description": "Delete a Kubernetes deployment.",
+      "inputschema": {
+        "properties": {
+          "ignoreNotFound": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "namespace"
+        ],
+        "type": "object"
+      },
+      "name": "delete_deployment"
+    },
+    {
+      "description": "Create a Kubernetes deployment.",
+      "inputschema": {
+        "properties": {
+          "customConfig": {},
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "ports": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array"
+          },
+          "replicas": {
+            "type": "integer"
+          },
+          "template": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "namespace",
+          "template"
+        ],
+        "type": "object"
+      },
+      "name": "create_deployment"
+    },
+    {
+      "description": "Update a Kubernetes deployment.",
+      "inputschema": {
+        "properties": {
+          "containerName": {
+            "type": "string"
+          },
+          "customConfig": {},
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "replicas": {
+            "type": "integer"
+          },
+          "template": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "namespace",
+          "template"
+        ],
+        "type": "object"
+      },
+      "name": "update_deployment"
+    },
+    {
+      "description": "Describe a Kubernetes deployment.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "namespace"
+        ],
+        "type": "object"
+      },
+      "name": "describe_deployment"
+    },
+    {
+      "description": "Scale a Kubernetes deployment.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "replicas": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "name",
+          "namespace",
+          "replicas"
+        ],
+        "type": "object"
+      },
+      "name": "scale_deployment"
+    },
+    {
+      "description": "Create a Kubernetes ConfigMap.",
+      "inputschema": {
+        "properties": {
+          "data": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "namespace",
+          "data"
+        ],
+        "type": "object"
+      },
+      "name": "create_configmap"
+    },
+    {
+      "description": "Get a Kubernetes ConfigMap.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "namespace"
+        ],
+        "type": "object"
+      },
+      "name": "get_configmap"
+    },
+    {
+      "description": "Update a Kubernetes ConfigMap.",
+      "inputschema": {
+        "properties": {
+          "data": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "namespace",
+          "data"
+        ],
+        "type": "object"
+      },
+      "name": "update_configmap"
+    },
+    {
+      "description": "Delete a Kubernetes ConfigMap.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "namespace"
+        ],
+        "type": "object"
+      },
+      "name": "delete_configmap"
+    },
+    {
+      "description": "Create a Kubernetes service.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "ports": {
+            "items": {
+              "properties": {
+                "name": {
+                  "typ": "string"
+                },
+                "nodePort": "integer",
+                "port": {
+                  "typ": "integer"
+                },
+                "protocol": "string",
+                "targetPo": "integer"
+              },
+              "required": [
+                "port"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "selector": {
+            "additionalProperties": {
+              "t": "string"
+            },
+            "type": "object"
+          },
+          "type": {
+            "enum": [
+              "ClusterIP",
+              "NodePort",
+              "LoadBalancer"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "ports"
+        ],
+        "type": "object"
+      },
+      "name": "create_service"
+    },
+    {
+      "description": "Update a Kubernetes service.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          },
+          "ports": {
+            "items": {
+              "properties": {
+                "name": {
+                  "typ": "string"
+                },
+                "nodePort": "integer",
+                "port": {
+                  "typ": "integer"
+                },
+                "protocol": "string",
+                "targetPo": "integer"
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "selector": {
+            "additionalProperties": {
+              "t": "string"
+            },
+            "type": "object"
+          },
+          "type": {
+            "enum": [
+              "ClusterIP",
+              "NodePort",
+              "LoadBalancer"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "namespace"
+        ],
+        "type": "object"
+      },
+      "name": "update_service"
+    },
+    {
+      "description": "Delete a Kubernetes service.",
+      "inputschema": {
+        "properties": {
+          "ignoreNotFound": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "name": "delete_service"
+    },
+    {
+      "description": "Describe a Kubernetes service.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "namespace": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "name": "describe_service"
+    }
+  ],
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/Flux159/servers/mcp-server-kubernetes/versions",
+  "xid": "/mcpproviders/Flux159/servers/mcp-server-kubernetes"
+}

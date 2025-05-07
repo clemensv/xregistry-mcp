@@ -1,0 +1,66 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:14:33.79601175Z",
+  "description": "A Model Context Protocol server that builds iOS workspace/project that enables seamless workflow working with iOS projects in Visual Studio Code using extensions like Cline or Roo Code.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:14:33.79601175Z",
+  "name": "io.github.ShenghaiWang/xcodebuild",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "uv",
+      "package_name": "mcpxcodebuild"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "ShenghaiWang/xcodebuild",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/ShenghaiWang/servers/xcodebuild/versions/1",
+  "serverid": "xcodebuild",
+  "tools": [
+    {
+      "description": "Build iOS Xcode workspace/project",
+      "inputschema": {
+        "properties": {
+          "folder": {
+            "description": "The full path of the current folder that the iOS Xcode workspace/project sits",
+            "type": "string"
+          }
+        },
+        "required": [
+          "folder"
+        ],
+        "type": "object"
+      },
+      "name": "build"
+    },
+    {
+      "description": "Run test for iOS Xcode workspace/project",
+      "inputschema": {
+        "properties": {
+          "folder": {
+            "description": "The full path of the current folder that the iOS Xcode workspace/project sits",
+            "type": "string"
+          }
+        },
+        "required": [
+          "folder"
+        ],
+        "type": "object"
+      },
+      "name": "test"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/ShenghaiWang/servers/xcodebuild/versions/1"
+}

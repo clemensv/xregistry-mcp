@@ -1,0 +1,320 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:38.263624454Z",
+  "description": "A full-featured Telegram integration for Claude, Cursor, and any MCP-compatible client, powered by Telethon and the Model Context Protocol (MCP). This project lets you interact with your Telegram account programmatically, automating everything from messaging to group management.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/chigwell/servers/telegram-mcp/meta",
+  "modifiedat": "2025-05-07T20:07:38.263624454Z",
+  "name": "io.github.chigwell/telegram-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "container",
+      "package_name": "unknown"
+    },
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "unknown",
+      "package_name": "unknown"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "chigwell/telegram-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/chigwell/servers/telegram-mcp",
+  "serverid": "telegram-mcp",
+  "tools": [
+    {
+      "description": "Paginated list of chats",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_chats"
+    },
+    {
+      "description": "List chats with metadata and filtering",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_chats"
+    },
+    {
+      "description": "Detailed info about a chat",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_chat"
+    },
+    {
+      "description": "Create a new group",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_group"
+    },
+    {
+      "description": "Create a channel or supergroup",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_channel"
+    },
+    {
+      "description": "Change chat/group/channel title",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "edit_chat_title"
+    },
+    {
+      "description": "Remove chat/group/channel photo",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "delete_chat_photo"
+    },
+    {
+      "description": "Leave a group or channel",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "leave_chat"
+    },
+    {
+      "description": "List all participants",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_participants"
+    },
+    {
+      "description": "List all admins",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_admins"
+    },
+    {
+      "description": "List all banned users",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_banned_users"
+    },
+    {
+      "description": "Promote user to admin",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "promote_admin"
+    },
+    {
+      "description": "Demote admin to user",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "demote_admin"
+    },
+    {
+      "description": "Ban user",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "ban_user"
+    },
+    {
+      "description": "Unban user",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "unban_user"
+    },
+    {
+      "description": "Get invite link",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_invite_link"
+    },
+    {
+      "description": "Export invite link",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "export_chat_invite"
+    },
+    {
+      "description": "Join chat by invite hash",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "import_chat_invite"
+    },
+    {
+      "description": "Join chat by invite link",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "join_chat_by_link"
+    },
+    {
+      "description": "Paginated messages",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_messages"
+    },
+    {
+      "description": "Filtered messages",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_messages"
+    },
+    {
+      "description": "Send a message",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "send_message"
+    },
+    {
+      "description": "Reply to a message",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "reply_to_message"
+    },
+    {
+      "description": "Edit your message",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "edit_message"
+    },
+    {
+      "description": "Delete a message",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "delete_message"
+    },
+    {
+      "description": "Forward a message",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "forward_message"
+    },
+    {
+      "description": "Pin a message",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "pin_message"
+    },
+    {
+      "description": "Unpin a message",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "unpin_message"
+    },
+    {
+      "description": "Mark all as read",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "mark_as_read"
+    },
+    {
+      "description": "Context around a message",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_message_context"
+    },
+    {
+      "description": "Full chat history",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_history"
+    },
+    {
+      "description": "List pinned messages",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_pinned_messages"
+    },
+    {
+      "description": "Most recent message with a contact",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_last_interaction"
+    },
+    {
+      "description": "List all contacts",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_contacts"
+    },
+    {
+      "description": "Search contacts",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "search_contacts"
+    },
+    {
+      "description": "Add a contact",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "add_contact"
+    },
+    {
+      "description": "Delete a contact",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "delete_contact"
+    },
+    {
+      "description": "Block a user",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "block_user"
+    },
+    {
+      "description": "Unblock a user",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "unblock_user"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/chigwell/servers/telegram-mcp/versions",
+  "xid": "/mcpproviders/chigwell/servers/telegram-mcp"
+}

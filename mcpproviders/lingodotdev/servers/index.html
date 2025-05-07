@@ -1,0 +1,59 @@
+{
+  "lingo.dev": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:17:55.703954499Z",
+    "description": "Lingo.dev MCP Server providing AI-powered localization tools via Model Context Protocol.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/lingodotdev/servers/lingo.dev/meta",
+    "modifiedat": "2025-05-07T20:17:55.703954499Z",
+    "name": "io.github.lingodotdev/lingo",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@lingo.dev/cli"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "lingodotdev/lingo.dev",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/lingodotdev/servers/lingo.dev",
+    "serverid": "lingo.dev",
+    "tools": [
+      {
+        "description": "Detect language and translate text with Lingo.dev.",
+        "inputschema": {
+          "properties": {
+            "targetLocale": {
+              "pattern": "^[a-z]{2}(-[A-Z]{2})?$",
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "text",
+            "targetLocale"
+          ],
+          "type": "object"
+        },
+        "name": "translate"
+      }
+    ],
+    "version_detail": {
+      "version": "1.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/lingodotdev/servers/lingo.dev/versions",
+    "xid": "/mcpproviders/lingodotdev/servers/lingo.dev"
+  }
+}

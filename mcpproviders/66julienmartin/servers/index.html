@@ -1,0 +1,148 @@
+{
+  "MCP-server-Deepseek_R1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:12:11.404103732Z",
+    "description": "A Model Context Protocol (MCP) server implementation for the Deepseek R1 language model. Deepseek R1 is a powerful language model optimized for reasoning tasks with a context window of 8192 tokens.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/66julienmartin/servers/MCP-server-Deepseek_R1/meta",
+    "modifiedat": "2025-05-07T20:12:11.404103732Z",
+    "name": "io.github.66julienmartin/MCP-server-Deepseek_R1",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "API key for Deepseek R1 model",
+              "name": "DEEPSEEK_API_KEY",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "/path/to/deepseek-r1-mcp/build/index.js"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@modelcontextprotocol/sdk"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "66julienmartin/MCP-server-Deepseek_R1",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/66julienmartin/servers/MCP-server-Deepseek_R1",
+    "serverid": "MCP-server-Deepseek_R1",
+    "tools": [
+      {
+        "description": "Generate text using DeepSeek R1 model",
+        "inputschema": {
+          "properties": {
+            "max_tokens": {
+              "description": "Maximum tokens to generate (default: 8192)",
+              "maximum": 8192,
+              "minimum": 1,
+              "type": "number"
+            },
+            "prompt": {
+              "description": "Input text for DeepSeek",
+              "type": "string"
+            },
+            "temperature": {
+              "description": "Sampling temperature (default: 0.2)",
+              "maximum": 2,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "prompt"
+          ],
+          "type": "object"
+        },
+        "name": "deepseek_r1"
+      }
+    ],
+    "version_detail": {
+      "version": "1.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/66julienmartin/servers/MCP-server-Deepseek_R1/versions",
+    "xid": "/mcpproviders/66julienmartin/servers/MCP-server-Deepseek_R1"
+  },
+  "MCP-server-Qwen_Max": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:12:08.48685716Z",
+    "description": "A Model Context Protocol (MCP) server implementation for the Qwen Max language model.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/66julienmartin/servers/MCP-server-Qwen_Max/meta",
+    "modifiedat": "2025-05-07T20:12:08.48685716Z",
+    "name": "io.github.66julienmartin/MCP-server-Qwen_Max",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "API key for Dashscope",
+              "name": "DASHSCOPE_API_KEY",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "/path/to/Qwen_Max/build/index.js"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@66julienmartin/mcp-server-qwen_max"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "66julienmartin/MCP-server-Qwen_Max",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/66julienmartin/servers/MCP-server-Qwen_Max",
+    "serverid": "MCP-server-Qwen_Max",
+    "tools": [
+      {
+        "description": "Generate text using Qwen Max model",
+        "inputschema": {
+          "properties": {
+            "max_tokens": {
+              "default": 8192,
+              "description": "Maximum number of tokens to generate",
+              "type": "number"
+            },
+            "prompt": {
+              "description": "The text prompt to generate content from",
+              "type": "string"
+            },
+            "temperature": {
+              "default": 0.7,
+              "description": "Sampling temperature (0-2)",
+              "maximum": 2,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "prompt"
+          ],
+          "type": "object"
+        },
+        "name": "qwen_max"
+      }
+    ],
+    "version_detail": {
+      "version": "1.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/66julienmartin/servers/MCP-server-Qwen_Max/versions",
+    "xid": "/mcpproviders/66julienmartin/servers/MCP-server-Qwen_Max"
+  }
+}

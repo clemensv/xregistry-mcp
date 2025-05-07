@@ -1,0 +1,61 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:09:42.274118469Z",
+  "description": "GOAT MCP Server providing on-chain tools for EVM wallets including ETH transfers and ERC20 tokens like USDC.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:09:42.274118469Z",
+  "name": "io.github.goat-sdk/goat",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Private key for wallet authentication",
+            "name": "WALLET_PRIVATE_KEY",
+            "require": true
+          },
+          {
+            "descrip": "RPC URL for blockchain access",
+            "name": "RPC_PROVIDER_URL",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "server.js"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@goat-sdk/goat"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "goat-sdk/goat",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/goat-sdk/servers/goat/versions/1",
+  "serverid": "goat",
+  "tools": [
+    {
+      "description": "Tool to send ETH tokens",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "sendETH"
+    },
+    {
+      "description": "Tool to interact with ERC20 tokens such as USDC",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "erc20"
+    }
+  ],
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/goat-sdk/servers/goat/versions/1"
+}

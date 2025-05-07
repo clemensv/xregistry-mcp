@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:07:35.408127223Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/ognis1205/servers/mcp-server-unitycatalog/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:07:35.408127223Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/ognis1205/servers/mcp-server-unitycatalog/meta",
+  "serverid": "mcp-server-unitycatalog",
+  "xid": "/mcpproviders/ognis1205/servers/mcp-server-unitycatalog/meta"
+}

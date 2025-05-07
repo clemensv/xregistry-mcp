@@ -1,0 +1,59 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:54.932207421Z",
+  "description": "An MCP server implementation for integrating with Placid.app's API. This server provides tools for listing templates and generating images and videos through the Model Context Protocol.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/felores/servers/placid-mcp-server/meta",
+  "modifiedat": "2025-05-07T20:07:54.932207421Z",
+  "name": "io.github.felores/placid-mcp-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "API token for Placid.app",
+            "name": "PLACID_API_TOKEN",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "@felores/placid-mcp-server"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@felores/placid-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "felores/placid-mcp-server",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/felores/servers/placid-mcp-server",
+  "serverid": "placid-mcp-server",
+  "tools": [
+    {
+      "description": "Lists available Placid templates with filtering options. Each template includes its title, ID, preview image URL, available layers, and tags.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "placid_list_templates"
+    },
+    {
+      "description": "Generate videos by combining Placid templates with dynamic content like videos, images, and text.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "placid_generate_video"
+    }
+  ],
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/felores/servers/placid-mcp-server/versions",
+  "xid": "/mcpproviders/felores/servers/placid-mcp-server"
+}

@@ -1,0 +1,78 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:08:08.873224015Z",
+    "description": "Model Context Protocol (MCP) server for Team Fight Tactics (TFT) that provides access to TFT game data through various tools.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:08:08.873224015Z",
+    "name": "io.github.GeLi2001/tft-mcp-server",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [
+            "mcp-server-tft",
+            "--apiKey",
+            "\u003cYOUR_RIOT_API_KEY\u003e",
+            "--gameName",
+            "\u003cYOUR_GAME_NAME\u003e",
+            "--tagLine",
+            "\u003cYOUR_TAG_LINE\u003e"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "mcp-server-tft"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "GeLi2001/tft-mcp-server",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/GeLi2001/servers/tft-mcp-server/versions/1",
+    "serverid": "tft-mcp-server",
+    "tools": [
+      {
+        "description": "Get TFT match history for the current player.",
+        "inputschema": {
+          "properties": {
+            "count": {
+              "description": "Number of matches to retrieve.",
+              "type": "integer"
+            },
+            "start": {
+              "description": "Start index for pagination.",
+              "type": "integer"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "tft_match_history"
+      },
+      {
+        "description": "Get detailed information about a specific TFT match.",
+        "inputschema": {
+          "properties": {
+            "matchId": {
+              "description": "The match ID to get details for.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "matchId"
+          ],
+          "type": "object"
+        },
+        "name": "tft_match_details"
+      }
+    ],
+    "version_detail": {
+      "version": "0.1.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/GeLi2001/servers/tft-mcp-server/versions/1"
+  }
+}

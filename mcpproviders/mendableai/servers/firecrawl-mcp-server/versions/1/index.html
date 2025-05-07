@@ -1,0 +1,477 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:09:20.863662164Z",
+  "description": "A Model Context Protocol (MCP) server implementation that integrates with Firecrawl for web scraping capabilities.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:09:20.863662164Z",
+  "name": "io.github.mendableai/firecrawl-mcp-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "container",
+      "package_name": "mendableai/firecrawl-mcp:latest"
+    },
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "API key for Firecrawl",
+            "name": "FIRECRAWL_API_KEY",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "-y",
+          "firecrawl-mcp"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "firecrawl-mcp"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "mendableai/firecrawl-mcp-server",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/mendableai/servers/firecrawl-mcp-server/versions/1",
+  "serverid": "firecrawl-mcp-server",
+  "tools": [
+    {
+      "description": "Scrape a single webpage with advanced options for content extraction. Supports various formats including markdown, HTML, and screenshots. Can execute custom actions like clicking or scrolling before scraping.",
+      "inputschema": {
+        "properties": {
+          "actions": {
+            "description": "List of actions to perform before scraping",
+            "items": {
+              "properties": {
+                "directi": "Scroll direction",
+                "fullPag": "Take full page screenshot",
+                "key": {
+                  "des": "Key to press (for press action)",
+                  "typ": "string"
+                },
+                "millise": "Time to wait in milliseconds (for wait action)",
+                "script": "JavaScript code to execute",
+                "selecto": "CSS selector for the target element",
+                "text": {
+                  "de": "Text to write (for write action)",
+                  "ty": "string"
+                },
+                "type": {
+                  "de": "Type of action to perform",
+                  "en": "executeJavascript",
+                  "ty": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "excludeTags": {
+            "description": "HTML tags to exclude from extraction",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "extract": {
+            "description": "Configuration for structured data extraction",
+            "properties": {
+              "prompt": {
+                "descri": "User prompt for LLM extraction",
+                "type": "string"
+              },
+              "schema": {
+                "descri": "Schema for structured data extraction",
+                "type": "object"
+              },
+              "systemPrompt": "System prompt for LLM extraction"
+            },
+            "type": "object"
+          },
+          "formats": {
+            "description": "Content formats to extract (default: ['markdown'])",
+            "items": {
+              "enum": [
+                "markdown",
+                "html",
+                "rawHtml",
+                "screenshot",
+                "links",
+                "screenshot@fullPage",
+                "extract"
+              ],
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "includeTags": {
+            "description": "HTML tags to specifically include in extraction",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "location": {
+            "description": "Location settings for scraping",
+            "properties": {
+              "country": {
+                "desc": "Country code for geolocation",
+                "type": "string"
+              },
+              "languages": {
+                "de": "Language codes for content",
+                "it": "string",
+                "ty": "array"
+              }
+            },
+            "type": "object"
+          },
+          "mobile": {
+            "description": "Use mobile viewport",
+            "type": "boolean"
+          },
+          "onlyMainContent": {
+            "description": "Extract only the main content, filtering out navigation, footers, etc.",
+            "type": "boolean"
+          },
+          "removeBase64Images": {
+            "description": "Remove base64 encoded images from output",
+            "type": "boolean"
+          },
+          "skipTlsVerification": {
+            "description": "Skip TLS certificate verification",
+            "type": "boolean"
+          },
+          "timeout": {
+            "description": "Maximum time in milliseconds to wait for the page to load",
+            "type": "number"
+          },
+          "url": {
+            "description": "The URL to scrape",
+            "type": "string"
+          },
+          "waitFor": {
+            "description": "Time in milliseconds to wait for dynamic content to load",
+            "type": "number"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "firecrawl_scrape"
+    },
+    {
+      "description": "Discover URLs from a starting point. Can use both sitemap.xml and HTML link discovery.",
+      "inputschema": {
+        "properties": {
+          "ignoreSitemap": {
+            "description": "Skip sitemap.xml discovery and only use HTML links",
+            "type": "boolean"
+          },
+          "includeSubdomains": {
+            "description": "Include URLs from subdomains in results",
+            "type": "boolean"
+          },
+          "limit": {
+            "description": "Maximum number of URLs to return",
+            "type": "number"
+          },
+          "search": {
+            "description": "Optional search term to filter URLs",
+            "type": "string"
+          },
+          "sitemapOnly": {
+            "description": "Only use sitemap.xml for discovery, ignore HTML links",
+            "type": "boolean"
+          },
+          "url": {
+            "description": "Starting URL for URL discovery",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "firecrawl_map"
+    },
+    {
+      "description": "Start an asynchronous crawl of multiple pages from a starting URL. Supports depth control, path filtering, and webhook notifications.",
+      "inputschema": {
+        "properties": {
+          "allowBackwardLinks": {
+            "description": "Allow crawling links that point to parent directories",
+            "type": "boolean"
+          },
+          "allowExternalLinks": {
+            "description": "Allow crawling links to external domains",
+            "type": "boolean"
+          },
+          "deduplicateSimilarURLs": {
+            "descripti": "Remove similar URLs during crawl",
+            "type": "boolean"
+          },
+          "excludePaths": {
+            "description": "URL paths to exclude from crawling",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "ignoreQueryParameters": {
+            "descriptio": "Ignore query parameters when comparing URLs",
+            "type": "boolean"
+          },
+          "ignoreSitemap": {
+            "description": "Skip sitemap.xml discovery",
+            "type": "boolean"
+          },
+          "includePaths": {
+            "description": "Only crawl these URL paths",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "description": "Maximum number of pages to crawl",
+            "type": "number"
+          },
+          "maxDepth": {
+            "description": "Maximum link depth to crawl",
+            "type": "number"
+          },
+          "scrapeOptions": {
+            "description": "Options for scraping each page",
+            "properties": {
+              "exclude": "string",
+              "formats": "array",
+              "include": "string",
+              "onlyMai": "boolean",
+              "waitFor": "number"
+            },
+            "type": "object"
+          },
+          "url": {
+            "description": "Starting URL for the crawl",
+            "type": "string"
+          },
+          "webhook": {
+            "oneOf": [
+              {
+                "description": "Webhook URL to notify when crawl is complete",
+                "type": "string"
+              },
+              {
+                "properties": {
+                  "head": "Custom headers for webhook requests",
+                  "url": "Webhook URL"
+                },
+                "required": [
+                  "url"
+                ],
+                "type": "object"
+              }
+            ]
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "firecrawl_crawl"
+    },
+    {
+      "description": "Check the status of a crawl job.",
+      "inputschema": {
+        "properties": {
+          "id": {
+            "description": "Crawl job ID to check",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "name": "firecrawl_check_crawl_status"
+    },
+    {
+      "description": "Search and retrieve content from web pages with optional scraping. Returns SERP results by default (url, title, description) or full page content when scrapeOptions are provided.",
+      "inputschema": {
+        "properties": {
+          "country": {
+            "description": "Country code for search results (default: us)",
+            "type": "string"
+          },
+          "filter": {
+            "description": "Search filter",
+            "type": "string"
+          },
+          "lang": {
+            "description": "Language code for search results (default: en)",
+            "type": "string"
+          },
+          "limit": {
+            "description": "Maximum number of results to return (default: 5)",
+            "type": "number"
+          },
+          "location": {
+            "description": "Location settings for search",
+            "properties": {
+              "country": {
+                "desc": "Country code for geolocation",
+                "type": "string"
+              },
+              "languages": {
+                "de": "Language codes for content",
+                "it": "string",
+                "ty": "array"
+              }
+            },
+            "type": "object"
+          },
+          "query": {
+            "description": "Search query string",
+            "type": "string"
+          },
+          "scrapeOptions": {
+            "description": "Options for scraping search results",
+            "properties": {
+              "formats": "Content formats to extract from search results",
+              "onlyMai": "Extract only the main content from results",
+              "waitFor": "Time in milliseconds to wait for dynamic content"
+            },
+            "type": "object"
+          },
+          "tbs": {
+            "description": "Time-based search filter",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "firecrawl_search"
+    },
+    {
+      "description": "Extract structured information from web pages using LLM. Supports both cloud AI and self-hosted LLM extraction.",
+      "inputschema": {
+        "properties": {
+          "allowExternalLinks": {
+            "description": "Allow extraction from external links",
+            "type": "boolean"
+          },
+          "enableWebSearch": {
+            "description": "Enable web search for additional context",
+            "type": "boolean"
+          },
+          "includeSubdomains": {
+            "description": "Include subdomains in extraction",
+            "type": "boolean"
+          },
+          "prompt": {
+            "description": "Prompt for the LLM extraction",
+            "type": "string"
+          },
+          "schema": {
+            "description": "JSON schema for structured data extraction",
+            "type": "object"
+          },
+          "systemPrompt": {
+            "description": "System prompt for LLM extraction",
+            "type": "string"
+          },
+          "urls": {
+            "description": "List of URLs to extract information from",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "urls"
+        ],
+        "type": "object"
+      },
+      "name": "firecrawl_extract"
+    },
+    {
+      "description": "Conduct deep research on a query using web crawling, search, and AI analysis.",
+      "inputschema": {
+        "properties": {
+          "maxDepth": {
+            "description": "Maximum depth of research iterations (1-10)",
+            "type": "number"
+          },
+          "maxUrls": {
+            "description": "Maximum number of URLs to analyze (1-1000)",
+            "type": "number"
+          },
+          "query": {
+            "description": "The query to research",
+            "type": "string"
+          },
+          "timeLimit": {
+            "description": "Time limit in seconds (30-300)",
+            "type": "number"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "firecrawl_deep_research"
+    },
+    {
+      "description": "Generate standardized LLMs.txt file for a given URL, which provides context about how LLMs should interact with the website.",
+      "inputschema": {
+        "properties": {
+          "maxUrls": {
+            "description": "Maximum number of URLs to process (1-100, default: 10)",
+            "type": "number"
+          },
+          "showFullText": {
+            "description": "Whether to show the full LLMs-full.txt in the response",
+            "type": "boolean"
+          },
+          "url": {
+            "description": "The URL to generate LLMs.txt from",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "firecrawl_generate_llmstxt"
+    }
+  ],
+  "version_detail": {
+    "version": "1.7.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/mendableai/servers/firecrawl-mcp-server/versions/1"
+}

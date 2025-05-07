@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:08:43.490908703Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/strowk/servers/foxy-contexts/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:08:43.490908703Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/strowk/servers/foxy-contexts/meta",
+  "serverid": "foxy-contexts",
+  "xid": "/mcpproviders/strowk/servers/foxy-contexts/meta"
+}

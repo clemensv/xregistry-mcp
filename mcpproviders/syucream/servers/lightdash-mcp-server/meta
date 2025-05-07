@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:11:33.427347102Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/syucream/servers/lightdash-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:11:33.427347102Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/syucream/servers/lightdash-mcp-server/meta",
+  "serverid": "lightdash-mcp-server",
+  "xid": "/mcpproviders/syucream/servers/lightdash-mcp-server/meta"
+}

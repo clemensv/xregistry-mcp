@@ -1,0 +1,119 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:09:37.155472222Z",
+  "description": "A Model Context Protocol (MCP) server implementation that integrates with Vectorize for advanced Vector retrieval and text extraction.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/vectorize-io/servers/vectorize-mcp-server/meta",
+  "modifiedat": "2025-05-07T20:09:37.155472222Z",
+  "name": "io.github.vectorize-io/vectorize-mcp-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Vectorize Organization ID",
+            "name": "VECTORIZE_ORG_ID",
+            "require": true
+          },
+          {
+            "descrip": "Vectorize Token",
+            "name": "VECTORIZE_TOKEN",
+            "require": true
+          },
+          {
+            "descrip": "Vectorize Pipeline ID",
+            "name": "VECTORIZE_PIPELINE_ID",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "-y",
+          "@vectorize-io/vectorize-mcp-server@latest"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@vectorize-io/vectorize-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "vectorize-io/vectorize-mcp-server",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/vectorize-io/servers/vectorize-mcp-server",
+  "serverid": "vectorize-mcp-server",
+  "tools": [
+    {
+      "description": "Retrieve documents from the configured pipeline.",
+      "inputschema": {
+        "properties": {
+          "k": {
+            "default": 4,
+            "description": "The number of documents to retrieve.",
+            "type": "number"
+          },
+          "question": {
+            "description": "The term to search for.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "question"
+        ],
+        "type": "object"
+      },
+      "name": "retrieve"
+    },
+    {
+      "description": "Generate a deep research on the configured pipeline.",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "The deep research query.",
+            "type": "string"
+          },
+          "webSearch": {
+            "description": "Whether to perform a web search.",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "query",
+          "webSearch"
+        ],
+        "type": "object"
+      },
+      "name": "deep-research"
+    },
+    {
+      "description": "Perform text extraction and chunking on a document.",
+      "inputschema": {
+        "properties": {
+          "base64Document": {
+            "description": "Document encoded in base64.",
+            "type": "string"
+          },
+          "contentType": {
+            "description": "Document content type.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "base64Document",
+          "contentType"
+        ],
+        "type": "object"
+      },
+      "name": "extract"
+    }
+  ],
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/vectorize-io/servers/vectorize-mcp-server/versions",
+  "xid": "/mcpproviders/vectorize-io/servers/vectorize-mcp-server"
+}

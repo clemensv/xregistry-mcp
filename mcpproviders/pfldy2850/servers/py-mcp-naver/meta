@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:07:34.982371517Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/pfldy2850/servers/py-mcp-naver/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:07:34.982371517Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/pfldy2850/servers/py-mcp-naver/meta",
+  "serverid": "py-mcp-naver",
+  "xid": "/mcpproviders/pfldy2850/servers/py-mcp-naver/meta"
+}

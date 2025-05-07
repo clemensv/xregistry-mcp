@@ -1,0 +1,369 @@
+{
+  "fantasy-pl-mcp": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:07:45.207724686Z",
+    "description": "A Model Context Protocol (MCP) server that provides access to Fantasy Premier League (FPL) data and tools. This server allows you to interact with FPL data in Claude for Desktop and other MCP-compatible clients.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/rishijatia/servers/fantasy-pl-mcp/meta",
+    "modifiedat": "2025-05-07T20:07:45.207724686Z",
+    "name": "io.github.rishijatia/fantasy-pl-mcp",
+    "prompts": [
+      {
+        "arguments": [
+          {
+            "description": "Available budget in millions (e.g., 8.5)",
+            "name": "budget",
+            "required": true
+          },
+          {
+            "description": "Optional position to target (e.g., MID, FWD, DEF, GKP)",
+            "name": "position",
+            "required": false
+          },
+          {
+            "description": "Optional team name if selling a player from that team",
+            "name": "team_to_sell",
+            "required": false
+          }
+        ],
+        "description": "Create a prompt for getting detailed FPL transfer advice",
+        "name": "transfer_advice_prompt"
+      },
+      {
+        "arguments": [
+          {
+            "description": "Name of the player to analyze",
+            "name": "player_name",
+            "required": true
+          },
+          {
+            "description": "Whether to compare with similar players",
+            "name": "include_comparisons",
+            "required": false
+          }
+        ],
+        "description": "Create a prompt for analyzing an FPL player in depth",
+        "name": "player_analysis_prompt"
+      },
+      {
+        "arguments": [
+          {
+            "description": "Comma-separated list of players in the team",
+            "name": "player_list",
+            "required": true
+          },
+          {
+            "description": "Remaining budget in millions",
+            "name": "budget_remaining",
+            "required": false
+          }
+        ],
+        "description": "Create a prompt for rating and analyzing an FPL team",
+        "name": "team_rating_prompt"
+      },
+      {
+        "arguments": [
+          {
+            "description": "Maximum ownership percentage to consider",
+            "name": "max_ownership",
+            "required": false
+          },
+          {
+            "description": "Optional maximum budget per player in millions",
+            "name": "budget",
+            "required": false
+          }
+        ],
+        "description": "Create a prompt for finding differential players with low ownership",
+        "name": "differential_players_prompt"
+      },
+      {
+        "arguments": [
+          {
+            "description": "Comma-separated list of available chips (e.g., \"Wildcard, Free Hit, Bench Boost\")",
+            "name": "available_chips",
+            "required": true
+          }
+        ],
+        "description": "Create a prompt for chip strategy advice",
+        "name": "chip_strategy_prompt"
+      }
+    ],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "python",
+        "package_name": "fpl-mcp"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "rishijatia/fantasy-pl-mcp",
+    "resources": [
+      {
+        "description": "Get a formatted list of all players with comprehensive statistics",
+        "name": "players",
+        "uritemplate": "fpl://static/players"
+      },
+      {
+        "description": "Get player information by searching for their name",
+        "name": "player_by_name",
+        "uritemplate": "fpl://static/players/{name}"
+      },
+      {
+        "description": "Get a formatted list of all Premier League teams with strength ratings",
+        "name": "teams",
+        "uritemplate": "fpl://static/teams"
+      },
+      {
+        "description": "Get team information by searching for their name",
+        "name": "team_by_name",
+        "uritemplate": "fpl://static/teams/{name}"
+      },
+      {
+        "description": "Get information about the current gameweek",
+        "name": "current_gameweek",
+        "uritemplate": "fpl://gameweeks/current"
+      },
+      {
+        "description": "Get information about all gameweeks",
+        "name": "all_gameweeks",
+        "uritemplate": "fpl://gameweeks/all"
+      },
+      {
+        "description": "Get all fixtures for the current Premier League season",
+        "name": "fixtures",
+        "uritemplate": "fpl://fixtures"
+      },
+      {
+        "description": "Get fixtures for a specific gameweek",
+        "name": "gameweek_fixtures",
+        "uritemplate": "fpl://fixtures/gameweek/{gameweek_id}"
+      },
+      {
+        "description": "Get fixtures for a specific team",
+        "name": "team_fixtures",
+        "uritemplate": "fpl://fixtures/team/{team_name}"
+      },
+      {
+        "description": "Get upcoming fixtures for a specific player",
+        "name": "player_fixtures",
+        "uritemplate": "fpl://players/{player_name}/fixtures"
+      },
+      {
+        "description": "Get information about upcoming blank gameweeks",
+        "name": "blank_gameweeks",
+        "uritemplate": "fpl://gameweeks/blank"
+      },
+      {
+        "description": "Get information about upcoming double gameweeks",
+        "name": "double_gameweeks",
+        "uritemplate": "fpl://gameweeks/double"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/rishijatia/servers/fantasy-pl-mcp",
+    "serverid": "fantasy-pl-mcp",
+    "tools": [
+      {
+        "description": "Check if FPL authentication is working correctly",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "check_fpl_authentication"
+      },
+      {
+        "description": "Get precise information about current, previous, and next gameweeks",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_gameweek_status"
+      },
+      {
+        "description": "Analyze upcoming fixtures for a player and provide a difficulty rating",
+        "inputschema": {
+          "properties": {
+            "num_fixtures": {
+              "type": "integer"
+            },
+            "player_name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "player_name"
+          ],
+          "type": "object"
+        },
+        "name": "analyze_player_fixtures"
+      },
+      {
+        "description": "Get information about upcoming blank gameweeks where teams don't have fixtures",
+        "inputschema": {
+          "properties": {
+            "num_gameweeks": {
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        },
+        "name": "get_blank_gameweeks"
+      },
+      {
+        "description": "Get information about upcoming double gameweeks where teams play multiple times",
+        "inputschema": {
+          "properties": {
+            "num_gameweeks": {
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        },
+        "name": "get_double_gameweeks"
+      },
+      {
+        "description": "Filter and analyze FPL players based on multiple criteria",
+        "inputschema": {
+          "properties": {
+            "form_threshold": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "include_gameweeks": {
+              "type": "boolean"
+            },
+            "limit": {
+              "type": "integer"
+            },
+            "max_ownership": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "max_price": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "min_ownership": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "min_points": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "min_price": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "num_gameweeks": {
+              "type": "integer"
+            },
+            "position": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "sort_by": {
+              "type": "string"
+            },
+            "sort_order": {
+              "type": "string"
+            },
+            "team": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "type": "object"
+        },
+        "name": "analyze_players"
+      },
+      {
+        "description": "Analyze upcoming fixtures for players, teams, or positions",
+        "inputschema": {
+          "properties": {
+            "entity_name": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "entity_type": {
+              "type": "string"
+            },
+            "include_blanks": {
+              "type": "boolean"
+            },
+            "include_doubles": {
+              "type": "boolean"
+            },
+            "num_gameweeks": {
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        },
+        "name": "analyze_fixtures"
+      },
+      {
+        "description": "Compare multiple players across various metrics",
+        "inputschema": {
+          "properties": {
+            "include_fixture_analysis": {
+              "type": "boolean"
+            },
+            "include_gameweeks": {
+              "type": "boolean"
+            },
+            "metrics": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "num_gameweeks": {
+              "type": "integer"
+            },
+            "player_names": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "player_names"
+          ],
+          "type": "object"
+        },
+        "name": "compare_players"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/rishijatia/servers/fantasy-pl-mcp/versions",
+    "xid": "/mcpproviders/rishijatia/servers/fantasy-pl-mcp"
+  }
+}

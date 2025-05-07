@@ -1,0 +1,139 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:10:59.076147335Z",
+  "description": "An MCP server to create, manage and publish X/Twitter posts directly through Claude chat.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/vidhupv/servers/x-mcp/meta",
+  "modifiedat": "2025-05-07T20:10:59.076147335Z",
+  "name": "io.github.vidhupv/x-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Twitter API key",
+            "name": "TWITTER_API_KEY",
+            "require": true
+          },
+          {
+            "descrip": "Twitter API secret",
+            "name": "TWITTER_API_SECRET",
+            "require": true
+          },
+          {
+            "descrip": "Twitter access token",
+            "name": "TWITTER_ACCESS_TOKEN",
+            "require": true
+          },
+          {
+            "descrip": "Twitter access token secret",
+            "name": "TWITTER_ACCESS_TOKEN_SECRET",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "--directory",
+          "/path/to/x-mcp",
+          "run",
+          "x-mcp"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "x-mcp"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "vidhupv/x-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/vidhupv/servers/x-mcp",
+  "serverid": "x-mcp",
+  "tools": [
+    {
+      "description": "Create a draft tweet",
+      "inputschema": {
+        "properties": {
+          "content": {
+            "description": "The content of the tweet",
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ],
+        "type": "object"
+      },
+      "name": "create_draft_tweet"
+    },
+    {
+      "description": "Create a draft tweet thread",
+      "inputschema": {
+        "properties": {
+          "contents": {
+            "description": "An array of tweet contents for the thread",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "contents"
+        ],
+        "type": "object"
+      },
+      "name": "create_draft_thread"
+    },
+    {
+      "description": "List all draft tweets and threads",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "list_drafts"
+    },
+    {
+      "description": "Publish a draft tweet or thread",
+      "inputschema": {
+        "properties": {
+          "draft_id": {
+            "description": "ID of the draft to publish",
+            "type": "string"
+          }
+        },
+        "required": [
+          "draft_id"
+        ],
+        "type": "object"
+      },
+      "name": "publish_draft"
+    },
+    {
+      "description": "Delete a draft tweet or thread",
+      "inputschema": {
+        "properties": {
+          "draft_id": {
+            "description": "ID of the draft to delete",
+            "type": "string"
+          }
+        },
+        "required": [
+          "draft_id"
+        ],
+        "type": "object"
+      },
+      "name": "delete_draft"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/vidhupv/servers/x-mcp/versions",
+  "xid": "/mcpproviders/vidhupv/servers/x-mcp"
+}

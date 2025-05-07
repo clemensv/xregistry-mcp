@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:07:58.53459621Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/dvcrn/servers/mcp-server-siri-shortcuts/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:07:58.53459621Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/dvcrn/servers/mcp-server-siri-shortcuts/meta",
+  "serverid": "mcp-server-siri-shortcuts",
+  "xid": "/mcpproviders/dvcrn/servers/mcp-server-siri-shortcuts/meta"
+}

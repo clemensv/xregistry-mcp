@@ -1,0 +1,70 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:41.153436996Z",
+  "description": "Dune Analytics tools",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:07:41.153436996Z",
+  "name": "io.github.kukapay/dune-analytics-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "API key for Dune Analytics",
+            "name": "DUNE_API_KEY",
+            "require": true
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "python",
+      "package_name": "dune-analytics-mcp"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "kukapay/dune-analytics-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/kukapay/servers/dune-analytics-mcp/versions/1",
+  "serverid": "dune-analytics-mcp",
+  "tools": [
+    {
+      "description": "Get the latest results for a specific query ID as a CSV string on dune analytics",
+      "inputschema": {
+        "properties": {
+          "query_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "query_id"
+        ],
+        "type": "object"
+      },
+      "name": "get_latest_result"
+    },
+    {
+      "description": "Run a query by ID and return results as a CSV string on dune analytics",
+      "inputschema": {
+        "properties": {
+          "query_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "query_id"
+        ],
+        "type": "object"
+      },
+      "name": "run_query"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/kukapay/servers/dune-analytics-mcp/versions/1"
+}

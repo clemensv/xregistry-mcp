@@ -1,0 +1,143 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:07:39.391449129Z",
+    "description": "A Model Context Protocol (MCP) server implementation that integrates with Stripe for handling payments, customers, and refunds. This server provides a structured API to manage financial transactions securely.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:07:39.391449129Z",
+    "name": "io.github.atharvagupta2003/mcp-stripe",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Stripe secret API key",
+              "name": "STRIPE_API_KEY",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "--directory",
+            "/ABSOLUTE/PATH/TO/PARENT/FOLDER/src",
+            "run",
+            "server.py"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "uv",
+        "package_name": "@atharvagupta2003/mcp-stripe"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "atharvagupta2003/mcp-stripe",
+    "resources": [
+      {
+        "description": "Stores audit logs of customer, payment, and refund operations; supports structured logging for better traceability; uses MCP resource endpoints to retrieve audit data",
+        "name": "audit_logs",
+        "uritemplate": "/audit/logs"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/atharvagupta2003/servers/mcp-stripe/versions/1",
+    "serverid": "mcp-stripe",
+    "tools": [
+      {
+        "description": "Create a new customer",
+        "inputschema": {
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "email",
+            "name"
+          ],
+          "type": "object"
+        },
+        "name": "customer_create"
+      },
+      {
+        "description": "Retrieve a customer's details",
+        "inputschema": {
+          "properties": {
+            "customer_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "customer_id"
+          ],
+          "type": "object"
+        },
+        "name": "customer_retrieve"
+      },
+      {
+        "description": "Update customer information",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "customer_update"
+      },
+      {
+        "description": "Create a payment intent for processing payments",
+        "inputschema": {
+          "properties": {
+            "amount": {
+              "type": "integer"
+            },
+            "currency": {
+              "type": "string"
+            },
+            "customer": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "amount",
+            "currency",
+            "customer"
+          ],
+          "type": "object"
+        },
+        "name": "payment_intent_create"
+      },
+      {
+        "description": "List recent charges",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "charge_list"
+      },
+      {
+        "description": "Create a refund for a charge",
+        "inputschema": {
+          "properties": {
+            "charge_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "charge_id"
+          ],
+          "type": "object"
+        },
+        "name": "refund_create"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/atharvagupta2003/servers/mcp-stripe/versions/1"
+  }
+}

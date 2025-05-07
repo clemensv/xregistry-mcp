@@ -1,0 +1,90 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:17:17.594840807Z",
+  "description": "Node.js server implementing Model Context Protocol (MCP) for Discourse search operation.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/AshDevFr/servers/discourse-mcp-server/meta",
+  "modifiedat": "2025-05-07T20:17:17.594840807Z",
+  "name": "io.github.AshDevFr/discourse-mcp-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "run",
+          "-i",
+          "--rm",
+          "-e",
+          "DISCOURSE_API_URL=https://try.discourse.org",
+          "-e",
+          "DISCOURSE_API_KEY=1234",
+          "-e",
+          "DISCOURSE_API_USERNAME=ash"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "container",
+      "package_name": "ashdev/discourse-mcp-server"
+    },
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "name": "DISCOURSE_API_URL",
+            "require": true
+          },
+          {
+            "name": "DISCOURSE_API_KEY",
+            "require": false
+          },
+          {
+            "name": "DISCOURSE_API_USERNAME",
+            "require": false
+          }
+        ],
+        "positional_arguments": [
+          "-y",
+          "@ashdev/discourse-mcp-server"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@ashdev/discourse-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "AshDevFr/discourse-mcp-server",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/AshDevFr/servers/discourse-mcp-server",
+  "serverid": "discourse-mcp-server",
+  "tools": [
+    {
+      "description": "Search Discourse posts",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "Query",
+            "minLength": 5,
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "search_posts"
+    }
+  ],
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/AshDevFr/servers/discourse-mcp-server/versions",
+  "xid": "/mcpproviders/AshDevFr/servers/discourse-mcp-server"
+}

@@ -1,0 +1,915 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:09:45.766801724Z",
+  "description": "Model Context Protocol server for NASA APIs",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/ProgramComputer/servers/NASA-MCP-server/meta",
+  "modifiedat": "2025-05-07T20:09:45.766801724Z",
+  "name": "io.github.ProgramComputer/NASA-MCP-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Your NASA API key (get at api.nasa.gov)",
+            "name": "NASA_API_KEY",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "-y",
+          "@programcomputer/nasa-mcp-server@latest"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@programcomputer/nasa-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "ProgramComputer/NASA-MCP-server",
+  "resources": [
+    {
+      "description": "NASA Astronomy Picture of the Day",
+      "mimetype": "application/json",
+      "name": "nasa-apod-image",
+      "uritemplate": "nasa://apod/image?date={date}"
+    },
+    {
+      "description": "NASA EPIC Earth observation image",
+      "mimetype": "application/json",
+      "name": "nasa-epic-image",
+      "uritemplate": "nasa://epic/image?date={date}\u0026collection={collection}"
+    },
+    {
+      "description": "NASA Mars Rover photograph",
+      "mimetype": "image/jpeg",
+      "name": "mars-rover-photo",
+      "uritemplate": "nasa://mars-rover/photo?rover={rover}\u0026id={id}"
+    },
+    {
+      "description": "NASA Image and Video Library item",
+      "mimetype": "image/jpeg",
+      "name": "nasa-image",
+      "uritemplate": "nasa://images/item?nasa_id={nasa_id}"
+    },
+    {
+      "description": "NASA Global Imagery Browse Services (GIBS) satellite image",
+      "mimetype": "image/jpeg",
+      "name": "nasa-gibs-imagery",
+      "uritemplate": "nasa://gibs/imagery?layer={layer}\u0026date={date}"
+    },
+    {
+      "description": "JPL Small-Body Database entry",
+      "mimetype": "application/json",
+      "name": "jpl-asteroid-data",
+      "uritemplate": "jpl://sbdb?object={object}"
+    },
+    {
+      "description": "NASA Earth Landsat satellite imagery",
+      "mimetype": "application/json",
+      "name": "nasa-earth-imagery",
+      "uritemplate": "nasa://earth/imagery?lon={lon}\u0026lat={lat}\u0026date={date}"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/ProgramComputer/servers/NASA-MCP-server",
+  "serverid": "NASA-MCP-server",
+  "tools": [
+    {
+      "description": "Fetch NASA's Astronomy Picture of the Day",
+      "inputschema": {
+        "properties": {
+          "count": {
+            "description": "Count of random APODs to retrieve",
+            "type": "number"
+          },
+          "date": {
+            "description": "The date of the APOD image to retrieve (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "end_date": {
+            "description": "End date for date range search (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "start_date": {
+            "description": "Start date for date range search (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "thumbs": {
+            "description": "Return URL of thumbnail for video content",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "date"
+        ],
+        "type": "object"
+      },
+      "name": "nasa_apod"
+    },
+    {
+      "description": "Near Earth Object Web Service - information about asteroids",
+      "inputschema": {
+        "properties": {
+          "asteroid_id": {
+            "description": "ID of a specific asteroid",
+            "type": "string"
+          },
+          "end_date": {
+            "description": "End date for asteroid search (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "start_date": {
+            "description": "Start date for asteroid search (YYYY-MM-DD)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "start_date",
+          "end_date"
+        ],
+        "type": "object"
+      },
+      "name": "nasa_neo"
+    },
+    {
+      "description": "Earth Polychromatic Imaging Camera - views of Earth",
+      "inputschema": {
+        "properties": {
+          "collection": {
+            "description": "Image collection (natural or enhanced)",
+            "type": "string"
+          },
+          "date": {
+            "description": "Date of the image (YYYY-MM-DD)",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "name": "nasa_epic"
+    },
+    {
+      "description": "Global Imagery Browse Services - satellite imagery",
+      "inputschema": {
+        "properties": {
+          "date": {
+            "description": "Date of imagery (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "format": {
+            "description": "Image format (png, jpg, jpeg)",
+            "type": "string"
+          },
+          "layer": {
+            "description": "Layer name (e.g., MODIS_Terra_CorrectedReflectance_TrueColor)",
+            "type": "string"
+          },
+          "resolution": {
+            "description": "Resolution in pixels per degree",
+            "type": "number"
+          }
+        },
+        "required": [
+          "layer",
+          "date"
+        ],
+        "type": "object"
+      },
+      "name": "nasa_gibs"
+    },
+    {
+      "description": "NASA Common Metadata Repository - search for NASA data collections",
+      "inputschema": {
+        "properties": {
+          "keyword": {
+            "description": "Search keyword",
+            "type": "string"
+          },
+          "limit": {
+            "description": "Maximum number of results to return",
+            "type": "number"
+          },
+          "page": {
+            "description": "Page number for pagination",
+            "type": "number"
+          },
+          "sort_key": {
+            "description": "Field to sort results by",
+            "type": "string"
+          }
+        },
+        "required": [
+          "keyword"
+        ],
+        "type": "object"
+      },
+      "name": "nasa_cmr"
+    },
+    {
+      "description": "NASA Fire Information for Resource Management System - fire data",
+      "inputschema": {
+        "properties": {
+          "days": {
+            "description": "Number of days of data to retrieve",
+            "type": "number"
+          },
+          "latitude": {
+            "description": "Latitude coordinate",
+            "type": "number"
+          },
+          "longitude": {
+            "description": "Longitude coordinate",
+            "type": "number"
+          }
+        },
+        "required": [
+          "latitude",
+          "longitude"
+        ],
+        "type": "object"
+      },
+      "name": "nasa_firms"
+    },
+    {
+      "description": "NASA Image and Video Library - search NASA's media archive",
+      "inputschema": {
+        "properties": {
+          "media_type": {
+            "description": "Media type (image, video, audio)",
+            "type": "string"
+          },
+          "page": {
+            "description": "Page number for pagination",
+            "type": "number"
+          },
+          "q": {
+            "description": "Search query",
+            "type": "string"
+          },
+          "year_end": {
+            "description": "End year for results",
+            "type": "string"
+          },
+          "year_start": {
+            "description": "Start year for results",
+            "type": "string"
+          }
+        },
+        "required": [
+          "q"
+        ],
+        "type": "object"
+      },
+      "name": "nasa_images"
+    },
+    {
+      "description": "NASA Exoplanet Archive - data about planets beyond our solar system",
+      "inputschema": {
+        "properties": {
+          "limit": {
+            "description": "Maximum number of results",
+            "type": "number"
+          },
+          "order": {
+            "description": "Ordering of results",
+            "type": "string"
+          },
+          "select": {
+            "description": "Columns to return",
+            "type": "string"
+          },
+          "table": {
+            "description": "Database table to query",
+            "type": "string"
+          },
+          "where": {
+            "description": "Filter conditions",
+            "type": "string"
+          }
+        },
+        "required": [
+          "table"
+        ],
+        "type": "object"
+      },
+      "name": "nasa_exoplanet"
+    },
+    {
+      "description": "Space Weather Database Of Notifications, Knowledge, Information",
+      "inputschema": {
+        "properties": {
+          "endDate": {
+            "description": "End date (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "startDate": {
+            "description": "Start date (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "type": {
+            "description": "Type of space weather event",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "type": "object"
+      },
+      "name": "nasa_donki"
+    },
+    {
+      "description": "NASA Mars Rover Photos - images from Mars rovers",
+      "inputschema": {
+        "properties": {
+          "camera": {
+            "description": "Camera name",
+            "type": "string"
+          },
+          "earth_date": {
+            "description": "Earth date of the photos (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "page": {
+            "description": "Page number for pagination",
+            "type": "number"
+          },
+          "rover": {
+            "description": "Name of the rover (curiosity, opportunity, spirit, perseverance)",
+            "type": "string"
+          },
+          "sol": {
+            "description": "Martian sol (day) of the photos",
+            "type": "number"
+          }
+        },
+        "required": [
+          "rover"
+        ],
+        "type": "object"
+      },
+      "name": "nasa_mars_rover"
+    },
+    {
+      "description": "Earth Observatory Natural Event Tracker - natural events data",
+      "inputschema": {
+        "properties": {
+          "category": {
+            "description": "Event category (wildfires, volcanoes, etc.)",
+            "type": "string"
+          },
+          "days": {
+            "description": "Number of days to look back",
+            "type": "number"
+          },
+          "limit": {
+            "description": "Maximum number of events to return",
+            "type": "number"
+          },
+          "source": {
+            "description": "Data source",
+            "type": "string"
+          },
+          "status": {
+            "description": "Event status (open, closed)",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "name": "nasa_eonet"
+    },
+    {
+      "description": "Prediction of Worldwide Energy Resources - meteorological data",
+      "inputschema": {
+        "properties": {
+          "community": {
+            "description": "User community (RE, SB, AG, etc.)",
+            "type": "string"
+          },
+          "end": {
+            "description": "End date (YYYYMMDD)",
+            "type": "string"
+          },
+          "format": {
+            "description": "Response format (json, csv, etc.)",
+            "type": "string"
+          },
+          "latitude": {
+            "description": "Latitude coordinate",
+            "type": "number"
+          },
+          "longitude": {
+            "description": "Longitude coordinate",
+            "type": "number"
+          },
+          "parameters": {
+            "description": "Comma-separated data parameters",
+            "type": "string"
+          },
+          "start": {
+            "description": "Start date (YYYYMMDD)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "parameters",
+          "community",
+          "longitude",
+          "latitude",
+          "start",
+          "end"
+        ],
+        "type": "object"
+      },
+      "name": "nasa_power"
+    },
+    {
+      "description": "Small-Body Database (SBDB) - asteroid and comet data",
+      "inputschema": {
+        "properties": {
+          "cad": {
+            "description": "Include close approach data",
+            "type": "boolean"
+          },
+          "sstr": {
+            "description": "Search string (e.g., asteroid name, number, or designation)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "sstr"
+        ],
+        "type": "object"
+      },
+      "name": "jpl_sbdb"
+    },
+    {
+      "description": "Fireball data - atmospheric impact events",
+      "inputschema": {
+        "properties": {
+          "date-max": {
+            "description": "End date (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "date-min": {
+            "description": "Start date (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "limit": {
+            "description": "Maximum number of results to return",
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "name": "jpl_fireball"
+    },
+    {
+      "description": "Julian Day number to/from calendar date/time converter",
+      "inputschema": {
+        "properties": {
+          "cd": {
+            "description": "Calendar date to convert to Julian date (YYYY-MM-DD or YYYY-MM-DDThh:mm:ss format)",
+            "type": "string"
+          },
+          "jd": {
+            "description": "Julian date to convert to calendar date",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "name": "jpl_jd_cal"
+    },
+    {
+      "description": "Human-accessible NEOs (Near-Earth Objects) data",
+      "inputschema": {
+        "properties": {
+          "des": {
+            "description": "Object designation (e.g., '2000 SG344' or '433')",
+            "type": "string"
+          },
+          "dur": {
+            "description": "Minimum total mission duration (days). Values: 60-450, default: 450",
+            "type": "number"
+          },
+          "dv": {
+            "description": "Minimum total delta-V (km/s). Values: 4-12, default: 12",
+            "type": "number"
+          },
+          "h": {
+            "description": "Object's maximum absolute magnitude (mag). Values: 16-30",
+            "type": "number"
+          },
+          "launch": {
+            "description": "Launch window (year range). Values: 2020-2025, 2025-2030, 2030-2035, 2035-2040, 2040-2045, 2020-2045, default: 2020-2045",
+            "type": "string"
+          },
+          "occ": {
+            "description": "Object's maximum orbit condition code. Values: 0-8",
+            "type": "number"
+          },
+          "plot": {
+            "description": "Include base-64 encoded plot image",
+            "type": "boolean"
+          },
+          "spk": {
+            "description": "Object SPK-ID (e.g., '2000433')",
+            "type": "string"
+          },
+          "stay": {
+            "description": "Minimum stay time (days). Values: 8, 16, 24, 32, default: 8",
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "name": "jpl_nhats"
+    },
+    {
+      "description": "Asteroid and comet close approaches to the planets in the past and future",
+      "inputschema": {
+        "properties": {
+          "body": {
+            "description": "Body to find close approaches to (e.g., Earth, Mars, ALL). Default: Earth",
+            "type": "string"
+          },
+          "date-max": {
+            "description": "End date for search (YYYY-MM-DD). Default: +60 days",
+            "type": "string"
+          },
+          "date-min": {
+            "description": "Start date for search (YYYY-MM-DD). Default: now",
+            "type": "string"
+          },
+          "des": {
+            "description": "Object designation (e.g., '2000 SG344' or '433')",
+            "type": "string"
+          },
+          "dist-max": {
+            "description": "Maximum approach distance (e.g., 0.05, 10LD). Default: 0.05 au",
+            "type": "string"
+          },
+          "dist-min": {
+            "description": "Minimum approach distance. Default: none",
+            "type": "string"
+          },
+          "fullname": {
+            "description": "Include full object name in result. Default: false",
+            "type": "boolean"
+          },
+          "neo": {
+            "description": "Limit to NEOs. Default: true",
+            "type": "boolean"
+          },
+          "sort": {
+            "description": "Sort field: date, dist, dist-min, v-inf, v-rel, h, object. Default: date",
+            "type": "string"
+          },
+          "spk": {
+            "description": "Object SPK-ID (e.g., '2000433')",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "name": "jpl_cad"
+    },
+    {
+      "description": "JPL Sentry - NEO Earth impact risk assessment data",
+      "inputschema": {
+        "properties": {
+          "all": {
+            "description": "Get all virtual impactors data",
+            "type": "boolean"
+          },
+          "date-max": {
+            "description": "End date (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "date-min": {
+            "description": "Start date (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "des": {
+            "description": "Object designation (e.g., '2011 AG5' or '29075')",
+            "type": "string"
+          },
+          "h-max": {
+            "description": "Maximum absolute magnitude (size filter)",
+            "type": "number"
+          },
+          "ip-min": {
+            "description": "Minimum impact probability",
+            "type": "string"
+          },
+          "limit": {
+            "description": "Maximum number of results to return",
+            "type": "number"
+          },
+          "ps-min": {
+            "description": "Minimum Palermo Scale value",
+            "type": "string"
+          },
+          "removed": {
+            "description": "Get objects removed from Sentry monitoring",
+            "type": "boolean"
+          },
+          "spk": {
+            "description": "Object SPK-ID",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "name": "jpl_sentry"
+    },
+    {
+      "description": "JPL Horizons - Solar system objects ephemeris data",
+      "inputschema": {
+        "properties": {
+          "CENTER": {
+            "description": "Coordinate center (e.g., '500@399' for Earth)",
+            "type": "string"
+          },
+          "COMMAND": {
+            "description": "Target object identifier (e.g., '499' for Mars, '1' for Ceres, 'C/2020 F3' for Comet NEOWISE)",
+            "type": "string"
+          },
+          "EPHEM_TYPE": {
+            "description": "Type of ephemeris (OBSERVER, VECTORS, ELEMENTS)",
+            "enum": [
+              "OBSERVER",
+              "VECTORS",
+              "ELEMENTS"
+            ],
+            "type": "string"
+          },
+          "MAKE_EPHEM": {
+            "description": "Generate ephemeris",
+            "enum": [
+              "YES",
+              "NO"
+            ],
+            "type": "string"
+          },
+          "OBJ_DATA": {
+            "description": "Include object data",
+            "enum": [
+              "YES",
+              "NO"
+            ],
+            "type": "string"
+          },
+          "OUT_UNITS": {
+            "description": "Output units for vector tables",
+            "enum": [
+              "KM-S",
+              "AU-D",
+              "KM-D"
+            ],
+            "type": "string"
+          },
+          "QUANTITIES": {
+            "description": "Observable quantities to include (e.g., 'A' for all, or '1,2,20,23' for specific ones)",
+            "type": "string"
+          },
+          "START_TIME": {
+            "description": "Start time for ephemeris (e.g., '2023-01-01')",
+            "type": "string"
+          },
+          "STEP_SIZE": {
+            "description": "Step size for ephemeris points (e.g., '1d' for daily, '1h' for hourly)",
+            "type": "string"
+          },
+          "STOP_TIME": {
+            "description": "Stop time for ephemeris (e.g., '2023-01-02')",
+            "type": "string"
+          },
+          "format": {
+            "description": "Response format (json, text)",
+            "enum": [
+              "json",
+              "text"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "COMMAND"
+        ],
+        "type": "object"
+      },
+      "name": "jpl_horizons"
+    },
+    {
+      "description": "JPL Horizons - Solar system objects ephemeris data (File Input)",
+      "inputschema": {
+        "properties": {
+          "CENTER": {
+            "description": "Coordinate center (e.g., '500@399' for Earth)",
+            "type": "string"
+          },
+          "COMMAND": {
+            "description": "Target object identifier (e.g., '499' for Mars, '1' for Ceres, 'C/2020 F3' for Comet NEOWISE)",
+            "type": "string"
+          },
+          "EPHEM_TYPE": {
+            "description": "Type of ephemeris (OBSERVER, VECTORS, ELEMENTS)",
+            "enum": [
+              "OBSERVER",
+              "VECTORS",
+              "ELEMENTS"
+            ],
+            "type": "string"
+          },
+          "MAKE_EPHEM": {
+            "description": "Generate ephemeris",
+            "enum": [
+              "YES",
+              "NO"
+            ],
+            "type": "string"
+          },
+          "OBJ_DATA": {
+            "description": "Include object data",
+            "enum": [
+              "YES",
+              "NO"
+            ],
+            "type": "string"
+          },
+          "OUT_UNITS": {
+            "description": "Output units for vector tables",
+            "enum": [
+              "KM-S",
+              "AU-D",
+              "KM-D"
+            ],
+            "type": "string"
+          },
+          "QUANTITIES": {
+            "description": "Observable quantities to include (e.g., 'A' for all, or '1,2,20,23' for specific ones)",
+            "type": "string"
+          },
+          "START_TIME": {
+            "description": "Start time for ephemeris (e.g., '2023-01-01')",
+            "type": "string"
+          },
+          "STEP_SIZE": {
+            "description": "Step size for ephemeris points (e.g., '1d' for daily, '1h' for hourly)",
+            "type": "string"
+          },
+          "STOP_TIME": {
+            "description": "Stop time for ephemeris (e.g., '2023-01-02')",
+            "type": "string"
+          },
+          "format": {
+            "description": "Response format (json, text)",
+            "enum": [
+              "json",
+              "text"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "COMMAND"
+        ],
+        "type": "object"
+      },
+      "name": "jpl_horizons_file"
+    },
+    {
+      "description": "JPL Three-Body Periodic Orbits Database",
+      "inputschema": {
+        "properties": {
+          "branch": {
+            "description": "Branch within family (N/S, E/W, etc., required for some families)",
+            "type": "string"
+          },
+          "family": {
+            "description": "Orbit family name (e.g., halo, dro, lyapunov)",
+            "type": "string"
+          },
+          "jacobimax": {
+            "description": "Maximum Jacobi constant",
+            "type": "number"
+          },
+          "jacobimin": {
+            "description": "Minimum Jacobi constant",
+            "type": "number"
+          },
+          "libr": {
+            "description": "Libration point (1-5, required for some families)",
+            "type": "integer"
+          },
+          "periodmax": {
+            "description": "Maximum period",
+            "type": "number"
+          },
+          "periodmin": {
+            "description": "Minimum period",
+            "type": "number"
+          },
+          "periodunits": {
+            "description": "Units for period (s, h, d, TU)",
+            "enum": [
+              "s",
+              "h",
+              "d",
+              "TU"
+            ],
+            "type": "string"
+          },
+          "stabmax": {
+            "description": "Maximum stability index",
+            "type": "number"
+          },
+          "stabmin": {
+            "description": "Minimum stability index",
+            "type": "number"
+          },
+          "sys": {
+            "description": "Three-body system (e.g., earth-moon, sun-earth)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "sys",
+          "family"
+        ],
+        "type": "object"
+      },
+      "name": "jpl_periodic_orbits"
+    },
+    {
+      "description": "NASA OSDR - Get data files for an OSD study",
+      "inputschema": {
+        "properties": {
+          "accession_number": {
+            "description": "OSD study accession number (e.g., '87')",
+            "type": "string"
+          }
+        },
+        "required": [
+          "accession_number"
+        ],
+        "type": "object"
+      },
+      "name": "nasa_osdr_files"
+    },
+    {
+      "description": "Scout - NEOCP orbits, ephemerides, and impact risk data",
+      "inputschema": {
+        "properties": {
+          "file": {
+            "description": "Type of data file to return (summary, ephem, obs, crit, all)",
+            "enum": [
+              "summary",
+              "ephem",
+              "obs",
+              "crit",
+              "all"
+            ],
+            "type": "string"
+          },
+          "limit": {
+            "description": "Limit number of results",
+            "type": "number"
+          },
+          "orbit_id": {
+            "description": "Scout internal orbit ID",
+            "type": "string"
+          },
+          "plot": {
+            "description": "Include plots in the response",
+            "type": "boolean"
+          },
+          "summary": {
+            "description": "Include summary data in the response",
+            "type": "boolean"
+          },
+          "tdes": {
+            "description": "Object temporary designation (e.g., P21Eolo)",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "name": "jpl_scout"
+    }
+  ],
+  "version_detail": {
+    "version": "1.0.11"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/ProgramComputer/servers/NASA-MCP-server/versions",
+  "xid": "/mcpproviders/ProgramComputer/servers/NASA-MCP-server"
+}

@@ -1,0 +1,48 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:08:42.366227598Z",
+  "description": "Golang-based MCP server connecting to Kubernetes. Provides listing and retrieval of Kubernetes contexts, namespaces, resources, nodes, pods, events, pod logs, and running commands in pods.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/strowk/servers/mcp-k8s-go/meta",
+  "modifiedat": "2025-05-07T20:08:42.366227598Z",
+  "name": "io.github.strowk/mcp-k8s-go",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "container",
+      "package_name": "unspecified"
+    },
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "@strowk/mcp-k8s"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@strowk/mcp-k8s"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "strowk/mcp-k8s-go",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/strowk/servers/mcp-k8s-go",
+  "serverid": "mcp-k8s-go",
+  "tools": [],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/strowk/servers/mcp-k8s-go/versions",
+  "xid": "/mcpproviders/strowk/servers/mcp-k8s-go"
+}

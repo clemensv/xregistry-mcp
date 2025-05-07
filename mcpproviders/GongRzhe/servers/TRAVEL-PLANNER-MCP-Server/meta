@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:16:02.077529253Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/TRAVEL-PLANNER-MCP-Server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:16:02.077529253Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/TRAVEL-PLANNER-MCP-Server/meta",
+  "serverid": "TRAVEL-PLANNER-MCP-Server",
+  "xid": "/mcpproviders/GongRzhe/servers/TRAVEL-PLANNER-MCP-Server/meta"
+}

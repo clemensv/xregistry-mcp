@@ -1,0 +1,78 @@
+{
+  "world_bank_mcp_server": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:07:40.491793266Z",
+    "description": "A Model Context Protocol (MCP) server that enables interaction with the open World Bank data API. This server allows AI assistants to list indicators and analyse those indicators for the countries that are available with the World Bank.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/anshumax/servers/world_bank_mcp_server/meta",
+    "modifiedat": "2025-05-07T20:07:40.491793266Z",
+    "name": "io.github.anshumax/world_bank_mcp_server",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [
+            "--directory",
+            "path/to/world_bank_mcp_server",
+            "run",
+            "world_bank_mcp_server"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@anshumax/world_bank_mcp_server"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "anshumax/world_bank_mcp_server",
+    "resources": [
+      {
+        "description": "List of countries in the World Bank database",
+        "mimetype": "application/json",
+        "name": "Countries list",
+        "uritemplate": "https://api.worldbank.org/v2/country?format=json\u0026per_page=1000"
+      },
+      {
+        "description": "List of indicators in the World Bank database",
+        "mimetype": "application/json",
+        "name": "Indicators list",
+        "uritemplate": "https://api.worldbank.org/v2/indicator?format=json\u0026per_page=50000"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/anshumax/servers/world_bank_mcp_server",
+    "serverid": "world_bank_mcp_server",
+    "tools": [
+      {
+        "description": "Get values for an indicator for a specific country from the World Bank API",
+        "inputschema": {
+          "properties": {
+            "country_id": {
+              "description": "The ID of the country for which the indicator is to be queried",
+              "type": "string"
+            },
+            "indicator_id": {
+              "description": "The ID of the indicator to be queried",
+              "type": "string"
+            }
+          },
+          "required": [
+            "country_id",
+            "indicator_id"
+          ],
+          "type": "object"
+        },
+        "name": "get_indicator_for_country"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/anshumax/servers/world_bank_mcp_server/versions",
+    "xid": "/mcpproviders/anshumax/servers/world_bank_mcp_server"
+  }
+}

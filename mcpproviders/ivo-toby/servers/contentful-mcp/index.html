@@ -1,0 +1,275 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:46.117271769Z",
+  "description": "An MCP server implementation that integrates with Contentful's Content Management API, providing comprehensive content management capabilities.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/ivo-toby/servers/contentful-mcp/meta",
+  "modifiedat": "2025-05-07T20:07:46.117271769Z",
+  "name": "io.github.ivo-toby/contentful-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Contentful Space ID",
+            "name": "SPACE_ID",
+            "require": true
+          },
+          {
+            "descrip": "Contentful Environment ID",
+            "name": "ENVIRONMENT_ID",
+            "require": false
+          },
+          {
+            "descrip": "Contentful API host",
+            "name": "CONTENTFUL_HOST",
+            "require": false
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@ivotoby/contentful-management-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "ivo-toby/contentful-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/ivo-toby/servers/contentful-mcp",
+  "serverid": "contentful-mcp",
+  "tools": [
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_entry"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_entry"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "update_entry"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "delete_entry"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "publish_entry"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "unpublish_entry"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "search_entries"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "bulk_publish"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "bulk_unpublish"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "bulk_validate"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "upload_asset"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_asset"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "update_asset"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "delete_asset"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "publish_asset"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "unpublish_asset"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_assets"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_spaces"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_space"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_environments"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_environment"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "delete_environment"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_content_types"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_content_type"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_content_type"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "update_content_type"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "delete_content_type"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "publish_content_type"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_ai_actions"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_ai_action"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_ai_action"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "update_ai_action"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "delete_ai_action"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "publish_ai_action"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "unpublish_ai_action"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "invoke_ai_action"
+    },
+    {
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_ai_action_invocation"
+    }
+  ],
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/ivo-toby/servers/contentful-mcp/versions",
+  "xid": "/mcpproviders/ivo-toby/servers/contentful-mcp"
+}

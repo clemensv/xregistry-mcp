@@ -1,0 +1,91 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:43.751051366Z",
+  "description": "A Model Context Protocol (MCP) implementation that enables secure interaction with MySQL databases. This server component facilitates communication between AI applications (hosts/clients) and MySQL databases, making database exploration and analysis safer and more structured through a controlled interface.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/designcomputer/servers/mysql_mcp_server/meta",
+  "modifiedat": "2025-05-07T20:07:43.751051366Z",
+  "name": "io.github.designcomputer/mysql_mcp_server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Database host",
+            "name": "MYSQL_HOST",
+            "require": true
+          },
+          {
+            "descrip": "Database port",
+            "name": "MYSQL_PORT",
+            "require": false
+          },
+          {
+            "descrip": "Database user",
+            "name": "MYSQL_USER",
+            "require": true
+          },
+          {
+            "descrip": "Database password",
+            "name": "MYSQL_PASSWORD",
+            "require": true
+          },
+          {
+            "descrip": "Database name",
+            "name": "MYSQL_DATABASE",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "--directory",
+          "path/to/mysql_mcp_server",
+          "run",
+          "mysql_mcp_server"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "mysql-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "designcomputer/mysql_mcp_server",
+  "resources": [
+    {
+      "description": "Data in table: {table}",
+      "mimetype": "text/plain",
+      "name": "Table",
+      "uritemplate": "mysql://{table}/data"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/designcomputer/servers/mysql_mcp_server",
+  "serverid": "mysql_mcp_server",
+  "tools": [
+    {
+      "description": "Execute an SQL query on the MySQL server",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "The SQL query to execute",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "execute_sql"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/designcomputer/servers/mysql_mcp_server/versions",
+  "xid": "/mcpproviders/designcomputer/servers/mysql_mcp_server"
+}

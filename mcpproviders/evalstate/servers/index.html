@@ -1,0 +1,135 @@
+{
+  "mcp-hfspace": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:08:01.262810166Z",
+    "description": "Connect to Hugging Face Spaces with minimal setup needed - simply add your spaces and go! Provides Image Generation capabilities to Claude Desktop.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/evalstate/servers/mcp-hfspace/meta",
+    "modifiedat": "2025-05-07T20:08:01.262810166Z",
+    "name": "io.github.evalstate/mcp-hfspace",
+    "prompts": [
+      {
+        "arguments": [],
+        "description": "List of available resources.",
+        "name": "Available Resources"
+      },
+      {
+        "arguments": [],
+        "description": "Prompt template from endpoint FLUX.1-schnell",
+        "name": "FLUX.1-schnell"
+      },
+      {
+        "arguments": [],
+        "description": "Prompt template from endpoint shuttleai/shuttle-jaguar",
+        "name": "shuttleai/shuttle-jaguar"
+      },
+      {
+        "arguments": [],
+        "description": "Prompt template from endpoint styletts2/styletts2",
+        "name": "styletts2/styletts2"
+      },
+      {
+        "arguments": [],
+        "description": "Prompt template from endpoint Qwen/QVQ-72B-preview",
+        "name": "Qwen/QVQ-72B-preview"
+      }
+    ],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Working directory for file upload/download",
+              "name": "MCP_HF_WORK_DIR",
+              "require": false
+            },
+            {
+              "descrip": "Hugging Face Token for private spaces",
+              "name": "HF_TOKEN",
+              "require": false
+            }
+          ],
+          "positional_arguments": [
+            "-y",
+            "@llmindset/mcp-hfspace"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@llmindset/mcp-hfspace"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "evalstate/mcp-hfspace",
+    "resources": [
+      {
+        "description": "List of available files and resources in the working directory.",
+        "mimetype": "text/markdown",
+        "name": "available-files",
+        "uritemplate": "resource://mcp-hfspace/available-files"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/evalstate/servers/mcp-hfspace",
+    "serverid": "mcp-hfspace",
+    "tools": [
+      {
+        "description": "A list of available file and resources. If the User requests things like 'most recent image' or 'the audio' use this tool to identify the intended resource. This tool returns 'resource uri', 'name', 'size', 'last modified'  and 'mime type' in a markdown table",
+        "inputschema": {
+          "properties": {},
+          "type": "object"
+        },
+        "name": "available-files"
+      },
+      {
+        "description": "Use semantic search to find an endpoint on the `Hugging Face Spaces` service. The search term will usually be 3-7 words describing a task or activity the Person is trying to accomplish. The results are returned in a markdown table. Present all results to the Person. Await specific guidance from the Person before making further Tool calls.",
+        "inputschema": {
+          "properties": {
+            "query": {
+              "description": "The semantic search term to use.",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": "search-spaces"
+      },
+      {
+        "description": "Endpoint tool loaded from Hugging Face Space",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "FLUX.1-schnell"
+      },
+      {
+        "description": "Endpoint tool loaded from Hugging Face Space",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "shuttleai/shuttle-jaguar"
+      },
+      {
+        "description": "Endpoint tool loaded from Hugging Face Space",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "styletts2/styletts2"
+      },
+      {
+        "description": "Endpoint tool loaded from Hugging Face Space",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "Qwen/QVQ-72B-preview"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/evalstate/servers/mcp-hfspace/versions",
+    "xid": "/mcpproviders/evalstate/servers/mcp-hfspace"
+  }
+}

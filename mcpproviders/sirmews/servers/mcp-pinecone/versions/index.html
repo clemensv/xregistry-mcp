@@ -1,0 +1,192 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:08:25.835515006Z",
+    "description": "Pinecone Model Context Protocol Server for Claude Desktop. Implements reading and writing to a Pinecone index with tools for semantic search, document processing, and stats.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:08:25.835515006Z",
+    "name": "io.github.sirmews/mcp-pinecone",
+    "prompts": [
+      {
+        "arguments": [
+          {
+            "description": "The question to answer, or the context to search for",
+            "name": "query",
+            "required": true
+          }
+        ],
+        "description": "Search Pinecone index and construct an answer based on relevant pinecone documents",
+        "name": "pinecone-query"
+      },
+      {
+        "arguments": [
+          {
+            "description": "The content to store as a Pinecone document",
+            "name": "content",
+            "required": true
+          },
+          {
+            "description": "The namespace to store the document in",
+            "name": "namespace",
+            "required": false
+          }
+        ],
+        "description": "Store content as document in Pinecone",
+        "name": "pinecone-store"
+      }
+    ],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [
+            "--directory",
+            "{project_dir}",
+            "run",
+            "mcp-pinecone"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "mcp-pinecone"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "sirmews/mcp-pinecone",
+    "resources": [
+      {
+        "description": "Vector resource identified by vector ID in Pinecone index",
+        "mimetype": "text/plain",
+        "name": "Pinecone Vector",
+        "uritemplate": "pinecone://vectors/{id}"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/sirmews/servers/mcp-pinecone/versions/1",
+    "serverid": "mcp-pinecone",
+    "tools": [
+      {
+        "description": "Search pinecone for documents",
+        "inputschema": {
+          "properties": {
+            "category": {
+              "type": "string"
+            },
+            "date_range": {
+              "properties": {
+                "end": {
+                  "format": "date",
+                  "type": "string"
+                },
+                "start": {
+                  "form": "date",
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "namespace": {
+              "description": "Optional namespace to search in",
+              "type": "string"
+            },
+            "query": {
+              "type": "string"
+            },
+            "tags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "top_k": {
+              "default": 10,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "semantic-search"
+      },
+      {
+        "description": "Read a document from pinecone",
+        "inputschema": {
+          "properties": {
+            "document_id": {
+              "type": "string"
+            },
+            "namespace": {
+              "description": "Optional namespace to read from",
+              "type": "string"
+            }
+          },
+          "required": [
+            "document_id"
+          ],
+          "type": "object"
+        },
+        "name": "read-document"
+      },
+      {
+        "description": "Process a document. This will optionally chunk, then embed, and upsert the document into pinecone.",
+        "inputschema": {
+          "properties": {
+            "document_id": {
+              "type": "string"
+            },
+            "metadata": {
+              "type": "object"
+            },
+            "namespace": {
+              "description": "Optional namespace to store the document in",
+              "type": "string"
+            },
+            "text": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "document_id",
+            "text",
+            "metadata"
+          ],
+          "type": "object"
+        },
+        "name": "process-document"
+      },
+      {
+        "description": "List all documents in the knowledge base by namespace",
+        "inputschema": {
+          "properties": {
+            "namespace": {
+              "description": "Namespace to list documents in",
+              "type": "string"
+            }
+          },
+          "required": [
+            "namespace"
+          ],
+          "type": "object"
+        },
+        "name": "list-documents"
+      },
+      {
+        "description": "Get stats about the Pinecone index specified in this server",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "pinecone-stats"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/sirmews/servers/mcp-pinecone/versions/1"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:46.477400384Z",
+  "description": "A Model Context Protocol (MCP) server that enables secure interaction with OceanBase databases.",
+  "documentation": "doc/oceanbase_mcp_server.md",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:07:46.477400384Z",
+  "name": "io.github.oceanbase/mcp-oceanbase",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "OceanBase database host",
+            "name": "OB_HOST",
+            "require": false
+          },
+          {
+            "descrip": "OceanBase database port",
+            "name": "OB_PORT",
+            "require": false
+          },
+          {
+            "descrip": "OceanBase database user",
+            "name": "OB_USER",
+            "require": true
+          },
+          {
+            "descrip": "OceanBase database password",
+            "name": "OB_PASSWORD",
+            "require": true
+          },
+          {
+            "descrip": "OceanBase database name",
+            "name": "OB_DATABASE",
+            "require": true
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "python",
+      "package_name": "mcp-oceanbase"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "oceanbase/mcp-oceanbase",
+  "resources": [
+    {
+      "description": "Data in table: {table}",
+      "mimetype": "text/plain",
+      "name": "Table",
+      "uritemplate": "oceanbase://{table}/data"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/oceanbase/servers/mcp-oceanbase/versions/1",
+  "serverid": "mcp-oceanbase",
+  "tools": [
+    {
+      "description": "Execute a SQL query on the OceanBase server",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "The SQL query to execute",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "execute_sql"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/oceanbase/servers/mcp-oceanbase/versions/1"
+}

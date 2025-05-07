@@ -1,0 +1,287 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:09:33.756984705Z",
+  "description": "MCP server implementation for Kibela API integration, enabling LLMs to interact with Kibela content.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:09:33.756984705Z",
+  "name": "io.github.kiwamizamurai/mcp-kibela-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Your Kibela team name",
+            "name": "KIBELA_TEAM",
+            "require": true
+          },
+          {
+            "descrip": "Your Kibela API token",
+            "name": "KIBELA_TOKEN",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "run",
+          "-i",
+          "--rm",
+          "-e",
+          "KIBELA_TEAM",
+          "-e",
+          "KIBELA_TOKEN",
+          "ghcr.io/kiwamizamurai/mcp-kibela-server:latest"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "container",
+      "package_name": "ghcr.io/kiwamizamurai/mcp-kibela-server:latest"
+    },
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Your Kibela team name",
+            "name": "KIBELA_TEAM",
+            "require": true
+          },
+          {
+            "descrip": "Your Kibela API token",
+            "name": "KIBELA_TOKEN",
+            "require": true
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@kiwamizamurai/mcp-kibela-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "kiwamizamurai/mcp-kibela-server",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/kiwamizamurai/servers/mcp-kibela-server/versions/1",
+  "serverid": "mcp-kibela-server",
+  "tools": [
+    {
+      "description": "Search Kibela notes with given query",
+      "inputschema": {
+        "properties": {
+          "coediting": {
+            "description": "Filter by co-editing status",
+            "type": "boolean"
+          },
+          "folderIds": {
+            "description": "Filter by folder IDs",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "isArchived": {
+            "description": "Filter by archive status",
+            "type": "boolean"
+          },
+          "query": {
+            "description": "Search query",
+            "type": "string"
+          },
+          "sortBy": {
+            "description": "Sort by (RELEVANT, CONTENT_UPDATED_AT)",
+            "type": "string"
+          },
+          "userIds": {
+            "description": "Filter by user IDs",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "kibela_search_notes"
+    },
+    {
+      "description": "Get your latest notes from Kibela",
+      "inputschema": {
+        "properties": {
+          "limit": {
+            "default": 15,
+            "description": "Number of notes to fetch (max 50)",
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "name": "kibela_get_my_notes"
+    },
+    {
+      "description": "Get content and comments of a specific note",
+      "inputschema": {
+        "properties": {
+          "id": {
+            "description": "Note ID",
+            "type": "string"
+          },
+          "include_image_data": {
+            "default": false,
+            "description": "Whether to include image data URLs in the response",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "name": "kibela_get_note_content"
+    },
+    {
+      "description": "Get list of accessible groups",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "kibela_get_groups"
+    },
+    {
+      "description": "Get folders in a group",
+      "inputschema": {
+        "properties": {
+          "groupId": {
+            "description": "Group ID",
+            "type": "string"
+          },
+          "parentFolderId": {
+            "description": "Parent folder ID",
+            "type": "string"
+          }
+        },
+        "required": [
+          "groupId"
+        ],
+        "type": "object"
+      },
+      "name": "kibela_get_group_folders"
+    },
+    {
+      "description": "Get notes in a group that are not attached to any folder",
+      "inputschema": {
+        "properties": {
+          "groupId": {
+            "description": "Group ID",
+            "type": "string"
+          }
+        },
+        "required": [
+          "groupId"
+        ],
+        "type": "object"
+      },
+      "name": "kibela_get_group_notes"
+    },
+    {
+      "description": "Get notes in a folder",
+      "inputschema": {
+        "properties": {
+          "folderId": {
+            "description": "Folder ID",
+            "type": "string"
+          }
+        },
+        "required": [
+          "folderId"
+        ],
+        "type": "object"
+      },
+      "name": "kibela_get_folder_notes"
+    },
+    {
+      "description": "Get list of users",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "kibela_get_users"
+    },
+    {
+      "description": "Like a note",
+      "inputschema": {
+        "properties": {
+          "noteId": {
+            "description": "Note ID",
+            "type": "string"
+          }
+        },
+        "required": [
+          "noteId"
+        ],
+        "type": "object"
+      },
+      "name": "kibela_like_note"
+    },
+    {
+      "description": "Unlike a note",
+      "inputschema": {
+        "properties": {
+          "noteId": {
+            "description": "Note ID",
+            "type": "string"
+          }
+        },
+        "required": [
+          "noteId"
+        ],
+        "type": "object"
+      },
+      "name": "kibela_unlike_note"
+    },
+    {
+      "description": "Get your recently viewed notes",
+      "inputschema": {
+        "properties": {
+          "limit": {
+            "default": 15,
+            "description": "Number of notes to fetch (max 15)",
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "name": "kibela_get_recently_viewed_notes"
+    },
+    {
+      "description": "Get note content by its URL",
+      "inputschema": {
+        "properties": {
+          "include_image_data": {
+            "default": false,
+            "description": "Whether to include image data URLs in the response",
+            "type": "boolean"
+          },
+          "path": {
+            "description": "Note path (e.g. 'https://${process.env.KIBELA_TEAM}.kibe.la/notes/5154')",
+            "type": "string"
+          }
+        },
+        "required": [
+          "path"
+        ],
+        "type": "object"
+      },
+      "name": "kibela_get_note_from_path"
+    }
+  ],
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/kiwamizamurai/servers/mcp-kibela-server/versions/1"
+}

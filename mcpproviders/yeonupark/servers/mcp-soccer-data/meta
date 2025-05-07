@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:14:07.311080994Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/yeonupark/servers/mcp-soccer-data/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:14:07.311080994Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/yeonupark/servers/mcp-soccer-data/meta",
+  "serverid": "mcp-soccer-data",
+  "xid": "/mcpproviders/yeonupark/servers/mcp-soccer-data/meta"
+}

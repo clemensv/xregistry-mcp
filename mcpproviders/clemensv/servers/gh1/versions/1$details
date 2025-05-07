@@ -1,0 +1,49 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:13:07.480658735Z",
+  "description": "GitHub integration MCP server providing tooling and resource discovery via GitHub APIs",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:13:07.480658735Z",
+  "name": "io.github.clemensv/mcp-servers",
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Port to run the server on",
+            "name": "PORT",
+            "require": false
+          },
+          {
+            "descrip": "Personal access token or GitHub App token for API access",
+            "name": "GITHUB_TOKEN",
+            "require": true
+          }
+        ],
+        "sub_commands": [
+          {
+            "description": "Start the GitHub MCP server",
+            "name": "start"
+          }
+        ]
+      },
+      "license": "MIT",
+      "name": "npm",
+      "package_name": "mcp-github-server"
+    }
+  ],
+  "remotes": [
+    {
+      "transporttype": "http",
+      "url": "https://api.github.com"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/clemensv/servers/gh1/versions/1",
+  "serverid": "gh1",
+  "version_detail": {
+    "version": "1.0.2"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/clemensv/servers/gh1/versions/1"
+}

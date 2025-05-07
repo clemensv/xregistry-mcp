@@ -1,0 +1,96 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:08:33.656879291Z",
+    "description": "A Model Context Protocol (MCP) server for Aiven providing access to Aiven services such as PostgreSQL, Kafka, ClickHouse, Valkey and OpenSearch, enabling LLMs to build full stack solutions.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:08:33.656879291Z",
+    "name": "io.github.Aiven-Open/mcp-aiven",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "The Aiven API url",
+              "name": "AIVEN_BASE_URL",
+              "require": true
+            },
+            {
+              "descrip": "The authentication token",
+              "name": "AIVEN_TOKEN",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "dev",
+            "mcp_aiven/mcp_server.py"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "python",
+        "package_name": "mcp-aiven"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "Aiven-Open/mcp-aiven",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/Aiven-Open/servers/mcp-aiven/versions/1",
+    "serverid": "mcp-aiven",
+    "tools": [
+      {
+        "description": "List all projects on your Aiven account.",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "list_projects"
+      },
+      {
+        "description": "List all services in a specific Aiven project.",
+        "inputschema": {
+          "properties": {
+            "project_name": {
+              "description": "Name of the Aiven project to list services for.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "project_name"
+          ],
+          "type": "object"
+        },
+        "name": "list_services"
+      },
+      {
+        "description": "Get the detail of your service in a specific Aiven project.",
+        "inputschema": {
+          "properties": {
+            "project_name": {
+              "description": "Name of the Aiven project.",
+              "type": "string"
+            },
+            "service_name": {
+              "description": "Name of the service within the project.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "project_name",
+            "service_name"
+          ],
+          "type": "object"
+        },
+        "name": "get_service_details"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/Aiven-Open/servers/mcp-aiven/versions/1"
+  }
+}

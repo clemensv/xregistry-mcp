@@ -1,0 +1,160 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:08:27.668069085Z",
+    "description": "A Model Context Protocol (MCP) server implementation that provides vector database capabilities through Chroma. This server enables semantic document search, metadata filtering, and document management with persistent storage.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:08:27.668069085Z",
+    "name": "io.github.privetin/chroma",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [
+            "--directory",
+            "C:/MCP/server/community/chroma",
+            "run",
+            "chroma"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "uv"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "privetin/chroma",
+    "resources": [
+      {
+        "description": "Stores documents with content and metadata",
+        "name": "documents",
+        "uritemplate": "/documents/{document_id}"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/privetin/servers/chroma/versions/1",
+    "serverid": "chroma",
+    "tools": [
+      {
+        "description": "Create a new document",
+        "inputschema": {
+          "properties": {
+            "content": {
+              "type": "string"
+            },
+            "document_id": {
+              "type": "string"
+            },
+            "metadata": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "document_id",
+            "content"
+          ],
+          "type": "object"
+        },
+        "name": "create_document"
+      },
+      {
+        "description": "Retrieve a document by ID",
+        "inputschema": {
+          "properties": {
+            "document_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "document_id"
+          ],
+          "type": "object"
+        },
+        "name": "read_document"
+      },
+      {
+        "description": "Update an existing document",
+        "inputschema": {
+          "properties": {
+            "content": {
+              "type": "string"
+            },
+            "document_id": {
+              "type": "string"
+            },
+            "metadata": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "document_id",
+            "content"
+          ],
+          "type": "object"
+        },
+        "name": "update_document"
+      },
+      {
+        "description": "Remove a document",
+        "inputschema": {
+          "properties": {
+            "document_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "document_id"
+          ],
+          "type": "object"
+        },
+        "name": "delete_document"
+      },
+      {
+        "description": "List all documents",
+        "inputschema": {
+          "properties": {
+            "limit": {
+              "type": "integer"
+            },
+            "offset": {
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        },
+        "name": "list_documents"
+      },
+      {
+        "description": "Find semantically similar documents",
+        "inputschema": {
+          "properties": {
+            "content_filter": {
+              "type": "string"
+            },
+            "metadata_filter": {
+              "type": "object"
+            },
+            "num_results": {
+              "type": "integer"
+            },
+            "query": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search_similar"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/privetin/servers/chroma/versions/1"
+  }
+}

@@ -1,0 +1,352 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:08:20.929720043Z",
+  "description": "This server provides data retrieval capabilities powered by Chroma, enabling AI models to create collections over generated data and user inputs, and retrieve that data using vector search, full text search, metadata filtering, and more.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/chroma-core/servers/chroma-mcp/meta",
+  "modifiedat": "2025-05-07T20:08:20.929720043Z",
+  "name": "io.github.chroma-core/chroma-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Type of Chroma client to use (ephemeral, persistent, http, cloud)",
+            "name": "CHROMA_CLIENT_TYPE",
+            "require": false
+          }
+        ],
+        "positional_arguments": [
+          "--client-type",
+          "ephemeral"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@chroma-core/chroma-mcp"
+    }
+  ],
+  "remotes": [
+    {
+      "transporttype": "http",
+      "url": "http://localhost:8000"
+    }
+  ],
+  "repo_ref": "chroma-core/chroma-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/chroma-core/servers/chroma-mcp",
+  "serverid": "chroma-mcp",
+  "tools": [
+    {
+      "description": "List all collections with pagination support",
+      "inputschema": {
+        "properties": {
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "offset": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        },
+        "type": "object"
+      },
+      "name": "chroma_list_collections"
+    },
+    {
+      "description": "Create a new collection with optional HNSW configuration",
+      "inputschema": {
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "ef_construction": {
+            "type": "integer"
+          },
+          "ef_search": {
+            "type": "integer"
+          },
+          "max_neighbors": {
+            "type": "integer"
+          },
+          "space": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection_name"
+        ],
+        "type": "object"
+      },
+      "name": "chroma_create_collection"
+    },
+    {
+      "description": "View a sample of documents in a collection",
+      "inputschema": {
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "collection_name"
+        ],
+        "type": "object"
+      },
+      "name": "chroma_peek_collection"
+    },
+    {
+      "description": "Get detailed information about a collection",
+      "inputschema": {
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection_name"
+        ],
+        "type": "object"
+      },
+      "name": "chroma_get_collection_info"
+    },
+    {
+      "description": "Get the number of documents in a collection",
+      "inputschema": {
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection_name"
+        ],
+        "type": "object"
+      },
+      "name": "chroma_get_collection_count"
+    },
+    {
+      "description": "Update a collection's name or metadata",
+      "inputschema": {
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "new_metadata": {
+            "type": "object"
+          },
+          "new_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection_name"
+        ],
+        "type": "object"
+      },
+      "name": "chroma_modify_collection"
+    },
+    {
+      "description": "Delete a collection",
+      "inputschema": {
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "collection_name"
+        ],
+        "type": "object"
+      },
+      "name": "chroma_delete_collection"
+    },
+    {
+      "description": "Add documents with optional metadata and custom IDs",
+      "inputschema": {
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "documents": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "metadatas": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "collection_name",
+          "documents"
+        ],
+        "type": "object"
+      },
+      "name": "chroma_add_documents"
+    },
+    {
+      "description": "Query documents using semantic search with advanced filtering",
+      "inputschema": {
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "include": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "n_results": {
+            "type": "integer"
+          },
+          "query_texts": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "where": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "collection_name",
+          "query_texts"
+        ],
+        "type": "object"
+      },
+      "name": "chroma_query_documents"
+    },
+    {
+      "description": "Retrieve documents by IDs or filters with pagination",
+      "inputschema": {
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "include": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "integer"
+          },
+          "where": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "collection_name"
+        ],
+        "type": "object"
+      },
+      "name": "chroma_get_documents"
+    },
+    {
+      "description": "Update existing documents' content, metadata, or embeddings",
+      "inputschema": {
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "documents": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "embeddings": {
+            "items": {
+              "items": {
+                "type": "number"
+              },
+              "type": "array"
+            },
+            "type": "array"
+          },
+          "ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "metadatas": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "collection_name",
+          "ids"
+        ],
+        "type": "object"
+      },
+      "name": "chroma_update_documents"
+    },
+    {
+      "description": "Delete specific documents from a collection",
+      "inputschema": {
+        "properties": {
+          "collection_name": {
+            "type": "string"
+          },
+          "ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "collection_name",
+          "ids"
+        ],
+        "type": "object"
+      },
+      "name": "chroma_delete_documents"
+    }
+  ],
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/chroma-core/servers/chroma-mcp/versions",
+  "xid": "/mcpproviders/chroma-core/servers/chroma-mcp"
+}

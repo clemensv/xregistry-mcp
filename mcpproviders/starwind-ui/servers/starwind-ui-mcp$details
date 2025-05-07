@@ -1,0 +1,81 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:13:41.860038159Z",
+  "description": "A TypeScript implementation of a Model Context Protocol (MCP) server for Starwind UI, providing tools to help developers work with Starwind UI components.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/starwind-ui/servers/starwind-ui-mcp/meta",
+  "modifiedat": "2025-05-07T20:13:41.860038159Z",
+  "name": "io.github.starwind-ui/starwind-ui-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "dist/server.js"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "starwind-ui/starwind-ui-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/starwind-ui/servers/starwind-ui-mcp",
+  "serverid": "starwind-ui-mcp",
+  "tools": [
+    {
+      "description": "Initializes a new Starwind UI project",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "init_project"
+    },
+    {
+      "description": "Generates installation commands for Starwind UI components",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "install_component"
+    },
+    {
+      "description": "Generates update commands for Starwind UI components",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "update_component"
+    },
+    {
+      "description": "Returns documentation links for Starwind UI components and guides",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_documentation"
+    },
+    {
+      "description": "Fetches LLM data from starwind.dev (rate limited, with caching)",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "fetch_llm_data"
+    },
+    {
+      "description": "Detects and returns the current package manager information",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_package_manager"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/starwind-ui/servers/starwind-ui-mcp/versions",
+  "xid": "/mcpproviders/starwind-ui/servers/starwind-ui-mcp"
+}

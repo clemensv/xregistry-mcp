@@ -1,0 +1,58 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:08:17.727011527Z",
+  "description": "A Model Context Protocol (MCP) server implementation that provides running generated python code to query any AWS resources through boto3.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/baryhuang/servers/mcp-server-aws-resources-python/meta",
+  "modifiedat": "2025-05-07T20:08:17.727011527Z",
+  "name": "io.github.baryhuang/mcp-server-aws-resources-python",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "container",
+      "package_name": "buryhuang/mcp-server-aws-resources"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "baryhuang/mcp-server-aws-resources-python",
+  "resources": [
+    {
+      "description": "A dynamic resource that provides access to AWS resources through boto3 queries",
+      "name": "aws://query_resources"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/baryhuang/servers/mcp-server-aws-resources-python",
+  "serverid": "mcp-server-aws-resources-python",
+  "tools": [
+    {
+      "description": "Execute a boto3 code snippet to query or modify AWS resources",
+      "inputschema": {
+        "properties": {
+          "code_snippet": {
+            "description": "Python code using boto3 to query AWS resources",
+            "type": "string"
+          }
+        },
+        "required": [
+          "code_snippet"
+        ],
+        "type": "object"
+      },
+      "name": "aws_resources_query_or_modify"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/baryhuang/servers/mcp-server-aws-resources-python/versions",
+  "xid": "/mcpproviders/baryhuang/servers/mcp-server-aws-resources-python"
+}

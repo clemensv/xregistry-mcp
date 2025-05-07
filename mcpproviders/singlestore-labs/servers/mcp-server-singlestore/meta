@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:13:56.246078295Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/singlestore-labs/servers/mcp-server-singlestore/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:13:56.246078295Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/singlestore-labs/servers/mcp-server-singlestore/meta",
+  "serverid": "mcp-server-singlestore",
+  "xid": "/mcpproviders/singlestore-labs/servers/mcp-server-singlestore/meta"
+}

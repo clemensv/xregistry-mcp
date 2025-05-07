@@ -1,0 +1,286 @@
+{
+  "holaspirit-mcp-server": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:11:30.779241622Z",
+    "description": "A MCP(Model Context Protocol) server that accesses to Holaspirit API. This server provides MCP-compatible access to Holaspirit's API, allowing AI assistants to interact with your Holaspirit data through a standardized interface.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/syucream/servers/holaspirit-mcp-server/meta",
+    "modifiedat": "2025-05-07T20:11:30.779241622Z",
+    "name": "io.github.syucream/holaspirit-mcp-server",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Your Holaspirit API token",
+              "name": "HOLASPIRIT_API_TOKEN",
+              "require": true
+            },
+            {
+              "descrip": "Your Holaspirit organization ID",
+              "name": "HOLASPIRIT_ORGANIZATION_ID",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "-y",
+            "holaspirit-mcp-server"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "holaspirit-mcp-server"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "syucream/holaspirit-mcp-server",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/syucream/servers/holaspirit-mcp-server",
+    "serverid": "holaspirit-mcp-server",
+    "tools": [
+      {
+        "description": "List all tasks in the organization",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "holaspirit_list_tasks"
+      },
+      {
+        "description": "List all metrics in the organization",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "holaspirit_list_metrics"
+      },
+      {
+        "description": "List all circles in the organization",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "holaspirit_list_circles"
+      },
+      {
+        "description": "Get details of a specific circle",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "holaspirit_get_circle"
+      },
+      {
+        "description": "List all roles in the organization",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "holaspirit_list_roles"
+      },
+      {
+        "description": "Get details of a specific role",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "holaspirit_get_role"
+      },
+      {
+        "description": "List all domains in the organization",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "holaspirit_list_domains"
+      },
+      {
+        "description": "List all policies in the organization",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "holaspirit_list_policies"
+      },
+      {
+        "description": "List all meetings in the organization",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "holaspirit_list_meetings"
+      },
+      {
+        "description": "Get details of a specific meeting",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "holaspirit_get_meeting"
+      },
+      {
+        "description": "Get member feed",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "holaspirit_get_member_feed"
+      },
+      {
+        "description": "Get tensions for a meeting or meetings",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "holaspirit_get_tensions"
+      },
+      {
+        "description": "Search for a member by email",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "holaspirit_search_member"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.1"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/syucream/servers/holaspirit-mcp-server/versions",
+    "xid": "/mcpproviders/syucream/servers/holaspirit-mcp-server"
+  },
+  "lightdash-mcp-server": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:11:33.427347102Z",
+    "description": "A MCP(Model Context Protocol) server that accesses to Lightdash. This server provides MCP-compatible access to Lightdash's API, allowing AI assistants to interact with your Lightdash data through a standardized interface.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/syucream/servers/lightdash-mcp-server/meta",
+    "modifiedat": "2025-05-07T20:11:33.427347102Z",
+    "name": "io.github.syucream/lightdash-mcp-server",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Your Lightdash PAT",
+              "name": "LIGHTDASH_API_KEY",
+              "require": true
+            },
+            {
+              "descrip": "The API base URL",
+              "name": "LIGHTDASH_API_URL",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "-y",
+            "lightdash-mcp-server"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "lightdash-mcp-server"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "syucream/lightdash-mcp-server",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/syucream/servers/lightdash-mcp-server",
+    "serverid": "lightdash-mcp-server",
+    "tools": [
+      {
+        "description": "List all projects in the Lightdash organization",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "lightdash_list_projects"
+      },
+      {
+        "description": "Get details of a specific project",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "lightdash_get_project"
+      },
+      {
+        "description": "List all spaces in a project",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "lightdash_list_spaces"
+      },
+      {
+        "description": "List all charts in a project",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "lightdash_list_charts"
+      },
+      {
+        "description": "List all dashboards in a project",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "lightdash_list_dashboards"
+      },
+      {
+        "description": "Get custom metrics for a project",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "lightdash_get_custom_metrics"
+      },
+      {
+        "description": "Get catalog for a project",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "lightdash_get_catalog"
+      },
+      {
+        "description": "Get metrics catalog for a project",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "lightdash_get_metrics_catalog"
+      },
+      {
+        "description": "Get charts as code for a project",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "lightdash_get_charts_as_code"
+      },
+      {
+        "description": "Get dashboards as code for a project",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "lightdash_get_dashboards_as_code"
+      },
+      {
+        "description": "Get metadata for a specific table in the data catalog",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "lightdash_get_metadata"
+      },
+      {
+        "description": "Get analytics for a specific table in the data catalog",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "lightdash_get_analytics"
+      },
+      {
+        "description": "Get organization user attributes",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "lightdash_get_user_attributes"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.1"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/syucream/servers/lightdash-mcp-server/versions",
+    "xid": "/mcpproviders/syucream/servers/lightdash-mcp-server"
+  }
+}

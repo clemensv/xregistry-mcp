@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:08:30.65801108Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/YuChenSSR/servers/mindmap-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:08:30.65801108Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/YuChenSSR/servers/mindmap-mcp-server/meta",
+  "serverid": "mindmap-mcp-server",
+  "xid": "/mcpproviders/YuChenSSR/servers/mindmap-mcp-server/meta"
+}

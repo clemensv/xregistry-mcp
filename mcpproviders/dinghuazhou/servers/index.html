@@ -1,0 +1,142 @@
+{
+  "sample-mcp-server-tos": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:07:38.973563318Z",
+    "description": "An MCP server implementation for retrieving data from TOS.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/dinghuazhou/servers/sample-mcp-server-tos/meta",
+    "modifiedat": "2025-05-07T20:07:38.973563318Z",
+    "name": "io.github.dinghuazhou/sample-mcp-server-tos",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "The access key for the VolcEngine.",
+              "name": "VOLC_ACCESSKEY",
+              "require": true
+            },
+            {
+              "descrip": "The secret key for the VolcEngine.",
+              "name": "VOLC_SECRETKEY",
+              "require": true
+            },
+            {
+              "descrip": "The region for the TOS service.",
+              "name": "REGION",
+              "require": true
+            },
+            {
+              "descrip": "The endpoint for the TOS service.",
+              "name": "TOS_ENDPOINT",
+              "require": true
+            },
+            {
+              "descrip": "The security token for the credential.",
+              "name": "SECURITY_TOKEN",
+              "require": false
+            },
+            {
+              "descrip": "If you want to use a specific bucket, you need to set this.",
+              "name": "TOS_BUCKETS",
+              "require": false
+            }
+          ],
+          "positional_arguments": [],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "python",
+        "package_name": "unspecified"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "dinghuazhou/sample-mcp-server-tos",
+    "resources": [
+      {
+        "description": "Buckets resource for TOS",
+        "name": "bucket",
+        "uritemplate": "/buckets/{bucket}"
+      },
+      {
+        "description": "Objects resource for TOS",
+        "name": "object",
+        "uritemplate": "/buckets/{bucket}/objects/{key}"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/dinghuazhou/servers/sample-mcp-server-tos",
+    "serverid": "sample-mcp-server-tos",
+    "tools": [
+      {
+        "description": "Returns a list of all buckets owned by the authenticated sender of the request",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "list_buckets"
+      },
+      {
+        "description": "Returns some or all (up to 1,000) of the objects in a bucket with each request",
+        "inputschema": {
+          "properties": {
+            "bucket": {
+              "type": "string"
+            },
+            "continuation_token": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "prefix": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "start_after": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "bucket"
+          ],
+          "type": "object"
+        },
+        "name": "list_objects"
+      },
+      {
+        "description": "Retrieves an object from volcengine TOS. In the GetObject request, specify the full key name for the object.",
+        "inputschema": {
+          "properties": {
+            "bucket": {
+              "type": "string"
+            },
+            "key": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "bucket",
+            "key"
+          ],
+          "type": "object"
+        },
+        "name": "get_object"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/dinghuazhou/servers/sample-mcp-server-tos/versions",
+    "xid": "/mcpproviders/dinghuazhou/servers/sample-mcp-server-tos"
+  }
+}

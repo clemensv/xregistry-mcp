@@ -1,0 +1,255 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:17:12.67281131Z",
+    "description": "This is an MCP server that creates an environment for an avatar to virtually travel on Google Maps. From an MCP client such as Claude Desktop, you can give instructions to the avatar and report on the progress of its journey with photos.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:17:12.67281131Z",
+    "name": "io.github.mfukushim/map-traveler-mcp",
+    "prompts": [],
+    "registries": [],
+    "remotes": [],
+    "repo_ref": "mfukushim/map-traveler-mcp",
+    "resources": [
+      {
+        "description": "Has five custom prompt samples. When you import a prompt with Claude Desktop, Claude will act as a travel",
+        "name": "custom_prompt_samples",
+        "uritemplate": "/prompts/custom_samples"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/mfukushim/servers/map-traveler-mcp/versions/1",
+    "serverid": "map-traveler-mcp",
+    "tools": [
+      {
+        "description": "Gets information about the current travel avatar's location.",
+        "inputschema": {
+          "properties": {
+            "includeNearbyFacilities": {
+              "descript": "Gets information about nearby facilities.",
+              "type": "boolean"
+            },
+            "includePhoto": {
+              "description": "Gets nearby Google Street View photos. If you have set up an image generation AI, it will synthesize the avatar.",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "includePhoto",
+            "includeNearbyFacilities"
+          ],
+          "type": "object"
+        },
+        "name": "get_traveler_view_info"
+      },
+      {
+        "description": "Gets information about the current travel avatar's address and nearby facilities.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_traveler_location"
+      },
+      {
+        "description": "Reach a specified percentage of the destination (moveMode=skip only)",
+        "inputschema": {
+          "properties": {
+            "timeElapsedPercentage": {
+              "descriptio": "Percent progress towards destination(0~100)",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "timeElapsedPercentage"
+          ],
+          "type": "object"
+        },
+        "name": "reach_a_percentage_of_destination"
+      },
+      {
+        "description": "Sets the current travel avatar's location.",
+        "inputschema": {
+          "properties": {
+            "address": {
+              "description": "Address information (exact address, or general name that Google Maps or Claude can recognize, etc.)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "address"
+          ],
+          "type": "object"
+        },
+        "name": "set_traveler_location"
+      },
+      {
+        "description": "Get the destination of the travel avatar you set",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_traveler_destination_address"
+      },
+      {
+        "description": "Set the destination of the travel avatar",
+        "inputschema": {
+          "properties": {
+            "address": {
+              "description": "Address information (exact address, or general name that Google Maps or Claude can recognize, etc.)",
+              "type": "string"
+            }
+          },
+          "required": [
+            "address"
+          ],
+          "type": "object"
+        },
+        "name": "set_traveler_destination_address"
+      },
+      {
+        "description": "Start the journey at the destination.(moveMode=realtime only)",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "start_traveler_journey"
+      },
+      {
+        "description": "Stop the journey.(moveMode=realtime only)",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "stop_traveler_journey"
+      },
+      {
+        "description": "Set the traveler's attributes. Set the traveler's personality that you want to change dynamically, such as name and personality. However, if you use a role script, the script is more stable.",
+        "inputschema": {
+          "properties": {
+            "settings": {
+              "description": "Setting information such as name and personality.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "settings"
+          ],
+          "type": "object"
+        },
+        "name": "set_traveler_info"
+      },
+      {
+        "description": "Get the traveler's attributes. Get the traveler's personality.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_traveler_info"
+      },
+      {
+        "description": "Set the prompt when generating the travel avatar image. The default is an anime-style woman. The anime style is enforced to prevent fake images.",
+        "inputschema": {
+          "properties": {
+            "prompt": {
+              "description": "Prompt string",
+              "type": "string"
+            }
+          },
+          "required": [
+            "prompt"
+          ],
+          "type": "object"
+        },
+        "name": "set_avatar_prompt"
+      },
+      {
+        "description": "Reset avatar generation prompts to default.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "reset_avatar_prompt"
+      },
+      {
+        "description": "Gets Bluesky SNS articles for the specified custom feed (feeds containing a specific tag).",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_sns_feeds"
+      },
+      {
+        "description": "Gets recent mentions (likes, replies) to Bluesky SNS posts that you made yourself.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_sns_mentions"
+      },
+      {
+        "description": "Posts an article to Bluesky SNS with the specified custom feed. Set a specific tag so that it can be determined that the post was generated by the travel bot.",
+        "inputschema": {
+          "properties": {
+            "message": {
+              "description": "article",
+              "type": "string"
+            }
+          },
+          "required": [
+            "message"
+          ],
+          "type": "object"
+        },
+        "name": "post_sns_writer"
+      },
+      {
+        "description": "Reply to the article with the specified id. Set a specific tag so that it can be determined that the post was generated by the travel bot.",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "description": "The ID of the post to reply to",
+              "type": "string"
+            },
+            "message": {
+              "description": "reply",
+              "type": "string"
+            }
+          },
+          "required": [
+            "message",
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "reply_sns_writer"
+      },
+      {
+        "description": "Add a like to the specified post.",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "description": "The ID of the post to like",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "add_like"
+      },
+      {
+        "description": "Guides you on how to set up features that have not yet been set.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "tips"
+      },
+      {
+        "description": "Get environment and image settings.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_setting"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/mfukushim/servers/map-traveler-mcp/versions/1"
+  }
+}

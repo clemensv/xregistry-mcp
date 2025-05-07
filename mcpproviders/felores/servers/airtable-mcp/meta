@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:07:54.357719249Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/felores/servers/airtable-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:07:54.357719249Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/felores/servers/airtable-mcp/meta",
+  "serverid": "airtable-mcp",
+  "xid": "/mcpproviders/felores/servers/airtable-mcp/meta"
+}

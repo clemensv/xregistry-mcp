@@ -1,0 +1,87 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:07:45.584981131Z",
+    "description": "An MCP server implementation that integrates the Hyperliquid SDK.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:07:45.584981131Z",
+    "name": "io.github.mektigboy/server-hyperliquid",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [
+            "-y",
+            "@mektigboy/server-hyperliquid"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@mektigboy/server-hyperliquid"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "mektigboy/server-hyperliquid",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/mektigboy/servers/server-hyperliquid/versions/1",
+    "serverid": "server-hyperliquid",
+    "tools": [
+      {
+        "description": "Retrieve mid prices for all coins on Hyperliquid",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_all_mids"
+      },
+      {
+        "description": "Get historical candlestick data for any token",
+        "inputschema": {
+          "properties": {
+            "coin": {
+              "type": "string"
+            },
+            "endTime": {
+              "type": "number"
+            },
+            "interval": {
+              "type": "string"
+            },
+            "startTime": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "coin",
+            "interval",
+            "startTime"
+          ],
+          "type": "object"
+        },
+        "name": "get_candle_snapshot"
+      },
+      {
+        "description": "Access the L2 order book for any token",
+        "inputschema": {
+          "properties": {
+            "symbol": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "symbol"
+          ],
+          "type": "object"
+        },
+        "name": "get_l2_book"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.1"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/mektigboy/servers/server-hyperliquid/versions/1"
+  }
+}

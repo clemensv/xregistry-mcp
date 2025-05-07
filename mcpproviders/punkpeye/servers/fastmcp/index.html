@@ -1,0 +1,118 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:13:45.418057684Z",
+  "description": "A TypeScript framework for building MCP servers capable of handling client sessions.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/punkpeye/servers/fastmcp/meta",
+  "modifiedat": "2025-05-07T20:13:45.418057684Z",
+  "name": "io.github.punkpeye/fastmcp",
+  "prompts": [
+    {
+      "arguments": [
+        {
+          "description": "Git diff or description of changes",
+          "name": "changes",
+          "required": true
+        }
+      ],
+      "description": "Generate a Git commit message",
+      "name": "git-commit"
+    },
+    {
+      "arguments": [
+        {
+          "description": "Name of the country",
+          "name": "name",
+          "required": true
+        }
+      ],
+      "description": "Writes a poem about a country",
+      "name": "countryPoem"
+    }
+  ],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "fastmcp"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "punkpeye/fastmcp",
+  "resources": [
+    {
+      "mimetype": "text/plain",
+      "name": "Application Logs",
+      "uritemplate": "file:///logs/{name}.log"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/punkpeye/servers/fastmcp",
+  "serverid": "fastmcp",
+  "tools": [
+    {
+      "description": "Add two numbers",
+      "inputschema": {
+        "additionalProperties": false,
+        "properties": {
+          "a": {
+            "type": "number"
+          },
+          "b": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "a",
+          "b"
+        ],
+        "type": "object"
+      },
+      "name": "add"
+    },
+    {
+      "description": "Fetch the content of a url (using Zod)",
+      "inputschema": {
+        "additionalProperties": false,
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "fetch-zod"
+    },
+    {
+      "description": "Fetch the content of a url (using ArkType)",
+      "inputschema": {
+        "additionalProperties": false,
+        "properties": {
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "fetch-arktype"
+    }
+  ],
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/punkpeye/servers/fastmcp/versions",
+  "xid": "/mcpproviders/punkpeye/servers/fastmcp"
+}

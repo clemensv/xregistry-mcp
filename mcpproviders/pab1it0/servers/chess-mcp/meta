@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:10:10.565337501Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/pab1it0/servers/chess-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:10:10.565337501Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/pab1it0/servers/chess-mcp/meta",
+  "serverid": "chess-mcp",
+  "xid": "/mcpproviders/pab1it0/servers/chess-mcp/meta"
+}

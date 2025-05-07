@@ -1,0 +1,77 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:09:24.09767679Z",
+    "description": "MCP-Amadeus is a community-developed Model Context Protocol (MCP) server that integrates with the Amadeus Flight Offers Search API to provide flight search capabilities through natural language interfaces. Built for use with MCP-compatible clients (e.g., Claude Desktop).",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:09:24.09767679Z",
+    "name": "io.github.donghyun-chae/mcp-amadeus",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Amadeus API Client ID",
+              "name": "AMADEUS_CLIENT_ID",
+              "require": true
+            },
+            {
+              "descrip": "Amadeus API Client Secret",
+              "name": "AMADEUS_CLIENT_SECRET",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "--directory",
+            "./src/",
+            "run",
+            "--env-file",
+            ".env",
+            "server.py"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "uv",
+        "package_name": "@donghyun-chae/mcp-amadeus"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "donghyun-chae/mcp-amadeus",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/donghyun-chae/servers/mcp-amadeus/versions/1",
+    "serverid": "mcp-amadeus",
+    "tools": [
+      {
+        "description": "Retrieves flight offers from the Amadeus Flight Offers Search API.",
+        "inputschema": {
+          "properties": {
+            "departure_date": {
+              "type": "string"
+            },
+            "destination": {
+              "type": "string"
+            },
+            "origin": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "origin",
+            "destination",
+            "departure_date"
+          ],
+          "type": "object"
+        },
+        "name": "get_flight_offers"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/donghyun-chae/servers/mcp-amadeus/versions/1"
+  }
+}

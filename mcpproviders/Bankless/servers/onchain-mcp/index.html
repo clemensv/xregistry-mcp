@@ -1,0 +1,325 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:15:09.845583701Z",
+  "description": "MCP (Model Context Protocol) server for blockchain data interaction through the Bankless API.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/Bankless/servers/onchain-mcp/meta",
+  "modifiedat": "2025-05-07T20:15:09.845583701Z",
+  "name": "io.github.Bankless/onchain-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "index.js"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/bankless-onchain-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "Bankless/onchain-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/Bankless/servers/onchain-mcp",
+  "serverid": "onchain-mcp",
+  "tools": [
+    {
+      "description": "Read contract state from a blockchain. important:  \n                \n                In case of a tuple, don't use type tuple, but specify the inner types (found in the source) in order. For nested structs, include the substructs types.\n    \n    Example: \n    struct DataTypeA {\n    DataTypeB b;\n    //the liquidity index. Expressed in ray\n    uint128 liquidityIndex;\n    }\n    \n    struct DataTypeB {\n    address token;\n    }\n    \n    results in outputs for function with return type DataTypeA (tuple in abi): outputs: [{\"type\": \"address\"}, {\"type\": \"uint128\"}]",
+      "inputschema": {
+        "properties": {
+          "contract": {
+            "type": "string"
+          },
+          "inputs": {
+            "items": {
+              "properties": {
+                "type": {
+                  "typ": "string"
+                },
+                "value": {}
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "method": {
+            "type": "string"
+          },
+          "network": {
+            "type": "string"
+          },
+          "outputs": {
+            "items": {
+              "properties": {
+                "type": {
+                  "ty": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "network",
+          "contract",
+          "method",
+          "inputs",
+          "outputs"
+        ],
+        "type": "object"
+      },
+      "name": "read_contract"
+    },
+    {
+      "description": "Gets the proxy address for a given network and contract",
+      "inputschema": {
+        "properties": {
+          "contract": {
+            "type": "string"
+          },
+          "network": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "network",
+          "contract"
+        ],
+        "type": "object"
+      },
+      "name": "get_proxy"
+    },
+    {
+      "description": "Gets the ABI for a given contract on a specific network",
+      "inputschema": {
+        "properties": {
+          "contract": {
+            "type": "string"
+          },
+          "network": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "network",
+          "contract"
+        ],
+        "type": "object"
+      },
+      "name": "get_abi"
+    },
+    {
+      "description": "Gets the source code for a given contract on a specific network",
+      "inputschema": {
+        "properties": {
+          "contract": {
+            "type": "string"
+          },
+          "network": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "network",
+          "contract"
+        ],
+        "type": "object"
+      },
+      "name": "get_source"
+    },
+    {
+      "description": "Fetches event logs for a given network and filter criteria",
+      "inputschema": {
+        "properties": {
+          "addresses": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "fromBlock": {
+            "type": [
+              "string",
+              "number",
+              "null"
+            ]
+          },
+          "network": {
+            "type": "string"
+          },
+          "optionalTopics": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "toBlock": {
+            "type": [
+              "string",
+              "number",
+              "null"
+            ]
+          },
+          "topic": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "network",
+          "addresses",
+          "topic"
+        ],
+        "type": "object"
+      },
+      "name": "get_events"
+    },
+    {
+      "description": "Builds an event topic signature based on event name and arguments",
+      "inputschema": {
+        "properties": {
+          "arguments": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "name": {
+            "type": "string"
+          },
+          "network": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "network",
+          "name",
+          "arguments"
+        ],
+        "type": "object"
+      },
+      "name": "build_event_topic"
+    },
+    {
+      "description": "Gets transaction history for a user and optional contract",
+      "inputschema": {
+        "properties": {
+          "contract": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "includeData": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "methodId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "network": {
+            "type": "string"
+          },
+          "startBlock": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "user": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "network",
+          "user"
+        ],
+        "type": "object"
+      },
+      "name": "get_transaction_history_for_user"
+    },
+    {
+      "description": "Gets detailed information about a specific transaction",
+      "inputschema": {
+        "properties": {
+          "network": {
+            "type": "string"
+          },
+          "txHash": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "network",
+          "txHash"
+        ],
+        "type": "object"
+      },
+      "name": "get_transaction_info"
+    },
+    {
+      "description": "Gets all token balances for a given address on a specific network",
+      "inputschema": {
+        "properties": {
+          "address": {
+            "type": "string"
+          },
+          "network": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "network",
+          "address"
+        ],
+        "type": "object"
+      },
+      "name": "get_token_balances_on_network"
+    },
+    {
+      "description": "Gets detailed information about a specific block by number or hash",
+      "inputschema": {
+        "properties": {
+          "blockId": {
+            "type": [
+              "string",
+              "number"
+            ]
+          },
+          "network": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "network",
+          "blockId"
+        ],
+        "type": "object"
+      },
+      "name": "get_block_info"
+    }
+  ],
+  "version_detail": {
+    "version": "0.6.2"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/Bankless/servers/onchain-mcp/versions",
+  "xid": "/mcpproviders/Bankless/servers/onchain-mcp"
+}

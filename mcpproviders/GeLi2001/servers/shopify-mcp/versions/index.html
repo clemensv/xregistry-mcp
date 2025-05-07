@@ -1,0 +1,281 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:08:07.489479214Z",
+    "description": "MCP Server for Shopify API, enabling interaction with store data through GraphQL API",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:08:07.489479214Z",
+    "name": "io.github.GeLi2001/shopify-mcp",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Shopify API access token",
+              "name": "SHOPIFY_ACCESS_TOKEN",
+              "require": true
+            },
+            {
+              "descrip": "Shopify store domain",
+              "name": "MYSHOPIFY_DOMAIN",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "shopify-mcp",
+            "--accessToken",
+            "\u003cYOUR_ACCESS_TOKEN\u003e",
+            "--domain",
+            "\u003cYOUR_SHOP\u003e.myshopify.com"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "shopify-mcp-server"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "GeLi2001/shopify-mcp",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/GeLi2001/servers/shopify-mcp/versions/1",
+    "serverid": "shopify-mcp",
+    "tools": [
+      {
+        "description": "Get all products or search by title",
+        "inputschema": {
+          "properties": {
+            "limit": {
+              "type": "number"
+            },
+            "searchTitle": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "limit"
+          ],
+          "type": "object"
+        },
+        "name": "get-products"
+      },
+      {
+        "description": "Get a specific product by ID",
+        "inputschema": {
+          "properties": {
+            "productId": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "productId"
+          ],
+          "type": "object"
+        },
+        "name": "get-product-by-id"
+      },
+      {
+        "description": "Get customers or search by name/email",
+        "inputschema": {
+          "properties": {
+            "limit": {
+              "type": "number"
+            },
+            "searchQuery": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": "get-customers"
+      },
+      {
+        "description": "Advanced order querying and filtering",
+        "inputschema": {
+          "properties": {
+            "limit": {
+              "type": "number"
+            },
+            "status": {
+              "enum": [
+                "any",
+                "open",
+                "closed",
+                "cancelled"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": "get-orders"
+      },
+      {
+        "description": "Get order by ID",
+        "inputschema": {
+          "properties": {
+            "orderId": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "orderId"
+          ],
+          "type": "object"
+        },
+        "name": "get-order-by-id"
+      },
+      {
+        "description": "Update an order",
+        "inputschema": {
+          "properties": {
+            "customAttributes": {
+              "items": {
+                "propertie": "string",
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "email": {
+              "format": "email",
+              "type": "string"
+            },
+            "id": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "metafields": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "t": "string"
+                  },
+                  "key": "string",
+                  "name": "string",
+                  "type": "string",
+                  "valu": "string"
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "note": {
+              "type": "string"
+            },
+            "shippingAddress": {
+              "properties": {
+                "addre": "string",
+                "city": "string",
+                "compa": "string",
+                "count": "string",
+                "first": "string",
+                "lastN": "string",
+                "phone": "string",
+                "provi": "string",
+                "zip": {
+                  "t": "string"
+                }
+              },
+              "type": "object"
+            },
+            "tags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "update-order"
+      },
+      {
+        "description": "Get orders for a specific customer",
+        "inputschema": {
+          "properties": {
+            "customerId": {
+              "pattern": "^\\d+$",
+              "type": "string"
+            },
+            "limit": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "customerId"
+          ],
+          "type": "object"
+        },
+        "name": "get-customer-orders"
+      },
+      {
+        "description": "Update a customer's information",
+        "inputschema": {
+          "properties": {
+            "email": {
+              "format": "email",
+              "type": "string"
+            },
+            "firstName": {
+              "type": "string"
+            },
+            "id": {
+              "pattern": "^\\d+$",
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "metafields": {
+              "items": {
+                "properties": {
+                  "id": {
+                    "t": "string"
+                  },
+                  "key": "string",
+                  "name": "string",
+                  "type": "string",
+                  "valu": "string"
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "note": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            },
+            "tags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "taxExempt": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "update-customer"
+      }
+    ],
+    "version_detail": {
+      "version": "1.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/GeLi2001/servers/shopify-mcp/versions/1"
+  }
+}

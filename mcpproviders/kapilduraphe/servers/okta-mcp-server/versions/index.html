@@ -1,0 +1,68 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:07:37.807278591Z",
+    "description": "This MCP server enables Claude to interact with Okta's user management system, providing user and group management capabilities.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:07:37.807278591Z",
+    "name": "io.github.kapilduraphe/okta-mcp-server",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "name": "OKTA_ORG_URL",
+              "require": true
+            },
+            {
+              "name": "OKTA_API_TOKEN",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "dist/index.js"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "unknown"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "kapilduraphe/okta-mcp-server",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/kapilduraphe/servers/okta-mcp-server/versions/1",
+    "serverid": "okta-mcp-server",
+    "tools": [
+      {
+        "description": "Retrieves detailed user information from Okta, including user details, account dates, personal information, employment details, contact information, address, and preferences.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_user"
+      },
+      {
+        "description": "Lists users from Okta with optional filtering and pagination, supporting SCIM filter expressions, free-form text search, sorting options, and pagination support.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_users"
+      },
+      {
+        "description": "Lists user groups from Okta with optional filtering and pagination, supporting filter expressions, free-form text search, sorting options, and pagination support.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_groups"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/kapilduraphe/servers/okta-mcp-server/versions/1"
+  }
+}

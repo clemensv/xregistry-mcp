@@ -1,0 +1,91 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:43.471284305Z",
+  "description": "This server connects agents to your Elasticsearch data using the Model Context Protocol. It allows you to interact with your Elasticsearch indices through natural language conversations.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:07:43.471284305Z",
+  "name": "io.github.elastic/mcp-server-elasticsearch",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Your Elasticsearch instance URL",
+            "name": "ES_URL",
+            "require": true
+          },
+          {
+            "descrip": "Elasticsearch API key for authentication",
+            "name": "ES_API_KEY",
+            "require": false
+          },
+          {
+            "descrip": "Elasticsearch username for basic authentication",
+            "name": "ES_USERNAME",
+            "require": false
+          },
+          {
+            "descrip": "Elasticsearch password for basic authentication",
+            "name": "ES_PASSWORD",
+            "require": false
+          },
+          {
+            "descrip": "Path to custom CA certificate for Elasticsearch SSL/TLS",
+            "name": "ES_CA_CERT",
+            "require": false
+          }
+        ],
+        "positional_arguments": [
+          "-y",
+          "@elastic/mcp-server-elasticsearch"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@elastic/mcp-server-elasticsearch"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "elastic/mcp-server-elasticsearch",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/elastic/servers/mcp-server-elasticsearch/versions/1",
+  "serverid": "mcp-server-elasticsearch",
+  "tools": [
+    {
+      "description": "List all available Elasticsearch indices",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_indices"
+    },
+    {
+      "description": "Get field mappings for a specific Elasticsearch index",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_mappings"
+    },
+    {
+      "description": "Perform an Elasticsearch search with the provided query DSL",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "search"
+    },
+    {
+      "description": "Get shard information for all or specific indices",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_shards"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/elastic/servers/mcp-server-elasticsearch/versions/1"
+}

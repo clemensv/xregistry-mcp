@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:07:47.948036226Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/AI-QL/servers/chat-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:07:47.948036226Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/AI-QL/servers/chat-mcp/meta",
+  "serverid": "chat-mcp",
+  "xid": "/mcpproviders/AI-QL/servers/chat-mcp/meta"
+}

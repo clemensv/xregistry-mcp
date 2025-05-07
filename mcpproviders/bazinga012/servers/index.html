@@ -1,0 +1,51 @@
+{
+  "mcp_code_executor": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:11:20.274990161Z",
+    "description": "The MCP Code Executor is an MCP server that allows LLMs to execute Python code within a specified Conda environment. This enables LLMs to run code with access to libraries and dependencies defined in the Conda environment.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/bazinga012/servers/mcp_code_executor/meta",
+    "modifiedat": "2025-05-07T20:11:20.274990161Z",
+    "name": "io.github.bazinga012/mcp_code_executor",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Directory where generated code is stored",
+              "name": "CODE_STORAGE_DIR",
+              "require": true
+            },
+            {
+              "descrip": "Name of the Conda environment to run code in",
+              "name": "CONDA_ENV_NAME",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "/path/to/mcp_code_executor/build/index.js"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "mcp_code_executor"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "bazinga012/mcp_code_executor",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/bazinga012/servers/mcp_code_executor",
+    "serverid": "mcp_code_executor",
+    "tools": [],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/bazinga012/servers/mcp_code_executor/versions",
+    "xid": "/mcpproviders/bazinga012/servers/mcp_code_executor"
+  }
+}

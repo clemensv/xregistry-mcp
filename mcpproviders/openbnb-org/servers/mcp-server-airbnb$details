@@ -1,0 +1,144 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:12:47.913270417Z",
+  "description": "MCP Server for searching Airbnb and get listing details.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/openbnb-org/servers/mcp-server-airbnb/meta",
+  "modifiedat": "2025-05-07T20:12:47.913270417Z",
+  "name": "io.github.openbnb-org/mcp-server-airbnb",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "-y",
+          "@openbnb/mcp-server-airbnb"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@openbnb/mcp-server-airbnb"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "openbnb-org/mcp-server-airbnb",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/openbnb-org/servers/mcp-server-airbnb",
+  "serverid": "mcp-server-airbnb",
+  "tools": [
+    {
+      "description": "Search for Airbnb listings with various filters and pagination. Provide direct links to the user",
+      "inputschema": {
+        "properties": {
+          "adults": {
+            "description": "Number of adults",
+            "type": "number"
+          },
+          "checkin": {
+            "description": "Check-in date (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "checkout": {
+            "description": "Check-out date (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "children": {
+            "description": "Number of children",
+            "type": "number"
+          },
+          "cursor": {
+            "description": "Base64-encoded string used for Pagination",
+            "type": "string"
+          },
+          "ignoreRobotsText": {
+            "description": "Ignore robots.txt rules for this request",
+            "type": "boolean"
+          },
+          "infants": {
+            "description": "Number of infants",
+            "type": "number"
+          },
+          "location": {
+            "description": "Location to search for (city, state, etc.)",
+            "type": "string"
+          },
+          "maxPrice": {
+            "description": "Maximum price for the stay",
+            "type": "number"
+          },
+          "minPrice": {
+            "description": "Minimum price for the stay",
+            "type": "number"
+          },
+          "pets": {
+            "description": "Number of pets",
+            "type": "number"
+          },
+          "placeId": {
+            "description": "Google Maps Place ID (overrides the location parameter)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "location"
+        ],
+        "type": "object"
+      },
+      "name": "airbnb_search"
+    },
+    {
+      "description": "Get detailed information about a specific Airbnb listing. Provide direct links to the user",
+      "inputschema": {
+        "properties": {
+          "adults": {
+            "description": "Number of adults",
+            "type": "number"
+          },
+          "checkin": {
+            "description": "Check-in date (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "checkout": {
+            "description": "Check-out date (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "children": {
+            "description": "Number of children",
+            "type": "number"
+          },
+          "id": {
+            "description": "The Airbnb listing ID",
+            "type": "string"
+          },
+          "ignoreRobotsText": {
+            "description": "Ignore robots.txt rules for this request",
+            "type": "boolean"
+          },
+          "infants": {
+            "description": "Number of infants",
+            "type": "number"
+          },
+          "pets": {
+            "description": "Number of pets",
+            "type": "number"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "name": "airbnb_listing_details"
+    }
+  ],
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/openbnb-org/servers/mcp-server-airbnb/versions",
+  "xid": "/mcpproviders/openbnb-org/servers/mcp-server-airbnb"
+}

@@ -1,0 +1,98 @@
+{
+  "mcp-xmind": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:18:05.994869178Z",
+    "description": "A Model Context Protocol server for analyzing and querying XMind mind maps. This tool provides powerful capabilities for searching, extracting, and analyzing content from XMind files.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/apeyroux/servers/mcp-xmind/meta",
+    "modifiedat": "2025-05-07T20:18:05.994869178Z",
+    "name": "io.github.apeyroux/mcp-xmind",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [
+            "dist/index.js",
+            "\u003callowed-directory\u003e"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@41px/mcp-xmind"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "apeyroux/mcp-xmind",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/apeyroux/servers/mcp-xmind",
+    "serverid": "mcp-xmind",
+    "tools": [
+      {
+        "description": "Parse and analyze XMind files\nExtract complete mind map structure",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "read_xmind"
+      },
+      {
+        "description": "Extract and analyze TODO tasks\nInclude task context and hierarchy",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_todo_tasks"
+      },
+      {
+        "description": "Recursively scan for XMind files\nFilter and organize results",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_xmind_directory"
+      },
+      {
+        "description": "Process multiple files simultaneously\nCompare and analyze across files",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "read_multiple_xmind_files"
+      },
+      {
+        "description": "Search files by name patterns\nRecursive directory scanning",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "search_xmind_files"
+      },
+      {
+        "description": "Smart fuzzy path matching\nRanked search results\nComplete subtree extraction",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "extract_node"
+      },
+      {
+        "description": "Direct node access by ID\nFast and precise retrieval",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "extract_node_by_id"
+      },
+      {
+        "description": "Multi-criteria content search\nConfigurable search fields",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "search_nodes"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/apeyroux/servers/mcp-xmind/versions",
+    "xid": "/mcpproviders/apeyroux/servers/mcp-xmind"
+  }
+}

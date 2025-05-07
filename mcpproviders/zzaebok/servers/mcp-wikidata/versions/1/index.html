@@ -1,0 +1,94 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:17:37.566242839Z",
+  "description": "A server implementation for Wikidata API using the Model Context Protocol (MCP). This project provides tools to interact with Wikidata, such as searching identifiers (entity and property), extracting metadata (label and description) and executing sparql query.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:17:37.566242839Z",
+  "name": "io.github.zzaebok/mcp-wikidata",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "uv",
+      "package_name": "@zzaebok/mcp-wikidata"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "zzaebok/mcp-wikidata",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/zzaebok/servers/mcp-wikidata/versions/1",
+  "serverid": "mcp-wikidata",
+  "tools": [
+    {
+      "description": "Search for a Wikidata entity ID by its query.",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "search_entity"
+    },
+    {
+      "description": "Search for a Wikidata property ID by its query.",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "search_property"
+    },
+    {
+      "description": "Get the properties associated with a given Wikidata entity ID.",
+      "inputschema": {
+        "properties": {
+          "entity_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity_id"
+        ],
+        "type": "object"
+      },
+      "name": "get_properties"
+    },
+    {
+      "description": "Execute a SPARQL query.",
+      "inputschema": {
+        "properties": {
+          "sparql_query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "sparql_query"
+        ],
+        "type": "object"
+      },
+      "name": "execute_sparql"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/zzaebok/servers/mcp-wikidata/versions/1"
+}

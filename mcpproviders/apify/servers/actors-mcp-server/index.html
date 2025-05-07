@@ -1,0 +1,152 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:15:39.995961568Z",
+  "description": "Implementation of an MCP server for all Apify Actors enabling interaction with one or more Apify Actors defined in the MCP Server configuration. Allows AI assistants to use Apify Actors as tools for various scraping and data extraction tasks.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/apify/servers/actors-mcp-server/meta",
+  "modifiedat": "2025-05-07T20:15:39.995961568Z",
+  "name": "io.github.apify/actors-mcp-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "API token for Apify platform",
+            "name": "APIFY_TOKEN",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "--actors",
+          "apify/rag-web-browser,lukaskrivka/google-maps-with-contact-details"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "container",
+      "package_name": "apify/actors-mcp-server:latest"
+    },
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "API token for Apify platform",
+            "name": "APIFY_TOKEN",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "dist/stdio.js",
+          "--actors",
+          "apify/rag-web-browser,lukaskrivka/google-maps-with-contact-details"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@apify/actors-mcp-server"
+    }
+  ],
+  "remotes": [
+    {
+      "transporttype": "http",
+      "url": "http://localhost:3001"
+    }
+  ],
+  "repo_ref": "apify/actors-mcp-server",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/apify/servers/actors-mcp-server",
+  "serverid": "actors-mcp-server",
+  "tools": [
+    {
+      "description": "Tool wrapping the Apify RAG Web Browser Actor for web search and scraping.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "apify-slash-rag-web-browser"
+    },
+    {
+      "description": "Tool wrapping the Facebook Posts Scraper Actor to extract data from Facebook posts.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "apify-slash-facebook-posts-scraper"
+    },
+    {
+      "description": "Tool wrapping the Google Maps Email Extractor Actor to extract contact details.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "apify-slash-google-maps-with-contact-details"
+    },
+    {
+      "description": "Tool wrapping the Google Search Results Scraper Actor to scrape SERPs.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "apify-slash-google-search-scraper"
+    },
+    {
+      "description": "Tool wrapping the Instagram Scraper Actor to scrape Instagram data.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "apify-slash-instagram-scraper"
+    },
+    {
+      "description": "Add a tool, Actor or MCP-Server to available tools by Actor ID or tool full name. Does not execute the tool, only adds it.",
+      "inputschema": {
+        "properties": {
+          "actorName": {
+            "description": "Add a tool, Actor or MCP-Server to available tools by Actor ID or tool full name. Tool name is always composed from `username/name`",
+            "type": "string"
+          }
+        },
+        "required": [
+          "actorName"
+        ],
+        "type": "object"
+      },
+      "name": "add-tool"
+    },
+    {
+      "description": "Remove a tool, an Actor or MCP-Server by name from available tools.",
+      "inputschema": {
+        "properties": {
+          "toolName": {
+            "description": "Tool name to remove from available tools.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "toolName"
+        ],
+        "type": "object"
+      },
+      "name": "remove-tool"
+    },
+    {
+      "description": "Helper tool for searching Actors.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "search-actor"
+    },
+    {
+      "description": "Helper tool for getting tool details.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get-tool-details"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/apify/servers/actors-mcp-server/versions",
+  "xid": "/mcpproviders/apify/servers/actors-mcp-server"
+}

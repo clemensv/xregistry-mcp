@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:16:06.688157477Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/Langflow-DOC-QA-SERVER/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:16:06.688157477Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/Langflow-DOC-QA-SERVER/meta",
+  "serverid": "Langflow-DOC-QA-SERVER",
+  "xid": "/mcpproviders/GongRzhe/servers/Langflow-DOC-QA-SERVER/meta"
+}

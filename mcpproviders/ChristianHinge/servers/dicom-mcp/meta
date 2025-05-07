@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:08:46.973401159Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/ChristianHinge/servers/dicom-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:08:46.973401159Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/ChristianHinge/servers/dicom-mcp/meta",
+  "serverid": "dicom-mcp",
+  "xid": "/mcpproviders/ChristianHinge/servers/dicom-mcp/meta"
+}

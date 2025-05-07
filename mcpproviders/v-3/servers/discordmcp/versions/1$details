@@ -1,0 +1,85 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:08:13.095212608Z",
+  "description": "A Model Context Protocol (MCP) server that enables LLMs to interact with Discord channels, allowing them to send and read messages through Discord's API. Using this server, LLMs like Claude can directly interact with Discord channels while maintaining user control and security.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:08:13.095212608Z",
+  "name": "io.github.v-3/discordmcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Discord bot token",
+            "name": "DISCORD_TOKEN",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "build/index.js"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "discordmcp"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "v-3/discordmcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/v-3/servers/discordmcp/versions/1",
+  "serverid": "discordmcp",
+  "tools": [
+    {
+      "description": "Sends a message to a specified Discord channel.",
+      "inputschema": {
+        "properties": {
+          "channel": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "server": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "channel",
+          "message"
+        ],
+        "type": "object"
+      },
+      "name": "send-message"
+    },
+    {
+      "description": "Reads recent messages from a specified Discord channel.",
+      "inputschema": {
+        "properties": {
+          "channel": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "server": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "channel"
+        ],
+        "type": "object"
+      },
+      "name": "read-messages"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/v-3/servers/discordmcp/versions/1"
+}

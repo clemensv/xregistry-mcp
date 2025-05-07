@@ -1,0 +1,250 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:09:22.523880982Z",
+  "description": "This is a Model Context Protocol (MCP) server that provides access to stock market data from Financial Datasets. It allows Claude and other AI assistants to retrieve income statements, balance sheets, cash flow statements, stock prices, and market news directly through the MCP interface.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/financial-datasets/servers/mcp-server/meta",
+  "modifiedat": "2025-05-07T20:09:22.523880982Z",
+  "name": "io.github.financial-datasets/mcp-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "API key for Financial Datasets API",
+            "name": "FINANCIAL_DATASETS_API_KEY",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "run",
+          "server.py"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "python",
+      "package_name": "financial-datasets-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "financial-datasets/mcp-server",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/financial-datasets/servers/mcp-server",
+  "serverid": "mcp-server",
+  "tools": [
+    {
+      "description": "Get income statements for a company.",
+      "inputschema": {
+        "properties": {
+          "limit": {
+            "type": "integer"
+          },
+          "period": {
+            "type": "string"
+          },
+          "ticker": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticker"
+        ],
+        "type": "object"
+      },
+      "name": "get_income_statements"
+    },
+    {
+      "description": "Get balance sheets for a company.",
+      "inputschema": {
+        "properties": {
+          "limit": {
+            "type": "integer"
+          },
+          "period": {
+            "type": "string"
+          },
+          "ticker": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticker"
+        ],
+        "type": "object"
+      },
+      "name": "get_balance_sheets"
+    },
+    {
+      "description": "Get cash flow statements for a company.",
+      "inputschema": {
+        "properties": {
+          "limit": {
+            "type": "integer"
+          },
+          "period": {
+            "type": "string"
+          },
+          "ticker": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticker"
+        ],
+        "type": "object"
+      },
+      "name": "get_cash_flow_statements"
+    },
+    {
+      "description": "Get the current / latest price of a company.",
+      "inputschema": {
+        "properties": {
+          "ticker": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticker"
+        ],
+        "type": "object"
+      },
+      "name": "get_current_stock_price"
+    },
+    {
+      "description": "Gets historical stock prices for a company.",
+      "inputschema": {
+        "properties": {
+          "end_date": {
+            "type": "string"
+          },
+          "interval": {
+            "type": "string"
+          },
+          "interval_multiplier": {
+            "type": "integer"
+          },
+          "start_date": {
+            "type": "string"
+          },
+          "ticker": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticker",
+          "start_date",
+          "end_date"
+        ],
+        "type": "object"
+      },
+      "name": "get_historical_stock_prices"
+    },
+    {
+      "description": "Get news for a company.",
+      "inputschema": {
+        "properties": {
+          "ticker": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticker"
+        ],
+        "type": "object"
+      },
+      "name": "get_company_news"
+    },
+    {
+      "description": "Gets all available crypto tickers.",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "get_available_crypto_tickers"
+    },
+    {
+      "description": "Gets historical prices for a crypto currency.",
+      "inputschema": {
+        "properties": {
+          "end_date": {
+            "type": "string"
+          },
+          "interval": {
+            "type": "string"
+          },
+          "interval_multiplier": {
+            "type": "integer"
+          },
+          "start_date": {
+            "type": "string"
+          },
+          "ticker": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticker",
+          "start_date",
+          "end_date"
+        ],
+        "type": "object"
+      },
+      "name": "get_crypto_prices"
+    },
+    {
+      "description": "Gets historical prices for a crypto currency.",
+      "inputschema": {
+        "properties": {
+          "end_date": {
+            "type": "string"
+          },
+          "interval": {
+            "type": "string"
+          },
+          "interval_multiplier": {
+            "type": "integer"
+          },
+          "start_date": {
+            "type": "string"
+          },
+          "ticker": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticker",
+          "start_date",
+          "end_date"
+        ],
+        "type": "object"
+      },
+      "name": "get_historical_crypto_prices"
+    },
+    {
+      "description": "Get the current / latest price of a crypto currency.",
+      "inputschema": {
+        "properties": {
+          "ticker": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticker"
+        ],
+        "type": "object"
+      },
+      "name": "get_current_crypto_price"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/financial-datasets/servers/mcp-server/versions",
+  "xid": "/mcpproviders/financial-datasets/servers/mcp-server"
+}

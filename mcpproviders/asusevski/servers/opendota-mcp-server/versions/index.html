@@ -1,0 +1,113 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:09:27.206939626Z",
+    "description": "A Model Context Protocol (MCP) server implementation for accessing OpenDota API data. This server enables LLMs and AI assistants to retrieve real-time Dota 2 statistics, match data, player information, and more through a standard interface.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:09:27.206939626Z",
+    "name": "io.github.asusevski/opendota-mcp-server",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "OpenDota API key",
+              "name": "OPENDOTA_API_KEY",
+              "require": false
+            }
+          ],
+          "positional_arguments": [
+            "-m",
+            "src.opendota_server.server"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "python",
+        "package_name": "opendota-mcp-server"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "asusevski/opendota-mcp-server",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/asusevski/servers/opendota-mcp-server/versions/1",
+    "serverid": "opendota-mcp-server",
+    "tools": [
+      {
+        "description": "Retrieve player information by account ID",
+        "name": "get_player_by_id"
+      },
+      {
+        "description": "Get recent matches for a player",
+        "name": "get_player_recent_matches"
+      },
+      {
+        "description": "Get detailed data for a specific match",
+        "name": "get_match_data"
+      },
+      {
+        "description": "Get win/loss statistics for a player",
+        "name": "get_player_win_loss"
+      },
+      {
+        "description": "Get a player's most played heroes",
+        "name": "get_player_heroes"
+      },
+      {
+        "description": "Get statistics for heroes",
+        "name": "get_hero_stats"
+      },
+      {
+        "description": "Search for players by name",
+        "name": "search_player"
+      },
+      {
+        "description": "Get list of professional players",
+        "name": "get_pro_players"
+      },
+      {
+        "description": "Get recent professional matches",
+        "name": "get_pro_matches"
+      },
+      {
+        "description": "Get players who have played with a specified player",
+        "name": "get_player_peers"
+      },
+      {
+        "description": "Get list of all Dota 2 heroes",
+        "name": "get_heroes"
+      },
+      {
+        "description": "Get player's overall stats totals",
+        "name": "get_player_totals"
+      },
+      {
+        "description": "Get player hero rankings",
+        "name": "get_player_rankings"
+      },
+      {
+        "description": "Get most common words used by player in chat",
+        "name": "get_player_wordcloud"
+      },
+      {
+        "description": "Get information about a team",
+        "name": "get_team_info"
+      },
+      {
+        "description": "Get recent public matches",
+        "name": "get_public_matches"
+      },
+      {
+        "description": "Get heroes played in a specific match",
+        "name": "get_match_heroes"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/asusevski/servers/opendota-mcp-server/versions/1"
+  }
+}

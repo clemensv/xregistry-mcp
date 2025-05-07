@@ -1,0 +1,184 @@
+{
+  "todoist-mcp-server": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:14:53.352372612Z",
+    "description": "An MCP (Model Context Protocol) server implementation that integrates Claude with Todoist, enabling natural language task management. This server allows Claude to interact with your Todoist tasks using everyday language.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/abhiz123/servers/todoist-mcp-server/meta",
+    "modifiedat": "2025-05-07T20:14:53.352372612Z",
+    "name": "io.github.abhiz123/todoist-mcp-server",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Todoist API token for authentication",
+              "name": "TODOIST_API_TOKEN",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "-y",
+            "@abhiz123/todoist-mcp-server"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@abhiz123/todoist-mcp-server"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "abhiz123/todoist-mcp-server",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/abhiz123/servers/todoist-mcp-server",
+    "serverid": "todoist-mcp-server",
+    "tools": [
+      {
+        "description": "Create a new task in Todoist with optional description, due date, and priority",
+        "inputschema": {
+          "properties": {
+            "content": {
+              "description": "The content/title of the task",
+              "type": "string"
+            },
+            "description": {
+              "description": "Detailed description of the task (optional)",
+              "type": "string"
+            },
+            "due_string": {
+              "description": "Natural language due date like 'tomorrow', 'next Monday', 'Jan 23' (optional)",
+              "type": "string"
+            },
+            "priority": {
+              "description": "Task priority from 1 (normal) to 4 (urgent) (optional)",
+              "enum": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "type": "number"
+            }
+          },
+          "required": [
+            "content"
+          ],
+          "type": "object"
+        },
+        "name": "todoist_create_task"
+      },
+      {
+        "description": "Get a list of tasks from Todoist with various filters",
+        "inputschema": {
+          "properties": {
+            "filter": {
+              "description": "Natural language filter like 'today', 'tomorrow', 'next week', 'priority 1', 'overdue' (optional)",
+              "type": "string"
+            },
+            "limit": {
+              "default": 10,
+              "description": "Maximum number of tasks to return (optional)",
+              "type": "number"
+            },
+            "priority": {
+              "description": "Filter by priority level (1-4) (optional)",
+              "enum": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "type": "number"
+            },
+            "project_id": {
+              "description": "Filter tasks by project ID (optional)",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": "todoist_get_tasks"
+      },
+      {
+        "description": "Update an existing task in Todoist by searching for it by name and then updating it",
+        "inputschema": {
+          "properties": {
+            "content": {
+              "description": "New content/title for the task (optional)",
+              "type": "string"
+            },
+            "description": {
+              "description": "New description for the task (optional)",
+              "type": "string"
+            },
+            "due_string": {
+              "description": "New due date in natural language like 'tomorrow', 'next Monday' (optional)",
+              "type": "string"
+            },
+            "priority": {
+              "description": "New priority level from 1 (normal) to 4 (urgent) (optional)",
+              "enum": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "type": "number"
+            },
+            "task_name": {
+              "description": "Name/content of the task to search for and update",
+              "type": "string"
+            }
+          },
+          "required": [
+            "task_name"
+          ],
+          "type": "object"
+        },
+        "name": "todoist_update_task"
+      },
+      {
+        "description": "Delete a task from Todoist by searching for it by name",
+        "inputschema": {
+          "properties": {
+            "task_name": {
+              "description": "Name/content of the task to search for and delete",
+              "type": "string"
+            }
+          },
+          "required": [
+            "task_name"
+          ],
+          "type": "object"
+        },
+        "name": "todoist_delete_task"
+      },
+      {
+        "description": "Mark a task as complete by searching for it by name",
+        "inputschema": {
+          "properties": {
+            "task_name": {
+              "description": "Name/content of the task to search for and complete",
+              "type": "string"
+            }
+          },
+          "required": [
+            "task_name"
+          ],
+          "type": "object"
+        },
+        "name": "todoist_complete_task"
+      }
+    ],
+    "version_detail": {
+      "version": "0.1.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/abhiz123/servers/todoist-mcp-server/versions",
+    "xid": "/mcpproviders/abhiz123/servers/todoist-mcp-server"
+  }
+}

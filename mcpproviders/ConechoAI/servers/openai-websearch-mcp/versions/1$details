@@ -1,0 +1,93 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:14:22.327877871Z",
+  "description": "This MCP server provides access to OpenAI's websearch functionality through the Model Context Protocol. It allows AI assistants to search the web during conversations with users, providing up-to-date information that may not be available in the assistant's training data.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:14:22.327877871Z",
+  "name": "io.github.ConechoAI/openai-websearch-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "name": "OPENAI_API_KEY",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "openai-websearch-mcp"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "uvx",
+      "package_name": "openai-websearch-mcp"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "ConechoAI/openai-websearch-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/ConechoAI/servers/openai-websearch-mcp/versions/1",
+  "serverid": "openai-websearch-mcp",
+  "tools": [
+    {
+      "description": "It allows AI assistants to search the web during conversations with users",
+      "inputschema": {
+        "properties": {
+          "input": {
+            "type": "string"
+          },
+          "model": {
+            "enum": [
+              "gpt-4o",
+              "gpt-4o-mini"
+            ],
+            "type": "string"
+          },
+          "search_context_size": {
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "web_search_preview",
+              "web_search_preview_2025_03_11"
+            ],
+            "type": "string"
+          },
+          "user_location": {
+            "properties": {
+              "city": {
+                "ty": "string"
+              },
+              "country": "string",
+              "region": "string",
+              "timezon": "string",
+              "type": {
+                "ty": "string"
+              }
+            },
+            "type": "object"
+          }
+        },
+        "required": [
+          "input",
+          "type"
+        ],
+        "type": "object"
+      },
+      "name": "web_search"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/ConechoAI/servers/openai-websearch-mcp/versions/1"
+}

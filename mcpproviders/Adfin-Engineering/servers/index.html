@@ -1,0 +1,136 @@
+{
+  "mcp-server-adfin": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:07:42.096014815Z",
+    "description": "MCP server implementation providing tools for filesystem operations and Adfin API interactions, enabling Claude Desktop integration.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/Adfin-Engineering/servers/mcp-server-adfin/meta",
+    "modifiedat": "2025-05-07T20:07:42.096014815Z",
+    "name": "io.github.Adfin-Engineering/mcp-server-adfin",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "User email for Adfin authentication",
+              "name": "ADFIN_EMAIL",
+              "require": true
+            },
+            {
+              "descrip": "User password for Adfin authentication",
+              "name": "ADFIN_PASSWORD",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "--directory",
+            "\u003cabsolute_path_to_adfin_mcp_folder\u003e",
+            "run",
+            "main_adfin_mcp.py"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "uv",
+        "package_name": "unknown"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "Adfin-Engineering/mcp-server-adfin",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/Adfin-Engineering/servers/mcp-server-adfin",
+    "serverid": "mcp-server-adfin",
+    "tools": [
+      {
+        "description": "Get the current working directory.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_cwd"
+      },
+      {
+        "description": "Get the files from the current working directory.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_cwd"
+      },
+      {
+        "description": "Search recursively for a file starting from the current working directory given the exact name of the file.",
+        "inputschema": {
+          "properties": {
+            "file_name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_name"
+          ],
+          "type": "object"
+        },
+        "name": "search_for_file"
+      },
+      {
+        "description": "Search recursively for a file or folder starting from the current working directory.",
+        "inputschema": {
+          "properties": {
+            "file_or_folder_name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_or_folder_name"
+          ],
+          "type": "object"
+        },
+        "name": "search_for_file_partial"
+      },
+      {
+        "description": "Make the Desktop the current working directory.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "make_desktop_cwd"
+      },
+      {
+        "description": "Make a folder the current working directory. That folder must be present in the previous cwd.",
+        "inputschema": {
+          "properties": {
+            "folder_name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "folder_name"
+          ],
+          "type": "object"
+        },
+        "name": "make_folder_cwd"
+      },
+      {
+        "description": "Upload an invoice to Adfin given its absolute path.",
+        "inputschema": {
+          "properties": {
+            "invoice_path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "invoice_path"
+          ],
+          "type": "object"
+        },
+        "name": "upload_invoice_to_adfin"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/Adfin-Engineering/servers/mcp-server-adfin/versions",
+    "xid": "/mcpproviders/Adfin-Engineering/servers/mcp-server-adfin"
+  }
+}

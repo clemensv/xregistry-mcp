@@ -1,0 +1,142 @@
+{
+  "verodat-mcp-server": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:07:51.33772492Z",
+    "description": "A Model Context Protocol (MCP) server implementation for Verodat, allowing AI models to interact with Verodat's data management capabilities through well-defined tools.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/Verodat/servers/verodat-mcp-server/meta",
+    "modifiedat": "2025-05-07T20:07:51.33772492Z",
+    "name": "io.github.Verodat/verodat-mcp-server",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "API key for authentication",
+              "name": "VERODAT_AI_API_KEY",
+              "require": true
+            },
+            {
+              "descrip": "Base URL for Verodat API",
+              "name": "VERODAT_API_BASE_URL",
+              "require": false
+            }
+          ],
+          "positional_arguments": [
+            "path/to/verodat-mcp-server/build/src/consume.js"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@Verodat/verodat-mcp-server"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "Verodat/verodat-mcp-server",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/Verodat/servers/verodat-mcp-server",
+    "serverid": "verodat-mcp-server",
+    "tools": [
+      {
+        "description": "Retrieve available accounts",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "get-accounts"
+      },
+      {
+        "description": "List workspaces within an account",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "get-workspaces"
+      },
+      {
+        "description": "List datasets in a workspace",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "get-datasets"
+      },
+      {
+        "description": "Retrieve actual data from a dataset",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "get-dataset-output"
+      },
+      {
+        "description": "Retrieve field definitions for a dataset",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "get-dataset-targetfields"
+      },
+      {
+        "description": "Retrieve existing AI queries",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "get-queries"
+      },
+      {
+        "description": "Get workspace context and data structure",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "get-ai-context"
+      },
+      {
+        "description": "Execute AI-powered queries on datasets",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "execute-ai-query"
+      },
+      {
+        "description": "Create a new dataset with defined schema",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "create-dataset"
+      },
+      {
+        "description": "Upload data rows to existing datasets",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "upload-dataset-rows"
+      }
+    ],
+    "version_detail": {
+      "version": "1.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/Verodat/servers/verodat-mcp-server/versions",
+    "xid": "/mcpproviders/Verodat/servers/verodat-mcp-server"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:09:28.837696997Z",
+  "description": "A Model Context Protocol (MCP) server that provides advanced HTTP request capabilities for Claude and other LLMs. Built on rquest, this server enables realistic browser emulation with accurate TLS/JA3/JA4 fingerprints, allowing models to interact with websites more naturally and bypass common anti-bot measures. It also supports converting PDF and HTML documents to Markdown for easier processing by LLMs.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/xxxbrian/servers/mcp-rquest/meta",
+  "modifiedat": "2025-05-07T20:09:28.837696997Z",
+  "name": "io.github.xxxbrian/mcp-rquest",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "mcp-rquest"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "uvx",
+      "package_name": "mcp-rquest"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "xxxbrian/mcp-rquest",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/xxxbrian/servers/mcp-rquest",
+  "serverid": "mcp-rquest",
+  "tools": [
+    {
+      "description": "Perform GET requests with optional parameters",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "http_get"
+    },
+    {
+      "description": "Submit data via POST requests",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "http_post"
+    },
+    {
+      "description": "Update resources with PUT requests",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "http_put"
+    },
+    {
+      "description": "Remove resources with DELETE requests",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "http_delete"
+    },
+    {
+      "description": "Partially update resources",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "http_patch"
+    },
+    {
+      "description": "Retrieve only headers from a resource",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "http_head"
+    },
+    {
+      "description": "Retrieve options for a resource",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "http_options"
+    },
+    {
+      "description": "Diagnostic request tracing",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "http_trace"
+    },
+    {
+      "description": "Retrieve stored large responses, optionally by line range",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_stored_response"
+    },
+    {
+      "description": "Convert HTML or PDF responses to Markdown format for better LLM processing",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_stored_response_with_markdown"
+    },
+    {
+      "description": "Get the current state of the PDF models loading process",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_model_state"
+    },
+    {
+      "description": "Restart the PDF models loading process if it failed or got stuck",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "restart_model_loading"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/xxxbrian/servers/mcp-rquest/versions",
+  "xid": "/mcpproviders/xxxbrian/servers/mcp-rquest"
+}

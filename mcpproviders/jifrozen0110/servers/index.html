@@ -1,0 +1,72 @@
+{
+  "mcp-riot": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:08:34.689291587Z",
+    "description": "MCP-Riot is a community-developed Model Context Protocol (MCP) server that integrates with the Riot Games API to provide League of Legends data to AI assistants via natural language queries.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/jifrozen0110/servers/mcp-riot/meta",
+    "modifiedat": "2025-05-07T20:08:34.689291587Z",
+    "name": "io.github.jifrozen0110/mcp-riot",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Riot API key",
+              "name": "RIOT_API_KEY",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "--directory",
+            "/ABSOLUTE/PATH/TO/PARENT/FOLDER",
+            "run",
+            "--env-file",
+            "/ABSOLUTE/PATH/TO/PARENT/FOLDER/.env",
+            "riot.py"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "uv",
+        "package_name": "mcp-riot"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "jifrozen0110/mcp-riot",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/jifrozen0110/servers/mcp-riot",
+    "serverid": "mcp-riot",
+    "tools": [
+      {
+        "description": "Summarizes level, rank, top champions, and recent matches.",
+        "name": "get_player_summary"
+      },
+      {
+        "description": "Returns top champions by mastery points.",
+        "name": "get_top_champions_tool"
+      },
+      {
+        "description": "Returns mastery details for a specific champion.",
+        "name": "get_champion_mastery_tool"
+      },
+      {
+        "description": "Returns recent matches for the given summoner.",
+        "name": "get_recent_matches_tool"
+      },
+      {
+        "description": "Returns match performance stats for a given match ID and puuid.",
+        "name": "get_match_summary"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/jifrozen0110/servers/mcp-riot/versions",
+    "xid": "/mcpproviders/jifrozen0110/servers/mcp-riot"
+  }
+}

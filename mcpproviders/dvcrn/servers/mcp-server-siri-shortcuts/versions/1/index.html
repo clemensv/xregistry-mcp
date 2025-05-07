@@ -1,0 +1,78 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:58.53459621Z",
+  "description": "This MCP server provides access to Siri shortcuts functionality via the Model Context Protocol (MCP). It allows listing, opening, and running shortcuts from the macOS Shortcuts app.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:07:58.53459621Z",
+  "name": "io.github.dvcrn/mcp-server-siri-shortcuts",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "mcp-server-siri-shortcuts"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "mcp-server-siri-shortcuts"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "dvcrn/mcp-server-siri-shortcuts",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/dvcrn/servers/mcp-server-siri-shortcuts/versions/1",
+  "serverid": "mcp-server-siri-shortcuts",
+  "tools": [
+    {
+      "description": "Lists all available Siri shortcuts on the system",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "list_shortcuts"
+    },
+    {
+      "description": "Opens a shortcut in the Shortcuts app",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "name": "open_shortcut"
+    },
+    {
+      "description": "Runs a shortcut with optional input",
+      "inputschema": {
+        "properties": {
+          "input": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "name": "run_shortcut"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/dvcrn/servers/mcp-server-siri-shortcuts/versions/1"
+}

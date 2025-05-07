@@ -1,0 +1,78 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:08:54.438554372Z",
+    "description": "Gitee MCP Server is a Model Context Protocol (MCP) server implementation for Gitee. It provides a set of tools for interacting with Gitee's API, allowing AI assistants to manage repositories, issues, pull requests, and more.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:08:54.438554372Z",
+    "name": "io.github.oschina/mcp-gitee",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Gitee API base URL",
+              "name": "GITEE_API_BASE",
+              "require": true
+            },
+            {
+              "descrip": "Gitee access token",
+              "name": "GITEE_ACCESS_TOKEN",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "-y",
+            "@gitee/mcp-gitee@latest"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@gitee/mcp-gitee"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "oschina/mcp-gitee",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/oschina/servers/mcp-gitee/versions/1",
+    "serverid": "mcp-gitee",
+    "tools": [
+      {
+        "description": "List user authorized repositories",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_user_repos"
+      },
+      {
+        "description": "Get the content of a file in a repository",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_file_content"
+      },
+      {
+        "description": "Create a user repository",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "create_user_repo"
+      },
+      {
+        "description": "Create an organization repository",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "create_org_repo"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/oschina/servers/mcp-gitee/versions/1"
+  }
+}

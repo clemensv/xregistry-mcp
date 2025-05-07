@@ -1,0 +1,65 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:07:41.381491748Z",
+    "description": "Provide the latest cryptocurrency news to AI agents, powered by CryptoPanic.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:07:41.381491748Z",
+    "name": "io.github.kukapay/cryptopanic-mcp-server",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "CryptoPanic API key",
+              "name": "CRYPTOPANIC_API_KEY",
+              "require": false
+            }
+          ],
+          "positional_arguments": [
+            "--directory",
+            "/your/path/to/cryptopanic-mcp-server",
+            "run",
+            "main.py"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "unspecified",
+        "package_name": "unspecified"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "kukapay/cryptopanic-mcp-server",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/kukapay/servers/cryptopanic-mcp-server/versions/1",
+    "serverid": "cryptopanic-mcp-server",
+    "tools": [
+      {
+        "description": "Fetch latest cryptocurrency news, analysis, or videos from CryptoPanic.",
+        "inputschema": {
+          "properties": {
+            "kind": {
+              "description": "Content type (news, analysis, videos)",
+              "type": "string"
+            },
+            "num_pages": {
+              "description": "Number of pages to fetch (default: 1, max: 10)",
+              "type": "integer"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "get_crypto_news"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/kukapay/servers/cryptopanic-mcp-server/versions/1"
+  }
+}

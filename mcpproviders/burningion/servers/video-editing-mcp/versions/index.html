@@ -1,0 +1,78 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:10:14.579757131Z",
+    "description": "Server to upload, edit, search, and generate videos using Video Jungle and LLM integration with custom vj:// URI scheme and video editing tools.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:10:14.579757131Z",
+    "name": "io.github.burningion/video-editing-mcp",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Enable searching local Photos app videos on MacOS",
+              "name": "LOAD_PHOTOS_DB",
+              "require": false
+            }
+          ],
+          "positional_arguments": [
+            "YOURAPIKEY"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "uvicorn",
+        "package_name": "video-editor-mcp"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "burningion/video-editing-mcp",
+    "resources": [
+      {
+        "description": "Access individual videos and projects via custom vj:// URI scheme.",
+        "name": "videos",
+        "uritemplate": "vj://{video_or_project_id}"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/burningion/servers/video-editing-mcp/versions/1",
+    "serverid": "video-editing-mcp",
+    "tools": [
+      {
+        "description": "Add a video from a URL and returns a vj:// URI to reference the video file.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "add-video"
+      },
+      {
+        "description": "Search videos using embeddings and keywords, returning video matches.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "search-videos"
+      },
+      {
+        "description": "Generate a rendered video edit from a set of video files.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "generate-edit-from-videos"
+      },
+      {
+        "description": "Generate an edit from a single input video file.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "generate-edit-from-single-video"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/burningion/servers/video-editing-mcp/versions/1"
+  }
+}

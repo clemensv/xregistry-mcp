@@ -1,0 +1,76 @@
+{
+  "mcp-obsidian": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:16:34.263544659Z",
+    "description": "Connector to allow Claude Desktop (or any MCP client) to read and search any directory containing Markdown notes (such as an Obsidian vault).",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/smithery-ai/servers/mcp-obsidian/meta",
+    "modifiedat": "2025-05-07T20:16:34.263544659Z",
+    "name": "io.github.smithery-ai/mcp-obsidian",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [
+            "-y",
+            "mcp-obsidian",
+            "${input:vaultPath}"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "mcp-obsidian"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "smithery-ai/mcp-obsidian",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/smithery-ai/servers/mcp-obsidian",
+    "serverid": "mcp-obsidian",
+    "tools": [
+      {
+        "description": "Read the contents of multiple notes. Each note's content is returned with its path as a reference. Failed reads for individual notes won't stop the entire operation. Reading too many at once may result in an error.",
+        "inputschema": {
+          "properties": {
+            "paths": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "paths"
+          ],
+          "type": "object"
+        },
+        "name": "read_notes"
+      },
+      {
+        "description": "Searches for a note by its name. The search is case-insensitive and matches partial names. Queries can also be a valid regex. Returns paths of the notes that match the query.",
+        "inputschema": {
+          "properties": {
+            "query": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search_notes"
+      }
+    ],
+    "version_detail": {
+      "version": "1.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/smithery-ai/servers/mcp-obsidian/versions",
+    "xid": "/mcpproviders/smithery-ai/servers/mcp-obsidian"
+  }
+}

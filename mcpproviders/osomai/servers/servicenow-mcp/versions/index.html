@@ -1,0 +1,99 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:13:04.18887033Z",
+    "description": "A Model Completion Protocol (MCP) server implementation for ServiceNow, allowing Claude to interact with ServiceNow instances.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:13:04.18887033Z",
+    "name": "io.github.osomai/servicenow-mcp",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "URL of the ServiceNow instance",
+              "name": "SERVICENOW_INSTANCE_URL",
+              "require": true
+            },
+            {
+              "descrip": "Username for authentication",
+              "name": "SERVICENOW_USERNAME",
+              "require": true
+            },
+            {
+              "descrip": "Password for authentication",
+              "name": "SERVICENOW_PASSWORD",
+              "require": true
+            },
+            {
+              "descrip": "Authentication type (basic, oauth, api_key)",
+              "name": "SERVICENOW_AUTH_TYPE",
+              "require": true
+            }
+          ],
+          "positional_arguments": [],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "python",
+        "package_name": "servicenow-mcp"
+      }
+    ],
+    "remotes": [
+      {
+        "transporttype": "http",
+        "url": "http://0.0.0.0:8080"
+      }
+    ],
+    "repo_ref": "osomai/servicenow-mcp",
+    "resources": [
+      {
+        "description": "Resource representing catalog items.",
+        "name": "catalog_items",
+        "uritemplate": "catalog://items"
+      },
+      {
+        "description": "Resource representing catalog categories.",
+        "name": "catalog_categories",
+        "uritemplate": "catalog://categories"
+      },
+      {
+        "description": "Resource representing a specific catalog item by ID.",
+        "name": "catalog_item",
+        "uritemplate": "catalog://{item_id}"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/osomai/servers/servicenow-mcp/versions/1",
+    "serverid": "servicenow-mcp",
+    "tools": [
+      {
+        "description": "Tool to list catalog items from ServiceNow.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_catalog_items"
+      },
+      {
+        "description": "Tool to get details of a specific catalog item from ServiceNow.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_catalog_item"
+      },
+      {
+        "description": "Tool to list catalog categories from ServiceNow.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_catalog_categories"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/osomai/servers/servicenow-mcp/versions/1"
+  }
+}

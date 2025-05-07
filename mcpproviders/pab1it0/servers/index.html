@@ -1,0 +1,287 @@
+{
+  "adx-mcp-server": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:10:12.578228869Z",
+    "description": "A Model Context Protocol (MCP) server for Azure Data Explorer/Eventhouse in Microsoft Fabric. Provides access to Azure Data Explorer/Eventhouse clusters and databases through standardized MCP interfaces, allowing AI assistants to execute KQL queries and explore data.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/pab1it0/servers/adx-mcp-server/meta",
+    "modifiedat": "2025-05-07T20:10:12.578228869Z",
+    "name": "io.github.pab1it0/adx-mcp-server",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "URL of the Azure Data Explorer cluster",
+              "name": "ADX_CLUSTER_URL",
+              "require": true
+            },
+            {
+              "descrip": "Name of the Azure Data Explorer database",
+              "name": "ADX_DATABASE",
+              "require": true
+            }
+          ],
+          "positional_arguments": [],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "container",
+        "package_name": "adx-mcp-server"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "pab1it0/adx-mcp-server",
+    "resources": [
+      {
+        "description": "Tables in the configured Azure Data Explorer database.",
+        "name": "tables",
+        "uritemplate": "/tables/{tableName}"
+      },
+      {
+        "description": "Schemas of tables in the database.",
+        "name": "schemas",
+        "uritemplate": "/schemas/{tableName}"
+      },
+      {
+        "description": "Sample data from tables.",
+        "name": "samples",
+        "uritemplate": "/samples/{tableName}"
+      },
+      {
+        "description": "Statistics and details of tables.",
+        "name": "statistics",
+        "uritemplate": "/statistics/{tableName}"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/pab1it0/servers/adx-mcp-server",
+    "serverid": "adx-mcp-server",
+    "tools": [
+      {
+        "description": "Execute KQL queries against Azure Data Explorer.",
+        "name": "execute_kql_query"
+      },
+      {
+        "description": "List tables in the configured database.",
+        "name": "list_tables"
+      },
+      {
+        "description": "View table schemas.",
+        "name": "view_table_schema"
+      },
+      {
+        "description": "Sample data from tables.",
+        "name": "sample_table_data"
+      },
+      {
+        "description": "Get table statistics and details.",
+        "name": "get_table_statistics"
+      }
+    ],
+    "version_detail": {
+      "version": "0.1.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/pab1it0/servers/adx-mcp-server/versions",
+    "xid": "/mcpproviders/pab1it0/servers/adx-mcp-server"
+  },
+  "chess-mcp": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:10:10.565337501Z",
+    "description": "A Model Context Protocol (MCP) server for Chess.com's Published Data API providing access to player data, game records, and other public information through standardized MCP interfaces.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/pab1it0/servers/chess-mcp/meta",
+    "modifiedat": "2025-05-07T20:10:10.565337501Z",
+    "name": "io.github.pab1it0/chess-mcp",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [
+            "run",
+            "--rm",
+            "-i",
+            "pab1it0/chess-mcp"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "container",
+        "package_name": "pab1it0/chess-mcp"
+      },
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [
+            "run"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "uv",
+        "package_name": "chess-mcp"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "pab1it0/chess-mcp",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/pab1it0/servers/chess-mcp",
+    "serverid": "chess-mcp",
+    "tools": [
+      {
+        "description": "Get a player's profile from Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_player_profile"
+      },
+      {
+        "description": "Get a player's stats from Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_player_stats"
+      },
+      {
+        "description": "Check if a player is currently online on Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "is_player_online"
+      },
+      {
+        "description": "Get a list of titled players from Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_titled_players"
+      },
+      {
+        "description": "Get a player's ongoing games on Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_player_current_games"
+      },
+      {
+        "description": "Get a player's games for a specific month from Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_player_games_by_month"
+      },
+      {
+        "description": "Get a list of available monthly game archives for a player on Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_player_game_archives"
+      },
+      {
+        "description": "Download PGN files for all games in a specific month from Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "download_player_games_pgn"
+      },
+      {
+        "description": "Get information about a club on Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_club_profile"
+      },
+      {
+        "description": "Get members of a club on Chess.com",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_club_members"
+      }
+    ],
+    "version_detail": {
+      "version": "0.1.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/pab1it0/servers/chess-mcp/versions",
+    "xid": "/mcpproviders/pab1it0/servers/chess-mcp"
+  },
+  "prometheus-mcp-server": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:10:08.571386476Z",
+    "description": "A Model Context Protocol (MCP) server for Prometheus. Provides access to Prometheus metrics and queries through standardized MCP interfaces, allowing AI assistants to execute PromQL queries and analyze metrics data.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/pab1it0/servers/prometheus-mcp-server/meta",
+    "modifiedat": "2025-05-07T20:10:08.571386476Z",
+    "name": "io.github.pab1it0/prometheus-mcp-server",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "container",
+        "package_name": "prometheus-mcp-server"
+      },
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "URL of the Prometheus server",
+              "name": "PROMETHEUS_URL",
+              "require": true
+            },
+            {
+              "descrip": "Username for basic authentication",
+              "name": "PROMETHEUS_USERNAME",
+              "require": false
+            },
+            {
+              "descrip": "Password for basic authentication",
+              "name": "PROMETHEUS_PASSWORD",
+              "require": false
+            },
+            {
+              "descrip": "Bearer token for authentication",
+              "name": "PROMETHEUS_TOKEN",
+              "require": false
+            }
+          ],
+          "positional_arguments": [
+            "--directory",
+            "\u003cfull path to prometheus-mcp-server directory\u003e",
+            "run",
+            "src/prometheus_mcp_server/main.py"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "unspecified",
+        "package_name": "unspecified"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "pab1it0/prometheus-mcp-server",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/pab1it0/servers/prometheus-mcp-server",
+    "serverid": "prometheus-mcp-server",
+    "tools": [],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/pab1it0/servers/prometheus-mcp-server/versions",
+    "xid": "/mcpproviders/pab1it0/servers/prometheus-mcp-server"
+  }
+}

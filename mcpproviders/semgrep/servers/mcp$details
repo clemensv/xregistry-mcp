@@ -1,0 +1,39 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:08:36.755547802Z",
+  "description": "A Model Context Protocol (MCP) server for using Semgrep to scan code for security vulnerabilities. Secure your vibe coding! Semgrep is a fast, deterministic static analysis tool that semantically understands many languages and comes with over 5,000 rules.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/semgrep/servers/mcp/meta",
+  "modifiedat": "2025-05-07T20:08:36.755547802Z",
+  "name": "io.github.semgrep/mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "-t",
+          "stdio"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "container",
+      "package_name": "ghcr.io/semgrep/mcp"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "semgrep/mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/semgrep/servers/mcp",
+  "serverid": "mcp",
+  "tools": [],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/semgrep/servers/mcp/versions",
+  "xid": "/mcpproviders/semgrep/servers/mcp"
+}

@@ -1,0 +1,117 @@
+{
+  "astra-db-mcp": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:10:42.713329055Z",
+    "description": "A Model Context Protocol (MCP) server for interacting with Astra DB. MCP extends the capabilities of Large Language Models (LLMs) by allowing them to interact with external systems as agents.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/datastax/servers/astra-db-mcp/meta",
+    "modifiedat": "2025-05-07T20:10:42.713329055Z",
+    "name": "io.github.datastax/astra-db-mcp",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Astra DB Application Token",
+              "name": "ASTRA_DB_APPLICATION_TOKEN",
+              "require": true
+            },
+            {
+              "descrip": "Astra DB API Endpoint",
+              "name": "ASTRA_DB_API_ENDPOINT",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "-y",
+            "@datastax/astra-db-mcp"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@datastax/astra-db-mcp"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "datastax/astra-db-mcp",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/datastax/servers/astra-db-mcp",
+    "serverid": "astra-db-mcp",
+    "tools": [
+      {
+        "description": "Get all collections in the database",
+        "name": "GetCollections"
+      },
+      {
+        "description": "Create a new collection in the database",
+        "name": "CreateCollection"
+      },
+      {
+        "description": "Update an existing collection in the database",
+        "name": "UpdateCollection"
+      },
+      {
+        "description": "Delete a collection from the database",
+        "name": "DeleteCollection"
+      },
+      {
+        "description": "List records from a collection in the database",
+        "name": "ListRecords"
+      },
+      {
+        "description": "Get a specific record from a collection by ID",
+        "name": "GetRecord"
+      },
+      {
+        "description": "Create a new record in a collection",
+        "name": "CreateRecord"
+      },
+      {
+        "description": "Update an existing record in a collection",
+        "name": "UpdateRecord"
+      },
+      {
+        "description": "Delete a record from a collection",
+        "name": "DeleteRecord"
+      },
+      {
+        "description": "Find records in a collection by field value",
+        "name": "FindRecord"
+      },
+      {
+        "description": "Create multiple records in a collection at once",
+        "name": "BulkCreateRecords"
+      },
+      {
+        "description": "Update multiple records in a collection at once",
+        "name": "BulkUpdateRecords"
+      },
+      {
+        "description": "Delete multiple records from a collection at once",
+        "name": "BulkDeleteRecords"
+      },
+      {
+        "description": "Open a web browser for authentication and setup",
+        "name": "OpenBrowser"
+      },
+      {
+        "description": "Get assistance with adding Astra DB client to your MCP client",
+        "name": "HelpAddToClient"
+      },
+      {
+        "description": "Get estimate of the number of documents in a collection",
+        "name": "EstimateDocumentCount"
+      }
+    ],
+    "version_detail": {
+      "version": "1.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/datastax/servers/astra-db-mcp/versions",
+    "xid": "/mcpproviders/datastax/servers/astra-db-mcp"
+  }
+}

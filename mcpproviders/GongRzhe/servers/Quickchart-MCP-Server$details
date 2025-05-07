@@ -1,0 +1,108 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:15:44.390106149Z",
+  "description": "A Model Context Protocol server for generating charts using QuickChart.io",
+  "documentation": "https://quickchart.io/documentation/",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/Quickchart-MCP-Server/meta",
+  "modifiedat": "2025-05-07T20:15:44.390106149Z",
+  "name": "io.github.GongRzhe/Quickchart-MCP-Server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "/path/to/quickchart-server/build/index.js"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@gongrzhe/quickchart-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "GongRzhe/Quickchart-MCP-Server",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/Quickchart-MCP-Server",
+  "serverid": "Quickchart-MCP-Server",
+  "tools": [
+    {
+      "description": "Generate a chart using QuickChart",
+      "inputschema": {
+        "properties": {
+          "datasets": {
+            "items": {
+              "properties": {
+                "additi": "object",
+                "backgr": "string",
+                "border": "string",
+                "data": {
+                  "t": "array"
+                },
+                "label": "string"
+              },
+              "required": [
+                "data"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "labels": {
+            "description": "Labels for data points",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "options": {
+            "type": "object"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "description": "Chart type (bar, line, pie, doughnut, radar, polarArea, scatter, bubble, radialGauge, speedometer)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "datasets"
+        ],
+        "type": "object"
+      },
+      "name": "generate_chart"
+    },
+    {
+      "description": "Download a chart image to a local file",
+      "inputschema": {
+        "properties": {
+          "config": {
+            "description": "Chart configuration object",
+            "type": "object"
+          },
+          "outputPath": {
+            "description": "Path where the chart image should be saved. If not provided, the chart will be saved to Desktop or home directory.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "config"
+        ],
+        "type": "object"
+      },
+      "name": "download_chart"
+    }
+  ],
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/Quickchart-MCP-Server/versions",
+  "xid": "/mcpproviders/GongRzhe/servers/Quickchart-MCP-Server"
+}

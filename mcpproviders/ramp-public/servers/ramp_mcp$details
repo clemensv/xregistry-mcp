@@ -1,0 +1,179 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:10:33.777476746Z",
+  "description": "A Model Context Protocol server for retrieving and analyzing data or running tasks for Ramp using Developer API. Implements an ETL pipeline and ephemeral sqlite database in memory for analysis by an LLM.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/ramp-public/servers/ramp_mcp/meta",
+  "modifiedat": "2025-05-07T20:10:33.777476746Z",
+  "name": "io.github.ramp-public/ramp_mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "name": "RAMP_CLIENT_ID",
+            "require": true
+          },
+          {
+            "name": "RAMP_CLIENT_SECRET",
+            "require": true
+          },
+          {
+            "name": "RAMP_ENV",
+            "require": false
+          }
+        ],
+        "positional_arguments": [
+          "-s",
+          "\u003cCOMMA-SEPARATED-SCOPES\u003e"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "uv",
+      "package_name": "ramp-mcp"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "ramp-public/ramp_mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/ramp-public/servers/ramp_mcp",
+  "serverid": "ramp_mcp",
+  "tools": [
+    {
+      "description": "Setup, process, query, and delete an ephemeral database in memory.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "process_data"
+    },
+    {
+      "description": "Setup, process, query, and delete an ephemeral database in memory.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "execute_query"
+    },
+    {
+      "description": "Setup, process, query, and delete an ephemeral database in memory.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "clear_table"
+    },
+    {
+      "description": "Fetch data directly from Ramp categories.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_ramp_categories"
+    },
+    {
+      "description": "Fetch data directly from Ramp currencies.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_currencies"
+    },
+    {
+      "description": "Load transactions data to server for client fetching.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "load_transactions"
+    },
+    {
+      "description": "Load reimbursements data to server for client fetching.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "load_reimbursements"
+    },
+    {
+      "description": "Load bills data to server for client fetching.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "load_bills"
+    },
+    {
+      "description": "Load locations data to server for client fetching.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "load_locations"
+    },
+    {
+      "description": "Load departments data to server for client fetching.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "load_departments"
+    },
+    {
+      "description": "Load bank accounts data to server for client fetching.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "load_bank_accounts"
+    },
+    {
+      "description": "Load vendors data to server for client fetching.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "load_vendors"
+    },
+    {
+      "description": "Load vendor bank accounts data to server for client fetching.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "load_vendor_bank_accounts"
+    },
+    {
+      "description": "Load entities data to server for client fetching.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "load_entities"
+    },
+    {
+      "description": "Load spend limits data to server for client fetching.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "load_spend_limits"
+    },
+    {
+      "description": "Load spend programs data to server for client fetching.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "load_spend_programs"
+    },
+    {
+      "description": "Load users data to server for client fetching.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "load_users"
+    },
+    {
+      "description": "Special tool that requires transactions, reimbursements, and bills scopes.",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "load_spend_export"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/ramp-public/servers/ramp_mcp/versions",
+  "xid": "/mcpproviders/ramp-public/servers/ramp_mcp"
+}

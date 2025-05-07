@@ -1,0 +1,180 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:08:38.861451719Z",
+  "description": "A Model Context Protocol server enabling Claude to maintain user context through Apache Unomi profile management.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/sergehuber/servers/inoyu-mcp-unomi-server/meta",
+  "modifiedat": "2025-05-07T20:08:38.861451719Z",
+  "name": "io.github.sergehuber/inoyu-mcp-unomi-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Base URL of the Apache Unomi server",
+            "name": "UNOMI_BASE_URL",
+            "require": true
+          },
+          {
+            "descrip": "Username for Apache Unomi authentication (default 'karaf')",
+            "name": "UNOMI_USERNAME",
+            "require": true
+          },
+          {
+            "descrip": "Password for Apache Unomi authentication (default 'karaf')",
+            "name": "UNOMI_PASSWORD",
+            "require": true
+          },
+          {
+            "descrip": "Fallback profile ID for Unomi",
+            "name": "UNOMI_PROFILE_ID",
+            "require": true
+          },
+          {
+            "descrip": "Unomi key for protected events (default '670c26d1cc413346c3b2fd9ce65dab41')",
+            "name": "UNOMI_KEY",
+            "require": true
+          },
+          {
+            "descrip": "Email address used for profile lookup",
+            "name": "UNOMI_EMAIL",
+            "require": false
+          },
+          {
+            "descrip": "Source identifier for Claude Desktop",
+            "name": "UNOMI_SOURCE_ID",
+            "require": false
+          }
+        ],
+        "positional_arguments": [
+          "@inoyu/mcp-unomi-server"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@inoyu/mcp-unomi-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "sergehuber/inoyu-mcp-unomi-server",
+  "resources": [
+    {
+      "description": "List of available Apache Unomi profiles",
+      "mimetype": "application/json",
+      "name": "Unomi Profiles",
+      "uritemplate": "unomi://profiles/list"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/sergehuber/servers/inoyu-mcp-unomi-server",
+  "serverid": "inoyu-mcp-unomi-server",
+  "tools": [
+    {
+      "description": "Create a new Unomi scope",
+      "inputschema": {
+        "properties": {
+          "description": {
+            "description": "Description of the scope",
+            "type": "string"
+          },
+          "name": {
+            "description": "Human-readable name for the scope",
+            "type": "string"
+          },
+          "scope": {
+            "description": "Scope identifier",
+            "type": "string"
+          }
+        },
+        "required": [
+          "scope"
+        ],
+        "type": "object"
+      },
+      "name": "create_scope"
+    },
+    {
+      "description": "Update properties of your profile using environment-provided ID",
+      "inputschema": {
+        "properties": {
+          "properties": {
+            "additionalProperties": "null",
+            "description": "Key-value pairs of properties to update",
+            "type": "object"
+          }
+        },
+        "required": [
+          "properties"
+        ],
+        "type": "object"
+      },
+      "name": "update_my_profile"
+    },
+    {
+      "description": "Get your profile using environment-provided IDs",
+      "inputschema": {
+        "properties": {
+          "requireScores": {
+            "description": "Whether to include scores in the response",
+            "type": "boolean"
+          },
+          "requireSegments": {
+            "description": "Whether to include segments in the response",
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "name": "get_my_profile"
+    },
+    {
+      "description": "Get a specific Unomi profile by ID",
+      "inputschema": {
+        "properties": {
+          "profileId": {
+            "description": "Profile ID",
+            "type": "string"
+          }
+        },
+        "required": [
+          "profileId"
+        ],
+        "type": "object"
+      },
+      "name": "get_profile"
+    },
+    {
+      "description": "Search Unomi profiles",
+      "inputschema": {
+        "properties": {
+          "limit": {
+            "description": "Maximum number of results",
+            "type": "number"
+          },
+          "offset": {
+            "description": "Result offset for pagination",
+            "type": "number"
+          },
+          "query": {
+            "description": "Search query",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "search_profiles"
+    }
+  ],
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/sergehuber/servers/inoyu-mcp-unomi-server/versions",
+  "xid": "/mcpproviders/sergehuber/servers/inoyu-mcp-unomi-server"
+}

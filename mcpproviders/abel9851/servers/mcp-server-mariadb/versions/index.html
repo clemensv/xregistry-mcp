@@ -1,0 +1,72 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:08:10.938184274Z",
+    "description": "An MCP server implementation for retrieving data from mariadb",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:08:10.938184274Z",
+    "name": "io.github.abel9851/mcp-server-mariadb",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "name": "MARIADB_HOST"
+            },
+            {
+              "name": "MARIADB_USER"
+            },
+            {
+              "name": "MARIADB_PASSWORD"
+            },
+            {
+              "name": "MARIADB_DATABASE"
+            },
+            {
+              "name": "MARIADB_PORT"
+            }
+          ],
+          "positional_arguments": [
+            "--host",
+            "${DB_HOST}",
+            "--port",
+            "${DB_PORT}",
+            "--user",
+            "${DB_USER}",
+            "--password",
+            "${DB_PASSWORD}",
+            "--database",
+            "${DB_NAME}"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "",
+        "package_name": ""
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "abel9851/mcp-server-mariadb",
+    "resources": [
+      {
+        "description": "Expose schema list in database",
+        "name": "schema list"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/abel9851/servers/mcp-server-mariadb/versions/1",
+    "serverid": "mcp-server-mariadb",
+    "tools": [
+      {
+        "description": "Execute read-only operations against MariDB",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "query_database"
+      }
+    ],
+    "versionid": "1",
+    "xid": "/mcpproviders/abel9851/servers/mcp-server-mariadb/versions/1"
+  }
+}

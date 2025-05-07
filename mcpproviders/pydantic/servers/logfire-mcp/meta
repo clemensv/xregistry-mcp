@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:13:52.60528994Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/pydantic/servers/logfire-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:13:52.60528994Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/pydantic/servers/logfire-mcp/meta",
+  "serverid": "logfire-mcp",
+  "xid": "/mcpproviders/pydantic/servers/logfire-mcp/meta"
+}

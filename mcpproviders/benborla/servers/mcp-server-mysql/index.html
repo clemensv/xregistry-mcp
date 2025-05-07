@@ -1,0 +1,144 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:08:06.818131042Z",
+  "description": "A Model Context Protocol server that provides access to MySQL databases. This server enables LLMs to inspect database schemas and execute SQL queries.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/benborla/servers/mcp-server-mysql/meta",
+  "modifiedat": "2025-05-07T20:08:06.818131042Z",
+  "name": "io.github.benborla/mcp-server-mysql",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "MySQL host address",
+            "name": "MYSQL_HOST",
+            "require": true
+          },
+          {
+            "descrip": "MySQL port number",
+            "name": "MYSQL_PORT",
+            "require": true
+          },
+          {
+            "descrip": "MySQL username",
+            "name": "MYSQL_USER",
+            "require": true
+          },
+          {
+            "descrip": "MySQL password",
+            "name": "MYSQL_PASS",
+            "require": true
+          },
+          {
+            "descrip": "MySQL database name (optional for multi-DB mode)",
+            "name": "MYSQL_DB",
+            "require": false
+          },
+          {
+            "descrip": "Allow INSERT SQL operations",
+            "name": "ALLOW_INSERT_OPERATION",
+            "require": false
+          },
+          {
+            "descrip": "Allow UPDATE SQL operations",
+            "name": "ALLOW_UPDATE_OPERATION",
+            "require": false
+          },
+          {
+            "descrip": "Allow DELETE SQL operations",
+            "name": "ALLOW_DELETE_OPERATION",
+            "require": false
+          },
+          {
+            "descrip": "Allow DDL SQL operations",
+            "name": "ALLOW_DDL_OPERATION",
+            "require": false
+          },
+          {
+            "descrip": "Schema-specific permissions for INSERT operations",
+            "name": "SCHEMA_INSERT_PERMISSIONS",
+            "require": false
+          },
+          {
+            "descri": "Schema-specific permissions for UPDATE operations",
+            "name": "SCHEMA_UPDATE_PERMISSIONS",
+            "requir": false
+          },
+          {
+            "descri": "Schema-specific permissions for DELETE operations",
+            "name": "SCHEMA_DELETE_PERMISSIONS",
+            "requir": false
+          },
+          {
+            "descri": "Schema-specific permissions for DDL operations",
+            "name": "SCHEMA_DDL_PERMISSIONS",
+            "requir": false
+          },
+          {
+            "descri": "Enable write mode in multi-DB mode",
+            "name": "MULTI_DB_WRITE_MODE",
+            "requir": false
+          },
+          {
+            "descri": "Enable SSL for MySQL connection",
+            "name": "MYSQL_SSL",
+            "requir": false
+          },
+          {
+            "descri": "Reject unauthorized SSL certificates",
+            "name": "MYSQL_SSL_REJECT_UNAUTHORIZED",
+            "requir": false
+          }
+        ],
+        "positional_arguments": [
+          "-y",
+          "@benborla29/mcp-server-mysql"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@benborla29/mcp-server-mysql"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "benborla/mcp-server-mysql",
+  "resources": [
+    {
+      "description": "Database and table name with schema suffix",
+      "mimetype": "application/json",
+      "name": "database schema",
+      "uritemplate": "{database}/{table}/schema"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/benborla/servers/mcp-server-mysql",
+  "serverid": "mcp-server-mysql",
+  "tools": [
+    {
+      "description": "Run SQL queries against MySQL database (Multi-DB mode enabled) with support for: INSERT, UPDATE, DELETE, DDL and READ operations (Schema-specific permissions enabled)",
+      "inputschema": {
+        "properties": {
+          "sql": {
+            "description": "The SQL query to execute",
+            "type": "string"
+          }
+        },
+        "required": [
+          "sql"
+        ],
+        "type": "object"
+      },
+      "name": "mysql_query"
+    }
+  ],
+  "version_detail": {
+    "version": "0.1.18"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/benborla/servers/mcp-server-mysql/versions",
+  "xid": "/mcpproviders/benborla/servers/mcp-server-mysql"
+}

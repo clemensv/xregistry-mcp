@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:08:20.114117822Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/KyrieTangSheng/servers/mcp-server-nationalparks/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:08:20.114117822Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/KyrieTangSheng/servers/mcp-server-nationalparks/meta",
+  "serverid": "mcp-server-nationalparks",
+  "xid": "/mcpproviders/KyrieTangSheng/servers/mcp-server-nationalparks/meta"
+}

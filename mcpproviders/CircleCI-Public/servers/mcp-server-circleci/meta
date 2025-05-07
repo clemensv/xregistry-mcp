@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:12:17.274491769Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/CircleCI-Public/servers/mcp-server-circleci/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:12:17.274491769Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/CircleCI-Public/servers/mcp-server-circleci/meta",
+  "serverid": "mcp-server-circleci",
+  "xid": "/mcpproviders/CircleCI-Public/servers/mcp-server-circleci/meta"
+}

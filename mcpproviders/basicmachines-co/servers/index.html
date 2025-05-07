@@ -1,0 +1,72 @@
+{
+  "basic-memory": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:10:18.671701104Z",
+    "description": "Basic Memory lets you build persistent knowledge through natural conversations with Large Language Models (LLMs) like Claude, while keeping everything in simple Markdown files on your computer. It uses the Model Context Protocol (MCP) to enable any compatible LLM to read and write to your local knowledge base.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/basicmachines-co/servers/basic-memory/meta",
+    "modifiedat": "2025-05-07T20:10:18.671701104Z",
+    "name": "io.github.basicmachines-co/basic-memory",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [
+            "mcp"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "python",
+        "package_name": "basic-memory"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "basicmachines-co/basic-memory",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/basicmachines-co/servers/basic-memory",
+    "serverid": "basic-memory",
+    "tools": [
+      {
+        "description": "Get recent activity from across the knowledge base.\n\nTimeframe supports natural language formats like:\n- \"2 days ago\"  \n- \"last week\"\n- \"yesterday\" \n- \"today\"\n- \"3 weeks ago\"\nOr standard formats like \"7d\"",
+        "inputschema": {
+          "properties": {
+            "depth": {
+              "type": "integer"
+            },
+            "max_related": {
+              "type": "integer"
+            },
+            "page": {
+              "type": "integer"
+            },
+            "page_size": {
+              "type": "integer"
+            },
+            "timeframe": {
+              "type": "string"
+            },
+            "type": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "name": "recent_activity"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/basicmachines-co/servers/basic-memory/versions",
+    "xid": "/mcpproviders/basicmachines-co/servers/basic-memory"
+  }
+}

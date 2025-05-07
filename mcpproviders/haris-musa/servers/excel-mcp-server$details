@@ -1,0 +1,52 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:41.860499483Z",
+  "description": "A Model Context Protocol (MCP) server that lets you manipulate Excel files without needing Microsoft Excel installed. Create, read, and modify Excel workbooks with your AI agent.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/haris-musa/servers/excel-mcp-server/meta",
+  "modifiedat": "2025-05-07T20:07:41.860499483Z",
+  "name": "io.github.haris-musa/excel-mcp-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Server port (default: 8000)",
+            "name": "FASTMCP_PORT",
+            "require": false
+          },
+          {
+            "descrip": "Directory for Excel files (default: ./excel_files)",
+            "name": "EXCEL_FILES_PATH",
+            "require": false
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "python",
+      "package_name": "excel-mcp-server"
+    }
+  ],
+  "remotes": [
+    {
+      "transporttype": "http",
+      "url": "http://localhost:8000/sse"
+    }
+  ],
+  "repo_ref": "haris-musa/excel-mcp-server",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/haris-musa/servers/excel-mcp-server",
+  "serverid": "excel-mcp-server",
+  "tools": [],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/haris-musa/servers/excel-mcp-server/versions",
+  "xid": "/mcpproviders/haris-musa/servers/excel-mcp-server"
+}

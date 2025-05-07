@@ -1,0 +1,103 @@
+{
+  "mcp-database-server": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:08:11.646526869Z",
+    "description": "Simple JSON document server with basic CRUD operations using Fireproof database in a Model Context Protocol server.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/fireproof-storage/servers/mcp-database-server/meta",
+    "modifiedat": "2025-05-07T20:08:11.646526869Z",
+    "name": "io.github.fireproof-storage/mcp-database-server",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "fireproof-mcp"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "fireproof-storage/mcp-database-server",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/fireproof-storage/servers/mcp-database-server",
+    "serverid": "mcp-database-server",
+    "tools": [
+      {
+        "description": "Save a JSON document",
+        "inputschema": {
+          "properties": {
+            "doc": {
+              "description": "JSON document to save",
+              "type": "object"
+            }
+          },
+          "required": [
+            "doc"
+          ],
+          "type": "object"
+        },
+        "name": "save_json_doc"
+      },
+      {
+        "description": "Load a JSON document by ID",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "description": "ID of document to load",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "load_json_doc"
+      },
+      {
+        "description": "Delete a JSON document by ID",
+        "inputschema": {
+          "properties": {
+            "id": {
+              "description": "ID of document to delete",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "delete_json_doc"
+      },
+      {
+        "description": "Query JSON documents sorted by a field",
+        "inputschema": {
+          "properties": {
+            "sort_field": {
+              "description": "Field to sort results by",
+              "type": "string"
+            }
+          },
+          "required": [
+            "sort_field"
+          ],
+          "type": "object"
+        },
+        "name": "query_json_docs"
+      }
+    ],
+    "version_detail": {
+      "version": "0.1.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/fireproof-storage/servers/mcp-database-server/versions",
+    "xid": "/mcpproviders/fireproof-storage/servers/mcp-database-server"
+  }
+}

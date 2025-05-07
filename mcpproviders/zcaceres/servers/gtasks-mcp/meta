@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:08:49.405382338Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/zcaceres/servers/gtasks-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:08:49.405382338Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/zcaceres/servers/gtasks-mcp/meta",
+  "serverid": "gtasks-mcp",
+  "xid": "/mcpproviders/zcaceres/servers/gtasks-mcp/meta"
+}

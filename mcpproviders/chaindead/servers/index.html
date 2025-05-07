@@ -1,0 +1,104 @@
+{
+  "telegram-mcp": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:09:05.001257351Z",
+    "description": "The server is a bridge between the Telegram API and the AI assistants and is based on the Model Context Protocol. It provides capabilities such as getting current account information, listing dialogs, marking dialogs as read, retrieving messages, and sending draft messages.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/chaindead/servers/telegram-mcp/meta",
+    "modifiedat": "2025-05-07T20:09:05.001257351Z",
+    "name": "io.github.chaindead/telegram-mcp",
+    "prompts": [
+      {
+        "arguments": [],
+        "description": "Prompts for managing messages such as checking unread messages, summarizing, analyzing, and preparing draft responses.",
+        "name": "Message Management"
+      },
+      {
+        "arguments": [],
+        "description": "Prompts for analyzing dialogs and suggesting folder structures or categorization.",
+        "name": "Organization"
+      },
+      {
+        "arguments": [],
+        "description": "Prompts for monitoring chats, drafting responses, and checking unanswered questions.",
+        "name": "Communication"
+      }
+    ],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Telegram API ID",
+              "name": "TG_APP_ID",
+              "require": true
+            },
+            {
+              "descrip": "Telegram API hash",
+              "name": "TG_API_HASH",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "-y",
+            "@chaindead/telegram-mcp"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@chaindead/telegram-mcp"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "chaindead/telegram-mcp",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/chaindead/servers/telegram-mcp",
+    "serverid": "telegram-mcp",
+    "tools": [
+      {
+        "description": "Get current account information",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "tg_me"
+      },
+      {
+        "description": "List dialogs with optional unread filter",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "tg_dialogs"
+      },
+      {
+        "description": "Mark dialog as read",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "tg_read"
+      },
+      {
+        "description": "Retrieve messages from specific dialog",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "tg_dialog"
+      },
+      {
+        "description": "Send draft messages to any dialog",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "tg_send"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/chaindead/servers/telegram-mcp/versions",
+    "xid": "/mcpproviders/chaindead/servers/telegram-mcp"
+  }
+}

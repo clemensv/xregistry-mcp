@@ -1,0 +1,95 @@
+{
+  "mem0-mcp": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:09:11.954501369Z",
+    "description": "This demonstrates a structured approach for using an MCP server with mem0 to manage coding preferences efficiently. The server provides tools for storing, retrieving, and searching coding preferences and exposes an SSE endpoint for MCP clients.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/mem0ai/servers/mem0-mcp/meta",
+    "modifiedat": "2025-05-07T20:09:11.954501369Z",
+    "name": "io.github.mem0ai/mem0-mcp",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "API key for mem0 client",
+              "name": "MEM0_API_KEY",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "run",
+            "main.py"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@modelcontextprotocol/sdk"
+      }
+    ],
+    "remotes": [
+      {
+        "transporttype": "http",
+        "url": "http://0.0.0.0:8080/sse"
+      }
+    ],
+    "repo_ref": "mem0ai/mem0-mcp",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/mem0ai/servers/mem0-mcp",
+    "serverid": "mem0-mcp",
+    "tools": [
+      {
+        "description": "Add a new memory. This method is called everytime the user informs anything about themselves, their preferences, or anything that has any relevent information whcih can be useful in the future conversation. This can also be called when the user asks you to remember something.",
+        "inputschema": {
+          "properties": {
+            "content": {
+              "description": "The content to store in memory",
+              "type": "string"
+            },
+            "userId": {
+              "description": "User ID for memory storage. If not provided explicitly, use a generic user ID like, 'mem0-mcp-user'",
+              "type": "string"
+            }
+          },
+          "required": [
+            "content",
+            "userId"
+          ],
+          "type": "object"
+        },
+        "name": "add-memory"
+      },
+      {
+        "description": "Search through stored memories. This method is called ANYTIME the user asks anything.",
+        "inputschema": {
+          "properties": {
+            "query": {
+              "description": "The search query. This is the query that the user has asked for. Example: 'What did I tell you about the weather last week?' or 'What did I tell you about my friend John?'",
+              "type": "string"
+            },
+            "userId": {
+              "description": "User ID for memory storage. If not provided explicitly, use a generic user ID like, 'mem0-mcp-user\"",
+              "type": "string"
+            }
+          },
+          "required": [
+            "query",
+            "userId"
+          ],
+          "type": "object"
+        },
+        "name": "search-memories"
+      }
+    ],
+    "version_detail": {
+      "version": "1.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/mem0ai/servers/mem0-mcp/versions",
+    "xid": "/mcpproviders/mem0ai/servers/mem0-mcp"
+  }
+}

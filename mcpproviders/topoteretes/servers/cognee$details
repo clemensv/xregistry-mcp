@@ -1,0 +1,110 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:11:28.15303524Z",
+  "description": "Build dynamic Agent memory using scalable, modular ECL (Extract, Cognify, Load) pipelines.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/topoteretes/servers/cognee/meta",
+  "modifiedat": "2025-05-07T20:11:28.15303524Z",
+  "name": "io.github.topoteretes/cognee",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "API key for LLM provider",
+            "name": "LLM_API_KEY",
+            "require": true
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "python",
+      "package_name": "cognee"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "topoteretes/cognee",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/topoteretes/servers/cognee",
+  "serverid": "cognee",
+  "tools": [
+    {
+      "description": "Cognifies text into knowledge graph",
+      "inputschema": {
+        "properties": {
+          "graph_model_file": {
+            "description": "The path to the graph model file (Optional)",
+            "type": "string"
+          },
+          "graph_model_name": {
+            "description": "The name of the graph model (Optional)",
+            "type": "string"
+          },
+          "text": {
+            "description": "The text to cognify",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ],
+        "type": "object"
+      },
+      "name": "cognify"
+    },
+    {
+      "description": "Transforms codebase into knowledge graph",
+      "inputschema": {
+        "properties": {
+          "repo_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "repo_path"
+        ],
+        "type": "object"
+      },
+      "name": "codify"
+    },
+    {
+      "description": "Searches for information in knowledge graph",
+      "inputschema": {
+        "properties": {
+          "search_query": {
+            "description": "The query to search for",
+            "type": "string"
+          },
+          "search_type": {
+            "description": "The type of search to perform (e.g., INSIGHTS, CODE)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "search_query"
+        ],
+        "type": "object"
+      },
+      "name": "search"
+    },
+    {
+      "description": "Prunes knowledge graph",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "prune"
+    }
+  ],
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/topoteretes/servers/cognee/versions",
+  "xid": "/mcpproviders/topoteretes/servers/cognee"
+}

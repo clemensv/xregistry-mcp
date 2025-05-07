@@ -1,0 +1,72 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:44.905815362Z",
+  "description": "A MCP (Model Context Protocol) provider Deepseek reasoning content to MCP-enabled AI Clients, like Claude Desktop. Supports access to Deepseek's thought processes from the Deepseek API service or from a local Ollama server.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/ruixingshi/servers/deepseek-thinker-mcp/meta",
+  "modifiedat": "2025-05-07T20:07:44.905815362Z",
+  "name": "io.github.ruixingshi/deepseek-thinker-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Your OpenAI API Key",
+            "name": "API_KEY",
+            "require": false
+          },
+          {
+            "descrip": "API Base URL",
+            "name": "BASE_URL",
+            "require": false
+          },
+          {
+            "descrip": "Set to true to use Ollama mode",
+            "name": "USE_OLLAMA",
+            "require": false
+          }
+        ],
+        "positional_arguments": [
+          "-y",
+          "deepseek-thinker-mcp"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "deepseek-thinker-mcp"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "ruixingshi/deepseek-thinker-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/ruixingshi/servers/deepseek-thinker-mcp",
+  "serverid": "deepseek-thinker-mcp",
+  "tools": [
+    {
+      "description": "Perform reasoning using the Deepseek model",
+      "inputschema": {
+        "properties": {
+          "originPrompt": {
+            "description": "user's original prompt",
+            "type": "string"
+          }
+        },
+        "required": [
+          "originPrompt"
+        ],
+        "type": "object"
+      },
+      "name": "get-deepseek-thinker"
+    }
+  ],
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/ruixingshi/servers/deepseek-thinker-mcp/versions",
+  "xid": "/mcpproviders/ruixingshi/servers/deepseek-thinker-mcp"
+}

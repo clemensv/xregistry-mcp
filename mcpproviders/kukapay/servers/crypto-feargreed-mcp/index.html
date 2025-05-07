@@ -1,0 +1,102 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:41.616906625Z",
+  "description": "A mcp server that provides real-time and historical Crypto Fear \u0026 Greed Index data, powered by the Alternative.me.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/kukapay/servers/crypto-feargreed-mcp/meta",
+  "modifiedat": "2025-05-07T20:07:41.616906625Z",
+  "name": "io.github.kukapay/crypto-feargreed-mcp",
+  "prompts": [
+    {
+      "arguments": [
+        {
+          "description": "Crypto Fear \u0026 Greed Index value to interpret",
+          "name": "value",
+          "required": true
+        }
+      ],
+      "description": "Index Data Interpretation.",
+      "name": "interpret_fng"
+    }
+  ],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "install",
+          "main.py",
+          "--name",
+          "CryptoFearGreed"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "python",
+      "package_name": "crypto-feargreed-mcp"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "kukapay/crypto-feargreed-mcp",
+  "resources": [
+    {
+      "description": "Current crypto Fear \u0026 Greed Index.",
+      "name": "current",
+      "uritemplate": "fng://current"
+    },
+    {
+      "description": "Historical Data of Crypto Fear \u0026 Greed Index for specified number of days.",
+      "name": "history",
+      "uritemplate": "fng://history/{days}"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/kukapay/servers/crypto-feargreed-mcp",
+  "serverid": "crypto-feargreed-mcp",
+  "tools": [
+    {
+      "description": "Current Index. Same as fng://current",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_current_fng_tool"
+    },
+    {
+      "description": "Historical Index Data. Same as fng://history/{days}",
+      "inputschema": {
+        "properties": {
+          "days": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "days"
+        ],
+        "type": "object"
+      },
+      "name": "get_historical_fng_tool"
+    },
+    {
+      "description": "Index trend Analysis.",
+      "inputschema": {
+        "properties": {
+          "days": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "days"
+        ],
+        "type": "object"
+      },
+      "name": "analyze_fng_trend"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/kukapay/servers/crypto-feargreed-mcp/versions",
+  "xid": "/mcpproviders/kukapay/servers/crypto-feargreed-mcp"
+}

@@ -1,0 +1,116 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:08:51.903492586Z",
+  "description": "This MCP server provides functionality to fetch web content in various formats, including HTML, JSON, plain text, and Markdown.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:08:51.903492586Z",
+  "name": "io.github.zcaceres/fetch-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "dist/index.js"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "zcaceres/fetch-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/zcaceres/servers/fetch-mcp/versions/1",
+  "serverid": "fetch-mcp",
+  "tools": [
+    {
+      "description": "Fetch a website and return the content as HTML",
+      "inputschema": {
+        "properties": {
+          "headers": {
+            "description": "Optional headers to include in the request",
+            "type": "object"
+          },
+          "url": {
+            "description": "URL of the website to fetch",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "fetch_html"
+    },
+    {
+      "description": "Fetch a website and return the content as Markdown",
+      "inputschema": {
+        "properties": {
+          "headers": {
+            "description": "Optional headers to include in the request",
+            "type": "object"
+          },
+          "url": {
+            "description": "URL of the website to fetch",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "fetch_markdown"
+    },
+    {
+      "description": "Fetch a website, return the content as plain text (no HTML)",
+      "inputschema": {
+        "properties": {
+          "headers": {
+            "description": "Optional headers to include in the request",
+            "type": "object"
+          },
+          "url": {
+            "description": "URL of the website to fetch",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "fetch_txt"
+    },
+    {
+      "description": "Fetch a JSON file from a URL",
+      "inputschema": {
+        "properties": {
+          "headers": {
+            "description": "Optional headers to include in the request",
+            "type": "object"
+          },
+          "url": {
+            "description": "URL of the JSON to fetch",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "fetch_json"
+    }
+  ],
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/zcaceres/servers/fetch-mcp/versions/1"
+}

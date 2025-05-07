@@ -1,0 +1,459 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:15:14.023584568Z",
+  "description": "A Model Context Protocol (MCP) server for interacting with Meilisearch through LLM interfaces like Claude.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:15:14.023584568Z",
+  "name": "io.github.meilisearch/meilisearch-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Default Meilisearch URL",
+            "name": "MEILI_HTTP_ADDR",
+            "require": false
+          },
+          {
+            "descrip": "Optional: Default Meilisearch API key",
+            "name": "MEILI_MASTER_KEY",
+            "require": false
+          }
+        ],
+        "positional_arguments": [
+          "-m",
+          "src.meilisearch_mcp"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "python",
+      "package_name": "meilisearch-mcp"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "meilisearch/meilisearch-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/meilisearch/servers/meilisearch-mcp/versions/1",
+  "serverid": "meilisearch-mcp",
+  "tools": [
+    {
+      "description": "Get current Meilisearch connection settings",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "get-connection-settings"
+    },
+    {
+      "description": "Update Meilisearch connection settings",
+      "inputschema": {
+        "properties": {
+          "api_key": {
+            "optional": true,
+            "type": "string"
+          },
+          "url": {
+            "optional": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "name": "update-connection-settings"
+    },
+    {
+      "description": "Check Meilisearch server health",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "health-check"
+    },
+    {
+      "description": "Get Meilisearch version information",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "get-version"
+    },
+    {
+      "description": "Get database statistics",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "get-stats"
+    },
+    {
+      "description": "Create a new Meilisearch index",
+      "inputschema": {
+        "properties": {
+          "primaryKey": {
+            "optional": true,
+            "type": "string"
+          },
+          "uid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "uid"
+        ],
+        "type": "object"
+      },
+      "name": "create-index"
+    },
+    {
+      "description": "List all Meilisearch indexes",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "list-indexes"
+    },
+    {
+      "description": "Get documents from an index",
+      "inputschema": {
+        "properties": {
+          "indexUid": {
+            "type": "string"
+          },
+          "limit": {
+            "optional": true,
+            "type": "integer"
+          },
+          "offset": {
+            "optional": true,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "indexUid"
+        ],
+        "type": "object"
+      },
+      "name": "get-documents"
+    },
+    {
+      "description": "Add documents to an index",
+      "inputschema": {
+        "properties": {
+          "documents": {
+            "type": "array"
+          },
+          "indexUid": {
+            "type": "string"
+          },
+          "primaryKey": {
+            "optional": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "indexUid",
+          "documents"
+        ],
+        "type": "object"
+      },
+      "name": "add-documents"
+    },
+    {
+      "description": "Get current settings for an index",
+      "inputschema": {
+        "properties": {
+          "indexUid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "indexUid"
+        ],
+        "type": "object"
+      },
+      "name": "get-settings"
+    },
+    {
+      "description": "Update settings for an index",
+      "inputschema": {
+        "properties": {
+          "indexUid": {
+            "type": "string"
+          },
+          "settings": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "indexUid",
+          "settings"
+        ],
+        "type": "object"
+      },
+      "name": "update-settings"
+    },
+    {
+      "description": "Search through Meilisearch indices. If indexUid is not provided, it will search across all indices.",
+      "inputschema": {
+        "properties": {
+          "filter": {
+            "optional": true,
+            "type": "string"
+          },
+          "indexUid": {
+            "optional": true,
+            "type": "string"
+          },
+          "limit": {
+            "optional": true,
+            "type": "integer"
+          },
+          "offset": {
+            "optional": true,
+            "type": "integer"
+          },
+          "query": {
+            "type": "string"
+          },
+          "sort": {
+            "items": {
+              "type": "string"
+            },
+            "optional": true,
+            "type": "array"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "search"
+    },
+    {
+      "description": "Get information about a specific task",
+      "inputschema": {
+        "properties": {
+          "taskUid": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "taskUid"
+        ],
+        "type": "object"
+      },
+      "name": "get-task"
+    },
+    {
+      "description": "Get list of tasks with optional filters",
+      "inputschema": {
+        "properties": {
+          "afterEnqueuedAt": {
+            "optional": true,
+            "type": "string"
+          },
+          "afterFinishedAt": {
+            "optional": true,
+            "type": "string"
+          },
+          "afterStartedAt": {
+            "optional": true,
+            "type": "string"
+          },
+          "batchUids": {
+            "items": {
+              "type": "string"
+            },
+            "optional": true,
+            "type": "array"
+          },
+          "beforeEnqueuedAt": {
+            "optional": true,
+            "type": "string"
+          },
+          "beforeFinishedAt": {
+            "optional": true,
+            "type": "string"
+          },
+          "beforeStartedAt": {
+            "optional": true,
+            "type": "string"
+          },
+          "canceledBy": {
+            "items": {
+              "type": "string"
+            },
+            "optional": true,
+            "type": "array"
+          },
+          "from": {
+            "optional": true,
+            "type": "integer"
+          },
+          "indexUids": {
+            "items": {
+              "type": "string"
+            },
+            "optional": true,
+            "type": "array"
+          },
+          "limit": {
+            "optional": true,
+            "type": "integer"
+          },
+          "reverse": {
+            "optional": true,
+            "type": "boolean"
+          },
+          "statuses": {
+            "items": {
+              "type": "string"
+            },
+            "optional": true,
+            "type": "array"
+          },
+          "types": {
+            "items": {
+              "type": "string"
+            },
+            "optional": true,
+            "type": "array"
+          },
+          "uids": {
+            "items": {
+              "type": "integer"
+            },
+            "optional": true,
+            "type": "array"
+          }
+        },
+        "type": "object"
+      },
+      "name": "get-tasks"
+    },
+    {
+      "description": "Cancel tasks based on filters",
+      "inputschema": {
+        "properties": {
+          "indexUids": {
+            "optional": true,
+            "type": "string"
+          },
+          "statuses": {
+            "optional": true,
+            "type": "string"
+          },
+          "types": {
+            "optional": true,
+            "type": "string"
+          },
+          "uids": {
+            "optional": true,
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "name": "cancel-tasks"
+    },
+    {
+      "description": "Get list of API keys",
+      "inputschema": {
+        "properties": {
+          "limit": {
+            "optional": true,
+            "type": "integer"
+          },
+          "offset": {
+            "optional": true,
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "name": "get-keys"
+    },
+    {
+      "description": "Create a new API key",
+      "inputschema": {
+        "properties": {
+          "actions": {
+            "type": "array"
+          },
+          "description": {
+            "optional": true,
+            "type": "string"
+          },
+          "expiresAt": {
+            "optional": true,
+            "type": "string"
+          },
+          "indexes": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "actions",
+          "indexes"
+        ],
+        "type": "object"
+      },
+      "name": "create-key"
+    },
+    {
+      "description": "Delete an API key",
+      "inputschema": {
+        "properties": {
+          "key": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key"
+        ],
+        "type": "object"
+      },
+      "name": "delete-key"
+    },
+    {
+      "description": "Get comprehensive health status of Meilisearch",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "get-health-status"
+    },
+    {
+      "description": "Get detailed metrics for an index",
+      "inputschema": {
+        "properties": {
+          "indexUid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "indexUid"
+        ],
+        "type": "object"
+      },
+      "name": "get-index-metrics"
+    },
+    {
+      "description": "Get system-level information",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "get-system-info"
+    }
+  ],
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/meilisearch/servers/meilisearch-mcp/versions/1"
+}

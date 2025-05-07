@@ -1,0 +1,80 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:16:20.349382356Z",
+  "description": "SEC EDGAR MCP is an open-source MCP server that connects AI models to the rich dataset of SEC EDGAR filings, enabling AI assistants to query official SEC financial data in real-time.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/stefanoamorelli/servers/sec-edgar-mcp/meta",
+  "modifiedat": "2025-05-07T20:16:20.349382356Z",
+  "name": "io.github.stefanoamorelli/sec-edgar-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "User-Agent string required by SEC EDGAR API",
+            "name": "SEC_API_USER_AGENT",
+            "require": true
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "python",
+      "package_name": "sec-edgar-mcp"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "stefanoamorelli/sec-edgar-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/stefanoamorelli/servers/sec-edgar-mcp",
+  "serverid": "sec-edgar-mcp",
+  "tools": [
+    {
+      "description": "Fetches submissions (filings) for a given company CIK.",
+      "inputschema": {
+        "properties": {
+          "cik": {
+            "description": "Central Index Key of the company",
+            "type": "string"
+          }
+        },
+        "required": [
+          "cik"
+        ],
+        "type": "object"
+      },
+      "name": "get_submissions"
+    },
+    {
+      "description": "Fetches specific financial concepts for a company.",
+      "inputschema": {
+        "properties": {
+          "cik": {
+            "description": "Central Index Key of the company",
+            "type": "string"
+          },
+          "concept": {
+            "description": "Financial concept to retrieve",
+            "type": "string"
+          }
+        },
+        "required": [
+          "cik",
+          "concept"
+        ],
+        "type": "object"
+      },
+      "name": "get_company_concepts"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/stefanoamorelli/servers/sec-edgar-mcp/versions",
+  "xid": "/mcpproviders/stefanoamorelli/servers/sec-edgar-mcp"
+}

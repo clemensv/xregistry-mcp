@@ -1,0 +1,86 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:10:12.578228869Z",
+  "description": "A Model Context Protocol (MCP) server for Azure Data Explorer/Eventhouse in Microsoft Fabric. Provides access to Azure Data Explorer/Eventhouse clusters and databases through standardized MCP interfaces, allowing AI assistants to execute KQL queries and explore data.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:10:12.578228869Z",
+  "name": "io.github.pab1it0/adx-mcp-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "URL of the Azure Data Explorer cluster",
+            "name": "ADX_CLUSTER_URL",
+            "require": true
+          },
+          {
+            "descrip": "Name of the Azure Data Explorer database",
+            "name": "ADX_DATABASE",
+            "require": true
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "container",
+      "package_name": "adx-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "pab1it0/adx-mcp-server",
+  "resources": [
+    {
+      "description": "Tables in the configured Azure Data Explorer database.",
+      "name": "tables",
+      "uritemplate": "/tables/{tableName}"
+    },
+    {
+      "description": "Schemas of tables in the database.",
+      "name": "schemas",
+      "uritemplate": "/schemas/{tableName}"
+    },
+    {
+      "description": "Sample data from tables.",
+      "name": "samples",
+      "uritemplate": "/samples/{tableName}"
+    },
+    {
+      "description": "Statistics and details of tables.",
+      "name": "statistics",
+      "uritemplate": "/statistics/{tableName}"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/pab1it0/servers/adx-mcp-server/versions/1",
+  "serverid": "adx-mcp-server",
+  "tools": [
+    {
+      "description": "Execute KQL queries against Azure Data Explorer.",
+      "name": "execute_kql_query"
+    },
+    {
+      "description": "List tables in the configured database.",
+      "name": "list_tables"
+    },
+    {
+      "description": "View table schemas.",
+      "name": "view_table_schema"
+    },
+    {
+      "description": "Sample data from tables.",
+      "name": "sample_table_data"
+    },
+    {
+      "description": "Get table statistics and details.",
+      "name": "get_table_statistics"
+    }
+  ],
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/pab1it0/servers/adx-mcp-server/versions/1"
+}

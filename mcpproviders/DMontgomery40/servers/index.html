@@ -1,0 +1,179 @@
+{
+  "deepseek-mcp-server": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:08:29.644188088Z",
+    "description": "A Model Context Protocol (MCP) server for the DeepSeek API, allowing seamless integration of DeepSeek's powerful language models with MCP-compatible applications like Claude Desktop.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/DMontgomery40/servers/deepseek-mcp-server/meta",
+    "modifiedat": "2025-05-07T20:08:29.644188088Z",
+    "name": "io.github.DMontgomery40/deepseek-mcp-server",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "API key for DeepSeek API",
+              "name": "DEEPSEEK_API_KEY",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "-y",
+            "deepseek-mcp-server"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "deepseek-mcp-server"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "DMontgomery40/deepseek-mcp-server",
+    "resources": [
+      {
+        "description": "Resource exposing available models with their capabilities.",
+        "name": "models",
+        "uritemplate": "models://{modelId}"
+      },
+      {
+        "description": "Resource exposing configuration options for models.",
+        "name": "model-config",
+        "uritemplate": "config://{modelId}"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/DMontgomery40/servers/deepseek-mcp-server",
+    "serverid": "deepseek-mcp-server",
+    "tools": [
+      {
+        "description": "Chat completion tool for generating responses from DeepSeek models.",
+        "inputschema": {
+          "additionalProperties": false,
+          "properties": {
+            "frequency_penalty": {
+              "maximum": 2,
+              "minimum": -2,
+              "type": "number"
+            },
+            "max_tokens": {
+              "minimum": 1,
+              "type": "integer"
+            },
+            "message": {
+              "type": "string"
+            },
+            "messages": {
+              "items": {
+                "properties": {
+                  "conten": "string",
+                  "role": {
+                    "e": "assistant",
+                    "t": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "model": {
+              "type": "string"
+            },
+            "presence_penalty": {
+              "maximum": 2,
+              "minimum": -2,
+              "type": "number"
+            },
+            "temperature": {
+              "maximum": 2,
+              "minimum": 0,
+              "type": "number"
+            },
+            "top_p": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "model",
+            "temperature",
+            "max_tokens",
+            "top_p",
+            "frequency_penalty",
+            "presence_penalty"
+          ],
+          "type": "object"
+        },
+        "name": "chat_completion"
+      },
+      {
+        "description": "Multi-turn conversation support maintaining message history and context.",
+        "inputschema": {
+          "additionalProperties": false,
+          "properties": {
+            "frequency_penalty": {
+              "maximum": 2,
+              "minimum": -2,
+              "type": "number"
+            },
+            "max_tokens": {
+              "minimum": 1,
+              "type": "integer"
+            },
+            "messages": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "items": {
+                    "properti": "text",
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              ]
+            },
+            "model": {
+              "type": "string"
+            },
+            "presence_penalty": {
+              "maximum": 2,
+              "minimum": -2,
+              "type": "number"
+            },
+            "temperature": {
+              "maximum": 2,
+              "minimum": 0,
+              "type": "number"
+            },
+            "top_p": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "model",
+            "temperature",
+            "max_tokens",
+            "top_p",
+            "frequency_penalty",
+            "presence_penalty"
+          ],
+          "type": "object"
+        },
+        "name": "multi_turn_chat"
+      }
+    ],
+    "version_detail": {
+      "version": "0.1.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/DMontgomery40/servers/deepseek-mcp-server/versions",
+    "xid": "/mcpproviders/DMontgomery40/servers/deepseek-mcp-server"
+  }
+}

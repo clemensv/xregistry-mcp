@@ -1,0 +1,77 @@
+{
+  "pushover-mcp": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:10:56.692480251Z",
+    "description": "A Model Context Protocol implementation for sending notifications via Pushover.net.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/AshikNesin/servers/pushover-mcp/meta",
+    "modifiedat": "2025-05-07T20:10:56.692480251Z",
+    "name": "io.github.AshikNesin/pushover-mcp",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [
+            "--token",
+            "YOUR_TOKEN",
+            "--user",
+            "YOUR_USER"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "pushover-mcp"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "AshikNesin/pushover-mcp",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/AshikNesin/servers/pushover-mcp",
+    "serverid": "pushover-mcp",
+    "tools": [
+      {
+        "description": "Sends a notification via Pushover.",
+        "inputschema": {
+          "properties": {
+            "device": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "priority": {
+              "type": "number"
+            },
+            "sound": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "url_title": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "message"
+          ],
+          "type": "object"
+        },
+        "name": "send"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/AshikNesin/servers/pushover-mcp/versions",
+    "xid": "/mcpproviders/AshikNesin/servers/pushover-mcp"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:08:26.76826315Z",
+  "description": "A Model Context Protocol server for DevRev. It is used to search and retrieve information using the DevRev APIs.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:08:26.76826315Z",
+  "name": "io.github.kpsunil97/devrev-mcp-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "name": "DEVREV_API_KEY",
+            "require": false
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "devrev-mcp"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "kpsunil97/devrev-mcp-server",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/kpsunil97/servers/devrev-mcp-server/versions/1",
+  "serverid": "devrev-mcp-server",
+  "tools": [
+    {
+      "description": "Search DevRev using the provided query",
+      "inputschema": {
+        "properties": {
+          "namespace": {
+            "enum": [
+              "article",
+              "issue",
+              "ticket"
+            ],
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "query",
+          "namespace"
+        ],
+        "type": "object"
+      },
+      "name": "search"
+    },
+    {
+      "description": "Get all information about a DevRev object using its ID",
+      "inputschema": {
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "type": "object"
+      },
+      "name": "get_object"
+    }
+  ],
+  "version_detail": {
+    "version": "0.1.1"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/kpsunil97/servers/devrev-mcp-server/versions/1"
+}

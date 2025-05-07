@@ -1,0 +1,146 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:12:32.297655756Z",
+  "description": "A Model Context Protocol server that provides read and write access to Airtable databases. This server enables LLMs to inspect database schemas, then read and write records.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/domdomegg/servers/airtable-mcp-server/meta",
+  "modifiedat": "2025-05-07T20:12:32.297655756Z",
+  "name": "io.github.domdomegg/airtable-mcp-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Airtable personal access token",
+            "name": "AIRTABLE_API_KEY",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "-y",
+          "airtable-mcp-server"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "airtable-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "domdomegg/airtable-mcp-server",
+  "resources": [
+    {
+      "description": "Schema of a specific table in an Airtable base",
+      "mimetype": "application/json",
+      "name": "Airtable Table Schema",
+      "uritemplate": "airtable://{baseId}/{tableId}/schema"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/domdomegg/servers/airtable-mcp-server",
+  "serverid": "airtable-mcp-server",
+  "tools": [
+    {
+      "description": "List records from a table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_records"
+    },
+    {
+      "description": "Search for records containing specific text",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "search_records"
+    },
+    {
+      "description": "List all accessible Airtable bases",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "list_bases"
+    },
+    {
+      "description": "List all tables in a specific base",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_tables"
+    },
+    {
+      "description": "Get detailed information about a specific table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "describe_table"
+    },
+    {
+      "description": "Get a specific record by ID",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_record"
+    },
+    {
+      "description": "Create a new record in a table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_record"
+    },
+    {
+      "description": "Update up to 10 records in a table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "update_records"
+    },
+    {
+      "description": "Delete records from a table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "delete_records"
+    },
+    {
+      "description": "Create a new table in a base",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_table"
+    },
+    {
+      "description": "Update a table's name or description",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "update_table"
+    },
+    {
+      "description": "Create a new field in a table",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_field"
+    },
+    {
+      "description": "Update a field's name or description",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "update_field"
+    }
+  ],
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/domdomegg/servers/airtable-mcp-server/versions",
+  "xid": "/mcpproviders/domdomegg/servers/airtable-mcp-server"
+}

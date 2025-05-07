@@ -1,0 +1,51 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:38.647205191Z",
+  "description": "This extension provides declarative and programmatic APIs that enable developers to implement the MCP server features easily.",
+  "documentation": "https://quarkiverse.github.io/quarkiverse-docs/quarkus-mcp-server/dev/index.html",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/quarkiverse/servers/quarkus-mcp-server/meta",
+  "modifiedat": "2025-05-07T20:07:38.647205191Z",
+  "name": "io.github.quarkiverse/quarkus-mcp-server",
+  "prompts": [
+    {
+      "arguments": [
+        {
+          "name": "lang",
+          "required": false
+        }
+      ],
+      "name": "code_assist"
+    }
+  ],
+  "registries": [],
+  "remotes": [
+    {
+      "transporttype": "http",
+      "url": "unspecified"
+    }
+  ],
+  "repo_ref": "quarkiverse/quarkus-mcp-server",
+  "resources": [
+    {
+      "name": "alpha",
+      "uritemplate": "file:///project/alpha"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/quarkiverse/servers/quarkus-mcp-server",
+  "serverid": "quarkus-mcp-server",
+  "tools": [
+    {
+      "description": "Converts the string value to lower case",
+      "name": "toLowerCase"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/quarkiverse/servers/quarkus-mcp-server/versions",
+  "xid": "/mcpproviders/quarkiverse/servers/quarkus-mcp-server"
+}

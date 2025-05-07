@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:15:01.362123108Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/Flux159/servers/mcp-server-kubernetes/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:15:01.362123108Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/Flux159/servers/mcp-server-kubernetes/meta",
+  "serverid": "mcp-server-kubernetes",
+  "xid": "/mcpproviders/Flux159/servers/mcp-server-kubernetes/meta"
+}

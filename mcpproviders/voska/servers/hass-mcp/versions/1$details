@@ -1,0 +1,358 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:08:59.506759476Z",
+  "description": "A Model Context Protocol (MCP) server for Home Assistant integration with Claude and other LLMs. Enables AI assistants to query device states, control entities, get summaries, troubleshoot automations, search entities, and create guided conversations.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:08:59.506759476Z",
+  "name": "io.github.voska/hass-mcp",
+  "prompts": [
+    {
+      "arguments": [
+        {
+          "description": "The type of trigger for the automation",
+          "name": "trigger_type",
+          "required": true
+        },
+        {
+          "description": "Optional entity to use as the trigger source",
+          "name": "entity_id",
+          "required": false
+        }
+      ],
+      "description": "Guide a user through creating a Home Assistant automation",
+      "name": "create_automation"
+    },
+    {
+      "arguments": [
+        {
+          "description": "The entity ID of the automation to troubleshoot",
+          "name": "automation_id",
+          "required": true
+        }
+      ],
+      "description": "Help a user troubleshoot an automation that isn't working",
+      "name": "debug_automation"
+    },
+    {
+      "arguments": [
+        {
+          "description": "The entity ID having issues",
+          "name": "entity_id",
+          "required": true
+        }
+      ],
+      "description": "Guide a user through troubleshooting issues with an entity",
+      "name": "troubleshoot_entity"
+    },
+    {
+      "arguments": [],
+      "description": "Analyze usage patterns and suggest optimized routines based on actual behavior",
+      "name": "routine_optimizer"
+    },
+    {
+      "arguments": [],
+      "description": "Review all automations, find conflicts, redundancies, or improvement opportunities",
+      "name": "automation_health_check"
+    },
+    {
+      "arguments": [],
+      "description": "Audit entity names and suggest standardization improvements",
+      "name": "entity_naming_consistency"
+    },
+    {
+      "arguments": [],
+      "description": "Create optimized dashboards based on user preferences and usage patterns",
+      "name": "dashboard_layout_generator"
+    }
+  ],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "URL of the Home Assistant instance",
+            "name": "HA_URL",
+            "require": true
+          },
+          {
+            "descrip": "Home Assistant Long-Lived Access Token",
+            "name": "HA_TOKEN",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "run",
+          "-i",
+          "--rm",
+          "-e",
+          "HA_URL",
+          "-e",
+          "HA_TOKEN",
+          "voska/hass-mcp"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "container",
+      "package_name": "voska/hass-mcp:latest"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "voska/hass-mcp",
+  "resources": [
+    {
+      "description": "Get the state of a Home Assistant entity as a resource",
+      "mimetype": "text/markdown",
+      "name": "entity",
+      "uritemplate": "hass://entities/{entity_id}"
+    },
+    {
+      "description": "Get a list of all Home Assistant entities as a resource",
+      "mimetype": "text/markdown",
+      "name": "entities",
+      "uritemplate": "hass://entities"
+    },
+    {
+      "description": "Search for entities matching a query string with a specified result limit",
+      "mimetype": "text/markdown",
+      "name": "search_entities",
+      "uritemplate": "hass://search/{query}/{limit}"
+    },
+    {
+      "description": "Get detailed information about a Home Assistant entity as a resource",
+      "mimetype": "text/markdown",
+      "name": "entity_detailed",
+      "uritemplate": "hass://entities/{entity_id}/detailed"
+    },
+    {
+      "description": "Get a list of entities for a specific domain as a resource",
+      "mimetype": "text/markdown",
+      "name": "entities_by_domain",
+      "uritemplate": "hass://entities/domain/{domain}"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/voska/servers/hass-mcp/versions/1",
+  "serverid": "hass-mcp",
+  "tools": [
+    {
+      "description": "Get the Home Assistant version",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "get_version"
+    },
+    {
+      "description": "Get the state of a Home Assistant entity with optional field filtering",
+      "inputschema": {
+        "properties": {
+          "detailed": {
+            "description": "Return all entity fields without filtering",
+            "type": "boolean"
+          },
+          "entity_id": {
+            "description": "The entity ID to get (e.g. 'light.living_room')",
+            "type": "string"
+          },
+          "fields": {
+            "description": "Optional list of fields to include",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "entity_id"
+        ],
+        "type": "object"
+      },
+      "name": "get_entity"
+    },
+    {
+      "description": "Perform an action on a Home Assistant entity (on, off, toggle)",
+      "inputschema": {
+        "properties": {
+          "action": {
+            "description": "Action to perform ('on', 'off', 'toggle')",
+            "type": "string"
+          },
+          "entity_id": {
+            "description": "The entity ID to control",
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity_id",
+          "action"
+        ],
+        "type": "object"
+      },
+      "name": "entity_action"
+    },
+    {
+      "description": "Get a list of Home Assistant entities with optional filtering",
+      "inputschema": {
+        "properties": {
+          "detailed": {
+            "description": "Return all entity fields without filtering",
+            "type": "boolean"
+          },
+          "domain": {
+            "description": "Optional domain to filter by",
+            "type": "string"
+          },
+          "fields": {
+            "description": "Optional list of specific fields to include",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "limit": {
+            "description": "Maximum number of entities to return",
+            "type": "integer"
+          },
+          "search_query": {
+            "description": "Optional search term to filter entities",
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "name": "list_entities"
+    },
+    {
+      "description": "Search for entities matching a query string",
+      "inputschema": {
+        "properties": {
+          "limit": {
+            "description": "Maximum number of results to return",
+            "type": "integer"
+          },
+          "query": {
+            "description": "Search query to match entity IDs, names, and attributes",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "search_entities_tool"
+    },
+    {
+      "description": "Get a summary of entities in a specific domain",
+      "inputschema": {
+        "properties": {
+          "domain": {
+            "description": "The domain to summarize",
+            "type": "string"
+          },
+          "example_limit": {
+            "description": "Maximum number of examples to include for each state",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "domain"
+        ],
+        "type": "object"
+      },
+      "name": "domain_summary"
+    },
+    {
+      "description": "Get a comprehensive overview of the entire Home Assistant system",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "system_overview"
+    },
+    {
+      "description": "Get a list of all automations from Home Assistant",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "list_automations"
+    },
+    {
+      "description": "Restart Home Assistant",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "restart_ha"
+    },
+    {
+      "description": "Call any Home Assistant service (low-level API access)",
+      "inputschema": {
+        "properties": {
+          "data": {
+            "description": "Optional data to pass to the service",
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "domain": {
+            "description": "The domain of the service",
+            "type": "string"
+          },
+          "service": {
+            "description": "The service to call",
+            "type": "string"
+          }
+        },
+        "required": [
+          "domain",
+          "service"
+        ],
+        "type": "object"
+      },
+      "name": "call_service"
+    },
+    {
+      "description": "Get the history of an entity's state changes",
+      "inputschema": {
+        "properties": {
+          "entity_id": {
+            "description": "The entity ID to get history for",
+            "type": "string"
+          },
+          "hours": {
+            "description": "Number of hours of history to retrieve",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "entity_id"
+        ],
+        "type": "object"
+      },
+      "name": "get_history"
+    },
+    {
+      "description": "Get the Home Assistant error log for troubleshooting",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "get_error_log"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/voska/servers/hass-mcp/versions/1"
+}

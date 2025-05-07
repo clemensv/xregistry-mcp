@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:15:09.845583701Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/Bankless/servers/onchain-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:15:09.845583701Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/Bankless/servers/onchain-mcp/meta",
+  "serverid": "onchain-mcp",
+  "xid": "/mcpproviders/Bankless/servers/onchain-mcp/meta"
+}

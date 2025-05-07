@@ -1,0 +1,98 @@
+{
+  "mcp-ical": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:07:42.599927397Z",
+    "description": "Transform how you interact with your macOS calendar using natural language via the Model Context Protocol (MCP). Provides natural language calendar management including event creation, updates, schedule queries, and calendar management.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/Omar-V2/servers/mcp-ical/meta",
+    "modifiedat": "2025-05-07T20:07:42.599927397Z",
+    "name": "io.github.Omar-V2/mcp-ical",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [
+            "--directory",
+            "/ABSOLUTE/PATH/TO/PARENT/FOLDER/mcp-ical",
+            "run"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "uv",
+        "package_name": "mcp-ical"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "Omar-V2/mcp-ical",
+    "resources": [
+      {
+        "description": "List all available calendars that can be used with calendar operations.",
+        "name": "calendars://list",
+        "uritemplate": "calendars://list"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/Omar-V2/servers/mcp-ical",
+    "serverid": "mcp-ical",
+    "tools": [
+      {
+        "description": "List all available calendars.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_calendars"
+      },
+      {
+        "description": "List calendar events in a date range.",
+        "inputschema": {
+          "properties": {
+            "calendar_name": {
+              "description": "Optional calendar name to filter by",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "end_date": {
+              "description": "End date in ISO8601 format (YYYY-MM-DDT23:59:59).",
+              "type": "string"
+            },
+            "start_date": {
+              "description": "Start date in ISO8601 format (YYYY-MM-DDT00:00:00).",
+              "type": "string"
+            }
+          },
+          "required": [
+            "start_date",
+            "end_date"
+          ],
+          "type": "object"
+        },
+        "name": "list_events"
+      },
+      {
+        "description": "Create a new calendar event with details like title, time, location, notes, reminders, and recurrence.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "create_event"
+      },
+      {
+        "description": "Update an existing calendar event with new details such as time, location, notes, reminders, and recurrence.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "update_event"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/Omar-V2/servers/mcp-ical/versions",
+    "xid": "/mcpproviders/Omar-V2/servers/mcp-ical"
+  }
+}

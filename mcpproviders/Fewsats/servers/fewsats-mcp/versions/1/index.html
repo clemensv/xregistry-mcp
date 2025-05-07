@@ -1,0 +1,118 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:09:03.646432288Z",
+  "description": "This MCP server integrates with Fewsats and allows AI Agents to purchase anything in a secure way.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:09:03.646432288Z",
+  "name": "io.github.Fewsats/fewsats-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "API key for Fewsats",
+            "name": "FEWSATS_API_KEY",
+            "require": true
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "uvx",
+      "package_name": "fewsats-mcp"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "Fewsats/fewsats-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/Fewsats/servers/fewsats-mcp/versions/1",
+  "serverid": "fewsats-mcp",
+  "tools": [
+    {
+      "description": "Retrieve the balance of the user's wallet",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "balance"
+    },
+    {
+      "description": "Retrieve the user's payment methods",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "payment_methods"
+    },
+    {
+      "description": "Pays an offer with the specified ID from the l402_offers",
+      "inputschema": {
+        "properties": {
+          "l402_offer": {
+            "properties": {
+              "offers": {
+                "ite": "string",
+                "typ": "array"
+              },
+              "payment_co": "string",
+              "payment_re": "string",
+              "version": {
+                "ty": "string"
+              }
+            },
+            "required": [
+              "offers",
+              "payment_context_token",
+              "payment_request_url",
+              "version"
+            ],
+            "type": "object"
+          },
+          "offer_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "offer_id",
+          "l402_offer"
+        ],
+        "type": "object"
+      },
+      "name": "pay_offer"
+    },
+    {
+      "description": "Retrieve the details of a payment",
+      "inputschema": {
+        "properties": {
+          "pid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "pid"
+        ],
+        "type": "object"
+      },
+      "name": "payment_info"
+    },
+    {
+      "description": "Retrieve the user's billing information",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "billing_info"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/Fewsats/servers/fewsats-mcp/versions/1"
+}

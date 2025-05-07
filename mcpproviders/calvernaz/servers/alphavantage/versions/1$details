@@ -1,0 +1,43 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:09:13.376170889Z",
+  "description": "A MCP server for the stock market data API, Alphavantage API.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:09:13.376170889Z",
+  "name": "io.github.calvernaz/alphavantage",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "name": "ALPHAVANTAGE_API_KEY",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "--directory",
+          "\u003cDIRECTORY-OF-CLONED-PROJECT\u003e/alphavantage",
+          "run",
+          "alphavantage"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "uv",
+      "package_name": "\u003cunknown\u003e"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "calvernaz/alphavantage",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/calvernaz/servers/alphavantage/versions/1",
+  "serverid": "alphavantage",
+  "tools": [],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/calvernaz/servers/alphavantage/versions/1"
+}

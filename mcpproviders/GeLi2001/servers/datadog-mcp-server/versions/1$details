@@ -1,0 +1,88 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:08:08.200783825Z",
+  "description": "A Model Context Protocol (MCP) server for interacting with the Datadog API.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:08:08.200783825Z",
+  "name": "io.github.GeLi2001/datadog-mcp-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Datadog API key",
+            "name": "DD_API_KEY",
+            "require": true
+          },
+          {
+            "descrip": "Datadog Application key",
+            "name": "DD_APP_KEY",
+            "require": true
+          },
+          {
+            "descrip": "Datadog site domain",
+            "name": "DD_SITE",
+            "require": false
+          },
+          {
+            "descrip": "Datadog logs site domain",
+            "name": "DD_LOGS_SITE",
+            "require": false
+          },
+          {
+            "descrip": "Datadog metrics site domain",
+            "name": "DD_METRICS_SITE",
+            "require": false
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "datadog-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "GeLi2001/datadog-mcp-server",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/GeLi2001/servers/datadog-mcp-server/versions/1",
+  "serverid": "datadog-mcp-server",
+  "tools": [
+    {
+      "description": "Fetch monitors with optional filtering",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get-monitors"
+    },
+    {
+      "description": "Get details of a specific monitor by ID",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get-monitor"
+    },
+    {
+      "description": "List all dashboards",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get-dashboards"
+    },
+    {
+      "description": "Get a specific dashboard by ID",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get-dashboard"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/GeLi2001/servers/datadog-mcp-server/versions/1"
+}

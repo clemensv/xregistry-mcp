@@ -1,0 +1,78 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:13:24.442480248Z",
+  "description": "A Model Context Protocol (MCP) server implementation that provides the LLM an interface for visualizing data using Vega-Lite syntax.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:13:24.442480248Z",
+  "name": "io.github.isaacwasserman/mcp-vegalite-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "--output_type",
+          "png"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "unknown",
+      "package_name": "unknown"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "isaacwasserman/mcp-vegalite-server",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/isaacwasserman/servers/mcp-vegalite-server/versions/1",
+  "serverid": "mcp-vegalite-server",
+  "tools": [
+    {
+      "description": "Save a table of data agregations to the server for later visualization",
+      "inputschema": {
+        "properties": {
+          "data": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "data"
+        ],
+        "type": "object"
+      },
+      "name": "save_data"
+    },
+    {
+      "description": "Visualize a table of data using Vega-Lite syntax",
+      "inputschema": {
+        "properties": {
+          "data_name": {
+            "type": "string"
+          },
+          "vegalite_specification": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "data_name",
+          "vegalite_specification"
+        ],
+        "type": "object"
+      },
+      "name": "visualize_data"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/isaacwasserman/servers/mcp-vegalite-server/versions/1"
+}

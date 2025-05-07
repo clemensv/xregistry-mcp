@@ -1,0 +1,266 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:09:32.081513396Z",
+  "description": "MCP Server Box is a Python project that integrates with the Box API to perform various operations such as file search, text extraction, AI-based querying, and data extraction. It leverages the box-sdk-gen library and provides a set of tools to interact with Box files and folders. The Model Context Protocol (MCP) is used to facilitate seamless integration with the Box API, enabling efficient and scalable operations on Box files and folders.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/box-community/servers/mcp-server-box/meta",
+  "modifiedat": "2025-05-07T20:09:32.081513396Z",
+  "name": "io.github.box-community/mcp-server-box",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "python",
+      "package_name": "mcp-server-box"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "box-community/mcp-server-box",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/box-community/servers/mcp-server-box",
+  "serverid": "mcp-server-box",
+  "tools": [
+    {
+      "description": "Get your current user information and check connection status.",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "box_who_am_i"
+    },
+    {
+      "description": "Start the Box application authorization process.",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "box_authorize_app_tool"
+    },
+    {
+      "description": "Search for files in Box.",
+      "inputschema": {
+        "properties": {
+          "ancestor_folder_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "file_extensions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "query": {
+            "type": "string"
+          },
+          "where_to_look_for_query": {
+            "items": {
+              "ty": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "box_search_tool"
+    },
+    {
+      "description": "Read the text content of a Box file.",
+      "inputschema": {
+        "properties": {
+          "file_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_id"
+        ],
+        "type": "object"
+      },
+      "name": "box_read_tool"
+    },
+    {
+      "description": "Ask Box AI about a file.",
+      "inputschema": {
+        "properties": {
+          "file_id": {
+            "type": "string"
+          },
+          "prompt": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_id",
+          "prompt"
+        ],
+        "type": "object"
+      },
+      "name": "box_ask_ai_tool"
+    },
+    {
+      "description": "Locate a folder by name.",
+      "inputschema": {
+        "properties": {
+          "folder_name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "folder_name"
+        ],
+        "type": "object"
+      },
+      "name": "box_search_folder_by_name"
+    },
+    {
+      "description": "Extract data from a file using AI.",
+      "inputschema": {
+        "properties": {
+          "fields": {
+            "type": "string"
+          },
+          "file_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_id",
+          "fields"
+        ],
+        "type": "object"
+      },
+      "name": "box_ai_extract_data"
+    },
+    {
+      "description": "List folder contents.",
+      "inputschema": {
+        "properties": {
+          "folder_id": {
+            "type": "string"
+          },
+          "is_recursive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "folder_id",
+          "is_recursive"
+        ],
+        "type": "object"
+      },
+      "name": "box_list_folder_content_by_folder_id"
+    },
+    {
+      "description": "Create, update, or delete folders in Box.",
+      "inputschema": {
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "folder_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "parent_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "recursive": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "type": "object"
+      },
+      "name": "box_manage_folder_tool"
+    },
+    {
+      "description": "Upload content as a file to Box.",
+      "inputschema": {
+        "properties": {
+          "content": {
+            "type": "string"
+          },
+          "file_name": {
+            "type": "string"
+          },
+          "folder_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "content",
+          "file_name"
+        ],
+        "type": "object"
+      },
+      "name": "box_upload_file_tool"
+    },
+    {
+      "description": "Download a file from Box and return its content.",
+      "inputschema": {
+        "properties": {
+          "file_id": {
+            "type": "string"
+          },
+          "save_file": {
+            "type": "boolean"
+          },
+          "save_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "file_id"
+        ],
+        "type": "object"
+      },
+      "name": "box_download_file_tool"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/box-community/servers/mcp-server-box/versions",
+  "xid": "/mcpproviders/box-community/servers/mcp-server-box"
+}

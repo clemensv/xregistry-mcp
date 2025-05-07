@@ -1,0 +1,189 @@
+{
+  "mcp-filesystem-server": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:08:44.621268066Z",
+    "description": "Go server implementing Model Context Protocol (MCP) for filesystem operations.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/mark3labs/servers/mcp-filesystem-server/meta",
+    "modifiedat": "2025-05-07T20:08:44.621268066Z",
+    "name": "io.github.mark3labs/mcp-filesystem-server",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "go",
+        "package_name": "github.com/mark3labs/mcp-filesystem-server"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "mark3labs/mcp-filesystem-server",
+    "resources": [
+      {
+        "description": "File system operations interface",
+        "name": "file://system",
+        "uritemplate": "file://system"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/mark3labs/servers/mcp-filesystem-server",
+    "serverid": "mcp-filesystem-server",
+    "tools": [
+      {
+        "description": "Read complete contents of a file",
+        "inputschema": {
+          "properties": {
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ],
+          "type": "object"
+        },
+        "name": "read_file"
+      },
+      {
+        "description": "Read multiple files simultaneously",
+        "inputschema": {
+          "properties": {
+            "paths": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "paths"
+          ],
+          "type": "object"
+        },
+        "name": "read_multiple_files"
+      },
+      {
+        "description": "Create new file or overwrite existing (exercise caution with this)",
+        "inputschema": {
+          "properties": {
+            "content": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "content"
+          ],
+          "type": "object"
+        },
+        "name": "write_file"
+      },
+      {
+        "description": "Create new directory or ensure it exists",
+        "inputschema": {
+          "properties": {
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ],
+          "type": "object"
+        },
+        "name": "create_directory"
+      },
+      {
+        "description": "List directory contents with [FILE] or [DIR] prefixes",
+        "inputschema": {
+          "properties": {
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ],
+          "type": "object"
+        },
+        "name": "list_directory"
+      },
+      {
+        "description": "Move or rename files and directories",
+        "inputschema": {
+          "properties": {
+            "destination": {
+              "type": "string"
+            },
+            "source": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "source",
+            "destination"
+          ],
+          "type": "object"
+        },
+        "name": "move_file"
+      },
+      {
+        "description": "Recursively search for files/directories",
+        "inputschema": {
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "pattern": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "pattern"
+          ],
+          "type": "object"
+        },
+        "name": "search_files"
+      },
+      {
+        "description": "Get detailed file/directory metadata",
+        "inputschema": {
+          "properties": {
+            "path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path"
+          ],
+          "type": "object"
+        },
+        "name": "get_file_info"
+      },
+      {
+        "description": "List all directories the server is allowed to access",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "list_allowed_directories"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/mark3labs/servers/mcp-filesystem-server/versions",
+    "xid": "/mcpproviders/mark3labs/servers/mcp-filesystem-server"
+  }
+}

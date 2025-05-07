@@ -1,0 +1,234 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:36.071277473Z",
+  "description": "An MCP server to interact with a Tinybird Workspace from any MCP client. Supports querying Tinybird Data Sources, getting results from Tinybird API Endpoints, and pushing Datafiles. Supports both SSE and STDIO modes.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/tinybirdco/servers/mcp-tinybird/meta",
+  "modifiedat": "2025-05-07T20:07:36.071277473Z",
+  "name": "io.github.tinybirdco/mcp-tinybird",
+  "prompts": [
+    {
+      "arguments": [
+        {
+          "description": "The topic of the data you want to explore",
+          "name": "topic",
+          "required": true
+        }
+      ],
+      "description": "A prompt to get insights from the Data Sources and Pipe Endpoints in the Tinybird Workspace",
+      "name": "tinybird-default"
+    }
+  ],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Tinybird API URL",
+            "name": "TB_API_URL",
+            "require": true
+          },
+          {
+            "descrip": "Tinybird Admin Token",
+            "name": "TB_ADMIN_TOKEN",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "mcp-tinybird",
+          "stdio"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@tinybirdco/mcp-tinybird"
+    }
+  ],
+  "remotes": [
+    {
+      "transporttype": "http",
+      "url": "http://localhost:8000"
+    }
+  ],
+  "repo_ref": "tinybirdco/mcp-tinybird",
+  "resources": [
+    {
+      "description": "A living document of discovered insights",
+      "mimetype": "text/plain",
+      "name": "Insights from Tinybird",
+      "uritemplate": "tinybird://insights"
+    },
+    {
+      "description": "Syntax and context to build .datasource datafiles",
+      "mimetype": "text/plain",
+      "name": "Context for datasource definition",
+      "uritemplate": "tinybird://datasource-definition-context"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/tinybirdco/servers/mcp-tinybird",
+  "serverid": "mcp-tinybird",
+  "tools": [
+    {
+      "description": "List all Data Sources in the Tinybird Workspace",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "list-data-sources"
+    },
+    {
+      "description": "Get details of a Data Source in the Tinybird Workspace, such as the schema",
+      "inputschema": {
+        "properties": {
+          "datasource_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "datasource_id"
+        ],
+        "type": "object"
+      },
+      "name": "get-data-source"
+    },
+    {
+      "description": "List all Pipe Endpoints in the Tinybird Workspace",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "list-pipes"
+    },
+    {
+      "description": "Get details of a Pipe Endpoint in the Tinybird Workspace, such as the nodes SQLs to understand what they do or what Data Sources they use",
+      "inputschema": {
+        "properties": {
+          "pipe_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "pipe_id"
+        ],
+        "type": "object"
+      },
+      "name": "get-pipe"
+    },
+    {
+      "description": "Requests data from a Pipe Endpoint in the Tinybird Workspace, includes parameters",
+      "inputschema": {
+        "properties": {
+          "params": {
+            "properties": {},
+            "type": "object"
+          },
+          "pipe_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "pipe_id"
+        ],
+        "type": "object"
+      },
+      "name": "request-pipe-data"
+    },
+    {
+      "description": "Runs a select query to the Tinybird Workspace. It may query Data Sources or Pipe Endpoints",
+      "inputschema": {
+        "properties": {
+          "select_query": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "select_query"
+        ],
+        "type": "object"
+      },
+      "name": "run-select-query"
+    },
+    {
+      "description": "Add a business insight to the memo",
+      "inputschema": {
+        "properties": {
+          "insight": {
+            "description": "Business insight discovered from data analysis",
+            "type": "string"
+          }
+        },
+        "required": [
+          "insight"
+        ],
+        "type": "object"
+      },
+      "name": "append-insight"
+    },
+    {
+      "description": "The Tinybird product description and documentation, including API Reference in LLM friendly format",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "llms-tinybird-docs"
+    },
+    {
+      "description": "Analyze the Pipe Endpoint SQL",
+      "inputschema": {
+        "properties": {
+          "pipe_name": {
+            "description": "The Pipe Endpoint name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "pipe_name"
+        ],
+        "type": "object"
+      },
+      "name": "analyze-pipe"
+    },
+    {
+      "description": "Push a .datasource or .pipe file to the Workspace",
+      "inputschema": {
+        "properties": {
+          "files": {
+            "description": "The datafile local path",
+            "type": "string"
+          }
+        },
+        "required": [
+          "files"
+        ],
+        "type": "object"
+      },
+      "name": "push-datafile"
+    },
+    {
+      "description": "Sends an event to a Data Source in Tinybird. The data needs to be in NDJSON format and conform to the Data Source schema in Tinybird",
+      "inputschema": {
+        "properties": {
+          "data": {
+            "description": "A JSON object that will be converted to a NDJSON String to save in the Tinybird Data Source via the events API. It should contain one key for each column in the Data Source",
+            "type": "string"
+          },
+          "datasource_name": {
+            "description": "The name of the Data Source in Tinybird",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "name": "save-event"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/tinybirdco/servers/mcp-tinybird/versions",
+  "xid": "/mcpproviders/tinybirdco/servers/mcp-tinybird"
+}

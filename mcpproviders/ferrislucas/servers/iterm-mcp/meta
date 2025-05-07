@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:07:35.882800512Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/ferrislucas/servers/iterm-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:07:35.882800512Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/ferrislucas/servers/iterm-mcp/meta",
+  "serverid": "iterm-mcp",
+  "xid": "/mcpproviders/ferrislucas/servers/iterm-mcp/meta"
+}

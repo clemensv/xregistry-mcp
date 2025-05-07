@@ -1,0 +1,66 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:13:10.80416561Z",
+    "description": "MCP server for resource discovery and metadata publication from PostgreSQL databases",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:13:10.80416561Z",
+    "name": "io.github.clemensv/mcp-servers/postgres",
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "PostgreSQL server hostname or IP",
+              "name": "PGHOST",
+              "require": true
+            },
+            {
+              "descrip": "PostgreSQL server port",
+              "name": "PGPORT",
+              "require": false
+            },
+            {
+              "descrip": "Username for PostgreSQL authentication",
+              "name": "PGUSER",
+              "require": true
+            },
+            {
+              "descrip": "Password for PostgreSQL authentication",
+              "name": "PGPASSWORD",
+              "require": true
+            },
+            {
+              "descrip": "Target PostgreSQL database",
+              "name": "PGDATABASE",
+              "require": true
+            }
+          ],
+          "sub_commands": [
+            {
+              "description": "Start the PostgreSQL MCP server",
+              "name": "start"
+            }
+          ]
+        },
+        "license": "MIT",
+        "name": "npm",
+        "package_name": "mcp-postgres-server"
+      }
+    ],
+    "remotes": [
+      {
+        "transporttype": "postgres",
+        "url": "postgresql://${PGHOST}:${PGPORT}/${PGDATABASE}"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/clemensv/servers/postgres/versions/1",
+    "serverid": "postgres",
+    "version_detail": {
+      "version": "1.0.2"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/clemensv/servers/postgres/versions/1"
+  }
+}

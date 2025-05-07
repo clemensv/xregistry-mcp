@@ -1,0 +1,169 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:11:54.14824232Z",
+    "description": "A simple Model Context Protocol (MCP) server implementation for Momento Cache.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:11:54.14824232Z",
+    "name": "io.github.momentohq/mcp-momento",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "API key for Momento Cache",
+              "name": "MOMENTO_API_KEY",
+              "require": true
+            },
+            {
+              "descrip": "Name of the cache to use",
+              "name": "MOMENTO_CACHE_NAME",
+              "require": false
+            },
+            {
+              "descrip": "Default TTL for cache entries in seconds",
+              "name": "DEFAULT_TTL_SECONDS",
+              "require": false
+            }
+          ],
+          "positional_arguments": [
+            "-y",
+            "@gomomento/mcp-momento"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@gomomento/mcp-momento"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "momentohq/mcp-momento",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/momentohq/servers/mcp-momento/versions/1",
+    "serverid": "mcp-momento",
+    "tools": [
+      {
+        "description": "get a key-value pair from the cache",
+        "inputschema": {
+          "properties": {
+            "cacheName": {
+              "description": "The name of the cache to get the value from. Uses the default cache name if not provided.",
+              "type": "string"
+            },
+            "key": {
+              "description": "The key to get from the cache",
+              "type": "string"
+            }
+          },
+          "required": [
+            "key"
+          ],
+          "type": "object"
+        },
+        "name": "get"
+      },
+      {
+        "description": "set a key-value pair in the cache",
+        "inputschema": {
+          "properties": {
+            "cacheName": {
+              "description": "The name of the cache to set the value in. Uses the default cache name if not provided.",
+              "type": "string"
+            },
+            "key": {
+              "description": "The key to set in the cache",
+              "type": "string"
+            },
+            "ttl": {
+              "description": "The TTL for the key in seconds",
+              "type": "number"
+            },
+            "value": {
+              "description": "The value to set in the cache",
+              "type": "string"
+            }
+          },
+          "required": [
+            "key",
+            "value"
+          ],
+          "type": "object"
+        },
+        "name": "set"
+      },
+      {
+        "description": "Lists all cache names in your Momento account",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "list-caches"
+      },
+      {
+        "description": "Creates a new cache",
+        "inputschema": {
+          "properties": {
+            "name": {
+              "description": "The name of the cache to create",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        },
+        "name": "create-cache"
+      },
+      {
+        "description": "Deletes a cache and all contained values from your Momento account",
+        "inputschema": {
+          "properties": {
+            "name": {
+              "description": "The name of the cache to delete",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "type": "object"
+        },
+        "name": "delete-cache"
+      },
+      {
+        "description": "publish a value to a topic",
+        "inputschema": {
+          "properties": {
+            "cacheName": {
+              "description": "The name of the cache to set the value in. Uses the default cache name if not provided.",
+              "type": "string"
+            },
+            "topicName": {
+              "description": "The name of the topic to publish the value to. Uses the default topic name if not provided.",
+              "type": "string"
+            },
+            "value": {
+              "description": "The value to publish",
+              "type": "string"
+            }
+          },
+          "required": [
+            "value"
+          ],
+          "type": "object"
+        },
+        "name": "publish"
+      }
+    ],
+    "version_detail": {
+      "version": "0.1.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/momentohq/servers/mcp-momento/versions/1"
+  }
+}

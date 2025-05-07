@@ -1,0 +1,53 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:12:41.619275531Z",
+  "description": "MCP Compass is a discovery \u0026 recommendation service that helps you explore Model Context Protocol servers. It acts as a smart guide that helps AI assistants find and understand available MCP services out there based on natural language queries, making it easier to discover and utilize the right tools for specific tasks.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:12:41.619275531Z",
+  "name": "io.github.liuyoshio/mcp-compass",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "-y",
+          "@liuyoshio/mcp-compass"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@liuyoshio/mcp-compass"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "liuyoshio/mcp-compass",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/liuyoshio/servers/mcp-compass/versions/1",
+  "serverid": "mcp-compass",
+  "tools": [
+    {
+      "description": "Use this tool when there is a need to findn external MCP tools. It explores and recommends existing MCP servers from the internet, based on the description of the MCP Server needed. It returns a list of MCP servers with their IDs, descriptions, GitHub URLs, and similarity scores.",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "Description for the MCP Server needed. It should be specific and actionable, e.g.: GOOD: - 'MCP Server for AWS Lambda Python3.9 deployment' - 'MCP Server for United Airlines booking API' - 'MCP Server for Stripe refund webhook handling' BAD: - 'MCP Server for cloud' (too vague) - 'MCP Server for booking' (which booking system?) - 'MCP Server for payment' (which payment provider?) Query should explicitly specify: 1. Target platform/vendor (e.g. AWS, Stripe, MongoDB) 2. Exact operation/service (e.g. Lambda deployment, webhook handling) 3. Additional context if applicable (e.g. Python, refund events)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "recommend-mcp-servers"
+    }
+  ],
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/liuyoshio/servers/mcp-compass/versions/1"
+}

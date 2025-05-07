@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:10:02.690143922Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/langfuse/servers/mcp-server-langfuse/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:10:02.690143922Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/langfuse/servers/mcp-server-langfuse/meta",
+  "serverid": "mcp-server-langfuse",
+  "xid": "/mcpproviders/langfuse/servers/mcp-server-langfuse/meta"
+}

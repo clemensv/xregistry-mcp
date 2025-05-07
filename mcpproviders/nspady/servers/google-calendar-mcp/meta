@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:07:37.529216168Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/nspady/servers/google-calendar-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:07:37.529216168Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/nspady/servers/google-calendar-mcp/meta",
+  "serverid": "google-calendar-mcp",
+  "xid": "/mcpproviders/nspady/servers/google-calendar-mcp/meta"
+}

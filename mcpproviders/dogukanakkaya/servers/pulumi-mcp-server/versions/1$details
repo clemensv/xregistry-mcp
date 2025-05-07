@@ -1,0 +1,71 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:37.951641187Z",
+  "description": "MCP server exposing Pulumi stacks and tooling via Model Context Protocol",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:07:37.951641187Z",
+  "name": "io.github.dogukanakkaya/pulumi-mcp-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Pulumi access token environment variable",
+            "name": "PULUMI_ACCESS_TOKEN",
+            "require": true
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "dogukanakkaya/pulumi-mcp-server",
+  "resources": [
+    {
+      "name": "Pulumi Stacks",
+      "uritemplate": "pulumi://{organization}"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/dogukanakkaya/servers/pulumi-mcp-server/versions/1",
+  "serverid": "pulumi-mcp-server",
+  "tools": [
+    {
+      "description": "Create a new Pulumi stack",
+      "inputschema": {
+        "properties": {
+          "organization": {
+            "description": "Organization name to create the stack in",
+            "type": "string"
+          },
+          "project": {
+            "description": "Project name",
+            "type": "string"
+          },
+          "stackName": {
+            "description": "Stack name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "organization",
+          "project",
+          "stackName"
+        ],
+        "type": "object"
+      },
+      "name": "create_pulumi_stack"
+    }
+  ],
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/dogukanakkaya/servers/pulumi-mcp-server/versions/1"
+}

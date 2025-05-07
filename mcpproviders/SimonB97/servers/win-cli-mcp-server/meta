@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:15:26.897054141Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/SimonB97/servers/win-cli-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:15:26.897054141Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/SimonB97/servers/win-cli-mcp-server/meta",
+  "serverid": "win-cli-mcp-server",
+  "xid": "/mcpproviders/SimonB97/servers/win-cli-mcp-server/meta"
+}

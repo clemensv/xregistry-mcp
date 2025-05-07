@@ -1,0 +1,73 @@
+{
+  "ai-agent-marketplace-index-mcp": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:07:56.965399149Z",
+    "description": "MCP Server for AI Agent Marketplace Index from DeepNLP, allowing AI assistants to search available AI agents by keywords or category, including tools for searching AI agents and listing AI agents to the marketplace.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/AI-Agent-Hub/servers/ai-agent-marketplace-index-mcp/meta",
+    "modifiedat": "2025-05-07T20:07:56.965399149Z",
+    "name": "io.github.AI-Agent-Hub/ai-agent-marketplace-index-mcp",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Microsoft Bing Search API key",
+              "name": "BING_SEARCH_API_KEY",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "run",
+            "-m",
+            "ai-agent-marketplace-index-mcp"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "python",
+        "package_name": "ai-agent-marketplace-index-mcp"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "AI-Agent-Hub/ai-agent-marketplace-index-mcp",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/AI-Agent-Hub/servers/ai-agent-marketplace-index-mcp",
+    "serverid": "ai-agent-marketplace-index-mcp",
+    "tools": [
+      {
+        "description": "General search of AI Agents for information, websites, content and metric statistic of web traffic, etc.",
+        "inputschema": {
+          "properties": {
+            "limit": {
+              "description": "Maximum number of results to return.",
+              "type": "integer"
+            },
+            "q": {
+              "description": "Query string to search AI agents.",
+              "type": "string"
+            },
+            "timeout": {
+              "description": "Timeout in seconds for the API call.",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "q"
+          ],
+          "type": "object"
+        },
+        "name": "search_ai_agent"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/AI-Agent-Hub/servers/ai-agent-marketplace-index-mcp/versions",
+    "xid": "/mcpproviders/AI-Agent-Hub/servers/ai-agent-marketplace-index-mcp"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:53.595525967Z",
+  "description": "The mcp-proxy is a tool that lets you switch between server transports. It supports proxying MCP server requests between stdio and SSE transports, enabling clients like Claude Desktop to communicate with MCP servers over SSE or stdio.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/sparfenyuk/servers/mcp-proxy/meta",
+  "modifiedat": "2025-05-07T20:07:53.595525967Z",
+  "name": "io.github.sparfenyuk/mcp-proxy",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Access token for authorization header",
+            "name": "API_ACCESS_TOKEN",
+            "require": false
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "container",
+      "package_name": "sparfenyuk/mcp-proxy:latest"
+    },
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Access token for authorization header",
+            "name": "API_ACCESS_TOKEN",
+            "require": false
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "python",
+      "package_name": "mcp-proxy"
+    }
+  ],
+  "remotes": [
+    {
+      "transporttype": "http",
+      "url": "http://example.io/sse"
+    }
+  ],
+  "repo_ref": "sparfenyuk/mcp-proxy",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/sparfenyuk/servers/mcp-proxy",
+  "serverid": "mcp-proxy",
+  "tools": [],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/sparfenyuk/servers/mcp-proxy/versions",
+  "xid": "/mcpproviders/sparfenyuk/servers/mcp-proxy"
+}

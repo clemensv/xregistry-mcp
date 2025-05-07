@@ -1,0 +1,69 @@
+{
+  "mcp-postman": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:07:48.667230777Z",
+    "description": "An MCP (Model Context Protocol) server that enables running Postman collections using Newman. This server allows LLMs to execute API tests and get detailed results through a standardized interface.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/shannonlal/servers/mcp-postman/meta",
+    "modifiedat": "2025-05-07T20:07:48.667230777Z",
+    "name": "io.github.shannonlal/mcp-postman",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [
+            "/absolute/path/to/mcp-postman/build/index.js"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@smithery/mcp-postman"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "shannonlal/mcp-postman",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/shannonlal/servers/mcp-postman",
+    "serverid": "mcp-postman",
+    "tools": [
+      {
+        "description": "Run a Postman Collection using Newman",
+        "inputschema": {
+          "properties": {
+            "collection": {
+              "description": "Path or URL to the Postman collection",
+              "type": "string"
+            },
+            "environment": {
+              "description": "Optional path or URL to environment file",
+              "type": "string"
+            },
+            "globals": {
+              "description": "Optional path or URL to globals file",
+              "type": "string"
+            },
+            "iterationCount": {
+              "description": "Optional number of iterations to run",
+              "type": "number"
+            }
+          },
+          "required": [
+            "collection"
+          ],
+          "type": "object"
+        },
+        "name": "run-collection"
+      }
+    ],
+    "version_detail": {
+      "version": "1.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/shannonlal/servers/mcp-postman/versions",
+    "xid": "/mcpproviders/shannonlal/servers/mcp-postman"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:07:55.903667666Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/cyberchitta/servers/scrapling-fetch-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:07:55.903667666Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/cyberchitta/servers/scrapling-fetch-mcp/meta",
+  "serverid": "scrapling-fetch-mcp",
+  "xid": "/mcpproviders/cyberchitta/servers/scrapling-fetch-mcp/meta"
+}

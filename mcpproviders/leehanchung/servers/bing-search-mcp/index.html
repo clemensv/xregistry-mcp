@@ -1,0 +1,133 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:09:44.005851034Z",
+  "description": "A Model Context Protocol (MCP) server for Microsoft Bing Search API integration, allowing AI assistants to perform web, news, and image searches.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/leehanchung/servers/bing-search-mcp/meta",
+  "modifiedat": "2025-05-07T20:09:44.005851034Z",
+  "name": "io.github.leehanchung/bing-search-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Microsoft Bing Search API key",
+            "name": "BING_API_KEY",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "bing-search-mcp"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "python",
+      "package_name": "bing-search-mcp"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "leehanchung/bing-search-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/leehanchung/servers/bing-search-mcp",
+  "serverid": "bing-search-mcp",
+  "tools": [
+    {
+      "description": "General web search for information, websites, and content.",
+      "inputschema": {
+        "properties": {
+          "count": {
+            "description": "Number of results (1-50)",
+            "type": "integer"
+          },
+          "market": {
+            "description": "Market code like en-US, en-GB",
+            "type": "string"
+          },
+          "offset": {
+            "description": "Pagination offset",
+            "type": "integer"
+          },
+          "query": {
+            "description": "Search query",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query",
+          "count",
+          "offset",
+          "market"
+        ],
+        "type": "object"
+      },
+      "name": "bing_web_search"
+    },
+    {
+      "description": "Search for news articles and current events.",
+      "inputschema": {
+        "properties": {
+          "count": {
+            "description": "Number of results (1-50)",
+            "type": "integer"
+          },
+          "freshness": {
+            "description": "Time period of news (Day, Week, Month)",
+            "type": "string"
+          },
+          "market": {
+            "description": "Market code like en-US, en-GB",
+            "type": "string"
+          },
+          "query": {
+            "description": "News search query",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query",
+          "count",
+          "market",
+          "freshness"
+        ],
+        "type": "object"
+      },
+      "name": "bing_news_search"
+    },
+    {
+      "description": "Search for images.",
+      "inputschema": {
+        "properties": {
+          "count": {
+            "description": "Number of results (1-50)",
+            "type": "integer"
+          },
+          "market": {
+            "description": "Market code like en-US, en-GB",
+            "type": "string"
+          },
+          "query": {
+            "description": "Image search query",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query",
+          "count",
+          "market"
+        ],
+        "type": "object"
+      },
+      "name": "bing_image_search"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/leehanchung/servers/bing-search-mcp/versions",
+  "xid": "/mcpproviders/leehanchung/servers/bing-search-mcp"
+}

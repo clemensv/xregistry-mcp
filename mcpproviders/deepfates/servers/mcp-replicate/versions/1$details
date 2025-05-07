@@ -1,0 +1,124 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:09:49.565595729Z",
+  "description": "A Model Context Protocol server implementation for Replicate. Run Replicate models through a simple tool-based interface.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:09:49.565595729Z",
+  "name": "io.github.deepfates/mcp-replicate",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Replicate API token for authentication",
+            "name": "REPLICATE_API_TOKEN",
+            "require": true
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "mcp-replicate"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "deepfates/mcp-replicate",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/deepfates/servers/mcp-replicate/versions/1",
+  "serverid": "mcp-replicate",
+  "tools": [
+    {
+      "description": "Find models using semantic search",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "search_models"
+    },
+    {
+      "description": "Browse available models",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_models"
+    },
+    {
+      "description": "Get details about a specific model",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_model"
+    },
+    {
+      "description": "Browse model collections",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_collections"
+    },
+    {
+      "description": "Get details about a specific collection",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_collection"
+    },
+    {
+      "description": "Run a model with your inputs",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "create_prediction"
+    },
+    {
+      "description": "Check a prediction's status",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_prediction"
+    },
+    {
+      "description": "Stop a running prediction",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "cancel_prediction"
+    },
+    {
+      "description": "See your recent predictions",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "list_predictions"
+    },
+    {
+      "description": "Open an image in your browser",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "view_image"
+    },
+    {
+      "description": "Clean up cached images",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "clear_image_cache"
+    },
+    {
+      "description": "Check cache usage",
+      "inputschema": {
+        "type": "object"
+      },
+      "name": "get_image_cache_stats"
+    }
+  ],
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/deepfates/servers/mcp-replicate/versions/1"
+}

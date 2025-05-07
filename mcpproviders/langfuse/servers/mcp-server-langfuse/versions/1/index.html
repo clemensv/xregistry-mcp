@@ -1,0 +1,91 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:10:02.690143922Z",
+  "description": "Model Context Protocol (MCP) Server for Langfuse Prompt Management. This server allows access and management of Langfuse prompts through the MCP protocol, implementing the MCP Prompts specification for prompt discovery and retrieval.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:10:02.690143922Z",
+  "name": "io.github.langfuse/mcp-server-langfuse",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Your Langfuse public API key",
+            "name": "LANGFUSE_PUBLIC_KEY",
+            "require": true
+          },
+          {
+            "descrip": "Your Langfuse secret API key",
+            "name": "LANGFUSE_SECRET_KEY",
+            "require": true
+          },
+          {
+            "descrip": "Base URL for Langfuse API",
+            "name": "LANGFUSE_BASEURL",
+            "require": false
+          }
+        ],
+        "positional_arguments": [
+          "build/index.js"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "langfuse/mcp-server-langfuse"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "langfuse/mcp-server-langfuse",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/langfuse/servers/mcp-server-langfuse/versions/1",
+  "serverid": "mcp-server-langfuse",
+  "tools": [
+    {
+      "description": "Get prompts that are stored in Langfuse",
+      "inputschema": {
+        "properties": {
+          "cursor": {
+            "description": "Cursor to paginate through prompts",
+            "nullable": true,
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "name": "get-prompts"
+    },
+    {
+      "description": "Get a prompt that is stored in Langfuse",
+      "inputschema": {
+        "properties": {
+          "arguments": {
+            "additionalProperties": {
+              "t": "string"
+            },
+            "description": "Arguments with prompt variables to pass to the prompt template, json object, e.g. {\"\u003cname\u003e\":\"\u003cvalue\u003e\"}",
+            "nullable": true,
+            "type": "object"
+          },
+          "name": {
+            "description": "Name of the prompt to retrieve, use get-prompts to get a list of prompts",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "name": "get-prompt"
+    }
+  ],
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/langfuse/servers/mcp-server-langfuse/versions/1"
+}

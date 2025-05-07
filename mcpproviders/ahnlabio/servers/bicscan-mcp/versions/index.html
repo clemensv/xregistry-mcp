@@ -1,0 +1,68 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:08:37.796335141Z",
+    "description": "A powerful and efficient Blockchain address risk scoring API MCP Server, leveraging the BICScan API to provide comprehensive risk assessments and asset information for blockchain addresses, domains, and decentralized applications (dApps).",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:08:37.796335141Z",
+    "name": "io.github.ahnlabio/bicscan-mcp",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "API key for BICScan",
+              "name": "BICSCAN_API_KEY",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "run",
+            "--rm",
+            "--interactive",
+            "--env",
+            "BICSCAN_API_KEY=YOUR_BICSCAN_API_KEY_HERE"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "container",
+        "package_name": "bicscan-mcp"
+      },
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "API key for BICScan",
+              "name": "BICSCAN_API_KEY",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "--directory",
+            "YOUR_BICSCAN_REPO_DIR_HERE",
+            "run",
+            "bicscan-mcp"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "uv",
+        "package_name": "bicscan-mcp"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "ahnlabio/bicscan-mcp",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/ahnlabio/servers/bicscan-mcp/versions/1",
+    "serverid": "bicscan-mcp",
+    "tools": [],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/ahnlabio/servers/bicscan-mcp/versions/1"
+  }
+}

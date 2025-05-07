@@ -1,0 +1,90 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:14:49.391423255Z",
+    "description": "An MCP server that provides fast file searching capabilities across Windows, macOS, and Linux. On Windows, it uses the Everything SDK. On macOS, it uses the built-in mdfind command. On Linux, it uses the locate/plocate command.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:14:49.391423255Z",
+    "name": "io.github.mamertofabian/mcp-everything-search",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Path to Everything SDK DLL on Windows",
+              "name": "EVERYTHING_SDK_PATH",
+              "require": false
+            }
+          ],
+          "positional_arguments": [],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "python",
+        "package_name": "mcp-server-everything-search"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "mamertofabian/mcp-everything-search",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/mamertofabian/servers/mcp-everything-search/versions/1",
+    "serverid": "mcp-everything-search",
+    "tools": [
+      {
+        "description": "Universal file search tool for Windows, macOS, and Linux. Supports platform-specific search capabilities using Everything SDK on Windows, mdfind on macOS, and locate on Linux.",
+        "inputschema": {
+          "properties": {
+            "match_case": {
+              "default": false,
+              "description": "Enable case-sensitive search",
+              "type": "boolean"
+            },
+            "match_path": {
+              "default": false,
+              "description": "Match against full path instead of filename only",
+              "type": "boolean"
+            },
+            "match_regex": {
+              "default": false,
+              "description": "Enable regex search",
+              "type": "boolean"
+            },
+            "match_whole_word": {
+              "default": false,
+              "description": "Match whole words only",
+              "type": "boolean"
+            },
+            "max_results": {
+              "default": 100,
+              "description": "Maximum number of results to return (1-1000)",
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "query": {
+              "description": "Search query string. See the search syntax guide for details.",
+              "type": "string"
+            },
+            "sort_by": {
+              "default": 1,
+              "description": "Sort order for results (Note: Not all sort options available on all platforms)",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "search"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/mamertofabian/servers/mcp-everything-search/versions/1"
+  }
+}

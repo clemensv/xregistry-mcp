@@ -1,0 +1,126 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:35.408127223Z",
+  "description": "A Model Context Protocol server for Unity Catalog providing Unity Catalog Functions as MCP tools.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/ognis1205/servers/mcp-server-unitycatalog/meta",
+  "modifiedat": "2025-05-07T20:07:35.408127223Z",
+  "name": "io.github.ognis1205/mcp-server-unitycatalog",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "The base URL of the Unity Catalog server.",
+            "name": "UC_SERVER",
+            "require": true
+          },
+          {
+            "descrip": "The name of the Unity Catalog catalog.",
+            "name": "UC_CATALOG",
+            "require": true
+          },
+          {
+            "descrip": "The name of the schema within a Unity Catalog catalog.",
+            "name": "UC_SCHEMA",
+            "require": true
+          },
+          {
+            "descrip": "The access token used to authorize API requests to the Unity Catalog server.",
+            "name": "UC_TOKEN",
+            "require": false
+          },
+          {
+            "descrip": "The verbosity level for logging. Default: warn.",
+            "name": "UC_VERBOSITY",
+            "require": false
+          },
+          {
+            "descrip": "The directory where log files will be stored. Default: .mcp_server_unitycatalog.",
+            "name": "UC_LOG_DIRECTORY",
+            "require": false
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "uv",
+      "package_name": "mcp-server-unitycatalog"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "ognis1205/mcp-server-unitycatalog",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/ognis1205/servers/mcp-server-unitycatalog",
+  "serverid": "mcp-server-unitycatalog",
+  "tools": [
+    {
+      "description": "Lists functions within the specified parent catalog and schema.",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "uc_list_functions"
+    },
+    {
+      "description": "Gets a function within a parent catalog and schema.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "name": "uc_get_function"
+    },
+    {
+      "description": "Creates a function within a parent catalog and schema. WARNING: This API is experimental and will change in future versions.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "script": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "script"
+        ],
+        "type": "object"
+      },
+      "name": "uc_create_function"
+    },
+    {
+      "description": "Deletes a function within a parent catalog and schema.",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "name": "uc_delete_function"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/ognis1205/servers/mcp-server-unitycatalog/versions",
+  "xid": "/mcpproviders/ognis1205/servers/mcp-server-unitycatalog"
+}

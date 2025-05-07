@@ -1,0 +1,104 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:08:45.796380349Z",
+  "description": "A Model Context Protocol (MCP) server that connects to Databricks API, allowing LLMs to run SQL queries, list jobs, and get job status.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:08:45.796380349Z",
+  "name": "io.github.JordiNeil/mcp-databricks-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Databricks instance URL",
+            "name": "DATABRICKS_HOST",
+            "require": true
+          },
+          {
+            "descrip": "Personal access token for Databricks",
+            "name": "DATABRICKS_TOKEN",
+            "require": true
+          },
+          {
+            "descrip": "HTTP path for Databricks SQL warehouse",
+            "name": "DATABRICKS_HTTP_PATH",
+            "require": true
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/databricks-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "JordiNeil/mcp-databricks-server",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/JordiNeil/servers/mcp-databricks-server/versions/1",
+  "serverid": "mcp-databricks-server",
+  "tools": [
+    {
+      "description": "Execute SQL queries on your Databricks SQL warehouse",
+      "inputschema": {
+        "properties": {
+          "sql": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "sql"
+        ],
+        "type": "object"
+      },
+      "name": "run_sql_query"
+    },
+    {
+      "description": "List all Databricks jobs in your workspace",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "list_jobs"
+    },
+    {
+      "description": "Get the status of a specific Databricks job by ID",
+      "inputschema": {
+        "properties": {
+          "job_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "job_id"
+        ],
+        "type": "object"
+      },
+      "name": "get_job_status"
+    },
+    {
+      "description": "Get detailed information about a specific Databricks job",
+      "inputschema": {
+        "properties": {
+          "job_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "job_id"
+        ],
+        "type": "object"
+      },
+      "name": "get_job_details"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/JordiNeil/servers/mcp-databricks-server/versions/1"
+}

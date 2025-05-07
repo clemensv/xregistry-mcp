@@ -1,0 +1,103 @@
+{
+  "twitter-mcp": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:15:18.286451704Z",
+    "description": "This MCP server allows Clients to interact with Twitter, enabling posting tweets and searching Twitter.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/EnesCinr/servers/twitter-mcp/meta",
+    "modifiedat": "2025-05-07T20:15:18.286451704Z",
+    "name": "io.github.EnesCinr/twitter-mcp",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Twitter API key",
+              "name": "API_KEY",
+              "require": true
+            },
+            {
+              "descrip": "Twitter API secret key",
+              "name": "API_SECRET_KEY",
+              "require": true
+            },
+            {
+              "descrip": "Twitter access token",
+              "name": "ACCESS_TOKEN",
+              "require": true
+            },
+            {
+              "descrip": "Twitter access token secret",
+              "name": "ACCESS_TOKEN_SECRET",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "-y",
+            "@enescinar/twitter-mcp"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@enescinar/twitter-mcp"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "EnesCinr/twitter-mcp",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/EnesCinr/servers/twitter-mcp",
+    "serverid": "twitter-mcp",
+    "tools": [
+      {
+        "description": "Post a new tweet to Twitter",
+        "inputschema": {
+          "properties": {
+            "text": {
+              "description": "The content of your tweet",
+              "maxLength": 280,
+              "type": "string"
+            }
+          },
+          "required": [
+            "text"
+          ],
+          "type": "object"
+        },
+        "name": "post_tweet"
+      },
+      {
+        "description": "Search for tweets on Twitter",
+        "inputschema": {
+          "properties": {
+            "count": {
+              "description": "Number of tweets to return (10-100)",
+              "maximum": 100,
+              "minimum": 10,
+              "type": "number"
+            },
+            "query": {
+              "description": "Search query",
+              "type": "string"
+            }
+          },
+          "required": [
+            "query",
+            "count"
+          ],
+          "type": "object"
+        },
+        "name": "search_tweets"
+      }
+    ],
+    "version_detail": {
+      "version": "1.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/EnesCinr/servers/twitter-mcp/versions",
+    "xid": "/mcpproviders/EnesCinr/servers/twitter-mcp"
+  }
+}

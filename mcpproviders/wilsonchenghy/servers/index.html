@@ -1,0 +1,66 @@
+{
+  "ShaderToy-MCP": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:11:08.812683248Z",
+    "description": "MCP Server for ShaderToy, connecting LLM like Claude with ShaderToy through Model Context Protocol (MCP), allowing the LLM to query and read the entire web page and generate complex shaders.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/wilsonchenghy/servers/ShaderToy-MCP/meta",
+    "modifiedat": "2025-05-07T20:11:08.812683248Z",
+    "name": "io.github.wilsonchenghy/ShaderToy-MCP",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "API key for ShaderToy access",
+              "name": "SHADERTOY_APP_KEY",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "run",
+            "--with",
+            "mcp[cli]",
+            "mcp",
+            "run",
+            "\u003cpath_to_project\u003e/ShaderToy-MCP/src/ShaderToy-MCP/server.py"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "uv",
+        "package_name": "mcp[cli]"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "wilsonchenghy/ShaderToy-MCP",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/wilsonchenghy/servers/ShaderToy-MCP",
+    "serverid": "ShaderToy-MCP",
+    "tools": [
+      {
+        "description": "Retrieve information on any shader on ShaderToy.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "get_shader_info"
+      },
+      {
+        "description": "Search for shaders available on ShaderToy through a search prompt.",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "search_shader"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/wilsonchenghy/servers/ShaderToy-MCP/versions",
+    "xid": "/mcpproviders/wilsonchenghy/servers/ShaderToy-MCP"
+  }
+}

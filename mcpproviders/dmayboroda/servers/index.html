@@ -1,0 +1,108 @@
+{
+  "minima": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:10:35.997923971Z",
+    "description": "Minima is an open source RAG on-premises containers, with ability to integrate with ChatGPT and MCP. Minima can also be used as a fully local RAG.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/dmayboroda/servers/minima/meta",
+    "modifiedat": "2025-05-07T20:10:35.997923971Z",
+    "name": "io.github.dmayboroda/minima",
+    "prompts": [
+      {
+        "arguments": [
+          {
+            "description": "Context to search",
+            "name": "context",
+            "required": true
+          }
+        ],
+        "description": "Find a context in a local files",
+        "name": "query"
+      }
+    ],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Specify the root folder for indexing (on your cloud or local pc).",
+              "name": "LOCAL_FILES_PATH",
+              "require": true
+            },
+            {
+              "descrip": "Specify the embedding model to use.",
+              "name": "EMBEDDING_MODEL_ID",
+              "require": true
+            },
+            {
+              "descrip": "Define the embedding dimension provided by the model.",
+              "name": "EMBEDDING_SIZE",
+              "require": true
+            },
+            {
+              "descrip": "Set up the Ollama model.",
+              "name": "OLLAMA_MODEL",
+              "require": true
+            },
+            {
+              "descrip": "Specify the reranker model.",
+              "name": "RERANKER_MODEL",
+              "require": true
+            },
+            {
+              "descrip": "Required for ChatGPT integration, just use your email.",
+              "name": "USER_ID",
+              "require": false
+            },
+            {
+              "descrip": "Required for ChatGPT integration, just use any password.",
+              "name": "PASSWORD",
+              "require": false
+            }
+          ],
+          "positional_arguments": [
+            "--directory",
+            "/path_to_cloned_minima_project/mcp-server",
+            "run",
+            "minima"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "minima"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "dmayboroda/minima",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/dmayboroda/servers/minima",
+    "serverid": "minima",
+    "tools": [
+      {
+        "description": "Find a context in local files (PDF, CSV, DOCX, MD, TXT)",
+        "inputschema": {
+          "properties": {
+            "text": {
+              "description": "context to find",
+              "type": "string"
+            }
+          },
+          "required": [
+            "text"
+          ],
+          "type": "object"
+        },
+        "name": "query"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.1"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/dmayboroda/servers/minima/versions",
+    "xid": "/mcpproviders/dmayboroda/servers/minima"
+  }
+}

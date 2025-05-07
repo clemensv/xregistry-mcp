@@ -1,0 +1,94 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:07:50.053949425Z",
+    "description": "A Model Context Protocol server implementation in Python that provides access to Microsoft SQL Server databases. This server enables Language Models to inspect table schemas and execute SQL queries through a standardized interface.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:07:50.053949425Z",
+    "name": "io.github.amornpan/py-mcp-mssql",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "SQL Server hostname or IP",
+              "name": "MSSQL_SERVER",
+              "require": true
+            },
+            {
+              "descrip": "Database name",
+              "name": "MSSQL_DATABASE",
+              "require": true
+            },
+            {
+              "descrip": "Username for authentication",
+              "name": "MSSQL_USER",
+              "require": true
+            },
+            {
+              "descrip": "Password for authentication",
+              "name": "MSSQL_PASSWORD",
+              "require": true
+            },
+            {
+              "descrip": "ODBC Driver 17 for SQL Server",
+              "name": "MSSQL_DRIVER",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "server.py"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "python",
+        "package_name": "py-mcp-mssql"
+      }
+    ],
+    "remotes": [
+      {
+        "transporttype": "http",
+        "url": "http://localhost:8000"
+      }
+    ],
+    "repo_ref": "amornpan/py-mcp-mssql",
+    "resources": [
+      {
+        "description": "Lists all available tables in the database with URIs in the format mssql://\u003ctable_name\u003e/data; includes table descriptions and MIME types.",
+        "mimetype": "text/csv",
+        "name": "tables",
+        "uritemplate": "mssql://{table_name}/data"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/amornpan/servers/py-mcp-mssql/versions/1",
+    "serverid": "py-mcp-mssql",
+    "tools": [
+      {
+        "description": "Executes SQL queries; supports both SELECT and modification queries; returns results in CSV format for SELECT queries and affected row count for modification queries.",
+        "inputschema": {
+          "properties": {
+            "arguments": {
+              "type": "object"
+            },
+            "name": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        "name": "call_tool"
+      }
+    ],
+    "version_detail": {
+      "version": "1.0.1"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/amornpan/servers/py-mcp-mssql/versions/1"
+  }
+}

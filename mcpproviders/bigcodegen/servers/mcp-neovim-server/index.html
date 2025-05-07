@@ -1,0 +1,251 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:11:41.556924934Z",
+  "description": "A proof of concept integration between Claude Desktop (or any client) and Neovim using Model Context Protocol (MCP) and the official neovim/node-client JavaScript library. This server leverages Vim's native text editing commands and workflows, which Claude already understands, to create a lightweight code or general purpose AI text assistance layer.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/bigcodegen/servers/mcp-neovim-server/meta",
+  "modifiedat": "2025-05-07T20:11:41.556924934Z",
+  "name": "io.github.bigcodegen/mcp-neovim-server",
+  "prompts": [
+    {
+      "arguments": [],
+      "description": "Empty prompt list since no prompts are supported",
+      "name": "empty"
+    }
+  ],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Set to 'true' to enable shell command execution (e.g. !ls). Defaults to false for security.",
+            "name": "ALLOW_SHELL_COMMANDS",
+            "require": false
+          },
+          {
+            "descrip": "Set to the path of your Neovim socket. Defaults to '/tmp/nvim' if not specified.",
+            "name": "NVIM_SOCKET_PATH",
+            "require": false
+          }
+        ],
+        "positional_arguments": [
+          "-y",
+          "mcp-neovim-server"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "mcp-neovim-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "bigcodegen/mcp-neovim-server",
+  "resources": [
+    {
+      "description": "Current neovim text editor session",
+      "mimetype": "text/plain",
+      "name": "Current neovim text editor session",
+      "uritemplate": "nvim://session"
+    },
+    {
+      "description": "List of all open buffers in the current Neovim session",
+      "mimetype": "application/json",
+      "name": "Open Neovim buffers",
+      "uritemplate": "nvim://buffers"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/bigcodegen/servers/mcp-neovim-server",
+  "serverid": "mcp-neovim-server",
+  "tools": [
+    {
+      "description": "Current VIM text editor buffer with line numbers shown",
+      "inputschema": {
+        "properties": {
+          "filename": {
+            "description": "Optional file name to view a specific buffer",
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "name": "vim_buffer"
+    },
+    {
+      "description": "Send a command to VIM for navigation, spot editing, and line deletion",
+      "inputschema": {
+        "properties": {
+          "command": {
+            "description": "Vim command to execute (use ! prefix for shell commands if enabled)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "command"
+        ],
+        "type": "object"
+      },
+      "name": "vim_command"
+    },
+    {
+      "description": "Get the status of the VIM editor",
+      "inputschema": {
+        "properties": {
+          "filename": {
+            "description": "Optional file name to get status for a specific buffer",
+            "type": "string"
+          }
+        },
+        "required": [],
+        "type": "object"
+      },
+      "name": "vim_status"
+    },
+    {
+      "description": "Edit lines using insert, replace, or replaceAll in the VIM editor",
+      "inputschema": {
+        "properties": {
+          "lines": {
+            "description": "The text content to insert or use as replacement",
+            "type": "string"
+          },
+          "mode": {
+            "description": "Whether to insert new content, replace existing content, or replace entire buffer",
+            "enum": [
+              "insert",
+              "replace",
+              "replaceAll"
+            ],
+            "type": "string"
+          },
+          "startLine": {
+            "description": "The line number where editing should begin (1-indexed)",
+            "type": "number"
+          }
+        },
+        "required": [
+          "startLine",
+          "mode",
+          "lines"
+        ],
+        "type": "object"
+      },
+      "name": "vim_edit"
+    },
+    {
+      "description": "Manipulate Neovim windows (split, vsplit, close, navigate)",
+      "inputschema": {
+        "properties": {
+          "command": {
+            "description": "Window manipulation command: split or vsplit to create new window, only to keep just current window, close to close current window, or wincmd with h/j/k/l to navigate between windows",
+            "enum": [
+              "split",
+              "vsplit",
+              "only",
+              "close",
+              "wincmd h",
+              "wincmd j",
+              "wincmd k",
+              "wincmd l"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "command"
+        ],
+        "type": "object"
+      },
+      "name": "vim_window"
+    },
+    {
+      "description": "Set a mark at a specific position",
+      "inputschema": {
+        "properties": {
+          "column": {
+            "description": "The column number where the mark should be placed (0-indexed)",
+            "type": "number"
+          },
+          "line": {
+            "description": "The line number where the mark should be placed (1-indexed)",
+            "type": "number"
+          },
+          "mark": {
+            "description": "Single lowercase letter [a-z] to use as the mark name",
+            "pattern": "^[a-z]$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mark",
+          "line",
+          "column"
+        ],
+        "type": "object"
+      },
+      "name": "vim_mark"
+    },
+    {
+      "description": "Set content of a register",
+      "inputschema": {
+        "properties": {
+          "content": {
+            "description": "The text content to store in the specified register",
+            "type": "string"
+          },
+          "register": {
+            "description": "Register name - a lowercase letter [a-z] or double-quote [\"] for the unnamed register",
+            "pattern": "^[a-z\"]$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "register",
+          "content"
+        ],
+        "type": "object"
+      },
+      "name": "vim_register"
+    },
+    {
+      "description": "Make a visual selection",
+      "inputschema": {
+        "properties": {
+          "endColumn": {
+            "description": "The ending column number for visual selection (0-indexed)",
+            "type": "number"
+          },
+          "endLine": {
+            "description": "The ending line number for visual selection (1-indexed)",
+            "type": "number"
+          },
+          "startColumn": {
+            "description": "The starting column number for visual selection (0-indexed)",
+            "type": "number"
+          },
+          "startLine": {
+            "description": "The starting line number for visual selection (1-indexed)",
+            "type": "number"
+          }
+        },
+        "required": [
+          "startLine",
+          "startColumn",
+          "endLine",
+          "endColumn"
+        ],
+        "type": "object"
+      },
+      "name": "vim_visual"
+    }
+  ],
+  "version_detail": {
+    "version": "0.4.1"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/bigcodegen/servers/mcp-neovim-server/versions",
+  "xid": "/mcpproviders/bigcodegen/servers/mcp-neovim-server"
+}

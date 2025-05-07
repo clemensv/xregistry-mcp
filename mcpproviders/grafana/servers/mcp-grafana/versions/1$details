@@ -1,0 +1,231 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:11:16.263831584Z",
+  "description": "A Model Context Protocol (MCP) server for Grafana. This provides access to your Grafana instance and the surrounding ecosystem.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:11:16.263831584Z",
+  "name": "io.github.grafana/mcp-grafana",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "python-asyncio",
+      "package_name": "grafana-mcp-server"
+    }
+  ],
+  "remotes": [
+    {
+      "transporttype": "http",
+      "url": "http://localhost:8000"
+    }
+  ],
+  "repo_ref": "grafana/mcp-grafana",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/grafana/servers/mcp-grafana/versions/1",
+  "serverid": "mcp-grafana",
+  "tools": [
+    {
+      "description": "Search for dashboards",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "search_dashboards"
+    },
+    {
+      "description": "Get a dashboard by uid",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "get_dashboard_by_uid"
+    },
+    {
+      "description": "List datasources",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "list_datasources"
+    },
+    {
+      "description": "Get a datasource by uid",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "get_datasource_by_uid"
+    },
+    {
+      "description": "Get a datasource by name",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "get_datasource_by_name"
+    },
+    {
+      "description": "Execute a query against a Prometheus datasource",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "query_prometheus"
+    },
+    {
+      "description": "List metric metadata",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "list_prometheus_metric_metadata"
+    },
+    {
+      "description": "List available metric names",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "list_prometheus_metric_names"
+    },
+    {
+      "description": "List label names matching a selector",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "list_prometheus_label_names"
+    },
+    {
+      "description": "List values for a specific label",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "list_prometheus_label_values"
+    },
+    {
+      "description": "List incidents in Grafana Incident",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "list_incidents"
+    },
+    {
+      "description": "Create an incident in Grafana Incident",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "create_incident"
+    },
+    {
+      "description": "Add an activity item to an incident in Grafana Incident",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "add_activity_to_incident"
+    },
+    {
+      "description": "Resolve an incident in Grafana Incident",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "resolve_incident"
+    },
+    {
+      "description": "Query and retrieve logs using LogQL (either log or metric queries)",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "query_loki_logs"
+    },
+    {
+      "description": "List all available label names in logs",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "list_loki_label_names"
+    },
+    {
+      "description": "List values for a specific label in Loki logs",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "list_loki_label_values"
+    },
+    {
+      "description": "List and fetch alert rule information",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "list_prometheus_alert_rules"
+    },
+    {
+      "description": "Get alert rule statuses (firing/normal/error/etc.)",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "get_alert_rule_statuses"
+    },
+    {
+      "description": "List contact points",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "list_contact_points"
+    },
+    {
+      "description": "List and manage schedules",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "list_oncall_schedules"
+    },
+    {
+      "description": "Get shift details",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "get_shift_details"
+    },
+    {
+      "description": "Get current on-call users",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "get_current_oncall_users"
+    },
+    {
+      "description": "List teams and users",
+      "inputschema": {
+        "properties": {},
+        "type": "object"
+      },
+      "name": "list_teams_and_users"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/grafana/servers/mcp-grafana/versions/1"
+}

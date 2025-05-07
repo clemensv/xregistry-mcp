@@ -1,0 +1,72 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:12:08.48685716Z",
+    "description": "A Model Context Protocol (MCP) server implementation for the Qwen Max language model.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:12:08.48685716Z",
+    "name": "io.github.66julienmartin/MCP-server-Qwen_Max",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "API key for Dashscope",
+              "name": "DASHSCOPE_API_KEY",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "/path/to/Qwen_Max/build/index.js"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@66julienmartin/mcp-server-qwen_max"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "66julienmartin/MCP-server-Qwen_Max",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/66julienmartin/servers/MCP-server-Qwen_Max/versions/1",
+    "serverid": "MCP-server-Qwen_Max",
+    "tools": [
+      {
+        "description": "Generate text using Qwen Max model",
+        "inputschema": {
+          "properties": {
+            "max_tokens": {
+              "default": 8192,
+              "description": "Maximum number of tokens to generate",
+              "type": "number"
+            },
+            "prompt": {
+              "description": "The text prompt to generate content from",
+              "type": "string"
+            },
+            "temperature": {
+              "default": 0.7,
+              "description": "Sampling temperature (0-2)",
+              "maximum": 2,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "prompt"
+          ],
+          "type": "object"
+        },
+        "name": "qwen_max"
+      }
+    ],
+    "version_detail": {
+      "version": "1.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/66julienmartin/servers/MCP-server-Qwen_Max/versions/1"
+  }
+}

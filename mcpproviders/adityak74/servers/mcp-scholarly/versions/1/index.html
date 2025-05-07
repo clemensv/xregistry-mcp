@@ -1,0 +1,69 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:07:36.314276604Z",
+  "description": "A MCP server to search for accurate academic articles. More scholarly vendors will be added soon.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:07:36.314276604Z",
+  "name": "io.github.adityak74/mcp-scholarly",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "--directory",
+          "/Users/adityakarnam/PycharmProjects/mcp-scholarly/mcp-scholarly",
+          "run",
+          "mcp-scholarly"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "uv",
+      "package_name": "mcp-scholarly"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "adityak74/mcp-scholarly",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/adityak74/servers/mcp-scholarly/versions/1",
+  "serverid": "mcp-scholarly",
+  "tools": [
+    {
+      "description": "Search arxiv for articles related to the given keyword.",
+      "inputschema": {
+        "properties": {
+          "keyword": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "keyword"
+        ],
+        "type": "object"
+      },
+      "name": "search-arxiv"
+    },
+    {
+      "description": "Search google scholar for articles related to the given keyword.",
+      "inputschema": {
+        "properties": {
+          "keyword": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "keyword"
+        ],
+        "type": "object"
+      },
+      "name": "search-google-scholar"
+    }
+  ],
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/adityak74/servers/mcp-scholarly/versions/1"
+}

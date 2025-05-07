@@ -1,0 +1,78 @@
+{
+  "mcp-server-axiom": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:14:37.64391832Z",
+    "description": "A Model Context Protocol server implementation for Axiom that enables AI agents to query your data using Axiom Processing Language (APL). Works with Claude desktop app. Implements two MCP tools: queryApl and listDatasets. No support for MCP resources or prompts yet.",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/axiomhq/servers/mcp-server-axiom/meta",
+    "modifiedat": "2025-05-07T20:14:37.64391832Z",
+    "name": "io.github.axiomhq/mcp-server-axiom",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "name": "AXIOM_TOKEN"
+            },
+            {
+              "name": "AXIOM_URL"
+            },
+            {
+              "name": "AXIOM_ORG_ID"
+            },
+            {
+              "name": "AXIOM_QUERY_RATE"
+            },
+            {
+              "name": "AXIOM_QUERY_BURST"
+            },
+            {
+              "name": "AXIOM_DATASETS_RATE"
+            },
+            {
+              "name": "AXIOM_DATASETS_BURST"
+            }
+          ],
+          "positional_arguments": [
+            "--config",
+            "/path/to/your/config.txt"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "cli",
+        "package_name": "github.com/axiomhq/axiom-mcp"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "axiomhq/mcp-server-axiom",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/axiomhq/servers/mcp-server-axiom",
+    "serverid": "mcp-server-axiom",
+    "tools": [
+      {
+        "description": "Execute APL queries against Axiom datasets",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "queryApl"
+      },
+      {
+        "description": "List available Axiom datasets",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "listDatasets"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/axiomhq/servers/mcp-server-axiom/versions",
+    "xid": "/mcpproviders/axiomhq/servers/mcp-server-axiom"
+  }
+}

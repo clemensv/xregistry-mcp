@@ -1,0 +1,96 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:14:29.963761002Z",
+  "description": "MSSQL MCP Server is a Model Context Protocol (MCP) server that enables secure and structured interaction with Microsoft SQL Server (MSSQL) databases. It allows AI assistants to list available tables, read table contents, and execute SQL queries with controlled access, ensuring safer database exploration, strict permission enforcement, and logging of database interactions.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/JexinSam/servers/mssql_mcp_server/meta",
+  "modifiedat": "2025-05-07T20:14:29.963761002Z",
+  "name": "io.github.JexinSam/mssql_mcp_server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "MSSQL driver environment variable",
+            "name": "MSSQL_DRIVER",
+            "require": true
+          },
+          {
+            "descrip": "MSSQL host environment variable",
+            "name": "MSSQL_HOST",
+            "require": true
+          },
+          {
+            "descrip": "MSSQL user environment variable",
+            "name": "MSSQL_USER",
+            "require": true
+          },
+          {
+            "descrip": "MSSQL password environment variable",
+            "name": "MSSQL_PASSWORD",
+            "require": true
+          },
+          {
+            "descrip": "MSSQL database environment variable",
+            "name": "MSSQL_DATABASE",
+            "require": true
+          },
+          {
+            "descrip": "Optional TrustServerCertificate environment variable",
+            "name": "TrustServerCertificate",
+            "require": false
+          },
+          {
+            "descrip": "Optional Trusted_Connection environment variable",
+            "name": "Trusted_Connection",
+            "require": false
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "python",
+      "package_name": "mssql-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "JexinSam/mssql_mcp_server",
+  "resources": [
+    {
+      "description": "Data in table: {table}",
+      "mimetype": "text/plain",
+      "name": "Table",
+      "uritemplate": "mssql://{table}/data"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/JexinSam/servers/mssql_mcp_server",
+  "serverid": "mssql_mcp_server",
+  "tools": [
+    {
+      "description": "Execute an SQL query on the MSSQL server",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "The SQL query to execute",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "execute_sql"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/JexinSam/servers/mssql_mcp_server/versions",
+  "xid": "/mcpproviders/JexinSam/servers/mssql_mcp_server"
+}

@@ -1,0 +1,197 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:07:43.166471848Z",
+    "description": "A Model Context Protocol server implementation for RabbitMQ. Enabling MCP client to interact with queues and topics hosted in a RabbitMQ instance.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:07:43.166471848Z",
+    "name": "io.github.kenliao94/mcp-server-rabbitmq",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [
+            "--directory",
+            "/path/to/repo/mcp-server-rabbitmq",
+            "run",
+            "mcp-server-rabbitmq",
+            "--rabbitmq-host",
+            "\u003chostname ex. test.rabbit.com, localhost\u003e",
+            "--port",
+            "\u003cport number ex. 5672\u003e",
+            "--username",
+            "\u003crabbitmq username\u003e",
+            "--password",
+            "\u003crabbitmq password\u003e",
+            "--use-tls",
+            "\u003ctrue if uses amqps, false otherwise\u003e"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@kenliao94/mcp-server-rabbitmq"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "kenliao94/mcp-server-rabbitmq",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/kenliao94/servers/mcp-server-rabbitmq/versions/1",
+    "serverid": "mcp-server-rabbitmq",
+    "tools": [
+      {
+        "description": "Enqueue a message to a RabbitMQ queue.",
+        "inputschema": {
+          "properties": {
+            "message": {
+              "type": "string"
+            },
+            "queue": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "message",
+            "queue"
+          ],
+          "type": "object"
+        },
+        "name": "enqueue"
+      },
+      {
+        "description": "Publish a message to a RabbitMQ exchange with fanout.",
+        "inputschema": {
+          "properties": {
+            "exchange": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "message",
+            "exchange"
+          ],
+          "type": "object"
+        },
+        "name": "fanout"
+      },
+      {
+        "description": "List all RabbitMQ queues.",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "list_queues"
+      },
+      {
+        "description": "List all RabbitMQ exchanges.",
+        "inputschema": {
+          "properties": {},
+          "required": [],
+          "type": "object"
+        },
+        "name": "list_exchanges"
+      },
+      {
+        "description": "Get information about a specific RabbitMQ queue.",
+        "inputschema": {
+          "properties": {
+            "queue": {
+              "type": "string"
+            },
+            "vhost": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "queue"
+          ],
+          "type": "object"
+        },
+        "name": "get_queue_info"
+      },
+      {
+        "description": "Delete a specific RabbitMQ queue.",
+        "inputschema": {
+          "properties": {
+            "queue": {
+              "type": "string"
+            },
+            "vhost": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "queue"
+          ],
+          "type": "object"
+        },
+        "name": "delete_queue"
+      },
+      {
+        "description": "Purge messages from a specific RabbitMQ queue.",
+        "inputschema": {
+          "properties": {
+            "queue": {
+              "type": "string"
+            },
+            "vhost": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "queue"
+          ],
+          "type": "object"
+        },
+        "name": "purge_queue"
+      },
+      {
+        "description": "Delete a specific RabbitMQ exchange.",
+        "inputschema": {
+          "properties": {
+            "exchange": {
+              "type": "string"
+            },
+            "vhost": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "exchange"
+          ],
+          "type": "object"
+        },
+        "name": "delete_exchange"
+      },
+      {
+        "description": "Get information about a specific RabbitMQ exchange.",
+        "inputschema": {
+          "properties": {
+            "exchange": {
+              "type": "string"
+            },
+            "vhost": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "exchange"
+          ],
+          "type": "object"
+        },
+        "name": "get_exchange_info"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/kenliao94/servers/mcp-server-rabbitmq/versions/1"
+  }
+}

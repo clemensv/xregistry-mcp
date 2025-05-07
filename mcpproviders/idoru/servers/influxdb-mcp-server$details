@@ -1,0 +1,187 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:18:21.656398868Z",
+  "description": "A Model Context Protocol (MCP) server that exposes access to an InfluxDB instance using the InfluxDB OSS API v2.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/idoru/servers/influxdb-mcp-server/meta",
+  "modifiedat": "2025-05-07T20:18:21.656398868Z",
+  "name": "io.github.idoru/influxdb-mcp-server",
+  "prompts": [
+    {
+      "arguments": [],
+      "description": "Common Flux query examples",
+      "name": "flux-query-examples"
+    },
+    {
+      "arguments": [],
+      "description": "Guide to InfluxDB line protocol format",
+      "name": "line-protocol-guide"
+    }
+  ],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Authentication token for the InfluxDB API",
+            "name": "INFLUXDB_TOKEN",
+            "require": true
+          },
+          {
+            "descrip": "URL of the InfluxDB instance (defaults to http://localhost:8086)",
+            "name": "INFLUXDB_URL",
+            "require": false
+          },
+          {
+            "descrip": "Default organization name for certain operations",
+            "name": "INFLUXDB_ORG",
+            "require": false
+          }
+        ],
+        "positional_arguments": [],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "influxdb-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "idoru/influxdb-mcp-server",
+  "resources": [
+    {
+      "description": "Displays all organizations in the InfluxDB instance",
+      "name": "orgs",
+      "uritemplate": "influxdb://orgs"
+    },
+    {
+      "description": "Shows all buckets with their metadata",
+      "name": "buckets",
+      "uritemplate": "influxdb://buckets"
+    },
+    {
+      "description": "Lists all measurements within a specified bucket",
+      "name": "bucket-measurements",
+      "uritemplate": "influxdb://bucket/{bucketName}/measurements"
+    },
+    {
+      "description": "Executes a Flux query and returns results as a resource",
+      "name": "query",
+      "uritemplate": "influxdb://query/{orgName}/{fluxQuery}"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/idoru/servers/influxdb-mcp-server",
+  "serverid": "influxdb-mcp-server",
+  "tools": [
+    {
+      "description": "Write time-series data in line protocol format",
+      "inputschema": {
+        "properties": {
+          "bucket": {
+            "description": "The bucket name",
+            "type": "string"
+          },
+          "data": {
+            "description": "Data in InfluxDB line protocol format",
+            "type": "string"
+          },
+          "org": {
+            "description": "The organization name",
+            "type": "string"
+          },
+          "precision": {
+            "description": "Timestamp precision (ns, us, ms, s)",
+            "enum": [
+              "ns",
+              "us",
+              "ms",
+              "s"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "org",
+          "bucket",
+          "data"
+        ],
+        "type": "object"
+      },
+      "name": "write-data"
+    },
+    {
+      "description": "Execute Flux queries",
+      "inputschema": {
+        "properties": {
+          "org": {
+            "description": "The organization name",
+            "type": "string"
+          },
+          "query": {
+            "description": "Flux query string",
+            "type": "string"
+          }
+        },
+        "required": [
+          "org",
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "query-data"
+    },
+    {
+      "description": "Create a new bucket",
+      "inputschema": {
+        "properties": {
+          "name": {
+            "description": "The bucket name",
+            "type": "string"
+          },
+          "orgID": {
+            "description": "The organization ID",
+            "type": "string"
+          },
+          "retentionPeriodSeconds": {
+            "descripti": "Retention period in seconds (optional)",
+            "type": "number"
+          }
+        },
+        "required": [
+          "name",
+          "orgID"
+        ],
+        "type": "object"
+      },
+      "name": "create-bucket"
+    },
+    {
+      "description": "Create a new organization",
+      "inputschema": {
+        "properties": {
+          "description": {
+            "description": "Organization description (optional)",
+            "type": "string"
+          },
+          "name": {
+            "description": "The organization name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name"
+        ],
+        "type": "object"
+      },
+      "name": "create-org"
+    }
+  ],
+  "version_detail": {
+    "version": "0.1.1"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/idoru/servers/influxdb-mcp-server/versions",
+  "xid": "/mcpproviders/idoru/servers/influxdb-mcp-server"
+}

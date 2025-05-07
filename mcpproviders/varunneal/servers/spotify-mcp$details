@@ -1,0 +1,135 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:08:22.645975392Z",
+  "description": "MCP project to connect Claude with Spotify. Built on top of spotipy-dev's API. Supports playback control, search, info retrieval, and queue management.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/varunneal/servers/spotify-mcp/meta",
+  "modifiedat": "2025-05-07T20:08:22.645975392Z",
+  "name": "io.github.varunneal/spotify-mcp",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [],
+        "positional_arguments": [
+          "--directory",
+          "/path/to/spotify_mcp",
+          "run",
+          "spotify-mcp"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "uv",
+      "package_name": "@modelcontextprotocol/inspector"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "varunneal/spotify-mcp",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/varunneal/servers/spotify-mcp",
+  "serverid": "spotify-mcp",
+  "tools": [
+    {
+      "description": "Manages the current playback with the following actions: - get: Get information about user's current track. - start: Starts playing new item or resumes current playback if called with no uri. - pause: Pauses current playback. - skip: Skips current track.",
+      "inputschema": {
+        "properties": {
+          "action": {
+            "description": "Action to perform: 'get', 'start', 'pause' or 'skip'.",
+            "type": "string"
+          },
+          "num_skips": {
+            "description": "Number of tracks to skip for `skip` action.",
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "spotify_uri": {
+            "description": "Spotify uri of item to play for 'start' action. If omitted, resumes current playback.",
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "type": "object"
+      },
+      "name": "SpotifyPlayback"
+    },
+    {
+      "description": "Manage the playback queue - get the queue or add tracks.",
+      "inputschema": {
+        "properties": {
+          "action": {
+            "description": "Action to perform: 'add' or 'get'.",
+            "type": "string"
+          },
+          "track_id": {
+            "description": "Track ID to add to queue (required for add action)",
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "type": "object"
+      },
+      "name": "SpotifyQueue"
+    },
+    {
+      "description": "Get detailed information about a Spotify item (track, album, artist, or playlist).",
+      "inputschema": {
+        "properties": {
+          "item_uri": {
+            "description": "URI of the item to get information about. If 'playlist' or 'album', returns its tracks. If 'artist', returns albums and top tracks.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "item_uri"
+        ],
+        "type": "object"
+      },
+      "name": "SpotifyGetInfo"
+    },
+    {
+      "description": "Search for tracks, albums, artists, or playlists on Spotify.",
+      "inputschema": {
+        "properties": {
+          "limit": {
+            "description": "Maximum number of items to return",
+            "type": "integer"
+          },
+          "qtype": {
+            "description": "Type of items to search for (track, album, artist, playlist, or comma-separated combination)",
+            "type": "string"
+          },
+          "query": {
+            "description": "query term",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "SpotifySearch"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/varunneal/servers/spotify-mcp/versions",
+  "xid": "/mcpproviders/varunneal/servers/spotify-mcp"
+}

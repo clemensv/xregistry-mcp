@@ -1,0 +1,104 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:09:14.808981559Z",
+  "description": "An MCP server implementation that integrates the SearXNG API, providing web search capabilities.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:09:14.808981559Z",
+  "name": "io.github.ihor-sokoliuk/mcp-searxng",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "URL of the SearXNG instance",
+            "name": "SEARXNG_URL",
+            "require": false
+          }
+        ],
+        "positional_arguments": [
+          "-y"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "mcp-searxng"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "ihor-sokoliuk/mcp-searxng",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/ihor-sokoliuk/servers/mcp-searxng/versions/1",
+  "serverid": "mcp-searxng",
+  "tools": [
+    {
+      "description": "Performs a web search using the SearXNG API, ideal for general queries, news, articles, and online content. Use this for broad information gathering, recent events, or when you need diverse web sources.",
+      "inputschema": {
+        "properties": {
+          "language": {
+            "default": "all",
+            "description": "Language code for search results (e.g., 'en', 'fr', 'de'). Default is instance-dependent.",
+            "type": "string"
+          },
+          "pageno": {
+            "default": 1,
+            "description": "Search page number (starts at 1)",
+            "type": "number"
+          },
+          "query": {
+            "description": "The search query. This is the main input for the web search",
+            "type": "string"
+          },
+          "safesearch": {
+            "default": "0",
+            "description": "Safe search filter level (0: None, 1: Moderate, 2: Strict)",
+            "enum": [
+              "0",
+              "1",
+              "2"
+            ],
+            "type": "string"
+          },
+          "time_range": {
+            "default": "",
+            "description": "Time range of search (day, month, year)",
+            "enum": [
+              "day",
+              "month",
+              "year"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "searxng_web_search"
+    },
+    {
+      "description": "Read the content from an URL. Use this for further information retrieving to understand the content of each URL.",
+      "inputschema": {
+        "properties": {
+          "url": {
+            "description": "URL",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ],
+        "type": "object"
+      },
+      "name": "web_url_read"
+    }
+  ],
+  "version_detail": {
+    "version": "0.4.6"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/ihor-sokoliuk/servers/mcp-searxng/versions/1"
+}

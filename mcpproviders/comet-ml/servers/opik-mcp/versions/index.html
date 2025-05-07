@@ -1,0 +1,79 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:12:23.225759732Z",
+    "description": "A Model Context Protocol (MCP) implementation for the Opik platform. It provides a unified interface for interacting with Opik's capabilities, supporting multiple transport mechanisms for flexible integration into various environments.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:12:23.225759732Z",
+    "name": "io.github.comet-ml/opik-mcp",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Environment variables from .env file",
+              "name": ".env",
+              "require": false
+            }
+          ],
+          "positional_arguments": [
+            "build/index.js",
+            "--debug",
+            "true"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "@comet-ml/opik-mcp"
+      }
+    ],
+    "remotes": [
+      {
+        "transporttype": "http",
+        "url": "http://localhost:3001"
+      }
+    ],
+    "repo_ref": "comet-ml/opik-mcp",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/comet-ml/servers/opik-mcp/versions/1",
+    "serverid": "opik-mcp",
+    "tools": [
+      {
+        "description": "Get information about the Opik server configuration",
+        "inputschema": {
+          "additionalProperties": false,
+          "properties": {
+            "random_string": {
+              "description": "Dummy parameter for no-parameter tools",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": "get_server_info"
+      },
+      {
+        "description": "Get information about the Opik server configuration",
+        "inputschema": {
+          "additionalProperties": false,
+          "properties": {
+            "random_string": {
+              "description": "Dummy parameter for no-parameter tools",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": "mcp__get_server_info"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.1"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/comet-ml/servers/opik-mcp/versions/1"
+  }
+}

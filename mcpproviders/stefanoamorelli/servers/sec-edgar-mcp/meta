@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:16:20.349382356Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/stefanoamorelli/servers/sec-edgar-mcp/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:16:20.349382356Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/stefanoamorelli/servers/sec-edgar-mcp/meta",
+  "serverid": "sec-edgar-mcp",
+  "xid": "/mcpproviders/stefanoamorelli/servers/sec-edgar-mcp/meta"
+}

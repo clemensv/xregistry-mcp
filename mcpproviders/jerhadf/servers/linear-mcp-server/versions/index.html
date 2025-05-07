@@ -1,0 +1,241 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:07:37.040773459Z",
+    "description": "A Model Context Protocol server for the Linear API providing integration with Linear's issue tracking system through MCP, allowing LLMs to interact with Linear issues.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:07:37.040773459Z",
+    "name": "io.github.jerhadf/linear-mcp-server",
+    "prompts": [
+      {
+        "arguments": [],
+        "description": "Instructions for using the Linear MCP server effectively",
+        "name": "linear-server-prompt"
+      }
+    ],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "API key for Linear",
+              "name": "LINEAR_API_KEY",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "-y",
+            "linear-mcp-server"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npm",
+        "package_name": "linear-mcp-server"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "jerhadf/linear-mcp-server",
+    "resources": [
+      {
+        "description": "A Linear issue with its details, comments, and metadata. Use this to fetch detailed information about a specific issue.",
+        "mimetype": "application/json",
+        "name": "Linear Issue",
+        "uritemplate": "linear-issue:///{issueId}"
+      },
+      {
+        "description": "Information about the authenticated user associated with the API key, including their role, teams, and settings.",
+        "name": "Current User",
+        "uritemplate": "linear-viewer:"
+      },
+      {
+        "description": "Details about the Linear organization associated with the API key, including settings, teams, and members.",
+        "name": "Current Organization",
+        "uritemplate": "linear-organization:"
+      },
+      {
+        "description": "All active issues belonging to a specific Linear team, including their status, priority, and assignees.",
+        "name": "Team Issues",
+        "uritemplate": "linear-team:///{teamId}/issues"
+      },
+      {
+        "description": "Active issues assigned to a specific Linear user. Returns issues sorted by update date.",
+        "name": "User Assigned Issues",
+        "uritemplate": "linear-user:///{userId}/assigned"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/jerhadf/servers/linear-mcp-server/versions/1",
+    "serverid": "linear-mcp-server",
+    "tools": [
+      {
+        "description": "Creates a new Linear issue with specified details. Use this to create tickets for tasks, bugs, or feature requests. Returns the created issue's identifier and URL. Required fields are title and teamId, with optional description, priority (0-4, where 0 is no priority and 1 is urgent), and status.",
+        "inputschema": {
+          "properties": {
+            "description": {
+              "description": "Issue description",
+              "type": "string"
+            },
+            "priority": {
+              "description": "Priority (0-4)",
+              "type": "number"
+            },
+            "status": {
+              "description": "Issue status",
+              "type": "string"
+            },
+            "teamId": {
+              "description": "Team ID",
+              "type": "string"
+            },
+            "title": {
+              "description": "Issue title",
+              "type": "string"
+            }
+          },
+          "required": [
+            "title",
+            "teamId"
+          ],
+          "type": "object"
+        },
+        "name": "linear_create_issue"
+      },
+      {
+        "description": "Updates an existing Linear issue's properties. Use this to modify issue details like title, description, priority, or status. Requires the issue ID and accepts any combination of updatable fields. Returns the updated issue's identifier and URL.",
+        "inputschema": {
+          "properties": {
+            "description": {
+              "description": "New description",
+              "type": "string"
+            },
+            "id": {
+              "description": "Issue ID",
+              "type": "string"
+            },
+            "priority": {
+              "description": "New priority (0-4)",
+              "type": "number"
+            },
+            "status": {
+              "description": "New status",
+              "type": "string"
+            },
+            "title": {
+              "description": "New title",
+              "type": "string"
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "type": "object"
+        },
+        "name": "linear_update_issue"
+      },
+      {
+        "description": "Searches Linear issues using flexible criteria. Supports filtering by any combination of: title/description text, team, status, assignee, labels, priority (1=urgent, 2=high, 3=normal, 4=low), and estimate. Returns up to 10 issues by default (configurable via limit).",
+        "inputschema": {
+          "properties": {
+            "assigneeId": {
+              "description": "Filter by assignee's user ID",
+              "type": "string"
+            },
+            "estimate": {
+              "description": "Filter by estimate points",
+              "type": "number"
+            },
+            "includeArchived": {
+              "description": "Include archived issues in results (default: false)",
+              "type": "boolean"
+            },
+            "labels": {
+              "description": "Filter by label names",
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "limit": {
+              "description": "Max results to return (default: 10)",
+              "type": "number"
+            },
+            "priority": {
+              "description": "Filter by priority (1=urgent, 2=high, 3=normal, 4=low)",
+              "type": "number"
+            },
+            "query": {
+              "description": "Optional text to search in title and description",
+              "type": "string"
+            },
+            "status": {
+              "description": "Filter by status name (e.g., 'In Progress', 'Done')",
+              "type": "string"
+            },
+            "teamId": {
+              "description": "Filter by team ID",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": "linear_search_issues"
+      },
+      {
+        "description": "Retrieves issues assigned to a specific user or the authenticated user if no userId is provided. Returns issues sorted by last updated, including priority, status, and other metadata. Useful for finding a user's workload or tracking assigned tasks.",
+        "inputschema": {
+          "properties": {
+            "includeArchived": {
+              "description": "Include archived issues in results",
+              "type": "boolean"
+            },
+            "limit": {
+              "description": "Maximum number of issues to return (default: 50)",
+              "type": "number"
+            },
+            "userId": {
+              "description": "Optional user ID. If not provided, returns authenticated user's issues",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": "linear_get_user_issues"
+      },
+      {
+        "description": "Adds a comment to an existing Linear issue. Supports markdown formatting in the comment body. Can optionally specify a custom user name and avatar for the comment. Returns the created comment's details including its URL.",
+        "inputschema": {
+          "properties": {
+            "body": {
+              "description": "Comment text in markdown format",
+              "type": "string"
+            },
+            "createAsUser": {
+              "description": "Optional custom username to show for the comment",
+              "type": "string"
+            },
+            "displayIconUrl": {
+              "description": "Optional avatar URL for the comment",
+              "type": "string"
+            },
+            "issueId": {
+              "description": "ID of the issue to comment on",
+              "type": "string"
+            }
+          },
+          "required": [
+            "issueId",
+            "body"
+          ],
+          "type": "object"
+        },
+        "name": "linear_add_comment"
+      }
+    ],
+    "version_detail": {
+      "version": "1.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/jerhadf/servers/linear-mcp-server/versions/1"
+  }
+}

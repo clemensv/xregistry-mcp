@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:10:06.581960629Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/GLips/servers/Figma-Context-MCP/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:10:06.581960629Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/GLips/servers/Figma-Context-MCP/meta",
+  "serverid": "Figma-Context-MCP",
+  "xid": "/mcpproviders/GLips/servers/Figma-Context-MCP/meta"
+}

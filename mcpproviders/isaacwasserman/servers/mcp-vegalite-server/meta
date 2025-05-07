@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:13:24.442480248Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/isaacwasserman/servers/mcp-vegalite-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:13:24.442480248Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/isaacwasserman/servers/mcp-vegalite-server/meta",
+  "serverid": "mcp-vegalite-server",
+  "xid": "/mcpproviders/isaacwasserman/servers/mcp-vegalite-server/meta"
+}

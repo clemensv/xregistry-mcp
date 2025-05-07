@@ -1,0 +1,124 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:10:06.581960629Z",
+  "description": "Give your coding agent access to your Figma data. Implement designs in any framework in one-shot. This MCP server is specifically designed for use with Cursor. It simplifies and translates Figma API responses to provide only the most relevant layout and styling information to the model, improving AI accuracy and relevance.",
+  "documentation": "https://www.framelink.ai/docs/quickstart?utm_source=github\u0026utm_medium=referral\u0026utm_campaign=readme",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/GLips/servers/Figma-Context-MCP/meta",
+  "modifiedat": "2025-05-07T20:10:06.581960629Z",
+  "name": "io.github.GLips/Figma-Context-MCP",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Figma API access token",
+            "name": "FIGMA_API_KEY",
+            "require": true
+          },
+          {
+            "descrip": "Port number for HTTP server",
+            "name": "PORT",
+            "require": false
+          }
+        ],
+        "positional_arguments": [
+          "-y",
+          "figma-developer-mcp",
+          "--figma-api-key=YOUR-KEY",
+          "--stdio"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "npm",
+      "package_name": "figma-developer-mcp"
+    }
+  ],
+  "remotes": [
+    {
+      "transporttype": "http",
+      "url": "http://localhost:PORT/mcp"
+    }
+  ],
+  "repo_ref": "GLips/Figma-Context-MCP",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/GLips/servers/Figma-Context-MCP",
+  "serverid": "Figma-Context-MCP",
+  "tools": [
+    {
+      "description": "When the nodeId cannot be obtained, obtain the layout information about the entire Figma file",
+      "inputschema": {
+        "properties": {
+          "depth": {
+            "description": "How many levels deep to traverse the node tree, only use if explicitly requested by the user",
+            "type": "number"
+          },
+          "fileKey": {
+            "description": "The key of the Figma file to fetch, often found in a provided URL like figma.com/(file|design)/\u003cfileKey\u003e/...",
+            "type": "string"
+          },
+          "nodeId": {
+            "description": "The ID of the node to fetch, often found as URL parameter node-id=\u003cnodeId\u003e, always use if provided",
+            "type": "string"
+          }
+        },
+        "required": [
+          "fileKey"
+        ],
+        "type": "object"
+      },
+      "name": "get_figma_data"
+    },
+    {
+      "description": "Download SVG and PNG images used in a Figma file based on the IDs of image or icon nodes",
+      "inputschema": {
+        "properties": {
+          "fileKey": {
+            "description": "The key of the Figma file containing the node",
+            "type": "string"
+          },
+          "localPath": {
+            "description": "The absolute path to the directory where images are stored in the project. If the directory does not exist, it will be created. The format of this path should respect the directory format of the operating system you are running on. Don't use any special character escaping in the path name either.",
+            "type": "string"
+          },
+          "nodes": {
+            "description": "The nodes to fetch as images",
+            "items": {
+              "properties": {
+                "fileName": "The local name for saving the fetched file",
+                "imageRef": "If a node has an imageRef fill, you must include this variable. Leave blank when downloading Vector SVG images.",
+                "nodeId": {
+                  "de": "The ID of the Figma image node to fetch, formatted as 1234:5678",
+                  "ty": "string"
+                }
+              },
+              "required": [
+                "nodeId",
+                "fileName"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "fileKey",
+          "nodes",
+          "localPath"
+        ],
+        "type": "object"
+      },
+      "name": "download_figma_images"
+    }
+  ],
+  "version_detail": {
+    "version": "0.2.1"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/GLips/servers/Figma-Context-MCP/versions",
+  "xid": "/mcpproviders/GLips/servers/Figma-Context-MCP"
+}

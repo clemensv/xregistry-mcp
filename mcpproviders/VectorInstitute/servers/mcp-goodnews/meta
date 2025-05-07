@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:07:34.915496097Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/VectorInstitute/servers/mcp-goodnews/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:07:34.915496097Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/VectorInstitute/servers/mcp-goodnews/meta",
+  "serverid": "mcp-goodnews",
+  "xid": "/mcpproviders/VectorInstitute/servers/mcp-goodnews/meta"
+}

@@ -1,0 +1,143 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:14:57.351362693Z",
+  "description": "A Model Context Protocol (MCP) server implementation that provides database interaction and business intelligence capabilities through IoTDB. This server enables running SQL queries.",
+  "epoch": 1,
+  "isdefault": true,
+  "modifiedat": "2025-05-07T20:14:57.351362693Z",
+  "name": "io.github.apache/iotdb-mcp-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Host address of the IoTDB server",
+            "name": "IOTDB_HOST",
+            "require": true
+          },
+          {
+            "descrip": "Port number of the IoTDB server",
+            "name": "IOTDB_PORT",
+            "require": true
+          },
+          {
+            "descrip": "Username for IoTDB authentication",
+            "name": "IOTDB_USER",
+            "require": true
+          },
+          {
+            "descrip": "Password for IoTDB authentication",
+            "name": "IOTDB_PASSWORD",
+            "require": true
+          },
+          {
+            "descrip": "Database name to connect to",
+            "name": "IOTDB_DATABASE",
+            "require": true
+          },
+          {
+            "descrip": "SQL dialect to use: 'tree' or 'table'",
+            "name": "IOTDB_SQL_DIALECT",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "--directory",
+          "YOUR_REPO_PATH/src/iotdb_mcp_server",
+          "run",
+          "server.py"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "python-uv",
+      "package_name": "iotdb-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "apache/iotdb-mcp-server",
+  "resources": [],
+  "self": "https://mcpxreg.org/mcpproviders/apache/servers/iotdb-mcp-server/versions/1",
+  "serverid": "iotdb-mcp-server",
+  "tools": [
+    {
+      "description": "Execute SHOW/COUNT queries to read metadata from the database",
+      "inputschema": {
+        "properties": {
+          "query_sql": {
+            "description": "The SHOW/COUNT SQL query to execute",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query_sql"
+        ],
+        "type": "object"
+      },
+      "name": "metadata_query"
+    },
+    {
+      "description": "Execute SELECT queries to read data from the database",
+      "inputschema": {
+        "properties": {
+          "query_sql": {
+            "description": "The SELECT SQL query to execute",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query_sql"
+        ],
+        "type": "object"
+      },
+      "name": "select_query"
+    },
+    {
+      "description": "Execute SELECT queries to read data from the database",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "The SELECT SQL query to execute",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "read_query"
+    },
+    {
+      "description": "Get a list of all tables in the database",
+      "inputschema": {
+        "properties": {},
+        "required": [],
+        "type": "object"
+      },
+      "name": "list_tables"
+    },
+    {
+      "description": "View schema information for a specific table",
+      "inputschema": {
+        "properties": {
+          "table_name": {
+            "description": "Name of table to describe",
+            "type": "string"
+          }
+        },
+        "required": [
+          "table_name"
+        ],
+        "type": "object"
+      },
+      "name": "describe-table"
+    }
+  ],
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "versionid": "1",
+  "xid": "/mcpproviders/apache/servers/iotdb-mcp-server/versions/1"
+}

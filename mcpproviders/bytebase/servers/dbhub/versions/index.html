@@ -1,0 +1,105 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:09:55.078899975Z",
+    "description": "DBHub is a universal database gateway implementing the Model Context Protocol (MCP) server interface. This gateway allows MCP-compatible clients to connect to and explore different databases.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-07T20:09:55.078899975Z",
+    "name": "io.github.bytebase/dbhub",
+    "prompts": [
+      {
+        "arguments": [],
+        "description": "Generate SQL statements for the database",
+        "name": "generate_sql"
+      },
+      {
+        "arguments": [],
+        "description": "Explain database elements",
+        "name": "explain_db"
+      }
+    ],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [
+            "--transport",
+            "sse",
+            "--port",
+            "8080",
+            "--dsn",
+            "postgres://user:password@localhost:5432/dbname?sslmode=disable"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "container",
+        "package_name": "bytebase/dbhub"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "bytebase/dbhub",
+    "resources": [
+      {
+        "description": "Database schemas resource",
+        "mimetype": "application/json",
+        "name": "schemas",
+        "uritemplate": "db://schemas"
+      },
+      {
+        "description": "Tables in a given schema",
+        "mimetype": "application/json",
+        "name": "tables_in_schema",
+        "uritemplate": "db://schemas/{schemaName}/tables"
+      },
+      {
+        "description": "Structure of a table in a schema",
+        "mimetype": "application/json",
+        "name": "table_structure_in_schema",
+        "uritemplate": "db://schemas/{schemaName}/tables/{tableName}"
+      },
+      {
+        "description": "Indexes in a table",
+        "mimetype": "application/json",
+        "name": "indexes_in_table",
+        "uritemplate": "db://schemas/{schemaName}/tables/{tableName}/indexes"
+      },
+      {
+        "description": "Stored procedures in a schema",
+        "mimetype": "application/json",
+        "name": "procedures_in_schema",
+        "uritemplate": "db://schemas/{schemaName}/procedures"
+      },
+      {
+        "description": "Details of a stored procedure",
+        "mimetype": "application/json",
+        "name": "procedure_details_in_schema",
+        "uritemplate": "db://schemas/{schemaName}/procedures/{procedureName}"
+      }
+    ],
+    "self": "https://mcpxreg.org/mcpproviders/bytebase/servers/dbhub/versions/1",
+    "serverid": "dbhub",
+    "tools": [
+      {
+        "description": "Execute SQL command on the database",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "execute_sql"
+      },
+      {
+        "description": "List available database connectors",
+        "inputschema": {
+          "type": "object"
+        },
+        "name": "list_connectors"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/bytebase/servers/dbhub/versions/1"
+  }
+}

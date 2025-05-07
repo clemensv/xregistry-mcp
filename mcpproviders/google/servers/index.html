@@ -1,0 +1,256 @@
+{
+  "maps": {
+    "ancestor": "1",
+    "createdat": "2025-05-07T20:07:42.866193013Z",
+    "description": "Google Maps API integration for geocoding, directions, and more.",
+    "documentation": "https://developers.google.com/maps/documentation",
+    "epoch": 1,
+    "isdefault": true,
+    "metaurl": "https://mcpxreg.org/mcpproviders/google/servers/maps/meta",
+    "modifiedat": "2025-05-07T20:07:42.866193013Z",
+    "name": "Google Maps",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Google Maps API key",
+              "name": "GOOGLE_MAPS_API_KEY",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "run",
+            "-i",
+            "--rm"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "container",
+        "package_name": "mcp/google-maps"
+      },
+      {
+        "command_arguments": {
+          "environment_variables": [
+            {
+              "descrip": "Google Maps API key",
+              "name": "GOOGLE_MAPS_API_KEY",
+              "require": true
+            }
+          ],
+          "positional_arguments": [
+            "-y",
+            "@modelcontextprotocol/server-google-maps"
+          ],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "npx",
+        "package_name": "@modelcontextprotocol/server-google-maps"
+      }
+    ],
+    "remotes": [
+      {
+        "transporttype": "https",
+        "url": "https://maps.googleapis.com/maps/api/mcp"
+      }
+    ],
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/google/servers/maps",
+    "serverid": "maps",
+    "tools": [
+      {
+        "description": "Convert address to coordinates",
+        "inputschema": {
+          "properties": {
+            "address": {
+              "description": "The address to geocode.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "address"
+          ],
+          "type": "object"
+        },
+        "name": "maps_geocode"
+      },
+      {
+        "description": "Convert coordinates to address",
+        "inputschema": {
+          "properties": {
+            "latitude": {
+              "description": "The latitude of the location.",
+              "type": "number"
+            },
+            "longitude": {
+              "description": "The longitude of the location.",
+              "type": "number"
+            }
+          },
+          "required": [
+            "latitude",
+            "longitude"
+          ],
+          "type": "object"
+        },
+        "name": "maps_reverse_geocode"
+      },
+      {
+        "description": "Search for places using text query",
+        "inputschema": {
+          "properties": {
+            "location": {
+              "properties": {
+                "latitude": {
+                  "des": "The latitude of the location.",
+                  "typ": "number"
+                },
+                "longitude": {
+                  "de": "The longitude of the location.",
+                  "ty": "number"
+                }
+              },
+              "required": [
+                "latitude",
+                "longitude"
+              ],
+              "type": "object"
+            },
+            "query": {
+              "type": "string"
+            },
+            "radius": {
+              "description": "The radius (in meters) within which to search for places.",
+              "type": "number"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        },
+        "name": "maps_search_places"
+      },
+      {
+        "description": "Get detailed information about a place",
+        "inputschema": {
+          "properties": {
+            "place_id": {
+              "description": "The unique identifier for the place.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "place_id"
+          ],
+          "type": "object"
+        },
+        "name": "maps_place_details"
+      },
+      {
+        "description": "Calculate distances and times between points",
+        "inputschema": {
+          "properties": {
+            "destinations": {
+              "items": {
+                "description": "The destination locations for the distance matrix.",
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "mode": {
+              "description": "The mode of transportation to use for the distance calculation.",
+              "enum": [
+                "driving",
+                "walking",
+                "bicycling",
+                "transit"
+              ],
+              "type": "string"
+            },
+            "origins": {
+              "items": {
+                "description": "The origin locations for the distance matrix.",
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "origins",
+            "destinations"
+          ],
+          "type": "object"
+        },
+        "name": "maps_distance_matrix"
+      },
+      {
+        "description": "Get elevation data for locations",
+        "inputschema": {
+          "properties": {
+            "locations": {
+              "items": {
+                "properties": {
+                  "latit": "The latitude of the location.",
+                  "longi": "The longitude of the location."
+                },
+                "required": [
+                  "latitude",
+                  "longitude"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "locations"
+          ],
+          "type": "object"
+        },
+        "name": "maps_elevation"
+      },
+      {
+        "description": "Get directions between points",
+        "inputschema": {
+          "properties": {
+            "destination": {
+              "description": "The endpoint for the directions.",
+              "type": "string"
+            },
+            "mode": {
+              "description": "The mode of transportation to use for the directions.",
+              "enum": [
+                "driving",
+                "walking",
+                "bicycling",
+                "transit"
+              ],
+              "type": "string"
+            },
+            "origin": {
+              "description": "The starting point for the directions.",
+              "type": "string"
+            }
+          },
+          "required": [
+            "origin",
+            "destination"
+          ],
+          "type": "object"
+        },
+        "name": "maps_directions"
+      }
+    ],
+    "version_detail": {
+      "version": "1.0.0"
+    },
+    "versionid": "1",
+    "versionscount": 1,
+    "versionsurl": "https://mcpxreg.org/mcpproviders/google/servers/maps/versions",
+    "xid": "/mcpproviders/google/servers/maps"
+  }
+}

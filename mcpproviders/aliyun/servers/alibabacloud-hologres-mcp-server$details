@@ -1,0 +1,206 @@
+{
+  "ancestor": "1",
+  "createdat": "2025-05-07T20:09:35.459256206Z",
+  "description": "Hologres MCP Server serves as a universal interface between AI Agents and Hologres databases. It enables seamless communication between AI Agents and Hologres, helping AI Agents retrieve Hologres database metadata and execute SQL operations.",
+  "epoch": 1,
+  "isdefault": true,
+  "metaurl": "https://mcpxreg.org/mcpproviders/aliyun/servers/alibabacloud-hologres-mcp-server/meta",
+  "modifiedat": "2025-05-07T20:09:35.459256206Z",
+  "name": "io.github.aliyun/alibabacloud-hologres-mcp-server",
+  "prompts": [],
+  "registries": [
+    {
+      "command_arguments": {
+        "environment_variables": [
+          {
+            "descrip": "Host of the Hologres database",
+            "name": "HOLOGRES_HOST",
+            "require": true
+          },
+          {
+            "descrip": "Port of the Hologres database",
+            "name": "HOLOGRES_PORT",
+            "require": true
+          },
+          {
+            "descrip": "Access ID for Hologres",
+            "name": "HOLOGRES_USER",
+            "require": true
+          },
+          {
+            "descrip": "Access key for Hologres",
+            "name": "HOLOGRES_PASSWORD",
+            "require": true
+          },
+          {
+            "descrip": "Database name in Hologres",
+            "name": "HOLOGRES_DATABASE",
+            "require": true
+          }
+        ],
+        "positional_arguments": [
+          "run",
+          "--with",
+          "hologres-mcp-server",
+          "hologres-mcp-server"
+        ],
+        "sub_commands": []
+      },
+      "license": "",
+      "name": "python",
+      "package_name": "hologres-mcp-server"
+    }
+  ],
+  "remotes": [],
+  "repo_ref": "aliyun/alibabacloud-hologres-mcp-server",
+  "resources": [
+    {
+      "description": "Hologres is a PostgreSQL-compatible OLAP product. List all schemas in Hologres database",
+      "mimetype": "text/plain",
+      "name": "All Schemas",
+      "uritemplate": "hologres:///schemas"
+    },
+    {
+      "description": "List all tables in a specific schema",
+      "mimetype": "text/plain",
+      "name": "Schema Tables",
+      "uritemplate": "hologres:///{schema}/tables"
+    },
+    {
+      "description": "Get the DDL script of a table in a specific schema",
+      "mimetype": "text/plain",
+      "name": "Table DDL",
+      "uritemplate": "hologres:///{schema}/{table}/ddl"
+    },
+    {
+      "description": "Get statistics information of a table",
+      "mimetype": "text/plain",
+      "name": "Table Statistics",
+      "uritemplate": "hologres:///{schema}/{table}/statistic"
+    },
+    {
+      "description": "List all partitions of a partitioned table",
+      "mimetype": "text/plain",
+      "name": "Table Statistics",
+      "uritemplate": "hologres:///{schema}/{table}/partitions"
+    },
+    {
+      "description": "System information in Hologres, following are some common system_paths:\n\n'missing_stats_tables'    Shows the tables that are missing statistics.\n'stat_activity'    Shows the information of current running queries.\n'query_log/latest/\u003crow_limits\u003e'    Get recent query log history with specified number of rows.\n'query_log/user/\u003cuser_name\u003e/\u003crow_limits\u003e'    Get query log history for a specific user with row limits.\n'query_log/application/\u003capplication_name\u003e/\u003crow_limits\u003e'    Get query log history for a specific application with row limits.\n'query_log/failed/\u003cinterval\u003e/\u003crow_limits\u003e' - Get failed query log history with interval and specified number of rows.\n",
+      "mimetype": "text/plain",
+      "name": "System internal Information",
+      "uritemplate": "system:///{+system_path}"
+    }
+  ],
+  "self": "https://mcpxreg.org/mcpproviders/aliyun/servers/alibabacloud-hologres-mcp-server",
+  "serverid": "alibabacloud-hologres-mcp-server",
+  "tools": [
+    {
+      "description": "Execute SELECT SQL to query data from Hologres database.",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "The (SELECT) SQL query to execute",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "execute_select_sql"
+    },
+    {
+      "description": "Execute (INSERT, UPDATE, DELETE) SQL to insert, update, and delete data in Hologres databse.",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "The DML SQL query to execute",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "execute_dml_sql"
+    },
+    {
+      "description": "Execute (CREATE, ALTER, DROP) SQL statements to CREATE, ALTER, or DROP tables, views, procedures, GUCs etc. in Hologres databse.",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "The DDL SQL query to execute",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "execute_ddl_sql"
+    },
+    {
+      "description": "Execute the ANALYZE TABLE command to have Hologres collect table statistics, enabling QO to generate better query plans",
+      "inputschema": {
+        "properties": {
+          "schema": {
+            "description": "Schema name",
+            "type": "string"
+          },
+          "table": {
+            "description": "Table name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "schema",
+          "table"
+        ],
+        "type": "object"
+      },
+      "name": "gather_table_statistics"
+    },
+    {
+      "description": "Get query plan for a SQL query",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "The SQL query to analyze",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "get_query_plan"
+    },
+    {
+      "description": "Get actual execution plan with runtime statistics for a SQL query",
+      "inputschema": {
+        "properties": {
+          "query": {
+            "description": "The SQL query to analyze",
+            "type": "string"
+          }
+        },
+        "required": [
+          "query"
+        ],
+        "type": "object"
+      },
+      "name": "get_execution_plan"
+    }
+  ],
+  "version_detail": {
+    "version": "0.1.7"
+  },
+  "versionid": "1",
+  "versionscount": 1,
+  "versionsurl": "https://mcpxreg.org/mcpproviders/aliyun/servers/alibabacloud-hologres-mcp-server/versions",
+  "xid": "/mcpproviders/aliyun/servers/alibabacloud-hologres-mcp-server"
+}

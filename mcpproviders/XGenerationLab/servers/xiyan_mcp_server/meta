@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-07T20:14:14.791758621Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/XGenerationLab/servers/xiyan_mcp_server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-07T20:14:14.791758621Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/XGenerationLab/servers/xiyan_mcp_server/meta",
+  "serverid": "xiyan_mcp_server",
+  "xid": "/mcpproviders/XGenerationLab/servers/xiyan_mcp_server/meta"
+}
