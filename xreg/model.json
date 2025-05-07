@@ -7,7 +7,7 @@
                 "servers": {
                     "plural": "servers",
                     "singular": "server",
-                    "maxversions": 1,
+                    "maxversions": 0,
                     "setversionid": false,
                     "setdefaultversionsticky": false,
                     "hasdocument": false,
@@ -34,49 +34,6 @@
                                     "description": "Semantic version number detail."
                                 }
                             }
-                        },
-                        "serverid": {
-                            "name": "serverid",
-                            "type": "string",
-                            "description": "Opaque server instance identifier."
-                        },
-                        "epoch": {
-                            "name": "epoch",
-                            "type": "uinteger",
-                            "description": "Unix epoch when the manifest was generated."
-                        },
-                        "self": {
-                            "name": "self",
-                            "type": "url",
-                            "description": "Canonical URL of this manifest."
-                        },
-                        "xid": {
-                            "name": "xid",
-                            "type": "string",
-                            "description": "Repository-relative path for this manifest."
-                        },
-                        "documentation": {
-                            "name": "documentation",
-                            "type": "url",
-                            "description": "Reference documentation URI."
-                        },
-                        "labels": {
-                            "name": "labels",
-                            "type": "map",
-                            "description": "Arbitrary key–value metadata.",
-                            "item": {
-                                "type": "string"
-                            }
-                        },
-                        "createdat": {
-                            "name": "createdat",
-                            "type": "timestamp",
-                            "description": "ISO-8601 creation timestamp."
-                        },
-                        "modifiedat": {
-                            "name": "modifiedat",
-                            "type": "timestamp",
-                            "description": "ISO-8601 last modification timestamp."
                         },
                         "registries": {
                             "name": "registries",
