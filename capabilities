@@ -1,0 +1,36 @@
+{
+  "apis": [
+    "/capabilities",
+    "/export",
+    "/model"
+  ],
+  "flags": [
+    "collections",
+    "doc",
+    "epoch",
+    "filter",
+    "inline",
+    "nodefaultversionid",
+    "nodefaultversionsticky",
+    "noepoch",
+    "noreadonly",
+    "offered",
+    "schema",
+    "setdefaultversionid",
+    "specversion"
+  ],
+  "mutable": [
+    "capabilities",
+    "entities",
+    "model"
+  ],
+  "pagination": false,
+  "schemas": [
+    "xregistry-json/1.0-rc1"
+  ],
+  "shortself": false,
+  "specversions": [
+    "1.0-rc1"
+  ],
+  "sticky": true
+}

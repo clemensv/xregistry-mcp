@@ -1,0 +1,661 @@
+{
+  "attributes": {
+    "specversion": {
+      "name": "specversion",
+      "type": "string",
+      "readonly": true,
+      "required": true
+    },
+    "registryid": {
+      "name": "registryid",
+      "type": "string",
+      "readonly": true,
+      "immutable": true,
+      "required": true
+    },
+    "self": {
+      "name": "self",
+      "type": "url",
+      "readonly": true,
+      "immutable": true,
+      "required": true
+    },
+    "xid": {
+      "name": "xid",
+      "type": "xid",
+      "readonly": true,
+      "immutable": true,
+      "required": true
+    },
+    "epoch": {
+      "name": "epoch",
+      "type": "uinteger",
+      "readonly": true,
+      "required": true
+    },
+    "name": {
+      "name": "name",
+      "type": "string"
+    },
+    "description": {
+      "name": "description",
+      "type": "string"
+    },
+    "documentation": {
+      "name": "documentation",
+      "type": "url"
+    },
+    "labels": {
+      "name": "labels",
+      "type": "map",
+      "item": {
+        "type": "string"
+      }
+    },
+    "createdat": {
+      "name": "createdat",
+      "type": "timestamp",
+      "required": true
+    },
+    "modifiedat": {
+      "name": "modifiedat",
+      "type": "timestamp",
+      "required": true
+    },
+    "capabilities": {
+      "name": "capabilities",
+      "type": "object",
+      "attributes": {
+        "*": {
+          "name": "*",
+          "type": "any"
+        }
+      }
+    },
+    "model": {
+      "name": "model",
+      "type": "object",
+      "attributes": {
+        "*": {
+          "name": "*",
+          "type": "any"
+        }
+      }
+    },
+    "mcpprovidersurl": {
+      "name": "mcpprovidersurl",
+      "type": "url",
+      "readonly": true,
+      "immutable": true,
+      "required": true
+    },
+    "mcpproviderscount": {
+      "name": "mcpproviderscount",
+      "type": "uinteger",
+      "readonly": true,
+      "required": true
+    },
+    "mcpproviders": {
+      "name": "mcpproviders",
+      "type": "map",
+      "item": {
+        "type": "object",
+        "attributes": {
+          "*": {
+            "name": "*",
+            "type": "any"
+          }
+        }
+      }
+    }
+  },
+  "groups": {
+    "mcpproviders": {
+      "plural": "mcpproviders",
+      "singular": "mcpprovider",
+      "attributes": {
+        "mcpproviderid": {
+          "name": "mcpproviderid",
+          "type": "string",
+          "immutable": true,
+          "required": true
+        },
+        "self": {
+          "name": "self",
+          "type": "url",
+          "readonly": true,
+          "immutable": true,
+          "required": true
+        },
+        "xid": {
+          "name": "xid",
+          "type": "xid",
+          "readonly": true,
+          "immutable": true,
+          "required": true
+        },
+        "epoch": {
+          "name": "epoch",
+          "type": "uinteger",
+          "readonly": true,
+          "required": true
+        },
+        "name": {
+          "name": "name",
+          "type": "string"
+        },
+        "description": {
+          "name": "description",
+          "type": "string"
+        },
+        "documentation": {
+          "name": "documentation",
+          "type": "url"
+        },
+        "labels": {
+          "name": "labels",
+          "type": "map",
+          "item": {
+            "type": "string"
+          }
+        },
+        "createdat": {
+          "name": "createdat",
+          "type": "timestamp",
+          "required": true
+        },
+        "modifiedat": {
+          "name": "modifiedat",
+          "type": "timestamp",
+          "required": true
+        },
+        "serversurl": {
+          "name": "serversurl",
+          "type": "url",
+          "readonly": true,
+          "immutable": true,
+          "required": true
+        },
+        "serverscount": {
+          "name": "serverscount",
+          "type": "uinteger",
+          "readonly": true,
+          "required": true
+        },
+        "servers": {
+          "name": "servers",
+          "type": "map",
+          "item": {
+            "type": "object",
+            "attributes": {
+              "*": {
+                "name": "*",
+                "type": "any"
+              }
+            }
+          }
+        }
+      },
+      "resources": {
+        "servers": {
+          "plural": "servers",
+          "singular": "server",
+          "maxversions": 0,
+          "setversionid": false,
+          "setdefaultversionsticky": false,
+          "hasdocument": false,
+          "singleversionroot": true,
+          "attributes": {
+            "serverid": {
+              "name": "serverid",
+              "type": "string",
+              "immutable": true,
+              "required": true
+            },
+            "versionid": {
+              "name": "versionid",
+              "type": "string",
+              "immutable": true,
+              "required": true
+            },
+            "self": {
+              "name": "self",
+              "type": "url",
+              "readonly": true,
+              "immutable": true,
+              "required": true
+            },
+            "xid": {
+              "name": "xid",
+              "type": "xid",
+              "readonly": true,
+              "immutable": true,
+              "required": true
+            },
+            "epoch": {
+              "name": "epoch",
+              "type": "uinteger",
+              "readonly": true,
+              "required": true
+            },
+            "name": {
+              "name": "name",
+              "type": "string",
+              "description": "Unique reverse-DNS identifier of the repository."
+            },
+            "isdefault": {
+              "name": "isdefault",
+              "type": "boolean",
+              "readonly": true,
+              "required": true,
+              "default": false
+            },
+            "description": {
+              "name": "description",
+              "type": "string",
+              "description": "Repository or server overview."
+            },
+            "documentation": {
+              "name": "documentation",
+              "type": "url"
+            },
+            "labels": {
+              "name": "labels",
+              "type": "map",
+              "item": {
+                "type": "string"
+              }
+            },
+            "createdat": {
+              "name": "createdat",
+              "type": "timestamp",
+              "required": true
+            },
+            "modifiedat": {
+              "name": "modifiedat",
+              "type": "timestamp",
+              "required": true
+            },
+            "ancestor": {
+              "name": "ancestor",
+              "type": "string",
+              "required": true
+            },
+            "contenttype": {
+              "name": "contenttype",
+              "type": "string"
+            },
+            "prompts": {
+              "name": "prompts",
+              "type": "array",
+              "description": "Static prompt templates bundled with this server.",
+              "item": {
+                "type": "object",
+                "attributes": {
+                  "arguments": {
+                    "name": "arguments",
+                    "type": "array",
+                    "item": {
+                      "type": "object",
+                      "attributes": {
+                        "description": {
+                          "name": "description",
+                          "type": "string"
+                        },
+                        "name": {
+                          "name": "name",
+                          "type": "string"
+                        },
+                        "required": {
+                          "name": "required",
+                          "type": "boolean"
+                        }
+                      }
+                    }
+                  },
+                  "description": {
+                    "name": "description",
+                    "type": "string"
+                  },
+                  "name": {
+                    "name": "name",
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "registries": {
+              "name": "registries",
+              "type": "array",
+              "description": "Package registry metadata blocks.",
+              "item": {
+                "type": "object",
+                "attributes": {
+                  "command_arguments": {
+                    "name": "command_arguments",
+                    "type": "object",
+                    "attributes": {
+                      "environment_variables": {
+                        "name": "environment_variables",
+                        "type": "array",
+                        "item": {
+                          "type": "object",
+                          "attributes": {
+                            "description": {
+                              "name": "description",
+                              "type": "string"
+                            },
+                            "name": {
+                              "name": "name",
+                              "type": "string"
+                            },
+                            "required": {
+                              "name": "required",
+                              "type": "boolean"
+                            }
+                          }
+                        }
+                      },
+                      "named_arguments": {
+                        "name": "named_arguments",
+                        "type": "array",
+                        "item": {
+                          "type": "string"
+                        }
+                      },
+                      "positional_arguments": {
+                        "name": "positional_arguments",
+                        "type": "array",
+                        "item": {
+                          "type": "string"
+                        }
+                      },
+                      "sub_commands": {
+                        "name": "sub_commands",
+                        "type": "array",
+                        "item": {
+                          "type": "object",
+                          "attributes": {
+                            "description": {
+                              "name": "description",
+                              "type": "string"
+                            },
+                            "name": {
+                              "name": "name",
+                              "type": "string"
+                            },
+                            "named_arguments": {
+                              "name": "named_arguments",
+                              "type": "array",
+                              "item": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "license": {
+                    "name": "license",
+                    "type": "string"
+                  },
+                  "name": {
+                    "name": "name",
+                    "type": "string"
+                  },
+                  "package_name": {
+                    "name": "package_name",
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "remotes": {
+              "name": "remotes",
+              "type": "array",
+              "description": "Source‑code hosting locations.",
+              "item": {
+                "type": "object",
+                "attributes": {
+                  "transporttype": {
+                    "name": "transporttype",
+                    "type": "string"
+                  },
+                  "url": {
+                    "name": "url",
+                    "type": "url"
+                  }
+                }
+              }
+            },
+            "repo_ref": {
+              "name": "repo_ref",
+              "type": "string",
+              "description": "Repository reference for the server."
+            },
+            "resources": {
+              "name": "resources",
+              "type": "array",
+              "description": "Data resources the server can expose or subscribe to.",
+              "item": {
+                "type": "object",
+                "attributes": {
+                  "description": {
+                    "name": "description",
+                    "type": "string"
+                  },
+                  "mimetype": {
+                    "name": "mimetype",
+                    "type": "string"
+                  },
+                  "name": {
+                    "name": "name",
+                    "type": "string"
+                  },
+                  "uritemplate": {
+                    "name": "uritemplate",
+                    "type": "uritemplate"
+                  }
+                }
+              }
+            },
+            "tools": {
+              "name": "tools",
+              "type": "array",
+              "description": "Tool definitions invocable via the MCP runtime.",
+              "item": {
+                "type": "object",
+                "attributes": {
+                  "description": {
+                    "name": "description",
+                    "type": "string"
+                  },
+                  "inputschema": {
+                    "name": "inputschema",
+                    "type": "any"
+                  },
+                  "name": {
+                    "name": "name",
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "version_detail": {
+              "name": "version_detail",
+              "type": "object",
+              "attributes": {
+                "version": {
+                  "name": "version",
+                  "type": "string",
+                  "description": "Semantic version number detail."
+                }
+              }
+            },
+            "metaurl": {
+              "name": "metaurl",
+              "type": "url",
+              "readonly": true,
+              "immutable": true,
+              "required": true
+            },
+            "meta": {
+              "name": "meta",
+              "type": "object",
+              "attributes": {
+                "*": {
+                  "name": "*",
+                  "type": "any"
+                }
+              }
+            },
+            "versionsurl": {
+              "name": "versionsurl",
+              "type": "url",
+              "readonly": true,
+              "immutable": true,
+              "required": true
+            },
+            "versionscount": {
+              "name": "versionscount",
+              "type": "uinteger",
+              "readonly": true,
+              "required": true
+            },
+            "versions": {
+              "name": "versions",
+              "type": "map",
+              "item": {
+                "type": "object",
+                "attributes": {
+                  "*": {
+                    "name": "*",
+                    "type": "any"
+                  }
+                }
+              }
+            }
+          },
+          "metaattributes": {
+            "serverid": {
+              "name": "serverid",
+              "type": "string",
+              "immutable": true,
+              "required": true
+            },
+            "self": {
+              "name": "self",
+              "type": "url",
+              "readonly": true,
+              "immutable": true,
+              "required": true
+            },
+            "xid": {
+              "name": "xid",
+              "type": "xid",
+              "readonly": true,
+              "immutable": true,
+              "required": true
+            },
+            "xref": {
+              "name": "xref",
+              "type": "url"
+            },
+            "epoch": {
+              "name": "epoch",
+              "type": "uinteger",
+              "readonly": true,
+              "required": true
+            },
+            "createdat": {
+              "name": "createdat",
+              "type": "timestamp",
+              "required": true
+            },
+            "modifiedat": {
+              "name": "modifiedat",
+              "type": "timestamp",
+              "required": true
+            },
+            "readonly": {
+              "name": "readonly",
+              "type": "boolean",
+              "readonly": true,
+              "required": true,
+              "default": false
+            },
+            "compatibility": {
+              "name": "compatibility",
+              "type": "string",
+              "enum": [
+                "none",
+                "backward",
+                "backward_transitive",
+                "forward",
+                "forward_transitive",
+                "full",
+                "full_transitive"
+              ],
+              "strict": false,
+              "required": true,
+              "default": "none"
+            },
+            "compatibilityauthority": {
+              "name": "compatibilityauthority",
+              "type": "string",
+              "enum": [
+                "external",
+                "server"
+              ],
+              "strict": false
+            },
+            "deprecated": {
+              "name": "deprecated",
+              "type": "object",
+              "attributes": {
+                "alternative": {
+                  "name": "alternative",
+                  "type": "url"
+                },
+                "docs": {
+                  "name": "docs",
+                  "type": "url"
+                },
+                "effective": {
+                  "name": "effective",
+                  "type": "timestamp"
+                },
+                "removal": {
+                  "name": "removal",
+                  "type": "timestamp"
+                },
+                "*": {
+                  "name": "*",
+                  "type": "any"
+                }
+              }
+            },
+            "defaultversionid": {
+              "name": "defaultversionid",
+              "type": "string",
+              "required": true
+            },
+            "defaultversionurl": {
+              "name": "defaultversionurl",
+              "type": "url",
+              "readonly": true,
+              "required": true
+            },
+            "defaultversionsticky": {
+              "name": "defaultversionsticky",
+              "type": "boolean",
+              "required": true,
+              "default": false
+            }
+          }
+        }
+      }
+    }
+  }
+}
