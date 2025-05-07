@@ -34,7 +34,7 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git config --local credential.helper "!f() { echo username=x-access-token; echo password=${{ secrets.GITHUB_TOKEN }}; }; f"
+          git config --local credential.helper "!echo username=x-access-token && echo password=${{ secrets.GITHUB_TOKEN }}"
       
       - name: Build Registry
         run: bash $GITHUB_WORKSPACE/xreg/build_registry.sh
