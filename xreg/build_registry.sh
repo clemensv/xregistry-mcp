@@ -28,20 +28,20 @@ echo "Updating model..."
 docker exec "${CONTAINER_ID}" /xr model update /workspace/xreg/model.json -s localhost:8080
 
 # Create entries for each registry index.json
-#echo "Creating registry entries..."
-#docker exec "${CONTAINER_ID}" /bin/sh -c '
-#  REGISTRY_DIR=/workspace/registry
-#  find $REGISTRY_DIR -type f -name index.json | while read file; do
-#    path=${file#"$REGISTRY_DIR"/}
-#    path=${path%/index.json}
-#    /xr create "$path" -d "@$file" -s localhost:8080
-#    if [ $? -ne 0 ]; then
-#      echo "Error processing file: $file"
-#    else
-#      echo "Processed file: $file"
-#    fi 
-#  done
-#'
+echo "Creating registry entries..."
+docker exec "${CONTAINER_ID}" /bin/sh -c '
+ REGISTRY_DIR=/workspace/registry
+ find $REGISTRY_DIR -type f -name index.json | while read file; do
+   path=${file#"$REGISTRY_DIR"/}
+   path=${path%/index.json}
+   /xr create "$path" -d "@$file" -s localhost:8080
+   if [ $? -ne 0 ]; then
+     echo "Error processing file: $file"
+   else
+     echo "Processed file: $file"
+   fi 
+ done
+'
 
 # Export the live data as a tarball
 echo "Exporting live data to $ARCHIVE_PATH..."
