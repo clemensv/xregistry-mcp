@@ -75,7 +75,7 @@ jobs:
       - name: Sync /live to static-site branch
         run: |
           cd $TEMP_DIR
-          rsync -av --delete $GITHUB_WORKSPACE/live/ .
+          rsync -av --filter="P /.git" --delete $GITHUB_WORKSPACE/live/ .
           git add .
           if git diff-index --quiet HEAD; then
             echo "No changes to commit."
