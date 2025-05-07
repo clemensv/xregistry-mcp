@@ -39,6 +39,12 @@ jobs:
       - name: Build Registry
         run: bash $GITHUB_WORKSPACE/xreg/build_registry.sh
 
+      - name: Set Fallback Repo Variables
+        if: env.GITHUB_SERVER_URL == '' || env.GITHUB_REPOSITORY == ''
+        run: |
+          export GITHUB_SERVER_URL="https://github.com"
+          export GITHUB_REPOSITORY="${{ github.repository }}"
+
       - name: Prepare temporary directory for static-site branch
         run: |
           TEMP_DIR=$(mktemp -d)
@@ -46,7 +52,7 @@ jobs:
           mkdir -p $TEMP_DIR
           cd $TEMP_DIR
           git init
-          git remote add origin $GITHUB_SERVER_URL/$GITHUB_REPOSITORY.git
+          git remote add origin $GITHUB_SERVER_URL/$GITHUB_REPOSITORY
           if git ls-remote --exit-code origin static-site; then
             echo "Checking out existing static-site branch."
             git fetch origin static-site
