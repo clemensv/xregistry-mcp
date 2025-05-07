@@ -37,7 +37,7 @@ jobs:
           git config --local credential.helper "!f() { echo username=x-access-token; echo password=${{ secrets.GITHUB_TOKEN }}; }; f"
       
       - name: Build Registry
-        run: /xreg/build_registry.sh
+        run: $GITHUB_WORKSPACE/xreg/build_registry.sh
 
       - name: Prepare temporary directory for static-site branch
         run: |
