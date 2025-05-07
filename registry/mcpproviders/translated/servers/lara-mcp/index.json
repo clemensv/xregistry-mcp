@@ -1,8 +1,36 @@
 {
-  "name": "Lara Translate",
+  "repo_ref": "translated/lara-mcp",
+  "name": "io.github.translated/lara-mcp",
   "description": "A Model Context Protocol (MCP) Server for Lara Translate API, enabling powerful translation capabilities with support for language detection, context-aware translations and translation memories.",
-  "mcpversion": "1.0",
-  "serverversion": "0.0.10",
+  "version_detail": {
+    "version": "0.0.10"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@translated/lara-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "LARA_ACCESS_KEY_ID",
+            "description": "Access key ID for Lara Translate API",
+            "required": true
+          },
+          {
+            "name": "LARA_ACCESS_KEY_SECRET",
+            "description": "Access key secret for Lara Translate API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "translate",
@@ -86,34 +114,5 @@
       "description": "List of Lara Translate supported languages.",
       "uritemplate": "languages://list"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@translated/lara-mcp",
-      "command": "node",
-      "args": [],
-      "env": [
-        {
-          "name": "LARA_ACCESS_KEY_ID",
-          "description": "Access key ID for Lara Translate API",
-          "required": true
-        },
-        {
-          "name": "LARA_ACCESS_KEY_SECRET",
-          "description": "Access key secret for Lara Translate API",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/translated/lara-mcp",
-    "name": "translated/lara-mcp"
-  }
+  ]
 }

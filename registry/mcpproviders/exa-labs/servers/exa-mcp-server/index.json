@@ -1,13 +1,33 @@
 {
-  "name": "exa-search-server",
+  "repo_ref": "exa-labs/exa-mcp-server",
+  "name": "io.github.exa-labs/exa-mcp-server",
   "description": "The Exa MCP server enables AI assistants to perform real-time web searches using Exa's powerful search API, providing structured search results including titles, URLs, and content snippets, caching recent searches as resources, handling rate limiting and errors gracefully, and supporting real-time web crawling for fresh content.",
-  "mcpversion": "1.0",
-  "serverversion": "0.3.6",
-  "repository": {
-    "url": "https://github.com/exa-labs/exa-mcp-server",
-    "name": "exa-labs/exa-mcp-server"
+  "version_detail": {
+    "version": "0.3.6"
   },
-  "docs": "https://www.loom.com/share/ac676f29664e4c6cb33a2f0a63772038?sid=0e72619f-5bfc-415d-a705-63d326373f60",
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "exa-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "/path/to/exa-mcp-server/build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "EXA_API_KEY",
+            "description": "API key for Exa search API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "web_search",
@@ -45,26 +65,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "exa-mcp-server",
-      "command": "npx",
-      "args": [
-        "/path/to/exa-mcp-server/build/index.js"
-      ],
-      "env": [
-        {
-          "name": "EXA_API_KEY",
-          "description": "API key for Exa search API",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

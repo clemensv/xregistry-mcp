@@ -1,12 +1,63 @@
 {
-  "name": "ElevenLabs MCP Server",
+  "repo_ref": "mamertofabian/elevenlabs-mcp-server",
+  "name": "io.github.mamertofabian/elevenlabs-mcp-server",
   "description": "A Model Context Protocol (MCP) server that integrates with ElevenLabs text-to-speech API, featuring both a server component and a sample web-based MCP Client (SvelteKit) for managing voice generation tasks.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
-  "repository": {
-    "url": "https://github.com/mamertofabian/elevenlabs-mcp-server",
-    "name": "mamertofabian/elevenlabs-mcp-server"
+  "version_detail": {
+    "version": "0.1.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@smithery/elevenlabs-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "elevenlabs-mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "ELEVENLABS_API_KEY",
+            "description": "API key for ElevenLabs",
+            "required": true
+          },
+          {
+            "name": "ELEVENLABS_VOICE_ID",
+            "description": "Default voice ID to use",
+            "required": false
+          },
+          {
+            "name": "ELEVENLABS_MODEL_ID",
+            "description": "Model ID for voice generation",
+            "required": false
+          },
+          {
+            "name": "ELEVENLABS_STABILITY",
+            "description": "Stability parameter for voice synthesis",
+            "required": false
+          },
+          {
+            "name": "ELEVENLABS_SIMILARITY_BOOST",
+            "description": "Similarity boost parameter",
+            "required": false
+          },
+          {
+            "name": "ELEVENLABS_STYLE",
+            "description": "Style parameter for voice",
+            "required": false
+          },
+          {
+            "name": "ELEVENLABS_OUTPUT_DIR",
+            "description": "Output directory for audio files",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "generate_audio_simple",
@@ -113,62 +164,5 @@
       "description": "Access list of available ElevenLabs voices with metadata",
       "mimetype": "application/json"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@smithery/elevenlabs-mcp-server",
-      "command": "elevenlabs-mcp-server",
-      "args": [
-        "elevenlabs-mcp-server"
-      ],
-      "env": [
-        {
-          "name": "ELEVENLABS_API_KEY",
-          "description": "API key for ElevenLabs",
-          "required": true
-        },
-        {
-          "name": "ELEVENLABS_VOICE_ID",
-          "description": "Default voice ID to use",
-          "required": false
-        },
-        {
-          "name": "ELEVENLABS_MODEL_ID",
-          "description": "Model ID for voice generation",
-          "required": false,
-          "default": "eleven_flash_v2"
-        },
-        {
-          "name": "ELEVENLABS_STABILITY",
-          "description": "Stability parameter for voice synthesis",
-          "required": false,
-          "default": "0.5"
-        },
-        {
-          "name": "ELEVENLABS_SIMILARITY_BOOST",
-          "description": "Similarity boost parameter",
-          "required": false,
-          "default": "0.75"
-        },
-        {
-          "name": "ELEVENLABS_STYLE",
-          "description": "Style parameter for voice",
-          "required": false,
-          "default": "0.1"
-        },
-        {
-          "name": "ELEVENLABS_OUTPUT_DIR",
-          "description": "Output directory for audio files",
-          "required": false,
-          "default": "output"
-        }
-      ]
-    }
-  }
+  ]
 }

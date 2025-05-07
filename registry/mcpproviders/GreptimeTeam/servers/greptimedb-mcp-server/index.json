@@ -1,12 +1,56 @@
 {
-  "name": "greptimedb-mcp-server",
+  "repo_ref": "GreptimeTeam/greptimedb-mcp-server",
+  "name": "io.github.GreptimeTeam/greptimedb-mcp-server",
   "description": "A Model Context Protocol (MCP) server implementation for GreptimeDB. This server provides AI assistants with a secure and structured way to explore and analyze databases. It enables them to list tables, read data, and execute SQL queries through a controlled interface, ensuring responsible database access.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/GreptimeTeam/greptimedb-mcp-server",
-    "name": "GreptimeTeam/greptimedb-mcp-server"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "greptimedb-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/path/to/greptimedb-mcp-server",
+          "run",
+          "-m",
+          "greptimedb_mcp_server.server"
+        ],
+        "environment_variables": [
+          {
+            "name": "GREPTIMEDB_HOST",
+            "description": "Database host",
+            "required": true
+          },
+          {
+            "name": "GREPTIMEDB_PORT",
+            "description": "Database port",
+            "required": false
+          },
+          {
+            "name": "GREPTIMEDB_USER",
+            "description": "Database username",
+            "required": true
+          },
+          {
+            "name": "GREPTIMEDB_PASSWORD",
+            "description": "Database password",
+            "required": false
+          },
+          {
+            "name": "GREPTIMEDB_DATABASE",
+            "description": "Database name",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
   "prompts": [
     {
       "name": "example_prompt",
@@ -39,56 +83,5 @@
       "description": "Data in table: {table}",
       "mimetype": "text/plain"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "uv",
-      "package": "greptimedb-mcp-server",
-      "command": "uv",
-      "args": [
-        "--directory",
-        "/path/to/greptimedb-mcp-server",
-        "run",
-        "-m",
-        "greptimedb_mcp_server.server"
-      ],
-      "env": [
-        {
-          "name": "GREPTIMEDB_HOST",
-          "description": "Database host",
-          "required": true,
-          "default": "localhost"
-        },
-        {
-          "name": "GREPTIMEDB_PORT",
-          "description": "Database port",
-          "required": false,
-          "default": "4002"
-        },
-        {
-          "name": "GREPTIMEDB_USER",
-          "description": "Database username",
-          "required": true,
-          "default": "root"
-        },
-        {
-          "name": "GREPTIMEDB_PASSWORD",
-          "description": "Database password",
-          "required": false,
-          "default": ""
-        },
-        {
-          "name": "GREPTIMEDB_DATABASE",
-          "description": "Database name",
-          "required": true,
-          "default": "public"
-        }
-      ]
-    }
-  }
+  ]
 }

@@ -1,8 +1,88 @@
 {
-  "name": "EasyMCP",
+  "repo_ref": "zcaceres/easy-mcp",
+  "name": "io.github.zcaceres/easy-mcp",
   "description": "EasyMCP is the simplest way to create Model Context Protocol (MCP) servers in TypeScript. It hides the plumbing, formatting, and other boilerplate definitions behind simple declarations. Easy MCP allows you to define the bare minimum of what you need to get started. Or you can define more complex resources, templates, tools, and prompts.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "easy-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "start:decorators"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "greetingPrompt",
+      "description": "",
+      "arguments": [
+        {
+          "name": "name",
+          "description": "",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "simplePrompt",
+      "description": "",
+      "arguments": [
+        {
+          "name": "name",
+          "description": "",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "configured-prompt",
+      "description": "A prompt with a name and description",
+      "arguments": [
+        {
+          "name": "name",
+          "description": "The name of the thing to prompt",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "simplePrompt",
+      "description": "",
+      "arguments": [
+        {
+          "name": "name",
+          "description": "",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "customPrompt",
+      "description": "A custom prompt with multiple parameters",
+      "arguments": [
+        {
+          "name": "name",
+          "description": "User's name",
+          "required": true
+        },
+        {
+          "name": "age",
+          "description": "User's age",
+          "required": false
+        }
+      ]
+    }
+  ],
   "tools": [
     {
       "name": "simpleFunc",
@@ -152,87 +232,5 @@
       "description": "",
       "mimetype": ""
     }
-  ],
-  "prompts": [
-    {
-      "name": "greetingPrompt",
-      "description": "",
-      "arguments": [
-        {
-          "name": "name",
-          "description": "",
-          "required": true
-        }
-      ]
-    },
-    {
-      "name": "simplePrompt",
-      "description": "",
-      "arguments": [
-        {
-          "name": "name",
-          "description": "",
-          "required": true
-        }
-      ]
-    },
-    {
-      "name": "configured-prompt",
-      "description": "A prompt with a name and description",
-      "arguments": [
-        {
-          "name": "name",
-          "description": "The name of the thing to prompt",
-          "required": true
-        }
-      ]
-    },
-    {
-      "name": "simplePrompt",
-      "description": "",
-      "arguments": [
-        {
-          "name": "name",
-          "description": "",
-          "required": true
-        }
-      ]
-    },
-    {
-      "name": "customPrompt",
-      "description": "A custom prompt with multiple parameters",
-      "arguments": [
-        {
-          "name": "name",
-          "description": "User's name",
-          "required": true
-        },
-        {
-          "name": "age",
-          "description": "User's age",
-          "required": false
-        }
-      ]
-    }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "easy-mcp",
-      "command": "bun",
-      "args": [
-        "start:decorators"
-      ],
-      "env": []
-    }
-  },
-  "repository": {
-    "url": "https://github.com/zcaceres/easy-mcp",
-    "name": "zcaceres/easy-mcp"
-  }
+  ]
 }

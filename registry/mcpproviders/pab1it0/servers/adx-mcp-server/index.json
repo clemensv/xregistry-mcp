@@ -1,12 +1,36 @@
 {
-  "name": "Azure Data Explorer MCP Server",
+  "repo_ref": "pab1it0/adx-mcp-server",
+  "name": "io.github.pab1it0/adx-mcp-server",
   "description": "A Model Context Protocol (MCP) server for Azure Data Explorer/Eventhouse in Microsoft Fabric. Provides access to Azure Data Explorer/Eventhouse clusters and databases through standardized MCP interfaces, allowing AI assistants to execute KQL queries and explore data.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
-  "repository": {
-    "url": "https://github.com/pab1it0/adx-mcp-server",
-    "name": "pab1it0/adx-mcp-server"
+  "version_detail": {
+    "version": "0.1.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "adx-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "ADX_CLUSTER_URL",
+            "description": "URL of the Azure Data Explorer cluster",
+            "required": true
+          },
+          {
+            "name": "ADX_DATABASE",
+            "description": "Name of the Azure Data Explorer database",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "execute_kql_query",
@@ -50,28 +74,5 @@
       "description": "Statistics and details of tables.",
       "uritemplate": "/statistics/{tableName}"
     }
-  ],
-  "deployment": {
-    "container": {
-      "image": "adx-mcp-server",
-      "args": [],
-      "env": [
-        {
-          "name": "ADX_CLUSTER_URL",
-          "description": "URL of the Azure Data Explorer cluster",
-          "required": true
-        },
-        {
-          "name": "ADX_DATABASE",
-          "description": "Name of the Azure Data Explorer database",
-          "required": true
-        }
-      ]
-    }
-  },
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  }
+  ]
 }

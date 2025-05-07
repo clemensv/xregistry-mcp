@@ -1,12 +1,31 @@
 {
-  "name": "Neon MCP Server",
+  "repo_ref": "neondatabase-labs/mcp-server-neon",
+  "name": "io.github.neondatabase-labs/mcp-server-neon",
   "description": "Neon MCP Server is an open-source tool that lets you interact with your Neon Postgres databases in natural language. It acts as a bridge between natural language requests and the Neon API, built upon the Model Context Protocol (MCP), enabling management of projects, branches, queries, and migrations via conversational commands.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/neondatabase-labs/mcp-server-neon",
-    "name": "neondatabase-labs/mcp-server-neon"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@neondatabase/mcp-server-neon",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "NEON_API_KEY",
+            "description": "API key for Neon authentication",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "NEON_TOOLS",
@@ -23,25 +42,5 @@
       "description": "Resources exposed by Neon MCP server.",
       "mimetype": "application/json"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@neondatabase/mcp-server-neon",
-      "command": "node ./bin/mcp-server-neon.js",
-      "args": [],
-      "env": [
-        {
-          "name": "NEON_API_KEY",
-          "description": "API key for Neon authentication",
-          "required": true
-        }
-      ]
-    }
-  }
+  ]
 }

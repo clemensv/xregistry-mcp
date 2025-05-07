@@ -1,8 +1,25 @@
 {
-  "name": "github-actions-mcp-server",
+  "repo_ref": "ko1ynnky/github-actions-mcp-server",
+  "name": "io.github.ko1ynnky/github-actions-mcp-server",
   "description": "MCP Server for the GitHub Actions API, enabling AI assistants to manage and operate GitHub Actions workflows.",
-  "mcpversion": "1.0.0",
-  "serverversion": "0.0.1",
+  "version_detail": {
+    "version": "0.0.1"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "github-actions-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "list_workflows",
@@ -68,23 +85,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "github-actions-mcp-server",
-      "packageversion": "0.0.1",
-      "command": "node",
-      "args": [],
-      "env": []
-    }
-  },
-  "repository": {
-    "url": "https://github.com/ko1ynnky/github-actions-mcp-server",
-    "name": "ko1ynnky/github-actions-mcp-server"
-  }
+  "resources": []
 }

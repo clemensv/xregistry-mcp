@@ -1,8 +1,38 @@
 {
-  "name": "Xero-MCP-Server",
+  "repo_ref": "john-zhang-dev/xero-mcp",
+  "name": "io.github.john-zhang-dev/xero-mcp",
   "description": "This MCP server allows Clients to interact with Xero Accounting Software.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "xero-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "xero-mcp@latest"
+        ],
+        "environment_variables": [
+          {
+            "name": "XERO_CLIENT_ID"
+          },
+          {
+            "name": "XERO_CLIENT_SECRET"
+          },
+          {
+            "name": "XERO_REDIRECT_URI"
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "authenticate",
@@ -89,35 +119,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "xero-mcp",
-      "command": "npx",
-      "args": [
-        "-y",
-        "xero-mcp@latest"
-      ],
-      "env": [
-        {
-          "name": "XERO_CLIENT_ID"
-        },
-        {
-          "name": "XERO_CLIENT_SECRET"
-        },
-        {
-          "name": "XERO_REDIRECT_URI"
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/john-zhang-dev/xero-mcp",
-    "name": "john-zhang-dev/xero-mcp"
-  }
+  "resources": []
 }

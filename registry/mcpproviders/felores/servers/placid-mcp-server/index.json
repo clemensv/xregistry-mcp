@@ -1,8 +1,33 @@
 {
-  "name": "placid-server",
+  "repo_ref": "felores/placid-mcp-server",
+  "name": "io.github.felores/placid-mcp-server",
   "description": "An MCP server implementation for integrating with Placid.app's API. This server provides tools for listing templates and generating images and videos through the Model Context Protocol.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@felores/placid-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "@felores/placid-mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "PLACID_API_TOKEN",
+            "description": "API token for Placid.app",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "placid_list_templates",
@@ -19,30 +44,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@felores/placid-mcp-server",
-      "command": "npx",
-      "args": [
-        "@felores/placid-mcp-server"
-      ],
-      "env": [
-        {
-          "name": "PLACID_API_TOKEN",
-          "description": "API token for Placid.app",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/felores/placid-mcp-server",
-    "name": "felores/placid-mcp-server"
-  }
+  "resources": []
 }

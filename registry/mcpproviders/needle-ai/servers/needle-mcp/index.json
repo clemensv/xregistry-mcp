@@ -1,12 +1,36 @@
 {
-  "name": "needle_mcp",
-  "description": "MCP (Model Context Protocol) server to manage documents and perform searches using Needle through Claude\u2019s Desktop Application.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/needle-ai/needle-mcp",
-    "name": "needle-ai/needle-mcp"
+  "repo_ref": "needle-ai/needle-mcp",
+  "name": "io.github.needle-ai/needle-mcp",
+  "description": "MCP (Model Context Protocol) server to manage documents and perform searches using Needle through Claude’s Desktop Application.",
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@smithery/needle-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/path/to/needle-mcp",
+          "run",
+          "needle-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "NEEDLE_API_KEY",
+            "description": "API key for Needle service",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "needle_list_collections",
@@ -129,30 +153,6 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@smithery/needle-mcp",
-      "command": "uv",
-      "args": [
-        "--directory",
-        "/path/to/needle-mcp",
-        "run",
-        "needle-mcp"
-      ],
-      "env": [
-        {
-          "name": "NEEDLE_API_KEY",
-          "description": "API key for Needle service",
-          "required": true
-        }
-      ]
-    }
-  },
+  "resources": [],
   "documentation": "https://github.com/yourusername/needle-mcp/blob/main/README.md"
 }

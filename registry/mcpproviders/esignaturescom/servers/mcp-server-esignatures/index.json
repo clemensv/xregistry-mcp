@@ -1,13 +1,33 @@
 {
-  "name": "mcp-server-esignatures",
+  "repo_ref": "esignaturescom/mcp-server-esignatures",
+  "name": "io.github.esignaturescom/mcp-server-esignatures",
   "description": "MCP server for eSignatures (https://esignatures.com)",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
-  "repository": {
-    "url": "https://github.com/esignaturescom/mcp-server-esignatures",
-    "name": "esignaturescom/mcp-server-esignatures"
+  "version_detail": {
+    "version": "0.1.0"
   },
-  "docs": "https://esignatures.com/docs/api",
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "mcp-server-esignatures",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "mcp-server-esignatures"
+        ],
+        "environment_variables": [
+          {
+            "name": "ESIGNATURES_SECRET_TOKEN",
+            "description": "Your eSignatures API secret token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "create_contract",
@@ -101,26 +121,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "mcp-server-esignatures",
-      "command": "uvx",
-      "args": [
-        "mcp-server-esignatures"
-      ],
-      "env": [
-        {
-          "name": "ESIGNATURES_SECRET_TOKEN",
-          "description": "Your eSignatures API secret token",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

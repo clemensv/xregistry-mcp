@@ -1,12 +1,43 @@
 {
-  "name": "firecrawl-mcp",
+  "repo_ref": "Klavis-AI/klavis",
+  "name": "io.github.Klavis-AI/klavis",
   "description": "MCP server providing web crawling, scraping, search, extraction, and related tools via Model Context Protocol.",
-  "mcpversion": "1.0",
-  "serverversion": "1.7.0",
-  "repository": {
-    "url": "https://github.com/Klavis-AI/klavis",
-    "name": "Klavis-AI/klavis"
+  "version_detail": {
+    "version": "1.7.0"
   },
+  "remotes": [
+    {
+      "url": "http://localhost:5000",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "klavisai/firecrawl-mcp:latest",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "npm",
+      "package_name": "@klavis-ai/firecrawl-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "index.js"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "firecrawl_scrape",
@@ -567,27 +598,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {
-    "http": {
-      "uri": "http://localhost:5000",
-      "authorization": {
-        "type": "header",
-        "required": false
-      }
-    }
-  },
-  "deployment": {
-    "container": {
-      "image": "klavisai/firecrawl-mcp:latest"
-    },
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@klavis-ai/firecrawl-mcp",
-      "command": "node",
-      "args": [
-        "index.js"
-      ]
-    }
-  }
+  "resources": []
 }

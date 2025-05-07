@@ -1,8 +1,64 @@
 {
-  "name": "monday",
+  "repo_ref": "sakce/mcp-server-monday",
+  "name": "io.github.sakce/mcp-server-monday",
   "description": "MCP Server for monday.com, enabling MCP clients to interact with Monday.com boards, items, updates, and documents.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "sakce/mcp-server-monday",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "--rm",
+          "-i"
+        ],
+        "environment_variables": [
+          {
+            "name": "MONDAY_API_KEY",
+            "description": "API key for Monday.com",
+            "required": true
+          },
+          {
+            "name": "MONDAY_WORKSPACE_NAME",
+            "description": "Workspace name for Monday.com",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "uvx",
+      "package_name": "mcp-server-monday",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "mcp-server-monday"
+        ],
+        "environment_variables": [
+          {
+            "name": "MONDAY_API_KEY",
+            "description": "API key for Monday.com",
+            "required": true
+          },
+          {
+            "name": "MONDAY_WORKSPACE_NAME",
+            "description": "Workspace name for Monday.com",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "monday-create-item",
@@ -117,55 +173,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "uvx",
-      "package": "mcp-server-monday",
-      "command": "uvx",
-      "args": [
-        "mcp-server-monday"
-      ],
-      "env": [
-        {
-          "name": "MONDAY_API_KEY",
-          "description": "API key for Monday.com",
-          "required": true
-        },
-        {
-          "name": "MONDAY_WORKSPACE_NAME",
-          "description": "Workspace name for Monday.com",
-          "required": true
-        }
-      ]
-    },
-    "container": {
-      "image": "sakce/mcp-server-monday",
-      "args": [
-        "run",
-        "--rm",
-        "-i"
-      ],
-      "env": [
-        {
-          "name": "MONDAY_API_KEY",
-          "description": "API key for Monday.com",
-          "required": true
-        },
-        {
-          "name": "MONDAY_WORKSPACE_NAME",
-          "description": "Workspace name for Monday.com",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/sakce/mcp-server-monday",
-    "name": "sakce/mcp-server-monday"
-  }
+  "resources": []
 }

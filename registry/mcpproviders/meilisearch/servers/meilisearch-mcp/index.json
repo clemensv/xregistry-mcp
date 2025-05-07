@@ -1,12 +1,39 @@
 {
-  "name": "meilisearch",
+  "repo_ref": "meilisearch/meilisearch-mcp",
+  "name": "io.github.meilisearch/meilisearch-mcp",
   "description": "A Model Context Protocol (MCP) server for interacting with Meilisearch through LLM interfaces like Claude.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
-  "repository": {
-    "url": "https://github.com/meilisearch/meilisearch-mcp",
-    "name": "meilisearch/meilisearch-mcp"
+  "version_detail": {
+    "version": "0.1.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "meilisearch-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-m",
+          "src.meilisearch_mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "MEILI_HTTP_ADDR",
+            "description": "Default Meilisearch URL",
+            "required": false
+          },
+          {
+            "name": "MEILI_MASTER_KEY",
+            "description": "Optional: Default Meilisearch API key",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get-connection-settings",
@@ -420,33 +447,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "meilisearch-mcp",
-      "command": "python",
-      "args": [
-        "-m",
-        "src.meilisearch_mcp"
-      ],
-      "env": [
-        {
-          "name": "MEILI_HTTP_ADDR",
-          "description": "Default Meilisearch URL",
-          "required": false,
-          "default": "http://localhost:7700"
-        },
-        {
-          "name": "MEILI_MASTER_KEY",
-          "description": "Optional: Default Meilisearch API key",
-          "required": false
-        }
-      ]
-    }
-  }
+  "resources": []
 }

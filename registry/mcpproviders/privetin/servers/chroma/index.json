@@ -1,8 +1,30 @@
 {
-  "name": "Chroma MCP Server",
+  "repo_ref": "privetin/chroma",
+  "name": "io.github.privetin/chroma",
   "description": "A Model Context Protocol (MCP) server implementation that provides vector database capabilities through Chroma. This server enables semantic document search, metadata filtering, and document management with persistent storage.",
-  "mcpversion": "0.1.0+",
-  "serverversion": "0.4.0+",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "uv",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "C:/MCP/server/community/chroma",
+          "run",
+          "chroma"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "create_document",
@@ -124,22 +146,5 @@
       "description": "Stores documents with content and metadata",
       "uritemplate": "/documents/{document_id}"
     }
-  ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "uv",
-      "command": "uv",
-      "args": [
-        "--directory",
-        "C:/MCP/server/community/chroma",
-        "run",
-        "chroma"
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/privetin/chroma",
-    "name": "privetin/chroma"
-  }
+  ]
 }

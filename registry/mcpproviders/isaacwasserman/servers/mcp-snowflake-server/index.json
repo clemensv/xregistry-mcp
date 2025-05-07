@@ -1,8 +1,42 @@
 {
-  "name": "Snowflake MCP Server",
+  "repo_ref": "isaacwasserman/mcp-snowflake-server",
+  "name": "io.github.isaacwasserman/mcp-snowflake-server",
   "description": "A Model Context Protocol (MCP) server implementation that provides database interaction with Snowflake. This server enables running SQL queries via tools and exposes data insights and schema context as resources.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "mcp_snowflake_server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--python=3.12",
+          "mcp_snowflake_server",
+          "--account",
+          "your_account",
+          "--warehouse",
+          "your_warehouse",
+          "--user",
+          "your_user",
+          "--password",
+          "your_password",
+          "--role",
+          "your_role",
+          "--database",
+          "your_database",
+          "--schema",
+          "your_schema"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "list_databases",
@@ -143,40 +177,5 @@
       "description": "Description of the {table_name} table",
       "mimetype": "text/plain"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "mcp_snowflake_server",
-      "command": "uvx",
-      "args": [
-        "--python=3.12",
-        "mcp_snowflake_server",
-        "--account",
-        "your_account",
-        "--warehouse",
-        "your_warehouse",
-        "--user",
-        "your_user",
-        "--password",
-        "your_password",
-        "--role",
-        "your_role",
-        "--database",
-        "your_database",
-        "--schema",
-        "your_schema"
-      ],
-      "env": []
-    }
-  },
-  "repository": {
-    "url": "https://github.com/isaacwasserman/mcp-snowflake-server",
-    "name": "isaacwasserman/mcp-snowflake-server"
-  }
+  ]
 }

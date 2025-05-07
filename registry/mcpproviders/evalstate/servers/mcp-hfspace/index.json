@@ -1,12 +1,65 @@
 {
-  "name": "mcp-hfspace",
+  "repo_ref": "evalstate/mcp-hfspace",
+  "name": "io.github.evalstate/mcp-hfspace",
   "description": "Connect to Hugging Face Spaces with minimal setup needed - simply add your spaces and go! Provides Image Generation capabilities to Claude Desktop.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/evalstate/mcp-hfspace",
-    "name": "evalstate/mcp-hfspace"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@llmindset/mcp-hfspace",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@llmindset/mcp-hfspace"
+        ],
+        "environment_variables": [
+          {
+            "name": "MCP_HF_WORK_DIR",
+            "description": "Working directory for file upload/download",
+            "required": false
+          },
+          {
+            "name": "HF_TOKEN",
+            "description": "Hugging Face Token for private spaces",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "Available Resources",
+      "description": "List of available resources.",
+      "arguments": []
+    },
+    {
+      "name": "FLUX.1-schnell",
+      "description": "Prompt template from endpoint FLUX.1-schnell",
+      "arguments": []
+    },
+    {
+      "name": "shuttleai/shuttle-jaguar",
+      "description": "Prompt template from endpoint shuttleai/shuttle-jaguar",
+      "arguments": []
+    },
+    {
+      "name": "styletts2/styletts2",
+      "description": "Prompt template from endpoint styletts2/styletts2",
+      "arguments": []
+    },
+    {
+      "name": "Qwen/QVQ-72B-preview",
+      "description": "Prompt template from endpoint Qwen/QVQ-72B-preview",
+      "arguments": []
+    }
+  ],
   "tools": [
     {
       "name": "available-files",
@@ -65,61 +118,5 @@
       "description": "List of available files and resources in the working directory.",
       "mimetype": "text/markdown"
     }
-  ],
-  "prompts": [
-    {
-      "name": "Available Resources",
-      "description": "List of available resources.",
-      "arguments": []
-    },
-    {
-      "name": "FLUX.1-schnell",
-      "description": "Prompt template from endpoint FLUX.1-schnell",
-      "arguments": []
-    },
-    {
-      "name": "shuttleai/shuttle-jaguar",
-      "description": "Prompt template from endpoint shuttleai/shuttle-jaguar",
-      "arguments": []
-    },
-    {
-      "name": "styletts2/styletts2",
-      "description": "Prompt template from endpoint styletts2/styletts2",
-      "arguments": []
-    },
-    {
-      "name": "Qwen/QVQ-72B-preview",
-      "description": "Prompt template from endpoint Qwen/QVQ-72B-preview",
-      "arguments": []
-    }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@llmindset/mcp-hfspace",
-      "packageversion": "unknown",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@llmindset/mcp-hfspace"
-      ],
-      "env": [
-        {
-          "name": "MCP_HF_WORK_DIR",
-          "description": "Working directory for file upload/download",
-          "required": false
-        },
-        {
-          "name": "HF_TOKEN",
-          "description": "Hugging Face Token for private spaces",
-          "required": false
-        }
-      ]
-    }
-  }
+  ]
 }

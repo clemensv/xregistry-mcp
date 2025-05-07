@@ -1,12 +1,38 @@
 {
-  "name": "descope",
+  "repo_ref": "descope-sample-apps/descope-mcp-server-stdio",
+  "name": "io.github.descope-sample-apps/descope-mcp-server-stdio",
   "description": "The Descope Model Context Protocol (MCP) server provides an interface to interact with Descope's Management APIs, enabling the search and retrieval of project-related information.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
-  "repository": {
-    "url": "https://github.com/descope-sample-apps/descope-mcp-server-stdio",
-    "name": "descope-sample-apps/descope-mcp-server-stdio"
+  "version_detail": {
+    "version": "1.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@descope-sample-apps/descope-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "/path/to/descope-mcp-server/build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "DESCOPE_PROJECT_ID",
+            "description": "Your Descope Project ID",
+            "required": true
+          },
+          {
+            "name": "DESCOPE_MANAGEMENT_KEY",
+            "description": "Your Descope Management Key",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "search-audits",
@@ -350,31 +376,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@descope-sample-apps/descope-mcp-server",
-      "command": "node",
-      "args": [
-        "/path/to/descope-mcp-server/build/index.js"
-      ],
-      "env": [
-        {
-          "name": "DESCOPE_PROJECT_ID",
-          "description": "Your Descope Project ID",
-          "required": true
-        },
-        {
-          "name": "DESCOPE_MANAGEMENT_KEY",
-          "description": "Your Descope Management Key",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

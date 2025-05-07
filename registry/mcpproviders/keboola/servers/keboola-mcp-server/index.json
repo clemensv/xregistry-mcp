@@ -1,12 +1,44 @@
 {
-  "name": "Keboola MCP Server",
+  "repo_ref": "keboola/keboola-mcp-server",
+  "name": "io.github.keboola/keboola-mcp-server",
   "description": "A Model Context Protocol (MCP) server for interacting with Keboola Connection. This server provides tools for listing and accessing data from Keboola Storage API.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/keboola/keboola-mcp-server",
-    "name": "keboola/keboola-mcp-server"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [
+    {
+      "url": "https://connection.keboola.com",
+      "transporttype": "https"
+    }
+  ],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "keboola-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--api-url",
+          "https://connection.keboola.com"
+        ],
+        "environment_variables": [
+          {
+            "name": "KBC_STORAGE_TOKEN",
+            "description": "Keboola Storage API token",
+            "required": true
+          },
+          {
+            "name": "KBC_WORKSPACE_SCHEMA",
+            "description": "Snowflake schema or BigQuery dataset of your workspace",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "docs_query",
@@ -167,52 +199,5 @@
       "description": "Tool to update a table's description."
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    },
-    "http": {
-      "uri": "https://connection.keboola.com",
-      "authorization": {
-        "type": "header",
-        "name": "Authorization",
-        "description": "Use the Keboola Storage API token as Bearer token in the Authorization header.",
-        "required": true,
-        "format": "Bearer {token}"
-      }
-    },
-    "websockets": {
-      "uri": "wss://connection.keboola.com/sse",
-      "authorization": {
-        "type": "header",
-        "name": "Authorization",
-        "description": "Use the Keboola Storage API token as Bearer token in the Authorization header.",
-        "required": true,
-        "format": "Bearer {token}"
-      }
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "keboola-mcp-server",
-      "command": "python -m keboola_mcp_server",
-      "args": [
-        "--api-url",
-        "https://connection.keboola.com"
-      ],
-      "env": [
-        {
-          "name": "KBC_STORAGE_TOKEN",
-          "description": "Keboola Storage API token",
-          "required": true
-        },
-        {
-          "name": "KBC_WORKSPACE_SCHEMA",
-          "description": "Snowflake schema or BigQuery dataset of your workspace",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

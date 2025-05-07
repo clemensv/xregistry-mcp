@@ -1,12 +1,13 @@
 {
-  "name": "DICOM MCP",
+  "repo_ref": "ChristianHinge/dicom-mcp",
+  "name": "io.github.ChristianHinge/dicom-mcp",
   "description": "A Model Context Protocol server for DICOM (Digital Imaging and Communications in Medicine) interactions. This server provides tools to query and interact with DICOM servers, enabling Large Language Models to access and analyze medical imaging metadata.",
-  "mcpversion": "unspecified",
-  "serverversion": "unspecified",
-  "repository": {
-    "url": "https://github.com/ChristianHinge/dicom-mcp",
-    "name": "ChristianHinge/dicom-mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [],
+  "prompts": [],
   "tools": [
     {
       "name": "list_dicom_nodes",
@@ -285,7 +286,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {},
-  "deployment": {}
+  "resources": []
 }

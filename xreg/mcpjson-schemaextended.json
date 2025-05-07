@@ -1,0 +1,193 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "http://xregistry.io/schema/server-manifest",
+    "title": "MCP Server Manifest",
+    "description": "Complete manifest schema for an MCP server. It is a strict superset of the Registry Manifest schema and therefore contains all fields required by registry manifests plus server-specific metadata.",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "pattern": "^io\\.github\\.[A-Za-z0-9_-]+\\/[A-Za-z0-9_-]+$",
+        "description": "Unique reverse-DNS identifier of the repository."
+      },
+      "description": {
+        "type": "string",
+        "description": "Repository or server overview."
+      },
+      "version_detail": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+$",
+            "description": "Semantic version number."
+          }
+        },
+        "required": ["version"],
+        "additionalProperties": false
+      },
+      "registries": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string", "description": "Registry name (e.g. npm)." },
+            "package_name": { "type": "string", "description": "Package identifier inside the registry." },
+            "license": { "type": "string", "description": "Package licence." },
+            "command_arguments": {
+              "type": "object",
+              "properties": {
+                "sub_commands": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": { "type": "string" },
+                      "description": { "type": "string" },
+                      "named_arguments": { "type": ["array", "null"], "items": { "type": "string" } }
+                    },
+                    "required": ["name", "description"]
+                  }
+                },
+                "positional_arguments": { "type": ["array", "null"], "items": { "type": "string" } },
+                "environment_variables": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": { "type": "string" },
+                      "description": { "type": "string" },
+                      "required": { "type": "boolean" }
+                    },
+                    "required": ["name", "description", "required"]
+                  }
+                },
+                "named_arguments": { "type": ["array", "null"], "items": { "type": "string" } }
+              },
+              "required": [
+                "sub_commands",
+                "environment_variables",
+                "positional_arguments",
+                "named_arguments"
+              ]
+            }
+          },
+          "required": ["name", "package_name", "license", "command_arguments"],
+          "additionalProperties": false
+        }
+      },
+      "remotes": {
+        "type": "array",
+        "description": "Code-hosting locations.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "transporttype": { "type": "string", "description": "Access protocol (git, https, ssh, …)." },
+            "url": { "type": "string", "format": "uri", "description": "Remote root URL." },
+            "subfolder": { "type": "string", "description": "Sub-directory containing this server." },
+            "branch": { "type": "string", "description": "Default branch." },
+            "commit": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{40}$",
+              "description": "Pinned commit (40-char SHA-1)."
+            },
+            "license": { "type": "string", "description": "Code licence." }
+          },
+          "required": ["transporttype", "url"],
+          "additionalProperties": false
+        }
+      },
+      "serverid": { "type": "string", "description": "Opaque server instance identifier." },
+      "epoch": { "type": "integer", "description": "Unix epoch when the manifest was generated." },
+      "self": { "type": "string", "format": "uri", "description": "Canonical URL of this manifest." },
+      "xid": { "type": "string", "description": "Repository-relative path for this manifest." },
+      "documentation": { "type": "string", "format": "uri", "description": "Reference documentation URI." },
+      "labels": {
+        "type": "object",
+        "description": "Arbitrary key–value metadata.",
+        "additionalProperties": { "type": "string" }
+      },
+      "createdat": { "type": "string", "format": "date-time", "description": "ISO-8601 creation timestamp." },
+      "modifiedat": { "type": "string", "format": "date-time", "description": "ISO-8601 last modification." },
+      "mcpversion": { "type": "string", "description": "MCP protocol version implemented." },
+      "serverversion": { "type": "string", "description": "Concrete server implementation version." },
+      "prompts": {
+        "type": "array",
+        "description": "Static prompt templates bundled with this server.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string", "description": "Template identifier." },
+            "description": { "type": "string", "description": "Usage guidance." },
+            "arguments": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "description": { "type": "string" },
+                  "required": { "type": "boolean" }
+                },
+                "required": ["name"]
+              }
+            }
+          },
+          "required": ["name"]
+        }
+      },
+      "tools": {
+        "type": "array",
+        "description": "Tool definitions invocable via the MCP runtime.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string", "description": "Tool identifier." },
+            "description": { "type": "string", "description": "Purpose." },
+            "inputschema": { "type": "object", "description": "JSON-Schema for invocation parameters." }
+          },
+          "required": ["name", "inputschema"]
+        }
+      },
+      "resources": {
+          "type": "array",
+          "description": "List of data resources the server can expose or subscribe to.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "uritemplate": {
+                "type": "string",
+                "description": "URI template with placeholders (e.g. /resources/{id})."
+              },
+              "name": {
+                "type": "string",
+                "description": "Logical name for the resource type."
+              },
+              "description": {
+                "type": "string",
+                "description": "Explanation of how to fill the template parameters."
+              },
+              "mimetype": {
+                "type": "string",
+                "description": "MIME type of the resource payload."
+              }
+            },
+            "required": [
+              "uritemplate",
+              "name"
+            ]
+          }
+        }
+    },
+    "required": [
+      "name",
+      "description",
+      "version_detail",
+      "registries",
+      "remotes",
+      "serverid",
+      "mcpversion",
+      "serverversion"
+    ],
+    "additionalProperties": false
+  }
+  

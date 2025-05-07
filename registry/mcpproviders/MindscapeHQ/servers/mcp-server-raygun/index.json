@@ -1,8 +1,34 @@
 {
-  "name": "raygun-server",
+  "repo_ref": "MindscapeHQ/mcp-server-raygun",
+  "name": "io.github.MindscapeHQ/mcp-server-raygun",
   "description": "MCP Server for Raygun's API V3 endpoints for interacting with your Crash Reporting and Real User Monitoring applications. This server provides comprehensive access to Raygun's API features through the Model Context Protocol.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@raygun.io/mcp-server-raygun",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@raygun.io/mcp-server-raygun"
+        ],
+        "environment_variables": [
+          {
+            "name": "RAYGUN_PAT_TOKEN",
+            "description": "Your Raygun PAT token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "list_applications",
@@ -293,32 +319,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@raygun.io/mcp-server-raygun",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@raygun.io/mcp-server-raygun"
-      ],
-      "env": [
-        {
-          "name": "RAYGUN_PAT_TOKEN",
-          "description": "Your Raygun PAT token",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/MindscapeHQ/mcp-server-raygun",
-    "name": "MindscapeHQ/mcp-server-raygun"
-  }
+  "resources": []
 }

@@ -1,12 +1,36 @@
 {
-  "name": "MCP Stripe Server",
+  "repo_ref": "atharvagupta2003/mcp-stripe",
+  "name": "io.github.atharvagupta2003/mcp-stripe",
   "description": "A Model Context Protocol (MCP) server implementation that integrates with Stripe for handling payments, customers, and refunds. This server provides a structured API to manage financial transactions securely.",
-  "mcpversion": "0.1.0+",
-  "serverversion": "unspecified",
-  "repository": {
-    "url": "https://github.com/atharvagupta2003/mcp-stripe",
-    "name": "atharvagupta2003/mcp-stripe"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "@atharvagupta2003/mcp-stripe",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/ABSOLUTE/PATH/TO/PARENT/FOLDER/src",
+          "run",
+          "server.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "STRIPE_API_KEY",
+            "description": "Stripe secret API key",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "customer_create",
@@ -105,30 +129,5 @@
       "description": "Stores audit logs of customer, payment, and refund operations; supports structured logging for better traceability; uses MCP resource endpoints to retrieve audit data",
       "uritemplate": "/audit/logs"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "uv",
-      "package": "@atharvagupta2003/mcp-stripe",
-      "command": "uv",
-      "args": [
-        "--directory",
-        "/ABSOLUTE/PATH/TO/PARENT/FOLDER/src",
-        "run",
-        "server.py"
-      ],
-      "env": [
-        {
-          "name": "STRIPE_API_KEY",
-          "description": "Stripe secret API key",
-          "required": true
-        }
-      ]
-    }
-  }
+  ]
 }

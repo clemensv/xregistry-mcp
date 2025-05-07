@@ -1,8 +1,33 @@
 {
-  "name": "codacy-mcp-server",
+  "repo_ref": "codacy/codacy-mcp-server",
+  "name": "io.github.codacy/codacy-mcp-server",
   "description": "MCP Server for the Codacy API, enabling access to repositories, files, quality, coverage, security and more.",
-  "mcpversion": "unknown",
-  "serverversion": "0.1.0",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@codacy/codacy-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "CODACY_ACCOUNT_TOKEN",
+            "description": "Codacy Account API Token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "codacy_list_organization_repositories",
@@ -159,31 +184,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@codacy/codacy-mcp-server",
-      "command": "node",
-      "args": [
-        "index.js"
-      ],
-      "env": [
-        {
-          "name": "CODACY_ACCOUNT_TOKEN",
-          "description": "Codacy Account API Token",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/codacy/codacy-mcp-server",
-    "name": "codacy/codacy-mcp-server"
-  }
+  "resources": []
 }

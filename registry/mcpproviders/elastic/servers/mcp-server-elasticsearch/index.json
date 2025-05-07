@@ -1,12 +1,54 @@
 {
-  "name": "Elasticsearch MCP Server",
+  "repo_ref": "elastic/mcp-server-elasticsearch",
+  "name": "io.github.elastic/mcp-server-elasticsearch",
   "description": "This server connects agents to your Elasticsearch data using the Model Context Protocol. It allows you to interact with your Elasticsearch indices through natural language conversations.",
-  "mcpversion": "unknown",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/elastic/mcp-server-elasticsearch",
-    "name": "elastic/mcp-server-elasticsearch"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@elastic/mcp-server-elasticsearch",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@elastic/mcp-server-elasticsearch"
+        ],
+        "environment_variables": [
+          {
+            "name": "ES_URL",
+            "description": "Your Elasticsearch instance URL",
+            "required": true
+          },
+          {
+            "name": "ES_API_KEY",
+            "description": "Elasticsearch API key for authentication",
+            "required": false
+          },
+          {
+            "name": "ES_USERNAME",
+            "description": "Elasticsearch username for basic authentication",
+            "required": false
+          },
+          {
+            "name": "ES_PASSWORD",
+            "description": "Elasticsearch password for basic authentication",
+            "required": false
+          },
+          {
+            "name": "ES_CA_CERT",
+            "description": "Path to custom CA certificate for Elasticsearch SSL/TLS",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "list_indices",
@@ -37,47 +79,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "npm",
-      "package": "@elastic/mcp-server-elasticsearch",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@elastic/mcp-server-elasticsearch"
-      ],
-      "env": [
-        {
-          "name": "ES_URL",
-          "description": "Your Elasticsearch instance URL",
-          "required": true
-        },
-        {
-          "name": "ES_API_KEY",
-          "description": "Elasticsearch API key for authentication",
-          "required": false
-        },
-        {
-          "name": "ES_USERNAME",
-          "description": "Elasticsearch username for basic authentication",
-          "required": false
-        },
-        {
-          "name": "ES_PASSWORD",
-          "description": "Elasticsearch password for basic authentication",
-          "required": false
-        },
-        {
-          "name": "ES_CA_CERT",
-          "description": "Path to custom CA certificate for Elasticsearch SSL/TLS",
-          "required": false
-        }
-      ]
-    }
-  },
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  }
+  "resources": []
 }

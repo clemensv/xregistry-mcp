@@ -1,8 +1,34 @@
 {
-  "name": "Productboard MCP Server",
+  "repo_ref": "kenjihikmatullah/productboard-mcp",
+  "name": "io.github.kenjihikmatullah/productboard-mcp",
   "description": "Integrate the Productboard API into agentic workflows via MCP",
-  "serverversion": "1.0.0",
-  "mcpversion": "unknown",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "productboard-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "productboard-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "PRODUCTBOARD_ACCESS_TOKEN",
+            "description": "Access token for Productboard API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "getProductsTool",
@@ -82,31 +108,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "productboard-mcp",
-      "command": "npx",
-      "args": [
-        "-y",
-        "productboard-mcp"
-      ],
-      "env": [
-        {
-          "name": "PRODUCTBOARD_ACCESS_TOKEN",
-          "description": "Access token for Productboard API",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/kenjihikmatullah/productboard-mcp",
-    "name": "kenjihikmatullah/productboard-mcp"
-  }
+  "resources": []
 }

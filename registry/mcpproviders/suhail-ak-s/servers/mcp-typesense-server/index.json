@@ -1,12 +1,58 @@
 {
-  "name": "Typesense MCP Server",
+  "repo_ref": "suhail-ak-s/mcp-typesense-server",
+  "name": "io.github.suhail-ak-s/mcp-typesense-server",
   "description": "A Model Context Protocol (MCP) server implementation that provides AI models with access to Typesense search capabilities. This server enables LLMs to discover, search, and analyze data stored in Typesense collections.",
-  "mcpversion": "1.0",
-  "serverversion": "not explicitly stated",
-  "repository": {
-    "url": "https://github.com/suhail-ak-s/mcp-typesense-server",
-    "name": "suhail-ak-s/mcp-typesense-server"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "typesense-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "dist/index.js",
+          "--host",
+          "your-typesense-host",
+          "--port",
+          "8108",
+          "--protocol",
+          "http",
+          "--api-key",
+          "your-api-key"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "analyze_collection",
+      "description": "Analyze collection structure and contents",
+      "arguments": [
+        {
+          "name": "collection_name",
+          "description": "Name of the collection to analyze",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "search_suggestions",
+      "description": "Get suggestions for effective search queries for a collection",
+      "arguments": [
+        {
+          "name": "collection_name",
+          "description": "Name of the collection for search suggestions",
+          "required": true
+        }
+      ]
+    }
+  ],
   "tools": [
     {
       "name": "typesense_query",
@@ -77,30 +123,6 @@
       }
     }
   ],
-  "prompts": [
-    {
-      "name": "analyze_collection",
-      "description": "Analyze collection structure and contents",
-      "arguments": [
-        {
-          "name": "collection_name",
-          "description": "Name of the collection to analyze",
-          "required": true
-        }
-      ]
-    },
-    {
-      "name": "search_suggestions",
-      "description": "Get suggestions for effective search queries for a collection",
-      "arguments": [
-        {
-          "name": "collection_name",
-          "description": "Name of the collection for search suggestions",
-          "required": true
-        }
-      ]
-    }
-  ],
   "resources": [
     {
       "name": "Collection Schemas",
@@ -108,34 +130,5 @@
       "description": "JSON schema information for each collection including field names and data types and sample documents",
       "mimetype": "application/json"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    },
-    "httplocal": {
-      "deployment": "container",
-      "host": "localhost",
-      "port": 8108,
-      "protocol": "http"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "typesense-mcp-server",
-      "command": "node",
-      "args": [
-        "dist/index.js",
-        "--host",
-        "your-typesense-host",
-        "--port",
-        "8108",
-        "--protocol",
-        "http",
-        "--api-key",
-        "your-api-key"
-      ]
-    }
-  }
+  ]
 }

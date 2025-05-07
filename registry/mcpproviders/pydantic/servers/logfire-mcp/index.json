@@ -1,12 +1,31 @@
 {
-  "name": "Logfire MCP Server",
+  "repo_ref": "pydantic/logfire-mcp",
+  "name": "io.github.pydantic/logfire-mcp",
   "description": "This repository contains a Model Context Protocol (MCP) server with tools that can access the OpenTelemetry traces and metrics you've sent to Logfire. This MCP server enables LLMs to retrieve your application's telemetry data, analyze distributed traces, and make use of the results of arbitrary SQL queries executed using the Logfire APIs.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/pydantic/logfire-mcp",
-    "name": "pydantic/logfire-mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "logfire-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "LOGFIRE_READ_TOKEN",
+            "description": "Logfire read token for API access",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "find_exceptions",
@@ -76,24 +95,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "logfire-mcp-server",
-      "command": "uvx logfire-mcp",
-      "args": [],
-      "env": [
-        {
-          "name": "LOGFIRE_READ_TOKEN",
-          "description": "Logfire read token for API access",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

@@ -1,8 +1,33 @@
 {
-  "name": "travel-planner",
+  "repo_ref": "GongRzhe/TRAVEL-PLANNER-MCP-Server",
+  "name": "io.github.GongRzhe/TRAVEL-PLANNER-MCP-Server",
   "description": "A Travel Planner Model Context Protocol (MCP) server implementation for interacting with Google Maps and travel planning services. This server enables LLMs to perform travel-related tasks such as location search, place details lookup, and travel time calculations.",
-  "mcpversion": "latest",
-  "serverversion": "0.1.0",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@gongrzhe/server-travelplanner-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "@gongrzhe/server-travelplanner-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "GOOGLE_MAPS_API_KEY",
+            "description": "Your Google Maps API key with Places, Directions, Geocoding, and Time Zone APIs enabled",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "create_itinerary",
@@ -154,25 +179,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@gongrzhe/server-travelplanner-mcp",
-      "command": "npx",
-      "args": [
-        "@gongrzhe/server-travelplanner-mcp"
-      ],
-      "env": [
-        {
-          "name": "GOOGLE_MAPS_API_KEY",
-          "description": "Your Google Maps API key with Places, Directions, Geocoding, and Time Zone APIs enabled",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/GongRzhe/TRAVEL-PLANNER-MCP-Server",
-    "name": "GongRzhe/TRAVEL-PLANNER-MCP-Server"
-  }
+  "resources": []
 }

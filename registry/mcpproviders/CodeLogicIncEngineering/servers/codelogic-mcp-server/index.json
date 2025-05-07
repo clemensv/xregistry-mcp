@@ -1,12 +1,53 @@
 {
-  "name": "codelogic-mcp-server",
+  "repo_ref": "CodeLogicIncEngineering/codelogic-mcp-server",
+  "name": "io.github.CodeLogicIncEngineering/codelogic-mcp-server",
   "description": "An MCP Server to utilize Codelogic's rich software dependency data in your AI programming assistant.",
-  "mcpversion": "1.0",
-  "serverversion": "latest",
-  "repository": {
-    "url": "https://github.com/CodeLogicIncEngineering/codelogic-mcp-server",
-    "name": "CodeLogicIncEngineering/codelogic-mcp-server"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "astral-uv",
+      "package_name": "codelogic-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "codelogic-mcp-server@latest"
+        ],
+        "environment_variables": [
+          {
+            "name": "CODELOGIC_SERVER_HOST",
+            "description": "URL of the CodeLogic server",
+            "required": true
+          },
+          {
+            "name": "CODELOGIC_USERNAME",
+            "description": "Username for authentication",
+            "required": true
+          },
+          {
+            "name": "CODELOGIC_PASSWORD",
+            "description": "Password for authentication",
+            "required": true
+          },
+          {
+            "name": "CODELOGIC_WORKSPACE_NAME",
+            "description": "Workspace name in CodeLogic",
+            "required": true
+          },
+          {
+            "name": "CODELOGIC_DEBUG_MODE",
+            "description": "Enable debug mode",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "codelogic-method-impact",
@@ -60,49 +101,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "astral-uv",
-      "package": "codelogic-mcp-server",
-      "packageversion": "latest",
-      "command": "uvx",
-      "args": [
-        "codelogic-mcp-server@latest"
-      ],
-      "env": [
-        {
-          "name": "CODELOGIC_SERVER_HOST",
-          "description": "URL of the CodeLogic server",
-          "required": true
-        },
-        {
-          "name": "CODELOGIC_USERNAME",
-          "description": "Username for authentication",
-          "required": true
-        },
-        {
-          "name": "CODELOGIC_PASSWORD",
-          "description": "Password for authentication",
-          "required": true
-        },
-        {
-          "name": "CODELOGIC_WORKSPACE_NAME",
-          "description": "Workspace name in CodeLogic",
-          "required": true
-        },
-        {
-          "name": "CODELOGIC_DEBUG_MODE",
-          "description": "Enable debug mode",
-          "required": false,
-          "default": "false"
-        }
-      ]
-    }
-  }
+  "resources": []
 }

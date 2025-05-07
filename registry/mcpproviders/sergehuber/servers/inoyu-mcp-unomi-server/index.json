@@ -1,8 +1,63 @@
 {
-  "name": "unomi-profile-server",
+  "repo_ref": "sergehuber/inoyu-mcp-unomi-server",
+  "name": "io.github.sergehuber/inoyu-mcp-unomi-server",
   "description": "A Model Context Protocol server enabling Claude to maintain user context through Apache Unomi profile management.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@inoyu/mcp-unomi-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "@inoyu/mcp-unomi-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "UNOMI_BASE_URL",
+            "description": "Base URL of the Apache Unomi server",
+            "required": true
+          },
+          {
+            "name": "UNOMI_USERNAME",
+            "description": "Username for Apache Unomi authentication (default 'karaf')",
+            "required": true
+          },
+          {
+            "name": "UNOMI_PASSWORD",
+            "description": "Password for Apache Unomi authentication (default 'karaf')",
+            "required": true
+          },
+          {
+            "name": "UNOMI_PROFILE_ID",
+            "description": "Fallback profile ID for Unomi",
+            "required": true
+          },
+          {
+            "name": "UNOMI_KEY",
+            "description": "Unomi key for protected events (default '670c26d1cc413346c3b2fd9ce65dab41')",
+            "required": true
+          },
+          {
+            "name": "UNOMI_EMAIL",
+            "description": "Email address used for profile lookup",
+            "required": false
+          },
+          {
+            "name": "UNOMI_SOURCE_ID",
+            "description": "Source identifier for Claude Desktop",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "create_scope",
@@ -117,61 +172,5 @@
       "description": "List of available Apache Unomi profiles",
       "mimetype": "application/json"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@inoyu/mcp-unomi-server",
-      "command": "npx",
-      "args": [
-        "@inoyu/mcp-unomi-server"
-      ],
-      "env": [
-        {
-          "name": "UNOMI_BASE_URL",
-          "description": "Base URL of the Apache Unomi server",
-          "required": true
-        },
-        {
-          "name": "UNOMI_USERNAME",
-          "description": "Username for Apache Unomi authentication (default 'karaf')",
-          "required": true
-        },
-        {
-          "name": "UNOMI_PASSWORD",
-          "description": "Password for Apache Unomi authentication (default 'karaf')",
-          "required": true
-        },
-        {
-          "name": "UNOMI_PROFILE_ID",
-          "description": "Fallback profile ID for Unomi",
-          "required": true
-        },
-        {
-          "name": "UNOMI_KEY",
-          "description": "Unomi key for protected events (default '670c26d1cc413346c3b2fd9ce65dab41')",
-          "required": true
-        },
-        {
-          "name": "UNOMI_EMAIL",
-          "description": "Email address used for profile lookup",
-          "required": false
-        },
-        {
-          "name": "UNOMI_SOURCE_ID",
-          "description": "Source identifier for Claude Desktop",
-          "required": false
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/sergehuber/inoyu-mcp-unomi-server",
-    "name": "sergehuber/inoyu-mcp-unomi-server"
-  }
+  ]
 }

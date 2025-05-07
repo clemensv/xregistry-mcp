@@ -1,12 +1,57 @@
 {
-  "name": "inkeep-mcp-server",
+  "repo_ref": "inkeep/mcp-server-python",
+  "name": "io.github.inkeep/mcp-server-python",
   "description": "Inkeep MCP Server powered by your docs and product content.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/inkeep/mcp-server-python",
-    "name": "inkeep/mcp-server-python"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "inkeep-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "<YOUR_INKEEP_MCP_SERVER_ABSOLUTE_PATH>",
+          "run",
+          "-m",
+          "inkeep_mcp_server"
+        ],
+        "environment_variables": [
+          {
+            "name": "INKEEP_API_BASE_URL",
+            "description": "Base URL for Inkeep API",
+            "required": true
+          },
+          {
+            "name": "INKEEP_API_KEY",
+            "description": "API key for authentication",
+            "required": true
+          },
+          {
+            "name": "INKEEP_API_MODEL",
+            "description": "Model to use",
+            "required": true
+          },
+          {
+            "name": "INKEEP_MCP_TOOL_NAME",
+            "description": "Name of the MCP tool",
+            "required": true
+          },
+          {
+            "name": "INKEEP_MCP_TOOL_DESCRIPTION",
+            "description": "Description of the MCP tool",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "search-product-content",
@@ -16,54 +61,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "inkeep-mcp-server",
-      "command": "uv",
-      "args": [
-        "--directory",
-        "<YOUR_INKEEP_MCP_SERVER_ABSOLUTE_PATH>",
-        "run",
-        "-m",
-        "inkeep_mcp_server"
-      ],
-      "env": [
-        {
-          "name": "INKEEP_API_BASE_URL",
-          "description": "Base URL for Inkeep API",
-          "required": true,
-          "default": "https://api.inkeep.com/v1"
-        },
-        {
-          "name": "INKEEP_API_KEY",
-          "description": "API key for authentication",
-          "required": true
-        },
-        {
-          "name": "INKEEP_API_MODEL",
-          "description": "Model to use",
-          "required": true,
-          "default": "inkeep-rag"
-        },
-        {
-          "name": "INKEEP_MCP_TOOL_NAME",
-          "description": "Name of the MCP tool",
-          "required": true,
-          "default": "search-product-content"
-        },
-        {
-          "name": "INKEEP_MCP_TOOL_DESCRIPTION",
-          "description": "Description of the MCP tool",
-          "required": true,
-          "default": "Retrieves product documentation about Inkeep. The query should be framed as a conversational question about Inkeep."
-        }
-      ]
-    }
-  }
+  "resources": []
 }

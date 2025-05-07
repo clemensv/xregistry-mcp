@@ -1,12 +1,51 @@
 {
-  "name": "Redis MCP Server",
+  "repo_ref": "redis/mcp-redis",
+  "name": "io.github.redis/mcp-redis",
   "description": "The Redis MCP Server is a natural language interface designed for agentic applications to efficiently manage and search data in Redis. It integrates seamlessly with MCP (Model Content Protocol) clients, enabling AI-driven workflows to interact with structured and unstructured data in Redis.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/redis/mcp-redis",
-    "name": "redis/mcp-redis"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcp-redis",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "REDIS_HOST",
+            "description": "Redis IP or hostname",
+            "required": false
+          },
+          {
+            "name": "REDIS_PORT",
+            "description": "Redis port",
+            "required": false
+          },
+          {
+            "name": "REDIS_USERNAME",
+            "description": "Default database username",
+            "required": false
+          },
+          {
+            "name": "REDIS_PWD",
+            "description": "Default database password",
+            "required": false
+          },
+          {
+            "name": "REDIS_SSL",
+            "description": "Enables or disables SSL/TLS",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "string",
@@ -79,49 +118,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "mcp-redis",
-      "command": "python main.py",
-      "args": [],
-      "env": [
-        {
-          "name": "REDIS_HOST",
-          "description": "Redis IP or hostname",
-          "required": false,
-          "default": "127.0.0.1"
-        },
-        {
-          "name": "REDIS_PORT",
-          "description": "Redis port",
-          "required": false,
-          "default": "6379"
-        },
-        {
-          "name": "REDIS_USERNAME",
-          "description": "Default database username",
-          "required": false,
-          "default": "default"
-        },
-        {
-          "name": "REDIS_PWD",
-          "description": "Default database password",
-          "required": false,
-          "default": ""
-        },
-        {
-          "name": "REDIS_SSL",
-          "description": "Enables or disables SSL/TLS",
-          "required": false,
-          "default": "False"
-        }
-      ]
-    }
-  }
+  "resources": []
 }

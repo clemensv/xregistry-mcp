@@ -1,8 +1,31 @@
 {
-  "name": "Fewsats MCP Server",
+  "repo_ref": "Fewsats/fewsats-mcp",
+  "name": "io.github.Fewsats/fewsats-mcp",
   "description": "This MCP server integrates with Fewsats and allows AI Agents to purchase anything in a secure way.",
-  "mcpversion": "0.2.2",
-  "serverversion": "unknown",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uvx",
+      "package_name": "fewsats-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "FEWSATS_API_KEY",
+            "description": "API key for Fewsats",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "balance",
@@ -113,28 +136,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "uvx",
-      "package": "fewsats-mcp",
-      "command": "fewsats-mcp",
-      "args": [],
-      "env": [
-        {
-          "name": "FEWSATS_API_KEY",
-          "description": "API key for Fewsats",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/Fewsats/fewsats-mcp",
-    "name": "Fewsats/fewsats-mcp"
-  }
+  "resources": []
 }

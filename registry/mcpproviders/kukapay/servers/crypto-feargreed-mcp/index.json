@@ -1,12 +1,42 @@
 {
-  "name": "Crypto Fear & Greed Index MCP Server",
+  "repo_ref": "kukapay/crypto-feargreed-mcp",
+  "name": "io.github.kukapay/crypto-feargreed-mcp",
   "description": "A mcp server that provides real-time and historical Crypto Fear & Greed Index data, powered by the Alternative.me.",
-  "mcpversion": "unknown",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/kukapay/crypto-feargreed-mcp",
-    "name": "kukapay/crypto-feargreed-mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "crypto-feargreed-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "install",
+          "main.py",
+          "--name",
+          "CryptoFearGreed"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "interpret_fng",
+      "description": "Index Data Interpretation.",
+      "arguments": [
+        {
+          "name": "value",
+          "description": "Crypto Fear & Greed Index value to interpret",
+          "required": true
+        }
+      ]
+    }
+  ],
   "tools": [
     {
       "name": "get_current_fng_tool",
@@ -57,32 +87,5 @@
       "name": "history",
       "description": "Historical Data of Crypto Fear & Greed Index for specified number of days."
     }
-  ],
-  "prompts": [
-    {
-      "name": "interpret_fng",
-      "description": "Index Data Interpretation.",
-      "arguments": [
-        {
-          "name": "value",
-          "description": "Crypto Fear & Greed Index value to interpret",
-          "required": true
-        }
-      ]
-    }
-  ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "crypto-feargreed-mcp",
-      "command": "mcp",
-      "args": [
-        "install",
-        "main.py",
-        "--name",
-        "CryptoFearGreed"
-      ],
-      "env": []
-    }
-  }
+  ]
 }

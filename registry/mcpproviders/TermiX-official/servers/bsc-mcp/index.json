@@ -1,8 +1,43 @@
 {
-  "name": "BNBChain MCP",
-  "description": "A plug-and-play MCP tool server to send BNB, transfer BEP-20 tokens, deploy tokens, and interact with smart contracts on the Binance Smart Chain (BSC) \u2014 built for Claude Desktop, AI agents, and developers.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "repo_ref": "TermiX-official/bsc-mcp",
+  "name": "io.github.TermiX-official/bsc-mcp",
+  "description": "A plug-and-play MCP tool server to send BNB, transfer BEP-20 tokens, deploy tokens, and interact with smart contracts on the Binance Smart Chain (BSC) — built for Claude Desktop, AI agents, and developers.",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "bnbchain-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--init"
+        ],
+        "environment_variables": [
+          {
+            "name": "BSC_WALLET_PRIVATE_KEY",
+            "description": "BSC Wallet Private Key",
+            "required": true
+          },
+          {
+            "name": "WALLET_PASSWORD",
+            "description": "Wallet Password (6 characters)",
+            "required": true
+          },
+          {
+            "name": "CUSTOM_RPC_URL",
+            "description": "Custom RPC URL",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "transferNativeToken",
@@ -57,41 +92,5 @@
       "description": "Sell meme token on Four.Meme"
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "bnbchain-mcp",
-      "command": "bnbchain-mcp",
-      "args": [
-        "--init"
-      ],
-      "env": [
-        {
-          "name": "BSC_WALLET_PRIVATE_KEY",
-          "description": "BSC Wallet Private Key",
-          "required": true
-        },
-        {
-          "name": "WALLET_PASSWORD",
-          "description": "Wallet Password (6 characters)",
-          "required": true
-        },
-        {
-          "name": "CUSTOM_RPC_URL",
-          "description": "Custom RPC URL",
-          "required": false,
-          "default": "https://bsc-dataseed.binance.org"
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/TermiX-official/bsc-mcp",
-    "name": "TermiX-official/bsc-mcp"
-  }
+  "resources": []
 }

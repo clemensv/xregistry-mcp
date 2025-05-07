@@ -1,22 +1,48 @@
 {
-  "name": "opencti-server",
+  "repo_ref": "Spathodea-Network/opencti-mcp",
+  "name": "io.github.Spathodea-Network/opencti-mcp",
   "description": "OpenCTI MCP Server is a Model Context Protocol (MCP) server that provides seamless integration with OpenCTI (Open Cyber Threat Intelligence) platform. It enables querying and retrieving threat intelligence data through a standardized interface.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
-  "repository": {
-    "url": "https://github.com/Spathodea-Network/opencti-mcp",
-    "name": "Spathodea-Network/opencti-mcp"
+  "version_detail": {
+    "version": "0.1.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "opencti-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "path/to/opencti-server/build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "OPENCTI_URL",
+            "description": "Your OpenCTI instance URL",
+            "required": true
+          },
+          {
+            "name": "OPENCTI_TOKEN",
+            "description": "Your OpenCTI API token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_latest_reports",
-      "description": "\u7372\u53d6\u6700\u65b0\u7684OpenCTI\u5831\u544a",
+      "description": "獲取最新的OpenCTI報告",
       "inputschema": {
         "type": "object",
         "properties": {
           "first": {
             "type": "number",
-            "description": "\u8fd4\u56de\u7d50\u679c\u6578\u91cf\u9650\u5236",
+            "description": "返回結果數量限制",
             "default": 10
           }
         }
@@ -24,13 +50,13 @@
     },
     {
       "name": "get_report_by_id",
-      "description": "\u6839\u64daID\u7372\u53d6OpenCTI\u5831\u544a",
+      "description": "根據ID獲取OpenCTI報告",
       "inputschema": {
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
-            "description": "\u5831\u544aID"
+            "description": "報告ID"
           }
         },
         "required": [
@@ -40,17 +66,17 @@
     },
     {
       "name": "search_indicators",
-      "description": "\u641c\u5c0bOpenCTI\u4e2d\u7684\u6307\u6a19",
+      "description": "搜尋OpenCTI中的指標",
       "inputschema": {
         "type": "object",
         "properties": {
           "query": {
             "type": "string",
-            "description": "\u641c\u5c0b\u95dc\u9375\u5b57"
+            "description": "搜尋關鍵字"
           },
           "first": {
             "type": "number",
-            "description": "\u8fd4\u56de\u7d50\u679c\u6578\u91cf\u9650\u5236",
+            "description": "返回結果數量限制",
             "default": 10
           }
         },
@@ -61,17 +87,17 @@
     },
     {
       "name": "search_malware",
-      "description": "\u641c\u5c0bOpenCTI\u4e2d\u7684\u60e1\u610f\u7a0b\u5f0f",
+      "description": "搜尋OpenCTI中的惡意程式",
       "inputschema": {
         "type": "object",
         "properties": {
           "query": {
             "type": "string",
-            "description": "\u641c\u5c0b\u95dc\u9375\u5b57"
+            "description": "搜尋關鍵字"
           },
           "first": {
             "type": "number",
-            "description": "\u8fd4\u56de\u7d50\u679c\u6578\u91cf\u9650\u5236",
+            "description": "返回結果數量限制",
             "default": 10
           }
         },
@@ -82,17 +108,17 @@
     },
     {
       "name": "search_threat_actors",
-      "description": "\u641c\u5c0bOpenCTI\u4e2d\u7684\u5a01\u8105\u884c\u70ba\u8005",
+      "description": "搜尋OpenCTI中的威脅行為者",
       "inputschema": {
         "type": "object",
         "properties": {
           "query": {
             "type": "string",
-            "description": "\u641c\u5c0b\u95dc\u9375\u5b57"
+            "description": "搜尋關鍵字"
           },
           "first": {
             "type": "number",
-            "description": "\u8fd4\u56de\u7d50\u679c\u6578\u91cf\u9650\u5236",
+            "description": "返回結果數量限制",
             "default": 10
           }
         },
@@ -103,13 +129,13 @@
     },
     {
       "name": "get_user_by_id",
-      "description": "\u6839\u64daID\u7372\u53d6\u4f7f\u7528\u8005\u8cc7\u8a0a",
+      "description": "根據ID獲取使用者資訊",
       "inputschema": {
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
-            "description": "\u4f7f\u7528\u8005ID"
+            "description": "使用者ID"
           }
         },
         "required": [
@@ -119,7 +145,7 @@
     },
     {
       "name": "list_users",
-      "description": "\u5217\u51fa\u6240\u6709\u4f7f\u7528\u8005",
+      "description": "列出所有使用者",
       "inputschema": {
         "type": "object",
         "properties": {}
@@ -127,13 +153,13 @@
     },
     {
       "name": "list_groups",
-      "description": "\u5217\u51fa\u6240\u6709\u7fa4\u7d44",
+      "description": "列出所有群組",
       "inputschema": {
         "type": "object",
         "properties": {
           "first": {
             "type": "number",
-            "description": "\u8fd4\u56de\u7d50\u679c\u6578\u91cf\u9650\u5236",
+            "description": "返回結果數量限制",
             "default": 10
           }
         }
@@ -141,13 +167,13 @@
     },
     {
       "name": "list_attack_patterns",
-      "description": "\u5217\u51fa\u6240\u6709\u653b\u64ca\u6a21\u5f0f",
+      "description": "列出所有攻擊模式",
       "inputschema": {
         "type": "object",
         "properties": {
           "first": {
             "type": "number",
-            "description": "\u8fd4\u56de\u7d50\u679c\u6578\u91cf\u9650\u5236",
+            "description": "返回結果數量限制",
             "default": 10
           }
         }
@@ -155,13 +181,13 @@
     },
     {
       "name": "get_campaign_by_name",
-      "description": "\u6839\u64da\u540d\u7a31\u7372\u53d6\u884c\u52d5\u8cc7\u8a0a",
+      "description": "根據名稱獲取行動資訊",
       "inputschema": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
-            "description": "\u884c\u52d5\u540d\u7a31"
+            "description": "行動名稱"
           }
         },
         "required": [
@@ -171,7 +197,7 @@
     },
     {
       "name": "list_connectors",
-      "description": "\u5217\u51fa\u6240\u6709\u9023\u63a5\u5668",
+      "description": "列出所有連接器",
       "inputschema": {
         "type": "object",
         "properties": {}
@@ -179,7 +205,7 @@
     },
     {
       "name": "list_status_templates",
-      "description": "\u5217\u51fa\u6240\u6709\u72c0\u614b\u6a21\u677f",
+      "description": "列出所有狀態模板",
       "inputschema": {
         "type": "object",
         "properties": {}
@@ -187,13 +213,13 @@
     },
     {
       "name": "get_file_by_id",
-      "description": "\u6839\u64daID\u7372\u53d6\u6a94\u6848\u8cc7\u8a0a",
+      "description": "根據ID獲取檔案資訊",
       "inputschema": {
         "type": "object",
         "properties": {
           "id": {
             "type": "string",
-            "description": "\u6a94\u6848ID"
+            "description": "檔案ID"
           }
         },
         "required": [
@@ -203,7 +229,7 @@
     },
     {
       "name": "list_files",
-      "description": "\u5217\u51fa\u6240\u6709\u6a94\u6848",
+      "description": "列出所有檔案",
       "inputschema": {
         "type": "object",
         "properties": {}
@@ -211,7 +237,7 @@
     },
     {
       "name": "list_marking_definitions",
-      "description": "\u5217\u51fa\u6240\u6709\u6a19\u8a18\u5b9a\u7fa9",
+      "description": "列出所有標記定義",
       "inputschema": {
         "type": "object",
         "properties": {}
@@ -219,38 +245,12 @@
     },
     {
       "name": "list_labels",
-      "description": "\u5217\u51fa\u6240\u6709\u6a19\u7c64",
+      "description": "列出所有標籤",
       "inputschema": {
         "type": "object",
         "properties": {}
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "opencti-server",
-      "command": "node",
-      "args": [
-        "path/to/opencti-server/build/index.js"
-      ],
-      "env": [
-        {
-          "name": "OPENCTI_URL",
-          "description": "Your OpenCTI instance URL",
-          "required": true
-        },
-        {
-          "name": "OPENCTI_TOKEN",
-          "description": "Your OpenCTI API token",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

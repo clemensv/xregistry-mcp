@@ -1,12 +1,40 @@
 {
-  "name": "DevHub CMS MCP",
+  "repo_ref": "devhub/devhub-cms-mcp",
+  "name": "io.github.devhub/devhub-cms-mcp",
   "description": "Integration with DevHub CMS to manage content",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/devhub/devhub-cms-mcp",
-    "name": "devhub/devhub-cms-mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "devhub-cms-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "devhub-cms-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "DEVHUB_API_KEY",
+            "required": true
+          },
+          {
+            "name": "DEVHUB_API_SECRET",
+            "required": true
+          },
+          {
+            "name": "DEVHUB_BASE_URL",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_hours_of_operation",
@@ -49,33 +77,5 @@
       "description": "Get the nearest DevHub location"
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "uv",
-      "package": "devhub-cms-mcp",
-      "command": "uvx",
-      "args": [
-        "devhub-cms-mcp"
-      ],
-      "env": [
-        {
-          "name": "DEVHUB_API_KEY",
-          "required": true
-        },
-        {
-          "name": "DEVHUB_API_SECRET",
-          "required": true
-        },
-        {
-          "name": "DEVHUB_BASE_URL",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

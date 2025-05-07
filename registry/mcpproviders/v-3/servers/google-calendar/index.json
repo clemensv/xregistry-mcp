@@ -1,8 +1,48 @@
 {
-  "name": "google-calendar-server",
+  "repo_ref": "v-3/google-calendar",
+  "name": "io.github.v-3/google-calendar",
   "description": "This MCP server allows Claude to interact with your Google Calendar, enabling capabilities like listing events, creating meetings, and finding free time slots.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/google-calendar-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "GOOGLE_CLIENT_ID",
+            "description": "Google OAuth client ID",
+            "required": true
+          },
+          {
+            "name": "GOOGLE_CLIENT_SECRET",
+            "description": "Google OAuth client secret",
+            "required": true
+          },
+          {
+            "name": "GOOGLE_REDIRECT_URI",
+            "description": "OAuth redirect URI",
+            "required": true
+          },
+          {
+            "name": "GOOGLE_REFRESH_TOKEN",
+            "description": "OAuth refresh token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "list_events",
@@ -137,45 +177,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@modelcontextprotocol/google-calendar-mcp-server",
-      "command": "node",
-      "args": [
-        "index.js"
-      ],
-      "env": [
-        {
-          "name": "GOOGLE_CLIENT_ID",
-          "description": "Google OAuth client ID",
-          "required": true
-        },
-        {
-          "name": "GOOGLE_CLIENT_SECRET",
-          "description": "Google OAuth client secret",
-          "required": true
-        },
-        {
-          "name": "GOOGLE_REDIRECT_URI",
-          "description": "OAuth redirect URI",
-          "required": true
-        },
-        {
-          "name": "GOOGLE_REFRESH_TOKEN",
-          "description": "OAuth refresh token",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/v-3/google-calendar",
-    "name": "v-3/google-calendar"
-  }
+  "resources": []
 }

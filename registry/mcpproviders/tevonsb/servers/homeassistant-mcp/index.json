@@ -1,8 +1,57 @@
 {
-  "name": "Model Context Protocol Server for Home Assistant",
+  "repo_ref": "tevonsb/homeassistant-mcp",
+  "name": "io.github.tevonsb/homeassistant-mcp",
   "description": "The server uses the MCP protocol to share access to a local Home Assistant instance with an LLM application. A powerful bridge between your Home Assistant instance and Language Learning Models (LLMs), enabling natural language control and monitoring of your smart home devices through the Model Context Protocol (MCP). This server provides a comprehensive API for managing your entire Home Assistant ecosystem, from device control to system administration.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [
+    {
+      "url": "http://localhost:3000",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "not specified",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "npm",
+      "package_name": "litemcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "HASS_HOST",
+            "description": "Home Assistant host URL",
+            "required": false
+          },
+          {
+            "name": "HASS_TOKEN",
+            "description": "Home Assistant access token",
+            "required": true
+          },
+          {
+            "name": "PORT",
+            "description": "Port to run the server on",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "list_devices",
@@ -429,53 +478,5 @@
       }
     }
   ],
-  "endpoints": {
-    "http": {
-      "uri": "http://localhost:3000",
-      "authorization": {
-        "type": "header",
-        "name": "Authorization",
-        "description": "Bearer token in Authorization header",
-        "required": true,
-        "format": "Bearer {token}"
-      }
-    },
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "container": {
-      "image": "not specified"
-    },
-    "sandbox": {
-      "runtime": "node",
-      "package": "litemcp",
-      "command": "node",
-      "args": [],
-      "env": [
-        {
-          "name": "HASS_HOST",
-          "description": "Home Assistant host URL",
-          "required": false,
-          "default": "http://192.168.178.63:8123"
-        },
-        {
-          "name": "HASS_TOKEN",
-          "description": "Home Assistant access token",
-          "required": true
-        },
-        {
-          "name": "PORT",
-          "description": "Port to run the server on",
-          "required": false,
-          "default": "3000"
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/tevonsb/homeassistant-mcp",
-    "name": "tevonsb/homeassistant-mcp"
-  }
+  "resources": []
 }

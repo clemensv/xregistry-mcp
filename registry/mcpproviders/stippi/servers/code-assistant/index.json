@@ -1,27 +1,33 @@
 {
-  "name": "Code Assistant",
+  "repo_ref": "stippi/code-assistant",
+  "name": "io.github.stippi/code-assistant",
   "description": "A CLI tool built in Rust for assisting with code-related tasks, capable of running as a Model Context Protocol server providing tools and resources to LLMs running in an MCP client.",
-  "mcpversion": "unknown",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/stippi/code-assistant",
-    "name": "stippi/code-assistant"
+  "version_detail": {
+    "version": "0.0.0"
   },
-  "deployment": {
-    "sandbox": {
-      "runtime": "rust",
-      "package": "code-assistant",
-      "command": "code-assistant",
-      "args": [
-        "server"
-      ],
-      "env": [
-        {
-          "name": "PERPLEXITY_API_KEY",
-          "description": "optional, enables perplexity_ask tool",
-          "required": false
-        }
-      ]
+  "remotes": [],
+  "registries": [
+    {
+      "name": "rust",
+      "package_name": "code-assistant",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "server"
+        ],
+        "environment_variables": [
+          {
+            "name": "PERPLEXITY_API_KEY",
+            "description": "optional, enables perplexity_ask tool",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
     }
-  }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
 }

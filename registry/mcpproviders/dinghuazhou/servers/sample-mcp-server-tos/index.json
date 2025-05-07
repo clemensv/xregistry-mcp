@@ -1,8 +1,56 @@
 {
-  "name": "TOS MCP Server",
+  "repo_ref": "dinghuazhou/sample-mcp-server-tos",
+  "name": "io.github.dinghuazhou/sample-mcp-server-tos",
   "description": "An MCP server implementation for retrieving data from TOS.",
-  "mcpversion": "1.0",
-  "serverversion": "unspecified",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "unspecified",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "VOLC_ACCESSKEY",
+            "description": "The access key for the VolcEngine.",
+            "required": true
+          },
+          {
+            "name": "VOLC_SECRETKEY",
+            "description": "The secret key for the VolcEngine.",
+            "required": true
+          },
+          {
+            "name": "REGION",
+            "description": "The region for the TOS service.",
+            "required": true
+          },
+          {
+            "name": "TOS_ENDPOINT",
+            "description": "The endpoint for the TOS service.",
+            "required": true
+          },
+          {
+            "name": "SECURITY_TOKEN",
+            "description": "The security token for the credential.",
+            "required": false
+          },
+          {
+            "name": "TOS_BUCKETS",
+            "description": "If you want to use a specific bucket, you need to set this.",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "list_buckets",
@@ -77,60 +125,5 @@
       "description": "Objects resource for TOS",
       "uritemplate": "/buckets/{bucket}/objects/{key}"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    },
-    "httplocal": {
-      "deployment": "container",
-      "port": 8000,
-      "host": "localhost",
-      "protocol": "http"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "unspecified",
-      "command": "tos-mcp-server",
-      "args": [],
-      "env": [
-        {
-          "name": "VOLC_ACCESSKEY",
-          "description": "The access key for the VolcEngine.",
-          "required": true
-        },
-        {
-          "name": "VOLC_SECRETKEY",
-          "description": "The secret key for the VolcEngine.",
-          "required": true
-        },
-        {
-          "name": "REGION",
-          "description": "The region for the TOS service.",
-          "required": true
-        },
-        {
-          "name": "TOS_ENDPOINT",
-          "description": "The endpoint for the TOS service.",
-          "required": true
-        },
-        {
-          "name": "SECURITY_TOKEN",
-          "description": "The security token for the credential.",
-          "required": false
-        },
-        {
-          "name": "TOS_BUCKETS",
-          "description": "If you want to use a specific bucket, you need to set this.",
-          "required": false
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/dinghuazhou/sample-mcp-server-tos",
-    "name": "dinghuazhou/sample-mcp-server-tos"
-  }
+  ]
 }

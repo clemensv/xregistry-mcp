@@ -1,12 +1,33 @@
 {
-  "name": "Linear MCP Server",
+  "repo_ref": "geropl/linear-mcp-go",
+  "name": "io.github.geropl/linear-mcp-go",
   "description": "A Model Context Protocol (MCP) server for Linear, written in Go. This server provides tools for interacting with the Linear API through the MCP protocol.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/geropl/linear-mcp-go",
-    "name": "geropl/linear-mcp-go"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "go",
+      "package_name": "linear-mcp-go",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "serve"
+        ],
+        "environment_variables": [
+          {
+            "name": "LINEAR_API_KEY",
+            "description": "Linear API key environment variable",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "linear_create_issue",
@@ -67,26 +88,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "go",
-      "package": "linear-mcp-go",
-      "command": "./linear-mcp-go",
-      "args": [
-        "serve"
-      ],
-      "env": [
-        {
-          "name": "LINEAR_API_KEY",
-          "description": "Linear API key environment variable",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

@@ -1,12 +1,33 @@
 {
-  "name": "Discord MCP Server",
+  "repo_ref": "v-3/discordmcp",
+  "name": "io.github.v-3/discordmcp",
   "description": "A Model Context Protocol (MCP) server that enables LLMs to interact with Discord channels, allowing them to send and read messages through Discord's API. Using this server, LLMs like Claude can directly interact with Discord channels while maintaining user control and security.",
-  "mcpversion": "1.0",
-  "serverversion": "unspecified",
-  "repository": {
-    "url": "https://github.com/v-3/discordmcp",
-    "name": "v-3/discordmcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "discordmcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "DISCORD_TOKEN",
+            "description": "Discord bot token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "send-message",
@@ -52,26 +73,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "discordmcp",
-      "command": "node",
-      "args": [
-        "build/index.js"
-      ],
-      "env": [
-        {
-          "name": "DISCORD_TOKEN",
-          "description": "Discord bot token",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

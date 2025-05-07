@@ -1,12 +1,28 @@
 {
-  "name": "redis",
+  "repo_ref": "GongRzhe/REDIS-MCP-Server",
+  "name": "io.github.GongRzhe/REDIS-MCP-Server",
   "description": "A Redis Model Context Protocol (MCP) server implementation for interacting with Redis databases. This server enables LLMs to interact with Redis key-value stores through a set of standardized tools.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
-  "repository": {
-    "url": "https://github.com/GongRzhe/REDIS-MCP-Server",
-    "name": "GongRzhe/REDIS-MCP-Server"
+  "version_detail": {
+    "version": "1.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@gongrzhe/server-redis-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "@gongrzhe/server-redis-mcp@1.0.0",
+          "redis://localhost:6379"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "set",
@@ -89,21 +105,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@gongrzhe/server-redis-mcp",
-      "packageversion": "1.0.0",
-      "command": "npx",
-      "args": [
-        "@gongrzhe/server-redis-mcp@1.0.0",
-        "redis://localhost:6379"
-      ]
-    }
-  }
+  "resources": []
 }

@@ -1,8 +1,53 @@
 {
-  "name": "mcp-server-for-intercom",
+  "repo_ref": "raoulbia-ai/mcp-server-for-intercom",
+  "name": "io.github.raoulbia-ai/mcp-server-for-intercom",
   "description": "An MCP-compliant server that enables AI assistants to access and analyze customer support data from Intercom.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [
+    {
+      "url": "http://localhost:8080",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "mcp-intercom:latest",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "INTERCOM_ACCESS_TOKEN",
+            "description": "Your Intercom API token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "npm",
+      "package_name": "mcp-server-for-intercom",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "INTERCOM_ACCESS_TOKEN",
+            "description": "Your Intercom API token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "search_conversations_by_customer",
@@ -118,47 +163,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    },
-    "http": {
-      "uri": "http://localhost:8080",
-      "authorization": {
-        "type": "header",
-        "name": "Authorization",
-        "description": "Use the INTERCOM_ACCESS_TOKEN as Bearer token in Authorization header",
-        "required": true,
-        "format": "Bearer {token}"
-      }
-    }
-  },
-  "deployment": {
-    "container": {
-      "image": "mcp-intercom:latest",
-      "env": [
-        {
-          "name": "INTERCOM_ACCESS_TOKEN",
-          "description": "Your Intercom API token",
-          "required": true
-        }
-      ]
-    },
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "mcp-server-for-intercom",
-      "command": "intercom-mcp",
-      "env": [
-        {
-          "name": "INTERCOM_ACCESS_TOKEN",
-          "description": "Your Intercom API token",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/raoulbia-ai/mcp-server-for-intercom",
-    "name": "raoulbia-ai/mcp-server-for-intercom"
-  }
+  "resources": []
 }

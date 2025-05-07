@@ -1,8 +1,13 @@
 {
-  "name": "HDW MCP Server",
+  "repo_ref": "horizondatawave/hdw-mcp-server",
+  "name": "io.github.horizondatawave/hdw-mcp-server",
   "description": "A Model Context Protocol (MCP) server that provides comprehensive access to LinkedIn data and functionalities using the HorizonDataWave API, enabling not only data retrieval but also robust management of user accounts.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [],
+  "prompts": [],
   "tools": [
     {
       "name": "search_linkedin_users",
@@ -181,9 +186,5 @@
       }
     }
   ],
-  "deployment": {},
-  "repository": {
-    "url": "https://github.com/horizondatawave/hdw-mcp-server",
-    "name": "horizondatawave/hdw-mcp-server"
-  }
+  "resources": []
 }

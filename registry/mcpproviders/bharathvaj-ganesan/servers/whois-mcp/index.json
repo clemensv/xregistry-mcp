@@ -1,6 +1,25 @@
 {
-  "name": "Whois MCP",
+  "repo_ref": "bharathvaj-ganesan/whois-mcp",
+  "name": "io.github.bharathvaj-ganesan/whois-mcp",
   "description": "Model Context Protocol server for whois lookups allowing AI agents to perform WHOIS lookups and retrieve domain details.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@bharathvaj/whois-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "whois_domain",
@@ -31,17 +50,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@bharathvaj/whois-mcp",
-      "command": "npx -y @bharathvaj/whois-mcp@latest"
-    }
-  },
-  "mcpversion": "unknown",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/bharathvaj-ganesan/whois-mcp",
-    "name": "bharathvaj-ganesan/whois-mcp"
-  }
+  "resources": []
 }

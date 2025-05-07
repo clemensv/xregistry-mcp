@@ -1,12 +1,51 @@
 {
-  "name": "OceanBase MCP Server",
+  "repo_ref": "yuanoOo/oceanbase_mcp_server",
+  "name": "io.github.yuanoOo/oceanbase_mcp_server",
   "description": "A Model Context Protocol (MCP) server that enables secure interaction with OceanBase databases. This server allows AI assistants to list tables, read data, and execute SQL queries through a controlled interface, making database exploration and analysis safer and more structured.",
-  "mcpversion": "1.0",
-  "serverversion": "unspecified",
-  "repository": {
-    "url": "https://github.com/yuanoOo/oceanbase_mcp_server",
-    "name": "yuanoOo/oceanbase_mcp_server"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "oceanbase-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "OB_HOST",
+            "description": "Database host",
+            "required": true
+          },
+          {
+            "name": "OB_PORT",
+            "description": "Database port",
+            "required": false
+          },
+          {
+            "name": "OB_USER",
+            "description": "Database username",
+            "required": true
+          },
+          {
+            "name": "OB_PASSWORD",
+            "description": "Database password",
+            "required": true
+          },
+          {
+            "name": "OB_DATABASE",
+            "description": "Database name",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "execute_sql",
@@ -32,47 +71,5 @@
       "description": "Data in table: {table}",
       "mimetype": "text/plain"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "oceanbase-mcp-server",
-      "command": "python -m oceanbase_mcp_server",
-      "args": [],
-      "env": [
-        {
-          "name": "OB_HOST",
-          "description": "Database host",
-          "required": true,
-          "default": "localhost"
-        },
-        {
-          "name": "OB_PORT",
-          "description": "Database port",
-          "required": false,
-          "default": "2881"
-        },
-        {
-          "name": "OB_USER",
-          "description": "Database username",
-          "required": true
-        },
-        {
-          "name": "OB_PASSWORD",
-          "description": "Database password",
-          "required": true
-        },
-        {
-          "name": "OB_DATABASE",
-          "description": "Database name",
-          "required": true
-        }
-      ]
-    }
-  }
+  ]
 }

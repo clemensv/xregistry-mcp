@@ -1,12 +1,30 @@
 {
-  "name": "spotify-mcp",
+  "repo_ref": "varunneal/spotify-mcp",
+  "name": "io.github.varunneal/spotify-mcp",
   "description": "MCP project to connect Claude with Spotify. Built on top of spotipy-dev's API. Supports playback control, search, info retrieval, and queue management.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/varunneal/spotify-mcp",
-    "name": "varunneal/spotify-mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "@modelcontextprotocol/inspector",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/path/to/spotify_mcp",
+          "run",
+          "spotify-mcp"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "SpotifyPlayback",
@@ -102,25 +120,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "uv",
-      "package": "@modelcontextprotocol/inspector",
-      "packageversion": null,
-      "command": "uv",
-      "args": [
-        "--directory",
-        "/path/to/spotify_mcp",
-        "run",
-        "spotify-mcp"
-      ],
-      "env": []
-    }
-  }
+  "resources": []
 }

@@ -1,13 +1,25 @@
 {
-  "name": "obsidian-mcp",
+  "repo_ref": "StevenStavrakis/obsidian-mcp",
+  "name": "io.github.StevenStavrakis/obsidian-mcp",
   "description": "An MCP (Model Context Protocol) server that enables AI assistants to interact with Obsidian vaults, providing tools for reading, creating, editing and managing notes and tags.",
-  "mcpversion": "1.0",
-  "serverversion": "1.0.6",
-  "repository": {
-    "url": "https://github.com/StevenStavrakis/obsidian-mcp",
-    "name": "StevenStavrakis/obsidian-mcp"
+  "version_detail": {
+    "version": "1.0.6"
   },
-  "docs": "https://modelcontextprotocol.io",
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "obsidian-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "read-note",
@@ -94,18 +106,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "obsidian-mcp",
-      "command": "node",
-      "args": []
-    }
-  }
+  "resources": []
 }

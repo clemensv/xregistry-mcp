@@ -1,61 +1,35 @@
 {
-  "name": "College Football Data MCP Server",
+  "repo_ref": "lenwood/cfbd-mcp-server",
+  "name": "io.github.lenwood/cfbd-mcp-server",
   "description": "An MCP server implementation providing access to college football statistics sourced from the College Football Data API within Claude Desktop. Enables AI assistants and applications to query comprehensive college football statistics and data including game results, team records, player statistics, play-by-play data, rankings, and win probability metrics using natural language.",
-  "mcpversion": "1.0",
-  "serverversion": "0.4.0",
-  "repository": {
-    "url": "https://github.com/lenwood/cfbd-mcp-server",
-    "name": "lenwood/cfbd-mcp-server"
+  "version_detail": {
+    "version": "0.4.0"
   },
-  "docs": "https://collegefootballdata.com/api/docs/?url=/api-docs.json",
-  "resources": [
+  "remotes": [],
+  "registries": [
     {
-      "uritemplate": "schema://games",
-      "name": "Games endpoint schema",
-      "description": "Get game information with scores, teams and metadata",
-      "mimetype": "text/plain"
-    },
-    {
-      "uritemplate": "schema://records",
-      "name": "Team records endpoint schema",
-      "description": "Get team season records",
-      "mimetype": "text/plain"
-    },
-    {
-      "uritemplate": "schema://plays",
-      "name": "Plays endpoint",
-      "description": "Schema for the /plays endpoint",
-      "mimetype": "text/plain"
-    },
-    {
-      "uritemplate": "schema://drives",
-      "name": "Drives endpoint",
-      "description": "Schema for the /drives endpoint",
-      "mimetype": "text/plain"
-    },
-    {
-      "uritemplate": "schema://play/stats",
-      "name": "Play/stats endpoint",
-      "description": "Schema for the /play/stats endpoint",
-      "mimetype": "text/plain"
-    },
-    {
-      "uritemplate": "schema://rankings",
-      "name": "Rankings endpoint",
-      "description": "Schema for the /rankings endpoint",
-      "mimetype": "text/plain"
-    },
-    {
-      "uritemplate": "schema://metrics/wp/pregame",
-      "name": "Metrics/wp/pregame endpoint",
-      "description": "Schema for the pregame win probability endpoint",
-      "mimetype": "text/plain"
-    },
-    {
-      "uritemplate": "schema://game/box/advanced",
-      "name": "Advanced box score endpoint",
-      "description": "Schema for the advanced box score endpoint",
-      "mimetype": "text/plain"
+      "name": "npm",
+      "package_name": "@smithery/cfbd",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@smithery/cli",
+          "install",
+          "cfbd",
+          "--client",
+          "claude"
+        ],
+        "environment_variables": [
+          {
+            "name": "CFB_API_KEY",
+            "description": "API key for College Football Data API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
     }
   ],
   "prompts": [
@@ -233,33 +207,54 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
+  "resources": [
+    {
+      "uritemplate": "schema://games",
+      "name": "Games endpoint schema",
+      "description": "Get game information with scores, teams and metadata",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "schema://records",
+      "name": "Team records endpoint schema",
+      "description": "Get team season records",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "schema://plays",
+      "name": "Plays endpoint",
+      "description": "Schema for the /plays endpoint",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "schema://drives",
+      "name": "Drives endpoint",
+      "description": "Schema for the /drives endpoint",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "schema://play/stats",
+      "name": "Play/stats endpoint",
+      "description": "Schema for the /play/stats endpoint",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "schema://rankings",
+      "name": "Rankings endpoint",
+      "description": "Schema for the /rankings endpoint",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "schema://metrics/wp/pregame",
+      "name": "Metrics/wp/pregame endpoint",
+      "description": "Schema for the pregame win probability endpoint",
+      "mimetype": "text/plain"
+    },
+    {
+      "uritemplate": "schema://game/box/advanced",
+      "name": "Advanced box score endpoint",
+      "description": "Schema for the advanced box score endpoint",
+      "mimetype": "text/plain"
     }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@smithery/cfbd",
-      "packageversion": null,
-      "command": "npx",
-      "args": [
-        "-y",
-        "@smithery/cli",
-        "install",
-        "cfbd",
-        "--client",
-        "claude"
-      ],
-      "env": [
-        {
-          "name": "CFB_API_KEY",
-          "description": "API key for College Football Data API",
-          "required": true,
-          "default": null
-        }
-      ]
-    }
-  }
+  ]
 }

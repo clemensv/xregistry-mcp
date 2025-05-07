@@ -1,12 +1,36 @@
 {
-  "name": "AppBuilder App MCP Server",
+  "repo_ref": "baidubce/app-builder",
+  "name": "io.github.baidubce/app-builder",
   "description": "This server provides MCP (Model Context Protocol) tools for interacting with Baidu AppBuilder applications. It supports both stdio and SSE (Server-Sent Events) protocols.",
-  "mcpversion": "1.0",
-  "serverversion": "1.0.5",
-  "repository": {
-    "url": "https://github.com/baidubce/app-builder",
-    "name": "baidubce/app-builder"
+  "version_detail": {
+    "version": "1.0.5"
   },
+  "remotes": [
+    {
+      "url": "http://appbuilder.baidu.com/v2/ai_search/mcp/sse",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "appbuilder-sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "APPBUILDER_TOKEN",
+            "description": "AppBuilder API token for authentication",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "list_apps",
@@ -60,38 +84,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    },
-    "http": {
-      "uri": "http://appbuilder.baidu.com/v2/ai_search/mcp/sse",
-      "authorization": {
-        "type": "header",
-        "name": "api_key",
-        "description": "Requires an AppBuilder API key in the format 'bce-v3/ALTAK-...'. Get your API key from: https://cloud.baidu.com/doc/AppBuilder/s/klv2eywua",
-        "required": true,
-        "format": "bce-v3/{token}"
-      }
-    },
-    "websockets": null,
-    "mqtt": null,
-    "httplocal": null
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "appbuilder-sdk",
-      "command": "python app_server.py",
-      "args": [],
-      "env": [
-        {
-          "name": "APPBUILDER_TOKEN",
-          "description": "AppBuilder API token for authentication",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

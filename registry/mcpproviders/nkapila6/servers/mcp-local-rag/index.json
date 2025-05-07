@@ -1,12 +1,30 @@
 {
-  "name": "mcp-local-rag",
-  "description": "\"primitive\" RAG-like web search model context protocol (MCP) server that runs locally. \u2728 no APIs \u2728",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/nkapila6/mcp-local-rag",
-    "name": "nkapila6/mcp-local-rag"
+  "repo_ref": "nkapila6/mcp-local-rag",
+  "name": "io.github.nkapila6/mcp-local-rag",
+  "description": "\"primitive\" RAG-like web search model context protocol (MCP) server that runs locally. ✨ no APIs ✨",
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "mcp-local-rag",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--python=3.10",
+          "--from",
+          "git+https://github.com/nkapila6/mcp-local-rag",
+          "mcp-local-rag"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "rag_search",
@@ -33,17 +51,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "uv",
-      "package": "mcp-local-rag",
-      "command": "uvx",
-      "args": [
-        "--python=3.10",
-        "--from",
-        "git+https://github.com/nkapila6/mcp-local-rag",
-        "mcp-local-rag"
-      ]
-    }
-  }
+  "resources": []
 }

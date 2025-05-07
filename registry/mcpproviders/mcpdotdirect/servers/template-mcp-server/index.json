@@ -1,8 +1,45 @@
 {
-  "name": "MCP Server",
+  "repo_ref": "mcpdotdirect/template-mcp-server",
+  "name": "io.github.mcpdotdirect/template-mcp-server",
   "description": "A CLI tool to quickly get started building your very own MCP (Model Context Protocol) server using FastMCP",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [
+    {
+      "url": "http://localhost:3001/sse",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "bun",
+      "package_name": "@mcpdotdirect/template-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "src/index.ts"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "greeting",
+      "description": "A simple greeting prompt",
+      "arguments": [
+        {
+          "name": "name",
+          "description": "Name to greet",
+          "required": true
+        }
+      ]
+    }
+  ],
   "tools": [
     {
       "name": "hello_world",
@@ -44,46 +81,5 @@
       "description": "Resource ID",
       "mimetype": "text/plain"
     }
-  ],
-  "prompts": [
-    {
-      "name": "greeting",
-      "description": "A simple greeting prompt",
-      "arguments": [
-        {
-          "name": "name",
-          "description": "Name to greet",
-          "required": true
-        }
-      ]
-    }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    },
-    "http": {
-      "uri": "http://localhost:3001/sse",
-      "authorization": {
-        "type": "none",
-        "required": false
-      }
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "bun",
-      "package": "@mcpdotdirect/template-mcp-server",
-      "command": "bun",
-      "args": [
-        "run",
-        "src/index.ts"
-      ],
-      "env": []
-    }
-  },
-  "repository": {
-    "url": "https://github.com/mcpdotdirect/template-mcp-server",
-    "name": "mcpdotdirect/template-mcp-server"
-  }
+  ]
 }

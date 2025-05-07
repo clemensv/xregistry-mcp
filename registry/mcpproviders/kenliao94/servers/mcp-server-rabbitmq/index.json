@@ -1,12 +1,40 @@
 {
-  "name": "RabbitMQ MCP Server",
+  "repo_ref": "kenliao94/mcp-server-rabbitmq",
+  "name": "io.github.kenliao94/mcp-server-rabbitmq",
   "description": "A Model Context Protocol server implementation for RabbitMQ. Enabling MCP client to interact with queues and topics hosted in a RabbitMQ instance.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/kenliao94/mcp-server-rabbitmq",
-    "name": "kenliao94/mcp-server-rabbitmq"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@kenliao94/mcp-server-rabbitmq",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/path/to/repo/mcp-server-rabbitmq",
+          "run",
+          "mcp-server-rabbitmq",
+          "--rabbitmq-host",
+          "<hostname ex. test.rabbit.com, localhost>",
+          "--port",
+          "<port number ex. 5672>",
+          "--username",
+          "<rabbitmq username>",
+          "--password",
+          "<rabbitmq password>",
+          "--use-tls",
+          "<true if uses amqps, false otherwise>"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "enqueue",
@@ -155,32 +183,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@kenliao94/mcp-server-rabbitmq",
-      "command": "uv",
-      "args": [
-        "--directory",
-        "/path/to/repo/mcp-server-rabbitmq",
-        "run",
-        "mcp-server-rabbitmq",
-        "--rabbitmq-host",
-        "<hostname ex. test.rabbit.com, localhost>",
-        "--port",
-        "<port number ex. 5672>",
-        "--username",
-        "<rabbitmq username>",
-        "--password",
-        "<rabbitmq password>",
-        "--use-tls",
-        "<true if uses amqps, false otherwise>"
-      ]
-    }
-  }
+  "resources": []
 }

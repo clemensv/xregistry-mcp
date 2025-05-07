@@ -1,8 +1,38 @@
 {
-  "name": "mcp-server-redis",
+  "repo_ref": "prajwalnayak7/mcp-server-redis",
+  "name": "io.github.prajwalnayak7/mcp-server-redis",
   "description": "This implementation provides a solid foundation for Redis integration through MCP. You can extend it further by adding more Redis commands as needed for your specific use case.",
-  "mcpversion": "1.0",
-  "serverversion": "unspecified",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcp-server-redis",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "src/server.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "REDIS_HOST",
+            "description": "Redis server hostname",
+            "required": true
+          },
+          {
+            "name": "REDIS_PORT",
+            "description": "Redis server port",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_value",
@@ -230,34 +260,5 @@
       "name": "keys",
       "description": "List keys matching a pattern"
     }
-  ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "mcp-server-redis",
-      "command": "python",
-      "args": [
-        "src/server.py"
-      ],
-      "env": [
-        {
-          "name": "REDIS_HOST",
-          "description": "Redis server hostname",
-          "required": true
-        },
-        {
-          "name": "REDIS_PORT",
-          "description": "Redis server port",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/prajwalnayak7/mcp-server-redis",
-    "name": "prajwalnayak7/mcp-server-redis",
-    "subfolder": null,
-    "branch": null,
-    "commit": null
-  }
+  ]
 }

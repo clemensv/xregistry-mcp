@@ -1,8 +1,33 @@
 {
-  "name": "ihor-sokoliuk/mcp-searxng",
+  "repo_ref": "ihor-sokoliuk/mcp-searxng",
+  "name": "io.github.ihor-sokoliuk/mcp-searxng",
   "description": "An MCP server implementation that integrates the SearXNG API, providing web search capabilities.",
-  "mcpversion": "1.0",
-  "serverversion": "0.4.6",
+  "version_detail": {
+    "version": "0.4.6"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "mcp-searxng",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y"
+        ],
+        "environment_variables": [
+          {
+            "name": "SEARXNG_URL",
+            "description": "URL of the SearXNG instance",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "searxng_web_search",
@@ -67,32 +92,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "mcp-searxng",
-      "command": "mcp-searxng",
-      "args": [
-        "-y"
-      ],
-      "env": [
-        {
-          "name": "SEARXNG_URL",
-          "description": "URL of the SearXNG instance",
-          "required": false,
-          "default": "http://localhost:8080"
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/ihor-sokoliuk/mcp-searxng",
-    "name": "ihor-sokoliuk/mcp-searxng"
-  }
+  "resources": []
 }

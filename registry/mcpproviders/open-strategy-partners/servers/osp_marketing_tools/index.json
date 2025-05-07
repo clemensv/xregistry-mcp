@@ -1,8 +1,25 @@
 {
-  "name": "osp_marketing_tools",
+  "repo_ref": "open-strategy-partners/osp_marketing_tools",
+  "name": "io.github.open-strategy-partners/osp_marketing_tools",
   "description": "A comprehensive suite of tools for technical marketing content creation, optimization, and product positioning based on Open Strategy Partners' proven methodologies. This software is based on the Model Context Protocol (MCP) and is usable by any LLM client that supports MCP.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "osp-marketing-tools",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "health_check",
@@ -53,19 +70,5 @@
       "uritemplate": "osp://marketing-tools",
       "description": "Resource namespace for OSP marketing tools."
     }
-  ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "osp-marketing-tools",
-      "packageversion": "0.1.0",
-      "command": "python main.py",
-      "args": [],
-      "env": []
-    }
-  },
-  "repository": {
-    "url": "https://github.com/open-strategy-partners/osp_marketing_tools",
-    "name": "open-strategy-partners/osp_marketing_tools"
-  }
+  ]
 }

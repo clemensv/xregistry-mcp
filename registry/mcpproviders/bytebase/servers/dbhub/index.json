@@ -1,12 +1,59 @@
 {
-  "name": "DBHub",
+  "repo_ref": "bytebase/dbhub",
+  "name": "io.github.bytebase/dbhub",
   "description": "DBHub is a universal database gateway implementing the Model Context Protocol (MCP) server interface. This gateway allows MCP-compatible clients to connect to and explore different databases.",
-  "mcpversion": "unspecified",
-  "serverversion": "unspecified",
-  "repository": {
-    "url": "https://github.com/bytebase/dbhub",
-    "name": "bytebase/dbhub"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "bytebase/dbhub",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--transport",
+          "sse",
+          "--port",
+          "8080",
+          "--dsn",
+          "postgres://user:password@localhost:5432/dbname?sslmode=disable"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "generate_sql",
+      "description": "Generate SQL statements for the database",
+      "arguments": []
+    },
+    {
+      "name": "explain_db",
+      "description": "Explain database elements",
+      "arguments": []
+    }
+  ],
+  "tools": [
+    {
+      "name": "execute_sql",
+      "description": "Execute SQL command on the database",
+      "inputschema": {
+        "type": "object"
+      }
+    },
+    {
+      "name": "list_connectors",
+      "description": "List available database connectors",
+      "inputschema": {
+        "type": "object"
+      }
+    }
+  ],
   "resources": [
     {
       "name": "schemas",
@@ -44,55 +91,5 @@
       "description": "Details of a stored procedure",
       "mimetype": "application/json"
     }
-  ],
-  "tools": [
-    {
-      "name": "execute_sql",
-      "description": "Execute SQL command on the database",
-      "inputschema": {
-        "type": "object"
-      }
-    },
-    {
-      "name": "list_connectors",
-      "description": "List available database connectors",
-      "inputschema": {
-        "type": "object"
-      }
-    }
-  ],
-  "prompts": [
-    {
-      "name": "generate_sql",
-      "description": "Generate SQL statements for the database",
-      "arguments": []
-    },
-    {
-      "name": "explain_db",
-      "description": "Explain database elements",
-      "arguments": []
-    }
-  ],
-  "endpoints": {
-    "httplocal": {
-      "deployment": "container",
-      "port": 8080,
-      "host": "0.0.0.0",
-      "protocol": "http"
-    }
-  },
-  "deployment": {
-    "container": {
-      "image": "bytebase/dbhub",
-      "args": [
-        "--transport",
-        "sse",
-        "--port",
-        "8080",
-        "--dsn",
-        "postgres://user:password@localhost:5432/dbname?sslmode=disable"
-      ],
-      "env": []
-    }
-  }
+  ]
 }

@@ -1,12 +1,41 @@
 {
-  "name": "ramp-mcp",
+  "repo_ref": "ramp-public/ramp_mcp",
+  "name": "io.github.ramp-public/ramp_mcp",
   "description": "A Model Context Protocol server for retrieving and analyzing data or running tasks for Ramp using Developer API. Implements an ETL pipeline and ephemeral sqlite database in memory for analysis by an LLM.",
-  "mcpversion": "1.0",
-  "serverversion": "unspecified",
-  "repository": {
-    "url": "https://github.com/ramp-public/ramp_mcp",
-    "name": "ramp-public/ramp_mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "ramp-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-s",
+          "<COMMA-SEPARATED-SCOPES>"
+        ],
+        "environment_variables": [
+          {
+            "name": "RAMP_CLIENT_ID",
+            "required": true
+          },
+          {
+            "name": "RAMP_CLIENT_SECRET",
+            "required": true
+          },
+          {
+            "name": "RAMP_ENV",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "process_data",
@@ -135,34 +164,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "uv",
-      "package": "ramp-mcp",
-      "command": "ramp-mcp",
-      "args": [
-        "-s",
-        "<COMMA-SEPARATED-SCOPES>"
-      ],
-      "env": [
-        {
-          "name": "RAMP_CLIENT_ID",
-          "required": true
-        },
-        {
-          "name": "RAMP_CLIENT_SECRET",
-          "required": true
-        },
-        {
-          "name": "RAMP_ENV",
-          "required": false
-        }
-      ]
-    }
-  }
+  "resources": []
 }

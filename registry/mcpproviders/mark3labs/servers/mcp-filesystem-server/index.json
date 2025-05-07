@@ -1,8 +1,25 @@
 {
-  "name": "Filesystem MCP Server",
+  "repo_ref": "mark3labs/mcp-filesystem-server",
+  "name": "io.github.mark3labs/mcp-filesystem-server",
   "description": "Go server implementing Model Context Protocol (MCP) for filesystem operations.",
-  "mcpversion": "unspecified",
-  "serverversion": "unspecified",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "go",
+      "package_name": "github.com/mark3labs/mcp-filesystem-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "read_file",
@@ -155,18 +172,5 @@
       "uritemplate": "file://system",
       "description": "File system operations interface"
     }
-  ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "go",
-      "package": "github.com/mark3labs/mcp-filesystem-server",
-      "command": "mcp-filesystem-server",
-      "args": [],
-      "env": []
-    }
-  },
-  "repository": {
-    "url": "https://github.com/mark3labs/mcp-filesystem-server",
-    "name": "mark3labs/mcp-filesystem-server"
-  }
+  ]
 }

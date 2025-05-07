@@ -1,8 +1,33 @@
 {
-  "name": "webflow-mcp-server",
+  "repo_ref": "kapilduraphe/webflow-mcp-server",
+  "name": "io.github.kapilduraphe/webflow-mcp-server",
   "description": "This MCP server enables Claude to interact with Webflow's APIs.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@kapilduraphe/webflow-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "/ABSOLUTE/PATH/TO/YOUR/build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "WEBFLOW_API_TOKEN",
+            "description": "Webflow API token environment variable",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_site",
@@ -30,30 +55,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@kapilduraphe/webflow-mcp-server",
-      "command": "node",
-      "args": [
-        "/ABSOLUTE/PATH/TO/YOUR/build/index.js"
-      ],
-      "env": [
-        {
-          "name": "WEBFLOW_API_TOKEN",
-          "description": "Webflow API token environment variable",
-          "required": true
-        }
-      ]
-    }
-  },
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "repository": {
-    "url": "https://github.com/kapilduraphe/webflow-mcp-server",
-    "name": "kapilduraphe/webflow-mcp-server"
-  }
+  "resources": []
 }

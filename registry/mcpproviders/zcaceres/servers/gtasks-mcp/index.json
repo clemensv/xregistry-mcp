@@ -1,8 +1,27 @@
 {
-  "name": "example-servers/gtasks",
+  "repo_ref": "zcaceres/gtasks-mcp",
+  "name": "io.github.zcaceres/gtasks-mcp",
   "description": "This MCP server integrates with Google Tasks to allow listing, reading, searching, creating, updating, and deleting tasks.",
-  "mcpversion": "unspecified",
-  "serverversion": "0.1.0",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@zcaceres/gtasks",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "dist/index.js"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "search",
@@ -151,26 +170,5 @@
       "description": "Represents individual tasks in Google Tasks. Supports reading task details including title, status, due date, notes, and other metadata. Can be listed, read, created, updated, and deleted using the provided tools.",
       "mimetype": "text/plain"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@zcaceres/gtasks",
-      "packageversion": "0.1.0",
-      "command": "node",
-      "args": [
-        "dist/index.js"
-      ],
-      "env": []
-    }
-  },
-  "repository": {
-    "url": "https://github.com/zcaceres/gtasks-mcp",
-    "name": "zcaceres/gtasks-mcp"
-  }
+  ]
 }

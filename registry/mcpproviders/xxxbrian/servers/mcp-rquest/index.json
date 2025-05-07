@@ -1,12 +1,27 @@
 {
-  "name": "mcp-rquest",
+  "repo_ref": "xxxbrian/mcp-rquest",
+  "name": "io.github.xxxbrian/mcp-rquest",
   "description": "A Model Context Protocol (MCP) server that provides advanced HTTP request capabilities for Claude and other LLMs. Built on rquest, this server enables realistic browser emulation with accurate TLS/JA3/JA4 fingerprints, allowing models to interact with websites more naturally and bypass common anti-bot measures. It also supports converting PDF and HTML documents to Markdown for easier processing by LLMs.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/xxxbrian/mcp-rquest",
-    "name": "xxxbrian/mcp-rquest"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uvx",
+      "package_name": "mcp-rquest",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "mcp-rquest"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "http_get",
@@ -93,14 +108,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "uvx",
-      "package": "mcp-rquest",
-      "command": "uvx",
-      "args": [
-        "mcp-rquest"
-      ]
-    }
-  }
+  "resources": []
 }

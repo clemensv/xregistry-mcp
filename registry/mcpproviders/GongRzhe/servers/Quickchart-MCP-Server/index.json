@@ -1,8 +1,27 @@
 {
-  "name": "quickchart-server",
+  "repo_ref": "GongRzhe/Quickchart-MCP-Server",
+  "name": "io.github.GongRzhe/Quickchart-MCP-Server",
   "description": "A Model Context Protocol server for generating charts using QuickChart.io",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@gongrzhe/quickchart-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "/path/to/quickchart-server/build/index.js"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "generate_chart",
@@ -101,24 +120,6 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@gongrzhe/quickchart-mcp-server",
-      "command": "node",
-      "args": [
-        "/path/to/quickchart-server/build/index.js"
-      ]
-    }
-  },
-  "documentation": "https://quickchart.io/documentation/",
-  "repository": {
-    "url": "https://github.com/GongRzhe/Quickchart-MCP-Server",
-    "name": "GongRzhe/Quickchart-MCP-Server"
-  }
+  "resources": [],
+  "documentation": "https://quickchart.io/documentation/"
 }

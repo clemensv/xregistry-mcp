@@ -1,12 +1,13 @@
 {
-  "name": "Virtual Traveling bot environment for MCP",
+  "repo_ref": "mfukushim/map-traveler-mcp",
+  "name": "io.github.mfukushim/map-traveler-mcp",
   "description": "This is an MCP server that creates an environment for an avatar to virtually travel on Google Maps. From an MCP client such as Claude Desktop, you can give instructions to the avatar and report on the progress of its journey with photos.",
-  "mcpversion": "unknown",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/mfukushim/map-traveler-mcp",
-    "name": "mfukushim/map-traveler-mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [],
+  "prompts": [],
   "tools": [
     {
       "name": "get_traveler_view_info",
@@ -239,7 +240,5 @@
       "description": "Has five custom prompt samples. When you import a prompt with Claude Desktop, Claude will act as a travel",
       "uritemplate": "/prompts/custom_samples"
     }
-  ],
-  "deployment": {},
-  "endpoints": {}
+  ]
 }

@@ -1,8 +1,67 @@
 {
-  "name": "kibela-mcp-server",
+  "repo_ref": "kiwamizamurai/mcp-kibela-server",
+  "name": "io.github.kiwamizamurai/mcp-kibela-server",
   "description": "MCP server implementation for Kibela API integration, enabling LLMs to interact with Kibela content.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "ghcr.io/kiwamizamurai/mcp-kibela-server:latest",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "-i",
+          "--rm",
+          "-e",
+          "KIBELA_TEAM",
+          "-e",
+          "KIBELA_TOKEN",
+          "ghcr.io/kiwamizamurai/mcp-kibela-server:latest"
+        ],
+        "environment_variables": [
+          {
+            "name": "KIBELA_TEAM",
+            "description": "Your Kibela team name",
+            "required": true
+          },
+          {
+            "name": "KIBELA_TOKEN",
+            "description": "Your Kibela API token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "npm",
+      "package_name": "@kiwamizamurai/mcp-kibela-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "KIBELA_TEAM",
+            "description": "Your Kibela team name",
+            "required": true
+          },
+          {
+            "name": "KIBELA_TOKEN",
+            "description": "Your Kibela API token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "kibela_search_notes",
@@ -217,53 +276,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@kiwamizamurai/mcp-kibela-server",
-      "command": "node",
-      "args": [],
-      "env": [
-        {
-          "name": "KIBELA_TEAM",
-          "description": "Your Kibela team name",
-          "required": true
-        },
-        {
-          "name": "KIBELA_TOKEN",
-          "description": "Your Kibela API token",
-          "required": true
-        }
-      ]
-    },
-    "container": {
-      "image": "ghcr.io/kiwamizamurai/mcp-kibela-server:latest",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-e",
-        "KIBELA_TEAM",
-        "-e",
-        "KIBELA_TOKEN",
-        "ghcr.io/kiwamizamurai/mcp-kibela-server:latest"
-      ],
-      "env": [
-        {
-          "name": "KIBELA_TEAM",
-          "description": "Your Kibela team name",
-          "required": true
-        },
-        {
-          "name": "KIBELA_TOKEN",
-          "description": "Your Kibela API token",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/kiwamizamurai/mcp-kibela-server",
-    "name": "kiwamizamurai/mcp-kibela-server"
-  }
+  "resources": []
 }

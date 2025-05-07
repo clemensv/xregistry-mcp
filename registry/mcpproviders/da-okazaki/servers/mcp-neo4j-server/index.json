@@ -1,12 +1,43 @@
 {
-  "name": "mcp-neo4j-server",
+  "repo_ref": "da-okazaki/mcp-neo4j-server",
+  "name": "io.github.da-okazaki/mcp-neo4j-server",
   "description": "An MCP server that provides integration between Neo4j graph database and Claude Desktop, enabling graph database operations through natural language interactions.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
-  "repository": {
-    "url": "https://github.com/da-okazaki/mcp-neo4j-server",
-    "name": "da-okazaki/mcp-neo4j-server"
+  "version_detail": {
+    "version": "1.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@alanse/mcp-neo4j-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "@alanse/mcp-neo4j-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "NEO4J_URI",
+            "description": "Neo4j database URI (default: bolt://localhost:7687)",
+            "required": false
+          },
+          {
+            "name": "NEO4J_USERNAME",
+            "description": "Neo4j username (default: neo4j)",
+            "required": false
+          },
+          {
+            "name": "NEO4J_PASSWORD",
+            "description": "Neo4j password (required)",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "execute_query",
@@ -83,36 +114,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@alanse/mcp-neo4j-server",
-      "command": "npx",
-      "args": [
-        "@alanse/mcp-neo4j-server"
-      ],
-      "env": [
-        {
-          "name": "NEO4J_URI",
-          "description": "Neo4j database URI (default: bolt://localhost:7687)",
-          "required": false
-        },
-        {
-          "name": "NEO4J_USERNAME",
-          "description": "Neo4j username (default: neo4j)",
-          "required": false
-        },
-        {
-          "name": "NEO4J_PASSWORD",
-          "description": "Neo4j password (required)",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

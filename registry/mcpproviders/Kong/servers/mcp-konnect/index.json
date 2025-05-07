@@ -1,12 +1,38 @@
 {
-  "name": "kong-konnect-mcp",
+  "repo_ref": "Kong/mcp-konnect",
+  "name": "io.github.Kong/mcp-konnect",
   "description": "Tools for managing and analyzing Kong Konnect API Gateway configurations and traffic",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
-  "repository": {
-    "url": "https://github.com/Kong/mcp-konnect",
-    "name": "Kong/mcp-konnect"
+  "version_detail": {
+    "version": "1.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "dist/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "KONNECT_ACCESS_TOKEN",
+            "description": "Your Kong Konnect API key",
+            "required": true
+          },
+          {
+            "name": "KONNECT_REGION",
+            "description": "The API region to use (defaults to US)",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "query_api_requests",
@@ -256,31 +282,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@modelcontextprotocol/sdk",
-      "command": "node",
-      "args": [
-        "dist/index.js"
-      ],
-      "env": [
-        {
-          "name": "KONNECT_ACCESS_TOKEN",
-          "description": "Your Kong Konnect API key",
-          "required": true
-        },
-        {
-          "name": "KONNECT_REGION",
-          "description": "The API region to use (defaults to US)",
-          "required": false
-        }
-      ]
-    }
-  }
+  "resources": []
 }

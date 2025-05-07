@@ -1,12 +1,51 @@
 {
-  "name": "x_mcp",
+  "repo_ref": "vidhupv/x-mcp",
+  "name": "io.github.vidhupv/x-mcp",
   "description": "An MCP server to create, manage and publish X/Twitter posts directly through Claude chat.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/vidhupv/x-mcp",
-    "name": "vidhupv/x-mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "x-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/path/to/x-mcp",
+          "run",
+          "x-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "TWITTER_API_KEY",
+            "description": "Twitter API key",
+            "required": true
+          },
+          {
+            "name": "TWITTER_API_SECRET",
+            "description": "Twitter API secret",
+            "required": true
+          },
+          {
+            "name": "TWITTER_ACCESS_TOKEN",
+            "description": "Twitter access token",
+            "required": true
+          },
+          {
+            "name": "TWITTER_ACCESS_TOKEN_SECRET",
+            "description": "Twitter access token secret",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "create_draft_tweet",
@@ -85,44 +124,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "x-mcp",
-      "command": "uv",
-      "args": [
-        "--directory",
-        "/path/to/x-mcp",
-        "run",
-        "x-mcp"
-      ],
-      "env": [
-        {
-          "name": "TWITTER_API_KEY",
-          "description": "Twitter API key",
-          "required": true
-        },
-        {
-          "name": "TWITTER_API_SECRET",
-          "description": "Twitter API secret",
-          "required": true
-        },
-        {
-          "name": "TWITTER_ACCESS_TOKEN",
-          "description": "Twitter access token",
-          "required": true
-        },
-        {
-          "name": "TWITTER_ACCESS_TOKEN_SECRET",
-          "description": "Twitter access token secret",
-          "required": true
-        }
-      ]
-    }
-  },
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  }
+  "resources": []
 }

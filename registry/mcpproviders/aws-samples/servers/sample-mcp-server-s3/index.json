@@ -1,8 +1,30 @@
 {
-  "name": "s3_service",
+  "repo_ref": "aws-samples/sample-mcp-server-s3",
+  "name": "io.github.aws-samples/sample-mcp-server-s3",
   "description": "An MCP server implementation for retrieving data such as PDF's from S3.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "s3-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/Users/user/generative_ai/model_context_protocol/s3-mcp-server",
+          "run",
+          "s3-mcp-server"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "ListBuckets",
@@ -103,29 +125,5 @@
       "uritemplate": "s3://{bucket}/{object_key}",
       "mimetype": "application/pdf"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "uv",
-      "package": "s3-mcp-server",
-      "command": "uv",
-      "args": [
-        "--directory",
-        "/Users/user/generative_ai/model_context_protocol/s3-mcp-server",
-        "run",
-        "s3-mcp-server"
-      ],
-      "env": []
-    }
-  },
-  "repository": {
-    "url": "https://github.com/aws-samples/sample-mcp-server-s3",
-    "name": "aws-samples/sample-mcp-server-s3"
-  },
-  "docs": "https://github.com/modelcontextprotocol/s3-mcp-server#readme"
+  ]
 }

@@ -1,8 +1,28 @@
 {
-  "name": "airbnb",
+  "repo_ref": "openbnb-org/mcp-server-airbnb",
+  "name": "io.github.openbnb-org/mcp-server-airbnb",
   "description": "MCP Server for searching Airbnb and get listing details.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@openbnb/mcp-server-airbnb",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@openbnb/mcp-server-airbnb"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "airbnb_search",
@@ -109,24 +129,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@openbnb/mcp-server-airbnb",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@openbnb/mcp-server-airbnb"
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/openbnb-org/mcp-server-airbnb",
-    "name": "openbnb-org/mcp-server-airbnb"
-  }
+  "resources": []
 }

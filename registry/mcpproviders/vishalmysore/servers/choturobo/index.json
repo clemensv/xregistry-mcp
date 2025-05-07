@@ -1,8 +1,65 @@
 {
-  "name": "ChotuRoboServer",
+  "repo_ref": "vishalmysore/choturobo",
+  "name": "io.github.vishalmysore/choturobo",
   "description": "Arduino-based robotics server integrating AI using the MCP (Model Context Protocol) framework from Claude AI by Anthropic. Controls hardware components like LEDs, motors, servos, fans, sensors via MCP tools and prompts.",
-  "mcpversion": "unknown",
-  "serverversion": "1.0.0",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "server.js"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "move-chotu",
+      "arguments": [
+        {
+          "name": "steps"
+        }
+      ],
+      "description": "Prompt to move Chotu a specified number of steps."
+    },
+    {
+      "name": "start-chotu",
+      "arguments": [],
+      "description": "Prompt to initialize Chotu and prepare for operation."
+    },
+    {
+      "name": "stop-chotu",
+      "arguments": [],
+      "description": "Prompt to stop Chotu safely and shut down operations."
+    },
+    {
+      "name": "turn-chotu",
+      "arguments": [
+        {
+          "name": "direction"
+        }
+      ],
+      "description": "Prompt to turn Chotu left or right."
+    },
+    {
+      "name": "set-chotu-speed",
+      "arguments": [
+        {
+          "name": "speed"
+        }
+      ],
+      "description": "Prompt to set Chotu's speed."
+    }
+  ],
   "tools": [
     {
       "name": "chotuBlinkEyes",
@@ -173,63 +230,5 @@
       "description": "Make Chotu sing a given message."
     }
   ],
-  "prompts": [
-    {
-      "name": "move-chotu",
-      "arguments": [
-        {
-          "name": "steps"
-        }
-      ],
-      "description": "Prompt to move Chotu a specified number of steps."
-    },
-    {
-      "name": "start-chotu",
-      "arguments": [],
-      "description": "Prompt to initialize Chotu and prepare for operation."
-    },
-    {
-      "name": "stop-chotu",
-      "arguments": [],
-      "description": "Prompt to stop Chotu safely and shut down operations."
-    },
-    {
-      "name": "turn-chotu",
-      "arguments": [
-        {
-          "name": "direction"
-        }
-      ],
-      "description": "Prompt to turn Chotu left or right."
-    },
-    {
-      "name": "set-chotu-speed",
-      "arguments": [
-        {
-          "name": "speed"
-        }
-      ],
-      "description": "Prompt to set Chotu's speed."
-    }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@modelcontextprotocol/sdk",
-      "command": "node",
-      "args": [
-        "server.js"
-      ],
-      "env": []
-    }
-  },
-  "repository": {
-    "url": "https://github.com/vishalmysore/choturobo",
-    "name": "vishalmysore/choturobo"
-  }
+  "resources": []
 }

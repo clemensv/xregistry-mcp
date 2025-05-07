@@ -1,8 +1,28 @@
 {
-  "name": "iterm-mcp",
+  "repo_ref": "ferrislucas/iterm-mcp",
+  "name": "io.github.ferrislucas/iterm-mcp",
   "description": "A Model Context Protocol server that provides access to your iTerm session.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "iterm-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "iterm-mcp"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "write_to_terminal",
@@ -53,26 +73,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "iterm-mcp",
-      "packageversion": "0.1.0",
-      "command": "npx",
-      "args": [
-        "-y",
-        "iterm-mcp"
-      ],
-      "env": []
-    }
-  },
-  "repository": {
-    "url": "https://github.com/ferrislucas/iterm-mcp",
-    "name": "ferrislucas/iterm-mcp"
-  }
+  "resources": []
 }

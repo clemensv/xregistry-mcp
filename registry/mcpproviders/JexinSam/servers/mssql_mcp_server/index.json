@@ -1,12 +1,61 @@
 {
-  "name": "MSSQL MCP Server",
+  "repo_ref": "JexinSam/mssql_mcp_server",
+  "name": "io.github.JexinSam/mssql_mcp_server",
   "description": "MSSQL MCP Server is a Model Context Protocol (MCP) server that enables secure and structured interaction with Microsoft SQL Server (MSSQL) databases. It allows AI assistants to list available tables, read table contents, and execute SQL queries with controlled access, ensuring safer database exploration, strict permission enforcement, and logging of database interactions.",
-  "mcpversion": "1.0",
-  "serverversion": "unspecified",
-  "repository": {
-    "url": "https://github.com/JexinSam/mssql_mcp_server",
-    "name": "JexinSam/mssql_mcp_server"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mssql-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "MSSQL_DRIVER",
+            "description": "MSSQL driver environment variable",
+            "required": true
+          },
+          {
+            "name": "MSSQL_HOST",
+            "description": "MSSQL host environment variable",
+            "required": true
+          },
+          {
+            "name": "MSSQL_USER",
+            "description": "MSSQL user environment variable",
+            "required": true
+          },
+          {
+            "name": "MSSQL_PASSWORD",
+            "description": "MSSQL password environment variable",
+            "required": true
+          },
+          {
+            "name": "MSSQL_DATABASE",
+            "description": "MSSQL database environment variable",
+            "required": true
+          },
+          {
+            "name": "TrustServerCertificate",
+            "description": "Optional TrustServerCertificate environment variable",
+            "required": false
+          },
+          {
+            "name": "Trusted_Connection",
+            "description": "Optional Trusted_Connection environment variable",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "execute_sql",
@@ -32,56 +81,5 @@
       "description": "Data in table: {table}",
       "mimetype": "text/plain"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "mssql-mcp-server",
-      "command": "python -m mssql_mcp_server",
-      "args": [],
-      "env": [
-        {
-          "name": "MSSQL_DRIVER",
-          "description": "MSSQL driver environment variable",
-          "required": true
-        },
-        {
-          "name": "MSSQL_HOST",
-          "description": "MSSQL host environment variable",
-          "required": true
-        },
-        {
-          "name": "MSSQL_USER",
-          "description": "MSSQL user environment variable",
-          "required": true
-        },
-        {
-          "name": "MSSQL_PASSWORD",
-          "description": "MSSQL password environment variable",
-          "required": true
-        },
-        {
-          "name": "MSSQL_DATABASE",
-          "description": "MSSQL database environment variable",
-          "required": true
-        },
-        {
-          "name": "TrustServerCertificate",
-          "description": "Optional TrustServerCertificate environment variable",
-          "required": false
-        },
-        {
-          "name": "Trusted_Connection",
-          "description": "Optional Trusted_Connection environment variable",
-          "required": false
-        }
-      ]
-    }
-  },
-  "docs": "https://github.com/JexinSam/mssql_mcp_server/blob/main/README.md"
+  ]
 }

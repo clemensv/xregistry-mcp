@@ -1,12 +1,36 @@
 {
-  "name": "Azure DevOps",
+  "repo_ref": "Vortiago/mcp-azure-devops",
+  "name": "io.github.Vortiago/mcp-azure-devops",
   "description": "A Model Context Protocol (MCP) server enabling AI assistants to interact with Azure DevOps services. This server provides a bridge between natural language interactions and the Azure DevOps REST API, supporting work item management, project management, and team management features.",
-  "mcpversion": "1.0",
-  "serverversion": "unspecified",
-  "repository": {
-    "url": "https://github.com/Vortiago/mcp-azure-devops",
-    "name": "Vortiago/mcp-azure-devops"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcp-azure-devops",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "AZURE_DEVOPS_PAT",
+            "description": "Personal Access Token for Azure DevOps API access",
+            "required": true
+          },
+          {
+            "name": "AZURE_DEVOPS_ORGANIZATION_URL",
+            "description": "Full URL to the Azure DevOps organization",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "query_work_items",
@@ -48,30 +72,5 @@
       "description": "List of teams within the organization.",
       "mimetype": "application/json"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "mcp-azure-devops",
-      "command": "mcp dev src/mcp_azure_devops/server.py",
-      "args": [],
-      "env": [
-        {
-          "name": "AZURE_DEVOPS_PAT",
-          "description": "Personal Access Token for Azure DevOps API access",
-          "required": true
-        },
-        {
-          "name": "AZURE_DEVOPS_ORGANIZATION_URL",
-          "description": "Full URL to the Azure DevOps organization",
-          "required": true
-        }
-      ]
-    }
-  }
+  ]
 }

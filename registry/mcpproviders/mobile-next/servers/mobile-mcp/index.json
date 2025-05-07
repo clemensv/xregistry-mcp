@@ -1,13 +1,28 @@
 {
-  "name": "mobile-mcp",
+  "repo_ref": "mobile-next/mobile-mcp",
+  "name": "io.github.mobile-next/mobile-mcp",
   "description": "This is a Model Context Protocol (MCP) server that enables scalable mobile automation, development through a platform-agnostic interface, eliminating the need for distinct iOS or Android knowledge. You can run it on emulators, simulators, and physical devices (iOS and Android). This server allows Agents and LLMs to interact with native iOS/Android applications and devices through structured accessibility snapshots or coordinate-based taps based on screenshots.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/mobile-next/mobile-mcp",
-    "name": "mobile-next/mobile-mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
-  "docs": "https://github.com/mobile-next/mobile-mcp/wiki",
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@mobilenext/mobile-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@mobilenext/mobile-mcp@latest"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "mobile_list_available_devices",
@@ -268,17 +283,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {},
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@mobilenext/mobile-mcp",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@mobilenext/mobile-mcp@latest"
-      ]
-    }
-  }
+  "resources": []
 }

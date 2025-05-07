@@ -1,40 +1,104 @@
 {
-  "name": "Hass-MCP",
+  "repo_ref": "voska/hass-mcp",
+  "name": "io.github.voska/hass-mcp",
   "description": "A Model Context Protocol (MCP) server for Home Assistant integration with Claude and other LLMs. Enables AI assistants to query device states, control entities, get summaries, troubleshoot automations, search entities, and create guided conversations.",
-  "mcpversion": "1.0",
-  "serverversion": "latest",
-  "repository": {
-    "url": "https://github.com/voska/hass-mcp",
-    "name": "voska/hass-mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
-  "deployment": {
-    "container": {
-      "image": "voska/hass-mcp:latest",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-e",
-        "HA_URL",
-        "-e",
-        "HA_TOKEN",
-        "voska/hass-mcp"
-      ],
-      "env": [
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "voska/hass-mcp:latest",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "-i",
+          "--rm",
+          "-e",
+          "HA_URL",
+          "-e",
+          "HA_TOKEN",
+          "voska/hass-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "HA_URL",
+            "description": "URL of the Home Assistant instance",
+            "required": true
+          },
+          {
+            "name": "HA_TOKEN",
+            "description": "Home Assistant Long-Lived Access Token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "create_automation",
+      "description": "Guide a user through creating a Home Assistant automation",
+      "arguments": [
         {
-          "name": "HA_URL",
-          "description": "URL of the Home Assistant instance",
-          "required": true,
-          "default": "http://homeassistant.local:8123"
+          "name": "trigger_type",
+          "description": "The type of trigger for the automation",
+          "required": true
         },
         {
-          "name": "HA_TOKEN",
-          "description": "Home Assistant Long-Lived Access Token",
+          "name": "entity_id",
+          "description": "Optional entity to use as the trigger source",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "debug_automation",
+      "description": "Help a user troubleshoot an automation that isn't working",
+      "arguments": [
+        {
+          "name": "automation_id",
+          "description": "The entity ID of the automation to troubleshoot",
           "required": true
         }
       ]
+    },
+    {
+      "name": "troubleshoot_entity",
+      "description": "Guide a user through troubleshooting issues with an entity",
+      "arguments": [
+        {
+          "name": "entity_id",
+          "description": "The entity ID having issues",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "routine_optimizer",
+      "description": "Analyze usage patterns and suggest optimized routines based on actual behavior",
+      "arguments": []
+    },
+    {
+      "name": "automation_health_check",
+      "description": "Review all automations, find conflicts, redundancies, or improvement opportunities",
+      "arguments": []
+    },
+    {
+      "name": "entity_naming_consistency",
+      "description": "Audit entity names and suggest standardization improvements",
+      "arguments": []
+    },
+    {
+      "name": "dashboard_layout_generator",
+      "description": "Create optimized dashboards based on user preferences and usage patterns",
+      "arguments": []
     }
-  },
+  ],
   "tools": [
     {
       "name": "get_version",
@@ -282,70 +346,5 @@
       "description": "Get a list of entities for a specific domain as a resource",
       "mimetype": "text/markdown"
     }
-  ],
-  "prompts": [
-    {
-      "name": "create_automation",
-      "description": "Guide a user through creating a Home Assistant automation",
-      "arguments": [
-        {
-          "name": "trigger_type",
-          "description": "The type of trigger for the automation",
-          "required": true
-        },
-        {
-          "name": "entity_id",
-          "description": "Optional entity to use as the trigger source",
-          "required": false
-        }
-      ]
-    },
-    {
-      "name": "debug_automation",
-      "description": "Help a user troubleshoot an automation that isn't working",
-      "arguments": [
-        {
-          "name": "automation_id",
-          "description": "The entity ID of the automation to troubleshoot",
-          "required": true
-        }
-      ]
-    },
-    {
-      "name": "troubleshoot_entity",
-      "description": "Guide a user through troubleshooting issues with an entity",
-      "arguments": [
-        {
-          "name": "entity_id",
-          "description": "The entity ID having issues",
-          "required": true
-        }
-      ]
-    },
-    {
-      "name": "routine_optimizer",
-      "description": "Analyze usage patterns and suggest optimized routines based on actual behavior",
-      "arguments": []
-    },
-    {
-      "name": "automation_health_check",
-      "description": "Review all automations, find conflicts, redundancies, or improvement opportunities",
-      "arguments": []
-    },
-    {
-      "name": "entity_naming_consistency",
-      "description": "Audit entity names and suggest standardization improvements",
-      "arguments": []
-    },
-    {
-      "name": "dashboard_layout_generator",
-      "description": "Create optimized dashboards based on user preferences and usage patterns",
-      "arguments": []
-    }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  }
+  ]
 }

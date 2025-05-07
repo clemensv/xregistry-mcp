@@ -1,13 +1,46 @@
 {
-  "name": "Framelink Figma MCP Server",
+  "repo_ref": "GLips/Figma-Context-MCP",
+  "name": "io.github.GLips/Figma-Context-MCP",
   "description": "Give your coding agent access to your Figma data. Implement designs in any framework in one-shot. This MCP server is specifically designed for use with Cursor. It simplifies and translates Figma API responses to provide only the most relevant layout and styling information to the model, improving AI accuracy and relevance.",
-  "mcpversion": "1.0",
-  "serverversion": "0.2.1",
-  "documentation": "https://www.framelink.ai/docs/quickstart?utm_source=github&utm_medium=referral&utm_campaign=readme",
-  "repository": {
-    "url": "https://github.com/GLips/Figma-Context-MCP",
-    "name": "GLips/Figma-Context-MCP"
+  "version_detail": {
+    "version": "0.2.1"
   },
+  "remotes": [
+    {
+      "url": "http://localhost:PORT/mcp",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "figma-developer-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "figma-developer-mcp",
+          "--figma-api-key=YOUR-KEY",
+          "--stdio"
+        ],
+        "environment_variables": [
+          {
+            "name": "FIGMA_API_KEY",
+            "description": "Figma API access token",
+            "required": true
+          },
+          {
+            "name": "PORT",
+            "description": "Port number for HTTP server",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_figma_data",
@@ -81,41 +114,6 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    },
-    "http": {
-      "uri": "http://localhost:PORT/mcp",
-      "authorization": {
-        "type": "none",
-        "required": false
-      }
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "figma-developer-mcp",
-      "command": "npx",
-      "args": [
-        "-y",
-        "figma-developer-mcp",
-        "--figma-api-key=YOUR-KEY",
-        "--stdio"
-      ],
-      "env": [
-        {
-          "name": "FIGMA_API_KEY",
-          "description": "Figma API access token",
-          "required": true
-        },
-        {
-          "name": "PORT",
-          "description": "Port number for HTTP server",
-          "required": false
-        }
-      ]
-    }
-  }
+  "resources": [],
+  "documentation": "https://www.framelink.ai/docs/quickstart?utm_source=github&utm_medium=referral&utm_campaign=readme"
 }

@@ -1,13 +1,60 @@
 {
-  "name": "IoTDB MCP Server",
+  "repo_ref": "apache/iotdb-mcp-server",
+  "name": "io.github.apache/iotdb-mcp-server",
   "description": "A Model Context Protocol (MCP) server implementation that provides database interaction and business intelligence capabilities through IoTDB. This server enables running SQL queries.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/apache/iotdb-mcp-server",
-    "name": "apache/iotdb-mcp-server"
+  "version_detail": {
+    "version": "0.0.0"
   },
-  "resources": [],
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python-uv",
+      "package_name": "iotdb-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "YOUR_REPO_PATH/src/iotdb_mcp_server",
+          "run",
+          "server.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "IOTDB_HOST",
+            "description": "Host address of the IoTDB server",
+            "required": true
+          },
+          {
+            "name": "IOTDB_PORT",
+            "description": "Port number of the IoTDB server",
+            "required": true
+          },
+          {
+            "name": "IOTDB_USER",
+            "description": "Username for IoTDB authentication",
+            "required": true
+          },
+          {
+            "name": "IOTDB_PASSWORD",
+            "description": "Password for IoTDB authentication",
+            "required": true
+          },
+          {
+            "name": "IOTDB_DATABASE",
+            "description": "Database name to connect to",
+            "required": true
+          },
+          {
+            "name": "IOTDB_SQL_DIALECT",
+            "description": "SQL dialect to use: 'tree' or 'table'",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
   "prompts": [],
   "tools": [
     {
@@ -84,57 +131,5 @@
       }
     }
   ],
-  "endpoints": {},
-  "deployment": {
-    "sandbox": {
-      "runtime": "python-uv",
-      "package": "iotdb-mcp-server",
-      "packageversion": "unknown",
-      "command": "uv",
-      "args": [
-        "--directory",
-        "YOUR_REPO_PATH/src/iotdb_mcp_server",
-        "run",
-        "server.py"
-      ],
-      "env": [
-        {
-          "name": "IOTDB_HOST",
-          "description": "Host address of the IoTDB server",
-          "required": true,
-          "default": "127.0.0.1"
-        },
-        {
-          "name": "IOTDB_PORT",
-          "description": "Port number of the IoTDB server",
-          "required": true,
-          "default": "6667"
-        },
-        {
-          "name": "IOTDB_USER",
-          "description": "Username for IoTDB authentication",
-          "required": true,
-          "default": "root"
-        },
-        {
-          "name": "IOTDB_PASSWORD",
-          "description": "Password for IoTDB authentication",
-          "required": true,
-          "default": "root"
-        },
-        {
-          "name": "IOTDB_DATABASE",
-          "description": "Database name to connect to",
-          "required": true,
-          "default": "test"
-        },
-        {
-          "name": "IOTDB_SQL_DIALECT",
-          "description": "SQL dialect to use: 'tree' or 'table'",
-          "required": true,
-          "default": "table"
-        }
-      ]
-    }
-  }
+  "resources": []
 }

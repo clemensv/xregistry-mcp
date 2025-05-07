@@ -1,12 +1,38 @@
 {
-  "name": "flightradar24-server",
+  "repo_ref": "sunsetcoder/flightradar24-mcp-server",
+  "name": "io.github.sunsetcoder/flightradar24-mcp-server",
   "description": "A Claude Desktop MCP server that helps you track flights in real-time using Flightradar24 data. Perfect for aviation enthusiasts, travel planners, or anyone curious about flights overhead!",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
-  "repository": {
-    "url": "https://github.com/sunsetcoder/flightradar24-mcp-server",
-    "name": "sunsetcoder/flightradar24-mcp-server"
+  "version_detail": {
+    "version": "1.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "/Users/<username>/<FULL_PATH...>/flightradar24-mcp-server/dist/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "FR24_API_KEY",
+            "description": "Flightradar24 API key",
+            "required": true
+          },
+          {
+            "name": "FR24_API_URL",
+            "description": "Flightradar24 API base URL",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_flight_positions",
@@ -51,31 +77,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@modelcontextprotocol/sdk",
-      "command": "node",
-      "args": [
-        "/Users/<username>/<FULL_PATH...>/flightradar24-mcp-server/dist/index.js"
-      ],
-      "env": [
-        {
-          "name": "FR24_API_KEY",
-          "description": "Flightradar24 API key",
-          "required": true
-        },
-        {
-          "name": "FR24_API_URL",
-          "description": "Flightradar24 API base URL",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

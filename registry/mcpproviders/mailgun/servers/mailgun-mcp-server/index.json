@@ -1,34 +1,32 @@
 {
-  "name": "Mailgun MCP Server",
+  "repo_ref": "mailgun/mailgun-mcp-server",
+  "name": "io.github.mailgun/mailgun-mcp-server",
   "description": "A Model Context Protocol (MCP) server implementation for Mailgun, enabling MCP-compatible AI clients like Claude Desktop to interact with the service.",
-  "mcpversion": "unknown",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/mailgun/mailgun-mcp-server",
-    "name": "mailgun/mailgun-mcp-server"
+  "version_detail": {
+    "version": "0.0.0"
   },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "mailgun-mcp-server",
-      "command": "node",
-      "args": [
-        "src/mailgun-mcp.js"
-      ],
-      "env": [
-        {
-          "name": "MAILGUN_API_KEY",
-          "description": "API key for Mailgun service",
-          "required": true
-        }
-      ]
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "mailgun-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "src/mailgun-mcp.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "MAILGUN_API_KEY",
+            "description": "API key for Mailgun service",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
     }
-  },
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
+  ],
   "prompts": [
     {
       "name": "send_email",
@@ -51,5 +49,7 @@
       "description": "Fetch and visualize email delivery statistics for the past week.",
       "arguments": []
     }
-  ]
+  ],
+  "tools": [],
+  "resources": []
 }

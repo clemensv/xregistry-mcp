@@ -1,12 +1,31 @@
 {
-  "name": "mcp-server-apache-airflow",
+  "repo_ref": "yangkyeongmo/mcp-server-apache-airflow",
+  "name": "io.github.yangkyeongmo/mcp-server-apache-airflow",
   "description": "A Model Context Protocol (MCP) server implementation for Apache Airflow, enabling seamless integration with MCP clients. This project provides a standardized way to interact with Apache Airflow through the Model Context Protocol.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/yangkyeongmo/mcp-server-apache-airflow",
-    "name": "yangkyeongmo/mcp-server-apache-airflow"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [
+    {
+      "url": "http://localhost:8080/api/v1",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "apache/airflow:latest",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
+  "tools": [],
   "resources": [
     {
       "name": "DAG Management",
@@ -48,21 +67,5 @@
       "uritemplate": "/api/v1/datasets",
       "description": "Endpoints for managing datasets."
     }
-  ],
-  "endpoints": {
-    "http": {
-      "uri": "http://localhost:8080/api/v1",
-      "authorization": {
-        "type": "header",
-        "name": "Authorization",
-        "description": "Bearer token for authentication",
-        "required": true
-      }
-    }
-  },
-  "deployment": {
-    "container": {
-      "image": "apache/airflow:latest"
-    }
-  }
+  ]
 }

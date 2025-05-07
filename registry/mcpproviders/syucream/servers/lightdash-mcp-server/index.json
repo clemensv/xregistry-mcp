@@ -1,12 +1,39 @@
 {
-  "name": "lightdash-mcp-server",
+  "repo_ref": "syucream/lightdash-mcp-server",
+  "name": "io.github.syucream/lightdash-mcp-server",
   "description": "A MCP(Model Context Protocol) server that accesses to Lightdash. This server provides MCP-compatible access to Lightdash's API, allowing AI assistants to interact with your Lightdash data through a standardized interface.",
-  "mcpversion": "1.0",
-  "serverversion": "0.0.1",
-  "repository": {
-    "url": "https://github.com/syucream/lightdash-mcp-server",
-    "name": "syucream/lightdash-mcp-server"
+  "version_detail": {
+    "version": "0.0.1"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "lightdash-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "lightdash-mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "LIGHTDASH_API_KEY",
+            "description": "Your Lightdash PAT",
+            "required": true
+          },
+          {
+            "name": "LIGHTDASH_API_URL",
+            "description": "The API base URL",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "lightdash_list_projects",
@@ -100,32 +127,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "lightdash-mcp-server",
-      "command": "npx",
-      "args": [
-        "-y",
-        "lightdash-mcp-server"
-      ],
-      "env": [
-        {
-          "name": "LIGHTDASH_API_KEY",
-          "description": "Your Lightdash PAT",
-          "required": true
-        },
-        {
-          "name": "LIGHTDASH_API_URL",
-          "description": "The API base URL",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

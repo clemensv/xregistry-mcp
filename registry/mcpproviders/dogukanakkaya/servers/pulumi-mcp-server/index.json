@@ -1,8 +1,31 @@
 {
-  "name": "Pulumi MCP Server",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "repo_ref": "dogukanakkaya/pulumi-mcp-server",
+  "name": "io.github.dogukanakkaya/pulumi-mcp-server",
   "description": "MCP server exposing Pulumi stacks and tooling via Model Context Protocol",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "PULUMI_ACCESS_TOKEN",
+            "description": "Pulumi access token environment variable",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "create_pulumi_stack",
@@ -36,29 +59,5 @@
       "name": "Pulumi Stacks",
       "uritemplate": "pulumi://{organization}"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@modelcontextprotocol/sdk",
-      "command": "node",
-      "args": [],
-      "env": [
-        {
-          "name": "PULUMI_ACCESS_TOKEN",
-          "description": "Pulumi access token environment variable",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/dogukanakkaya/pulumi-mcp-server",
-    "name": "dogukanakkaya/pulumi-mcp-server"
-  }
+  ]
 }

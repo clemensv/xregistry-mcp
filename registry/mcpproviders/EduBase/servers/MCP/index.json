@@ -1,14 +1,53 @@
 {
-  "name": "@edubase/mcp",
+  "repo_ref": "EduBase/MCP",
+  "name": "io.github.EduBase/MCP",
   "description": "Implementation of the Model Context Protocol (MCP) server for the EduBase platform. It allows MCP clients and LLMs to interact with EduBase account and perform tasks.",
-  "mcpversion": "1.0.10",
-  "serverversion": "1.0.10",
-  "repository": {
-    "url": "https://github.com/EduBase/MCP",
-    "name": "EduBase/MCP",
-    "branch": "main"
+  "version_detail": {
+    "version": "1.0.10"
   },
-  "docs": "https://developer.edubase.net",
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@EduBase/MCP",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "/path/to/dist/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "EDUBASE_API_URL",
+            "description": "URL of the EduBase API",
+            "required": true
+          },
+          {
+            "name": "EDUBASE_API_APP",
+            "description": "EduBase API application identifier",
+            "required": true
+          },
+          {
+            "name": "EDUBASE_API_KEY",
+            "description": "EduBase API key",
+            "required": true
+          },
+          {
+            "name": "EDUBASE_API_MAXRATE",
+            "description": "Optional rate limit per second",
+            "required": false
+          },
+          {
+            "name": "EDUBASE_API_MAXRATE60",
+            "description": "Optional rate limit per minute",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "edubase_get_user",
@@ -27,46 +66,5 @@
       "description": "Tools named edubase_<method>_<endpoint> for each documented API endpoint"
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@EduBase/MCP",
-      "command": "node",
-      "args": [
-        "/path/to/dist/index.js"
-      ],
-      "env": [
-        {
-          "name": "EDUBASE_API_URL",
-          "description": "URL of the EduBase API",
-          "required": true
-        },
-        {
-          "name": "EDUBASE_API_APP",
-          "description": "EduBase API application identifier",
-          "required": true
-        },
-        {
-          "name": "EDUBASE_API_KEY",
-          "description": "EduBase API key",
-          "required": true
-        },
-        {
-          "name": "EDUBASE_API_MAXRATE",
-          "description": "Optional rate limit per second",
-          "required": false
-        },
-        {
-          "name": "EDUBASE_API_MAXRATE60",
-          "description": "Optional rate limit per minute",
-          "required": false
-        }
-      ]
-    }
-  }
+  "resources": []
 }

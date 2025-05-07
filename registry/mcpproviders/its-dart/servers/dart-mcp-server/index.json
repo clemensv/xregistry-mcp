@@ -1,12 +1,32 @@
 {
-  "name": "dart-mcp",
+  "repo_ref": "its-dart/dart-mcp-server",
+  "name": "io.github.its-dart/dart-mcp-server",
   "description": "The official AI Model Context Protocol (MCP) server for Dart, providing task and document management via prompts, resources, and tools.",
-  "mcpversion": "1.0",
-  "serverversion": "0.0.0",
-  "repository": {
-    "url": "https://github.com/its-dart/dart-mcp-server",
-    "name": "its-dart/dart-mcp-server"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "dart-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "DART_TOKEN",
+            "description": "API token for Dart",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
   "prompts": [
     {
       "name": "Create task",
@@ -510,27 +530,5 @@
       "name": "Dart doc",
       "description": "A Dart doc with its title, text content, and folder. Use this to fetch detailed information about a specific doc."
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "dart-mcp-server",
-      "command": "node",
-      "args": [
-        "index.js"
-      ],
-      "env": [
-        {
-          "name": "DART_TOKEN",
-          "description": "API token for Dart",
-          "required": true
-        }
-      ]
-    }
-  }
+  ]
 }

@@ -1,8 +1,48 @@
 {
-  "name": "arango-server",
+  "repo_ref": "ravenwits/mcp-server-arangodb",
+  "name": "io.github.ravenwits/mcp-server-arangodb",
   "description": "A Model Context Protocol server for ArangoDB providing database interaction capabilities through ArangoDB with core database operations and MCP tool integration.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "arango-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "arango-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "ARANGO_URL",
+            "description": "ArangoDB connection URL",
+            "required": false
+          },
+          {
+            "name": "ARANGO_DB",
+            "description": "ArangoDB database name",
+            "required": false
+          },
+          {
+            "name": "ARANGO_USERNAME",
+            "description": "ArangoDB username",
+            "required": true
+          },
+          {
+            "name": "ARANGO_PASSWORD",
+            "description": "ArangoDB password",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "arango_query",
@@ -139,47 +179,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "arango-server",
-      "command": "npx",
-      "args": [
-        "arango-server"
-      ],
-      "env": [
-        {
-          "name": "ARANGO_URL",
-          "description": "ArangoDB connection URL",
-          "required": false,
-          "default": "http://localhost:8529"
-        },
-        {
-          "name": "ARANGO_DB",
-          "description": "ArangoDB database name",
-          "required": false,
-          "default": "_system"
-        },
-        {
-          "name": "ARANGO_USERNAME",
-          "description": "ArangoDB username",
-          "required": true
-        },
-        {
-          "name": "ARANGO_PASSWORD",
-          "description": "ArangoDB password",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/ravenwits/mcp-server-arangodb",
-    "name": "ravenwits/mcp-server-arangodb"
-  }
+  "resources": []
 }

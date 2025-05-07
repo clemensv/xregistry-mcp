@@ -1,12 +1,25 @@
 {
-  "name": "Kagi MCP server",
+  "repo_ref": "kagisearch/kagimcp",
+  "name": "io.github.kagisearch/kagimcp",
   "description": "An MCP server implementation providing tools for web search and summarization using the Kagi Search and Summarizer APIs.",
-  "mcpversion": "1.0",
-  "serverversion": "unspecified",
-  "repository": {
-    "url": "https://github.com/kagisearch/kagimcp",
-    "name": "kagisearch/kagimcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "kagimcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "kagi_search_fetch",
@@ -59,13 +72,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "uv",
-      "package": "kagimcp",
-      "command": "kagimcp",
-      "args": [],
-      "env": []
-    }
-  }
+  "resources": []
 }

@@ -1,12 +1,29 @@
 {
-  "name": "MCP iCal Server",
+  "repo_ref": "Omar-V2/mcp-ical",
+  "name": "io.github.Omar-V2/mcp-ical",
   "description": "Transform how you interact with your macOS calendar using natural language via the Model Context Protocol (MCP). Provides natural language calendar management including event creation, updates, schedule queries, and calendar management.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/Omar-V2/mcp-ical",
-    "name": "Omar-V2/mcp-ical"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "mcp-ical",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/ABSOLUTE/PATH/TO/PARENT/FOLDER/mcp-ical",
+          "run"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "list_calendars",
@@ -64,22 +81,5 @@
       "uritemplate": "calendars://list",
       "description": "List all available calendars that can be used with calendar operations."
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "uv",
-      "package": "mcp-ical",
-      "command": "uv",
-      "args": [
-        "--directory",
-        "/ABSOLUTE/PATH/TO/PARENT/FOLDER/mcp-ical",
-        "run"
-      ]
-    }
-  }
+  ]
 }

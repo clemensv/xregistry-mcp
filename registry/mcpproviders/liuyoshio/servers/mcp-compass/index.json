@@ -1,12 +1,28 @@
 {
-  "name": "mcp-compass",
+  "repo_ref": "liuyoshio/mcp-compass",
+  "name": "io.github.liuyoshio/mcp-compass",
   "description": "MCP Compass is a discovery & recommendation service that helps you explore Model Context Protocol servers. It acts as a smart guide that helps AI assistants find and understand available MCP services out there based on natural language queries, making it easier to discover and utilize the right tools for specific tasks.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
-  "repository": {
-    "url": "https://github.com/liuyoshio/mcp-compass",
-    "name": "liuyoshio/mcp-compass"
+  "version_detail": {
+    "version": "1.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@liuyoshio/mcp-compass",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@liuyoshio/mcp-compass"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "recommend-mcp-servers",
@@ -25,20 +41,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@liuyoshio/mcp-compass",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@liuyoshio/mcp-compass"
-      ]
-    }
-  }
+  "resources": []
 }

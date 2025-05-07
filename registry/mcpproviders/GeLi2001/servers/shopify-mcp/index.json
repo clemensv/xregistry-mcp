@@ -1,8 +1,42 @@
 {
-  "name": "shopify",
+  "repo_ref": "GeLi2001/shopify-mcp",
+  "name": "io.github.GeLi2001/shopify-mcp",
   "description": "MCP Server for Shopify API, enabling interaction with store data through GraphQL API",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "shopify-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "shopify-mcp",
+          "--accessToken",
+          "<YOUR_ACCESS_TOKEN>",
+          "--domain",
+          "<YOUR_SHOP>.myshopify.com"
+        ],
+        "environment_variables": [
+          {
+            "name": "SHOPIFY_ACCESS_TOKEN",
+            "description": "Shopify API access token",
+            "required": true
+          },
+          {
+            "name": "MYSHOPIFY_DOMAIN",
+            "description": "Shopify store domain",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get-products",
@@ -275,34 +309,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "shopify-mcp-server",
-      "command": "npx",
-      "args": [
-        "shopify-mcp",
-        "--accessToken",
-        "<YOUR_ACCESS_TOKEN>",
-        "--domain",
-        "<YOUR_SHOP>.myshopify.com"
-      ],
-      "env": [
-        {
-          "name": "SHOPIFY_ACCESS_TOKEN",
-          "description": "Shopify API access token",
-          "required": true
-        },
-        {
-          "name": "MYSHOPIFY_DOMAIN",
-          "description": "Shopify store domain",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/GeLi2001/shopify-mcp",
-    "name": "GeLi2001/shopify-mcp"
-  }
+  "resources": []
 }

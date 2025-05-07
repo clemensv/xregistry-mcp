@@ -1,8 +1,62 @@
 {
-  "name": "discourse",
+  "repo_ref": "AshDevFr/discourse-mcp-server",
+  "name": "io.github.AshDevFr/discourse-mcp-server",
   "description": "Node.js server implementing Model Context Protocol (MCP) for Discourse search operation.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "ashdev/discourse-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "-i",
+          "--rm",
+          "-e",
+          "DISCOURSE_API_URL=https://try.discourse.org",
+          "-e",
+          "DISCOURSE_API_KEY=1234",
+          "-e",
+          "DISCOURSE_API_USERNAME=ash"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "npm",
+      "package_name": "@ashdev/discourse-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@ashdev/discourse-mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "DISCOURSE_API_URL",
+            "required": true
+          },
+          {
+            "name": "DISCOURSE_API_KEY",
+            "required": false
+          },
+          {
+            "name": "DISCOURSE_API_USERNAME",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "search_posts",
@@ -22,47 +76,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@ashdev/discourse-mcp-server",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@ashdev/discourse-mcp-server"
-      ],
-      "env": [
-        {
-          "name": "DISCOURSE_API_URL",
-          "required": true
-        },
-        {
-          "name": "DISCOURSE_API_KEY",
-          "required": false
-        },
-        {
-          "name": "DISCOURSE_API_USERNAME",
-          "required": false
-        }
-      ]
-    },
-    "container": {
-      "image": "ashdev/discourse-mcp-server",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-e",
-        "DISCOURSE_API_URL=https://try.discourse.org",
-        "-e",
-        "DISCOURSE_API_KEY=1234",
-        "-e",
-        "DISCOURSE_API_USERNAME=ash"
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/AshDevFr/discourse-mcp-server",
-    "name": "AshDevFr/discourse-mcp-server"
-  }
+  "resources": []
 }

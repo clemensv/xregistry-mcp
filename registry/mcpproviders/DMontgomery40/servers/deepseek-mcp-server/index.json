@@ -1,12 +1,34 @@
 {
-  "name": "deepseek-mcp-server",
+  "repo_ref": "DMontgomery40/deepseek-mcp-server",
+  "name": "io.github.DMontgomery40/deepseek-mcp-server",
   "description": "A Model Context Protocol (MCP) server for the DeepSeek API, allowing seamless integration of DeepSeek's powerful language models with MCP-compatible applications like Claude Desktop.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
-  "repository": {
-    "url": "https://github.com/DMontgomery40/deepseek-mcp-server",
-    "name": "DMontgomery40/deepseek-mcp-server"
+  "version_detail": {
+    "version": "0.1.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "deepseek-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "deepseek-mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "DEEPSEEK_API_KEY",
+            "description": "API key for DeepSeek API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "chat_completion",
@@ -171,28 +193,5 @@
       "uritemplate": "config://{modelId}",
       "description": "Resource exposing configuration options for models."
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "deepseek-mcp-server",
-      "command": "npx",
-      "args": [
-        "-y",
-        "deepseek-mcp-server"
-      ],
-      "env": [
-        {
-          "name": "DEEPSEEK_API_KEY",
-          "description": "API key for DeepSeek API",
-          "required": true
-        }
-      ]
-    }
-  }
+  ]
 }

@@ -1,8 +1,62 @@
 {
-  "name": "onenote-mcp-server",
+  "repo_ref": "rajvirtual/MCP-Servers",
+  "name": "io.github.rajvirtual/MCP-Servers",
   "description": "MCP server providing tools to read and create Microsoft OneNote content via Microsoft Graph API.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "CLIENT_ID",
+            "description": "Azure AD client ID for authentication",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "Get all notebooks",
+      "description": "List all available OneNote notebooks"
+    },
+    {
+      "name": "Get sections in a notebook",
+      "description": "List all sections in a specific notebook"
+    },
+    {
+      "name": "Get pages in a section",
+      "description": "List all pages in a specific section"
+    },
+    {
+      "name": "Get a specific page",
+      "description": "Get content from a specific page"
+    },
+    {
+      "name": "Create a new notebook",
+      "description": "Create a brand new notebook"
+    },
+    {
+      "name": "Create a section in a notebook",
+      "description": "Create a new section in a specific notebook"
+    },
+    {
+      "name": "Create a page in a section",
+      "description": "Create a new page in a specific section"
+    }
+  ],
   "tools": [
     {
       "name": "onenote-read",
@@ -78,67 +132,5 @@
       }
     }
   ],
-  "prompts": [
-    {
-      "id": "get-notebooks",
-      "name": "Get all notebooks",
-      "description": "List all available OneNote notebooks"
-    },
-    {
-      "id": "get-sections",
-      "name": "Get sections in a notebook",
-      "description": "List all sections in a specific notebook"
-    },
-    {
-      "id": "get-pages",
-      "name": "Get pages in a section",
-      "description": "List all pages in a specific section"
-    },
-    {
-      "id": "get-page",
-      "name": "Get a specific page",
-      "description": "Get content from a specific page"
-    },
-    {
-      "id": "create-notebook",
-      "name": "Create a new notebook",
-      "description": "Create a brand new notebook"
-    },
-    {
-      "id": "create-section",
-      "name": "Create a section in a notebook",
-      "description": "Create a new section in a specific notebook"
-    },
-    {
-      "id": "create-page",
-      "name": "Create a page in a section",
-      "description": "Create a new page in a specific section"
-    }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@modelcontextprotocol/sdk",
-      "command": "node",
-      "args": [
-        "index.js"
-      ],
-      "env": [
-        {
-          "name": "CLIENT_ID",
-          "description": "Azure AD client ID for authentication",
-          "required": false
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/rajvirtual/MCP-Servers",
-    "name": "rajvirtual/MCP-Servers"
-  }
+  "resources": []
 }

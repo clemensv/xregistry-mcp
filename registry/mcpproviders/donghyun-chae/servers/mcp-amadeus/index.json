@@ -1,12 +1,43 @@
 {
-  "name": "Amadeus MCP Server",
+  "repo_ref": "donghyun-chae/mcp-amadeus",
+  "name": "io.github.donghyun-chae/mcp-amadeus",
   "description": "MCP-Amadeus is a community-developed Model Context Protocol (MCP) server that integrates with the Amadeus Flight Offers Search API to provide flight search capabilities through natural language interfaces. Built for use with MCP-compatible clients (e.g., Claude Desktop).",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/donghyun-chae/mcp-amadeus",
-    "name": "donghyun-chae/mcp-amadeus"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "@donghyun-chae/mcp-amadeus",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "./src/",
+          "run",
+          "--env-file",
+          ".env",
+          "server.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "AMADEUS_CLIENT_ID",
+            "description": "Amadeus API Client ID",
+            "required": true
+          },
+          {
+            "name": "AMADEUS_CLIENT_SECRET",
+            "description": "Amadeus API Client Secret",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_flight_offers",
@@ -32,31 +63,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "uv",
-      "package": "@donghyun-chae/mcp-amadeus",
-      "command": "uv",
-      "args": [
-        "--directory",
-        "./src/",
-        "run",
-        "--env-file",
-        ".env",
-        "server.py"
-      ],
-      "env": [
-        {
-          "name": "AMADEUS_CLIENT_ID",
-          "description": "Amadeus API Client ID",
-          "required": true
-        },
-        {
-          "name": "AMADEUS_CLIENT_SECRET",
-          "description": "Amadeus API Client Secret",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

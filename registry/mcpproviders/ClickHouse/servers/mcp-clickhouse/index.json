@@ -1,12 +1,66 @@
 {
-  "name": "mcp-clickhouse",
+  "repo_ref": "ClickHouse/mcp-clickhouse",
+  "name": "io.github.ClickHouse/mcp-clickhouse",
   "description": "An MCP server for ClickHouse.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/ClickHouse/mcp-clickhouse",
-    "name": "ClickHouse/mcp-clickhouse"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "mcp-clickhouse",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "CLICKHOUSE_HOST",
+            "description": "The hostname of your ClickHouse server",
+            "required": true
+          },
+          {
+            "name": "CLICKHOUSE_USER",
+            "description": "The username for authentication",
+            "required": true
+          },
+          {
+            "name": "CLICKHOUSE_PASSWORD",
+            "description": "The password for authentication",
+            "required": true
+          },
+          {
+            "name": "CLICKHOUSE_PORT",
+            "description": "The port of the ClickHouse server",
+            "required": false
+          },
+          {
+            "name": "CLICKHOUSE_SECURE",
+            "description": "Use secure connection",
+            "required": false
+          },
+          {
+            "name": "CLICKHOUSE_VERIFY",
+            "description": "Verify SSL certificates",
+            "required": false
+          },
+          {
+            "name": "CLICKHOUSE_CONNECT_TIMEOUT",
+            "description": "Connection timeout in seconds",
+            "required": false
+          },
+          {
+            "name": "CLICKHOUSE_SEND_RECEIVE_TIMEOUT",
+            "description": "Send/receive timeout in seconds",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "run_select_query",
@@ -54,54 +108,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "mcp-clickhouse",
-      "command": "mcp dev mcp_clickhouse/mcp_server.py",
-      "args": [],
-      "env": [
-        {
-          "name": "CLICKHOUSE_HOST",
-          "description": "The hostname of your ClickHouse server",
-          "required": true
-        },
-        {
-          "name": "CLICKHOUSE_USER",
-          "description": "The username for authentication",
-          "required": true
-        },
-        {
-          "name": "CLICKHOUSE_PASSWORD",
-          "description": "The password for authentication",
-          "required": true
-        },
-        {
-          "name": "CLICKHOUSE_PORT",
-          "description": "The port of the ClickHouse server",
-          "required": false
-        },
-        {
-          "name": "CLICKHOUSE_SECURE",
-          "description": "Use secure connection",
-          "required": false
-        },
-        {
-          "name": "CLICKHOUSE_VERIFY",
-          "description": "Verify SSL certificates",
-          "required": false
-        },
-        {
-          "name": "CLICKHOUSE_CONNECT_TIMEOUT",
-          "description": "Connection timeout in seconds",
-          "required": false
-        },
-        {
-          "name": "CLICKHOUSE_SEND_RECEIVE_TIMEOUT",
-          "description": "Send/receive timeout in seconds",
-          "required": false
-        }
-      ]
-    }
-  }
+  "resources": []
 }

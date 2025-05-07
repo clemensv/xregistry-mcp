@@ -1,47 +1,59 @@
 {
-  "name": "BICScan MCP Server",
+  "repo_ref": "ahnlabio/bicscan-mcp",
+  "name": "io.github.ahnlabio/bicscan-mcp",
   "description": "A powerful and efficient Blockchain address risk scoring API MCP Server, leveraging the BICScan API to provide comprehensive risk assessments and asset information for blockchain addresses, domains, and decentralized applications (dApps).",
-  "mcpversion": "unspecified",
-  "serverversion": "unspecified",
-  "repository": {
-    "url": "https://github.com/ahnlabio/bicscan-mcp",
-    "name": "ahnlabio/bicscan-mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
-  "deployment": {
-    "sandbox": {
-      "runtime": "uv",
-      "package": "bicscan-mcp",
-      "command": "uv",
-      "args": [
-        "--directory",
-        "YOUR_BICSCAN_REPO_DIR_HERE",
-        "run",
-        "bicscan-mcp"
-      ],
-      "env": [
-        {
-          "name": "BICSCAN_API_KEY",
-          "description": "API key for BICScan",
-          "required": true
-        }
-      ]
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "bicscan-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "--rm",
+          "--interactive",
+          "--env",
+          "BICSCAN_API_KEY=YOUR_BICSCAN_API_KEY_HERE"
+        ],
+        "environment_variables": [
+          {
+            "name": "BICSCAN_API_KEY",
+            "description": "API key for BICScan",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
     },
-    "container": {
-      "image": "bicscan-mcp",
-      "args": [
-        "run",
-        "--rm",
-        "--interactive",
-        "--env",
-        "BICSCAN_API_KEY=YOUR_BICSCAN_API_KEY_HERE"
-      ],
-      "env": [
-        {
-          "name": "BICSCAN_API_KEY",
-          "description": "API key for BICScan",
-          "required": true
-        }
-      ]
+    {
+      "name": "uv",
+      "package_name": "bicscan-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "YOUR_BICSCAN_REPO_DIR_HERE",
+          "run",
+          "bicscan-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "BICSCAN_API_KEY",
+            "description": "API key for BICScan",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
     }
-  }
+  ],
+  "prompts": [],
+  "tools": [],
+  "resources": []
 }

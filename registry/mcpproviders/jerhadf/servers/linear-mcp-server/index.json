@@ -1,12 +1,40 @@
 {
-  "name": "linear-mcp-server",
+  "repo_ref": "jerhadf/linear-mcp-server",
+  "name": "io.github.jerhadf/linear-mcp-server",
   "description": "A Model Context Protocol server for the Linear API providing integration with Linear's issue tracking system through MCP, allowing LLMs to interact with Linear issues.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
-  "repository": {
-    "url": "https://github.com/jerhadf/linear-mcp-server",
-    "name": "jerhadf/linear-mcp-server"
+  "version_detail": {
+    "version": "1.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "linear-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "linear-mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "LINEAR_API_KEY",
+            "description": "API key for Linear",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "linear-server-prompt",
+      "description": "Instructions for using the Linear MCP server effectively",
+      "arguments": []
+    }
+  ],
   "tools": [
     {
       "name": "linear_create_issue",
@@ -199,35 +227,5 @@
       "name": "User Assigned Issues",
       "description": "Active issues assigned to a specific Linear user. Returns issues sorted by update date."
     }
-  ],
-  "prompts": [
-    {
-      "name": "linear-server-prompt",
-      "description": "Instructions for using the Linear MCP server effectively",
-      "arguments": []
-    }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "linear-mcp-server",
-      "command": "npx",
-      "args": [
-        "-y",
-        "linear-mcp-server"
-      ],
-      "env": [
-        {
-          "name": "LINEAR_API_KEY",
-          "description": "API key for Linear",
-          "required": true
-        }
-      ]
-    }
-  }
+  ]
 }

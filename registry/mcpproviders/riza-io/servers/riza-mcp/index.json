@@ -1,8 +1,33 @@
 {
-  "name": "riza",
+  "repo_ref": "riza-io/riza-mcp",
+  "name": "io.github.riza-io/riza-mcp",
   "description": "The Riza MCP server wraps the Riza API and presents endpoints as individual tools for LLM-generated code execution and management.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@riza-io/riza-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "@riza-io/riza-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "RIZA_API_KEY",
+            "description": "API key for authenticating with Riza API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "create_tool",
@@ -47,30 +72,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@riza-io/riza-mcp",
-      "command": "npx",
-      "args": [
-        "@riza-io/riza-mcp"
-      ],
-      "env": [
-        {
-          "name": "RIZA_API_KEY",
-          "description": "API key for authenticating with Riza API",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/riza-io/riza-mcp",
-    "name": "riza-io/riza-mcp"
-  }
+  "resources": []
 }

@@ -1,12 +1,32 @@
 {
-  "name": "OpenAI Web Search",
+  "repo_ref": "ConechoAI/openai-websearch-mcp",
+  "name": "io.github.ConechoAI/openai-websearch-mcp",
   "description": "This MCP server provides access to OpenAI's websearch functionality through the Model Context Protocol. It allows AI assistants to search the web during conversations with users, providing up-to-date information that may not be available in the assistant's training data.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/ConechoAI/openai-websearch-mcp",
-    "name": "ConechoAI/openai-websearch-mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uvx",
+      "package_name": "openai-websearch-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "openai-websearch-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "OPENAI_API_KEY",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "web_search",
@@ -67,20 +87,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "uvx",
-      "package": "openai-websearch-mcp",
-      "command": "uvx",
-      "args": [
-        "openai-websearch-mcp"
-      ],
-      "env": [
-        {
-          "name": "OPENAI_API_KEY",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

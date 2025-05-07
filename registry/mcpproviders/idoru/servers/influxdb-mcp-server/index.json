@@ -1,32 +1,50 @@
 {
-  "name": "InfluxDB",
+  "repo_ref": "idoru/influxdb-mcp-server",
+  "name": "io.github.idoru/influxdb-mcp-server",
   "description": "A Model Context Protocol (MCP) server that exposes access to an InfluxDB instance using the InfluxDB OSS API v2.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.1",
-  "repository": {
-    "url": "https://github.com/idoru/influxdb-mcp-server",
-    "name": "idoru/influxdb-mcp-server"
+  "version_detail": {
+    "version": "0.1.1"
   },
-  "resources": [
+  "remotes": [],
+  "registries": [
     {
-      "name": "orgs",
-      "uritemplate": "influxdb://orgs",
-      "description": "Displays all organizations in the InfluxDB instance"
+      "name": "npm",
+      "package_name": "influxdb-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "INFLUXDB_TOKEN",
+            "description": "Authentication token for the InfluxDB API",
+            "required": true
+          },
+          {
+            "name": "INFLUXDB_URL",
+            "description": "URL of the InfluxDB instance (defaults to http://localhost:8086)",
+            "required": false
+          },
+          {
+            "name": "INFLUXDB_ORG",
+            "description": "Default organization name for certain operations",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "flux-query-examples",
+      "description": "Common Flux query examples",
+      "arguments": []
     },
     {
-      "name": "buckets",
-      "uritemplate": "influxdb://buckets",
-      "description": "Shows all buckets with their metadata"
-    },
-    {
-      "name": "bucket-measurements",
-      "uritemplate": "influxdb://bucket/{bucketName}/measurements",
-      "description": "Lists all measurements within a specified bucket"
-    },
-    {
-      "name": "query",
-      "uritemplate": "influxdb://query/{orgName}/{fluxQuery}",
-      "description": "Executes a Flux query and returns results as a resource"
+      "name": "line-protocol-guide",
+      "description": "Guide to InfluxDB line protocol format",
+      "arguments": []
     }
   ],
   "tools": [
@@ -133,46 +151,26 @@
       }
     }
   ],
-  "prompts": [
+  "resources": [
     {
-      "name": "flux-query-examples",
-      "description": "Common Flux query examples",
-      "arguments": []
+      "name": "orgs",
+      "uritemplate": "influxdb://orgs",
+      "description": "Displays all organizations in the InfluxDB instance"
     },
     {
-      "name": "line-protocol-guide",
-      "description": "Guide to InfluxDB line protocol format",
-      "arguments": []
+      "name": "buckets",
+      "uritemplate": "influxdb://buckets",
+      "description": "Shows all buckets with their metadata"
+    },
+    {
+      "name": "bucket-measurements",
+      "uritemplate": "influxdb://bucket/{bucketName}/measurements",
+      "description": "Lists all measurements within a specified bucket"
+    },
+    {
+      "name": "query",
+      "uritemplate": "influxdb://query/{orgName}/{fluxQuery}",
+      "description": "Executes a Flux query and returns results as a resource"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "influxdb-mcp-server",
-      "command": "npx influxdb-mcp-server",
-      "args": [],
-      "env": [
-        {
-          "name": "INFLUXDB_TOKEN",
-          "description": "Authentication token for the InfluxDB API",
-          "required": true
-        },
-        {
-          "name": "INFLUXDB_URL",
-          "description": "URL of the InfluxDB instance (defaults to http://localhost:8086)",
-          "required": false
-        },
-        {
-          "name": "INFLUXDB_ORG",
-          "description": "Default organization name for certain operations",
-          "required": false
-        }
-      ]
-    }
-  }
+  ]
 }

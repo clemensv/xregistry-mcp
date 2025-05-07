@@ -1,12 +1,34 @@
 {
-  "name": "OpenDota MCP Server",
+  "repo_ref": "asusevski/opendota-mcp-server",
+  "name": "io.github.asusevski/opendota-mcp-server",
   "description": "A Model Context Protocol (MCP) server implementation for accessing OpenDota API data. This server enables LLMs and AI assistants to retrieve real-time Dota 2 statistics, match data, player information, and more through a standard interface.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/asusevski/opendota-mcp-server",
-    "name": "asusevski/opendota-mcp-server"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "opendota-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-m",
+          "src.opendota_server.server"
+        ],
+        "environment_variables": [
+          {
+            "name": "OPENDOTA_API_KEY",
+            "description": "OpenDota API key",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_player_by_id",
@@ -77,22 +99,5 @@
       "description": "Get heroes played in a specific match"
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "opendota-mcp-server",
-      "command": "python",
-      "args": [
-        "-m",
-        "src.opendota_server.server"
-      ],
-      "env": [
-        {
-          "name": "OPENDOTA_API_KEY",
-          "description": "OpenDota API key",
-          "required": false
-        }
-      ]
-    }
-  }
+  "resources": []
 }

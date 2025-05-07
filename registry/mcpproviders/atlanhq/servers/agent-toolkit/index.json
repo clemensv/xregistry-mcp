@@ -1,13 +1,25 @@
 {
-  "name": "Atlan MCP",
+  "repo_ref": "atlanhq/agent-toolkit",
+  "name": "io.github.atlanhq/agent-toolkit",
   "description": "A protocol server that enables interaction with Atlan services through function calling. Provides tools for asset search, and retrieval using pyatlan.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/atlanhq/agent-toolkit",
-    "subfolder": "modelcontextprotocol",
-    "name": "atlanhq/agent-toolkit"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "atlan-agent-toolkit",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "search_assets_tool",
@@ -187,13 +199,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "atlan-agent-toolkit",
-      "command": "python -m mcp.server.fastmcp",
-      "args": [],
-      "env": []
-    }
-  }
+  "resources": []
 }

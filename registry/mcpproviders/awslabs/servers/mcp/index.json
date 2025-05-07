@@ -1,13 +1,27 @@
 {
-  "name": "AWS MCP Servers",
+  "repo_ref": "awslabs/mcp",
+  "name": "io.github.awslabs/mcp",
   "description": "A suite of specialized MCP servers that help you get the most out of AWS, wherever you use MCP.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/awslabs/mcp",
-    "name": "awslabs/mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
-  "docs": "https://modelcontextprotocol.io/introduction",
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "awslabs/mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "server.py"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "generate_diagram",
@@ -727,20 +741,5 @@
       "description": "AWS Terraform Provider Best Practices from AWS Prescriptive Guidance",
       "mimetype": "text/markdown"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "awslabs/mcp",
-      "command": "python3",
-      "args": [
-        "server.py"
-      ]
-    }
-  }
+  ]
 }

@@ -1,12 +1,39 @@
 {
-  "name": "Hyperbrowser MCP Server",
+  "repo_ref": "hyperbrowserai/mcp",
+  "name": "io.github.hyperbrowserai/mcp",
   "description": "Hyperbrowser's Model Context Protocol (MCP) Server providing tools to scrape, extract structured data, and crawl webpages, with access to general purpose browser agents.",
-  "mcpversion": "unspecified",
-  "serverversion": "unspecified",
-  "repository": {
-    "url": "https://github.com/hyperbrowserai/mcp",
-    "name": "hyperbrowserai/mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [
+    {
+      "url": "http://localhost:3001/sse",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "hyperbrowser-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "hyperbrowser-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "HYPERBROWSER_API_KEY",
+            "description": "API key for Hyperbrowser MCP Server",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "scrape_webpage",
@@ -45,7 +72,7 @@
     },
     {
       "name": "openai_computer_use_agent",
-      "description": "General-purpose automation using OpenAI\u2019s CUA model",
+      "description": "General-purpose automation using OpenAI’s CUA model",
       "inputschema": {
         "type": "object"
       }
@@ -86,35 +113,5 @@
       "description": "Documentation resources accessible via hyperbrowser:// URI scheme",
       "mimetype": "text/markdown"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    },
-    "http": {
-      "uri": "http://localhost:3001/sse",
-      "authorization": {
-        "type": "bearer",
-        "required": true
-      }
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "hyperbrowser-mcp",
-      "command": "npx",
-      "args": [
-        "-y",
-        "hyperbrowser-mcp"
-      ],
-      "env": [
-        {
-          "name": "HYPERBROWSER_API_KEY",
-          "description": "API key for Hyperbrowser MCP Server",
-          "required": true
-        }
-      ]
-    }
-  }
+  ]
 }

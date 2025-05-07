@@ -1,12 +1,25 @@
 {
-  "name": "SingleStore MCP Server",
+  "repo_ref": "singlestore-labs/mcp-server-singlestore",
+  "name": "io.github.singlestore-labs/mcp-server-singlestore",
   "description": "MCP server for SingleStore enabling integration with LLM clients like Claude Desktop and Cursor to perform operations using natural language.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/singlestore-labs/mcp-server-singlestore",
-    "name": "singlestore-labs/mcp-server-singlestore"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "singlestore-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "workspace_groups_info",
@@ -104,19 +117,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "singlestore-mcp-server",
-      "command": "uvx singlestore-mcp-server start",
-      "args": [],
-      "env": []
-    }
-  }
+  "resources": []
 }

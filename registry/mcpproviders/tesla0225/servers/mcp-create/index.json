@@ -1,16 +1,47 @@
 {
-  "name": "MCP Create Server",
+  "repo_ref": "tesla0225/mcp-create",
+  "name": "io.github.tesla0225/mcp-create",
   "description": "A dynamic MCP server management service that creates, runs, and manages Model Context Protocol (MCP) servers dynamically. This service itself functions as an MCP server and launches/manages other MCP servers as child processes, enabling a flexible MCP ecosystem.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
-  "repository": {
-    "url": "https://github.com/tesla0225/mcp-create",
-    "name": "tesla0225/mcp-create"
+  "version_detail": {
+    "version": "1.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "mcp-create",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "-i",
+          "--rm",
+          "mcp-create"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "index.js"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "create-server-from-template",
-      "description": "Create a new MCP server from a template.\n  \n  \u4ee5\u4e0b\u306e\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u30b3\u30fc\u30c9\u3092\u30d9\u30fc\u30b9\u306b\u3001\u30e6\u30fc\u30b6\u30fc\u306e\u8981\u6c42\u306b\u5408\u308f\u305b\u305f\u30b5\u30fc\u30d0\u30fc\u3092\u5b9f\u88c5\u3057\u3066\u304f\u3060\u3055\u3044\u3002\n  \u8a00\u8a9e\u306b\u5fdc\u3058\u3066\u9069\u5207\u306a\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u3092\u9078\u629e\u3057\u3001\u5fc5\u8981\u306b\u5fdc\u3058\u3066\u6a5f\u80fd\u3092\u8ffd\u52a0\u30fb\u5909\u66f4\u3057\u3066\u304f\u3060\u3055\u3044\u3002\n  \n  TypeScript\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8:\n  ```typescript\n  import { Server } from \"@modelcontextprotocol/sdk/server/index.js\";\n  import { StdioServerTransport } from \"@modelcontextprotocol/sdk/server/stdio.js\";\n  import { \n    CallToolRequestSchema, \n    ListToolsRequestSchema \n  } from \"@modelcontextprotocol/sdk/types.js\";\n\n  const server = new Server({\n    name: \"dynamic-test-server\",\n    version: \"1.0.0\"\n  }, {\n    capabilities: {\n      tools: {}\n    }\n  });\n\n  // \u3053\u3053\u3067\u30c4\u30fc\u30eb\u3092\u5b9f\u88c5\u3057\u3066\u304f\u3060\u3055\u3044\n  server.setRequestHandler(ListToolsRequestSchema, async () => {\n    return {\n      tools: [{\n        name: \"echo\",\n        description: \"Echo back a message\",\n        inputSchema: {\n          type: \"object\",\n          properties: {\n            message: { type: \"string\" }\n          },\n          required: [\"message\"]\n        }\n      }]\n    };\n  });\n\n  server.setRequestHandler(CallToolRequestSchema, async (request) => {\n    if (request.params.name === \"echo\") {\n      // TypeScript\u306e\u578b\u3092\u9069\u5207\u306b\u6271\u3046\u305f\u3081\u3001\u578b\u30a2\u30b5\u30fc\u30b7\u30e7\u30f3\u3092\u4f7f\u7528\n      const message = request.params.arguments.message as string;\n      // \u307e\u305f\u306f any \u3092\u4f7f\u3046: const message: any = request.params.arguments.message;\n      \n      return {\n        content: [\n          {\n            type: \"text\",\n            text: `Echo: ${message}`\n          }\n        ]\n      };\n    }\n    throw new Error(\"Tool not found\");\n  });\n\n  // Server startup\n  const transport = new StdioServerTransport();\n  server.connect(transport);\n  ```\n  \n  Python\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8:\n  ```python\n  import asyncio\n  from mcp.server import Server\n  from mcp.server.stdio import stdio_server\n\n  app = Server(\"dynamic-test-server\")\n\n  @app.list_tools()\n  async def list_tools():\n      return [\n          {\n              \"name\": \"echo\",\n              \"description\": \"Echo back a message\",\n              \"inputSchema\": {\n                  \"type\": \"object\",\n                  \"properties\": {\n                      \"message\": {\"type\": \"string\"}\n                  },\n                  \"required\": [\"message\"]\n              }\n          }\n      ]\n\n  @app.call_tool()\n  async def call_tool(name, arguments):\n      if name == \"echo\":\n          return [{\"type\": \"text\", \"text\": f\"Echo: {arguments.get('message')}\"}]\n      raise ValueError(f\"Tool not found: {name}\")\n\n  async def main():\n      async with stdio_server() as streams:\n          await app.run(\n              streams[0],\n              streams[1],\n              app.create_initialization_options()\n          )\n\n  if __name__ == \"__main__\":\n      asyncio.run(main())\n  ```\n  \n  \u6ce8\u610f\u4e8b\u9805\uff1a\n  - TypeScript\u5b9f\u88c5\u6642\u306f\u3001\u5f15\u6570\u306e\u578b\u3092\u9069\u5207\u306b\u6271\u3046\u305f\u3081\u306b\u578b\u30a2\u30b5\u30fc\u30b7\u30e7\u30f3\uff08as string\uff09\u3092\u4f7f\u7528\u3059\u308b\u304b\u3001\n    \u660e\u793a\u7684\u306b\u578b\u3092\u5ba3\u8a00\u3057\u3066\u304f\u3060\u3055\u3044\uff08\u4f8b\uff1aconst value: string = request.params.arguments.someValue\uff09\u3002\n  - \u8907\u96d1\u306a\u578b\u3092\u6271\u3046\u5834\u5408\u306f\u3001interface \u3084 type \u3092\u5b9a\u7fa9\u3057\u3066\u578b\u5b89\u5168\u6027\u3092\u78ba\u4fdd\u3059\u308b\u3053\u3068\u3092\u304a\u52e7\u3081\u3057\u307e\u3059\u3002\n  \n  \u30e6\u30fc\u30b6\u30fc\u306e\u8981\u6c42\u306b\u5fdc\u3058\u3066\u4e0a\u8a18\u306e\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u3092\u53c2\u8003\u306b\u30ab\u30b9\u30bf\u30de\u30a4\u30ba\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u305d\u306e\u969b\u3001\u57fa\u672c\u7684\u306a\u69cb\u9020\u3092\u7dad\u6301\u3057\u3064\u3064\u3001\u30c4\u30fc\u30eb\u540d\u3084\u6a5f\u80fd\u3092\u5909\u66f4\u3067\u304d\u307e\u3059\u3002",
+      "description": "Create a new MCP server from a template.\n  \n  以下のテンプレートコードをベースに、ユーザーの要求に合わせたサーバーを実装してください。\n  言語に応じて適切なテンプレートを選択し、必要に応じて機能を追加・変更してください。\n  \n  TypeScriptテンプレート:\n  ```typescript\n  import { Server } from \"@modelcontextprotocol/sdk/server/index.js\";\n  import { StdioServerTransport } from \"@modelcontextprotocol/sdk/server/stdio.js\";\n  import { \n    CallToolRequestSchema, \n    ListToolsRequestSchema \n  } from \"@modelcontextprotocol/sdk/types.js\";\n\n  const server = new Server({\n    name: \"dynamic-test-server\",\n    version: \"1.0.0\"\n  }, {\n    capabilities: {\n      tools: {}\n    }\n  });\n\n  // ここでツールを実装してください\n  server.setRequestHandler(ListToolsRequestSchema, async () => {\n    return {\n      tools: [{\n        name: \"echo\",\n        description: \"Echo back a message\",\n        inputSchema: {\n          type: \"object\",\n          properties: {\n            message: { type: \"string\" }\n          },\n          required: [\"message\"]\n        }\n      }]\n    };\n  });\n\n  server.setRequestHandler(CallToolRequestSchema, async (request) => {\n    if (request.params.name === \"echo\") {\n      // TypeScriptの型を適切に扱うため、型アサーションを使用\n      const message = request.params.arguments.message as string;\n      // または any を使う: const message: any = request.params.arguments.message;\n      \n      return {\n        content: [\n          {\n            type: \"text\",\n            text: `Echo: ${message}`\n          }\n        ]\n      };\n    }\n    throw new Error(\"Tool not found\");\n  });\n\n  // Server startup\n  const transport = new StdioServerTransport();\n  server.connect(transport);\n  ```\n  \n  Pythonテンプレート:\n  ```python\n  import asyncio\n  from mcp.server import Server\n  from mcp.server.stdio import stdio_server\n\n  app = Server(\"dynamic-test-server\")\n\n  @app.list_tools()\n  async def list_tools():\n      return [\n          {\n              \"name\": \"echo\",\n              \"description\": \"Echo back a message\",\n              \"inputSchema\": {\n                  \"type\": \"object\",\n                  \"properties\": {\n                      \"message\": {\"type\": \"string\"}\n                  },\n                  \"required\": [\"message\"]\n              }\n          }\n      ]\n\n  @app.call_tool()\n  async def call_tool(name, arguments):\n      if name == \"echo\":\n          return [{\"type\": \"text\", \"text\": f\"Echo: {arguments.get('message')}\"}]\n      raise ValueError(f\"Tool not found: {name}\")\n\n  async def main():\n      async with stdio_server() as streams:\n          await app.run(\n              streams[0],\n              streams[1],\n              app.create_initialization_options()\n          )\n\n  if __name__ == \"__main__\":\n      asyncio.run(main())\n  ```\n  \n  注意事項：\n  - TypeScript実装時は、引数の型を適切に扱うために型アサーション（as string）を使用するか、\n    明示的に型を宣言してください（例：const value: string = request.params.arguments.someValue）。\n  - 複雑な型を扱う場合は、interface や type を定義して型安全性を確保することをお勧めします。\n  \n  ユーザーの要求に応じて上記のテンプレートを参考にカスタマイズしてください。その際、基本的な構造を維持しつつ、ツール名や機能を変更できます。",
       "inputschema": {
         "type": "object",
         "properties": {
@@ -24,11 +55,11 @@
           },
           "code": {
             "type": "string",
-            "description": "\u30ab\u30b9\u30bf\u30de\u30a4\u30ba\u3057\u305f\u30b5\u30fc\u30d0\u30fc\u30b3\u30fc\u30c9\u3002\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u3092\u5143\u306b\u5909\u66f4\u3057\u305f\u30b3\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u7701\u7565\u3057\u305f\u5834\u5408\u306f\u30c7\u30d5\u30a9\u30eb\u30c8\u306e\u30c6\u30f3\u30d7\u30ec\u30fc\u30c8\u304c\u4f7f\u7528\u3055\u308c\u307e\u3059\u3002"
+            "description": "カスタマイズしたサーバーコード。テンプレートを元に変更したコードを入力してください。省略した場合はデフォルトのテンプレートが使用されます。"
           },
           "dependencies": {
             "type": "object",
-            "description": "\u4f7f\u7528\u3059\u308b\u30e9\u30a4\u30d6\u30e9\u30ea\u3068\u305d\u306e\u30d0\u30fc\u30b8\u30e7\u30f3\uff08\u4f8b: { \"axios\": \"^1.0.0\" }\uff09"
+            "description": "使用するライブラリとそのバージョン（例: { \"axios\": \"^1.0.0\" }）"
           }
         },
         "required": [
@@ -102,28 +133,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "container": {
-      "image": "mcp-create",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "mcp-create"
-      ]
-    },
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@modelcontextprotocol/sdk",
-      "command": "node",
-      "args": [
-        "index.js"
-      ]
-    }
-  }
+  "resources": []
 }

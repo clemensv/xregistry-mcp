@@ -1,6 +1,31 @@
 {
-  "name": "Dappier MCP Server",
+  "repo_ref": "DappierAI/dappier-mcp",
+  "name": "io.github.DappierAI/dappier-mcp",
   "description": "A Model Context Protocol (MCP) server that connects any LLM or Agentic AI to real-time, rights-cleared, proprietary data from trusted sources. Dappier enables your AI to become an expert in anything by providing access to specialized models, including Real-Time Web Search, News, Sports, Financial Stock Market Data, Crypto Data, and exclusive content from premium publishers.",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "dappier-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "DAPPIER_API_KEY",
+            "description": "API key for accessing Dappier services",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "dappier_real_time_search",
@@ -59,26 +84,5 @@
       }
     }
   ],
-  "repository": {
-    "url": "https://github.com/DappierAI/dappier-mcp",
-    "name": "DappierAI/dappier-mcp"
-  },
-  "docs": "https://marketplace.dappier.com/marketplace",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "dappier-mcp",
-      "command": "dappier-mcp",
-      "args": [],
-      "env": [
-        {
-          "name": "DAPPIER_API_KEY",
-          "description": "API key for accessing Dappier services",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

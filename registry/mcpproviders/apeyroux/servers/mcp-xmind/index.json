@@ -1,8 +1,28 @@
 {
-  "name": "MCP XMind Server",
+  "repo_ref": "apeyroux/mcp-xmind",
+  "name": "io.github.apeyroux/mcp-xmind",
   "description": "A Model Context Protocol server for analyzing and querying XMind mind maps. This tool provides powerful capabilities for searching, extracting, and analyzing content from XMind files.",
-  "mcpversion": "1.0",
-  "serverversion": "unspecified",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@41px/mcp-xmind",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "dist/index.js",
+          "<allowed-directory>"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "read_xmind",
@@ -61,20 +81,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@41px/mcp-xmind",
-      "command": "node",
-      "args": [
-        "dist/index.js",
-        "<allowed-directory>"
-      ],
-      "env": []
-    }
-  },
-  "repository": {
-    "url": "https://github.com/apeyroux/mcp-xmind",
-    "name": "apeyroux/mcp-xmind"
-  }
+  "resources": []
 }

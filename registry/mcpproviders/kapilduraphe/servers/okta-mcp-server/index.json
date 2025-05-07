@@ -1,8 +1,36 @@
 {
-  "name": "Okta MCP Server",
+  "repo_ref": "kapilduraphe/okta-mcp-server",
+  "name": "io.github.kapilduraphe/okta-mcp-server",
   "description": "This MCP server enables Claude to interact with Okta's user management system, providing user and group management capabilities.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "unknown",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "dist/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "OKTA_ORG_URL",
+            "required": true
+          },
+          {
+            "name": "OKTA_API_TOKEN",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_user",
@@ -26,28 +54,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "unknown",
-      "command": "node",
-      "args": [
-        "dist/index.js"
-      ],
-      "env": [
-        {
-          "name": "OKTA_ORG_URL",
-          "required": true
-        },
-        {
-          "name": "OKTA_API_TOKEN",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/kapilduraphe/okta-mcp-server",
-    "name": "kapilduraphe/okta-mcp-server"
-  }
+  "resources": []
 }

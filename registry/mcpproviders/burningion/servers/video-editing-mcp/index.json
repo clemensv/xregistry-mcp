@@ -1,12 +1,33 @@
 {
-  "name": "Video Editor MCP server",
+  "repo_ref": "burningion/video-editing-mcp",
+  "name": "io.github.burningion/video-editing-mcp",
   "description": "Server to upload, edit, search, and generate videos using Video Jungle and LLM integration with custom vj:// URI scheme and video editing tools.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/burningion/video-editing-mcp",
-    "name": "burningion/video-editing-mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uvicorn",
+      "package_name": "video-editor-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "YOURAPIKEY"
+        ],
+        "environment_variables": [
+          {
+            "name": "LOAD_PHOTOS_DB",
+            "description": "Enable searching local Photos app videos on MacOS",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "add-video",
@@ -43,23 +64,5 @@
       "description": "Access individual videos and projects via custom vj:// URI scheme.",
       "uritemplate": "vj://{video_or_project_id}"
     }
-  ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "uvicorn",
-      "package": "video-editor-mcp",
-      "command": "uv run video-editor-mcp",
-      "args": [
-        "YOURAPIKEY"
-      ],
-      "env": [
-        {
-          "name": "LOAD_PHOTOS_DB",
-          "description": "Enable searching local Photos app videos on MacOS",
-          "required": false
-        }
-      ]
-    }
-  },
-  "docs": "https://www.video-jungle.com"
+  ]
 }

@@ -1,12 +1,39 @@
 {
-  "name": "mem0",
+  "repo_ref": "mem0ai/mem0-mcp",
+  "name": "io.github.mem0ai/mem0-mcp",
   "description": "This demonstrates a structured approach for using an MCP server with mem0 to manage coding preferences efficiently. The server provides tools for storing, retrieving, and searching coding preferences and exposes an SSE endpoint for MCP clients.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
-  "repository": {
-    "url": "https://github.com/mem0ai/mem0-mcp",
-    "name": "mem0ai/mem0-mcp"
+  "version_detail": {
+    "version": "1.0.0"
   },
+  "remotes": [
+    {
+      "url": "http://0.0.0.0:8080/sse",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "main.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "MEM0_API_KEY",
+            "description": "API key for mem0 client",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "add-memory",
@@ -27,8 +54,7 @@
           "content",
           "userId"
         ]
-      },
-      "annotations": {}
+      }
     },
     {
       "name": "search-memories",
@@ -49,39 +75,8 @@
           "query",
           "userId"
         ]
-      },
-      "annotations": {}
-    }
-  ],
-  "resources": [],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    },
-    "http": {
-      "uri": "http://0.0.0.0:8080/sse",
-      "authorization": {
-        "type": "none",
-        "required": false
       }
     }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@modelcontextprotocol/sdk",
-      "command": "uv",
-      "args": [
-        "run",
-        "main.py"
-      ],
-      "env": [
-        {
-          "name": "MEM0_API_KEY",
-          "description": "API key for mem0 client",
-          "required": true
-        }
-      ]
-    }
-  }
+  ],
+  "resources": []
 }

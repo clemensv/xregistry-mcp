@@ -1,8 +1,31 @@
 {
-  "name": "mcp-server-chatsum",
+  "repo_ref": "chatmcp/mcp-server-chatsum",
+  "name": "io.github.chatmcp/mcp-server-chatsum",
   "description": "This MCP Server is used to summarize your chat messages.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "CHAT_DB_PATH"
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "query_chat_messages",
@@ -12,29 +35,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@modelcontextprotocol/sdk",
-      "command": "node",
-      "args": [
-        "build/index.js"
-      ],
-      "env": [
-        {
-          "name": "CHAT_DB_PATH"
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/chatmcp/mcp-server-chatsum",
-    "name": "chatmcp/mcp-server-chatsum"
-  }
+  "resources": []
 }

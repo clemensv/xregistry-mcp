@@ -1,8 +1,25 @@
 {
-  "name": "EVM MCP Server",
+  "repo_ref": "mcpdotdirect/evm-mcp-server",
+  "name": "io.github.mcpdotdirect/evm-mcp-server",
   "description": "A comprehensive Model Context Protocol (MCP) server that provides blockchain services across multiple EVM-compatible networks. This server enables AI agents to interact with Ethereum, Optimism, Arbitrum, Base, Polygon, and many other EVM chains with a unified interface.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@evm-evm-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_chain_info",
@@ -801,19 +818,5 @@
       "name": "erc1155_token_address_balance",
       "uritemplate": "evm://{network}/erc1155/{tokenAddress}/{tokenId}/balanceOf/{address}"
     }
-  ],
-  "endpoints": {},
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@evm-evm-server",
-      "command": "startServer",
-      "args": [],
-      "env": []
-    }
-  },
-  "repository": {
-    "url": "https://github.com/mcpdotdirect/evm-mcp-server",
-    "name": "mcpdotdirect/evm-mcp-server"
-  }
+  ]
 }

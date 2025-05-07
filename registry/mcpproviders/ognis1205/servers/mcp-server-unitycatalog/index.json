@@ -1,12 +1,56 @@
 {
-  "name": "mcp-unitycatalog",
+  "repo_ref": "ognis1205/mcp-server-unitycatalog",
+  "name": "io.github.ognis1205/mcp-server-unitycatalog",
   "description": "A Model Context Protocol server for Unity Catalog providing Unity Catalog Functions as MCP tools.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/ognis1205/mcp-server-unitycatalog",
-    "name": "ognis1205/mcp-server-unitycatalog"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "mcp-server-unitycatalog",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "UC_SERVER",
+            "description": "The base URL of the Unity Catalog server.",
+            "required": true
+          },
+          {
+            "name": "UC_CATALOG",
+            "description": "The name of the Unity Catalog catalog.",
+            "required": true
+          },
+          {
+            "name": "UC_SCHEMA",
+            "description": "The name of the schema within a Unity Catalog catalog.",
+            "required": true
+          },
+          {
+            "name": "UC_TOKEN",
+            "description": "The access token used to authorize API requests to the Unity Catalog server.",
+            "required": false
+          },
+          {
+            "name": "UC_VERBOSITY",
+            "description": "The verbosity level for logging. Default: warn.",
+            "required": false
+          },
+          {
+            "name": "UC_LOG_DIRECTORY",
+            "description": "The directory where log files will be stored. Default: .mcp_server_unitycatalog.",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "uc_list_functions",
@@ -67,49 +111,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "uv",
-      "package": "mcp-server-unitycatalog",
-      "command": "mcp-server-unitycatalog",
-      "args": [],
-      "env": [
-        {
-          "name": "UC_SERVER",
-          "description": "The base URL of the Unity Catalog server.",
-          "required": true
-        },
-        {
-          "name": "UC_CATALOG",
-          "description": "The name of the Unity Catalog catalog.",
-          "required": true
-        },
-        {
-          "name": "UC_SCHEMA",
-          "description": "The name of the schema within a Unity Catalog catalog.",
-          "required": true
-        },
-        {
-          "name": "UC_TOKEN",
-          "description": "The access token used to authorize API requests to the Unity Catalog server.",
-          "required": false
-        },
-        {
-          "name": "UC_VERBOSITY",
-          "description": "The verbosity level for logging. Default: warn.",
-          "required": false
-        },
-        {
-          "name": "UC_LOG_DIRECTORY",
-          "description": "The directory where log files will be stored. Default: .mcp_server_unitycatalog.",
-          "required": false
-        }
-      ]
-    }
-  }
+  "resources": []
 }

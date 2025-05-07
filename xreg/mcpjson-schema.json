@@ -1,0 +1,99 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/schemas/registry-manifest.schema.json",
+    "title": "Registry Manifest",
+    "description": "Schema for registry manifest files.",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "pattern": "^io\\.github\\.[a-zA-Z0-9_-]+\\/[a-zA-Z0-9_-]+$",
+        "description": "Unique identifier for the repository in reverse domain notation."
+      },
+      "description": {
+        "type": "string",
+        "description": "A description of the repository."
+      },
+      "version_detail": {
+        "type": "object",
+        "properties": {
+          "version": {
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+\\.\\d+$",
+            "description": "Semantic version number."
+          }
+        },
+        "required": ["version"],
+        "additionalProperties": false
+      },
+      "registries": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "The name of the registry (e.g., npm)."
+            },
+            "package_name": {
+              "type": "string",
+              "description": "The package name in the registry."
+            },
+            "license": {
+              "type": "string",
+              "description": "The license of the package."
+            },
+            "command_arguments": {
+              "type": "object",
+              "properties": {
+                "sub_commands": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {"type": "string"},
+                      "description": {"type": "string"},
+                      "named_arguments": {"type": ["array", "null"], "items": {"type": "string"}}
+                    },
+                    "required": ["name", "description"]
+                  }
+                },
+                "positional_arguments": {"type": ["array", "null"], "items": {"type": "string"}},
+                "environment_variables": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {"type": "string"},
+                      "description": {"type": "string"},
+                      "required": {"type": "boolean"}
+                    },
+                    "required": ["name", "description", "required"]
+                  }
+                },
+                "named_arguments": {"type": ["array", "null"], "items": {"type": "string"}}
+              },
+              "required": ["sub_commands", "environment_variables", "positional_arguments", "named_arguments"]
+            }
+          },
+          "required": ["name", "package_name", "license", "command_arguments"],
+          "additionalProperties": false
+        }
+      },
+      "remotes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "transporttype": {"type": "string"},
+            "url": {"type": "string", "format": "uri"}
+          },
+          "required": ["transporttype", "url"],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": ["name", "description", "version_detail", "registries", "remotes"],
+    "additionalProperties": false
+  }
+  

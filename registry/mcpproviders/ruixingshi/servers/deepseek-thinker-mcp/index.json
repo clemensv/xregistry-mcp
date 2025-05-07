@@ -1,8 +1,44 @@
 {
-  "name": "deepseek-thinker",
+  "repo_ref": "ruixingshi/deepseek-thinker-mcp",
+  "name": "io.github.ruixingshi/deepseek-thinker-mcp",
   "description": "A MCP (Model Context Protocol) provider Deepseek reasoning content to MCP-enabled AI Clients, like Claude Desktop. Supports access to Deepseek's thought processes from the Deepseek API service or from a local Ollama server.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "deepseek-thinker-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "deepseek-thinker-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "API_KEY",
+            "description": "Your OpenAI API Key",
+            "required": false
+          },
+          {
+            "name": "BASE_URL",
+            "description": "API Base URL",
+            "required": false
+          },
+          {
+            "name": "USE_OLLAMA",
+            "description": "Set to true to use Ollama mode",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get-deepseek-thinker",
@@ -21,41 +57,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "deepseek-thinker-mcp",
-      "command": "npx",
-      "args": [
-        "-y",
-        "deepseek-thinker-mcp"
-      ],
-      "env": [
-        {
-          "name": "API_KEY",
-          "description": "Your OpenAI API Key",
-          "required": false
-        },
-        {
-          "name": "BASE_URL",
-          "description": "API Base URL",
-          "required": false
-        },
-        {
-          "name": "USE_OLLAMA",
-          "description": "Set to true to use Ollama mode",
-          "required": false
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/ruixingshi/deepseek-thinker-mcp",
-    "name": "ruixingshi/deepseek-thinker-mcp"
-  }
+  "resources": []
 }

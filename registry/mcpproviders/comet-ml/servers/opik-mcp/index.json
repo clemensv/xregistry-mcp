@@ -1,13 +1,40 @@
 {
-  "name": "Opik MCP",
+  "repo_ref": "comet-ml/opik-mcp",
+  "name": "io.github.comet-ml/opik-mcp",
   "description": "A Model Context Protocol (MCP) implementation for the Opik platform. It provides a unified interface for interacting with Opik's capabilities, supporting multiple transport mechanisms for flexible integration into various environments.",
-  "mcpversion": "0.0.1",
-  "serverversion": "0.0.1",
-  "repository": {
-    "url": "https://github.com/comet-ml/opik-mcp",
-    "name": "comet-ml/opik-mcp"
+  "version_detail": {
+    "version": "0.0.1"
   },
-  "docs": "https://www.comet.com/docs/opik/?from=llm&utm_source=opik&utm_medium=github&utm_content=docs_button&utm_campaign=opik",
+  "remotes": [
+    {
+      "url": "http://localhost:3001",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@comet-ml/opik-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "build/index.js",
+          "--debug",
+          "true"
+        ],
+        "environment_variables": [
+          {
+            "name": ".env",
+            "description": "Environment variables from .env file",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_server_info",
@@ -38,35 +65,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    },
-    "http": {
-      "uri": "http://localhost:3001",
-      "authorization": {
-        "type": "none",
-        "required": false
-      }
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@comet-ml/opik-mcp",
-      "command": "node",
-      "args": [
-        "build/index.js",
-        "--debug",
-        "true"
-      ],
-      "env": [
-        {
-          "name": ".env",
-          "description": "Environment variables from .env file",
-          "required": false
-        }
-      ]
-    }
-  }
+  "resources": []
 }

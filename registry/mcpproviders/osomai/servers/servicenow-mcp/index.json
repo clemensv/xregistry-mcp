@@ -1,12 +1,51 @@
 {
-  "name": "ServiceNow MCP Server",
+  "repo_ref": "osomai/servicenow-mcp",
+  "name": "io.github.osomai/servicenow-mcp",
   "description": "A Model Completion Protocol (MCP) server implementation for ServiceNow, allowing Claude to interact with ServiceNow instances.",
-  "mcpversion": "1.0",
-  "serverversion": "unspecified",
-  "repository": {
-    "url": "https://github.com/osomai/servicenow-mcp",
-    "name": "osomai/servicenow-mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [
+    {
+      "url": "http://0.0.0.0:8080",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "servicenow-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "SERVICENOW_INSTANCE_URL",
+            "description": "URL of the ServiceNow instance",
+            "required": true
+          },
+          {
+            "name": "SERVICENOW_USERNAME",
+            "description": "Username for authentication",
+            "required": true
+          },
+          {
+            "name": "SERVICENOW_PASSWORD",
+            "description": "Password for authentication",
+            "required": true
+          },
+          {
+            "name": "SERVICENOW_AUTH_TYPE",
+            "description": "Authentication type (basic, oauth, api_key)",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "list_catalog_items",
@@ -46,47 +85,5 @@
       "name": "catalog_item",
       "description": "Resource representing a specific catalog item by ID."
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    },
-    "http": {
-      "uri": "http://0.0.0.0:8080",
-      "authorization": {
-        "type": "basic",
-        "required": true
-      }
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "servicenow-mcp",
-      "command": "python -m servicenow_mcp.cli",
-      "args": [],
-      "env": [
-        {
-          "name": "SERVICENOW_INSTANCE_URL",
-          "description": "URL of the ServiceNow instance",
-          "required": true
-        },
-        {
-          "name": "SERVICENOW_USERNAME",
-          "description": "Username for authentication",
-          "required": true
-        },
-        {
-          "name": "SERVICENOW_PASSWORD",
-          "description": "Password for authentication",
-          "required": true
-        },
-        {
-          "name": "SERVICENOW_AUTH_TYPE",
-          "description": "Authentication type (basic, oauth, api_key)",
-          "required": true
-        }
-      ]
-    }
-  }
+  ]
 }

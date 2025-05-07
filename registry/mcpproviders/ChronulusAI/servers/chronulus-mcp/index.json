@@ -1,12 +1,25 @@
 {
-  "name": "chronulus-agents",
+  "repo_ref": "ChronulusAI/chronulus-mcp",
+  "name": "io.github.ChronulusAI/chronulus-mcp",
   "description": "Chronulus MCP provides access to the Chronulus AI platform of forecasting and prediction agents.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/ChronulusAI/chronulus-mcp",
-    "name": "ChronulusAI/chronulus-mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "chronulus-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "create_chronulus_session",
@@ -58,19 +71,5 @@
       "description": "Get BetaPlot.jsx",
       "mimetype": "text/javascript"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "chronulus-mcp",
-      "command": "python -m chronulus_mcp",
-      "args": [],
-      "env": []
-    }
-  }
+  ]
 }

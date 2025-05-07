@@ -1,12 +1,28 @@
 {
-  "name": "openrpc",
+  "repo_ref": "shanejonas/openrpc-mpc-server",
+  "name": "io.github.shanejonas/openrpc-mpc-server",
   "description": "A Model Context Protocol (MCP) server that provides JSON-RPC functionality through OpenRPC.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
-  "repository": {
-    "url": "https://github.com/shanejonas/openrpc-mpc-server",
-    "name": "shanejonas/openrpc-mpc-server"
+  "version_detail": {
+    "version": "0.1.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "openrpc-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "openrpc-mcp-server"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "rpc_call",
@@ -50,21 +66,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "openrpc-mcp-server",
-      "command": "npx",
-      "args": [
-        "-y",
-        "openrpc-mcp-server"
-      ]
-    }
-  }
+  "resources": []
 }

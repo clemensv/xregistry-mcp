@@ -1,12 +1,34 @@
 {
-  "name": "todoist-mcp-server",
+  "repo_ref": "abhiz123/todoist-mcp-server",
+  "name": "io.github.abhiz123/todoist-mcp-server",
   "description": "An MCP (Model Context Protocol) server implementation that integrates Claude with Todoist, enabling natural language task management. This server allows Claude to interact with your Todoist tasks using everyday language.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
-  "repository": {
-    "url": "https://github.com/abhiz123/todoist-mcp-server",
-    "name": "abhiz123/todoist-mcp-server"
+  "version_detail": {
+    "version": "0.1.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@abhiz123/todoist-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@abhiz123/todoist-mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "TODOIST_API_TOKEN",
+            "description": "Todoist API token for authentication",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "todoist_create_task",
@@ -145,27 +167,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@abhiz123/todoist-mcp-server",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@abhiz123/todoist-mcp-server"
-      ],
-      "env": [
-        {
-          "name": "TODOIST_API_TOKEN",
-          "description": "Todoist API token for authentication",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

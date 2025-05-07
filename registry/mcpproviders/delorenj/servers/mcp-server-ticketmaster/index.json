@@ -1,8 +1,34 @@
 {
-  "name": "ticketmaster",
+  "repo_ref": "delorenj/mcp-server-ticketmaster",
+  "name": "io.github.delorenj/mcp-server-ticketmaster",
   "description": "A Model Context Protocol server that provides tools for discovering events, venues, and attractions through the Ticketmaster Discovery API.",
-  "mcpversion": "1.0",
-  "serverversion": "0.2.0",
+  "version_detail": {
+    "version": "0.2.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@delorenj/mcp-server-ticketmaster",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@delorenj/mcp-server-ticketmaster"
+        ],
+        "environment_variables": [
+          {
+            "name": "TICKETMASTER_API_KEY",
+            "description": "Ticketmaster API key environment variable",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "search_ticketmaster",
@@ -71,26 +97,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@delorenj/mcp-server-ticketmaster",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@delorenj/mcp-server-ticketmaster"
-      ],
-      "env": [
-        {
-          "name": "TICKETMASTER_API_KEY",
-          "description": "Ticketmaster API key environment variable",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/delorenj/mcp-server-ticketmaster",
-    "name": "delorenj/mcp-server-ticketmaster"
-  }
+  "resources": []
 }

@@ -1,8 +1,25 @@
 {
-  "name": "json-doc-server",
+  "repo_ref": "fireproof-storage/mcp-database-server",
+  "name": "io.github.fireproof-storage/mcp-database-server",
   "description": "Simple JSON document server with basic CRUD operations using Fireproof database in a Model Context Protocol server.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "fireproof-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "save_json_doc",
@@ -69,20 +86,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "fireproof-mcp",
-      "command": "/path/to/fireproof-mcp/build/index.js"
-    }
-  },
-  "repository": {
-    "url": "https://github.com/fireproof-storage/mcp-database-server",
-    "name": "fireproof-storage/mcp-database-server"
-  }
+  "resources": []
 }

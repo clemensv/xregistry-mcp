@@ -1,12 +1,31 @@
 {
-  "name": "tavily-mcp",
+  "repo_ref": "tavily-ai/tavily-mcp",
+  "name": "io.github.tavily-ai/tavily-mcp",
   "description": "The Tavily MCP server provides seamless interaction with the tavily-search and tavily-extract tools, enabling real-time web search and intelligent data extraction capabilities via the Model Context Protocol.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
-  "repository": {
-    "url": "https://github.com/tavily-ai/tavily-mcp",
-    "name": "tavily-ai/tavily-mcp"
+  "version_detail": {
+    "version": "0.1.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "tavily-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "TAVILY_API_KEY",
+            "description": "API key for Tavily service",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "tavily-search",
@@ -133,25 +152,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "tavily-mcp",
-      "command": "node",
-      "args": [],
-      "env": [
-        {
-          "name": "TAVILY_API_KEY",
-          "description": "API key for Tavily service",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

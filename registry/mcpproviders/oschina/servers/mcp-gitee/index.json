@@ -1,12 +1,39 @@
 {
-  "name": "Gitee MCP Server",
+  "repo_ref": "oschina/mcp-gitee",
+  "name": "io.github.oschina/mcp-gitee",
   "description": "Gitee MCP Server is a Model Context Protocol (MCP) server implementation for Gitee. It provides a set of tools for interacting with Gitee's API, allowing AI assistants to manage repositories, issues, pull requests, and more.",
-  "mcpversion": "1.0",
-  "serverversion": "latest",
-  "repository": {
-    "url": "https://github.com/oschina/mcp-gitee",
-    "name": "oschina/mcp-gitee"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@gitee/mcp-gitee",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@gitee/mcp-gitee@latest"
+        ],
+        "environment_variables": [
+          {
+            "name": "GITEE_API_BASE",
+            "description": "Gitee API base URL",
+            "required": true
+          },
+          {
+            "name": "GITEE_ACCESS_TOKEN",
+            "description": "Gitee access token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "list_user_repos",
@@ -37,33 +64,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@gitee/mcp-gitee",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@gitee/mcp-gitee@latest"
-      ],
-      "env": [
-        {
-          "name": "GITEE_API_BASE",
-          "description": "Gitee API base URL",
-          "required": true,
-          "default": "https://gitee.com/api/v5"
-        },
-        {
-          "name": "GITEE_ACCESS_TOKEN",
-          "description": "Gitee access token",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

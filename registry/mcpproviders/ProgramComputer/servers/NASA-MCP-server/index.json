@@ -1,13 +1,34 @@
 {
-  "name": "NASA MCP Server",
+  "repo_ref": "ProgramComputer/NASA-MCP-server",
+  "name": "io.github.ProgramComputer/NASA-MCP-server",
   "description": "Model Context Protocol server for NASA APIs",
-  "mcpversion": "1.0",
-  "serverversion": "1.0.11",
-  "repository": {
-    "url": "https://github.com/ProgramComputer/NASA-MCP-server",
-    "name": "ProgramComputer/NASA-MCP-server"
+  "version_detail": {
+    "version": "1.0.11"
   },
-  "docs": "https://github.com/ProgramComputer/NASA-MCP-server#readme",
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@programcomputer/nasa-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@programcomputer/nasa-mcp-server@latest"
+        ],
+        "environment_variables": [
+          {
+            "name": "NASA_API_KEY",
+            "description": "Your NASA API key (get at api.nasa.gov)",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "nasa_apod",
@@ -879,28 +900,5 @@
       "description": "NASA Earth Landsat satellite imagery",
       "mimetype": "application/json"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@programcomputer/nasa-mcp-server",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@programcomputer/nasa-mcp-server@latest"
-      ],
-      "env": [
-        {
-          "name": "NASA_API_KEY",
-          "description": "Your NASA API key (get at api.nasa.gov)",
-          "required": true
-        }
-      ]
-    }
-  }
+  ]
 }

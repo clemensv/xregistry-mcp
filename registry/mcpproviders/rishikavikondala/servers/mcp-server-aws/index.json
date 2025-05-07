@@ -1,12 +1,46 @@
 {
-  "name": "AWS MCP Server",
+  "repo_ref": "rishikavikondala/mcp-server-aws",
+  "name": "io.github.rishikavikondala/mcp-server-aws",
   "description": "A Model Context Protocol server implementation for AWS operations that currently supports S3 and DynamoDB services. All operations are automatically logged and can be accessed through the audit://aws-operations resource endpoint.",
-  "mcpversion": "unknown",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/rishikavikondala/mcp-server-aws",
-    "name": "rishikavikondala/mcp-server-aws"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "mcp-server-aws",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "/path/to/repo/mcp-server-aws",
+          "run",
+          "mcp-server-aws"
+        ],
+        "environment_variables": [
+          {
+            "name": "AWS_ACCESS_KEY_ID",
+            "description": "AWS access key ID",
+            "required": false
+          },
+          {
+            "name": "AWS_SECRET_ACCESS_KEY",
+            "description": "AWS secret access key",
+            "required": false
+          },
+          {
+            "name": "AWS_REGION",
+            "description": "AWS region, defaults to us-east-1",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "s3_bucket_create",
@@ -169,40 +203,5 @@
       "uritemplate": "audit://aws-operations",
       "description": "Access to automatically logged AWS operations."
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "mcp-server-aws",
-      "command": "mcp-server-aws",
-      "args": [
-        "--directory",
-        "/path/to/repo/mcp-server-aws",
-        "run",
-        "mcp-server-aws"
-      ],
-      "env": [
-        {
-          "name": "AWS_ACCESS_KEY_ID",
-          "description": "AWS access key ID",
-          "required": false
-        },
-        {
-          "name": "AWS_SECRET_ACCESS_KEY",
-          "description": "AWS secret access key",
-          "required": false
-        },
-        {
-          "name": "AWS_REGION",
-          "description": "AWS region, defaults to us-east-1",
-          "required": false
-        }
-      ]
-    }
-  }
+  ]
 }

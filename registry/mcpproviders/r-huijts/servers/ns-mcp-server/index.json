@@ -1,12 +1,34 @@
 {
-  "name": "NS Travel Information MCP Server",
+  "repo_ref": "r-huijts/ns-mcp-server",
+  "name": "io.github.r-huijts/ns-mcp-server",
   "description": "This MCP server connects Claude to real-time NS (Nederlandse Spoorwegen) travel information, making it your perfect companion for navigating the Netherlands by train.",
-  "mcpversion": "1.0",
-  "serverversion": "1.0.0",
-  "repository": {
-    "url": "https://github.com/r-huijts/ns-mcp-server",
-    "name": "r-huijts/ns-mcp-server"
+  "version_detail": {
+    "version": "1.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "ns-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "ns-mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "NS_API_KEY",
+            "description": "Your NS API key (required)",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_disruptions",
@@ -276,27 +298,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "ns-mcp-server",
-      "command": "npx",
-      "args": [
-        "-y",
-        "ns-mcp-server"
-      ],
-      "env": [
-        {
-          "name": "NS_API_KEY",
-          "description": "Your NS API key (required)",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

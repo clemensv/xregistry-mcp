@@ -1,12 +1,48 @@
 {
-  "name": "FastMCP",
+  "repo_ref": "punkpeye/fastmcp",
+  "name": "io.github.punkpeye/fastmcp",
   "description": "A TypeScript framework for building MCP servers capable of handling client sessions.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
-  "repository": {
-    "url": "https://github.com/punkpeye/fastmcp",
-    "name": "punkpeye/fastmcp"
+  "version_detail": {
+    "version": "1.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "fastmcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "git-commit",
+      "description": "Generate a Git commit message",
+      "arguments": [
+        {
+          "name": "changes",
+          "description": "Git diff or description of changes",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "countryPoem",
+      "description": "Writes a poem about a country",
+      "arguments": [
+        {
+          "name": "name",
+          "description": "Name of the country",
+          "required": true
+        }
+      ]
+    }
+  ],
   "tools": [
     {
       "name": "add",
@@ -67,45 +103,5 @@
       "mimetype": "text/plain",
       "uritemplate": "file:///logs/{name}.log"
     }
-  ],
-  "prompts": [
-    {
-      "name": "git-commit",
-      "description": "Generate a Git commit message",
-      "arguments": [
-        {
-          "name": "changes",
-          "description": "Git diff or description of changes",
-          "required": true
-        }
-      ]
-    },
-    {
-      "name": "countryPoem",
-      "description": "Writes a poem about a country",
-      "arguments": [
-        {
-          "name": "name",
-          "description": "Name of the country",
-          "required": true
-        }
-      ]
-    }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    },
-    "http": {},
-    "websockets": {},
-    "mqtt": {},
-    "httplocal": {}
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "fastmcp",
-      "command": "start"
-    }
-  }
+  ]
 }

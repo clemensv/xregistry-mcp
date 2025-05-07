@@ -1,7 +1,33 @@
 {
-  "name": "ScreenshotOne MCP Server",
+  "repo_ref": "screenshotone/mcp",
+  "name": "io.github.screenshotone/mcp",
   "description": "An official implementation of an MCP (Model Context Protocol) server for ScreenshotOne that provides a tool to render a screenshot of a website and returns it as an image.",
-  "documentation": "https://screenshotone.com/blog/mcp-server/",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "screenshotone-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "SCREENSHOTONE_API_KEY",
+            "description": "API key for ScreenshotOne service",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "render-website-screenshot",
@@ -11,27 +37,6 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "screenshotone-mcp",
-      "command": "node",
-      "args": [
-        "build/index.js"
-      ],
-      "env": [
-        {
-          "name": "SCREENSHOTONE_API_KEY",
-          "description": "API key for ScreenshotOne service",
-          "required": true
-        }
-      ]
-    }
-  },
-  "mcpversion": "unknown",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/screenshotone/mcp",
-    "name": "screenshotone/mcp"
-  }
+  "resources": [],
+  "documentation": "https://screenshotone.com/blog/mcp-server/"
 }

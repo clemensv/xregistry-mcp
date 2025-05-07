@@ -1,12 +1,28 @@
 {
-  "name": "Terminal Controller for MCP",
+  "repo_ref": "GongRzhe/terminal-controller-mcp",
+  "name": "io.github.GongRzhe/terminal-controller-mcp",
   "description": "A Model Context Protocol (MCP) server that enables secure terminal command execution, directory navigation, and file system operations through a standardized interface.",
-  "mcpversion": "unspecified",
-  "serverversion": "unspecified",
-  "repository": {
-    "url": "https://github.com/GongRzhe/terminal-controller-mcp",
-    "name": "GongRzhe/terminal-controller-mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "terminal-controller",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-m",
+          "terminal_controller"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "execute_command",
@@ -64,16 +80,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "terminal-controller",
-      "command": "python",
-      "args": [
-        "-m",
-        "terminal_controller"
-      ],
-      "env": []
-    }
-  }
+  "resources": []
 }

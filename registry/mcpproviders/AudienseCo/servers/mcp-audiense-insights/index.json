@@ -1,8 +1,76 @@
 {
-  "name": "audiense-insights",
+  "repo_ref": "AudienseCo/mcp-audiense-insights",
+  "name": "io.github.AudienseCo/mcp-audiense-insights",
   "description": "This server, based on the Model Context Protocol (MCP), allows Claude or any other MCP-compatible client to interact with your Audiense Insights account. It extracts marketing insights and audience analysis from Audiense reports, covering demographic, cultural, influencer, and content engagement analysis.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@AudienseCo/mcp-audiense-insights",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "AUDIENSE_CLIENT_ID"
+          },
+          {
+            "name": "AUDIENSE_CLIENT_SECRET"
+          },
+          {
+            "name": "TWITTER_BEARER_TOKEN"
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [
+    {
+      "name": "audiense-demo",
+      "description": "A prompt to extract marketing insights and audience understanding from Audiense reports through demographic, cultural, influencer, and content analysis.",
+      "arguments": [
+        {
+          "name": "reportName",
+          "description": "The name or id of the Audiense Insights report.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "audiense-demo2",
+      "description": "A prompt to extract marketing insights and audience understanding from Audiense reports through demographic, cultural, influencer, and content analysis.",
+      "arguments": [
+        {
+          "name": "reportName",
+          "description": "The name or id of the Audiense Insights report.",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "segment-matching",
+      "description": "A prompt to match and compare audience segments across Audiense reports, identifying similarities, unique traits, and key insights based on demographics, interests, influencers, and engagement patterns.",
+      "arguments": [
+        {
+          "name": "brand1",
+          "description": "The name or ID of the Audiense Insights report for the first brand to analyze.",
+          "required": true
+        },
+        {
+          "name": "brand2",
+          "description": "The name or ID of the Audiense Insights report for the second brand to analyze.",
+          "required": true
+        }
+      ]
+    }
+  ],
   "tools": [
     {
       "name": "get-reports",
@@ -77,7 +145,7 @@
     },
     {
       "name": "compare-audience-influencers",
-      "description": "Compares the influencers of an audience with a baseline audience. The baseline is determined as follows: If the selection was the full audience and a single country represents more than 50% of the audience, that country is used as the baseline. Otherwise, the Global baseline is applied. If the selection was a specific segment, the full audience is used as the baseline. Each influencer comparison includes: - Affinity (%) - The level of alignment between the influencer and the audience. Baseline Affinity (%) - The influencer\u2019s affinity within the baseline audience. Uniqueness Score - A measure of how distinct the influencer is within the selected audience compared to the baseline.",
+      "description": "Compares the influencers of an audience with a baseline audience. The baseline is determined as follows: If the selection was the full audience and a single country represents more than 50% of the audience, that country is used as the baseline. Otherwise, the Global baseline is applied. If the selection was a specific segment, the full audience is used as the baseline. Each influencer comparison includes: - Affinity (%) - The level of alignment between the influencer and the audience. Baseline Affinity (%) - The influencer’s affinity within the baseline audience. Uniqueness Score - A measure of how distinct the influencer is within the selected audience compared to the baseline.",
       "inputschema": {
         "type": "object",
         "properties": {
@@ -171,74 +239,5 @@
       }
     }
   ],
-  "prompts": [
-    {
-      "name": "audiense-demo",
-      "description": "A prompt to extract marketing insights and audience understanding from Audiense reports through demographic, cultural, influencer, and content analysis.",
-      "arguments": [
-        {
-          "name": "reportName",
-          "description": "The name or id of the Audiense Insights report.",
-          "required": true
-        }
-      ]
-    },
-    {
-      "name": "audiense-demo2",
-      "description": "A prompt to extract marketing insights and audience understanding from Audiense reports through demographic, cultural, influencer, and content analysis.",
-      "arguments": [
-        {
-          "name": "reportName",
-          "description": "The name or id of the Audiense Insights report.",
-          "required": true
-        }
-      ]
-    },
-    {
-      "name": "segment-matching",
-      "description": "A prompt to match and compare audience segments across Audiense reports, identifying similarities, unique traits, and key insights based on demographics, interests, influencers, and engagement patterns.",
-      "arguments": [
-        {
-          "name": "brand1",
-          "description": "The name or ID of the Audiense Insights report for the first brand to analyze.",
-          "required": true
-        },
-        {
-          "name": "brand2",
-          "description": "The name or ID of the Audiense Insights report for the second brand to analyze.",
-          "required": true
-        }
-      ]
-    }
-  ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@AudienseCo/mcp-audiense-insights",
-      "command": "node",
-      "args": [
-        "build/index.js"
-      ],
-      "env": [
-        {
-          "name": "AUDIENSE_CLIENT_ID"
-        },
-        {
-          "name": "AUDIENSE_CLIENT_SECRET"
-        },
-        {
-          "name": "TWITTER_BEARER_TOKEN"
-        }
-      ]
-    }
-  },
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "repository": {
-    "url": "https://github.com/AudienseCo/mcp-audiense-insights",
-    "name": "AudienseCo/mcp-audiense-insights"
-  }
+  "resources": []
 }

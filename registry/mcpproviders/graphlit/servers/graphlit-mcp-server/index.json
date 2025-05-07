@@ -1,13 +1,43 @@
 {
-  "name": "Graphlit MCP Server",
+  "repo_ref": "graphlit/graphlit-mcp-server",
+  "name": "io.github.graphlit/graphlit-mcp-server",
   "description": "The Model Context Protocol (MCP) Server enables integration between MCP clients and the Graphlit service. It acts as a searchable, and RAG-ready knowledge base across developer and product management tools, ingesting data from various sources and providing tools for retrieval, RAG, extraction, publishing, ingestion, data connectors, web operations, notifications, and management operations.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
-  "documentation": "https://www.graphlit.com/blog/graphlit-mcp-server",
-  "repository": {
-    "url": "https://github.com/graphlit/graphlit-mcp-server",
-    "name": "graphlit/graphlit-mcp-server"
+  "version_detail": {
+    "version": "1.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "graphlit-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "GRAPHLIT_ENVIRONMENT_ID",
+            "description": "Your environment ID.",
+            "required": true
+          },
+          {
+            "name": "GRAPHLIT_ORGANIZATION_ID",
+            "description": "Your organization ID.",
+            "required": true
+          },
+          {
+            "name": "GRAPHLIT_JWT_SECRET",
+            "description": "Your JWT secret for signing the JWT token.",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "configureProject",
@@ -1256,36 +1286,5 @@
       "description": "Returns project metadata including credits used, available quota, and default content workflow. Accepts project resource URI, i.e. projects://{id}, where 'id' is a project identifier."
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "graphlit-mcp-server",
-      "command": "node",
-      "args": [
-        "index.js"
-      ],
-      "env": [
-        {
-          "name": "GRAPHLIT_ENVIRONMENT_ID",
-          "description": "Your environment ID.",
-          "required": true
-        },
-        {
-          "name": "GRAPHLIT_ORGANIZATION_ID",
-          "description": "Your organization ID.",
-          "required": true
-        },
-        {
-          "name": "GRAPHLIT_JWT_SECRET",
-          "description": "Your JWT secret for signing the JWT token.",
-          "required": true
-        }
-      ]
-    }
-  }
+  "documentation": "https://www.graphlit.com/blog/graphlit-mcp-server"
 }

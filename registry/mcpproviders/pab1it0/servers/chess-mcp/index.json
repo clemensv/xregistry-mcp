@@ -1,12 +1,43 @@
 {
-  "name": "Chess.com MCP Server",
+  "repo_ref": "pab1it0/chess-mcp",
+  "name": "io.github.pab1it0/chess-mcp",
   "description": "A Model Context Protocol (MCP) server for Chess.com's Published Data API providing access to player data, game records, and other public information through standardized MCP interfaces.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
-  "repository": {
-    "url": "https://github.com/pab1it0/chess-mcp",
-    "name": "pab1it0/chess-mcp"
+  "version_detail": {
+    "version": "0.1.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "pab1it0/chess-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "--rm",
+          "-i",
+          "pab1it0/chess-mcp"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "uv",
+      "package_name": "chess-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_player_profile",
@@ -79,24 +110,5 @@
       }
     }
   ],
-  "deployment": {
-    "container": {
-      "image": "pab1it0/chess-mcp",
-      "args": [
-        "run",
-        "--rm",
-        "-i",
-        "pab1it0/chess-mcp"
-      ]
-    },
-    "sandbox": {
-      "runtime": "uv",
-      "package": "chess-mcp",
-      "command": "src/chess_mcp/main.py",
-      "args": [
-        "run"
-      ],
-      "env": []
-    }
-  }
+  "resources": []
 }

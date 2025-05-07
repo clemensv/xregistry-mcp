@@ -1,8 +1,41 @@
 {
-  "name": "contentful-mcp-server",
+  "repo_ref": "ivo-toby/contentful-mcp",
+  "name": "io.github.ivo-toby/contentful-mcp",
   "description": "An MCP server implementation that integrates with Contentful's Content Management API, providing comprehensive content management capabilities.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
+  "version_detail": {
+    "version": "1.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@ivotoby/contentful-management-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "SPACE_ID",
+            "description": "Contentful Space ID",
+            "required": true
+          },
+          {
+            "name": "ENVIRONMENT_ID",
+            "description": "Contentful Environment ID",
+            "required": false
+          },
+          {
+            "name": "CONTENTFUL_HOST",
+            "description": "Contentful API host",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "create_entry",
@@ -227,40 +260,5 @@
       }
     }
   ],
-  "prompts": [],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@ivotoby/contentful-management-mcp-server",
-      "command": "node",
-      "args": [],
-      "env": [
-        {
-          "name": "SPACE_ID",
-          "description": "Contentful Space ID",
-          "required": true
-        },
-        {
-          "name": "ENVIRONMENT_ID",
-          "description": "Contentful Environment ID",
-          "required": false,
-          "default": "master"
-        },
-        {
-          "name": "CONTENTFUL_HOST",
-          "description": "Contentful API host",
-          "required": false
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/ivo-toby/contentful-mcp",
-    "name": "ivo-toby/contentful-mcp"
-  }
+  "resources": []
 }

@@ -1,12 +1,33 @@
 {
-  "name": "airtable-server",
+  "repo_ref": "felores/airtable-mcp",
+  "name": "io.github.felores/airtable-mcp",
   "description": "A Model Context Protocol server that provides tools for interacting with Airtable's API. This server enables programmatic management of Airtable bases, tables, fields, and records through Claude Desktop or other MCP clients.",
-  "mcpversion": "1.0",
-  "serverversion": "0.2.0",
-  "repository": {
-    "url": "https://github.com/felores/airtable-mcp",
-    "name": "felores/airtable-mcp"
+  "version_detail": {
+    "version": "0.2.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@felores/airtable-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "@felores/airtable-mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "AIRTABLE_API_KEY",
+            "description": "Airtable API key for authentication",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "list_bases",
@@ -373,26 +394,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@felores/airtable-mcp-server",
-      "command": "npx",
-      "args": [
-        "@felores/airtable-mcp-server"
-      ],
-      "env": [
-        {
-          "name": "AIRTABLE_API_KEY",
-          "description": "Airtable API key for authentication",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

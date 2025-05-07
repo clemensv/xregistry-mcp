@@ -1,12 +1,34 @@
 {
-  "name": "airtable-mcp-server",
+  "repo_ref": "domdomegg/airtable-mcp-server",
+  "name": "io.github.domdomegg/airtable-mcp-server",
   "description": "A Model Context Protocol server that provides read and write access to Airtable databases. This server enables LLMs to inspect database schemas, then read and write records.",
-  "mcpversion": "unknown",
-  "serverversion": "0.1.0",
-  "repository": {
-    "url": "https://github.com/domdomegg/airtable-mcp-server",
-    "name": "domdomegg/airtable-mcp-server"
+  "version_detail": {
+    "version": "0.1.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "airtable-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "airtable-mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "AIRTABLE_API_KEY",
+            "description": "Airtable personal access token",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "list_records",
@@ -109,23 +131,5 @@
       "description": "Schema of a specific table in an Airtable base",
       "mimetype": "application/json"
     }
-  ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "airtable-mcp-server",
-      "command": "npx",
-      "args": [
-        "-y",
-        "airtable-mcp-server"
-      ],
-      "env": [
-        {
-          "name": "AIRTABLE_API_KEY",
-          "description": "Airtable personal access token",
-          "required": true
-        }
-      ]
-    }
-  }
+  ]
 }

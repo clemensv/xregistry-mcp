@@ -1,9 +1,39 @@
 {
-  "name": "octagon-mcp-server",
+  "repo_ref": "OctagonAI/octagon-mcp-server",
+  "name": "io.github.OctagonAI/octagon-mcp-server",
   "description": "The Octagon MCP server provides specialized AI-powered financial research and analysis by integrating with the Octagon Market Intelligence API, enabling users to easily analyze and extract detailed insights from public filings, earnings call transcripts, financial metrics, stock market data, and extensive private market transactions within Claude Desktop and other popular MCP clients.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "documentation": "https://docs.octagonagents.com",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@OctagonAI/octagon-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@OctagonAI/octagon-mcp-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "OCTAGON_API_KEY",
+            "description": "Your Octagon API key",
+            "required": true
+          },
+          {
+            "name": "OCTAGON_API_BASE_URL",
+            "description": "Base URL for Octagon API",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "octagon-sec-agent",
@@ -198,38 +228,6 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@OctagonAI/octagon-mcp-server",
-      "packageversion": "latest",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@OctagonAI/octagon-mcp-server"
-      ],
-      "env": [
-        {
-          "name": "OCTAGON_API_KEY",
-          "description": "Your Octagon API key",
-          "required": true
-        },
-        {
-          "name": "OCTAGON_API_BASE_URL",
-          "description": "Base URL for Octagon API",
-          "required": false,
-          "default": "https://api.octagonagents.com/v1"
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/OctagonAI/octagon-mcp-server",
-    "name": "OctagonAI/octagon-mcp-server"
-  }
+  "resources": [],
+  "documentation": "https://docs.octagonagents.com"
 }

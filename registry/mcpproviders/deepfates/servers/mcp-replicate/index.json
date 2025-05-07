@@ -1,12 +1,31 @@
 {
-  "name": "replicate",
+  "repo_ref": "deepfates/mcp-replicate",
+  "name": "io.github.deepfates/mcp-replicate",
   "description": "A Model Context Protocol server implementation for Replicate. Run Replicate models through a simple tool-based interface.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
-  "repository": {
-    "url": "https://github.com/deepfates/mcp-replicate",
-    "name": "deepfates/mcp-replicate"
+  "version_detail": {
+    "version": "0.1.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "mcp-replicate",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "REPLICATE_API_TOKEN",
+            "description": "Replicate API token for authentication",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "search_models",
@@ -93,24 +112,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "mcp-replicate",
-      "command": "mcp-replicate",
-      "args": [],
-      "env": [
-        {
-          "name": "REPLICATE_API_TOKEN",
-          "description": "Replicate API token for authentication",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

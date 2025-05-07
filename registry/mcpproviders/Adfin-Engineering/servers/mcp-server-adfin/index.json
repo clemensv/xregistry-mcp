@@ -1,12 +1,41 @@
 {
-  "name": "Adfin MCP Server",
+  "repo_ref": "Adfin-Engineering/mcp-server-adfin",
+  "name": "io.github.Adfin-Engineering/mcp-server-adfin",
   "description": "MCP server implementation providing tools for filesystem operations and Adfin API interactions, enabling Claude Desktop integration.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/Adfin-Engineering/mcp-server-adfin",
-    "name": "Adfin-Engineering/mcp-server-adfin"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "unknown",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "<absolute_path_to_adfin_mcp_folder>",
+          "run",
+          "main_adfin_mcp.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "ADFIN_EMAIL",
+            "description": "User email for Adfin authentication",
+            "required": true
+          },
+          {
+            "name": "ADFIN_PASSWORD",
+            "description": "User password for Adfin authentication",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_cwd",
@@ -90,34 +119,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "uv",
-      "package": "unknown",
-      "command": "uv",
-      "args": [
-        "--directory",
-        "<absolute_path_to_adfin_mcp_folder>",
-        "run",
-        "main_adfin_mcp.py"
-      ],
-      "env": [
-        {
-          "name": "ADFIN_EMAIL",
-          "description": "User email for Adfin authentication",
-          "required": true
-        },
-        {
-          "name": "ADFIN_PASSWORD",
-          "description": "User password for Adfin authentication",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

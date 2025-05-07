@@ -1,8 +1,28 @@
 {
-  "name": "hyperliquid",
+  "repo_ref": "mektigboy/server-hyperliquid",
+  "name": "io.github.mektigboy/server-hyperliquid",
   "description": "An MCP server implementation that integrates the Hyperliquid SDK.",
-  "mcpversion": "0.0.1",
-  "serverversion": "0.0.1",
+  "version_detail": {
+    "version": "0.0.1"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@mektigboy/server-hyperliquid",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@mektigboy/server-hyperliquid"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_all_mids",
@@ -53,24 +73,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@mektigboy/server-hyperliquid",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@mektigboy/server-hyperliquid"
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/mektigboy/server-hyperliquid",
-    "name": "mektigboy/server-hyperliquid"
-  }
+  "resources": []
 }

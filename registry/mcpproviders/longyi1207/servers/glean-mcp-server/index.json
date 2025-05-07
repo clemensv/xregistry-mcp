@@ -1,8 +1,45 @@
 {
-  "name": "glean-server",
+  "repo_ref": "longyi1207/glean-mcp-server",
+  "name": "io.github.longyi1207/glean-mcp-server",
   "description": "An MCP server implementation that integrates the Glean API, providing the Search and Chat functions.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "glean-server:latest",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "-i",
+          "--rm",
+          "-e",
+          "GLEAN_API_KEY",
+          "-e",
+          "GLEAN_DOMAIN",
+          "glean-server"
+        ],
+        "environment_variables": [
+          {
+            "name": "GLEAN_API_KEY",
+            "description": "API key for Glean",
+            "required": true
+          },
+          {
+            "name": "GLEAN_DOMAIN",
+            "description": "Domain for Glean API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "search",
@@ -37,40 +74,5 @@
       }
     }
   ],
-  "deployment": {
-    "container": {
-      "image": "glean-server:latest",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "-e",
-        "GLEAN_API_KEY",
-        "-e",
-        "GLEAN_DOMAIN",
-        "glean-server"
-      ],
-      "env": [
-        {
-          "name": "GLEAN_API_KEY",
-          "description": "API key for Glean",
-          "required": true
-        },
-        {
-          "name": "GLEAN_DOMAIN",
-          "description": "Domain for Glean API",
-          "required": true
-        }
-      ]
-    }
-  },
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "repository": {
-    "url": "https://github.com/longyi1207/glean-mcp-server",
-    "name": "longyi1207/glean-mcp-server"
-  }
+  "resources": []
 }

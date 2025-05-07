@@ -1,13 +1,39 @@
 {
-  "name": "Chroma MCP Server",
+  "repo_ref": "chroma-core/chroma-mcp",
+  "name": "io.github.chroma-core/chroma-mcp",
   "description": "This server provides data retrieval capabilities powered by Chroma, enabling AI models to create collections over generated data and user inputs, and retrieve that data using vector search, full text search, metadata filtering, and more.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
-  "repository": {
-    "url": "https://github.com/chroma-core/chroma-mcp",
-    "name": "chroma-core/chroma-mcp"
+  "version_detail": {
+    "version": "1.0.0"
   },
-  "docs": "https://docs.trychroma.com/",
+  "remotes": [
+    {
+      "url": "http://localhost:8000",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@chroma-core/chroma-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--client-type",
+          "ephemeral"
+        ],
+        "environment_variables": [
+          {
+            "name": "CHROMA_CLIENT_TYPE",
+            "description": "Type of Chroma client to use (ephemeral, persistent, http, cloud)",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "chroma_list_collections",
@@ -311,33 +337,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {
-    "http": {
-      "uri": "http://localhost:8000",
-      "authorization": {
-        "type": "none",
-        "required": false
-      }
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@chroma-core/chroma-mcp",
-      "command": "chroma-mcp",
-      "args": [
-        "--client-type",
-        "ephemeral"
-      ],
-      "env": [
-        {
-          "name": "CHROMA_CLIENT_TYPE",
-          "description": "Type of Chroma client to use (ephemeral, persistent, http, cloud)",
-          "required": false,
-          "default": "ephemeral"
-        }
-      ]
-    }
-  }
+  "resources": []
 }

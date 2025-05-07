@@ -1,12 +1,33 @@
 {
-  "name": "unity-mcp-server",
+  "repo_ref": "quazaai/UnityMCPIntegration",
+  "name": "io.github.quazaai/UnityMCPIntegration",
   "description": "MCP server providing integration between Model Context Protocol and Unity Editor, enabling AI assistants to interact with Unity projects in real-time, including scene hierarchy, project settings, code execution, logs, and play mode control.",
-  "mcpversion": "1.0",
-  "serverversion": "0.2.0",
-  "repository": {
-    "url": "https://github.com/quazaai/UnityMCPIntegration",
-    "name": "quazaai/UnityMCPIntegration"
+  "version_detail": {
+    "version": "0.2.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@quazaai/unitymcpintegration",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "path-to-project>\\Library\\PackageCache\\com.quaza.unitymcp@d2b8f1260bca\\mcpServer\\mcpServer\\build\\index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "MCP_WEBSOCKET_PORT",
+            "description": "Port for WebSocket server",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_current_scene_info",
@@ -358,34 +379,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    },
-    "websockets": {
-      "uri": "ws://localhost:5010",
-      "authorization": {
-        "type": "none",
-        "required": false
-      }
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@quazaai/unitymcpintegration",
-      "command": "node",
-      "args": [
-        "path-to-project>\\Library\\PackageCache\\com.quaza.unitymcp@d2b8f1260bca\\mcpServer\\mcpServer\\build\\index.js"
-      ],
-      "env": [
-        {
-          "name": "MCP_WEBSOCKET_PORT",
-          "description": "Port for WebSocket server",
-          "required": false,
-          "default": "5010"
-        }
-      ]
-    }
-  }
+  "resources": []
 }

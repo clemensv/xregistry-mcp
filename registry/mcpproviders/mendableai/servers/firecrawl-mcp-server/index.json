@@ -1,12 +1,45 @@
 {
-  "name": "firecrawl-mcp",
+  "repo_ref": "mendableai/firecrawl-mcp-server",
+  "name": "io.github.mendableai/firecrawl-mcp-server",
   "description": "A Model Context Protocol (MCP) server implementation that integrates with Firecrawl for web scraping capabilities.",
-  "mcpversion": "1.0",
-  "serverversion": "1.7.0",
-  "repository": {
-    "url": "https://github.com/mendableai/firecrawl-mcp-server",
-    "name": "mendableai/firecrawl-mcp-server"
+  "version_detail": {
+    "version": "1.7.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "mendableai/firecrawl-mcp:latest",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "npm",
+      "package_name": "firecrawl-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "firecrawl-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "FIRECRAWL_API_KEY",
+            "description": "API key for Firecrawl",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "firecrawl_scrape",
@@ -519,36 +552,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    },
-    "httplocal": {
-      "deployment": "container",
-      "port": 3000,
-      "host": "localhost",
-      "protocol": "http"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "firecrawl-mcp",
-      "command": "npx",
-      "args": [
-        "-y",
-        "firecrawl-mcp"
-      ],
-      "env": [
-        {
-          "name": "FIRECRAWL_API_KEY",
-          "description": "API key for Firecrawl",
-          "required": true
-        }
-      ]
-    },
-    "container": {
-      "image": "mendableai/firecrawl-mcp:latest"
-    }
-  }
+  "resources": []
 }

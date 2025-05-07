@@ -1,8 +1,79 @@
 {
-  "name": "aws-athena-mcp",
+  "repo_ref": "lishenxydlgzs/aws-athena-mcp",
+  "name": "io.github.lishenxydlgzs/aws-athena-mcp",
   "description": "A Model Context Protocol (MCP) server for running AWS Athena queries. This server enables AI assistants to execute SQL queries against your AWS Athena databases and retrieve results.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@lishenxydlgzs/aws-athena-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@lishenxydlgzs/aws-athena-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "OUTPUT_S3_PATH",
+            "description": "S3 bucket path for Athena query results",
+            "required": true
+          },
+          {
+            "name": "AWS_REGION",
+            "description": "AWS region (optional)",
+            "required": false
+          },
+          {
+            "name": "AWS_PROFILE",
+            "description": "AWS profile name (optional)",
+            "required": false
+          },
+          {
+            "name": "AWS_ACCESS_KEY_ID",
+            "description": "AWS access key (optional)",
+            "required": false
+          },
+          {
+            "name": "AWS_SECRET_ACCESS_KEY",
+            "description": "AWS secret key (optional)",
+            "required": false
+          },
+          {
+            "name": "AWS_SESSION_TOKEN",
+            "description": "AWS session token (optional)",
+            "required": false
+          },
+          {
+            "name": "ATHENA_WORKGROUP",
+            "description": "Athena WorkGroup (optional)",
+            "required": false
+          },
+          {
+            "name": "QUERY_TIMEOUT_MS",
+            "description": "Query timeout in milliseconds (optional)",
+            "required": false
+          },
+          {
+            "name": "MAX_RETRIES",
+            "description": "Maximum retry attempts (optional)",
+            "required": false
+          },
+          {
+            "name": "RETRY_DELAY_MS",
+            "description": "Delay between retries in milliseconds (optional)",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "run_query",
@@ -114,76 +185,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@lishenxydlgzs/aws-athena-mcp",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@lishenxydlgzs/aws-athena-mcp"
-      ],
-      "env": [
-        {
-          "name": "OUTPUT_S3_PATH",
-          "description": "S3 bucket path for Athena query results",
-          "required": true
-        },
-        {
-          "name": "AWS_REGION",
-          "description": "AWS region (optional)",
-          "required": false
-        },
-        {
-          "name": "AWS_PROFILE",
-          "description": "AWS profile name (optional)",
-          "required": false
-        },
-        {
-          "name": "AWS_ACCESS_KEY_ID",
-          "description": "AWS access key (optional)",
-          "required": false
-        },
-        {
-          "name": "AWS_SECRET_ACCESS_KEY",
-          "description": "AWS secret key (optional)",
-          "required": false
-        },
-        {
-          "name": "AWS_SESSION_TOKEN",
-          "description": "AWS session token (optional)",
-          "required": false
-        },
-        {
-          "name": "ATHENA_WORKGROUP",
-          "description": "Athena WorkGroup (optional)",
-          "required": false
-        },
-        {
-          "name": "QUERY_TIMEOUT_MS",
-          "description": "Query timeout in milliseconds (optional)",
-          "required": false
-        },
-        {
-          "name": "MAX_RETRIES",
-          "description": "Maximum retry attempts (optional)",
-          "required": false
-        },
-        {
-          "name": "RETRY_DELAY_MS",
-          "description": "Delay between retries in milliseconds (optional)",
-          "required": false
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/lishenxydlgzs/aws-athena-mcp",
-    "name": "lishenxydlgzs/aws-athena-mcp"
-  }
+  "resources": []
 }

@@ -1,11 +1,12 @@
 {
-  "name": "oatpp-mcp",
-  "description": "Anthropic\u2019s Model Context Protocol implementation for Oat++",
-  "documentation": "https://www.anthropic.com/news/model-context-protocol",
-  "repository": {
-    "url": "https://github.com/oatpp/oatpp-mcp",
-    "name": "oatpp/oatpp-mcp"
+  "repo_ref": "oatpp/oatpp-mcp",
+  "name": "io.github.oatpp/oatpp-mcp",
+  "description": "Anthropic’s Model Context Protocol implementation for Oat++",
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [],
   "prompts": [
     {
       "name": "CodeReview"
@@ -21,12 +22,5 @@
       "name": "File"
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "serverversion": "unspecified",
-  "mcpversion": "unspecified",
-  "deployment": {}
+  "documentation": "https://www.anthropic.com/news/model-context-protocol"
 }

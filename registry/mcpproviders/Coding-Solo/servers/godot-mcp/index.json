@@ -1,13 +1,38 @@
 {
-  "name": "godot-mcp",
+  "repo_ref": "Coding-Solo/godot-mcp",
+  "name": "io.github.Coding-Solo/godot-mcp",
   "description": "A Model Context Protocol (MCP) server for interacting with the Godot game engine. It enables AI assistants to launch the Godot editor, run Godot projects, capture debug output, and control project execution.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
-  "repository": {
-    "url": "https://github.com/Coding-Solo/godot-mcp",
-    "name": "Coding-Solo/godot-mcp",
-    "branch": "main"
+  "version_detail": {
+    "version": "0.1.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/godot-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "DEBUG",
+            "description": "Enable debug mode (set to 'true' to enable)",
+            "required": false
+          },
+          {
+            "name": "GODOT_PATH",
+            "description": "Path to the Godot executable",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "launch_editor",
@@ -301,33 +326,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@modelcontextprotocol/godot-mcp",
-      "command": "node",
-      "args": [
-        "index.js"
-      ],
-      "env": [
-        {
-          "name": "DEBUG",
-          "description": "Enable debug mode (set to 'true' to enable)",
-          "required": false,
-          "default": "false"
-        },
-        {
-          "name": "GODOT_PATH",
-          "description": "Path to the Godot executable",
-          "required": false
-        }
-      ]
-    }
-  },
-  "docs": "https://modelcontextprotocol.io/introduction"
+  "resources": []
 }

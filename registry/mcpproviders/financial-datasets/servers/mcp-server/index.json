@@ -1,12 +1,34 @@
 {
-  "name": "Financial Datasets MCP Server",
+  "repo_ref": "financial-datasets/mcp-server",
+  "name": "io.github.financial-datasets/mcp-server",
   "description": "This is a Model Context Protocol (MCP) server that provides access to stock market data from Financial Datasets. It allows Claude and other AI assistants to retrieve income statements, balance sheets, cash flow statements, stock prices, and market news directly through the MCP interface.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/financial-datasets/mcp-server",
-    "name": "financial-datasets/mcp-server"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "financial-datasets-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "run",
+          "server.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "FINANCIAL_DATASETS_API_KEY",
+            "description": "API key for Financial Datasets API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_income_statements",
@@ -213,27 +235,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "financial-datasets-mcp-server",
-      "command": "uv",
-      "args": [
-        "run",
-        "server.py"
-      ],
-      "env": [
-        {
-          "name": "FINANCIAL_DATASETS_API_KEY",
-          "description": "API key for Financial Datasets API",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

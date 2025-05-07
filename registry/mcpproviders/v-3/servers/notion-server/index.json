@@ -1,12 +1,33 @@
 {
-  "name": "notion-server",
+  "repo_ref": "v-3/notion-server",
+  "name": "io.github.v-3/notion-server",
   "description": "A Model Context Protocol (MCP) server that provides seamless integration with Notion. This server enables Language Models to interact with your Notion workspace through standardized tools for searching, reading, creating, and updating pages and databases.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
-  "repository": {
-    "url": "https://github.com/v-3/notion-server",
-    "name": "v-3/notion-server"
+  "version_detail": {
+    "version": "1.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "/absolute/path/to/notion-server/build/index.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "NOTION_API_KEY",
+            "description": "Notion API key environment variable",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "search_pages",
@@ -330,26 +351,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@modelcontextprotocol/sdk",
-      "command": "node",
-      "args": [
-        "/absolute/path/to/notion-server/build/index.js"
-      ],
-      "env": [
-        {
-          "name": "NOTION_API_KEY",
-          "description": "Notion API key environment variable",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

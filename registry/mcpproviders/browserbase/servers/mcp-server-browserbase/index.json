@@ -1,13 +1,38 @@
 {
-  "name": "example-servers/browserbase",
+  "repo_ref": "browserbase/mcp-server-browserbase",
+  "name": "io.github.browserbase/mcp-server-browserbase",
   "description": "This server provides cloud browser automation capabilities using Browserbase, Puppeteer, and Stagehand. It enables LLMs to interact with web pages, take screenshots, and execute JavaScript in a cloud browser environment.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
-  "repository": {
-    "url": "https://github.com/browserbase/mcp-server-browserbase",
-    "name": "browserbase/mcp-server-browserbase",
-    "subfolder": "browserbase"
+  "version_detail": {
+    "version": "0.1.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@browserbasehq/mcp-browserbase",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "server.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "BROWSERBASE_API_KEY",
+            "description": "API key for Browserbase",
+            "required": true
+          },
+          {
+            "name": "BROWSERBASE_PROJECT_ID",
+            "description": "Project ID for Browserbase",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "browserbase_create_session",
@@ -95,32 +120,5 @@
       "description": "Screenshot resources identified by name",
       "mimetype": "image/png"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@browserbasehq/mcp-browserbase",
-      "command": "node",
-      "args": [
-        "server.js"
-      ],
-      "env": [
-        {
-          "name": "BROWSERBASE_API_KEY",
-          "description": "API key for Browserbase",
-          "required": true
-        },
-        {
-          "name": "BROWSERBASE_PROJECT_ID",
-          "description": "Project ID for Browserbase",
-          "required": true
-        }
-      ]
-    }
-  }
+  ]
 }

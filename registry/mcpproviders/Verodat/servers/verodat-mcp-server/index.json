@@ -1,12 +1,38 @@
 {
-  "name": "Verodat MCP Server",
+  "repo_ref": "Verodat/verodat-mcp-server",
+  "name": "io.github.Verodat/verodat-mcp-server",
   "description": "A Model Context Protocol (MCP) server implementation for Verodat, allowing AI models to interact with Verodat's data management capabilities through well-defined tools.",
-  "mcpversion": "1.0.0",
-  "serverversion": "1.0.0",
-  "repository": {
-    "url": "https://github.com/Verodat/verodat-mcp-server",
-    "name": "Verodat/verodat-mcp-server"
+  "version_detail": {
+    "version": "1.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@Verodat/verodat-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "path/to/verodat-mcp-server/build/src/consume.js"
+        ],
+        "environment_variables": [
+          {
+            "name": "VERODAT_AI_API_KEY",
+            "description": "API key for authentication",
+            "required": true
+          },
+          {
+            "name": "VERODAT_API_BASE_URL",
+            "description": "Base URL for Verodat API",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get-accounts",
@@ -99,31 +125,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@Verodat/verodat-mcp-server",
-      "command": "node",
-      "args": [
-        "path/to/verodat-mcp-server/build/src/consume.js"
-      ],
-      "env": [
-        {
-          "name": "VERODAT_AI_API_KEY",
-          "description": "API key for authentication",
-          "required": true
-        },
-        {
-          "name": "VERODAT_API_BASE_URL",
-          "description": "Base URL for Verodat API",
-          "required": false
-        }
-      ]
-    }
-  }
+  "resources": []
 }

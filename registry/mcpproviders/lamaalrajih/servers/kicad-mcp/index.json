@@ -1,12 +1,32 @@
 {
-  "name": "KiCad MCP Server",
+  "repo_ref": "lamaalrajih/kicad-mcp",
+  "name": "io.github.lamaalrajih/kicad-mcp",
   "description": "A Model Context Protocol (MCP) server for KiCad providing resources, tools, and prompts to interact with KiCad projects, schematics, BOMs, DRC checks, netlists, and circuit pattern recognition.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/lamaalrajih/kicad-mcp",
-    "name": "lamaalrajih/kicad-mcp"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "python",
+      "package_name": "kicad-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "main.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "KICAD_SEARCH_PATHS",
+            "description": "Comma-separated list of paths to search for KiCad projects.",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
   "prompts": [
     {
       "name": "create_new_component",
@@ -245,28 +265,5 @@
       "description": "Get a formatted report of identified circuit patterns in a KiCad project.",
       "mimetype": "text/markdown"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "python",
-      "package": "kicad-mcp",
-      "command": "python",
-      "args": [
-        "main.py"
-      ],
-      "env": [
-        {
-          "name": "KICAD_SEARCH_PATHS",
-          "description": "Comma-separated list of paths to search for KiCad projects.",
-          "required": false,
-          "default": ""
-        }
-      ]
-    }
-  }
+  ]
 }

@@ -1,12 +1,27 @@
 {
-  "name": "MCP-PIF",
+  "repo_ref": "hungryrobot1/MCP-PIF",
+  "name": "io.github.hungryrobot1/MCP-PIF",
   "description": "This project implements the Model Context Protocol (MCP) as a practical embodiment of the Personal Intelligence Framework (PIF). Through structured tools and progressive interaction patterns, it creates spaces for meaningful development of understanding between humans and AI.",
-  "mcpversion": "unspecified",
-  "serverversion": "unspecified",
-  "repository": {
-    "url": "https://github.com/hungryrobot1/MCP-PIF",
-    "name": "hungryrobot1/MCP-PIF"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "unspecified",
+      "package_name": "@modelcontextprotocol/sdk",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "path/to/your/mcp-pif/build/index.js"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "read",
@@ -196,22 +211,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "unspecified",
-      "package": "@modelcontextprotocol/sdk",
-      "packageversion": "unspecified",
-      "command": "node",
-      "args": [
-        "path/to/your/mcp-pif/build/index.js"
-      ],
-      "env": []
-    }
-  }
+  "resources": []
 }

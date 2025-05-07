@@ -1,8 +1,49 @@
 {
-  "name": "mcp-server-mariadb",
+  "repo_ref": "abel9851/mcp-server-mariadb",
+  "name": "io.github.abel9851/mcp-server-mariadb",
   "description": "An MCP server implementation for retrieving data from mariadb",
-  "mcpversion": "",
-  "serverversion": "",
+  "remotes": [],
+  "registries": [
+    {
+      "name": "",
+      "package_name": "",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--host",
+          "${DB_HOST}",
+          "--port",
+          "${DB_PORT}",
+          "--user",
+          "${DB_USER}",
+          "--password",
+          "${DB_PASSWORD}",
+          "--database",
+          "${DB_NAME}"
+        ],
+        "environment_variables": [
+          {
+            "name": "MARIADB_HOST"
+          },
+          {
+            "name": "MARIADB_USER"
+          },
+          {
+            "name": "MARIADB_PASSWORD"
+          },
+          {
+            "name": "MARIADB_DATABASE"
+          },
+          {
+            "name": "MARIADB_PORT"
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "query_database",
@@ -17,45 +58,5 @@
       "name": "schema list",
       "description": "Expose schema list in database"
     }
-  ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "",
-      "package": "",
-      "command": "mcp-server-mariadb",
-      "args": [
-        "--host",
-        "${DB_HOST}",
-        "--port",
-        "${DB_PORT}",
-        "--user",
-        "${DB_USER}",
-        "--password",
-        "${DB_PASSWORD}",
-        "--database",
-        "${DB_NAME}"
-      ],
-      "env": [
-        {
-          "name": "MARIADB_HOST"
-        },
-        {
-          "name": "MARIADB_USER"
-        },
-        {
-          "name": "MARIADB_PASSWORD"
-        },
-        {
-          "name": "MARIADB_DATABASE"
-        },
-        {
-          "name": "MARIADB_PORT"
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/abel9851/mcp-server-mariadb",
-    "name": "abel9851/mcp-server-mariadb"
-  }
+  ]
 }

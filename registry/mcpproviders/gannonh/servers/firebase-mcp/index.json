@@ -1,8 +1,39 @@
 {
-  "name": "firebase-mcp",
+  "repo_ref": "gannonh/firebase-mcp",
+  "name": "io.github.gannonh/firebase-mcp",
   "description": "Firebase MCP enables AI assistants to work directly with Firebase services, including Firestore, Storage, and Authentication, through a standardized Model Context Protocol interface.",
-  "mcpversion": "1.3.3",
-  "serverversion": "1.3.3",
+  "version_detail": {
+    "version": "1.3.3"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@gannonh/firebase-mcp",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@gannonh/firebase-mcp"
+        ],
+        "environment_variables": [
+          {
+            "name": "SERVICE_ACCOUNT_KEY_PATH",
+            "description": "Path to Firebase service account JSON key",
+            "required": true
+          },
+          {
+            "name": "FIREBASE_STORAGE_BUCKET",
+            "description": "Firebase storage bucket name",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "firestore_add_document",
@@ -358,38 +389,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@gannonh/firebase-mcp",
-      "packageversion": "1.3.3",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@gannonh/firebase-mcp"
-      ],
-      "env": [
-        {
-          "name": "SERVICE_ACCOUNT_KEY_PATH",
-          "description": "Path to Firebase service account JSON key",
-          "required": true
-        },
-        {
-          "name": "FIREBASE_STORAGE_BUCKET",
-          "description": "Firebase storage bucket name",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/gannonh/firebase-mcp",
-    "name": "gannonh/firebase-mcp"
-  },
-  "docs": "https://glama.ai/mcp/servers/x4i8z2xmrq",
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  }
+  "resources": []
 }

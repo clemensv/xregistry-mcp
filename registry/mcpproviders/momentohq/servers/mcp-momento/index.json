@@ -1,8 +1,44 @@
 {
-  "name": "momento",
+  "repo_ref": "momentohq/mcp-momento",
+  "name": "io.github.momentohq/mcp-momento",
   "description": "A simple Model Context Protocol (MCP) server implementation for Momento Cache.",
-  "mcpversion": "1.0",
-  "serverversion": "0.1.0",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@gomomento/mcp-momento",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@gomomento/mcp-momento"
+        ],
+        "environment_variables": [
+          {
+            "name": "MOMENTO_API_KEY",
+            "description": "API key for Momento Cache",
+            "required": true
+          },
+          {
+            "name": "MOMENTO_CACHE_NAME",
+            "description": "Name of the cache to use",
+            "required": false
+          },
+          {
+            "name": "DEFAULT_TTL_SECONDS",
+            "description": "Default TTL for cache entries in seconds",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get",
@@ -119,44 +155,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@gomomento/mcp-momento",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@gomomento/mcp-momento"
-      ],
-      "env": [
-        {
-          "name": "MOMENTO_API_KEY",
-          "description": "API key for Momento Cache",
-          "required": true
-        },
-        {
-          "name": "MOMENTO_CACHE_NAME",
-          "description": "Name of the cache to use",
-          "required": false,
-          "default": "mcp-momento"
-        },
-        {
-          "name": "DEFAULT_TTL_SECONDS",
-          "description": "Default TTL for cache entries in seconds",
-          "required": false,
-          "default": "60"
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/momentohq/mcp-momento",
-    "name": "momentohq/mcp-momento"
-  }
+  "resources": []
 }

@@ -1,12 +1,38 @@
 {
-  "name": "MCP-Soccerdata",
+  "repo_ref": "yeonupark/mcp-soccer-data",
+  "name": "io.github.yeonupark/mcp-soccer-data",
   "description": "An open-source Model Context Protocol (MCP) server that connects to the SoccerDataAPI to deliver up-to-date football match information via natural language interactions.",
-  "mcpversion": "unknown",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/yeonupark/mcp-soccer-data",
-    "name": "yeonupark/mcp-soccer-data"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "uv",
+      "package_name": "@yeonupark/mcp-soccer-data",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "src/",
+          "run",
+          "--env-file",
+          ".env",
+          "server.py"
+        ],
+        "environment_variables": [
+          {
+            "name": "AUTH_KEY",
+            "description": "Authentication key for Soccerdata API",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "get_livescores()",
@@ -16,26 +42,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "uv",
-      "package": "@yeonupark/mcp-soccer-data",
-      "command": "uv",
-      "args": [
-        "--directory",
-        "src/",
-        "run",
-        "--env-file",
-        ".env",
-        "server.py"
-      ],
-      "env": [
-        {
-          "name": "AUTH_KEY",
-          "description": "Authentication key for Soccerdata API",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

@@ -1,12 +1,44 @@
 {
-  "name": "keycloak-admin",
+  "repo_ref": "ChristophEnglisch/keycloak-model-context-protocol",
+  "name": "io.github.ChristophEnglisch/keycloak-model-context-protocol",
   "description": "A Model Context Protocol server for Keycloak administration, providing tools to manage users and realms.",
-  "mcpversion": "1.0",
-  "serverversion": "0.0.1",
-  "repository": {
-    "url": "https://github.com/ChristophEnglisch/keycloak-model-context-protocol",
-    "name": "ChristophEnglisch/keycloak-model-context-protocol"
+  "version_detail": {
+    "version": "0.0.1"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "keycloak-model-context-protocol",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "keycloak-model-context-protocol"
+        ],
+        "environment_variables": [
+          {
+            "name": "KEYCLOAK_URL",
+            "description": "URL of the Keycloak server",
+            "required": false
+          },
+          {
+            "name": "KEYCLOAK_ADMIN",
+            "description": "Keycloak admin username",
+            "required": false
+          },
+          {
+            "name": "KEYCLOAK_ADMIN_PASSWORD",
+            "description": "Keycloak admin password",
+            "required": false
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "create-user",
@@ -84,40 +116,5 @@
       }
     }
   ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "keycloak-model-context-protocol",
-      "command": "npx",
-      "args": [
-        "-y",
-        "keycloak-model-context-protocol"
-      ],
-      "env": [
-        {
-          "name": "KEYCLOAK_URL",
-          "description": "URL of the Keycloak server",
-          "required": false,
-          "default": "http://localhost:8080"
-        },
-        {
-          "name": "KEYCLOAK_ADMIN",
-          "description": "Keycloak admin username",
-          "required": false,
-          "default": "admin"
-        },
-        {
-          "name": "KEYCLOAK_ADMIN_PASSWORD",
-          "description": "Keycloak admin password",
-          "required": false,
-          "default": "admin"
-        }
-      ]
-    }
-  }
+  "resources": []
 }

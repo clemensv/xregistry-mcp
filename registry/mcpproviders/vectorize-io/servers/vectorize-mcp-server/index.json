@@ -1,8 +1,44 @@
 {
-  "name": "vectorize-mcp",
+  "repo_ref": "vectorize-io/vectorize-mcp-server",
+  "name": "io.github.vectorize-io/vectorize-mcp-server",
   "description": "A Model Context Protocol (MCP) server implementation that integrates with Vectorize for advanced Vector retrieval and text extraction.",
-  "mcpversion": "unknown",
-  "serverversion": "0.1.0",
+  "version_detail": {
+    "version": "0.1.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@vectorize-io/vectorize-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "-y",
+          "@vectorize-io/vectorize-mcp-server@latest"
+        ],
+        "environment_variables": [
+          {
+            "name": "VECTORIZE_ORG_ID",
+            "description": "Vectorize Organization ID",
+            "required": true
+          },
+          {
+            "name": "VECTORIZE_TOKEN",
+            "description": "Vectorize Token",
+            "required": true
+          },
+          {
+            "name": "VECTORIZE_PIPELINE_ID",
+            "description": "Vectorize Pipeline ID",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "retrieve",
@@ -68,36 +104,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@vectorize-io/vectorize-mcp-server",
-      "command": "npx",
-      "args": [
-        "-y",
-        "@vectorize-io/vectorize-mcp-server@latest"
-      ],
-      "env": [
-        {
-          "name": "VECTORIZE_ORG_ID",
-          "description": "Vectorize Organization ID",
-          "required": true
-        },
-        {
-          "name": "VECTORIZE_TOKEN",
-          "description": "Vectorize Token",
-          "required": true
-        },
-        {
-          "name": "VECTORIZE_PIPELINE_ID",
-          "description": "Vectorize Pipeline ID",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/vectorize-io/vectorize-mcp-server",
-    "name": "vectorize-io/vectorize-mcp-server"
-  }
+  "resources": []
 }

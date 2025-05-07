@@ -1,13 +1,60 @@
 {
-  "name": "Apify Model Context Protocol (MCP) Server",
+  "repo_ref": "apify/actors-mcp-server",
+  "name": "io.github.apify/actors-mcp-server",
   "description": "Implementation of an MCP server for all Apify Actors enabling interaction with one or more Apify Actors defined in the MCP Server configuration. Allows AI assistants to use Apify Actors as tools for various scraping and data extraction tasks.",
-  "mcpversion": "1.0",
-  "serverversion": "unspecified",
-  "repository": {
-    "url": "https://github.com/apify/actors-mcp-server",
-    "name": "apify/actors-mcp-server"
+  "version_detail": {
+    "version": "0.0.0"
   },
-  "docs": "https://modelcontextprotocol.org/",
+  "remotes": [
+    {
+      "url": "http://localhost:3001",
+      "transporttype": "http"
+    }
+  ],
+  "registries": [
+    {
+      "name": "container",
+      "package_name": "apify/actors-mcp-server:latest",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--actors",
+          "apify/rag-web-browser,lukaskrivka/google-maps-with-contact-details"
+        ],
+        "environment_variables": [
+          {
+            "name": "APIFY_TOKEN",
+            "description": "API token for Apify platform",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    },
+    {
+      "name": "npm",
+      "package_name": "@apify/actors-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "dist/stdio.js",
+          "--actors",
+          "apify/rag-web-browser,lukaskrivka/google-maps-with-contact-details"
+        ],
+        "environment_variables": [
+          {
+            "name": "APIFY_TOKEN",
+            "description": "API token for Apify platform",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "apify-slash-rag-web-browser",
@@ -91,63 +138,5 @@
       }
     }
   ],
-  "resources": [],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    },
-    "http": {
-      "uri": "http://localhost:3001",
-      "authorization": {
-        "type": "header",
-        "name": "authorization",
-        "description": "Provide your APIFY_TOKEN as Bearer token in the Authorization header.",
-        "required": true,
-        "format": "Bearer {token}"
-      },
-      "openapi": {
-        "url": "https://actors-mcp-server.apify.actor/openapi.json",
-        "description": "OpenAPI specification for the MCP server HTTP API"
-      }
-    },
-    "httplocal": {
-      "deployment": "container",
-      "port": 3001,
-      "host": "localhost",
-      "protocol": "http"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "nodejs",
-      "package": "@apify/actors-mcp-server",
-      "command": "node",
-      "args": [
-        "dist/stdio.js",
-        "--actors",
-        "apify/rag-web-browser,lukaskrivka/google-maps-with-contact-details"
-      ],
-      "env": [
-        {
-          "name": "APIFY_TOKEN",
-          "description": "API token for Apify platform",
-          "required": true
-        }
-      ]
-    },
-    "container": {
-      "image": "apify/actors-mcp-server:latest",
-      "args": [
-        "--actors",
-        "apify/rag-web-browser,lukaskrivka/google-maps-with-contact-details"
-      ],
-      "env": [
-        {
-          "name": "APIFY_TOKEN",
-          "description": "API token for Apify platform",
-          "required": true
-        }
-      ]
-    }
-  }
+  "resources": []
 }

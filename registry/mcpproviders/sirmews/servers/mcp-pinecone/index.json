@@ -1,12 +1,29 @@
 {
-  "name": "pinecone-mcp",
+  "repo_ref": "sirmews/mcp-pinecone",
+  "name": "io.github.sirmews/mcp-pinecone",
   "description": "Pinecone Model Context Protocol Server for Claude Desktop. Implements reading and writing to a Pinecone index with tools for semantic search, document processing, and stats.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
-  "repository": {
-    "url": "https://github.com/sirmews/mcp-pinecone",
-    "name": "sirmews/mcp-pinecone"
+  "version_detail": {
+    "version": "0.0.0"
   },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "mcp-pinecone",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [
+          "--directory",
+          "{project_dir}",
+          "run",
+          "mcp-pinecone"
+        ],
+        "environment_variables": [],
+        "named_arguments": null
+      }
+    }
+  ],
   "prompts": [
     {
       "name": "pinecone-query",
@@ -161,23 +178,5 @@
       "description": "Vector resource identified by vector ID in Pinecone index",
       "mimetype": "text/plain"
     }
-  ],
-  "endpoints": {
-    "stdio": {
-      "deployment": "sandbox"
-    }
-  },
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "mcp-pinecone",
-      "command": "uv",
-      "args": [
-        "--directory",
-        "{project_dir}",
-        "run",
-        "mcp-pinecone"
-      ]
-    }
-  }
+  ]
 }

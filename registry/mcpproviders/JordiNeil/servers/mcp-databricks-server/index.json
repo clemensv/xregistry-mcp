@@ -1,8 +1,41 @@
 {
-  "name": "Databricks MCP Server",
+  "repo_ref": "JordiNeil/mcp-databricks-server",
+  "name": "io.github.JordiNeil/mcp-databricks-server",
   "description": "A Model Context Protocol (MCP) server that connects to Databricks API, allowing LLMs to run SQL queries, list jobs, and get job status.",
-  "mcpversion": "1.0",
-  "serverversion": "unknown",
+  "version_detail": {
+    "version": "0.0.0"
+  },
+  "remotes": [],
+  "registries": [
+    {
+      "name": "npm",
+      "package_name": "@modelcontextprotocol/databricks-mcp-server",
+      "license": "",
+      "command_arguments": {
+        "sub_commands": [],
+        "positional_arguments": [],
+        "environment_variables": [
+          {
+            "name": "DATABRICKS_HOST",
+            "description": "Databricks instance URL",
+            "required": true
+          },
+          {
+            "name": "DATABRICKS_TOKEN",
+            "description": "Personal access token for Databricks",
+            "required": true
+          },
+          {
+            "name": "DATABRICKS_HTTP_PATH",
+            "description": "HTTP path for Databricks SQL warehouse",
+            "required": true
+          }
+        ],
+        "named_arguments": null
+      }
+    }
+  ],
+  "prompts": [],
   "tools": [
     {
       "name": "run_sql_query",
@@ -59,33 +92,5 @@
       }
     }
   ],
-  "deployment": {
-    "sandbox": {
-      "runtime": "node",
-      "package": "@modelcontextprotocol/databricks-mcp-server",
-      "command": "python3 main.py",
-      "args": [],
-      "env": [
-        {
-          "name": "DATABRICKS_HOST",
-          "description": "Databricks instance URL",
-          "required": true
-        },
-        {
-          "name": "DATABRICKS_TOKEN",
-          "description": "Personal access token for Databricks",
-          "required": true
-        },
-        {
-          "name": "DATABRICKS_HTTP_PATH",
-          "description": "HTTP path for Databricks SQL warehouse",
-          "required": true
-        }
-      ]
-    }
-  },
-  "repository": {
-    "url": "https://github.com/JordiNeil/mcp-databricks-server",
-    "name": "JordiNeil/mcp-databricks-server"
-  }
+  "resources": []
 }
