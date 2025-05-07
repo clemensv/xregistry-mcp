@@ -33,18 +33,29 @@ docker run --rm --network host -v "$REPO_ROOT":/workspace ghcr.io/xregistry/xr m
 
 # Dynamically create entries for each registry index.json (using ../registry)
 REGISTRY_DIR="$REPO_ROOT/registry"
-find "$REGISTRY_DIR" -type f -name index.json | while read file; do
-  # Get relative path from registry directory and remove the trailing /index.json
-  path=${file#"$REGISTRY_DIR"/}
-  path=${path%/index.json}
-  # Run the xr create command inside the container; note that the JSON file is referenced via /workspace
-  docker run --rm --network host -v "$REPO_ROOT":/workspace ghcr.io/xregistry/xr create "$path" -d "@/workspace/registry/$path/index.json" -s localhost:8080
-  if [ $? -ne 0 ]; then
-    echo "Error processing file: $file"
-  else
-    echo "Processed file: $file"
-  fi
-done
+docker run --rm --network host \
+  -v "$REPO_ROOT":/workspace \
+  --entrypoint /bin/sh \
+  ghcr.io/xregistry/xr \
+  -c '
+    find /workspace/registry -type f -name index.json | while read file; do
+      # Get relative path from registry directory and remove the trailing /index.json
+      path=${file#/workspace/registry/}
+      path=${path%/index.json}
+
+      # Run the xr create command
+      /xr create "$path" -d "@$file" -s localhost:8080
+      
+      # Check for errors
+      if [ $? -ne 0 ]; then
+        echo "Error processing file: $file"
+      else
+        echo "Processed file: $file"
+      fi
+    done
+  '
+
+
 
 mkdir -p $REPO_ROOT/live
 # Download entire live directory using the xr docker container
@@ -53,7 +64,7 @@ docker run --rm --network host -v "$REPO_ROOT":/workspace ghcr.io/xregistry/xr d
 docker stop "${CONTAINER_ID}"
 docker rm "${CONTAINER_ID}"
 
-pip install pandas
+yes | pip install pandas --quiet
 python "$REPO_ROOT/index/build_index.py"
 cp $REPO_ROOT/index/flex/*.flex.json $REPO_ROOT/live
 
