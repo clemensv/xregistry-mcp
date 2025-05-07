@@ -1,5 +1,4 @@
-name: Validate MCP JSON
-
+name: Ingest from remote repo via issue
 on:
   issues:
     types: [opened, edited]
