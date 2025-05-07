@@ -41,34 +41,53 @@ export const createServer = () => {
     }
   );
 
+
+
   const registryUrl = "https://clemensv.github.io/xregistry-mcp/";
-  const flexIndexes = {
-    server: new FlexSearch.Index(),
-    tool: new FlexSearch.Index(),
-    resource: new FlexSearch.Index(),
-    prompt: new FlexSearch.Index(),
+
+  async function loadIndex(type: string) {
+    // Load the pre-built index
+    const indexData: Record<string, unknown> = await fetch(`${registryUrl}/${type}_index.flex.json`).then(r => r.json()) as Record<string, unknown>;
+
+    // Create the index with storage enabled
+    const index = new FlexSearch.Document({
+      document: {
+        id: 'id',
+        index: ['name', 'description'],
+        store: true
+      }
+    });
+
+    // Import the index
+    for (const [key, value] of Object.entries(indexData)) {
+      await index.import(key, value);
+    }
+
+    return index;
+  }
+
+  const flexIndexes: {
+    server: FlexSearch.Document<unknown, true>
+    tool: FlexSearch.Document<unknown, true>
+    resource: FlexSearch.Document<unknown, true>
+    prompt: FlexSearch.Document<unknown, true>
+  } = {
+    server: null as any,
+    tool: null as any,
+    resource: null as any,
+    prompt: null as any,
   };
 
   const loadIndexes = async () => {
-    const indexFiles = [
-      { type: "server", file: "server_index.flex.json" },
-      { type: "tool", file: "tool_index.flex.json" },
-      { type: "resource", file: "resource_index.flex.json" },
-      { type: "prompt", file: "prompt_index.flex.json" },
-    ];
-
-    for (const { type, file } of indexFiles) {
-      const response = await fetch(`${registryUrl}${file}`);
-      if (response.ok) {
-        const data = await response.json();
-        flexIndexes[type].import(data);
-      }
-    }
+    flexIndexes.server = await loadIndex("servers");
+    flexIndexes.tool = await loadIndex("tools");
+    flexIndexes.resource = await loadIndex("resources");
+    flexIndexes.prompt = await loadIndex("prompts");
   };
 
-  loadIndexes();
+  loadIndexes().catch(console.error);
 
-  const fetchRegistryData = async (path) => {
+  const fetchRegistryData = async (path: string) => {
     const response = await fetch(`${registryUrl}${path}`);
     if (!response.ok) {
       throw new Error(`Failed to fetch data from ${path}`);
@@ -126,37 +145,37 @@ export const createServer = () => {
     }
 
     if (name === ToolName.GET_SERVERS) {
-      const { providerId } = args;
+      const { providerId } = args as { providerId: string };
       return { content: [{ type: "json", data: await fetchRegistryData(`mcpproviders/${providerId}/servers`) }] };
     }
 
     if (name === ToolName.FIND_SERVERS) {
-      const { query } = args;
-      const results = flexIndexes.server.search(query, 10);
+      const { query } = args as { query: string };
+      const results = flexIndexes.server.search(String(query), 10);
       return { content: [{ type: "json", data: results }] };
     }
 
     if (name === ToolName.FIND_TOOLS) {
-      const { query } = args;
-      const results = flexIndexes.tool.search(query, 10);
+      const { query } = args as { query: string };
+      const results = flexIndexes.tool.search(String(query), 10);
       return { content: [{ type: "json", data: results }] };
     }
 
     if (name === ToolName.FIND_PROMPTS) {
-      const { query } = args;
-      const results = flexIndexes.prompt.search(query, 10);
+      const { query } = args as { query: string };
+      const results = flexIndexes.prompt.search(String(query), 10);
       return { content: [{ type: "json", data: results }] };
     }
 
     if (name === ToolName.FIND_RESOURCES) {
-      const { query } = args;
-      const results = flexIndexes.resource.search(query, 10);
+      const { query } = args as { query: string };
+      const results = flexIndexes.resource.search(String(query), 10);
       return { content: [{ type: "json", data: results }] };
     }
 
     if (name === ToolName.FIND_DEPLOYMENTS) {
-      const { query } = args;
-      const results = flexIndexes.server.search(query, 10); // Assuming deployments are part of servers
+      const { query } = args as { query: string };
+      const results = flexIndexes.server.search(String(query), 10); // Assuming deployments are part of servers
       return { content: [{ type: "json", data: results }] };
     }
 

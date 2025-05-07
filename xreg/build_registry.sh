@@ -56,4 +56,6 @@ docker rm "${CONTAINER_ID}"
 python "$REPO_ROOT/index/build_index.py"
 cp $REPO_ROOT/index/flex/*.flex.json $REPO_ROOT/live
 
+cp $REPO_ROOT/xreg/staticwebapp.conmfig.json $REPO_ROOT/live/staticwebapp.config.json
+
 echo "xregistry server stopped and removed."

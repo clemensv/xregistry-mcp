@@ -1,190 +1,78 @@
-# Everything MCP Server
+# xRegistry-MCP Server
 
-This MCP server attempts to exercise all the features of the MCP protocol. It is not intended to be a useful server, but rather a test server for builders of MCP clients. It implements prompts, tools, resources, sampling, and more to showcase MCP capabilities.
+This repository contains the implementation of the xRegistry-MCP Server, which interacts with a remote registry to manage MCP providers, servers, tools, resources, prompts, and deployments.
 
-## Components
+## Overview
 
-### Tools
+The server is built using the Model Context Protocol (MCP) SDK, and it provides the following functionalities:
+- **Configuration & Setup:** 
+  - Defines server metadata (name and version).
+  - Loads FlexSearch indexes for efficient keyword-based searches.
+  - Maintains a connection with the remote registry hosted at `https://clemensv.github.io/xregistry-mcp/`.
 
-1. `echo`
-   - Simple tool to echo back input messages
-   - Input:
-     - `message` (string): Message to echo back
-   - Returns: Text content with echoed message
+- **Tool Endpoints:**
+  - **GET_PROVIDERS:** Returns all available MCP providers.
+  - **GET_SERVERS:** Retrieves servers associated with a specific provider.
+  - **FIND_SERVERS:** Searches for servers using keywords.
+  - **FIND_TOOLS:** Searches for tools using keywords.
+  - **FIND_PROMPTS:** Searches for prompts using keywords.
+  - **FIND_RESOURCES:** Searches for resources using keywords.
+  - **FIND_DEPLOYMENTS:** Searches for deployments (assumed to be part of server results).
 
-2. `add`
-   - Adds two numbers together
-   - Inputs:
-     - `a` (number): First number
-     - `b` (number): Second number
-   - Returns: Text result of the addition
+- **Prompt Endpoints:**
+  - **MCP_MANIFEST:** Retrieves the MCP manifest.
+  - **MCP_SERVER_REGISTRATION:** Registers a new MCP server.
 
-3. `longRunningOperation`
-   - Demonstrates progress notifications for long operations
-   - Inputs:
-     - `duration` (number, default: 10): Duration in seconds
-     - `steps` (number, default: 5): Number of progress steps
-   - Returns: Completion message with duration and steps
-   - Sends progress notifications during execution
+## Technical Details
 
-4. `sampleLLM`
-   - Demonstrates LLM sampling capability using MCP sampling feature
-   - Inputs:
-     - `prompt` (string): The prompt to send to the LLM
-     - `maxTokens` (number, default: 100): Maximum tokens to generate
-   - Returns: Generated LLM response
+1. **Server Initialization:**
+   - The server initializes with a name ("xRegistry-MCP-Server") and version ("1.0.0").
+   - It registers capabilities for prompts, tools, and logging.
 
-5. `getTinyImage`
-   - Returns a small test image
-   - No inputs required
-   - Returns: Base64 encoded PNG image data
+2. **Data Indexing & Searching:**
+   - Uses [FlexSearch](https://github.com/nextapps-de/flexsearch) to create indexes for `server`, `tool`, `resource`, and `prompt`.
+   - Index JSON files are fetched from the remote registry URL and imported into FlexSearch.
 
-6. `printEnv`
-   - Prints all environment variables
-   - Useful for debugging MCP server configuration
-   - No inputs required
-   - Returns: JSON string of all environment variables
+3. **Request Handlers:**
+   - **List Tools & Prompts:** Define the available tools and prompts with descriptions and input schema for each.
+   - **Call Tool:** Handles tool calls by processing requests, fetching data from the registry, and performing searches on the imported indexes.
 
-7. `annotatedMessage`
-   - Demonstrates how annotations can be used to provide metadata about content
-   - Inputs:
-     - `messageType` (enum: "error" | "success" | "debug"): Type of message to demonstrate different annotation patterns
-     - `includeImage` (boolean, default: false): Whether to include an example image
-   - Returns: Content with varying annotations:
-     - Error messages: High priority (1.0), visible to both user and assistant
-     - Success messages: Medium priority (0.7), user-focused
-     - Debug messages: Low priority (0.3), assistant-focused
-     - Optional image: Medium priority (0.5), user-focused
-   - Example annotations:
-     ```json
-     {
-       "priority": 1.0,
-       "audience": ["user", "assistant"]
-     }
-     ```
+4. **Registry Data Fetching:**
+   - Data fetching is abstracted into a helper function that retrieves JSON data from the remote registry URL.
+   - Algorithms are in place to manage communication failures.
 
-8. `getResourceReference`
-   - Returns a resource reference that can be used by MCP clients
-   - Inputs:
-     - `resourceId` (number, 1-100): ID of the resource to reference
-   - Returns: A resource reference with:
-     - Text introduction
-     - Embedded resource with `type: "resource"`
-     - Text instruction for using the resource URI
+5. **Cleanup:**
+   - The server includes a cleanup function for resource management (e.g., closing connections).
 
-### Resources
+## Usage
 
-The server provides 100 test resources in two formats:
-- Even numbered resources:
-  - Plaintext format
-  - URI pattern: `test://static/resource/{even_number}`
-  - Content: Simple text description
+1. **Starting the Server:**
+   - Instantiate the server by invoking the `createServer` function.
+   - Ensure that the machine has network access to fetch remote index data.
 
-- Odd numbered resources:
-  - Binary blob format
-  - URI pattern: `test://static/resource/{odd_number}`
-  - Content: Base64 encoded binary data
+2. **Interacting with the Server:**
+   - Use the tool endpoints to retrieve or search for MCP providers, servers, tools, resources, prompts, or deployments.
+   - Use the prompt endpoints to interact with the MCP manifest and server registration.
 
-Resource features:
-- Supports pagination (10 items per page)
-- Allows subscribing to resource updates
-- Demonstrates resource templates
-- Auto-updates subscribed resources every 5 seconds
+3. **Extending the Server:**
+   - Additional handlers can be added to extend functionalities further.
+   - Modify the FlexSearch configurations or fetch behavior as required.
 
-### Prompts
+## Repository Structure
 
-1. `simple_prompt`
-   - Basic prompt without arguments
-   - Returns: Single message exchange
-
-2. `complex_prompt`
-   - Advanced prompt demonstrating argument handling
-   - Required arguments:
-     - `temperature` (number): Temperature setting
-   - Optional arguments:
-     - `style` (string): Output style preference
-   - Returns: Multi-turn conversation with images
-
-3. `resource_prompt`
-   - Demonstrates embedding resource references in prompts
-   - Required arguments:
-     - `resourceId` (number): ID of the resource to embed (1-100)
-   - Returns: Multi-turn conversation with an embedded resource reference
-   - Shows how to include resources directly in prompt messages
-
-### Logging
-
-The server sends random-leveled log messages every 15 seconds, e.g.:
-
-```json
-{
-  "method": "notifications/message",
-  "params": {
-	"level": "info",
-	"data": "Info-level message"
-  }
-}
+```
+/mcpserver
+ ├── registry.ts      # Main server implementation using MCP SDK
+ ├── README.md        # Project documentation (this file)
 ```
 
-## Usage with Claude Desktop (uses [stdio Transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#stdio))
+## Dependencies
 
-Add to your `claude_desktop_config.json`:
+- [@modelcontextprotocol/sdk](https://www.npmjs.com/package/@modelcontextprotocol/sdk)
+- [zod](https://github.com/colinhacks/zod) for schema validation
+- [node-fetch](https://www.npmjs.com/package/node-fetch) for HTTP requests
+- [FlexSearch](https://github.com/nextapps-de/flexsearch) for indexing and search functionality
 
-```json
-{
-  "mcpServers": {
-    "everything": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-everything"
-      ]
-    }
-  }
-}
-```
+## Conclusion
 
-## Usage with VS Code
-
-For quick installation, use of of the one-click install buttons below...
-
-[![Install with NPX in VS Code](https://img.shields.io/badge/VS_Code-NPM-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=everything&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40modelcontextprotocol%2Fserver-everything%22%5D%7D) [![Install with NPX in VS Code Insiders](https://img.shields.io/badge/VS_Code_Insiders-NPM-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=everything&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40modelcontextprotocol%2Fserver-everything%22%5D%7D&quality=insiders)
-
-[![Install with Docker in VS Code](https://img.shields.io/badge/VS_Code-Docker-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=everything&config=%7B%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22mcp%2Feverything%22%5D%7D) [![Install with Docker in VS Code Insiders](https://img.shields.io/badge/VS_Code_Insiders-Docker-24bfa5?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=everything&config=%7B%22command%22%3A%22docker%22%2C%22args%22%3A%5B%22run%22%2C%22-i%22%2C%22--rm%22%2C%22mcp%2Feverything%22%5D%7D&quality=insiders)
-
-For manual installation, add the following JSON block to your User Settings (JSON) file in VS Code. You can do this by pressing `Ctrl + Shift + P` and typing `Preferences: Open User Settings (JSON)`.
-
-Optionally, you can add it to a file called `.vscode/mcp.json` in your workspace. This will allow you to share the configuration with others.
-
-> Note that the `mcp` key is not needed in the `.vscode/mcp.json` file.
-
-#### NPX
-
-```json
-{
-  "mcp": {
-    "servers": {
-      "everything": {
-        "command": "npx",
-        "args": ["-y", "@modelcontextprotocol/server-everything"]
-      }
-    }
-  }
-}
-```
-
-## Run with [HTTP+SSE Transport](https://modelcontextprotocol.io/specification/2024-11-05/basic/transports#http-with-sse) (deprecated as of [2025-03-26](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports))
-
-```shell
-cd src/everything
-npm install
-npm run start:sse
-```
-
-## Run with [Streamable HTTP Transport](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#streamable-http)
-
-```shell
-cd src/everything
-npm install
-npm run start:streamableHttp
-```
+The xRegistry-MCP Server is a lightweight yet powerful registry system designed for efficient management and searching of MCP entities. This design allows for dynamic data retrieval from remote sources, flexibility in search operations, and easy integration with MCP-based workflows.
