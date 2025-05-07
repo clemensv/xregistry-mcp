@@ -88,15 +88,39 @@ const octokit = new Octokit({ auth: process.env.GH_TOKEN });
     server = ''
   } = config;
 
+  // RFC3986 unreserved + "@" validation
+  const VALID_NAME_REGEX = /^[A-Za-z0-9_][A-Za-z0-9._~@-]{0,127}$/;
+  
   if (!repoUrl || !mcpprovider || !server) {
     await octokit.rest.issues.createComment({
       owner,
       repo,
       issue_number,
-      body: '❌ YAML must contain `repo:`, `mcpprovider:`, and `server:` fields.'
+      body: '❌ YAML must contain non-empty `repo:`, `mcpprovider:`, and `server:` fields.'
     });
     process.exit(0);
   }
+  
+  if (!VALID_NAME_REGEX.test(mcpprovider)) {
+    await octokit.rest.issues.createComment({
+      owner,
+      repo,
+      issue_number,
+      body: `❌ Invalid \`mcpprovider:\` value: \`${mcpprovider}\`. Must be 1-128 characters long, start with ALPHA, DIGIT, or "_", and contain only ALPHA, DIGIT, "-", ".", "_", "~", or "@".`
+    });
+    process.exit(0);
+  }
+  
+  if (!VALID_NAME_REGEX.test(server)) {
+    await octokit.rest.issues.createComment({
+      owner,
+      repo,
+      issue_number,
+      body: `❌ Invalid \`server:\` value: \`${server}\`. Must be 1-128 characters long, start with ALPHA, DIGIT, or "_", and contain only ALPHA, DIGIT, "-", ".", "_", "~", or "@".`
+    });
+    process.exit(0);
+  }
+
 
   // Determine default branch of the current repo
   const { data: repoData } = await octokit.rest.repos.get({ owner, repo });
