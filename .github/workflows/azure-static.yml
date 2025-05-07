@@ -69,6 +69,7 @@ jobs:
             touch .gitkeep
             git add .gitkeep
             git commit -m "Initial commit for static-site"
+            git remote set-url --push origin https://clemensv:${{ secrets.GITHUB_TOKEN }}@github.com/clemensv/xregistry-mcp
             git push -u origin static-site
           fi
           echo "TEMP_DIR=$TEMP_DIR" >> $GITHUB_ENV
@@ -82,5 +83,6 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "Update static-site with latest build"
+            git remote set-url --push origin https://clemensv:${{ secrets.GITHUB_TOKEN }}@github.com/clemensv/xregistry-mcp
             git push origin static-site
           fi
