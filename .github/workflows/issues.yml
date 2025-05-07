@@ -1,0 +1,29 @@
+name: Ingest from remote repo via issue
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  validate-mcp:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: write
+    steps:
+      - name: Checkout repo (needed for node_modules)
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          npm install js-yaml axios @octokit/rest
+
+      - name: Validate issue YAML and check MCP file
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node .github/scripts/validate-mcp.js
