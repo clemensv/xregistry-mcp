@@ -122,6 +122,11 @@
                                 }
                             }
                         },
+                        "repo_ref": {
+                            "name": "repo_ref",
+                            "type": "string",
+                            "description": "Repository reference for the server."
+                        },
                         "remotes": {
                             "name": "remotes",
                             "type": "array",
@@ -196,7 +201,7 @@
                                     },
                                     "inputschema": {
                                         "name": "inputschema",
-                                        "type": "object"
+                                        "type": "any"
                                     }
                                 }
                             }
