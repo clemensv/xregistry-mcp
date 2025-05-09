@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:14:11.025392764Z",
+  "createdat": "2025-05-09T16:44:20.309314417Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/Automata-Labs-team/servers/code-sandbox-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:14:11.025392764Z",
+  "modifiedat": "2025-05-09T16:44:20.309314417Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/Automata-Labs-team/servers/code-sandbox-mcp/meta",
   "serverid": "code-sandbox-mcp",

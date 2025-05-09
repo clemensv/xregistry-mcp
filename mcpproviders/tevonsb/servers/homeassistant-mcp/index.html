@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:13:17.495239698Z",
+  "createdat": "2025-05-09T16:43:54.734190074Z",
   "description": "The server uses the MCP protocol to share access to a local Home Assistant instance with an LLM application. A powerful bridge between your Home Assistant instance and Language Learning Models (LLMs), enabling natural language control and monitoring of your smart home devices through the Model Context Protocol (MCP). This server provides a comprehensive API for managing your entire Home Assistant ecosystem, from device control to system administration.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/tevonsb/servers/homeassistant-mcp/meta",
-  "modifiedat": "2025-05-07T20:13:17.495239698Z",
+  "modifiedat": "2025-05-09T16:43:54.734190074Z",
   "name": "io.github.tevonsb/homeassistant-mcp",
   "prompts": [],
   "registries": [
@@ -23,19 +23,19 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Home Assistant host URL",
+            "description": "Home Assistant host URL",
             "name": "HASS_HOST",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Home Assistant access token",
+            "description": "Home Assistant access token",
             "name": "HASS_TOKEN",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Port to run the server on",
+            "description": "Port to run the server on",
             "name": "PORT",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [],
@@ -200,7 +200,7 @@
             "type": "boolean"
           },
           "significant_changes_only": {
-            "descrip": "Only return significant state changes",
+            "description": "Only return significant state changes",
             "type": "boolean"
           },
           "start_time": {
@@ -391,25 +391,25 @@
             "description": "Automation configuration (required for create and update)",
             "properties": {
               "action": {
-                "descrip": "List of actions",
+                "description": "List of actions",
                 "items": {},
                 "type": "array"
               },
               "alias": {
-                "descript": "Friendly name for the automation",
+                "description": "Friendly name for the automation",
                 "type": "string"
               },
               "condition": {
-                "desc": "List of conditions",
-                "item": {},
+                "description": "List of conditions",
+                "items": {},
                 "type": "array"
               },
               "description": {
-                "de": "Description of what the automation does",
-                "ty": "string"
+                "description": "Description of what the automation does",
+                "type": "string"
               },
               "mode": {
-                "descripti": "How multiple triggerings are handled",
+                "description": "How multiple triggerings are handled",
                 "enum": [
                   "single",
                   "parallel",
@@ -419,7 +419,7 @@
                 "type": "string"
               },
               "trigger": {
-                "descri": "List of triggers",
+                "description": "List of triggers",
                 "items": {},
                 "type": "array"
               }

@@ -1,13 +1,13 @@
 {
   "Figma-Context-MCP": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:10:06.581960629Z",
+    "createdat": "2025-05-09T16:42:22.437869617Z",
     "description": "Give your coding agent access to your Figma data. Implement designs in any framework in one-shot. This MCP server is specifically designed for use with Cursor. It simplifies and translates Figma API responses to provide only the most relevant layout and styling information to the model, improving AI accuracy and relevance.",
     "documentation": "https://www.framelink.ai/docs/quickstart?utm_source=github\u0026utm_medium=referral\u0026utm_campaign=readme",
     "epoch": 1,
     "isdefault": true,
     "metaurl": "https://mcpxreg.org/mcpproviders/GLips/servers/Figma-Context-MCP/meta",
-    "modifiedat": "2025-05-07T20:10:06.581960629Z",
+    "modifiedat": "2025-05-09T16:42:22.437869617Z",
     "name": "io.github.GLips/Figma-Context-MCP",
     "prompts": [],
     "registries": [
@@ -15,14 +15,14 @@
         "command_arguments": {
           "environment_variables": [
             {
-              "descrip": "Figma API access token",
+              "description": "Figma API access token",
               "name": "FIGMA_API_KEY",
-              "require": true
+              "required": true
             },
             {
-              "descrip": "Port number for HTTP server",
+              "description": "Port number for HTTP server",
               "name": "PORT",
-              "require": false
+              "required": false
             }
           ],
           "positional_arguments": [
@@ -89,11 +89,17 @@
               "description": "The nodes to fetch as images",
               "items": {
                 "properties": {
-                  "fileName": "The local name for saving the fetched file",
-                  "imageRef": "If a node has an imageRef fill, you must include this variable. Leave blank when downloading Vector SVG images.",
+                  "fileName": {
+                    "description": "The local name for saving the fetched file",
+                    "type": "string"
+                  },
+                  "imageRef": {
+                    "description": "If a node has an imageRef fill, you must include this variable. Leave blank when downloading Vector SVG images.",
+                    "type": "string"
+                  },
                   "nodeId": {
-                    "de": "The ID of the Figma image node to fetch, formatted as 1234:5678",
-                    "ty": "string"
+                    "description": "The ID of the Figma image node to fetch, formatted as 1234:5678",
+                    "type": "string"
                   }
                 },
                 "required": [

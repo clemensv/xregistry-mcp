@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:15:57.62458153Z",
+  "createdat": "2025-05-09T16:45:11.293175555Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/REDIS-MCP-Server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:15:57.62458153Z",
+  "modifiedat": "2025-05-09T16:45:11.293175555Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/REDIS-MCP-Server/meta",
   "serverid": "REDIS-MCP-Server",

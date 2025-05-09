@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:16:57.952425131Z",
+  "createdat": "2025-05-09T16:45:39.647706683Z",
   "description": "A Model Context Protocol server for ArangoDB providing database interaction capabilities through ArangoDB with core database operations and MCP tool integration.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:16:57.952425131Z",
+  "modifiedat": "2025-05-09T16:45:39.647706683Z",
   "name": "io.github.ravenwits/mcp-server-arangodb",
   "prompts": [],
   "registries": [
@@ -12,24 +12,24 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "ArangoDB connection URL",
+            "description": "ArangoDB connection URL",
             "name": "ARANGO_URL",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "ArangoDB database name",
+            "description": "ArangoDB database name",
             "name": "ARANGO_DB",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "ArangoDB username",
+            "description": "ArangoDB username",
             "name": "ARANGO_USERNAME",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "ArangoDB password",
+            "description": "ArangoDB password",
             "name": "ARANGO_PASSWORD",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [

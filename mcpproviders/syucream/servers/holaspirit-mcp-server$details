@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:11:30.779241622Z",
+  "createdat": "2025-05-09T16:43:03.06815153Z",
   "description": "A MCP(Model Context Protocol) server that accesses to Holaspirit API. This server provides MCP-compatible access to Holaspirit's API, allowing AI assistants to interact with your Holaspirit data through a standardized interface.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/syucream/servers/holaspirit-mcp-server/meta",
-  "modifiedat": "2025-05-07T20:11:30.779241622Z",
+  "modifiedat": "2025-05-09T16:43:03.06815153Z",
   "name": "io.github.syucream/holaspirit-mcp-server",
   "prompts": [],
   "registries": [
@@ -13,14 +13,14 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Your Holaspirit API token",
+            "description": "Your Holaspirit API token",
             "name": "HOLASPIRIT_API_TOKEN",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Your Holaspirit organization ID",
+            "description": "Your Holaspirit organization ID",
             "name": "HOLASPIRIT_ORGANIZATION_ID",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [

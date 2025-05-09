@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:07:43.751051366Z",
+  "createdat": "2025-05-09T16:41:13.545716314Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/designcomputer/servers/mysql_mcp_server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:07:43.751051366Z",
+  "modifiedat": "2025-05-09T16:41:13.545716314Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/designcomputer/servers/mysql_mcp_server/meta",
   "serverid": "mysql_mcp_server",

@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:09:27.206939626Z",
+  "createdat": "2025-05-09T16:42:03.697295669Z",
   "description": "A Model Context Protocol (MCP) server implementation for accessing OpenDota API data. This server enables LLMs and AI assistants to retrieve real-time Dota 2 statistics, match data, player information, and more through a standard interface.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:09:27.206939626Z",
+  "modifiedat": "2025-05-09T16:42:03.697295669Z",
   "name": "io.github.asusevski/opendota-mcp-server",
   "prompts": [],
   "registries": [
@@ -12,9 +12,9 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "OpenDota API key",
+            "description": "OpenDota API key",
             "name": "OPENDOTA_API_KEY",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [

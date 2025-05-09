@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:07:59.602575167Z",
+  "createdat": "2025-05-09T16:41:21.682532958Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/Simon-Kansara/servers/ableton-live-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:07:59.602575167Z",
+  "modifiedat": "2025-05-09T16:41:21.682532958Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/Simon-Kansara/servers/ableton-live-mcp-server/meta",
   "serverid": "ableton-live-mcp-server",

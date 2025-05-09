@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:09:19.31784043Z",
+  "createdat": "2025-05-09T16:41:59.904944544Z",
   "description": "This server, based on the Model Context Protocol (MCP), allows Claude or any other MCP-compatible client to interact with your Audiense Insights account. It extracts marketing insights and audience analysis from Audiense reports, covering demographic, cultural, influencer, and content engagement analysis.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:09:19.31784043Z",
+  "modifiedat": "2025-05-09T16:41:59.904944544Z",
   "name": "io.github.AudienseCo/mcp-audiense-insights",
   "prompts": [
     {
@@ -152,10 +152,13 @@
       "inputschema": {
         "properties": {
           "audience_influencers_id": {
-            "descript": "The ID of the audience influencers.",
+            "description": "The ID of the audience influencers.",
             "type": "string"
           },
-          "baseline_audience_influencers_id": "The ID of the baseline audience influencers.",
+          "baseline_audience_influencers_id": {
+            "description": "The ID of the baseline audience influencers.",
+            "type": "string"
+          },
           "bio_keyword": {
             "description": "Keyword to filter influencers by their biography.",
             "type": "string"

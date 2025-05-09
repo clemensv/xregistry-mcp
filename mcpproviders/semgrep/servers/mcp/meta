@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:08:36.755547802Z",
+  "createdat": "2025-05-09T16:41:39.652021978Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/semgrep/servers/mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:08:36.755547802Z",
+  "modifiedat": "2025-05-09T16:41:39.652021978Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/semgrep/servers/mcp/meta",
   "serverid": "mcp",

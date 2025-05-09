@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:10:38.242089277Z",
+  "createdat": "2025-05-09T16:42:37.43263416Z",
   "description": "A MCP server connecting to multiple managed indexes on LlamaCloud. Each index is exposed as a separate tool that allows querying specific LlamaCloud indexes.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:10:38.242089277Z",
+  "modifiedat": "2025-05-09T16:42:37.43263416Z",
   "name": "io.github.run-llama/mcp-server-llamacloud",
   "prompts": [],
   "registries": [
@@ -12,14 +12,14 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "LlamaCloud project name environment variable",
+            "description": "LlamaCloud project name environment variable",
             "name": "LLAMA_CLOUD_PROJECT_NAME",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "LlamaCloud API key environment variable",
+            "description": "LlamaCloud API key environment variable",
             "name": "LLAMA_CLOUD_API_KEY",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [

@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:15:57.62458153Z",
+  "createdat": "2025-05-09T16:45:11.293175555Z",
   "description": "A Redis Model Context Protocol (MCP) server implementation for interacting with Redis databases. This server enables LLMs to interact with Redis key-value stores through a set of standardized tools.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/REDIS-MCP-Server/meta",
-  "modifiedat": "2025-05-07T20:15:57.62458153Z",
+  "modifiedat": "2025-05-09T16:45:11.293175555Z",
   "name": "io.github.GongRzhe/REDIS-MCP-Server",
   "prompts": [],
   "registries": [

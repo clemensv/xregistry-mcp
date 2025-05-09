@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:09:38.848939378Z",
+  "createdat": "2025-05-09T16:42:09.239920762Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/delorenj/servers/mcp-server-ticketmaster/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:09:38.848939378Z",
+  "modifiedat": "2025-05-09T16:42:09.239920762Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/delorenj/servers/mcp-server-ticketmaster/meta",
   "serverid": "mcp-server-ticketmaster",

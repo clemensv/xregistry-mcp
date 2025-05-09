@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:14:11.025392764Z",
+  "createdat": "2025-05-09T16:44:20.309314417Z",
   "description": "A secure sandbox environment for executing code within Docker containers. This MCP server provides AI applications with a safe and isolated environment for running code while maintaining security through containerization.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/Automata-Labs-team/servers/code-sandbox-mcp/meta",
-  "modifiedat": "2025-05-07T20:14:11.025392764Z",
+  "modifiedat": "2025-05-09T16:44:20.309314417Z",
   "name": "io.github.Automata-Labs-team/code-sandbox-mcp",
   "prompts": [],
   "registries": [

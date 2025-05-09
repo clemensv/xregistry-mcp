@@ -1,11 +1,11 @@
 {
   "1": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:11:38.769866853Z",
+    "createdat": "2025-05-09T16:43:06.891705028Z",
     "description": "A Model Context Protocol server that enables LLMs to interact with MongoDB databases. This server provides capabilities for inspecting collection schemas and executing MongoDB operations through a standardized interface.",
     "epoch": 1,
     "isdefault": true,
-    "modifiedat": "2025-05-07T20:11:38.769866853Z",
+    "modifiedat": "2025-05-09T16:43:06.891705028Z",
     "name": "io.github.kiliczsh/mcp-mongo-server",
     "prompts": [
       {
@@ -25,14 +25,14 @@
         "command_arguments": {
           "environment_variables": [
             {
-              "descrip": "MongoDB connection URI",
+              "description": "MongoDB connection URI",
               "name": "MCP_MONGODB_URI",
-              "require": true
+              "required": true
             },
             {
-              "descrip": "Enable read-only mode",
+              "description": "Enable read-only mode",
               "name": "MCP_MONGODB_READONLY",
-              "require": false
+              "required": false
             }
           ],
           "positional_arguments": [
@@ -212,7 +212,7 @@
         "inputschema": {
           "properties": {
             "bypassDocumentValidation": {
-              "descrip": "Allow insert to bypass schema validation",
+              "description": "Allow insert to bypass schema validation",
               "type": "boolean"
             },
             "collection": {
@@ -269,19 +269,34 @@
               "description": "Array of index specifications",
               "items": {
                 "properties": {
-                  "backgro": "boolean",
-                  "expireA": "TTL in seconds for documents",
+                  "background": {
+                    "description": "Optional: Builds index in background",
+                    "type": "boolean"
+                  },
+                  "expireAfterSeconds": {
+                    "description": "TTL in seconds for documents",
+                    "type": "number"
+                  },
                   "key": {
-                    "des": "Index key pattern, e.g. { field: 1 }",
-                    "typ": "object"
+                    "description": "Index key pattern, e.g. { field: 1 }",
+                    "type": "object"
                   },
                   "name": {
-                    "de": "Optional: Name of the index",
-                    "ty": "string"
+                    "description": "Optional: Name of the index",
+                    "type": "string"
                   },
-                  "partial": "Filter expression for partial indexes",
-                  "sparse": "boolean",
-                  "unique": "Optional: Creates a unique index"
+                  "partialFilterExpression": {
+                    "description": "Filter expression for partial indexes",
+                    "type": "object"
+                  },
+                  "sparse": {
+                    "description": "Optional: Creates a sparse index",
+                    "type": "boolean"
+                  },
+                  "unique": {
+                    "description": "Optional: Creates a unique index",
+                    "type": "boolean"
+                  }
                 },
                 "required": [
                   "key"

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:07:40.283235712Z",
+  "createdat": "2025-05-09T16:41:11.749881872Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/smn2gnt/servers/MCP-Salesforce/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:07:40.283235712Z",
+  "modifiedat": "2025-05-09T16:41:11.749881872Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/smn2gnt/servers/MCP-Salesforce/meta",
   "serverid": "MCP-Salesforce",

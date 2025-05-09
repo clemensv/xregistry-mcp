@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:13:38.33668432Z",
+  "createdat": "2025-05-09T16:44:04.75717274Z",
   "description": "A Model Context Protocol (MCP) server that exposes OpenAPI schema information to Large Language Models (LLMs) like Claude. This server allows an LLM to explore and understand OpenAPI specifications through a set of specialized tools.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:13:38.33668432Z",
+  "modifiedat": "2025-05-09T16:44:04.75717274Z",
   "name": "io.github.hannesj/mcp-openapi-schema",
   "prompts": [],
   "registries": [

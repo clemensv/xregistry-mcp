@@ -1,11 +1,11 @@
 {
   "1": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:07:54.357719249Z",
+    "createdat": "2025-05-09T16:41:19.236847231Z",
     "description": "A Model Context Protocol server that provides tools for interacting with Airtable's API. This server enables programmatic management of Airtable bases, tables, fields, and records through Claude Desktop or other MCP clients.",
     "epoch": 1,
     "isdefault": true,
-    "modifiedat": "2025-05-07T20:07:54.357719249Z",
+    "modifiedat": "2025-05-09T16:41:19.236847231Z",
     "name": "io.github.felores/airtable-mcp",
     "prompts": [],
     "registries": [
@@ -13,9 +13,9 @@
         "command_arguments": {
           "environment_variables": [
             {
-              "descrip": "Airtable API key for authentication",
+              "description": "Airtable API key for authentication",
               "name": "AIRTABLE_API_KEY",
-              "require": true
+              "required": true
             }
           ],
           "positional_arguments": [
@@ -75,15 +75,21 @@
               "description": "Initial fields for the table",
               "items": {
                 "properties": {
-                  "descript": "string",
-                  "name": {
-                    "des": "Name of the field",
-                    "typ": "string"
+                  "description": {
+                    "description": "Description of the field",
+                    "type": "string"
                   },
-                  "options": "object",
+                  "name": {
+                    "description": "Name of the field",
+                    "type": "string"
+                  },
+                  "options": {
+                    "description": "Field-specific options",
+                    "type": "object"
+                  },
                   "type": {
-                    "des": "Type of the field (e.g., singleLineText, multilineText, number, etc.)",
-                    "typ": "string"
+                    "description": "Type of the field (e.g., singleLineText, multilineText, number, etc.)",
+                    "type": "string"
                   }
                 },
                 "required": [
@@ -147,19 +153,19 @@
             "field": {
               "properties": {
                 "description": {
-                  "des": "Description of the field",
-                  "typ": "string"
+                  "description": "Description of the field",
+                  "type": "string"
                 },
                 "name": {
-                  "descriptio": "Name of the field",
+                  "description": "Name of the field",
                   "type": "string"
                 },
                 "options": {
-                  "descrip": "Field-specific options",
+                  "description": "Field-specific options",
                   "type": "object"
                 },
                 "type": {
-                  "descriptio": "Type of the field",
+                  "description": "Type of the field",
                   "type": "string"
                 }
               },
@@ -202,15 +208,15 @@
             "updates": {
               "properties": {
                 "description": {
-                  "d": "New description for the field",
-                  "t": "string"
+                  "description": "New description for the field",
+                  "type": "string"
                 },
                 "name": {
-                  "descript": "New name for the field",
+                  "description": "New name for the field",
                   "type": "string"
                 },
                 "options": {
-                  "descr": "New field-specific options",
+                  "description": "New field-specific options",
                   "type": "object"
                 }
               },

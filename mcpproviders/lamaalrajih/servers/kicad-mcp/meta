@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:15:22.555370629Z",
+  "createdat": "2025-05-09T16:44:54.724249367Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/lamaalrajih/servers/kicad-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:15:22.555370629Z",
+  "modifiedat": "2025-05-09T16:44:54.724249367Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/lamaalrajih/servers/kicad-mcp/meta",
   "serverid": "kicad-mcp",

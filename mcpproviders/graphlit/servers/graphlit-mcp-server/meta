@@ -1,0 +1,13 @@
+{
+  "compatibility": "none",
+  "createdat": "2025-05-09T16:41:14.602590949Z",
+  "defaultversionid": "1",
+  "defaultversionsticky": false,
+  "defaultversionurl": "https://mcpxreg.org/mcpproviders/graphlit/servers/graphlit-mcp-server/versions/1",
+  "epoch": 1,
+  "modifiedat": "2025-05-09T16:41:14.602590949Z",
+  "readonly": false,
+  "self": "https://mcpxreg.org/mcpproviders/graphlit/servers/graphlit-mcp-server/meta",
+  "serverid": "graphlit-mcp-server",
+  "xid": "/mcpproviders/graphlit/servers/graphlit-mcp-server/meta"
+}

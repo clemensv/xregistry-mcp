@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:12:57.548804753Z",
+  "createdat": "2025-05-09T16:43:45.164250064Z",
   "description": "The official AI Model Context Protocol (MCP) server for Dart, providing task and document management via prompts, resources, and tools.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:12:57.548804753Z",
+  "modifiedat": "2025-05-09T16:43:45.164250064Z",
   "name": "io.github.its-dart/dart-mcp-server",
   "prompts": [
     {
@@ -81,9 +81,9 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "API token for Dart",
+            "description": "API token for Dart",
             "name": "DART_TOKEN",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [

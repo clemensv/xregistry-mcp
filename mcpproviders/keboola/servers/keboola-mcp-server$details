@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:12:05.550618579Z",
+  "createdat": "2025-05-09T16:43:20.422511352Z",
   "description": "A Model Context Protocol (MCP) server for interacting with Keboola Connection. This server provides tools for listing and accessing data from Keboola Storage API.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/keboola/servers/keboola-mcp-server/meta",
-  "modifiedat": "2025-05-07T20:12:05.550618579Z",
+  "modifiedat": "2025-05-09T16:43:20.422511352Z",
   "name": "io.github.keboola/keboola-mcp-server",
   "prompts": [],
   "registries": [
@@ -13,14 +13,14 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Keboola Storage API token",
+            "description": "Keboola Storage API token",
             "name": "KBC_STORAGE_TOKEN",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Snowflake schema or BigQuery dataset of your workspace",
+            "description": "Snowflake schema or BigQuery dataset of your workspace",
             "name": "KBC_WORKSPACE_SCHEMA",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [

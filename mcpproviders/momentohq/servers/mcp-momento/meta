@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:11:54.14824232Z",
+  "createdat": "2025-05-09T16:43:14.892300901Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/momentohq/servers/mcp-momento/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:11:54.14824232Z",
+  "modifiedat": "2025-05-09T16:43:14.892300901Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/momentohq/servers/mcp-momento/meta",
   "serverid": "mcp-momento",

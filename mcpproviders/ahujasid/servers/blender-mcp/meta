@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:09:25.636943853Z",
+  "createdat": "2025-05-09T16:42:02.971355519Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/ahujasid/servers/blender-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:09:25.636943853Z",
+  "modifiedat": "2025-05-09T16:42:02.971355519Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/ahujasid/servers/blender-mcp/meta",
   "serverid": "blender-mcp",

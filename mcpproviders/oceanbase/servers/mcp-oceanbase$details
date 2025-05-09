@@ -1,12 +1,12 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:07:46.477400384Z",
+  "createdat": "2025-05-09T16:41:15.207105525Z",
   "description": "A Model Context Protocol (MCP) server that enables secure interaction with OceanBase databases.",
   "documentation": "doc/oceanbase_mcp_server.md",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/oceanbase/servers/mcp-oceanbase/meta",
-  "modifiedat": "2025-05-07T20:07:46.477400384Z",
+  "modifiedat": "2025-05-09T16:41:15.207105525Z",
   "name": "io.github.oceanbase/mcp-oceanbase",
   "prompts": [],
   "registries": [
@@ -14,29 +14,29 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "OceanBase database host",
+            "description": "OceanBase database host",
             "name": "OB_HOST",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "OceanBase database port",
+            "description": "OceanBase database port",
             "name": "OB_PORT",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "OceanBase database user",
+            "description": "OceanBase database user",
             "name": "OB_USER",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "OceanBase database password",
+            "description": "OceanBase database password",
             "name": "OB_PASSWORD",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "OceanBase database name",
+            "description": "OceanBase database name",
             "name": "OB_DATABASE",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [],

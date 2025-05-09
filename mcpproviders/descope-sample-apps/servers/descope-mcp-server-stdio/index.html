@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:07:35.504460195Z",
+  "createdat": "2025-05-09T16:41:08.624818521Z",
   "description": "The Descope Model Context Protocol (MCP) server provides an interface to interact with Descope's Management APIs, enabling the search and retrieval of project-related information.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/descope-sample-apps/servers/descope-mcp-server-stdio/meta",
-  "modifiedat": "2025-05-07T20:07:35.504460195Z",
+  "modifiedat": "2025-05-09T16:41:08.624818521Z",
   "name": "io.github.descope-sample-apps/descope-mcp-server-stdio",
   "prompts": [],
   "registries": [
@@ -13,14 +13,14 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Your Descope Project ID",
+            "description": "Your Descope Project ID",
             "name": "DESCOPE_PROJECT_ID",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Your Descope Management Key",
+            "description": "Your Descope Management Key",
             "name": "DESCOPE_MANAGEMENT_KEY",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [
@@ -187,7 +187,7 @@
             "type": "array"
           },
           "customAttributes": {
-            "additionalPrope": {},
+            "additionalProperties": {},
             "type": "object"
           },
           "displayName": {
@@ -231,8 +231,15 @@
           "userTenants": {
             "items": {
               "properties": {
-                "rol": "array",
-                "ten": "string"
+                "roleNames": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "tenantId": {
+                  "type": "string"
+                }
               },
               "required": [
                 "tenantId",
@@ -267,7 +274,7 @@
             "type": "array"
           },
           "customAttributes": {
-            "additionalPrope": {},
+            "additionalProperties": {},
             "type": "object"
           },
           "displayName": {
@@ -323,9 +330,17 @@
           },
           "templateOptions": {
             "properties": {
-              "appUr": "uri",
-              "custo": "string",
-              "redir": "uri"
+              "appUrl": {
+                "format": "uri",
+                "type": "string"
+              },
+              "customClaims": {
+                "type": "string"
+              },
+              "redirectUrl": {
+                "format": "uri",
+                "type": "string"
+              }
             },
             "required": [],
             "type": "object"
@@ -333,8 +348,15 @@
           "userTenants": {
             "items": {
               "properties": {
-                "rol": "string",
-                "ten": "string"
+                "roleNames": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                "tenantId": {
+                  "type": "string"
+                }
               },
               "required": [
                 "tenantId",

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:07:42.353663138Z",
+  "createdat": "2025-05-09T16:41:12.820059847Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/XeroAPI/servers/xero-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:07:42.353663138Z",
+  "modifiedat": "2025-05-09T16:41:12.820059847Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/XeroAPI/servers/xero-mcp-server/meta",
   "serverid": "xero-mcp-server",

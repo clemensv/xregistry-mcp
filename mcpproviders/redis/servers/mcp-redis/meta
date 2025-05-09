@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:08:10.233602521Z",
+  "createdat": "2025-05-09T16:41:26.784049639Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/redis/servers/mcp-redis/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:08:10.233602521Z",
+  "modifiedat": "2025-05-09T16:41:26.784049639Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/redis/servers/mcp-redis/meta",
   "serverid": "mcp-redis",

@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:08:48.199406721Z",
+  "createdat": "2025-05-09T16:41:45.157466134Z",
   "description": "Markdownify is a Model Context Protocol (MCP) server that converts various file types and web content to Markdown format. It provides a set of tools to transform PDFs, images, audio files, web pages, and more into easily readable and shareable Markdown text.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/zcaceres/servers/markdownify-mcp/meta",
-  "modifiedat": "2025-05-07T20:08:48.199406721Z",
+  "modifiedat": "2025-05-09T16:41:45.157466134Z",
   "name": "io.github.zcaceres/markdownify-mcp",
   "prompts": [],
   "registries": [
@@ -13,9 +13,9 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "By default, the server will use the default install location of `uv`",
+            "description": "By default, the server will use the default install location of `uv`",
             "name": "UV_PATH",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:13:00.909497645Z",
+  "createdat": "2025-05-09T16:43:46.834854928Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/Fibery-inc/servers/fibery-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:13:00.909497645Z",
+  "modifiedat": "2025-05-09T16:43:46.834854928Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/Fibery-inc/servers/fibery-mcp-server/meta",
   "serverid": "fibery-mcp-server",

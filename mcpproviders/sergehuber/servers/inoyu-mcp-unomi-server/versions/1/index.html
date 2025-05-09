@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:08:38.861451719Z",
+  "createdat": "2025-05-09T16:41:40.650403881Z",
   "description": "A Model Context Protocol server enabling Claude to maintain user context through Apache Unomi profile management.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:08:38.861451719Z",
+  "modifiedat": "2025-05-09T16:41:40.650403881Z",
   "name": "io.github.sergehuber/inoyu-mcp-unomi-server",
   "prompts": [],
   "registries": [
@@ -12,39 +12,39 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Base URL of the Apache Unomi server",
+            "description": "Base URL of the Apache Unomi server",
             "name": "UNOMI_BASE_URL",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Username for Apache Unomi authentication (default 'karaf')",
+            "description": "Username for Apache Unomi authentication (default 'karaf')",
             "name": "UNOMI_USERNAME",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Password for Apache Unomi authentication (default 'karaf')",
+            "description": "Password for Apache Unomi authentication (default 'karaf')",
             "name": "UNOMI_PASSWORD",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Fallback profile ID for Unomi",
+            "description": "Fallback profile ID for Unomi",
             "name": "UNOMI_PROFILE_ID",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Unomi key for protected events (default '670c26d1cc413346c3b2fd9ce65dab41')",
+            "description": "Unomi key for protected events (default '670c26d1cc413346c3b2fd9ce65dab41')",
             "name": "UNOMI_KEY",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Email address used for profile lookup",
+            "description": "Email address used for profile lookup",
             "name": "UNOMI_EMAIL",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Source identifier for Claude Desktop",
+            "description": "Source identifier for Claude Desktop",
             "name": "UNOMI_SOURCE_ID",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [
@@ -99,7 +99,14 @@
       "inputschema": {
         "properties": {
           "properties": {
-            "additionalProperties": "null",
+            "additionalProperties": {
+              "type": [
+                "string",
+                "number",
+                "boolean",
+                "null"
+              ]
+            },
             "description": "Key-value pairs of properties to update",
             "type": "object"
           }

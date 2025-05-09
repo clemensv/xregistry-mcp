@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:14:41.518393889Z",
+  "createdat": "2025-05-09T16:44:34.98493949Z",
   "description": "A Model Context Protocol server for Keycloak administration, providing tools to manage users and realms.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/ChristophEnglisch/servers/keycloak-model-context-protocol/meta",
-  "modifiedat": "2025-05-07T20:14:41.518393889Z",
+  "modifiedat": "2025-05-09T16:44:34.98493949Z",
   "name": "io.github.ChristophEnglisch/keycloak-model-context-protocol",
   "prompts": [],
   "registries": [
@@ -13,19 +13,19 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "URL of the Keycloak server",
+            "description": "URL of the Keycloak server",
             "name": "KEYCLOAK_URL",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Keycloak admin username",
+            "description": "Keycloak admin username",
             "name": "KEYCLOAK_ADMIN",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Keycloak admin password",
+            "description": "Keycloak admin password",
             "name": "KEYCLOAK_ADMIN_PASSWORD",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [

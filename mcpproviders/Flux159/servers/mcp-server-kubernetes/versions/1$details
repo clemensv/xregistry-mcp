@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:15:01.362123108Z",
+  "createdat": "2025-05-09T16:44:44.556846105Z",
   "description": "MCP Server that can connect to a Kubernetes cluster and manage it.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:15:01.362123108Z",
+  "modifiedat": "2025-05-09T16:44:44.556846105Z",
   "name": "io.github.Flux159/mcp-server-kubernetes",
   "prompts": [],
   "registries": [
@@ -870,14 +870,20 @@
             "items": {
               "properties": {
                 "name": {
-                  "typ": "string"
+                  "type": "string"
                 },
-                "nodePort": "integer",
+                "nodePort": {
+                  "type": "integer"
+                },
                 "port": {
-                  "typ": "integer"
+                  "type": "integer"
                 },
-                "protocol": "string",
-                "targetPo": "integer"
+                "protocol": {
+                  "type": "string"
+                },
+                "targetPort": {
+                  "type": "integer"
+                }
               },
               "required": [
                 "port"
@@ -888,7 +894,7 @@
           },
           "selector": {
             "additionalProperties": {
-              "t": "string"
+              "type": "string"
             },
             "type": "object"
           },
@@ -923,14 +929,20 @@
             "items": {
               "properties": {
                 "name": {
-                  "typ": "string"
+                  "type": "string"
                 },
-                "nodePort": "integer",
+                "nodePort": {
+                  "type": "integer"
+                },
                 "port": {
-                  "typ": "integer"
+                  "type": "integer"
                 },
-                "protocol": "string",
-                "targetPo": "integer"
+                "protocol": {
+                  "type": "string"
+                },
+                "targetPort": {
+                  "type": "integer"
+                }
               },
               "type": "object"
             },
@@ -938,7 +950,7 @@
           },
           "selector": {
             "additionalProperties": {
-              "t": "string"
+              "type": "string"
             },
             "type": "object"
           },

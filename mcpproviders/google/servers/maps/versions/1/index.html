@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:07:42.866193013Z",
+  "createdat": "2025-05-09T16:41:13.080028022Z",
   "description": "Google Maps API integration for geocoding, directions, and more.",
   "documentation": "https://developers.google.com/maps/documentation",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:07:42.866193013Z",
+  "modifiedat": "2025-05-09T16:41:13.080028022Z",
   "name": "Google Maps",
   "prompts": [],
   "registries": [
@@ -13,9 +13,9 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Google Maps API key",
+            "description": "Google Maps API key",
             "name": "GOOGLE_MAPS_API_KEY",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [
@@ -33,9 +33,9 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Google Maps API key",
+            "description": "Google Maps API key",
             "name": "GOOGLE_MAPS_API_KEY",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [
@@ -103,12 +103,12 @@
           "location": {
             "properties": {
               "latitude": {
-                "des": "The latitude of the location.",
-                "typ": "number"
+                "description": "The latitude of the location.",
+                "type": "number"
               },
               "longitude": {
-                "de": "The longitude of the location.",
-                "ty": "number"
+                "description": "The longitude of the location.",
+                "type": "number"
               }
             },
             "required": [
@@ -192,8 +192,14 @@
           "locations": {
             "items": {
               "properties": {
-                "latit": "The latitude of the location.",
-                "longi": "The longitude of the location."
+                "latitude": {
+                  "description": "The latitude of the location.",
+                  "type": "number"
+                },
+                "longitude": {
+                  "description": "The longitude of the location.",
+                  "type": "number"
+                }
               },
               "required": [
                 "latitude",

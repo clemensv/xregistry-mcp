@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:16:06.688157477Z",
+  "createdat": "2025-05-09T16:45:15.532060345Z",
   "description": "A Model Context Protocol server for document Q\u0026A powered by Langflow",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:16:06.688157477Z",
+  "modifiedat": "2025-05-09T16:45:15.532060345Z",
   "name": "io.github.GongRzhe/Langflow-DOC-QA-SERVER",
   "prompts": [],
   "registries": [
@@ -12,9 +12,9 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "The endpoint URL for the Langflow API service.",
+            "description": "The endpoint URL for the Langflow API service.",
             "name": "API_ENDPOINT",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [

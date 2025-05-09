@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:10:51.953265289Z",
+  "createdat": "2025-05-09T16:42:43.909127324Z",
   "description": "MCP Server for the TickTick API, enabling task management, project organization, habit tracking, and more.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/alexarevalo9/servers/ticktick-mcp-server/meta",
-  "modifiedat": "2025-05-07T20:10:51.953265289Z",
+  "modifiedat": "2025-05-09T16:42:43.909127324Z",
   "name": "io.github.alexarevalo9/ticktick-mcp-server",
   "prompts": [],
   "registries": [
@@ -13,9 +13,9 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Path to dotenv config file",
+            "description": "Path to dotenv config file",
             "name": "DOTENV_CONFIG_PATH",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [],
@@ -169,16 +169,26 @@
           "items": {
             "items": {
               "properties": {
-                "completed": "string",
-                "isAllDay": "boolean",
-                "sortOrder": "number",
-                "startDate": "string",
-                "status": {
-                  "ty": "number"
+                "completedTime": {
+                  "type": "string"
                 },
-                "timeZone": "string",
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "sortOrder": {
+                  "type": "number"
+                },
+                "startDate": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "number"
+                },
+                "timeZone": {
+                  "type": "string"
+                },
                 "title": {
-                  "typ": "string"
+                  "type": "string"
                 }
               },
               "required": [
@@ -246,16 +256,26 @@
           "items": {
             "items": {
               "properties": {
-                "completed": "string",
-                "isAllDay": "boolean",
-                "sortOrder": "number",
-                "startDate": "string",
-                "status": {
-                  "ty": "number"
+                "completedTime": {
+                  "type": "string"
                 },
-                "timeZone": "string",
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "sortOrder": {
+                  "type": "number"
+                },
+                "startDate": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "number"
+                },
+                "timeZone": {
+                  "type": "string"
+                },
                 "title": {
-                  "typ": "string"
+                  "type": "string"
                 }
               },
               "required": [

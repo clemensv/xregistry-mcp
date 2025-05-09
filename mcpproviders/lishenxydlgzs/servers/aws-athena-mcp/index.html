@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:14:26.119371541Z",
+  "createdat": "2025-05-09T16:44:27.545685317Z",
   "description": "A Model Context Protocol (MCP) server for running AWS Athena queries. This server enables AI assistants to execute SQL queries against your AWS Athena databases and retrieve results.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/lishenxydlgzs/servers/aws-athena-mcp/meta",
-  "modifiedat": "2025-05-07T20:14:26.119371541Z",
+  "modifiedat": "2025-05-09T16:44:27.545685317Z",
   "name": "io.github.lishenxydlgzs/aws-athena-mcp",
   "prompts": [],
   "registries": [
@@ -13,54 +13,54 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "S3 bucket path for Athena query results",
+            "description": "S3 bucket path for Athena query results",
             "name": "OUTPUT_S3_PATH",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "AWS region (optional)",
+            "description": "AWS region (optional)",
             "name": "AWS_REGION",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "AWS profile name (optional)",
+            "description": "AWS profile name (optional)",
             "name": "AWS_PROFILE",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "AWS access key (optional)",
+            "description": "AWS access key (optional)",
             "name": "AWS_ACCESS_KEY_ID",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "AWS secret key (optional)",
+            "description": "AWS secret key (optional)",
             "name": "AWS_SECRET_ACCESS_KEY",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "AWS session token (optional)",
+            "description": "AWS session token (optional)",
             "name": "AWS_SESSION_TOKEN",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Athena WorkGroup (optional)",
+            "description": "Athena WorkGroup (optional)",
             "name": "ATHENA_WORKGROUP",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Query timeout in milliseconds (optional)",
+            "description": "Query timeout in milliseconds (optional)",
             "name": "QUERY_TIMEOUT_MS",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Maximum retry attempts (optional)",
+            "description": "Maximum retry attempts (optional)",
             "name": "MAX_RETRIES",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Delay between retries in milliseconds (optional)",
+            "description": "Delay between retries in milliseconds (optional)",
             "name": "RETRY_DELAY_MS",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [

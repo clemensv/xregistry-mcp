@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:13:34.800219672Z",
+  "createdat": "2025-05-09T16:44:03.076629161Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/hannesj/servers/mcp-graphql-schema/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:13:34.800219672Z",
+  "modifiedat": "2025-05-09T16:44:03.076629161Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/hannesj/servers/mcp-graphql-schema/meta",
   "serverid": "mcp-graphql-schema",

@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:09:56.966254329Z",
+  "createdat": "2025-05-09T16:42:17.900825851Z",
   "description": "Implementation of the Model Context Protocol (MCP) server for the EduBase platform. It allows MCP clients and LLMs to interact with EduBase account and perform tasks.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:09:56.966254329Z",
+  "modifiedat": "2025-05-09T16:42:17.900825851Z",
   "name": "io.github.EduBase/MCP",
   "prompts": [],
   "registries": [
@@ -12,29 +12,29 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "URL of the EduBase API",
+            "description": "URL of the EduBase API",
             "name": "EDUBASE_API_URL",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "EduBase API application identifier",
+            "description": "EduBase API application identifier",
             "name": "EDUBASE_API_APP",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "EduBase API key",
+            "description": "EduBase API key",
             "name": "EDUBASE_API_KEY",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Optional rate limit per second",
+            "description": "Optional rate limit per second",
             "name": "EDUBASE_API_MAXRATE",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Optional rate limit per minute",
+            "description": "Optional rate limit per minute",
             "name": "EDUBASE_API_MAXRATE60",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [

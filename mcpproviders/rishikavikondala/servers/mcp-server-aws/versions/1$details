@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:07:49.616569075Z",
+  "createdat": "2025-05-09T16:41:16.867887457Z",
   "description": "A Model Context Protocol server implementation for AWS operations that currently supports S3 and DynamoDB services. All operations are automatically logged and can be accessed through the audit://aws-operations resource endpoint.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:07:49.616569075Z",
+  "modifiedat": "2025-05-09T16:41:16.867887457Z",
   "name": "io.github.rishikavikondala/mcp-server-aws",
   "prompts": [],
   "registries": [
@@ -12,19 +12,19 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "AWS access key ID",
+            "description": "AWS access key ID",
             "name": "AWS_ACCESS_KEY_ID",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "AWS secret access key",
+            "description": "AWS secret access key",
             "name": "AWS_SECRET_ACCESS_KEY",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "AWS region, defaults to us-east-1",
+            "description": "AWS region, defaults to us-east-1",
             "name": "AWS_REGION",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [

@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:15:22.555370629Z",
+  "createdat": "2025-05-09T16:44:54.724249367Z",
   "description": "A Model Context Protocol (MCP) server for KiCad providing resources, tools, and prompts to interact with KiCad projects, schematics, BOMs, DRC checks, netlists, and circuit pattern recognition.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/lamaalrajih/servers/kicad-mcp/meta",
-  "modifiedat": "2025-05-07T20:15:22.555370629Z",
+  "modifiedat": "2025-05-09T16:44:54.724249367Z",
   "name": "io.github.lamaalrajih/kicad-mcp",
   "prompts": [
     {
@@ -29,9 +29,9 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Comma-separated list of paths to search for KiCad projects.",
+            "description": "Comma-separated list of paths to search for KiCad projects.",
             "name": "KICAD_SEARCH_PATHS",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [

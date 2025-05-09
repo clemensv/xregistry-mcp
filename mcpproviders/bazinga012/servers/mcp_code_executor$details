@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:11:20.274990161Z",
+  "createdat": "2025-05-09T16:42:57.97544213Z",
   "description": "The MCP Code Executor is an MCP server that allows LLMs to execute Python code within a specified Conda environment. This enables LLMs to run code with access to libraries and dependencies defined in the Conda environment.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/bazinga012/servers/mcp_code_executor/meta",
-  "modifiedat": "2025-05-07T20:11:20.274990161Z",
+  "modifiedat": "2025-05-09T16:42:57.97544213Z",
   "name": "io.github.bazinga012/mcp_code_executor",
   "prompts": [],
   "registries": [
@@ -13,14 +13,14 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Directory where generated code is stored",
+            "description": "Directory where generated code is stored",
             "name": "CODE_STORAGE_DIR",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Name of the Conda environment to run code in",
+            "description": "Name of the Conda environment to run code in",
             "name": "CONDA_ENV_NAME",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:09:20.863662164Z",
+  "createdat": "2025-05-09T16:42:00.648054083Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/mendableai/servers/firecrawl-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:09:20.863662164Z",
+  "modifiedat": "2025-05-09T16:42:00.648054083Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/mendableai/servers/firecrawl-mcp-server/meta",
   "serverid": "firecrawl-mcp-server",

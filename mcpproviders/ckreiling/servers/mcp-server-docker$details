@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:07:37.226908808Z",
+  "createdat": "2025-05-09T16:41:09.897705569Z",
   "description": "An MCP server for managing Docker with natural language! Compose containers, introspect and debug running containers, and manage persistent data with Docker volumes.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/ckreiling/servers/mcp-server-docker/meta",
-  "modifiedat": "2025-05-07T20:07:37.226908808Z",
+  "modifiedat": "2025-05-09T16:41:09.897705569Z",
   "name": "io.github.ckreiling/mcp-server-docker",
   "prompts": [
     {

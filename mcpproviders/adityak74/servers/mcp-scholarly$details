@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:07:36.314276604Z",
+  "createdat": "2025-05-09T16:41:09.243677457Z",
   "description": "A MCP server to search for accurate academic articles. More scholarly vendors will be added soon.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/adityak74/servers/mcp-scholarly/meta",
-  "modifiedat": "2025-05-07T20:07:36.314276604Z",
+  "modifiedat": "2025-05-09T16:41:09.243677457Z",
   "name": "io.github.adityak74/mcp-scholarly",
   "prompts": [],
   "registries": [

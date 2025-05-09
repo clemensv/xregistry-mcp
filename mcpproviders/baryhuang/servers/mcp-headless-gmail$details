@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:08:16.939620719Z",
+  "createdat": "2025-05-09T16:41:30.028504757Z",
   "description": "A MCP (Model Context Protocol) server that provides get, send Gmails without local credential or token setup.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/baryhuang/servers/mcp-headless-gmail/meta",
-  "modifiedat": "2025-05-07T20:08:16.939620719Z",
+  "modifiedat": "2025-05-09T16:41:30.028504757Z",
   "name": "io.github.baryhuang/mcp-headless-gmail",
   "prompts": [],
   "registries": [

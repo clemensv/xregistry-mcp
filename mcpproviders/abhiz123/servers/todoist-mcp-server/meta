@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:14:53.352372612Z",
+  "createdat": "2025-05-09T16:44:40.684265537Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/abhiz123/servers/todoist-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:14:53.352372612Z",
+  "modifiedat": "2025-05-09T16:44:40.684265537Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/abhiz123/servers/todoist-mcp-server/meta",
   "serverid": "todoist-mcp-server",

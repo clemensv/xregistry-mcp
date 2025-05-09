@@ -1,12 +1,12 @@
 {
   "Gmail-MCP-Server": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:15:48.809187405Z",
+    "createdat": "2025-05-09T16:45:07.154049199Z",
     "description": "A Model Context Protocol (MCP) server for Gmail integration in Claude Desktop with auto authentication support. This server enables AI assistants to manage Gmail through natural language interactions.",
     "epoch": 1,
     "isdefault": true,
     "metaurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/Gmail-MCP-Server/meta",
-    "modifiedat": "2025-05-07T20:15:48.809187405Z",
+    "modifiedat": "2025-05-09T16:45:07.154049199Z",
     "name": "io.github.GongRzhe/Gmail-MCP-Server",
     "prompts": [],
     "registries": [
@@ -39,12 +39,12 @@
   },
   "JSON-MCP-Server": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:15:53.182268742Z",
+    "createdat": "2025-05-09T16:45:09.217938242Z",
     "description": "A JSON Model Context Protocol (MCP) server implementation for querying and manipulating JSON data. This server enables LLMs to interact with JSON data through a set of standardized tools.",
     "epoch": 1,
     "isdefault": true,
     "metaurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/JSON-MCP-Server/meta",
-    "modifiedat": "2025-05-07T20:15:53.182268742Z",
+    "modifiedat": "2025-05-09T16:45:09.217938242Z",
     "name": "io.github.GongRzhe/JSON-MCP-Server",
     "prompts": [],
     "registries": [
@@ -118,12 +118,12 @@
   },
   "Langflow-DOC-QA-SERVER": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:16:06.688157477Z",
+    "createdat": "2025-05-09T16:45:15.532060345Z",
     "description": "A Model Context Protocol server for document Q\u0026A powered by Langflow",
     "epoch": 1,
     "isdefault": true,
     "metaurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/Langflow-DOC-QA-SERVER/meta",
-    "modifiedat": "2025-05-07T20:16:06.688157477Z",
+    "modifiedat": "2025-05-09T16:45:15.532060345Z",
     "name": "io.github.GongRzhe/Langflow-DOC-QA-SERVER",
     "prompts": [],
     "registries": [
@@ -131,9 +131,9 @@
         "command_arguments": {
           "environment_variables": [
             {
-              "descrip": "The endpoint URL for the Langflow API service.",
+              "description": "The endpoint URL for the Langflow API service.",
               "name": "API_ENDPOINT",
-              "require": false
+              "required": false
             }
           ],
           "positional_arguments": [
@@ -179,13 +179,13 @@
   },
   "Quickchart-MCP-Server": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:15:44.390106149Z",
+    "createdat": "2025-05-09T16:45:05.085010611Z",
     "description": "A Model Context Protocol server for generating charts using QuickChart.io",
     "documentation": "https://quickchart.io/documentation/",
     "epoch": 1,
     "isdefault": true,
     "metaurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/Quickchart-MCP-Server/meta",
-    "modifiedat": "2025-05-07T20:15:44.390106149Z",
+    "modifiedat": "2025-05-09T16:45:05.085010611Z",
     "name": "io.github.GongRzhe/Quickchart-MCP-Server",
     "prompts": [],
     "registries": [
@@ -215,13 +215,41 @@
             "datasets": {
               "items": {
                 "properties": {
-                  "additi": "object",
-                  "backgr": "string",
-                  "border": "string",
-                  "data": {
-                    "t": "array"
+                  "additionalConfig": {
+                    "type": "object"
                   },
-                  "label": "string"
+                  "backgroundColor": {
+                    "oneOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    ]
+                  },
+                  "borderColor": {
+                    "oneOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      }
+                    ]
+                  },
+                  "data": {
+                    "type": "array"
+                  },
+                  "label": {
+                    "type": "string"
+                  }
                 },
                 "required": [
                   "data"
@@ -287,12 +315,12 @@
   },
   "REDIS-MCP-Server": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:15:57.62458153Z",
+    "createdat": "2025-05-09T16:45:11.293175555Z",
     "description": "A Redis Model Context Protocol (MCP) server implementation for interacting with Redis databases. This server enables LLMs to interact with Redis key-value stores through a set of standardized tools.",
     "epoch": 1,
     "isdefault": true,
     "metaurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/REDIS-MCP-Server/meta",
-    "modifiedat": "2025-05-07T20:15:57.62458153Z",
+    "modifiedat": "2025-05-09T16:45:11.293175555Z",
     "name": "io.github.GongRzhe/REDIS-MCP-Server",
     "prompts": [],
     "registries": [
@@ -407,12 +435,12 @@
   },
   "TRAVEL-PLANNER-MCP-Server": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:16:02.077529253Z",
+    "createdat": "2025-05-09T16:45:13.388062705Z",
     "description": "A Travel Planner Model Context Protocol (MCP) server implementation for interacting with Google Maps and travel planning services. This server enables LLMs to perform travel-related tasks such as location search, place details lookup, and travel time calculations.",
     "epoch": 1,
     "isdefault": true,
     "metaurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/TRAVEL-PLANNER-MCP-Server/meta",
-    "modifiedat": "2025-05-07T20:16:02.077529253Z",
+    "modifiedat": "2025-05-09T16:45:13.388062705Z",
     "name": "io.github.GongRzhe/TRAVEL-PLANNER-MCP-Server",
     "prompts": [],
     "registries": [
@@ -420,9 +448,9 @@
         "command_arguments": {
           "environment_variables": [
             {
-              "descrip": "Your Google Maps API key with Places, Directions, Geocoding, and Time Zone APIs enabled",
+              "description": "Your Google Maps API key with Places, Directions, Geocoding, and Time Zone APIs enabled",
               "name": "GOOGLE_MAPS_API_KEY",
-              "require": true
+              "required": true
             }
           ],
           "positional_arguments": [
@@ -601,12 +629,12 @@
   },
   "terminal-controller-mcp": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:16:11.183359682Z",
+    "createdat": "2025-05-09T16:45:17.659114139Z",
     "description": "A Model Context Protocol (MCP) server that enables secure terminal command execution, directory navigation, and file system operations through a standardized interface.",
     "epoch": 1,
     "isdefault": true,
     "metaurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/terminal-controller-mcp/meta",
-    "modifiedat": "2025-05-07T20:16:11.183359682Z",
+    "modifiedat": "2025-05-09T16:45:17.659114139Z",
     "name": "io.github.GongRzhe/terminal-controller-mcp",
     "prompts": [],
     "registries": [

@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:08:20.114117822Z",
+  "createdat": "2025-05-09T16:41:31.542238936Z",
   "description": "MCP Server for the National Park Service (NPS) API, providing real-time information about U.S. National Parks, including park details, alerts, and activities.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:08:20.114117822Z",
+  "modifiedat": "2025-05-09T16:41:31.542238936Z",
   "name": "io.github.KyrieTangSheng/mcp-server-nationalparks",
   "prompts": [],
   "registries": [

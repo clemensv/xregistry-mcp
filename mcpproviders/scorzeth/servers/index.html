@@ -1,12 +1,12 @@
 {
   "anki-mcp-server": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:08:18.505197507Z",
+    "createdat": "2025-05-09T16:41:30.777627909Z",
     "description": "An MCP server implementation that connects to a locally running Anki, providing card review and creation.",
     "epoch": 1,
     "isdefault": true,
     "metaurl": "https://mcpxreg.org/mcpproviders/scorzeth/servers/anki-mcp-server/meta",
-    "modifiedat": "2025-05-07T20:08:18.505197507Z",
+    "modifiedat": "2025-05-09T16:41:30.777627909Z",
     "name": "io.github.scorzeth/anki-mcp-server",
     "prompts": [],
     "registries": [
@@ -53,10 +53,13 @@
             "answers": {
               "items": {
                 "properties": {
-                  "cardId": "number",
+                  "cardId": {
+                    "description": "Id of the card to answer",
+                    "type": "number"
+                  },
                   "ease": {
-                    "de": "Ease of the card between 1 (Again) and 4 (Easy)",
-                    "ty": "number"
+                    "description": "Ease of the card between 1 (Again) and 4 (Easy)",
+                    "type": "number"
                   }
                 },
                 "type": "object"

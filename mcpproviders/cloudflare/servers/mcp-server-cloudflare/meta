@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:17:07.695224078Z",
+  "createdat": "2025-05-09T16:45:44.221106998Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/cloudflare/servers/mcp-server-cloudflare/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:17:07.695224078Z",
+  "modifiedat": "2025-05-09T16:45:44.221106998Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/cloudflare/servers/mcp-server-cloudflare/meta",
   "serverid": "mcp-server-cloudflare",

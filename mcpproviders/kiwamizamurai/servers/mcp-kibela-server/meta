@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:09:33.756984705Z",
+  "createdat": "2025-05-09T16:42:06.77730807Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/kiwamizamurai/servers/mcp-kibela-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:09:33.756984705Z",
+  "modifiedat": "2025-05-09T16:42:06.77730807Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/kiwamizamurai/servers/mcp-kibela-server/meta",
   "serverid": "mcp-kibela-server",

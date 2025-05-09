@@ -1,26 +1,26 @@
 {
   "gh1": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:13:07.480658735Z",
+    "createdat": "2025-05-09T16:43:49.975887215Z",
     "description": "GitHub integration MCP server providing tooling and resource discovery via GitHub APIs",
     "epoch": 1,
     "isdefault": true,
     "metaurl": "https://mcpxreg.org/mcpproviders/clemensv/servers/gh1/meta",
-    "modifiedat": "2025-05-07T20:13:07.480658735Z",
+    "modifiedat": "2025-05-09T16:43:49.975887215Z",
     "name": "io.github.clemensv/mcp-servers",
     "registries": [
       {
         "command_arguments": {
           "environment_variables": [
             {
-              "descrip": "Port to run the server on",
+              "description": "Port to run the server on",
               "name": "PORT",
-              "require": false
+              "required": false
             },
             {
-              "descrip": "Personal access token or GitHub App token for API access",
+              "description": "Personal access token or GitHub App token for API access",
               "name": "GITHUB_TOKEN",
-              "require": true
+              "required": true
             }
           ],
           "sub_commands": [
@@ -53,26 +53,26 @@
   },
   "google-maps": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:13:14.14235871Z",
+    "createdat": "2025-05-09T16:43:53.139886976Z",
     "description": "Google Maps integration MCP server providing geospatial tooling and data access using the Google Maps Platform APIs",
     "epoch": 1,
     "isdefault": true,
     "metaurl": "https://mcpxreg.org/mcpproviders/clemensv/servers/google-maps/meta",
-    "modifiedat": "2025-05-07T20:13:14.14235871Z",
+    "modifiedat": "2025-05-09T16:43:53.139886976Z",
     "name": "io.github.clemensv/mcp-servers/google-maps",
     "registries": [
       {
         "command_arguments": {
           "environment_variables": [
             {
-              "descrip": "Port to run the server on",
+              "description": "Port to run the server on",
               "name": "PORT",
-              "require": false
+              "required": false
             },
             {
-              "descrip": "API key for accessing Google Maps Platform services",
+              "description": "API key for accessing Google Maps Platform services",
               "name": "GOOGLE_MAPS_API_KEY",
-              "require": true
+              "required": true
             }
           ],
           "sub_commands": [
@@ -105,41 +105,41 @@
   },
   "postgres": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:13:10.80416561Z",
+    "createdat": "2025-05-09T16:43:51.551455359Z",
     "description": "MCP server for resource discovery and metadata publication from PostgreSQL databases",
     "epoch": 1,
     "isdefault": true,
     "metaurl": "https://mcpxreg.org/mcpproviders/clemensv/servers/postgres/meta",
-    "modifiedat": "2025-05-07T20:13:10.80416561Z",
+    "modifiedat": "2025-05-09T16:43:51.551455359Z",
     "name": "io.github.clemensv/mcp-servers/postgres",
     "registries": [
       {
         "command_arguments": {
           "environment_variables": [
             {
-              "descrip": "PostgreSQL server hostname or IP",
+              "description": "PostgreSQL server hostname or IP",
               "name": "PGHOST",
-              "require": true
+              "required": true
             },
             {
-              "descrip": "PostgreSQL server port",
+              "description": "PostgreSQL server port",
               "name": "PGPORT",
-              "require": false
+              "required": false
             },
             {
-              "descrip": "Username for PostgreSQL authentication",
+              "description": "Username for PostgreSQL authentication",
               "name": "PGUSER",
-              "require": true
+              "required": true
             },
             {
-              "descrip": "Password for PostgreSQL authentication",
+              "description": "Password for PostgreSQL authentication",
               "name": "PGPASSWORD",
-              "require": true
+              "required": true
             },
             {
-              "descrip": "Target PostgreSQL database",
+              "description": "Target PostgreSQL database",
               "name": "PGDATABASE",
-              "require": true
+              "required": true
             }
           ],
           "sub_commands": [

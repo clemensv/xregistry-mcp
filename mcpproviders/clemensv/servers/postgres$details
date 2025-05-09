@@ -1,40 +1,40 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:13:10.80416561Z",
+  "createdat": "2025-05-09T16:43:51.551455359Z",
   "description": "MCP server for resource discovery and metadata publication from PostgreSQL databases",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/clemensv/servers/postgres/meta",
-  "modifiedat": "2025-05-07T20:13:10.80416561Z",
+  "modifiedat": "2025-05-09T16:43:51.551455359Z",
   "name": "io.github.clemensv/mcp-servers/postgres",
   "registries": [
     {
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "PostgreSQL server hostname or IP",
+            "description": "PostgreSQL server hostname or IP",
             "name": "PGHOST",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "PostgreSQL server port",
+            "description": "PostgreSQL server port",
             "name": "PGPORT",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Username for PostgreSQL authentication",
+            "description": "Username for PostgreSQL authentication",
             "name": "PGUSER",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Password for PostgreSQL authentication",
+            "description": "Password for PostgreSQL authentication",
             "name": "PGPASSWORD",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Target PostgreSQL database",
+            "description": "Target PostgreSQL database",
             "name": "PGDATABASE",
-            "require": true
+            "required": true
           }
         ],
         "sub_commands": [

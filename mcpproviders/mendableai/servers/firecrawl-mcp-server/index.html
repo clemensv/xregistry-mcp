@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:09:20.863662164Z",
+  "createdat": "2025-05-09T16:42:00.648054083Z",
   "description": "A Model Context Protocol (MCP) server implementation that integrates with Firecrawl for web scraping capabilities.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/mendableai/servers/firecrawl-mcp-server/meta",
-  "modifiedat": "2025-05-07T20:09:20.863662164Z",
+  "modifiedat": "2025-05-09T16:42:00.648054083Z",
   "name": "io.github.mendableai/firecrawl-mcp-server",
   "prompts": [],
   "registries": [
@@ -23,9 +23,9 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "API key for Firecrawl",
+            "description": "API key for Firecrawl",
             "name": "FIRECRAWL_API_KEY",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [
@@ -53,23 +53,51 @@
             "description": "List of actions to perform before scraping",
             "items": {
               "properties": {
-                "directi": "Scroll direction",
-                "fullPag": "Take full page screenshot",
-                "key": {
-                  "des": "Key to press (for press action)",
-                  "typ": "string"
+                "direction": {
+                  "description": "Scroll direction",
+                  "enum": [
+                    "up",
+                    "down"
+                  ],
+                  "type": "string"
                 },
-                "millise": "Time to wait in milliseconds (for wait action)",
-                "script": "JavaScript code to execute",
-                "selecto": "CSS selector for the target element",
+                "fullPage": {
+                  "description": "Take full page screenshot",
+                  "type": "boolean"
+                },
+                "key": {
+                  "description": "Key to press (for press action)",
+                  "type": "string"
+                },
+                "milliseconds": {
+                  "description": "Time to wait in milliseconds (for wait action)",
+                  "type": "number"
+                },
+                "script": {
+                  "description": "JavaScript code to execute",
+                  "type": "string"
+                },
+                "selector": {
+                  "description": "CSS selector for the target element",
+                  "type": "string"
+                },
                 "text": {
-                  "de": "Text to write (for write action)",
-                  "ty": "string"
+                  "description": "Text to write (for write action)",
+                  "type": "string"
                 },
                 "type": {
-                  "de": "Type of action to perform",
-                  "en": "executeJavascript",
-                  "ty": "string"
+                  "description": "Type of action to perform",
+                  "enum": [
+                    "wait",
+                    "click",
+                    "screenshot",
+                    "write",
+                    "press",
+                    "scroll",
+                    "scrape",
+                    "executeJavascript"
+                  ],
+                  "type": "string"
                 }
               },
               "required": [
@@ -90,14 +118,17 @@
             "description": "Configuration for structured data extraction",
             "properties": {
               "prompt": {
-                "descri": "User prompt for LLM extraction",
+                "description": "User prompt for LLM extraction",
                 "type": "string"
               },
               "schema": {
-                "descri": "Schema for structured data extraction",
+                "description": "Schema for structured data extraction",
                 "type": "object"
               },
-              "systemPrompt": "System prompt for LLM extraction"
+              "systemPrompt": {
+                "description": "System prompt for LLM extraction",
+                "type": "string"
+              }
             },
             "type": "object"
           },
@@ -128,13 +159,15 @@
             "description": "Location settings for scraping",
             "properties": {
               "country": {
-                "desc": "Country code for geolocation",
+                "description": "Country code for geolocation",
                 "type": "string"
               },
               "languages": {
-                "de": "Language codes for content",
-                "it": "string",
-                "ty": "array"
+                "description": "Language codes for content",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
               }
             },
             "type": "object"
@@ -224,7 +257,7 @@
             "type": "boolean"
           },
           "deduplicateSimilarURLs": {
-            "descripti": "Remove similar URLs during crawl",
+            "description": "Remove similar URLs during crawl",
             "type": "boolean"
           },
           "excludePaths": {
@@ -235,7 +268,7 @@
             "type": "array"
           },
           "ignoreQueryParameters": {
-            "descriptio": "Ignore query parameters when comparing URLs",
+            "description": "Ignore query parameters when comparing URLs",
             "type": "boolean"
           },
           "ignoreSitemap": {
@@ -260,11 +293,39 @@
           "scrapeOptions": {
             "description": "Options for scraping each page",
             "properties": {
-              "exclude": "string",
-              "formats": "array",
-              "include": "string",
-              "onlyMai": "boolean",
-              "waitFor": "number"
+              "excludeTags": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "formats": {
+                "items": {
+                  "enum": [
+                    "markdown",
+                    "html",
+                    "rawHtml",
+                    "screenshot",
+                    "links",
+                    "screenshot@fullPage",
+                    "extract"
+                  ],
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "includeTags": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "onlyMainContent": {
+                "type": "boolean"
+              },
+              "waitFor": {
+                "type": "number"
+              }
             },
             "type": "object"
           },
@@ -280,8 +341,14 @@
               },
               {
                 "properties": {
-                  "head": "Custom headers for webhook requests",
-                  "url": "Webhook URL"
+                  "headers": {
+                    "description": "Custom headers for webhook requests",
+                    "type": "object"
+                  },
+                  "url": {
+                    "description": "Webhook URL",
+                    "type": "string"
+                  }
                 },
                 "required": [
                   "url"
@@ -338,13 +405,15 @@
             "description": "Location settings for search",
             "properties": {
               "country": {
-                "desc": "Country code for geolocation",
+                "description": "Country code for geolocation",
                 "type": "string"
               },
               "languages": {
-                "de": "Language codes for content",
-                "it": "string",
-                "ty": "array"
+                "description": "Language codes for content",
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
               }
             },
             "type": "object"
@@ -356,9 +425,26 @@
           "scrapeOptions": {
             "description": "Options for scraping search results",
             "properties": {
-              "formats": "Content formats to extract from search results",
-              "onlyMai": "Extract only the main content from results",
-              "waitFor": "Time in milliseconds to wait for dynamic content"
+              "formats": {
+                "description": "Content formats to extract from search results",
+                "items": {
+                  "enum": [
+                    "markdown",
+                    "html",
+                    "rawHtml"
+                  ],
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "onlyMainContent": {
+                "description": "Extract only the main content from results",
+                "type": "boolean"
+              },
+              "waitFor": {
+                "description": "Time in milliseconds to wait for dynamic content",
+                "type": "number"
+              }
             },
             "type": "object"
           },

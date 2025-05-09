@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:10:02.690143922Z",
+  "createdat": "2025-05-09T16:42:20.610750914Z",
   "description": "Model Context Protocol (MCP) Server for Langfuse Prompt Management. This server allows access and management of Langfuse prompts through the MCP protocol, implementing the MCP Prompts specification for prompt discovery and retrieval.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/langfuse/servers/mcp-server-langfuse/meta",
-  "modifiedat": "2025-05-07T20:10:02.690143922Z",
+  "modifiedat": "2025-05-09T16:42:20.610750914Z",
   "name": "io.github.langfuse/mcp-server-langfuse",
   "prompts": [],
   "registries": [
@@ -13,19 +13,19 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Your Langfuse public API key",
+            "description": "Your Langfuse public API key",
             "name": "LANGFUSE_PUBLIC_KEY",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Your Langfuse secret API key",
+            "description": "Your Langfuse secret API key",
             "name": "LANGFUSE_SECRET_KEY",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Base URL for Langfuse API",
+            "description": "Base URL for Langfuse API",
             "name": "LANGFUSE_BASEURL",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [
@@ -65,7 +65,7 @@
         "properties": {
           "arguments": {
             "additionalProperties": {
-              "t": "string"
+              "type": "string"
             },
             "description": "Arguments with prompt variables to pass to the prompt template, json object, e.g. {\"\u003cname\u003e\":\"\u003cvalue\u003e\"}",
             "nullable": true,

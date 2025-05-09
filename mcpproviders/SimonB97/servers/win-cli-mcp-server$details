@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:15:26.897054141Z",
+  "createdat": "2025-05-09T16:44:56.765558946Z",
   "description": "MCP server for secure command-line interactions on Windows systems, enabling controlled access to PowerShell, CMD, Git Bash shells, and remote systems via SSH. It allows MCP clients to perform operations on your system, similar to Open Interpreter.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/SimonB97/servers/win-cli-mcp-server/meta",
-  "modifiedat": "2025-05-07T20:15:26.897054141Z",
+  "modifiedat": "2025-05-09T16:44:56.765558946Z",
   "name": "io.github.SimonB97/win-cli-mcp-server",
   "prompts": [],
   "registries": [
@@ -142,11 +142,26 @@
         "properties": {
           "connectionConfig": {
             "properties": {
-              "host": "Host of the SSH connection",
-              "pass": "string",
-              "port": "number",
-              "priv": "Path to the private key for the SSH connection",
-              "user": "Username for the SSH connection"
+              "host": {
+                "description": "Host of the SSH connection",
+                "type": "string"
+              },
+              "password": {
+                "description": "Password for the SSH connection",
+                "type": "string"
+              },
+              "port": {
+                "description": "Port of the SSH connection",
+                "type": "number"
+              },
+              "privateKeyPath": {
+                "description": "Path to the private key for the SSH connection",
+                "type": "string"
+              },
+              "username": {
+                "description": "Username for the SSH connection",
+                "type": "string"
+              }
             },
             "type": "object"
           },
@@ -177,11 +192,26 @@
         "properties": {
           "connectionConfig": {
             "properties": {
-              "host": "string",
-              "pass": "Password for the SSH connection",
-              "port": "Port of the SSH connection",
-              "priv": "Path to the private key for the SSH connection",
-              "user": "Username for the SSH connection"
+              "host": {
+                "description": "Host of the SSH connection",
+                "type": "string"
+              },
+              "password": {
+                "description": "Password for the SSH connection",
+                "type": "string"
+              },
+              "port": {
+                "description": "Port of the SSH connection",
+                "type": "number"
+              },
+              "privateKeyPath": {
+                "description": "Path to the private key for the SSH connection",
+                "type": "string"
+              },
+              "username": {
+                "description": "Username for the SSH connection",
+                "type": "string"
+              }
             },
             "type": "object"
           },

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:08:31.642286255Z",
+  "createdat": "2025-05-09T16:41:37.244480218Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/alibaba/servers/higress/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:08:31.642286255Z",
+  "modifiedat": "2025-05-09T16:41:37.244480218Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/alibaba/servers/higress/meta",
   "serverid": "higress",

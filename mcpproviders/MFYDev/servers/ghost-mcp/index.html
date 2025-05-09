@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:08:05.359088641Z",
+  "createdat": "2025-05-09T16:41:24.392564785Z",
   "description": "A Model Context Protocol (MCP) server for interacting with Ghost CMS through LLM interfaces like Claude. This server provides secure and comprehensive access to your Ghost blog, leveraging JWT authentication and a rich set of MCP tools for managing posts, users, members, tiers, offers, and newsletters.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/MFYDev/servers/ghost-mcp/meta",
-  "modifiedat": "2025-05-07T20:08:05.359088641Z",
+  "modifiedat": "2025-05-09T16:41:24.392564785Z",
   "name": "io.github.MFYDev/ghost-mcp",
   "prompts": [],
   "registries": [
@@ -13,19 +13,19 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "URL of your Ghost blog",
+            "description": "URL of your Ghost blog",
             "name": "GHOST_API_URL",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Admin API key for Ghost",
+            "description": "Admin API key for Ghost",
             "name": "GHOST_ADMIN_API_KEY",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Ghost API version, e.g. v5.0",
+            "description": "Ghost API version, e.g. v5.0",
             "name": "GHOST_API_VERSION",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [
@@ -186,10 +186,10 @@
             "items": {
               "properties": {
                 "name": {
-                  "typ": "string"
+                  "type": "string"
                 },
                 "slug": {
-                  "typ": "string"
+                  "type": "string"
                 }
               },
               "required": [
@@ -205,7 +205,9 @@
           "newsletters": {
             "items": {
               "properties": {
-                "id": "string"
+                "id": {
+                  "type": "string"
+                }
               },
               "required": [
                 "id"
@@ -239,10 +241,10 @@
             "items": {
               "properties": {
                 "name": {
-                  "typ": "string"
+                  "type": "string"
                 },
                 "slug": {
-                  "typ": "string"
+                  "type": "string"
                 }
               },
               "required": [
@@ -258,7 +260,9 @@
           "newsletters": {
             "items": {
               "properties": {
-                "id": "string"
+                "id": {
+                  "type": "string"
+                }
               },
               "required": [
                 "id"

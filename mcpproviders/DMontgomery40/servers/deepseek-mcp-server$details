@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:08:29.644188088Z",
+  "createdat": "2025-05-09T16:41:36.288255037Z",
   "description": "A Model Context Protocol (MCP) server for the DeepSeek API, allowing seamless integration of DeepSeek's powerful language models with MCP-compatible applications like Claude Desktop.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/DMontgomery40/servers/deepseek-mcp-server/meta",
-  "modifiedat": "2025-05-07T20:08:29.644188088Z",
+  "modifiedat": "2025-05-09T16:41:36.288255037Z",
   "name": "io.github.DMontgomery40/deepseek-mcp-server",
   "prompts": [],
   "registries": [
@@ -13,9 +13,9 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "API key for DeepSeek API",
+            "description": "API key for DeepSeek API",
             "name": "DEEPSEEK_API_KEY",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [
@@ -66,10 +66,16 @@
           "messages": {
             "items": {
               "properties": {
-                "conten": "string",
+                "content": {
+                  "type": "string"
+                },
                 "role": {
-                  "e": "assistant",
-                  "t": "string"
+                  "enum": [
+                    "system",
+                    "user",
+                    "assistant"
+                  ],
+                  "type": "string"
                 }
               },
               "type": "object"
@@ -128,7 +134,32 @@
               },
               {
                 "items": {
-                  "properti": "text",
+                  "properties": {
+                    "content": {
+                      "properties": {
+                        "text": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "const": "text",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "text"
+                      ],
+                      "type": "object"
+                    },
+                    "role": {
+                      "enum": [
+                        "system",
+                        "user",
+                        "assistant"
+                      ],
+                      "type": "string"
+                    }
+                  },
                   "type": "object"
                 },
                 "type": "array"

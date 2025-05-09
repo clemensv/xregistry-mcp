@@ -1,12 +1,12 @@
 {
   "datadog-mcp-server": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:08:08.200783825Z",
+    "createdat": "2025-05-09T16:41:25.842458321Z",
     "description": "A Model Context Protocol (MCP) server for interacting with the Datadog API.",
     "epoch": 1,
     "isdefault": true,
     "metaurl": "https://mcpxreg.org/mcpproviders/GeLi2001/servers/datadog-mcp-server/meta",
-    "modifiedat": "2025-05-07T20:08:08.200783825Z",
+    "modifiedat": "2025-05-09T16:41:25.842458321Z",
     "name": "io.github.GeLi2001/datadog-mcp-server",
     "prompts": [],
     "registries": [
@@ -14,29 +14,29 @@
         "command_arguments": {
           "environment_variables": [
             {
-              "descrip": "Datadog API key",
+              "description": "Datadog API key",
               "name": "DD_API_KEY",
-              "require": true
+              "required": true
             },
             {
-              "descrip": "Datadog Application key",
+              "description": "Datadog Application key",
               "name": "DD_APP_KEY",
-              "require": true
+              "required": true
             },
             {
-              "descrip": "Datadog site domain",
+              "description": "Datadog site domain",
               "name": "DD_SITE",
-              "require": false
+              "required": false
             },
             {
-              "descrip": "Datadog logs site domain",
+              "description": "Datadog logs site domain",
               "name": "DD_LOGS_SITE",
-              "require": false
+              "required": false
             },
             {
-              "descrip": "Datadog metrics site domain",
+              "description": "Datadog metrics site domain",
               "name": "DD_METRICS_SITE",
-              "require": false
+              "required": false
             }
           ],
           "positional_arguments": [],
@@ -92,12 +92,12 @@
   },
   "shopify-mcp": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:08:07.489479214Z",
+    "createdat": "2025-05-09T16:41:25.489819603Z",
     "description": "MCP Server for Shopify API, enabling interaction with store data through GraphQL API",
     "epoch": 1,
     "isdefault": true,
     "metaurl": "https://mcpxreg.org/mcpproviders/GeLi2001/servers/shopify-mcp/meta",
-    "modifiedat": "2025-05-07T20:08:07.489479214Z",
+    "modifiedat": "2025-05-09T16:41:25.489819603Z",
     "name": "io.github.GeLi2001/shopify-mcp",
     "prompts": [],
     "registries": [
@@ -105,14 +105,14 @@
         "command_arguments": {
           "environment_variables": [
             {
-              "descrip": "Shopify API access token",
+              "description": "Shopify API access token",
               "name": "SHOPIFY_ACCESS_TOKEN",
-              "require": true
+              "required": true
             },
             {
-              "descrip": "Shopify store domain",
+              "description": "Shopify store domain",
               "name": "MYSHOPIFY_DOMAIN",
-              "require": true
+              "required": true
             }
           ],
           "positional_arguments": [
@@ -227,7 +227,14 @@
           "properties": {
             "customAttributes": {
               "items": {
-                "propertie": "string",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
                 "type": "object"
               },
               "type": "array"
@@ -244,12 +251,20 @@
               "items": {
                 "properties": {
                   "id": {
-                    "t": "string"
+                    "type": "string"
                   },
-                  "key": "string",
-                  "name": "string",
-                  "type": "string",
-                  "valu": "string"
+                  "key": {
+                    "type": "string"
+                  },
+                  "namespace": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
                 },
                 "type": "object"
               },
@@ -260,16 +275,35 @@
             },
             "shippingAddress": {
               "properties": {
-                "addre": "string",
-                "city": "string",
-                "compa": "string",
-                "count": "string",
-                "first": "string",
-                "lastN": "string",
-                "phone": "string",
-                "provi": "string",
+                "address1": {
+                  "type": "string"
+                },
+                "address2": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "company": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "firstName": {
+                  "type": "string"
+                },
+                "lastName": {
+                  "type": "string"
+                },
+                "phone": {
+                  "type": "string"
+                },
+                "province": {
+                  "type": "string"
+                },
                 "zip": {
-                  "t": "string"
+                  "type": "string"
                 }
               },
               "type": "object"
@@ -329,12 +363,20 @@
               "items": {
                 "properties": {
                   "id": {
-                    "t": "string"
+                    "type": "string"
                   },
-                  "key": "string",
-                  "name": "string",
-                  "type": "string",
-                  "valu": "string"
+                  "key": {
+                    "type": "string"
+                  },
+                  "namespace": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
                 },
                 "type": "object"
               },
@@ -374,12 +416,12 @@
   },
   "tft-mcp-server": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:08:08.873224015Z",
+    "createdat": "2025-05-09T16:41:26.160349385Z",
     "description": "Model Context Protocol (MCP) server for Team Fight Tactics (TFT) that provides access to TFT game data through various tools.",
     "epoch": 1,
     "isdefault": true,
     "metaurl": "https://mcpxreg.org/mcpproviders/GeLi2001/servers/tft-mcp-server/meta",
-    "modifiedat": "2025-05-07T20:08:08.873224015Z",
+    "modifiedat": "2025-05-09T16:41:26.160349385Z",
     "name": "io.github.GeLi2001/tft-mcp-server",
     "prompts": [],
     "registries": [

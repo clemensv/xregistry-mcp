@@ -1,12 +1,12 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:15:44.390106149Z",
+  "createdat": "2025-05-09T16:45:05.085010611Z",
   "description": "A Model Context Protocol server for generating charts using QuickChart.io",
   "documentation": "https://quickchart.io/documentation/",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/Quickchart-MCP-Server/meta",
-  "modifiedat": "2025-05-07T20:15:44.390106149Z",
+  "modifiedat": "2025-05-09T16:45:05.085010611Z",
   "name": "io.github.GongRzhe/Quickchart-MCP-Server",
   "prompts": [],
   "registries": [
@@ -36,13 +36,41 @@
           "datasets": {
             "items": {
               "properties": {
-                "additi": "object",
-                "backgr": "string",
-                "border": "string",
-                "data": {
-                  "t": "array"
+                "additionalConfig": {
+                  "type": "object"
                 },
-                "label": "string"
+                "backgroundColor": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  ]
+                },
+                "borderColor": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    }
+                  ]
+                },
+                "data": {
+                  "type": "array"
+                },
+                "label": {
+                  "type": "string"
+                }
               },
               "required": [
                 "data"

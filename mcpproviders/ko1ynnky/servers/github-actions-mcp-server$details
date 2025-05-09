@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:10:45.013095326Z",
+  "createdat": "2025-05-09T16:42:40.622635599Z",
   "description": "MCP Server for the GitHub Actions API, enabling AI assistants to manage and operate GitHub Actions workflows.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/ko1ynnky/servers/github-actions-mcp-server/meta",
-  "modifiedat": "2025-05-07T20:10:45.013095326Z",
+  "modifiedat": "2025-05-09T16:42:40.622635599Z",
   "name": "io.github.ko1ynnky/github-actions-mcp-server",
   "prompts": [],
   "registries": [

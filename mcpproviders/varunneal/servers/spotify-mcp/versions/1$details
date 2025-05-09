@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:08:22.645975392Z",
+  "createdat": "2025-05-09T16:41:32.762740408Z",
   "description": "MCP project to connect Claude with Spotify. Built on top of spotipy-dev's API. Supports playback control, search, info retrieval, and queue management.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:08:22.645975392Z",
+  "modifiedat": "2025-05-09T16:41:32.762740408Z",
   "name": "io.github.varunneal/spotify-mcp",
   "prompts": [],
   "registries": [

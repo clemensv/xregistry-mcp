@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:10:59.076147335Z",
+  "createdat": "2025-05-09T16:42:47.350627892Z",
   "description": "An MCP server to create, manage and publish X/Twitter posts directly through Claude chat.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/vidhupv/servers/x-mcp/meta",
-  "modifiedat": "2025-05-07T20:10:59.076147335Z",
+  "modifiedat": "2025-05-09T16:42:47.350627892Z",
   "name": "io.github.vidhupv/x-mcp",
   "prompts": [],
   "registries": [
@@ -13,24 +13,24 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Twitter API key",
+            "description": "Twitter API key",
             "name": "TWITTER_API_KEY",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Twitter API secret",
+            "description": "Twitter API secret",
             "name": "TWITTER_API_SECRET",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Twitter access token",
+            "description": "Twitter access token",
             "name": "TWITTER_ACCESS_TOKEN",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Twitter access token secret",
+            "description": "Twitter access token secret",
             "name": "TWITTER_ACCESS_TOKEN_SECRET",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [

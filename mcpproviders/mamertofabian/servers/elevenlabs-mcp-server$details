@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:14:45.440557192Z",
+  "createdat": "2025-05-09T16:44:36.874706447Z",
   "description": "A Model Context Protocol (MCP) server that integrates with ElevenLabs text-to-speech API, featuring both a server component and a sample web-based MCP Client (SvelteKit) for managing voice generation tasks.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/mamertofabian/servers/elevenlabs-mcp-server/meta",
-  "modifiedat": "2025-05-07T20:14:45.440557192Z",
+  "modifiedat": "2025-05-09T16:44:36.874706447Z",
   "name": "io.github.mamertofabian/elevenlabs-mcp-server",
   "prompts": [],
   "registries": [
@@ -13,39 +13,39 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "API key for ElevenLabs",
+            "description": "API key for ElevenLabs",
             "name": "ELEVENLABS_API_KEY",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Default voice ID to use",
+            "description": "Default voice ID to use",
             "name": "ELEVENLABS_VOICE_ID",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Model ID for voice generation",
+            "description": "Model ID for voice generation",
             "name": "ELEVENLABS_MODEL_ID",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Stability parameter for voice synthesis",
+            "description": "Stability parameter for voice synthesis",
             "name": "ELEVENLABS_STABILITY",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Similarity boost parameter",
+            "description": "Similarity boost parameter",
             "name": "ELEVENLABS_SIMILARITY_BOOST",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Style parameter for voice",
+            "description": "Style parameter for voice",
             "name": "ELEVENLABS_STYLE",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Output directory for audio files",
+            "description": "Output directory for audio files",
             "name": "ELEVENLABS_OUTPUT_DIR",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [

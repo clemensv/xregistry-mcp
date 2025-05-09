@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:09:44.005851034Z",
+  "createdat": "2025-05-09T16:42:11.694332422Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/leehanchung/servers/bing-search-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:09:44.005851034Z",
+  "modifiedat": "2025-05-09T16:42:11.694332422Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/leehanchung/servers/bing-search-mcp/meta",
   "serverid": "bing-search-mcp",

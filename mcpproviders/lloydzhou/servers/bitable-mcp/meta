@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:11:44.317623718Z",
+  "createdat": "2025-05-09T16:43:09.612346416Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/lloydzhou/servers/bitable-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:11:44.317623718Z",
+  "modifiedat": "2025-05-09T16:43:09.612346416Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/lloydzhou/servers/bitable-mcp/meta",
   "serverid": "bitable-mcp",

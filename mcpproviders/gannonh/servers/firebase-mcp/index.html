@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:10:22.871909656Z",
+  "createdat": "2025-05-09T16:42:30.101489043Z",
   "description": "Firebase MCP enables AI assistants to work directly with Firebase services, including Firestore, Storage, and Authentication, through a standardized Model Context Protocol interface.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/gannonh/servers/firebase-mcp/meta",
-  "modifiedat": "2025-05-07T20:10:22.871909656Z",
+  "modifiedat": "2025-05-09T16:42:30.101489043Z",
   "name": "io.github.gannonh/firebase-mcp",
   "prompts": [],
   "registries": [
@@ -13,14 +13,14 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Path to Firebase service account JSON key",
+            "description": "Path to Firebase service account JSON key",
             "name": "SERVICE_ACCOUNT_KEY_PATH",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Firebase storage bucket name",
+            "description": "Firebase storage bucket name",
             "name": "FIREBASE_STORAGE_BUCKET",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [
@@ -74,13 +74,16 @@
             "items": {
               "properties": {
                 "field": {
-                  "d": "Field name to filter",
-                  "t": "string"
+                  "description": "Field name to filter",
+                  "type": "string"
                 },
-                "operato": "Comparison operator (==, \u003e, \u003c, \u003e=, \u003c=, array-contains, in, array-contains-any)",
+                "operator": {
+                  "description": "Comparison operator (==, \u003e, \u003c, \u003e=, \u003c=, array-contains, in, array-contains-any)",
+                  "type": "string"
+                },
                 "value": {
-                  "d": "Value to compare against (use ISO format for dates)",
-                  "t": "string"
+                  "description": "Value to compare against (use ISO format for dates)",
+                  "type": "string"
                 }
               },
               "required": [
@@ -101,10 +104,18 @@
             "description": "Array of fields to order by",
             "items": {
               "properties": {
-                "directi": "string",
+                "direction": {
+                  "default": "asc",
+                  "description": "Sort direction (asc or desc)",
+                  "enum": [
+                    "asc",
+                    "desc"
+                  ],
+                  "type": "string"
+                },
                 "field": {
-                  "d": "Field name to order by",
-                  "t": "string"
+                  "description": "Field name to order by",
+                  "type": "string"
                 }
               },
               "required": [
@@ -319,9 +330,18 @@
             "description": "Optional filters to apply to the query",
             "items": {
               "properties": {
-                "field": "string",
-                "operat": "Comparison operator (==, !=, \u003c, \u003c=, \u003e, \u003e=, array-contains, array-contains-any, in, not-in)",
-                "value": "Value to compare against"
+                "field": {
+                  "description": "Field name to filter",
+                  "type": "string"
+                },
+                "operator": {
+                  "description": "Comparison operator (==, !=, \u003c, \u003c=, \u003e, \u003e=, array-contains, array-contains-any, in, not-in)",
+                  "type": "string"
+                },
+                "value": {
+                  "description": "Value to compare against",
+                  "type": "string"
+                }
               },
               "required": [
                 "field",
@@ -340,8 +360,19 @@
             "description": "Optional fields to order results by",
             "items": {
               "properties": {
-                "direct": "Sort direction (asc or desc)",
-                "field": "Field name to order by"
+                "direction": {
+                  "default": "asc",
+                  "description": "Sort direction (asc or desc)",
+                  "enum": [
+                    "asc",
+                    "desc"
+                  ],
+                  "type": "string"
+                },
+                "field": {
+                  "description": "Field name to order by",
+                  "type": "string"
+                }
               },
               "required": [
                 "field"

@@ -1,11 +1,11 @@
 {
   "1": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:15:35.581994814Z",
+    "createdat": "2025-05-09T16:45:00.909340163Z",
     "description": "This MCP server connects Claude to real-time NS (Nederlandse Spoorwegen) travel information, making it your perfect companion for navigating the Netherlands by train.",
     "epoch": 1,
     "isdefault": true,
-    "modifiedat": "2025-05-07T20:15:35.581994814Z",
+    "modifiedat": "2025-05-09T16:45:00.909340163Z",
     "name": "io.github.r-huijts/ns-mcp-server",
     "prompts": [],
     "registries": [
@@ -13,9 +13,9 @@
         "command_arguments": {
           "environment_variables": [
             {
-              "descrip": "Your NS API key (required)",
+              "description": "Your NS API key (required)",
               "name": "NS_API_KEY",
-              "require": true
+              "required": true
             }
           ],
           "positional_arguments": [
@@ -155,8 +155,8 @@
         "inputschema": {
           "properties": {
             "includeNonPlannableStations": {
-              "defa": false,
-              "desc": "Include stations where trains do not stop regularly",
+              "default": false,
+              "description": "Include stations where trains do not stop regularly",
               "type": "boolean"
             },
             "limit": {

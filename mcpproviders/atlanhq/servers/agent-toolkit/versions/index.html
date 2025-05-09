@@ -1,0 +1,213 @@
+{
+  "1": {
+    "ancestor": "1",
+    "createdat": "2025-05-09T16:41:21.926781812Z",
+    "description": "A protocol server that enables interaction with Atlan services through function calling. Provides tools for asset search, and retrieval using pyatlan.",
+    "epoch": 1,
+    "isdefault": true,
+    "modifiedat": "2025-05-09T16:41:21.926781812Z",
+    "name": "io.github.atlanhq/agent-toolkit",
+    "prompts": [],
+    "registries": [
+      {
+        "command_arguments": {
+          "environment_variables": [],
+          "positional_arguments": [],
+          "sub_commands": []
+        },
+        "license": "",
+        "name": "python",
+        "package_name": "atlan-agent-toolkit"
+      }
+    ],
+    "remotes": [],
+    "repo_ref": "atlanhq/agent-toolkit",
+    "resources": [],
+    "self": "https://mcpxreg.org/mcpproviders/atlanhq/servers/agent-toolkit/versions/1",
+    "serverid": "agent-toolkit",
+    "tools": [
+      {
+        "description": "Advanced asset search using FluentSearch with flexible conditions.",
+        "inputschema": {
+          "properties": {
+            "asset_type": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object"
+                }
+              ]
+            },
+            "conditions": {
+              "oneOf": [
+                {
+                  "type": "object"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "connection_qualified_name": {
+              "type": "string"
+            },
+            "date_range": {
+              "type": "object"
+            },
+            "directly_tagged": {
+              "type": "boolean"
+            },
+            "domain_guids": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "include_archived": {
+              "type": "boolean"
+            },
+            "include_attributes": {
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "object"
+                  }
+                ]
+              },
+              "type": "array"
+            },
+            "limit": {
+              "type": "integer"
+            },
+            "min_somes": {
+              "type": "integer"
+            },
+            "negative_conditions": {
+              "type": "object"
+            },
+            "offset": {
+              "type": "integer"
+            },
+            "some_conditions": {
+              "type": "object"
+            },
+            "sort_by": {
+              "type": "string"
+            },
+            "sort_order": {
+              "type": "string"
+            },
+            "tags": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
+        },
+        "name": "search_assets_tool"
+      },
+      {
+        "description": "Execute the search with the given query",
+        "inputschema": {
+          "properties": {
+            "dsl_query": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "required": [
+            "dsl_query"
+          ],
+          "type": "object"
+        },
+        "name": "get_assets_by_dsl_tool"
+      },
+      {
+        "description": "Traverse asset lineage in specified direction.",
+        "inputschema": {
+          "properties": {
+            "depth": {
+              "type": "integer"
+            },
+            "direction": {
+              "enum": [
+                "UPSTREAM",
+                "DOWNSTREAM"
+              ],
+              "type": "string"
+            },
+            "guid": {
+              "type": "string"
+            },
+            "immediate_neighbors": {
+              "type": "boolean"
+            },
+            "size": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "guid",
+            "direction"
+          ],
+          "type": "object"
+        },
+        "name": "traverse_lineage_tool"
+      },
+      {
+        "description": "Update one or multiple assets with different values for the same attribute.",
+        "inputschema": {
+          "properties": {
+            "assets": {
+              "oneOf": [
+                {
+                  "type": "object"
+                },
+                {
+                  "items": {
+                    "type": "object"
+                  },
+                  "type": "array"
+                }
+              ]
+            },
+            "attribute_name": {
+              "type": "string"
+            },
+            "attribute_values": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          "required": [
+            "assets",
+            "attribute_name",
+            "attribute_values"
+          ],
+          "type": "object"
+        },
+        "name": "update_assets_tool"
+      }
+    ],
+    "version_detail": {
+      "version": "0.0.0"
+    },
+    "versionid": "1",
+    "xid": "/mcpproviders/atlanhq/servers/agent-toolkit/versions/1"
+  }
+}

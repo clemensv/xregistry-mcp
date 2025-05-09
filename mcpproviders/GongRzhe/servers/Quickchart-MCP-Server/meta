@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:15:44.390106149Z",
+  "createdat": "2025-05-09T16:45:05.085010611Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/Quickchart-MCP-Server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:15:44.390106149Z",
+  "modifiedat": "2025-05-09T16:45:05.085010611Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/Quickchart-MCP-Server/meta",
   "serverid": "Quickchart-MCP-Server",

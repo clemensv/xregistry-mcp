@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:07:35.978687762Z",
+  "createdat": "2025-05-09T16:41:09.001811145Z",
   "description": "Eunomia MCP Server is an extension of the Eunomia framework that connects Eunomia instruments with MCP servers. It provides a simple way to orchestrate data governance policies (like PII detection or user access control) and seamlessly integrate them with external server processes in the MCP ecosystem.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:07:35.978687762Z",
+  "modifiedat": "2025-05-09T16:41:09.001811145Z",
   "name": "io.github.whataboutyou-ai/eunomia-mcp-server",
   "prompts": [],
   "registries": [

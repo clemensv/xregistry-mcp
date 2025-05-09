@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:08:19.309075427Z",
+  "createdat": "2025-05-09T16:41:31.162789412Z",
   "description": "This is a Model Context Protocol (MCP) server that integrates AgentQL's data extraction capabilities.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:08:19.309075427Z",
+  "modifiedat": "2025-05-09T16:41:31.162789412Z",
   "name": "io.github.tinyfish-io/agentql-mcp",
   "prompts": [],
   "registries": [
@@ -13,7 +13,7 @@
         "environment_variables": [
           {
             "name": "AGENTQL_API_KEY",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [

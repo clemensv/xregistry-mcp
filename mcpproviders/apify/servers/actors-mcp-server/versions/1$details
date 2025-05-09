@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:15:39.995961568Z",
+  "createdat": "2025-05-09T16:45:03.014995129Z",
   "description": "Implementation of an MCP server for all Apify Actors enabling interaction with one or more Apify Actors defined in the MCP Server configuration. Allows AI assistants to use Apify Actors as tools for various scraping and data extraction tasks.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:15:39.995961568Z",
+  "modifiedat": "2025-05-09T16:45:03.014995129Z",
   "name": "io.github.apify/actors-mcp-server",
   "prompts": [],
   "registries": [
@@ -12,9 +12,9 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "API token for Apify platform",
+            "description": "API token for Apify platform",
             "name": "APIFY_TOKEN",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [
@@ -31,9 +31,9 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "API token for Apify platform",
+            "description": "API token for Apify platform",
             "name": "APIFY_TOKEN",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [

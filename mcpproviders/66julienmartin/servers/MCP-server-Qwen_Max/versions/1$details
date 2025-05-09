@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:12:08.48685716Z",
+  "createdat": "2025-05-09T16:43:21.848383302Z",
   "description": "A Model Context Protocol (MCP) server implementation for the Qwen Max language model.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:12:08.48685716Z",
+  "modifiedat": "2025-05-09T16:43:21.848383302Z",
   "name": "io.github.66julienmartin/MCP-server-Qwen_Max",
   "prompts": [],
   "registries": [
@@ -12,9 +12,9 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "API key for Dashscope",
+            "description": "API key for Dashscope",
             "name": "DASHSCOPE_API_KEY",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [

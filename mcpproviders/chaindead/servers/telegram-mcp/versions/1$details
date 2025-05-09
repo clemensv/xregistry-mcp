@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:09:05.001257351Z",
+  "createdat": "2025-05-09T16:41:53.107662749Z",
   "description": "The server is a bridge between the Telegram API and the AI assistants and is based on the Model Context Protocol. It provides capabilities such as getting current account information, listing dialogs, marking dialogs as read, retrieving messages, and sending draft messages.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:09:05.001257351Z",
+  "modifiedat": "2025-05-09T16:41:53.107662749Z",
   "name": "io.github.chaindead/telegram-mcp",
   "prompts": [
     {
@@ -28,14 +28,14 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Telegram API ID",
+            "description": "Telegram API ID",
             "name": "TG_APP_ID",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Telegram API hash",
+            "description": "Telegram API hash",
             "name": "TG_API_HASH",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [

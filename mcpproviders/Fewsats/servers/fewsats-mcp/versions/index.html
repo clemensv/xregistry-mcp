@@ -1,11 +1,11 @@
 {
   "1": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:09:03.646432288Z",
+    "createdat": "2025-05-09T16:41:52.452566944Z",
     "description": "This MCP server integrates with Fewsats and allows AI Agents to purchase anything in a secure way.",
     "epoch": 1,
     "isdefault": true,
-    "modifiedat": "2025-05-07T20:09:03.646432288Z",
+    "modifiedat": "2025-05-09T16:41:52.452566944Z",
     "name": "io.github.Fewsats/fewsats-mcp",
     "prompts": [],
     "registries": [
@@ -13,9 +13,9 @@
         "command_arguments": {
           "environment_variables": [
             {
-              "descrip": "API key for Fewsats",
+              "description": "API key for Fewsats",
               "name": "FEWSATS_API_KEY",
-              "require": true
+              "required": true
             }
           ],
           "positional_arguments": [],
@@ -57,13 +57,43 @@
             "l402_offer": {
               "properties": {
                 "offers": {
-                  "ite": "string",
-                  "typ": "array"
+                  "items": {
+                    "properties": {
+                      "amount": {
+                        "type": "number"
+                      },
+                      "currency": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "amount",
+                      "currency",
+                      "description",
+                      "title"
+                    ],
+                    "type": "object"
+                  },
+                  "type": "array"
                 },
-                "payment_co": "string",
-                "payment_re": "string",
+                "payment_context_token": {
+                  "type": "string"
+                },
+                "payment_request_url": {
+                  "type": "string"
+                },
                 "version": {
-                  "ty": "string"
+                  "type": "string"
                 }
               },
               "required": [

@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:15:18.286451704Z",
+  "createdat": "2025-05-09T16:44:52.727316196Z",
   "description": "This MCP server allows Clients to interact with Twitter, enabling posting tweets and searching Twitter.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:15:18.286451704Z",
+  "modifiedat": "2025-05-09T16:44:52.727316196Z",
   "name": "io.github.EnesCinr/twitter-mcp",
   "prompts": [],
   "registries": [
@@ -12,24 +12,24 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Twitter API key",
+            "description": "Twitter API key",
             "name": "API_KEY",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Twitter API secret key",
+            "description": "Twitter API secret key",
             "name": "API_SECRET_KEY",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Twitter access token",
+            "description": "Twitter access token",
             "name": "ACCESS_TOKEN",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Twitter access token secret",
+            "description": "Twitter access token secret",
             "name": "ACCESS_TOKEN_SECRET",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [

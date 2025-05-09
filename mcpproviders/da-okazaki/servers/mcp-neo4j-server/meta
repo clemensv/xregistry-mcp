@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:10:49.605363007Z",
+  "createdat": "2025-05-09T16:42:42.802967889Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/da-okazaki/servers/mcp-neo4j-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:10:49.605363007Z",
+  "modifiedat": "2025-05-09T16:42:42.802967889Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/da-okazaki/servers/mcp-neo4j-server/meta",
   "serverid": "mcp-neo4j-server",

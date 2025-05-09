@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:09:28.837696997Z",
+  "createdat": "2025-05-09T16:42:04.451227497Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/xxxbrian/servers/mcp-rquest/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:09:28.837696997Z",
+  "modifiedat": "2025-05-09T16:42:04.451227497Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/xxxbrian/servers/mcp-rquest/meta",
   "serverid": "mcp-rquest",

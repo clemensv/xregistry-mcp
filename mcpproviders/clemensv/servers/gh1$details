@@ -1,25 +1,25 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:13:07.480658735Z",
+  "createdat": "2025-05-09T16:43:49.975887215Z",
   "description": "GitHub integration MCP server providing tooling and resource discovery via GitHub APIs",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/clemensv/servers/gh1/meta",
-  "modifiedat": "2025-05-07T20:13:07.480658735Z",
+  "modifiedat": "2025-05-09T16:43:49.975887215Z",
   "name": "io.github.clemensv/mcp-servers",
   "registries": [
     {
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Port to run the server on",
+            "description": "Port to run the server on",
             "name": "PORT",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Personal access token or GitHub App token for API access",
+            "description": "Personal access token or GitHub App token for API access",
             "name": "GITHUB_TOKEN",
-            "require": true
+            "required": true
           }
         ],
         "sub_commands": [

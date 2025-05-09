@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:16:38.933834023Z",
+  "createdat": "2025-05-09T16:45:30.723124004Z",
   "description": "A Model Context Protocol (MCP) server enabling AI assistants to interact with Azure DevOps services. This server provides a bridge between natural language interactions and the Azure DevOps REST API, supporting work item management, project management, and team management features.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/Vortiago/servers/mcp-azure-devops/meta",
-  "modifiedat": "2025-05-07T20:16:38.933834023Z",
+  "modifiedat": "2025-05-09T16:45:30.723124004Z",
   "name": "io.github.Vortiago/mcp-azure-devops",
   "prompts": [],
   "registries": [
@@ -13,14 +13,14 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Personal Access Token for Azure DevOps API access",
+            "description": "Personal Access Token for Azure DevOps API access",
             "name": "AZURE_DEVOPS_PAT",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Full URL to the Azure DevOps organization",
+            "description": "Full URL to the Azure DevOps organization",
             "name": "AZURE_DEVOPS_ORGANIZATION_URL",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [],

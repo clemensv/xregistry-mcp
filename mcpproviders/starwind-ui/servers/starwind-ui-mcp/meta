@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:13:41.860038159Z",
+  "createdat": "2025-05-09T16:44:06.446834271Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/starwind-ui/servers/starwind-ui-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:13:41.860038159Z",
+  "modifiedat": "2025-05-09T16:44:06.446834271Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/starwind-ui/servers/starwind-ui-mcp/meta",
   "serverid": "starwind-ui-mcp",

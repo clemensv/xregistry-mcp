@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:07:35.679884731Z",
+  "createdat": "2025-05-09T16:41:08.776739318Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/gotohuman/servers/gotohuman-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:07:35.679884731Z",
+  "modifiedat": "2025-05-09T16:41:08.776739318Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/gotohuman/servers/gotohuman-mcp-server/meta",
   "serverid": "gotohuman-mcp-server",

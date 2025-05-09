@@ -1,12 +1,12 @@
 {
   "mcp-server-rememberizer": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:07:50.886466821Z",
+    "createdat": "2025-05-09T16:41:17.492350672Z",
     "description": "A Model Context Protocol server for interacting with Rememberizer's document and knowledge management API. This server enables Large Language Models to search, retrieve, and manage documents and integrations through Rememberizer.",
     "epoch": 1,
     "isdefault": true,
     "metaurl": "https://mcpxreg.org/mcpproviders/skydeckai/servers/mcp-server-rememberizer/meta",
-    "modifiedat": "2025-05-07T20:07:50.886466821Z",
+    "modifiedat": "2025-05-09T16:41:17.492350672Z",
     "name": "io.github.skydeckai/mcp-server-rememberizer",
     "prompts": [],
     "registries": [
@@ -14,9 +14,9 @@
         "command_arguments": {
           "environment_variables": [
             {
-              "descrip": "API token for Rememberizer.ai",
+              "description": "API token for Rememberizer.ai",
               "name": "REMEMBERIZER_API_TOKEN",
-              "require": true
+              "required": true
             }
           ],
           "positional_arguments": [],
@@ -58,7 +58,7 @@
         "inputschema": {
           "properties": {
             "from_datetime_ISO8601": {
-              "descriptio": "Start date in ISO 8601 format with timezone (e.g., 2023-01-01T00:00:00Z). Use this to filter results from a specific date.",
+              "description": "Start date in ISO 8601 format with timezone (e.g., 2023-01-01T00:00:00Z). Use this to filter results from a specific date.",
               "type": "string"
             },
             "match_this": {
@@ -86,7 +86,7 @@
         "inputschema": {
           "properties": {
             "from_datetime_ISO8601": {
-              "descriptio": "Start date in ISO 8601 format with timezone (e.g., 2023-01-01T00:00:00Z). Use this to filter results from a specific date.",
+              "description": "Start date in ISO 8601 format with timezone (e.g., 2023-01-01T00:00:00Z). Use this to filter results from a specific date.",
               "type": "string"
             },
             "n_results": {

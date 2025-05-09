@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:07:36.216903839Z",
+  "createdat": "2025-05-09T16:41:09.17343285Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/isdaniel/servers/mcp_weather_server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:07:36.216903839Z",
+  "modifiedat": "2025-05-09T16:41:09.17343285Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/isdaniel/servers/mcp_weather_server/meta",
   "serverid": "mcp_weather_server",

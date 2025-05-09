@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:15:09.845583701Z",
+  "createdat": "2025-05-09T16:44:48.64653135Z",
   "description": "MCP (Model Context Protocol) server for blockchain data interaction through the Bankless API.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:15:09.845583701Z",
+  "modifiedat": "2025-05-09T16:44:48.64653135Z",
   "name": "io.github.Bankless/onchain-mcp",
   "prompts": [],
   "registries": [
@@ -38,7 +38,7 @@
             "items": {
               "properties": {
                 "type": {
-                  "typ": "string"
+                  "type": "string"
                 },
                 "value": {}
               },
@@ -59,7 +59,7 @@
             "items": {
               "properties": {
                 "type": {
-                  "ty": "string"
+                  "type": "string"
                 }
               },
               "required": [

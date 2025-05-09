@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:18:21.656398868Z",
+  "createdat": "2025-05-09T16:46:17.595313549Z",
   "description": "A Model Context Protocol (MCP) server that exposes access to an InfluxDB instance using the InfluxDB OSS API v2.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/idoru/servers/influxdb-mcp-server/meta",
-  "modifiedat": "2025-05-07T20:18:21.656398868Z",
+  "modifiedat": "2025-05-09T16:46:17.595313549Z",
   "name": "io.github.idoru/influxdb-mcp-server",
   "prompts": [
     {
@@ -24,19 +24,19 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Authentication token for the InfluxDB API",
+            "description": "Authentication token for the InfluxDB API",
             "name": "INFLUXDB_TOKEN",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "URL of the InfluxDB instance (defaults to http://localhost:8086)",
+            "description": "URL of the InfluxDB instance (defaults to http://localhost:8086)",
             "name": "INFLUXDB_URL",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Default organization name for certain operations",
+            "description": "Default organization name for certain operations",
             "name": "INFLUXDB_ORG",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [],
@@ -144,7 +144,7 @@
             "type": "string"
           },
           "retentionPeriodSeconds": {
-            "descripti": "Retention period in seconds (optional)",
+            "description": "Retention period in seconds (optional)",
             "type": "number"
           }
         },

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:12:44.738278321Z",
+  "createdat": "2025-05-09T16:43:39.067252591Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/adenot/servers/mcp-google-search/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:12:44.738278321Z",
+  "modifiedat": "2025-05-09T16:43:39.067252591Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/adenot/servers/mcp-google-search/meta",
   "serverid": "mcp-google-search",

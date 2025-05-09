@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:07:39.807125524Z",
+  "createdat": "2025-05-09T16:41:11.459901672Z",
   "description": "MCP server providing integration between Model Context Protocol and Unity Editor, enabling AI assistants to interact with Unity projects in real-time, including scene hierarchy, project settings, code execution, logs, and play mode control.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:07:39.807125524Z",
+  "modifiedat": "2025-05-09T16:41:11.459901672Z",
   "name": "io.github.quazaai/UnityMCPIntegration",
   "prompts": [],
   "registries": [
@@ -12,9 +12,9 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Port for WebSocket server",
+            "description": "Port for WebSocket server",
             "name": "MCP_WEBSOCKET_PORT",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [
@@ -248,12 +248,12 @@
             "items": {
               "properties": {
                 "newText": {
-                  "d": "Text to replace with",
-                  "t": "string"
+                  "description": "Text to replace with",
+                  "type": "string"
                 },
                 "oldText": {
-                  "d": "Text to search for - must match exactly",
-                  "t": "string"
+                  "description": "Text to search for - must match exactly",
+                  "type": "string"
                 }
               },
               "required": [

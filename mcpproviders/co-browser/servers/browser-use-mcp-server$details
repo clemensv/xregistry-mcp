@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:10:27.18797836Z",
+  "createdat": "2025-05-09T16:42:32.172325076Z",
   "description": "An MCP server that enables AI agents to control web browsers using browser-use.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/co-browser/servers/browser-use-mcp-server/meta",
-  "modifiedat": "2025-05-07T20:10:27.18797836Z",
+  "modifiedat": "2025-05-09T16:42:32.172325076Z",
   "name": "io.github.co-browser/browser-use-mcp-server",
   "prompts": [],
   "registries": [
@@ -13,9 +13,9 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "API key for OpenAI",
+            "description": "API key for OpenAI",
             "name": "OPENAI_API_KEY",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [

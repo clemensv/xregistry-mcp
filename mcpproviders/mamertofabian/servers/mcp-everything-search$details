@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:14:49.391423255Z",
+  "createdat": "2025-05-09T16:44:38.78192036Z",
   "description": "An MCP server that provides fast file searching capabilities across Windows, macOS, and Linux. On Windows, it uses the Everything SDK. On macOS, it uses the built-in mdfind command. On Linux, it uses the locate/plocate command.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/mamertofabian/servers/mcp-everything-search/meta",
-  "modifiedat": "2025-05-07T20:14:49.391423255Z",
+  "modifiedat": "2025-05-09T16:44:38.78192036Z",
   "name": "io.github.mamertofabian/mcp-everything-search",
   "prompts": [],
   "registries": [
@@ -13,9 +13,9 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Path to Everything SDK DLL on Windows",
+            "description": "Path to Everything SDK DLL on Windows",
             "name": "EVERYTHING_SDK_PATH",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [],

@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:07:46.811711413Z",
+  "createdat": "2025-05-09T16:41:15.372212355Z",
   "description": "MCP server for eSignatures (https://esignatures.com)",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/esignaturescom/servers/mcp-server-esignatures/meta",
-  "modifiedat": "2025-05-07T20:07:46.811711413Z",
+  "modifiedat": "2025-05-09T16:41:15.372212355Z",
   "name": "io.github.esignaturescom/mcp-server-esignatures",
   "prompts": [],
   "registries": [
@@ -13,9 +13,9 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "Your eSignatures API secret token",
+            "description": "Your eSignatures API secret token",
             "name": "ESIGNATURES_SECRET_TOKEN",
-            "require": true
+            "required": true
           }
         ],
         "positional_arguments": [

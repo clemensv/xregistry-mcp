@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:14:29.963761002Z",
+  "createdat": "2025-05-09T16:44:29.413533799Z",
   "description": "MSSQL MCP Server is a Model Context Protocol (MCP) server that enables secure and structured interaction with Microsoft SQL Server (MSSQL) databases. It allows AI assistants to list available tables, read table contents, and execute SQL queries with controlled access, ensuring safer database exploration, strict permission enforcement, and logging of database interactions.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-07T20:14:29.963761002Z",
+  "modifiedat": "2025-05-09T16:44:29.413533799Z",
   "name": "io.github.JexinSam/mssql_mcp_server",
   "prompts": [],
   "registries": [
@@ -12,39 +12,39 @@
       "command_arguments": {
         "environment_variables": [
           {
-            "descrip": "MSSQL driver environment variable",
+            "description": "MSSQL driver environment variable",
             "name": "MSSQL_DRIVER",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "MSSQL host environment variable",
+            "description": "MSSQL host environment variable",
             "name": "MSSQL_HOST",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "MSSQL user environment variable",
+            "description": "MSSQL user environment variable",
             "name": "MSSQL_USER",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "MSSQL password environment variable",
+            "description": "MSSQL password environment variable",
             "name": "MSSQL_PASSWORD",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "MSSQL database environment variable",
+            "description": "MSSQL database environment variable",
             "name": "MSSQL_DATABASE",
-            "require": true
+            "required": true
           },
           {
-            "descrip": "Optional TrustServerCertificate environment variable",
+            "description": "Optional TrustServerCertificate environment variable",
             "name": "TrustServerCertificate",
-            "require": false
+            "required": false
           },
           {
-            "descrip": "Optional Trusted_Connection environment variable",
+            "description": "Optional Trusted_Connection environment variable",
             "name": "Trusted_Connection",
-            "require": false
+            "required": false
           }
         ],
         "positional_arguments": [],

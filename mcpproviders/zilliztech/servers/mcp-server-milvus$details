@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-07T20:09:09.150287344Z",
+  "createdat": "2025-05-09T16:41:55.071785239Z",
   "description": "This MCP server provides access to Milvus vector database functionality, enabling integration between LLM applications and external data sources via the Model Context Protocol.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/zilliztech/servers/mcp-server-milvus/meta",
-  "modifiedat": "2025-05-07T20:09:09.150287344Z",
+  "modifiedat": "2025-05-09T16:41:55.071785239Z",
   "name": "io.github.zilliztech/mcp-server-milvus",
   "prompts": [],
   "registries": [

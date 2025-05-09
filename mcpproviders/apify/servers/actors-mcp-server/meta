@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-07T20:15:39.995961568Z",
+  "createdat": "2025-05-09T16:45:03.014995129Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/apify/servers/actors-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-07T20:15:39.995961568Z",
+  "modifiedat": "2025-05-09T16:45:03.014995129Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/apify/servers/actors-mcp-server/meta",
   "serverid": "actors-mcp-server",

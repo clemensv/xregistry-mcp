@@ -1,12 +1,12 @@
 {
   "n8n-mcp-server": {
     "ancestor": "1",
-    "createdat": "2025-05-07T20:13:48.972472085Z",
+    "createdat": "2025-05-09T16:44:09.846947847Z",
     "description": "A Model Context Protocol (MCP) server that allows AI assistants to interact with n8n workflows through natural language. This MCP server provides tools and resources for AI assistants to manage n8n workflows and executions, including listing, creating, updating, deleting, activating, deactivating workflows, executing workflows, monitoring status, and accessing workflow information and execution statistics.",
     "epoch": 1,
     "isdefault": true,
     "metaurl": "https://mcpxreg.org/mcpproviders/leonardsellem/servers/n8n-mcp-server/meta",
-    "modifiedat": "2025-05-07T20:13:48.972472085Z",
+    "modifiedat": "2025-05-09T16:44:09.846947847Z",
     "name": "io.github.leonardsellem/n8n-mcp-server",
     "prompts": [],
     "registries": [
@@ -14,29 +14,29 @@
         "command_arguments": {
           "environment_variables": [
             {
-              "descrip": "Full URL of the n8n API, including /api/v1",
+              "description": "Full URL of the n8n API, including /api/v1",
               "name": "N8N_API_URL",
-              "require": true
+              "required": true
             },
             {
-              "descrip": "API key for authenticating with n8n",
+              "description": "API key for authenticating with n8n",
               "name": "N8N_API_KEY",
-              "require": true
+              "required": true
             },
             {
-              "descrip": "Username for webhook authentication (optional)",
+              "description": "Username for webhook authentication (optional)",
               "name": "N8N_WEBHOOK_USERNAME",
-              "require": false
+              "required": false
             },
             {
-              "descrip": "Password for webhook authentication (optional)",
+              "description": "Password for webhook authentication (optional)",
               "name": "N8N_WEBHOOK_PASSWORD",
-              "require": false
+              "required": false
             },
             {
-              "descrip": "Enable debug logging (optional)",
+              "description": "Enable debug logging (optional)",
               "name": "DEBUG",
-              "require": false
+              "required": false
             }
           ],
           "positional_arguments": [
