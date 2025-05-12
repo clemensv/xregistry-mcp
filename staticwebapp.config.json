@@ -2,5 +2,9 @@
     "mimeTypes": {
         ".json": "application/json",
         ".html": "application/json"
-    }
+    },
+    "globalHeaders": {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "POST, GET, OPTIONS"
+  }
 }
