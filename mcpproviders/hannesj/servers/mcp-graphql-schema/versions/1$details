@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:44:03.076629161Z",
+  "createdat": "2025-05-12T08:20:28.924941527Z",
   "description": "A Model Context Protocol (MCP) server that exposes GraphQL schema information to Large Language Models (LLMs) like Claude. This server allows an LLM to explore and understand GraphQL schemas through a set of specialized tools.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-09T16:44:03.076629161Z",
+  "modifiedat": "2025-05-12T08:20:28.924941527Z",
   "name": "io.github.hannesj/mcp-graphql-schema",
   "prompts": [],
   "registries": [

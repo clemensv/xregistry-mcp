@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:42:34.181353144Z",
+  "createdat": "2025-05-12T08:19:01.689125932Z",
   "description": "MCP server providing web crawling, scraping, search, extraction, and related tools via Model Context Protocol.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/Klavis-AI/servers/klavis/meta",
-  "modifiedat": "2025-05-09T16:42:34.181353144Z",
+  "modifiedat": "2025-05-12T08:19:01.689125932Z",
   "name": "io.github.Klavis-AI/klavis",
   "prompts": [],
   "registries": [

@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:44:18.549649274Z",
+  "createdat": "2025-05-12T08:20:44.179959301Z",
   "description": "An open-source Model Context Protocol (MCP) server that connects to the SoccerDataAPI to deliver up-to-date football match information via natural language interactions.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/yeonupark/servers/mcp-soccer-data/meta",
-  "modifiedat": "2025-05-09T16:44:18.549649274Z",
+  "modifiedat": "2025-05-12T08:20:44.179959301Z",
   "name": "io.github.yeonupark/mcp-soccer-data",
   "prompts": [],
   "registries": [

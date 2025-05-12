@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:43:49.975887215Z",
+  "createdat": "2025-05-12T08:20:16.051231221Z",
   "description": "GitHub integration MCP server providing tooling and resource discovery via GitHub APIs",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/clemensv/servers/gh1/meta",
-  "modifiedat": "2025-05-09T16:43:49.975887215Z",
+  "modifiedat": "2025-05-12T08:20:16.051231221Z",
   "name": "io.github.clemensv/mcp-servers",
   "registries": [
     {

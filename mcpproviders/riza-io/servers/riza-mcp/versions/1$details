@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:41:59.203688127Z",
+  "createdat": "2025-05-12T08:18:27.220659572Z",
   "description": "The Riza MCP server wraps the Riza API and presents endpoints as individual tools for LLM-generated code execution and management.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-09T16:41:59.203688127Z",
+  "modifiedat": "2025-05-12T08:18:27.220659572Z",
   "name": "io.github.riza-io/riza-mcp",
   "prompts": [],
   "registries": [

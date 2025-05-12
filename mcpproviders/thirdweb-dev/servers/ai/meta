@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:41:17.93724666Z",
+  "createdat": "2025-05-12T08:17:46.513163087Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/thirdweb-dev/servers/ai/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:41:17.93724666Z",
+  "modifiedat": "2025-05-12T08:17:46.513163087Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/thirdweb-dev/servers/ai/meta",
   "serverid": "ai",

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:43:37.579123375Z",
+  "createdat": "2025-05-12T08:20:03.760688015Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/liuyoshio/servers/mcp-compass/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:43:37.579123375Z",
+  "modifiedat": "2025-05-12T08:20:03.760688015Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/liuyoshio/servers/mcp-compass/meta",
   "serverid": "mcp-compass",

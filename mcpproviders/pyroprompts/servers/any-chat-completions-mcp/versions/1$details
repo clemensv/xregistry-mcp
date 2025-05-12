@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:42:31.173602929Z",
+  "createdat": "2025-05-12T08:18:58.732034997Z",
   "description": "Integrate Claude with Any OpenAI SDK Compatible Chat Completion API - OpenAI, Perplexity, Groq, xAI, PyroPrompts and more. This implements the Model Context Protocol Server.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-09T16:42:31.173602929Z",
+  "modifiedat": "2025-05-12T08:18:58.732034997Z",
   "name": "io.github.pyroprompts/any-chat-completions-mcp",
   "prompts": [],
   "registries": [

@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:45:03.014995129Z",
+  "createdat": "2025-05-12T08:21:28.038313048Z",
   "description": "Implementation of an MCP server for all Apify Actors enabling interaction with one or more Apify Actors defined in the MCP Server configuration. Allows AI assistants to use Apify Actors as tools for various scraping and data extraction tasks.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/apify/servers/actors-mcp-server/meta",
-  "modifiedat": "2025-05-09T16:45:03.014995129Z",
+  "modifiedat": "2025-05-12T08:21:28.038313048Z",
   "name": "io.github.apify/actors-mcp-server",
   "prompts": [],
   "registries": [

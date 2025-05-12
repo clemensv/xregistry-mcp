@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:43:39.067252591Z",
+  "createdat": "2025-05-12T08:20:05.22709028Z",
   "description": "A Model Context Protocol server that provides web search capabilities using Google Custom Search API and webpage content extraction functionality.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/adenot/servers/mcp-google-search/meta",
-  "modifiedat": "2025-05-09T16:43:39.067252591Z",
+  "modifiedat": "2025-05-12T08:20:05.22709028Z",
   "name": "io.github.adenot/mcp-google-search",
   "prompts": [],
   "registries": [

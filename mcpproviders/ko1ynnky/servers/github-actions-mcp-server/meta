@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:42:40.622635599Z",
+  "createdat": "2025-05-12T08:19:08.040533366Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/ko1ynnky/servers/github-actions-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:42:40.622635599Z",
+  "modifiedat": "2025-05-12T08:19:08.040533366Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/ko1ynnky/servers/github-actions-mcp-server/meta",
   "serverid": "github-actions-mcp-server",

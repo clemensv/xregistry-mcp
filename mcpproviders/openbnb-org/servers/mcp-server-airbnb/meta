@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:43:40.566416305Z",
+  "createdat": "2025-05-12T08:20:06.708598839Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/openbnb-org/servers/mcp-server-airbnb/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:43:40.566416305Z",
+  "modifiedat": "2025-05-12T08:20:06.708598839Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/openbnb-org/servers/mcp-server-airbnb/meta",
   "serverid": "mcp-server-airbnb",

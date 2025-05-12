@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:41:29.299712035Z",
+  "createdat": "2025-05-12T08:17:57.700870198Z",
   "description": "Chronulus MCP provides access to the Chronulus AI platform of forecasting and prediction agents.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/ChronulusAI/servers/chronulus-mcp/meta",
-  "modifiedat": "2025-05-09T16:41:29.299712035Z",
+  "modifiedat": "2025-05-12T08:17:57.700870198Z",
   "name": "io.github.ChronulusAI/chronulus-mcp",
   "prompts": [],
   "registries": [

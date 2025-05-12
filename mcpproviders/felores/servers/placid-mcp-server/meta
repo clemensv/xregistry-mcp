@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:41:19.541364306Z",
+  "createdat": "2025-05-12T08:17:48.099609891Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/felores/servers/placid-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:41:19.541364306Z",
+  "modifiedat": "2025-05-12T08:17:48.099609891Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/felores/servers/placid-mcp-server/meta",
   "serverid": "placid-mcp-server",

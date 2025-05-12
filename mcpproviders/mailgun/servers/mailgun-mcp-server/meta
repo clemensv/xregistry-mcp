@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:42:41.71583811Z",
+  "createdat": "2025-05-12T08:19:09.10312743Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/mailgun/servers/mailgun-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:42:41.71583811Z",
+  "modifiedat": "2025-05-12T08:19:09.10312743Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/mailgun/servers/mailgun-mcp-server/meta",
   "serverid": "mailgun-mcp-server",

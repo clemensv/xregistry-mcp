@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:44:33.118123743Z",
+  "createdat": "2025-05-12T08:20:58.54322952Z",
   "description": "A Model Context Protocol server implementation for Axiom that enables AI agents to query your data using Axiom Processing Language (APL). Works with Claude desktop app. Implements two MCP tools: queryApl and listDatasets. No support for MCP resources or prompts yet.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-09T16:44:33.118123743Z",
+  "modifiedat": "2025-05-12T08:20:58.54322952Z",
   "name": "io.github.axiomhq/mcp-server-axiom",
   "prompts": [],
   "registries": [

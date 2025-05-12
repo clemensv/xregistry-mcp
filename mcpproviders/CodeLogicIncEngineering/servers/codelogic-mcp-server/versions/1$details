@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:43:13.548589019Z",
+  "createdat": "2025-05-12T08:19:40.218796209Z",
   "description": "An MCP Server to utilize Codelogic's rich software dependency data in your AI programming assistant.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-09T16:43:13.548589019Z",
+  "modifiedat": "2025-05-12T08:19:40.218796209Z",
   "name": "io.github.CodeLogicIncEngineering/codelogic-mcp-server",
   "prompts": [],
   "registries": [

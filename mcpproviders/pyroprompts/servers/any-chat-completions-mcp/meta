@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:42:31.173602929Z",
+  "createdat": "2025-05-12T08:18:58.732034997Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/pyroprompts/servers/any-chat-completions-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:42:31.173602929Z",
+  "modifiedat": "2025-05-12T08:18:58.732034997Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/pyroprompts/servers/any-chat-completions-mcp/meta",
   "serverid": "any-chat-completions-mcp",

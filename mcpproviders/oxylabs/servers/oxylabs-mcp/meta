@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:42:53.150154379Z",
+  "createdat": "2025-05-12T08:19:20.265026129Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/oxylabs/servers/oxylabs-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:42:53.150154379Z",
+  "modifiedat": "2025-05-12T08:19:20.265026129Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/oxylabs/servers/oxylabs-mcp/meta",
   "serverid": "oxylabs-mcp",

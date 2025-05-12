@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:44:16.802519948Z",
+  "createdat": "2025-05-12T08:20:42.456539965Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/teddyzxcv/servers/ntfy-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:44:16.802519948Z",
+  "modifiedat": "2025-05-12T08:20:42.456539965Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/teddyzxcv/servers/ntfy-mcp/meta",
   "serverid": "ntfy-mcp",

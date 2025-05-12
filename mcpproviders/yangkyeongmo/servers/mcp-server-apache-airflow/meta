@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:42:29.114880098Z",
+  "createdat": "2025-05-12T08:18:56.708865033Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/yangkyeongmo/servers/mcp-server-apache-airflow/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:42:29.114880098Z",
+  "modifiedat": "2025-05-12T08:18:56.708865033Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/yangkyeongmo/servers/mcp-server-apache-airflow/meta",
   "serverid": "mcp-server-apache-airflow",

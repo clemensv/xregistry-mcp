@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:42:01.479248282Z",
+  "createdat": "2025-05-12T08:18:29.469317546Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/financial-datasets/servers/mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:42:01.479248282Z",
+  "modifiedat": "2025-05-12T08:18:29.469317546Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/financial-datasets/servers/mcp-server/meta",
   "serverid": "mcp-server",

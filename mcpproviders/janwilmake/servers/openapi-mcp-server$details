@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:41:49.891962578Z",
+  "createdat": "2025-05-12T08:18:18.028498633Z",
   "description": "A Model Context Protocol (MCP) server for Claude/Cursor that enables searching and exploring OpenAPI specifications through oapis.org.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/janwilmake/servers/openapi-mcp-server/meta",
-  "modifiedat": "2025-05-09T16:41:49.891962578Z",
+  "modifiedat": "2025-05-12T08:18:18.028498633Z",
   "name": "io.github.janwilmake/openapi-mcp-server",
   "prompts": [],
   "registries": [

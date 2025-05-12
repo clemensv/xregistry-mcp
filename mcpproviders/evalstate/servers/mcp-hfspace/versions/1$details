@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:41:22.460844318Z",
+  "createdat": "2025-05-12T08:17:50.962980443Z",
   "description": "Connect to Hugging Face Spaces with minimal setup needed - simply add your spaces and go! Provides Image Generation capabilities to Claude Desktop.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-09T16:41:22.460844318Z",
+  "modifiedat": "2025-05-12T08:17:50.962980443Z",
   "name": "io.github.evalstate/mcp-hfspace",
   "prompts": [
     {

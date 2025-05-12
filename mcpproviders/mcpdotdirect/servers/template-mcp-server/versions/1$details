@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:41:41.886781225Z",
+  "createdat": "2025-05-12T08:18:10.105413858Z",
   "description": "A CLI tool to quickly get started building your very own MCP (Model Context Protocol) server using FastMCP",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-09T16:41:41.886781225Z",
+  "modifiedat": "2025-05-12T08:18:10.105413858Z",
   "name": "io.github.mcpdotdirect/template-mcp-server",
   "prompts": [
     {

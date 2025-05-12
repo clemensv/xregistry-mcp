@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:44:15.054465137Z",
+  "createdat": "2025-05-12T08:20:40.730384823Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/exa-labs/servers/exa-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:44:15.054465137Z",
+  "modifiedat": "2025-05-12T08:20:40.730384823Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/exa-labs/servers/exa-mcp-server/meta",
   "serverid": "exa-mcp-server",

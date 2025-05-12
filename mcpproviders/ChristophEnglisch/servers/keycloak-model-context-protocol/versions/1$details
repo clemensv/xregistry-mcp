@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:44:34.98493949Z",
+  "createdat": "2025-05-12T08:21:00.38533069Z",
   "description": "A Model Context Protocol server for Keycloak administration, providing tools to manage users and realms.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-09T16:44:34.98493949Z",
+  "modifiedat": "2025-05-12T08:21:00.38533069Z",
   "name": "io.github.ChristophEnglisch/keycloak-model-context-protocol",
   "prompts": [],
   "registries": [

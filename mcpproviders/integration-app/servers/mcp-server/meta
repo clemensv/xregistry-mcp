@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:41:20.687197476Z",
+  "createdat": "2025-05-12T08:17:49.239760586Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/integration-app/servers/mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:41:20.687197476Z",
+  "modifiedat": "2025-05-12T08:17:49.239760586Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/integration-app/servers/mcp-server/meta",
   "serverid": "mcp-server",

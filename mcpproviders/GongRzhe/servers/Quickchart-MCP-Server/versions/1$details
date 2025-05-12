@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:45:05.085010611Z",
+  "createdat": "2025-05-12T08:21:30.07866553Z",
   "description": "A Model Context Protocol server for generating charts using QuickChart.io",
   "documentation": "https://quickchart.io/documentation/",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-09T16:45:05.085010611Z",
+  "modifiedat": "2025-05-12T08:21:30.07866553Z",
   "name": "io.github.GongRzhe/Quickchart-MCP-Server",
   "prompts": [],
   "registries": [

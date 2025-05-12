@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:41:51.171536447Z",
+  "createdat": "2025-05-12T08:18:19.301482992Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/translated/servers/lara-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:41:51.171536447Z",
+  "modifiedat": "2025-05-12T08:18:19.301482992Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/translated/servers/lara-mcp/meta",
   "serverid": "lara-mcp",

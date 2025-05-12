@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:41:29.669533077Z",
+  "createdat": "2025-05-12T08:17:58.053562538Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/maton-ai/servers/agent-toolkit/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:41:29.669533077Z",
+  "modifiedat": "2025-05-12T08:17:58.053562538Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/maton-ai/servers/agent-toolkit/meta",
   "serverid": "agent-toolkit",

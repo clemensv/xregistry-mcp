@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:43:37.579123375Z",
+  "createdat": "2025-05-12T08:20:03.760688015Z",
   "description": "MCP Compass is a discovery \u0026 recommendation service that helps you explore Model Context Protocol servers. It acts as a smart guide that helps AI assistants find and understand available MCP services out there based on natural language queries, making it easier to discover and utilize the right tools for specific tasks.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/liuyoshio/servers/mcp-compass/meta",
-  "modifiedat": "2025-05-09T16:43:37.579123375Z",
+  "modifiedat": "2025-05-12T08:20:03.760688015Z",
   "name": "io.github.liuyoshio/mcp-compass",
   "prompts": [],
   "registries": [

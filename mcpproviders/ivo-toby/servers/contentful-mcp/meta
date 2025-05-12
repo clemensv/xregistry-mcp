@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:41:15.010321616Z",
+  "createdat": "2025-05-12T08:17:43.656711529Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/ivo-toby/servers/contentful-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:41:15.010321616Z",
+  "modifiedat": "2025-05-12T08:17:43.656711529Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/ivo-toby/servers/contentful-mcp/meta",
   "serverid": "contentful-mcp",

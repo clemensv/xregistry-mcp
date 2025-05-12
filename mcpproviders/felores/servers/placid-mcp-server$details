@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:41:19.541364306Z",
+  "createdat": "2025-05-12T08:17:48.099609891Z",
   "description": "An MCP server implementation for integrating with Placid.app's API. This server provides tools for listing templates and generating images and videos through the Model Context Protocol.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/felores/servers/placid-mcp-server/meta",
-  "modifiedat": "2025-05-09T16:41:19.541364306Z",
+  "modifiedat": "2025-05-12T08:17:48.099609891Z",
   "name": "io.github.felores/placid-mcp-server",
   "prompts": [],
   "registries": [

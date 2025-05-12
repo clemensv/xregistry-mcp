@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:41:35.826872353Z",
+  "createdat": "2025-05-12T08:18:04.109163993Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/john-zhang-dev/servers/xero-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:41:35.826872353Z",
+  "modifiedat": "2025-05-12T08:18:04.109163993Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/john-zhang-dev/servers/xero-mcp/meta",
   "serverid": "xero-mcp",

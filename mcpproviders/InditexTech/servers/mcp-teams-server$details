@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:42:16.161080967Z",
+  "createdat": "2025-05-12T08:18:43.922879691Z",
   "description": "An MCP (Model Context Protocol) server implementation for Microsoft Teams integration, providing capabilities to read messages, create messages, reply to messages, mention members.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/InditexTech/servers/mcp-teams-server/meta",
-  "modifiedat": "2025-05-09T16:42:16.161080967Z",
+  "modifiedat": "2025-05-12T08:18:43.922879691Z",
   "name": "io.github.InditexTech/mcp-teams-server",
   "prompts": [],
   "registries": [

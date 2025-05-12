@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:41:20.687197476Z",
+  "createdat": "2025-05-12T08:17:49.239760586Z",
   "description": "Working with HubSpot.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/integration-app/servers/mcp-server/meta",
-  "modifiedat": "2025-05-09T16:41:20.687197476Z",
+  "modifiedat": "2025-05-12T08:17:49.239760586Z",
   "name": "io.github.integration-app/mcp-server",
   "prompts": [],
   "registries": [

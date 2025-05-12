@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:41:48.131531958Z",
+  "createdat": "2025-05-12T08:18:16.286119738Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/oschina/servers/mcp-gitee/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:41:48.131531958Z",
+  "modifiedat": "2025-05-12T08:18:16.286119738Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/oschina/servers/mcp-gitee/meta",
   "serverid": "mcp-gitee",

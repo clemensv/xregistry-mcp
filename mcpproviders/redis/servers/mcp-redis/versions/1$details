@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:41:26.784049639Z",
+  "createdat": "2025-05-12T08:17:55.255364974Z",
   "description": "The Redis MCP Server is a natural language interface designed for agentic applications to efficiently manage and search data in Redis. It integrates seamlessly with MCP (Model Content Protocol) clients, enabling AI-driven workflows to interact with structured and unstructured data in Redis.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-09T16:41:26.784049639Z",
+  "modifiedat": "2025-05-12T08:17:55.255364974Z",
   "name": "io.github.redis/mcp-redis",
   "prompts": [],
   "registries": [

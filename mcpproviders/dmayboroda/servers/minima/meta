@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:42:36.38182171Z",
+  "createdat": "2025-05-12T08:19:03.864015113Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/dmayboroda/servers/minima/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:42:36.38182171Z",
+  "modifiedat": "2025-05-12T08:19:03.864015113Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/dmayboroda/servers/minima/meta",
   "serverid": "minima",

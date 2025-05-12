@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:41:16.502251125Z",
+  "createdat": "2025-05-12T08:17:45.117483401Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/awslabs/servers/mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:41:16.502251125Z",
+  "modifiedat": "2025-05-12T08:17:45.117483401Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/awslabs/servers/mcp/meta",
   "serverid": "mcp",

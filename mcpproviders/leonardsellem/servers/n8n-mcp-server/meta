@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:44:09.846947847Z",
+  "createdat": "2025-05-12T08:20:35.592444996Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/leonardsellem/servers/n8n-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:44:09.846947847Z",
+  "modifiedat": "2025-05-12T08:20:35.592444996Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/leonardsellem/servers/n8n-mcp-server/meta",
   "serverid": "n8n-mcp-server",

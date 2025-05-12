@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:41:10.870495854Z",
+  "createdat": "2025-05-12T08:17:39.678412302Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/sooperset/servers/mcp-atlassian/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:41:10.870495854Z",
+  "modifiedat": "2025-05-12T08:17:39.678412302Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/sooperset/servers/mcp-atlassian/meta",
   "serverid": "mcp-atlassian",

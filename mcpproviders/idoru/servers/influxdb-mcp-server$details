@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:46:17.595313549Z",
+  "createdat": "2025-05-12T08:22:41.88329155Z",
   "description": "A Model Context Protocol (MCP) server that exposes access to an InfluxDB instance using the InfluxDB OSS API v2.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/idoru/servers/influxdb-mcp-server/meta",
-  "modifiedat": "2025-05-09T16:46:17.595313549Z",
+  "modifiedat": "2025-05-12T08:22:41.88329155Z",
   "name": "io.github.idoru/influxdb-mcp-server",
   "prompts": [
     {

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:41:30.419381869Z",
+  "createdat": "2025-05-12T08:17:58.767778243Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/baryhuang/servers/mcp-server-aws-resources-python/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:41:30.419381869Z",
+  "modifiedat": "2025-05-12T08:17:58.767778243Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/baryhuang/servers/mcp-server-aws-resources-python/meta",
   "serverid": "mcp-server-aws-resources-python",

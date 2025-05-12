@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:43:53.139886976Z",
+  "createdat": "2025-05-12T08:20:19.161397894Z",
   "description": "Google Maps integration MCP server providing geospatial tooling and data access using the Google Maps Platform APIs",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/clemensv/servers/google-maps/meta",
-  "modifiedat": "2025-05-09T16:43:53.139886976Z",
+  "modifiedat": "2025-05-12T08:20:19.161397894Z",
   "name": "io.github.clemensv/mcp-servers/google-maps",
   "registries": [
     {

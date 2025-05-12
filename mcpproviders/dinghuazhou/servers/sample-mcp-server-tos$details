@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:41:10.958401565Z",
+  "createdat": "2025-05-12T08:17:39.761436935Z",
   "description": "An MCP server implementation for retrieving data from TOS.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/dinghuazhou/servers/sample-mcp-server-tos/meta",
-  "modifiedat": "2025-05-09T16:41:10.958401565Z",
+  "modifiedat": "2025-05-12T08:17:39.761436935Z",
   "name": "io.github.dinghuazhou/sample-mcp-server-tos",
   "prompts": [],
   "registries": [

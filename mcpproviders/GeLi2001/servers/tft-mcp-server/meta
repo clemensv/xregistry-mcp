@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:41:26.160349385Z",
+  "createdat": "2025-05-12T08:17:54.631166912Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/GeLi2001/servers/tft-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:41:26.160349385Z",
+  "modifiedat": "2025-05-12T08:17:54.631166912Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/GeLi2001/servers/tft-mcp-server/meta",
   "serverid": "tft-mcp-server",

@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:41:20.209678126Z",
+  "createdat": "2025-05-12T08:17:48.76047347Z",
   "description": "An MCP (Model Context Protocol) server that enables AI assistants to interact with Obsidian vaults, providing tools for reading, creating, editing and managing notes and tags.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-09T16:41:20.209678126Z",
+  "modifiedat": "2025-05-12T08:17:48.76047347Z",
   "name": "io.github.StevenStavrakis/obsidian-mcp",
   "prompts": [],
   "registries": [

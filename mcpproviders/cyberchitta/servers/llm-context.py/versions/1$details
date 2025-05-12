@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:41:19.758234939Z",
+  "createdat": "2025-05-12T08:17:48.313545519Z",
   "description": "A tool that helps developers quickly inject relevant content from code/text projects into Large Language Model chat interfaces, providing direct LLM integration through the Model Context Protocol (MCP).",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-09T16:41:19.758234939Z",
+  "modifiedat": "2025-05-12T08:17:48.313545519Z",
   "name": "io.github.cyberchitta/llm-context",
   "prompts": [],
   "registries": [

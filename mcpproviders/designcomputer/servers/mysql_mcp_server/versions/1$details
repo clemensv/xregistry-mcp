@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:41:13.545716314Z",
+  "createdat": "2025-05-12T08:17:42.244116025Z",
   "description": "A Model Context Protocol (MCP) implementation that enables secure interaction with MySQL databases. This server component facilitates communication between AI applications (hosts/clients) and MySQL databases, making database exploration and analysis safer and more structured through a controlled interface.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-09T16:41:13.545716314Z",
+  "modifiedat": "2025-05-12T08:17:42.244116025Z",
   "name": "io.github.designcomputer/mysql_mcp_server",
   "prompts": [],
   "registries": [

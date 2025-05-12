@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:41:37.705241745Z",
+  "createdat": "2025-05-12T08:18:05.975337538Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/sendaifun/servers/solana-agent-kit/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:41:37.705241745Z",
+  "modifiedat": "2025-05-12T08:18:05.975337538Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/sendaifun/servers/solana-agent-kit/meta",
   "serverid": "solana-agent-kit",

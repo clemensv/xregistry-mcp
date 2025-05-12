@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:44:56.765558946Z",
+  "createdat": "2025-05-12T08:21:21.875019619Z",
   "description": "MCP server for secure command-line interactions on Windows systems, enabling controlled access to PowerShell, CMD, Git Bash shells, and remote systems via SSH. It allows MCP clients to perform operations on your system, similar to Open Interpreter.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/SimonB97/servers/win-cli-mcp-server/meta",
-  "modifiedat": "2025-05-09T16:44:56.765558946Z",
+  "modifiedat": "2025-05-12T08:21:21.875019619Z",
   "name": "io.github.SimonB97/win-cli-mcp-server",
   "prompts": [],
   "registries": [

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:46:15.139882601Z",
+  "createdat": "2025-05-12T08:22:39.453478679Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/wanaku-ai/servers/wanaku/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:46:15.139882601Z",
+  "modifiedat": "2025-05-12T08:22:39.453478679Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/wanaku-ai/servers/wanaku/meta",
   "serverid": "wanaku",

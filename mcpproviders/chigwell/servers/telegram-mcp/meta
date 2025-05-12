@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:41:10.541544365Z",
+  "createdat": "2025-05-12T08:17:39.363947625Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/chigwell/servers/telegram-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:41:10.541544365Z",
+  "modifiedat": "2025-05-12T08:17:39.363947625Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/chigwell/servers/telegram-mcp/meta",
   "serverid": "telegram-mcp",

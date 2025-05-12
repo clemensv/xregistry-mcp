@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:41:24.863483314Z",
+  "createdat": "2025-05-12T08:17:53.325688272Z",
   "description": "Model Context Protocol server for whois lookups allowing AI agents to perform WHOIS lookups and retrieve domain details.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/bharathvaj-ganesan/servers/whois-mcp/meta",
-  "modifiedat": "2025-05-09T16:41:24.863483314Z",
+  "modifiedat": "2025-05-12T08:17:53.325688272Z",
   "name": "io.github.bharathvaj-ganesan/whois-mcp",
   "prompts": [],
   "registries": [

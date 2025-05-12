@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:43:09.612346416Z",
+  "createdat": "2025-05-12T08:19:36.369974287Z",
   "description": "This MCP server provides access to Lark Bitable through the Model Context Protocol. It allows users to interact with Bitable tables using predefined tools.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-09T16:43:09.612346416Z",
+  "modifiedat": "2025-05-12T08:19:36.369974287Z",
   "name": "io.github.lloydzhou/bitable-mcp",
   "prompts": [],
   "registries": [

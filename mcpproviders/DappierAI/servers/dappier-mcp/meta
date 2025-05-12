@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:41:23.011627935Z",
+  "createdat": "2025-05-12T08:17:51.499692256Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/DappierAI/servers/dappier-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:41:23.011627935Z",
+  "modifiedat": "2025-05-12T08:17:51.499692256Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/DappierAI/servers/dappier-mcp/meta",
   "serverid": "dappier-mcp",

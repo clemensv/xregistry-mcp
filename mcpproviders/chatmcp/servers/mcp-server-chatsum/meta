@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:42:45.101106364Z",
+  "createdat": "2025-05-12T08:19:12.396136064Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/chatmcp/servers/mcp-server-chatsum/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:42:45.101106364Z",
+  "modifiedat": "2025-05-12T08:19:12.396136064Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/chatmcp/servers/mcp-server-chatsum/meta",
   "serverid": "mcp-server-chatsum",

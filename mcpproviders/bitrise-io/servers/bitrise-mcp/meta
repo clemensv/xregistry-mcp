@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:41:20.923714457Z",
+  "createdat": "2025-05-12T08:17:49.474070603Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/bitrise-io/servers/bitrise-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:41:20.923714457Z",
+  "modifiedat": "2025-05-12T08:17:49.474070603Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/bitrise-io/servers/bitrise-mcp/meta",
   "serverid": "bitrise-mcp",

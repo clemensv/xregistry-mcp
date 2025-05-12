@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-09T16:44:31.264908586Z",
+  "createdat": "2025-05-12T08:20:56.721617601Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/ShenghaiWang/servers/xcodebuild/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-09T16:44:31.264908586Z",
+  "modifiedat": "2025-05-12T08:20:56.721617601Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/ShenghaiWang/servers/xcodebuild/meta",
   "serverid": "xcodebuild",

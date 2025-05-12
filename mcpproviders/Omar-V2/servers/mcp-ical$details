@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:41:12.947168156Z",
+  "createdat": "2025-05-12T08:17:41.654527316Z",
   "description": "Transform how you interact with your macOS calendar using natural language via the Model Context Protocol (MCP). Provides natural language calendar management including event creation, updates, schedule queries, and calendar management.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/Omar-V2/servers/mcp-ical/meta",
-  "modifiedat": "2025-05-09T16:41:12.947168156Z",
+  "modifiedat": "2025-05-12T08:17:41.654527316Z",
   "name": "io.github.Omar-V2/mcp-ical",
   "prompts": [],
   "registries": [

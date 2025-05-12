@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:43:20.422511352Z",
+  "createdat": "2025-05-12T08:19:46.881992449Z",
   "description": "A Model Context Protocol (MCP) server for interacting with Keboola Connection. This server provides tools for listing and accessing data from Keboola Storage API.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/keboola/servers/keboola-mcp-server/meta",
-  "modifiedat": "2025-05-09T16:43:20.422511352Z",
+  "modifiedat": "2025-05-12T08:19:46.881992449Z",
   "name": "io.github.keboola/keboola-mcp-server",
   "prompts": [],
   "registries": [

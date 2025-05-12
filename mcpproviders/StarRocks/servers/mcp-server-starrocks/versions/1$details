@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-09T16:42:56.751314528Z",
+  "createdat": "2025-05-12T08:19:23.798896961Z",
   "description": "The StarRocks MCP Server acts as a bridge between AI assistants and StarRocks databases. It allows for direct SQL execution, database exploration, data visualization via charts, and retrieving detailed schema/data overviews without requiring complex client-side setup.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-09T16:42:56.751314528Z",
+  "modifiedat": "2025-05-12T08:19:23.798896961Z",
   "name": "io.github.StarRocks/mcp-server-starrocks",
   "prompts": [],
   "registries": [
