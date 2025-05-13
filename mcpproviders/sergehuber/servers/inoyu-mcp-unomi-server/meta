@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:18:08.860994824Z",
+  "createdat": "2025-05-13T21:19:33.661752905Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/sergehuber/servers/inoyu-mcp-unomi-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:18:08.860994824Z",
+  "modifiedat": "2025-05-13T21:19:33.661752905Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/sergehuber/servers/inoyu-mcp-unomi-server/meta",
   "serverid": "inoyu-mcp-unomi-server",

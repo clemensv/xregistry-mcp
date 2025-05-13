@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:17:42.783890943Z",
+  "createdat": "2025-05-13T21:18:00.086411277Z",
   "description": "A MCP (Model Context Protocol) provider Deepseek reasoning content to MCP-enabled AI Clients, like Claude Desktop. Supports access to Deepseek's thought processes from the Deepseek API service or from a local Ollama server.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-12T08:17:42.783890943Z",
+  "modifiedat": "2025-05-13T21:18:00.086411277Z",
   "name": "io.github.ruixingshi/deepseek-thinker-mcp",
   "prompts": [],
   "registries": [

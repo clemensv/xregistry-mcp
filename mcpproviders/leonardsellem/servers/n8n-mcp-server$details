@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:20:35.592444996Z",
+  "createdat": "2025-05-13T21:20:07.787429978Z",
   "description": "A Model Context Protocol (MCP) server that allows AI assistants to interact with n8n workflows through natural language. This MCP server provides tools and resources for AI assistants to manage n8n workflows and executions, including listing, creating, updating, deleting, activating, deactivating workflows, executing workflows, monitoring status, and accessing workflow information and execution statistics.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/leonardsellem/servers/n8n-mcp-server/meta",
-  "modifiedat": "2025-05-12T08:20:35.592444996Z",
+  "modifiedat": "2025-05-13T21:20:07.787429978Z",
   "name": "io.github.leonardsellem/n8n-mcp-server",
   "prompts": [],
   "registries": [

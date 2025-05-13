@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:17:41.654527316Z",
+  "createdat": "2025-05-13T21:17:44.828990115Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/Omar-V2/servers/mcp-ical/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:17:41.654527316Z",
+  "modifiedat": "2025-05-13T21:17:44.828990115Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/Omar-V2/servers/mcp-ical/meta",
   "serverid": "mcp-ical",

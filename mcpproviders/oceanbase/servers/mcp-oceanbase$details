@@ -1,12 +1,12 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:17:43.843332967Z",
+  "createdat": "2025-05-13T21:17:53.125644888Z",
   "description": "A Model Context Protocol (MCP) server that enables secure interaction with OceanBase databases.",
   "documentation": "doc/oceanbase_mcp_server.md",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/oceanbase/servers/mcp-oceanbase/meta",
-  "modifiedat": "2025-05-12T08:17:43.843332967Z",
+  "modifiedat": "2025-05-13T21:17:53.125644888Z",
   "name": "io.github.oceanbase/mcp-oceanbase",
   "prompts": [],
   "registries": [

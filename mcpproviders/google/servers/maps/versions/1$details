@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:17:41.782482388Z",
+  "createdat": "2025-05-13T21:18:50.405622865Z",
   "description": "Google Maps API integration for geocoding, directions, and more.",
   "documentation": "https://developers.google.com/maps/documentation",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-12T08:17:41.782482388Z",
+  "modifiedat": "2025-05-13T21:18:50.405622865Z",
   "name": "Google Maps",
   "prompts": [],
   "registries": [

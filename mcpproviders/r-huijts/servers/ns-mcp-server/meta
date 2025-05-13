@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:21:25.971470961Z",
+  "createdat": "2025-05-13T21:19:39.996119628Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/r-huijts/servers/ns-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:21:25.971470961Z",
+  "modifiedat": "2025-05-13T21:19:39.996119628Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/r-huijts/servers/ns-mcp-server/meta",
   "serverid": "ns-mcp-server",

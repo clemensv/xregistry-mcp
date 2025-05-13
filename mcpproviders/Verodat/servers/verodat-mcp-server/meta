@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:17:46.301584509Z",
+  "createdat": "2025-05-13T21:22:50.40794539Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/Verodat/servers/verodat-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:17:46.301584509Z",
+  "modifiedat": "2025-05-13T21:22:50.40794539Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/Verodat/servers/verodat-mcp-server/meta",
   "serverid": "verodat-mcp-server",

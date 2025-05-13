@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:18:20.569250935Z",
+  "createdat": "2025-05-13T21:17:43.173262115Z",
   "description": "This MCP server integrates with Fewsats and allows AI Agents to purchase anything in a secure way.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-12T08:18:20.569250935Z",
+  "modifiedat": "2025-05-13T21:17:43.173262115Z",
   "name": "io.github.Fewsats/fewsats-mcp",
   "prompts": [],
   "registries": [

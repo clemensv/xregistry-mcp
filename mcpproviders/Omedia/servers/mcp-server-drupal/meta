@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:17:42.649064877Z",
+  "createdat": "2025-05-13T21:18:32.692908778Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/Omedia/servers/mcp-server-drupal/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:17:42.649064877Z",
+  "modifiedat": "2025-05-13T21:18:32.692908778Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/Omedia/servers/mcp-server-drupal/meta",
   "serverid": "mcp-server-drupal",

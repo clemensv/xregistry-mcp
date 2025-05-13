@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:18:38.736334377Z",
+  "createdat": "2025-05-13T21:22:43.073660425Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/goat-sdk/servers/goat/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:18:38.736334377Z",
+  "modifiedat": "2025-05-13T21:22:43.073660425Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/goat-sdk/servers/goat/meta",
   "serverid": "goat",

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:19:15.737478659Z",
+  "createdat": "2025-05-13T21:20:03.377060704Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/suekou/servers/mcp-notion-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:19:15.737478659Z",
+  "modifiedat": "2025-05-13T21:20:03.377060704Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/suekou/servers/mcp-notion-server/meta",
   "serverid": "mcp-notion-server",

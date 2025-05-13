@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:17:39.510901918Z",
+  "createdat": "2025-05-13T21:22:07.954699139Z",
   "description": "Model Context Protocol servers implemented in Java using the Quarkus MCP server framework, enabling extension of MCP enabled LLM AI applications.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/quarkiverse/servers/quarkus-mcp-servers/meta",
-  "modifiedat": "2025-05-12T08:17:39.510901918Z",
+  "modifiedat": "2025-05-13T21:22:07.954699139Z",
   "name": "io.github.quarkiverse/quarkus-mcp-servers",
   "prompts": [],
   "registries": [

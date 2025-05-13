@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:17:50.440396005Z",
+  "createdat": "2025-05-13T21:19:53.332288664Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/atlanhq/servers/agent-toolkit/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:17:50.440396005Z",
+  "modifiedat": "2025-05-13T21:19:53.332288664Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/atlanhq/servers/agent-toolkit/meta",
   "serverid": "agent-toolkit",

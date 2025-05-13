@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:17:59.498713219Z",
+  "createdat": "2025-05-13T21:19:49.23772287Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/tinyfish-io/servers/agentql-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:17:59.498713219Z",
+  "modifiedat": "2025-05-13T21:19:49.23772287Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/tinyfish-io/servers/agentql-mcp/meta",
   "serverid": "agentql-mcp",

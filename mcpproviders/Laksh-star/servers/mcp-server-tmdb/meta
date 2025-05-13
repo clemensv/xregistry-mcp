@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:21:11.936559946Z",
+  "createdat": "2025-05-13T21:18:52.217301345Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/Laksh-star/servers/mcp-server-tmdb/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:21:11.936559946Z",
+  "modifiedat": "2025-05-13T21:18:52.217301345Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/Laksh-star/servers/mcp-server-tmdb/meta",
   "serverid": "mcp-server-tmdb",

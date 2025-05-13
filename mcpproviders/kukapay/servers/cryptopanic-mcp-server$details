@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:17:41.063356057Z",
+  "createdat": "2025-05-13T21:17:44.045329387Z",
   "description": "Provide the latest cryptocurrency news to AI agents, powered by CryptoPanic.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/kukapay/servers/cryptopanic-mcp-server/meta",
-  "modifiedat": "2025-05-12T08:17:41.063356057Z",
+  "modifiedat": "2025-05-13T21:17:44.045329387Z",
   "name": "io.github.kukapay/cryptopanic-mcp-server",
   "prompts": [],
   "registries": [

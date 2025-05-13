@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:17:49.004227112Z",
+  "createdat": "2025-05-13T21:20:26.405206544Z",
   "description": "MCP Server for AI Agent Marketplace Index from DeepNLP, allowing AI assistants to search available AI agents by keywords or category, including tools for searching AI agents and listing AI agents to the marketplace.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/AI-Agent-Hub/servers/ai-agent-marketplace-index-mcp/meta",
-  "modifiedat": "2025-05-12T08:17:49.004227112Z",
+  "modifiedat": "2025-05-13T21:20:26.405206544Z",
   "name": "io.github.AI-Agent-Hub/ai-agent-marketplace-index-mcp",
   "prompts": [],
   "registries": [

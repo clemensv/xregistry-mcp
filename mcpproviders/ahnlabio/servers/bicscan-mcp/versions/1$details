@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:18:08.366983603Z",
+  "createdat": "2025-05-13T21:19:56.111684206Z",
   "description": "A powerful and efficient Blockchain address risk scoring API MCP Server, leveraging the BICScan API to provide comprehensive risk assessments and asset information for blockchain addresses, domains, and decentralized applications (dApps).",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-12T08:18:08.366983603Z",
+  "modifiedat": "2025-05-13T21:19:56.111684206Z",
   "name": "io.github.ahnlabio/bicscan-mcp",
   "prompts": [],
   "registries": [

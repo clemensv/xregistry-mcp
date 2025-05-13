@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:17:37.350774392Z",
+  "createdat": "2025-05-13T21:19:22.981770379Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/raoulbia-ai/servers/mcp-server-for-intercom/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:17:37.350774392Z",
+  "modifiedat": "2025-05-13T21:19:22.981770379Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/raoulbia-ai/servers/mcp-server-for-intercom/meta",
   "serverid": "mcp-server-for-intercom",

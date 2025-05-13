@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:21:53.21629387Z",
+  "createdat": "2025-05-13T21:20:29.603077938Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/smithery-ai/servers/mcp-obsidian/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:21:53.21629387Z",
+  "modifiedat": "2025-05-13T21:20:29.603077938Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/smithery-ai/servers/mcp-obsidian/meta",
   "serverid": "mcp-obsidian",

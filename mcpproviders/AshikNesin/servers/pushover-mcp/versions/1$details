@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:19:13.483264737Z",
+  "createdat": "2025-05-13T21:20:06.316597255Z",
   "description": "A Model Context Protocol implementation for sending notifications via Pushover.net.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-12T08:19:13.483264737Z",
+  "modifiedat": "2025-05-13T21:20:06.316597255Z",
   "name": "io.github.AshikNesin/pushover-mcp",
   "prompts": [],
   "registries": [

@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:20:39.003819234Z",
+  "createdat": "2025-05-13T21:18:41.852857856Z",
   "description": "MCP server for SingleStore enabling integration with LLM clients like Claude Desktop and Cursor to perform operations using natural language.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/singlestore-labs/servers/mcp-server-singlestore/meta",
-  "modifiedat": "2025-05-12T08:20:39.003819234Z",
+  "modifiedat": "2025-05-13T21:18:41.852857856Z",
   "name": "io.github.singlestore-labs/mcp-server-singlestore",
   "prompts": [],
   "registries": [

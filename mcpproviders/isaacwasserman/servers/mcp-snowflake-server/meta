@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:20:22.440780775Z",
+  "createdat": "2025-05-13T21:22:35.799351833Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/isaacwasserman/servers/mcp-snowflake-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:20:22.440780775Z",
+  "modifiedat": "2025-05-13T21:22:35.799351833Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/isaacwasserman/servers/mcp-snowflake-server/meta",
   "serverid": "mcp-snowflake-server",

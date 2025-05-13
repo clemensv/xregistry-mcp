@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:20:14.489924721Z",
+  "createdat": "2025-05-13T21:17:41.539281561Z",
   "description": "A Model Completion Protocol (MCP) server implementation for ServiceNow, allowing Claude to interact with ServiceNow instances.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-12T08:20:14.489924721Z",
+  "modifiedat": "2025-05-13T21:17:41.539281561Z",
   "name": "io.github.osomai/servicenow-mcp",
   "prompts": [],
   "registries": [

@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:21:46.726263083Z",
+  "createdat": "2025-05-13T21:20:36.317784326Z",
   "description": "SEC EDGAR MCP is an open-source MCP server that connects AI models to the rich dataset of SEC EDGAR filings, enabling AI assistants to query official SEC financial data in real-time.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/stefanoamorelli/servers/sec-edgar-mcp/meta",
-  "modifiedat": "2025-05-12T08:21:46.726263083Z",
+  "modifiedat": "2025-05-13T21:20:36.317784326Z",
   "name": "io.github.stefanoamorelli/sec-edgar-mcp",
   "prompts": [],
   "registries": [

@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:17:57.28391522Z",
+  "createdat": "2025-05-13T21:18:13.129236112Z",
   "description": "A Model Context Protocol (MCP) server that provides seamless integration with Notion. This server enables Language Models to interact with your Notion workspace through standardized tools for searching, reading, creating, and updating pages and databases.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-12T08:17:57.28391522Z",
+  "modifiedat": "2025-05-13T21:18:13.129236112Z",
   "name": "io.github.v-3/notion-server",
   "prompts": [],
   "registries": [

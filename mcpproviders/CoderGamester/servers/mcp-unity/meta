@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:17:56.233124498Z",
+  "createdat": "2025-05-13T21:18:40.264274213Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/CoderGamester/servers/mcp-unity/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:17:56.233124498Z",
+  "modifiedat": "2025-05-13T21:18:40.264274213Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/CoderGamester/servers/mcp-unity/meta",
   "serverid": "mcp-unity",

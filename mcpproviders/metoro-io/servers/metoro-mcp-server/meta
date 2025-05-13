@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:20:00.867311535Z",
+  "createdat": "2025-05-13T21:17:51.326979791Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/metoro-io/servers/metoro-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:20:00.867311535Z",
+  "modifiedat": "2025-05-13T21:17:51.326979791Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/metoro-io/servers/metoro-mcp-server/meta",
   "serverid": "metoro-mcp-server",

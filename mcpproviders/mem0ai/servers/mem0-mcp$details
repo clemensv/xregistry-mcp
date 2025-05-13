@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:18:24.439430525Z",
+  "createdat": "2025-05-13T21:22:26.362988612Z",
   "description": "This demonstrates a structured approach for using an MCP server with mem0 to manage coding preferences efficiently. The server provides tools for storing, retrieving, and searching coding preferences and exposes an SSE endpoint for MCP clients.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/mem0ai/servers/mem0-mcp/meta",
-  "modifiedat": "2025-05-12T08:18:24.439430525Z",
+  "modifiedat": "2025-05-13T21:22:26.362988612Z",
   "name": "io.github.mem0ai/mem0-mcp",
   "prompts": [],
   "registries": [

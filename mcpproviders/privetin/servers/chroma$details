@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:18:03.65113547Z",
+  "createdat": "2025-05-13T21:20:39.689317263Z",
   "description": "A Model Context Protocol (MCP) server implementation that provides vector database capabilities through Chroma. This server enables semantic document search, metadata filtering, and document management with persistent storage.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/privetin/servers/chroma/meta",
-  "modifiedat": "2025-05-12T08:18:03.65113547Z",
+  "modifiedat": "2025-05-13T21:20:39.689317263Z",
   "name": "io.github.privetin/chroma",
   "prompts": [],
   "registries": [

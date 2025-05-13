@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:17:51.234237673Z",
+  "createdat": "2025-05-13T21:19:37.420908165Z",
   "description": "A comprehensive suite of tools for technical marketing content creation, optimization, and product positioning based on Open Strategy Partners' proven methodologies. This software is based on the Model Context Protocol (MCP) and is usable by any LLM client that supports MCP.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-12T08:17:51.234237673Z",
+  "modifiedat": "2025-05-13T21:19:37.420908165Z",
   "name": "io.github.open-strategy-partners/osp_marketing_tools",
   "prompts": [],
   "registries": [

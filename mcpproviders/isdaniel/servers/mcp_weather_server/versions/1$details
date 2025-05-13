@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:17:38.038485363Z",
+  "createdat": "2025-05-13T21:22:52.905301207Z",
   "description": "A Model Context Protocol (MCP) server that provides weather information using the Open-Meteo API.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-12T08:17:38.038485363Z",
+  "modifiedat": "2025-05-13T21:22:52.905301207Z",
   "name": "io.github.isdaniel/mcp_weather_server",
   "prompts": [],
   "registries": [

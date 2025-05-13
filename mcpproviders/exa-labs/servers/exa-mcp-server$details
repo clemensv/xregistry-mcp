@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:20:40.730384823Z",
+  "createdat": "2025-05-13T21:22:47.939549854Z",
   "description": "The Exa MCP server enables AI assistants to perform real-time web searches using Exa's powerful search API, providing structured search results including titles, URLs, and content snippets, caching recent searches as resources, handling rate limiting and errors gracefully, and supporting real-time web crawling for fresh content.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/exa-labs/servers/exa-mcp-server/meta",
-  "modifiedat": "2025-05-12T08:20:40.730384823Z",
+  "modifiedat": "2025-05-13T21:22:47.939549854Z",
   "name": "io.github.exa-labs/exa-mcp-server",
   "prompts": [],
   "registries": [

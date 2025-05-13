@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:17:41.173853701Z",
+  "createdat": "2025-05-13T21:17:43.933586642Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/kukapay/servers/crypto-feargreed-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:17:41.173853701Z",
+  "modifiedat": "2025-05-13T21:17:43.933586642Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/kukapay/servers/crypto-feargreed-mcp/meta",
   "serverid": "crypto-feargreed-mcp",

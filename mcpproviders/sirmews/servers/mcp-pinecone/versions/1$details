@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:18:02.748375727Z",
+  "createdat": "2025-05-13T21:18:13.725459143Z",
   "description": "Pinecone Model Context Protocol Server for Claude Desktop. Implements reading and writing to a Pinecone index with tools for semantic search, document processing, and stats.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-12T08:18:02.748375727Z",
+  "modifiedat": "2025-05-13T21:18:13.725459143Z",
   "name": "io.github.sirmews/mcp-pinecone",
   "prompts": [
     {

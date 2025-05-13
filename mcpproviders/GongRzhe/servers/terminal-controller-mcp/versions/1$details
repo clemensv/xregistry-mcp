@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:21:42.486610025Z",
+  "createdat": "2025-05-13T21:17:58.754211718Z",
   "description": "A Model Context Protocol (MCP) server that enables secure terminal command execution, directory navigation, and file system operations through a standardized interface.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-12T08:21:42.486610025Z",
+  "modifiedat": "2025-05-13T21:17:58.754211718Z",
   "name": "io.github.GongRzhe/terminal-controller-mcp",
   "prompts": [],
   "registries": [

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:19:57.975338791Z",
+  "createdat": "2025-05-13T21:17:48.640627741Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/GreptimeTeam/servers/greptimedb-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:19:57.975338791Z",
+  "modifiedat": "2025-05-13T21:17:48.640627741Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/GreptimeTeam/servers/greptimedb-mcp-server/meta",
   "serverid": "greptimedb-mcp-server",

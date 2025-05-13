@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:22:06.500287837Z",
+  "createdat": "2025-05-13T21:18:04.49422416Z",
   "description": "Arduino-based robotics server integrating AI using the MCP (Model Context Protocol) framework from Claude AI by Anthropic. Controls hardware components like LEDs, motors, servos, fans, sensors via MCP tools and prompts.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-12T08:22:06.500287837Z",
+  "modifiedat": "2025-05-13T21:18:04.49422416Z",
   "name": "io.github.vishalmysore/choturobo",
   "prompts": [
     {

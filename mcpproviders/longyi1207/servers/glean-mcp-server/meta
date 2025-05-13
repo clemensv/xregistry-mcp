@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:18:33.157296364Z",
+  "createdat": "2025-05-13T21:22:45.49550851Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/longyi1207/servers/glean-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:18:33.157296364Z",
+  "modifiedat": "2025-05-13T21:22:45.49550851Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/longyi1207/servers/glean-mcp-server/meta",
   "serverid": "glean-mcp-server",

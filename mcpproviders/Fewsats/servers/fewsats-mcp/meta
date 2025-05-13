@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:18:20.569250935Z",
+  "createdat": "2025-05-13T21:17:43.173262115Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/Fewsats/servers/fewsats-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:18:20.569250935Z",
+  "modifiedat": "2025-05-13T21:17:43.173262115Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/Fewsats/servers/fewsats-mcp/meta",
   "serverid": "fewsats-mcp",

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:17:50.716220679Z",
+  "createdat": "2025-05-13T21:17:42.587741268Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/neo4j-contrib/servers/mcp-neo4j/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:17:50.716220679Z",
+  "modifiedat": "2025-05-13T21:17:42.587741268Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/neo4j-contrib/servers/mcp-neo4j/meta",
   "serverid": "mcp-neo4j",

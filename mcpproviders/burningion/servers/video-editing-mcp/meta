@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:18:53.85326923Z",
+  "createdat": "2025-05-13T21:17:44.471712286Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/burningion/servers/video-editing-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:18:53.85326923Z",
+  "modifiedat": "2025-05-13T21:17:44.471712286Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/burningion/servers/video-editing-mcp/meta",
   "serverid": "video-editing-mcp",

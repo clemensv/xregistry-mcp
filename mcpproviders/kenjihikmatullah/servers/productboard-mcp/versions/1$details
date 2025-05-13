@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:18:22.484259487Z",
+  "createdat": "2025-05-13T21:22:21.648437328Z",
   "description": "Integrate the Productboard API into agentic workflows via MCP",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-12T08:18:22.484259487Z",
+  "modifiedat": "2025-05-13T21:22:21.648437328Z",
   "name": "io.github.kenjihikmatullah/productboard-mcp",
   "prompts": [],
   "registries": [

@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:17:39.678412302Z",
+  "createdat": "2025-05-13T21:18:21.451683261Z",
   "description": "Model Context Protocol (MCP) server for Atlassian products (Confluence and Jira). This integration supports both Confluence \u0026 Jira Cloud and Server/Data Center deployments.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-12T08:17:39.678412302Z",
+  "modifiedat": "2025-05-13T21:18:21.451683261Z",
   "name": "io.github.sooperset/mcp-atlassian",
   "prompts": [],
   "registries": [

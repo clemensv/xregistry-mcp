@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:21:42.486610025Z",
+  "createdat": "2025-05-13T21:17:58.754211718Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/terminal-controller-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:21:42.486610025Z",
+  "modifiedat": "2025-05-13T21:17:58.754211718Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/terminal-controller-mcp/meta",
   "serverid": "terminal-controller-mcp",

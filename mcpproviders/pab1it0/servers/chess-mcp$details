@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:18:51.970343511Z",
+  "createdat": "2025-05-13T21:17:41.254987118Z",
   "description": "A Model Context Protocol (MCP) server for Chess.com's Published Data API providing access to player data, game records, and other public information through standardized MCP interfaces.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/pab1it0/servers/chess-mcp/meta",
-  "modifiedat": "2025-05-12T08:18:51.970343511Z",
+  "modifiedat": "2025-05-13T21:17:41.254987118Z",
   "name": "io.github.pab1it0/chess-mcp",
   "prompts": [],
   "registries": [

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-12T08:18:23.139246295Z",
+  "createdat": "2025-05-13T21:21:13.95948988Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/zilliztech/servers/mcp-server-milvus/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-12T08:18:23.139246295Z",
+  "modifiedat": "2025-05-13T21:21:13.95948988Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/zilliztech/servers/mcp-server-milvus/meta",
   "serverid": "mcp-server-milvus",

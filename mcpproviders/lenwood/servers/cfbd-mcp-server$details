@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-12T08:19:42.855985943Z",
+  "createdat": "2025-05-13T21:18:47.740915112Z",
   "description": "An MCP server implementation providing access to college football statistics sourced from the College Football Data API within Claude Desktop. Enables AI assistants and applications to query comprehensive college football statistics and data including game results, team records, player statistics, play-by-play data, rankings, and win probability metrics using natural language.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/lenwood/servers/cfbd-mcp-server/meta",
-  "modifiedat": "2025-05-12T08:19:42.855985943Z",
+  "modifiedat": "2025-05-13T21:18:47.740915112Z",
   "name": "io.github.lenwood/cfbd-mcp-server",
   "prompts": [
     {
