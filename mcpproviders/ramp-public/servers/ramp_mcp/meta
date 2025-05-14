@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:36:53.841112591Z",
+  "createdat": "2025-05-14T07:02:24.990591403Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/ramp-public/servers/ramp_mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:36:53.841112591Z",
+  "modifiedat": "2025-05-14T07:02:24.990591403Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/ramp-public/servers/ramp_mcp/meta",
   "serverid": "ramp_mcp",

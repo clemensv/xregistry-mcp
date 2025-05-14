@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:36:44.309238599Z",
+  "createdat": "2025-05-14T07:02:15.373071502Z",
   "description": "A MCP server to search for accurate academic articles. More scholarly vendors will be added soon.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T05:36:44.309238599Z",
+  "modifiedat": "2025-05-14T07:02:15.373071502Z",
   "name": "io.github.adityak74/mcp-scholarly",
   "prompts": [],
   "registries": [

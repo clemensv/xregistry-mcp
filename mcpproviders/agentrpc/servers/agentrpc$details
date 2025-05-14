@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:39:11.237978103Z",
+  "createdat": "2025-05-14T07:04:45.84469683Z",
   "description": "Universal RPC layer for AI agents across network boundaries and languages, supporting Model Context Protocol (MCP) and OpenAI-compatible tool definitions.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/agentrpc/servers/agentrpc/meta",
-  "modifiedat": "2025-05-14T05:39:11.237978103Z",
+  "modifiedat": "2025-05-14T07:04:45.84469683Z",
   "name": "io.github.agentrpc/agentrpc",
   "prompts": [],
   "registries": [

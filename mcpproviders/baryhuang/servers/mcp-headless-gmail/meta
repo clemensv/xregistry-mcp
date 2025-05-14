@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:37:05.763826572Z",
+  "createdat": "2025-05-14T07:02:37.025226545Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/baryhuang/servers/mcp-headless-gmail/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:37:05.763826572Z",
+  "modifiedat": "2025-05-14T07:02:37.025226545Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/baryhuang/servers/mcp-headless-gmail/meta",
   "serverid": "mcp-headless-gmail",

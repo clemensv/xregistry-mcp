@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:36:08.798391366Z",
+  "createdat": "2025-05-14T07:01:39.453290618Z",
   "description": "This server connects agents to your Elasticsearch data using the Model Context Protocol. It allows you to interact with your Elasticsearch indices through natural language conversations.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T05:36:08.798391366Z",
+  "modifiedat": "2025-05-14T07:01:39.453290618Z",
   "name": "io.github.elastic/mcp-server-elasticsearch",
   "prompts": [],
   "registries": [

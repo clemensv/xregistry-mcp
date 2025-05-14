@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:38:18.736346194Z",
+  "createdat": "2025-05-14T07:03:52.360894068Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/quazaai/servers/UnityMCPIntegration/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:38:18.736346194Z",
+  "modifiedat": "2025-05-14T07:03:52.360894068Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/quazaai/servers/UnityMCPIntegration/meta",
   "serverid": "UnityMCPIntegration",

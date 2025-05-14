@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:36:39.407026643Z",
+  "createdat": "2025-05-14T07:02:10.390543518Z",
   "description": "This is a Model Context Protocol (MCP) server that provides tools for interacting with the Paddle API.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/PaddleHQ/servers/paddle-mcp-server/meta",
-  "modifiedat": "2025-05-14T05:36:39.407026643Z",
+  "modifiedat": "2025-05-14T07:02:10.390543518Z",
   "name": "io.github.PaddleHQ/paddle-mcp-server",
   "prompts": [],
   "registries": [

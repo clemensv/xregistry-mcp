@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:38:23.060391373Z",
+  "createdat": "2025-05-14T07:03:56.802027028Z",
   "description": "This is an MCP server that creates an environment for an avatar to virtually travel on Google Maps. From an MCP client such as Claude Desktop, you can give instructions to the avatar and report on the progress of its journey with photos.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T05:38:23.060391373Z",
+  "modifiedat": "2025-05-14T07:03:56.802027028Z",
   "name": "io.github.mfukushim/map-traveler-mcp",
   "prompts": [],
   "registries": [],

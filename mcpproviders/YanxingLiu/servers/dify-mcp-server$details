@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:37:42.870330268Z",
+  "createdat": "2025-05-14T07:03:14.362222245Z",
   "description": "A simple implementation of an MCP server for using dify workflows. It achieves the invocation of the Dify workflow by calling the tools of MCP.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/YanxingLiu/servers/dify-mcp-server/meta",
-  "modifiedat": "2025-05-14T05:37:42.870330268Z",
+  "modifiedat": "2025-05-14T07:03:14.362222245Z",
   "name": "io.github.YanxingLiu/dify-mcp-server",
   "prompts": [],
   "registries": [

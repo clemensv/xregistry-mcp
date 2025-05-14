@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:40:48.0321839Z",
+  "createdat": "2025-05-14T07:06:24.429100199Z",
   "description": "Model Context Protocol (MCP) server for managing Redis Cloud resources via natural language commands.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T05:40:48.0321839Z",
+  "modifiedat": "2025-05-14T07:06:24.429100199Z",
   "name": "io.github.redis/mcp-redis-cloud",
   "prompts": [],
   "registries": [

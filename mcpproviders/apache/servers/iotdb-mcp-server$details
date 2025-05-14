@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:37:16.702131062Z",
+  "createdat": "2025-05-14T07:02:48.019532704Z",
   "description": "A Model Context Protocol (MCP) server implementation that provides database interaction and business intelligence capabilities through IoTDB. This server enables running SQL queries.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/apache/servers/iotdb-mcp-server/meta",
-  "modifiedat": "2025-05-14T05:37:16.702131062Z",
+  "modifiedat": "2025-05-14T07:02:48.019532704Z",
   "name": "io.github.apache/iotdb-mcp-server",
   "prompts": [],
   "registries": [

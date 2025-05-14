@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:38:33.508298018Z",
+  "createdat": "2025-05-14T07:04:07.424315121Z",
   "description": "A Model Context Protocol (MCP) server that connects to Databricks API, allowing LLMs to run SQL queries, list jobs, and get job status.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T05:38:33.508298018Z",
+  "modifiedat": "2025-05-14T07:04:07.424315121Z",
   "name": "io.github.JordiNeil/mcp-databricks-server",
   "prompts": [],
   "registries": [

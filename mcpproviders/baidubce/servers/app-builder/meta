@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:40:18.491656119Z",
+  "createdat": "2025-05-14T07:05:54.235210429Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/baidubce/servers/app-builder/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:40:18.491656119Z",
+  "modifiedat": "2025-05-14T07:05:54.235210429Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/baidubce/servers/app-builder/meta",
   "serverid": "app-builder",

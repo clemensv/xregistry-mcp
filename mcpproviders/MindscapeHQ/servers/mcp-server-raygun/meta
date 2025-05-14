@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:36:35.02472082Z",
+  "createdat": "2025-05-14T07:02:06.017060454Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/MindscapeHQ/servers/mcp-server-raygun/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:36:35.02472082Z",
+  "modifiedat": "2025-05-14T07:02:06.017060454Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/MindscapeHQ/servers/mcp-server-raygun/meta",
   "serverid": "mcp-server-raygun",

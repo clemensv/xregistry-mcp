@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:39:23.840077826Z",
+  "createdat": "2025-05-14T07:04:58.637522085Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/MFYDev/servers/ghost-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:39:23.840077826Z",
+  "modifiedat": "2025-05-14T07:04:58.637522085Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/MFYDev/servers/ghost-mcp/meta",
   "serverid": "ghost-mcp",

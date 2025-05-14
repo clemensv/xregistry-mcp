@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:40:36.374567234Z",
+  "createdat": "2025-05-14T07:06:12.550744257Z",
   "description": "The server is a bridge between the Telegram API and the AI assistants and is based on the Model Context Protocol. It provides capabilities such as getting current account information, listing dialogs, marking dialogs as read, retrieving messages, and sending draft messages.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T05:40:36.374567234Z",
+  "modifiedat": "2025-05-14T07:06:12.550744257Z",
   "name": "io.github.chaindead/telegram-mcp",
   "prompts": [
     {

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:36:43.61707535Z",
+  "createdat": "2025-05-14T07:02:14.65875101Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/voska/servers/hass-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:36:43.61707535Z",
+  "modifiedat": "2025-05-14T07:02:14.65875101Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/voska/servers/hass-mcp/meta",
   "serverid": "hass-mcp",

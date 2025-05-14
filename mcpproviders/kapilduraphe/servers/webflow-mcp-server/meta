@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:37:30.737497328Z",
+  "createdat": "2025-05-14T07:03:02.122280535Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/kapilduraphe/servers/webflow-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:37:30.737497328Z",
+  "modifiedat": "2025-05-14T07:03:02.122280535Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/kapilduraphe/servers/webflow-mcp-server/meta",
   "serverid": "webflow-mcp-server",

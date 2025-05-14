@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:39:04.302003345Z",
+  "createdat": "2025-05-14T07:04:38.763065988Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/rember/servers/rember-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:39:04.302003345Z",
+  "modifiedat": "2025-05-14T07:04:38.763065988Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/rember/servers/rember-mcp/meta",
   "serverid": "rember-mcp",

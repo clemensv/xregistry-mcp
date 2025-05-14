@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:39:39.185169501Z",
+  "createdat": "2025-05-14T07:05:14.231739312Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/geropl/servers/linear-mcp-go/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:39:39.185169501Z",
+  "modifiedat": "2025-05-14T07:05:14.231739312Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/geropl/servers/linear-mcp-go/meta",
   "serverid": "linear-mcp-go",

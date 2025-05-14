@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:36:24.986968056Z",
+  "createdat": "2025-05-14T07:01:55.925292442Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/mamertofabian/servers/elevenlabs-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:36:24.986968056Z",
+  "modifiedat": "2025-05-14T07:01:55.925292442Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/mamertofabian/servers/elevenlabs-mcp-server/meta",
   "serverid": "elevenlabs-mcp-server",

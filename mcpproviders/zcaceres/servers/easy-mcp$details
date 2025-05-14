@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:37:18.626473999Z",
+  "createdat": "2025-05-14T07:02:49.950960257Z",
   "description": "EasyMCP is the simplest way to create Model Context Protocol (MCP) servers in TypeScript. It hides the plumbing, formatting, and other boilerplate definitions behind simple declarations. Easy MCP allows you to define the bare minimum of what you need to get started. Or you can define more complex resources, templates, tools, and prompts.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/zcaceres/servers/easy-mcp/meta",
-  "modifiedat": "2025-05-14T05:37:18.626473999Z",
+  "modifiedat": "2025-05-14T07:02:49.950960257Z",
   "name": "io.github.zcaceres/easy-mcp",
   "prompts": [
     {

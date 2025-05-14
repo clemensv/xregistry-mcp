@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:37:46.366734139Z",
+  "createdat": "2025-05-14T07:03:17.896111419Z",
   "description": "This MCP server allows Clients to interact with Twitter, enabling posting tweets and searching Twitter.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T05:37:46.366734139Z",
+  "modifiedat": "2025-05-14T07:03:17.896111419Z",
   "name": "io.github.EnesCinr/twitter-mcp",
   "prompts": [],
   "registries": [

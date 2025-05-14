@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:36:27.914169594Z",
+  "createdat": "2025-05-14T07:01:58.856943652Z",
   "description": "This MCP server provides access to OpenAI's websearch functionality through the Model Context Protocol. It allows AI assistants to search the web during conversations with users, providing up-to-date information that may not be available in the assistant's training data.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T05:36:27.914169594Z",
+  "modifiedat": "2025-05-14T07:01:58.856943652Z",
   "name": "io.github.ConechoAI/openai-websearch-mcp",
   "prompts": [],
   "registries": [

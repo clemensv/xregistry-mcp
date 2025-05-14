@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:36:00.405727893Z",
+  "createdat": "2025-05-14T07:01:31.000414367Z",
   "description": "MongoDB MCP server for natural language database interaction",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/furey/servers/mongodb-lens/meta",
-  "modifiedat": "2025-05-14T05:36:00.405727893Z",
+  "modifiedat": "2025-05-14T07:01:31.000414367Z",
   "name": "io.github.furey/mongodb-lens",
   "prompts": [],
   "registries": [

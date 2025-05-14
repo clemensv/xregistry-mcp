@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:38:41.163736701Z",
+  "createdat": "2025-05-14T07:04:15.206782121Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/suhail-ak-s/servers/mcp-typesense-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:38:41.163736701Z",
+  "modifiedat": "2025-05-14T07:04:15.206782121Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/suhail-ak-s/servers/mcp-typesense-server/meta",
   "serverid": "mcp-typesense-server",

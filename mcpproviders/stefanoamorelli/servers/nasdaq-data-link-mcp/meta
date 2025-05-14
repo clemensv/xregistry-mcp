@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:38:55.815638112Z",
+  "createdat": "2025-05-14T07:04:30.119980108Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/stefanoamorelli/servers/nasdaq-data-link-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:38:55.815638112Z",
+  "modifiedat": "2025-05-14T07:04:30.119980108Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/stefanoamorelli/servers/nasdaq-data-link-mcp/meta",
   "serverid": "nasdaq-data-link-mcp",

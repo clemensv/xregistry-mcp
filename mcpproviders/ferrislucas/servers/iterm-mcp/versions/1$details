@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:37:11.966484771Z",
+  "createdat": "2025-05-14T07:02:43.272178762Z",
   "description": "A Model Context Protocol server that provides access to your iTerm session.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T05:37:11.966484771Z",
+  "modifiedat": "2025-05-14T07:02:43.272178762Z",
   "name": "io.github.ferrislucas/iterm-mcp",
   "prompts": [],
   "registries": [

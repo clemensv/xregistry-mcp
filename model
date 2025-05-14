@@ -113,6 +113,7 @@
     "mcpproviders": {
       "plural": "mcpproviders",
       "singular": "mcpprovider",
+      "description": "Registry of Model Context Protocol (MCP) servers and their capabilities, organized by provider.",
       "attributes": {
         "mcpproviderid": {
           "name": "mcpproviderid",
@@ -398,15 +399,18 @@
                   },
                   "license": {
                     "name": "license",
-                    "type": "string"
+                    "type": "string",
+                    "description": "License of the package."
                   },
                   "name": {
                     "name": "name",
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of the registry."
                   },
                   "package_name": {
                     "name": "package_name",
-                    "type": "string"
+                    "type": "string",
+                    "description": "Name of the package."
                   }
                 }
               }
@@ -420,11 +424,13 @@
                 "attributes": {
                   "transporttype": {
                     "name": "transporttype",
-                    "type": "string"
+                    "type": "string",
+                    "description": "Transport type of the remote."
                   },
                   "url": {
                     "name": "url",
-                    "type": "url"
+                    "type": "url",
+                    "description": "URL of the remote."
                   }
                 }
               }
@@ -485,6 +491,7 @@
             "version_detail": {
               "name": "version_detail",
               "type": "object",
+              "description": "Version detail for the server.",
               "attributes": {
                 "version": {
                   "name": "version",

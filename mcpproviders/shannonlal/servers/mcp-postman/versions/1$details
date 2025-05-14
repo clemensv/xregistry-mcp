@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:36:14.570948024Z",
+  "createdat": "2025-05-14T07:01:45.296854935Z",
   "description": "An MCP (Model Context Protocol) server that enables running Postman collections using Newman. This server allows LLMs to execute API tests and get detailed results through a standardized interface.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T05:36:14.570948024Z",
+  "modifiedat": "2025-05-14T07:01:45.296854935Z",
   "name": "io.github.shannonlal/mcp-postman",
   "prompts": [],
   "registries": [

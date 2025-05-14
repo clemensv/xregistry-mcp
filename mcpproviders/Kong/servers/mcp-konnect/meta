@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:39:43.102117369Z",
+  "createdat": "2025-05-14T07:05:18.208171785Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/Kong/servers/mcp-konnect/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:39:43.102117369Z",
+  "modifiedat": "2025-05-14T07:05:18.208171785Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/Kong/servers/mcp-konnect/meta",
   "serverid": "mcp-konnect",

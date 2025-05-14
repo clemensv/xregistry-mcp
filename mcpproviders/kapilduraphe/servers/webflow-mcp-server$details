@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:37:30.737497328Z",
+  "createdat": "2025-05-14T07:03:02.122280535Z",
   "description": "This MCP server enables Claude to interact with Webflow's APIs.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/kapilduraphe/servers/webflow-mcp-server/meta",
-  "modifiedat": "2025-05-14T05:37:30.737497328Z",
+  "modifiedat": "2025-05-14T07:03:02.122280535Z",
   "name": "io.github.kapilduraphe/webflow-mcp-server",
   "prompts": [],
   "registries": [

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:36:42.377112457Z",
+  "createdat": "2025-05-14T07:02:13.383165488Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/daobataotie/servers/mssql-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:36:42.377112457Z",
+  "modifiedat": "2025-05-14T07:02:13.383165488Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/daobataotie/servers/mssql-mcp/meta",
   "serverid": "mssql-mcp",

@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:40:03.437114773Z",
+  "createdat": "2025-05-14T07:05:38.890961168Z",
   "description": "remotely attestable MCP server that uses a trusted execution environment and RA-TLS for remote attestation between MCP clients and servers.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/co-browser/servers/attestable-mcp-server/meta",
-  "modifiedat": "2025-05-14T05:40:03.437114773Z",
+  "modifiedat": "2025-05-14T07:05:38.890961168Z",
   "name": "io.github.co-browser/attestable-mcp-server",
   "prompts": [],
   "registries": [

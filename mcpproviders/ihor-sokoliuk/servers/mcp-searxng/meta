@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:39:20.177618302Z",
+  "createdat": "2025-05-14T07:04:54.91751034Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/ihor-sokoliuk/servers/mcp-searxng/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:39:20.177618302Z",
+  "modifiedat": "2025-05-14T07:04:54.91751034Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/ihor-sokoliuk/servers/mcp-searxng/meta",
   "serverid": "mcp-searxng",

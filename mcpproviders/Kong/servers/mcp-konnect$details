@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:39:43.102117369Z",
+  "createdat": "2025-05-14T07:05:18.208171785Z",
   "description": "Tools for managing and analyzing Kong Konnect API Gateway configurations and traffic",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/Kong/servers/mcp-konnect/meta",
-  "modifiedat": "2025-05-14T05:39:43.102117369Z",
+  "modifiedat": "2025-05-14T07:05:18.208171785Z",
   "name": "io.github.Kong/mcp-konnect",
   "prompts": [],
   "registries": [

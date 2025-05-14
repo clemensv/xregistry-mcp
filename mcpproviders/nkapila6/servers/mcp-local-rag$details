@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:36:41.772554354Z",
+  "createdat": "2025-05-14T07:02:12.777965311Z",
   "description": "\"primitive\" RAG-like web search model context protocol (MCP) server that runs locally. ✨ no APIs ✨",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/nkapila6/servers/mcp-local-rag/meta",
-  "modifiedat": "2025-05-14T05:36:41.772554354Z",
+  "modifiedat": "2025-05-14T07:02:12.777965311Z",
   "name": "io.github.nkapila6/mcp-local-rag",
   "prompts": [],
   "registries": [

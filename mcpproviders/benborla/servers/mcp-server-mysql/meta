@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:37:53.581467512Z",
+  "createdat": "2025-05-14T07:03:25.205331384Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/benborla/servers/mcp-server-mysql/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:37:53.581467512Z",
+  "modifiedat": "2025-05-14T07:03:25.205331384Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/benborla/servers/mcp-server-mysql/meta",
   "serverid": "mcp-server-mysql",

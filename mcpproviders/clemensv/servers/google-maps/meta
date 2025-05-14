@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:39:14.806722837Z",
+  "createdat": "2025-05-14T07:04:49.450823758Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/clemensv/servers/google-maps/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:39:14.806722837Z",
+  "modifiedat": "2025-05-14T07:04:49.450823758Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/clemensv/servers/google-maps/meta",
   "serverid": "google-maps",

@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:40:05.532538038Z",
+  "createdat": "2025-05-14T07:05:41.011034792Z",
   "description": "A Model Context Protocol (MCP) server for converting Markdown content to interactive mindmaps.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T05:40:05.532538038Z",
+  "modifiedat": "2025-05-14T07:05:41.011034792Z",
   "name": "io.github.YuChenSSR/mindmap-mcp-server",
   "prompts": [],
   "registries": [

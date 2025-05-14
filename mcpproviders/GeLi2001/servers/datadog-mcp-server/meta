@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:39:33.371399678Z",
+  "createdat": "2025-05-14T07:05:08.334896156Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/GeLi2001/servers/datadog-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:39:33.371399678Z",
+  "modifiedat": "2025-05-14T07:05:08.334896156Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/GeLi2001/servers/datadog-mcp-server/meta",
   "serverid": "datadog-mcp-server",

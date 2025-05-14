@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:38:39.598880979Z",
+  "createdat": "2025-05-14T07:04:13.618453714Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/tesla0225/servers/mcp-create/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:38:39.598880979Z",
+  "modifiedat": "2025-05-14T07:04:13.618453714Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/tesla0225/servers/mcp-create/meta",
   "serverid": "mcp-create",

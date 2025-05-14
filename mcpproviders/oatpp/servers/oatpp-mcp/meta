@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:37:54.834536388Z",
+  "createdat": "2025-05-14T07:03:26.466695809Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/oatpp/servers/oatpp-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:37:54.834536388Z",
+  "modifiedat": "2025-05-14T07:03:26.466695809Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/oatpp/servers/oatpp-mcp/meta",
   "serverid": "oatpp-mcp",

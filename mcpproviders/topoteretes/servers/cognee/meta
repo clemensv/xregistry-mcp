@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T05:36:13.51894633Z",
+  "createdat": "2025-05-14T07:01:44.23366984Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/topoteretes/servers/cognee/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T05:36:13.51894633Z",
+  "modifiedat": "2025-05-14T07:01:44.23366984Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/topoteretes/servers/cognee/meta",
   "serverid": "cognee",

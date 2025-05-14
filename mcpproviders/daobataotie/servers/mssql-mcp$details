@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T05:36:42.377112457Z",
+  "createdat": "2025-05-14T07:02:13.383165488Z",
   "description": "MSSQL MCP Server provides database interaction and business intelligence capabilities, enabling running SQL queries, analyzing business data, and automatically generating business insight memos.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/daobataotie/servers/mssql-mcp/meta",
-  "modifiedat": "2025-05-14T05:36:42.377112457Z",
+  "modifiedat": "2025-05-14T07:02:13.383165488Z",
   "name": "io.github.daobataotie/mssql-mcp",
   "prompts": [
     {
