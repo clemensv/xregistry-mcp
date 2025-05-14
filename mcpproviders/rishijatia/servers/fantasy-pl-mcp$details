@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:19:58.943725903Z",
+  "createdat": "2025-05-14T05:38:17.272643944Z",
   "description": "A Model Context Protocol (MCP) server that provides access to Fantasy Premier League (FPL) data and tools. This server allows you to interact with FPL data in Claude for Desktop and other MCP-compatible clients.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/rishijatia/servers/fantasy-pl-mcp/meta",
-  "modifiedat": "2025-05-13T21:19:58.943725903Z",
+  "modifiedat": "2025-05-14T05:38:17.272643944Z",
   "name": "io.github.rishijatia/fantasy-pl-mcp",
   "prompts": [
     {

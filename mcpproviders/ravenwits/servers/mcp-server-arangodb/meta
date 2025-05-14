@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-13T21:18:04.915285516Z",
+  "createdat": "2025-05-14T05:36:24.169346972Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/ravenwits/servers/mcp-server-arangodb/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-13T21:18:04.915285516Z",
+  "modifiedat": "2025-05-14T05:36:24.169346972Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/ravenwits/servers/mcp-server-arangodb/meta",
   "serverid": "mcp-server-arangodb",

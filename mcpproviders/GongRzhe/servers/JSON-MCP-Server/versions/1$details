@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:17:58.140587629Z",
+  "createdat": "2025-05-14T05:36:17.43028725Z",
   "description": "A JSON Model Context Protocol (MCP) server implementation for querying and manipulating JSON data. This server enables LLMs to interact with JSON data through a set of standardized tools.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-13T21:17:58.140587629Z",
+  "modifiedat": "2025-05-14T05:36:17.43028725Z",
   "name": "io.github.GongRzhe/JSON-MCP-Server",
   "prompts": [],
   "registries": [

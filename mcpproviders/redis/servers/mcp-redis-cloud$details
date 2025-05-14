@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:22:31.072943227Z",
+  "createdat": "2025-05-14T05:40:48.0321839Z",
   "description": "Model Context Protocol (MCP) server for managing Redis Cloud resources via natural language commands.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/redis/servers/mcp-redis-cloud/meta",
-  "modifiedat": "2025-05-13T21:22:31.072943227Z",
+  "modifiedat": "2025-05-14T05:40:48.0321839Z",
   "name": "io.github.redis/mcp-redis-cloud",
   "prompts": [],
   "registries": [

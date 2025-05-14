@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-13T21:18:13.725459143Z",
+  "createdat": "2025-05-14T05:36:32.891830249Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/sirmews/servers/mcp-pinecone/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-13T21:18:13.725459143Z",
+  "modifiedat": "2025-05-14T05:36:32.891830249Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/sirmews/servers/mcp-pinecone/meta",
   "serverid": "mcp-pinecone",

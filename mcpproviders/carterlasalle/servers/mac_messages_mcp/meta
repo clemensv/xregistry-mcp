@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-13T21:20:16.948825311Z",
+  "createdat": "2025-05-14T05:38:35.02900755Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/carterlasalle/servers/mac_messages_mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-13T21:20:16.948825311Z",
+  "modifiedat": "2025-05-14T05:38:35.02900755Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/carterlasalle/servers/mac_messages_mcp/meta",
   "serverid": "mac_messages_mcp",

@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:20:50.002632972Z",
+  "createdat": "2025-05-14T05:39:07.740671771Z",
   "description": "Minima is an open source RAG on-premises containers, with ability to integrate with ChatGPT and MCP. Minima can also be used as a fully local RAG.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/dmayboroda/servers/minima/meta",
-  "modifiedat": "2025-05-13T21:20:50.002632972Z",
+  "modifiedat": "2025-05-14T05:39:07.740671771Z",
   "name": "io.github.dmayboroda/minima",
   "prompts": [
     {

@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:20:37.9719607Z",
+  "createdat": "2025-05-14T05:38:55.815638112Z",
   "description": "A community developed and maintained Model Context Protocol (MCP) server that provides access to Nasdaq Data Link financial and economic datasets through natural language interfaces and large language models.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-13T21:20:37.9719607Z",
+  "modifiedat": "2025-05-14T05:38:55.815638112Z",
   "name": "io.github.stefanoamorelli/nasdaq-data-link-mcp",
   "prompts": [],
   "registries": [],

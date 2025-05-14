@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:18:08.186682269Z",
+  "createdat": "2025-05-14T05:36:27.428867694Z",
   "description": "The Tavily MCP server provides seamless interaction with the tavily-search and tavily-extract tools, enabling real-time web search and intelligent data extraction capabilities via the Model Context Protocol.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/tavily-ai/servers/tavily-mcp/meta",
-  "modifiedat": "2025-05-13T21:18:08.186682269Z",
+  "modifiedat": "2025-05-14T05:36:27.428867694Z",
   "name": "io.github.tavily-ai/tavily-mcp",
   "prompts": [],
   "registries": [

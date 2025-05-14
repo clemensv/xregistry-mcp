@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:20:55.306079789Z",
+  "createdat": "2025-05-14T05:39:13.008611507Z",
   "description": "A Model Context Protocol server for interacting with Rememberizer's document and knowledge management API. This server enables Large Language Models to search, retrieve, and manage documents and integrations through Rememberizer.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-13T21:20:55.306079789Z",
+  "modifiedat": "2025-05-14T05:39:13.008611507Z",
   "name": "io.github.skydeckai/mcp-server-rememberizer",
   "prompts": [],
   "registries": [

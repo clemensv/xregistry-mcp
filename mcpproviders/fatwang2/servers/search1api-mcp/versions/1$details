@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:21:56.946089562Z",
+  "createdat": "2025-05-14T05:40:14.173884083Z",
   "description": "A Model Context Protocol (MCP) server that provides search and crawl functionality using Search1API.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-13T21:21:56.946089562Z",
+  "modifiedat": "2025-05-14T05:40:14.173884083Z",
   "name": "io.github.fatwang2/search1api-mcp",
   "prompts": [],
   "registries": [

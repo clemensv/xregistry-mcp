@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:18:31.273221541Z",
+  "createdat": "2025-05-14T05:36:50.299906204Z",
   "description": "MCP Server for ShaderToy, connecting LLM like Claude with ShaderToy through Model Context Protocol (MCP), allowing the LLM to query and read the entire web page and generate complex shaders.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-13T21:18:31.273221541Z",
+  "modifiedat": "2025-05-14T05:36:50.299906204Z",
   "name": "io.github.wilsonchenghy/ShaderToy-MCP",
   "prompts": [],
   "registries": [

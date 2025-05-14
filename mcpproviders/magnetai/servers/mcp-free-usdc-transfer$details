@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:18:07.183375084Z",
+  "createdat": "2025-05-14T05:36:26.421805922Z",
   "description": "An MCP server implementation enabling free USDC transfers on Base with Coinbase CDP MPC Wallet integration.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/magnetai/servers/mcp-free-usdc-transfer/meta",
-  "modifiedat": "2025-05-13T21:18:07.183375084Z",
+  "modifiedat": "2025-05-14T05:36:26.421805922Z",
   "name": "io.github.magnetai/mcp-free-usdc-transfer",
   "prompts": [],
   "registries": [

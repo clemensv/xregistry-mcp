@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-13T21:17:51.114874703Z",
+  "createdat": "2025-05-14T05:36:10.491265121Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/sparfenyuk/servers/mcp-proxy/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-13T21:17:51.114874703Z",
+  "modifiedat": "2025-05-14T05:36:10.491265121Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/sparfenyuk/servers/mcp-proxy/meta",
   "serverid": "mcp-proxy",

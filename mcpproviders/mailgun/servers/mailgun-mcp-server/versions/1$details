@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:17:42.671284031Z",
+  "createdat": "2025-05-14T05:36:02.171490196Z",
   "description": "A Model Context Protocol (MCP) server implementation for Mailgun, enabling MCP-compatible AI clients like Claude Desktop to interact with the service.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-13T21:17:42.671284031Z",
+  "modifiedat": "2025-05-14T05:36:02.171490196Z",
   "name": "io.github.mailgun/mailgun-mcp-server",
   "prompts": [
     {

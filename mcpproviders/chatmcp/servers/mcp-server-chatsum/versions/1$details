@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:17:45.733760181Z",
+  "createdat": "2025-05-14T05:36:05.1931626Z",
   "description": "This MCP Server is used to summarize your chat messages.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-13T21:17:45.733760181Z",
+  "modifiedat": "2025-05-14T05:36:05.1931626Z",
   "name": "io.github.chatmcp/mcp-server-chatsum",
   "prompts": [],
   "registries": [

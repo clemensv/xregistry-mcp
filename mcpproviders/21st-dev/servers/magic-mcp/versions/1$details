@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:17:49.823313028Z",
+  "createdat": "2025-05-14T05:36:09.220665484Z",
   "description": "Magic Component Platform (MCP) is a powerful AI-driven tool that helps developers create beautiful, modern UI components instantly through natural language descriptions. It integrates seamlessly with popular IDEs and provides a streamlined workflow for UI development.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-13T21:17:49.823313028Z",
+  "modifiedat": "2025-05-14T05:36:09.220665484Z",
   "name": "io.github.21st-dev/magic-mcp",
   "prompts": [],
   "registries": [

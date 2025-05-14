@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:17:51.114874703Z",
+  "createdat": "2025-05-14T05:36:10.491265121Z",
   "description": "The mcp-proxy is a tool that lets you switch between server transports. It supports proxying MCP server requests between stdio and SSE transports, enabling clients like Claude Desktop to communicate with MCP servers over SSE or stdio.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/sparfenyuk/servers/mcp-proxy/meta",
-  "modifiedat": "2025-05-13T21:17:51.114874703Z",
+  "modifiedat": "2025-05-14T05:36:10.491265121Z",
   "name": "io.github.sparfenyuk/mcp-proxy",
   "prompts": [],
   "registries": [

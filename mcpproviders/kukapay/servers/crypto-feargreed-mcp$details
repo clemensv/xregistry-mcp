@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:17:43.933586642Z",
+  "createdat": "2025-05-14T05:36:03.408334082Z",
   "description": "A mcp server that provides real-time and historical Crypto Fear \u0026 Greed Index data, powered by the Alternative.me.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/kukapay/servers/crypto-feargreed-mcp/meta",
-  "modifiedat": "2025-05-13T21:17:43.933586642Z",
+  "modifiedat": "2025-05-14T05:36:03.408334082Z",
   "name": "io.github.kukapay/crypto-feargreed-mcp",
   "prompts": [
     {

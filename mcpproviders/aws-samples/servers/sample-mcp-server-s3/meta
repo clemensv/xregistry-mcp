@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-13T21:22:03.495090664Z",
+  "createdat": "2025-05-14T05:40:20.683426368Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/aws-samples/servers/sample-mcp-server-s3/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-13T21:22:03.495090664Z",
+  "modifiedat": "2025-05-14T05:40:20.683426368Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/aws-samples/servers/sample-mcp-server-s3/meta",
   "serverid": "sample-mcp-server-s3",

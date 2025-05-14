@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:17:51.792940096Z",
+  "createdat": "2025-05-14T05:36:11.167489459Z",
   "description": "An MCP server implementation that integrates with Contentful's Content Management API, providing comprehensive content management capabilities.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-13T21:17:51.792940096Z",
+  "modifiedat": "2025-05-14T05:36:11.167489459Z",
   "name": "io.github.ivo-toby/contentful-mcp",
   "prompts": [],
   "registries": [

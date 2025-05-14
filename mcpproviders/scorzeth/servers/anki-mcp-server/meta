@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-13T21:18:15.313516792Z",
+  "createdat": "2025-05-14T05:36:34.473100642Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/scorzeth/servers/anki-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-13T21:18:15.313516792Z",
+  "modifiedat": "2025-05-14T05:36:34.473100642Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/scorzeth/servers/anki-mcp-server/meta",
   "serverid": "anki-mcp-server",

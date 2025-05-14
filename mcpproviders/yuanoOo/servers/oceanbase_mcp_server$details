@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:19:50.580618394Z",
+  "createdat": "2025-05-14T05:38:09.054239894Z",
   "description": "A Model Context Protocol (MCP) server that enables secure interaction with OceanBase databases. This server allows AI assistants to list tables, read data, and execute SQL queries through a controlled interface, making database exploration and analysis safer and more structured.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/yuanoOo/servers/oceanbase_mcp_server/meta",
-  "modifiedat": "2025-05-13T21:19:50.580618394Z",
+  "modifiedat": "2025-05-14T05:38:09.054239894Z",
   "name": "io.github.yuanoOo/oceanbase_mcp_server",
   "prompts": [],
   "registries": [

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-13T21:20:06.316597255Z",
+  "createdat": "2025-05-14T05:38:24.531747345Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/AshikNesin/servers/pushover-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-13T21:20:06.316597255Z",
+  "modifiedat": "2025-05-14T05:38:24.531747345Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/AshikNesin/servers/pushover-mcp/meta",
   "serverid": "pushover-mcp",

@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:22:35.799351833Z",
+  "createdat": "2025-05-14T05:40:52.751030774Z",
   "description": "A Model Context Protocol (MCP) server implementation that provides database interaction with Snowflake. This server enables running SQL queries via tools and exposes data insights and schema context as resources.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-13T21:22:35.799351833Z",
+  "modifiedat": "2025-05-14T05:40:52.751030774Z",
   "name": "io.github.isaacwasserman/mcp-snowflake-server",
   "prompts": [],
   "registries": [

@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:17:45.195416341Z",
+  "createdat": "2025-05-14T05:36:04.663482854Z",
   "description": "Expose your FastAPI endpoints as Model Context Protocol (MCP) tools, with Auth!",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-13T21:17:45.195416341Z",
+  "modifiedat": "2025-05-14T05:36:04.663482854Z",
   "name": "io.github.tadata-org/fastapi_mcp",
   "prompts": [],
   "registries": [],

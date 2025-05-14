@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-13T21:18:04.054071445Z",
+  "createdat": "2025-05-14T05:36:23.320531605Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/mobile-next/servers/mobile-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-13T21:18:04.054071445Z",
+  "modifiedat": "2025-05-14T05:36:23.320531605Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/mobile-next/servers/mobile-mcp/meta",
   "serverid": "mobile-mcp",

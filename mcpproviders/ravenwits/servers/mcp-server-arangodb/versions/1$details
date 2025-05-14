@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:18:04.915285516Z",
+  "createdat": "2025-05-14T05:36:24.169346972Z",
   "description": "A Model Context Protocol server for ArangoDB providing database interaction capabilities through ArangoDB with core database operations and MCP tool integration.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-13T21:18:04.915285516Z",
+  "modifiedat": "2025-05-14T05:36:24.169346972Z",
   "name": "io.github.ravenwits/mcp-server-arangodb",
   "prompts": [],
   "registries": [

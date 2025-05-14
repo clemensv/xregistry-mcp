@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-13T21:22:10.191658249Z",
+  "createdat": "2025-05-14T05:40:27.312749051Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/quarkiverse/servers/quarkus-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-13T21:22:10.191658249Z",
+  "modifiedat": "2025-05-14T05:40:27.312749051Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/quarkiverse/servers/quarkus-mcp-server/meta",
   "serverid": "quarkus-mcp-server",

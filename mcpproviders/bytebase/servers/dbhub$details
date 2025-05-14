@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:18:37.159196924Z",
+  "createdat": "2025-05-14T05:36:56.111117644Z",
   "description": "DBHub is a universal database gateway implementing the Model Context Protocol (MCP) server interface. This gateway allows MCP-compatible clients to connect to and explore different databases.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/bytebase/servers/dbhub/meta",
-  "modifiedat": "2025-05-13T21:18:37.159196924Z",
+  "modifiedat": "2025-05-14T05:36:56.111117644Z",
   "name": "io.github.bytebase/dbhub",
   "prompts": [
     {

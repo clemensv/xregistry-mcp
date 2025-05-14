@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:17:44.363168766Z",
+  "createdat": "2025-05-14T05:36:03.837269402Z",
   "description": "Model Context Protocol (MCP) Server for CircleCI enabling natural language interaction with CircleCI pipelines and logs.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/CircleCI-Public/servers/mcp-server-circleci/meta",
-  "modifiedat": "2025-05-13T21:17:44.363168766Z",
+  "modifiedat": "2025-05-14T05:36:03.837269402Z",
   "name": "io.github.CircleCI-Public/mcp-server-circleci",
   "prompts": [],
   "registries": [

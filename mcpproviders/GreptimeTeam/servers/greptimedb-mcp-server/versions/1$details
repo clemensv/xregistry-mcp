@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:17:48.640627741Z",
+  "createdat": "2025-05-14T05:36:08.049161177Z",
   "description": "A Model Context Protocol (MCP) server implementation for GreptimeDB. This server provides AI assistants with a secure and structured way to explore and analyze databases. It enables them to list tables, read data, and execute SQL queries through a controlled interface, ensuring responsible database access.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-13T21:17:48.640627741Z",
+  "modifiedat": "2025-05-14T05:36:08.049161177Z",
   "name": "io.github.GreptimeTeam/greptimedb-mcp-server",
   "prompts": [
     {

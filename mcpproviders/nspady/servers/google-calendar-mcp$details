@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:18:14.274491353Z",
+  "createdat": "2025-05-14T05:36:33.438324922Z",
   "description": "This is a Model Context Protocol (MCP) server that provides integration with Google Calendar. It allows LLMs to read, create, update and search for calendar events through a standardized interface.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/nspady/servers/google-calendar-mcp/meta",
-  "modifiedat": "2025-05-13T21:18:14.274491353Z",
+  "modifiedat": "2025-05-14T05:36:33.438324922Z",
   "name": "io.github.nspady/google-calendar-mcp",
   "prompts": [],
   "registries": [

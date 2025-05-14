@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:17:43.827100127Z",
+  "createdat": "2025-05-14T05:36:03.301375878Z",
   "description": "Dune Analytics tools",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-13T21:17:43.827100127Z",
+  "modifiedat": "2025-05-14T05:36:03.301375878Z",
   "name": "io.github.kukapay/dune-analytics-mcp",
   "prompts": [],
   "registries": [

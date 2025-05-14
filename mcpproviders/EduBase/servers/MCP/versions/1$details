@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-13T21:17:42.849200493Z",
+  "createdat": "2025-05-14T05:36:02.343821869Z",
   "description": "Implementation of the Model Context Protocol (MCP) server for the EduBase platform. It allows MCP clients and LLMs to interact with EduBase account and perform tasks.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-13T21:17:42.849200493Z",
+  "modifiedat": "2025-05-14T05:36:02.343821869Z",
   "name": "io.github.EduBase/MCP",
   "prompts": [],
   "registries": [

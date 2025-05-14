@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-13T21:19:27.661454643Z",
+  "createdat": "2025-05-14T05:37:46.366734139Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/EnesCinr/servers/twitter-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-13T21:19:27.661454643Z",
+  "modifiedat": "2025-05-14T05:37:46.366734139Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/EnesCinr/servers/twitter-mcp/meta",
   "serverid": "twitter-mcp",

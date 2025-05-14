@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-13T21:19:24.148046124Z",
+  "createdat": "2025-05-14T05:37:42.870330268Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/YanxingLiu/servers/dify-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-13T21:19:24.148046124Z",
+  "modifiedat": "2025-05-14T05:37:42.870330268Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/YanxingLiu/servers/dify-mcp-server/meta",
   "serverid": "dify-mcp-server",
