@@ -1,0 +1,35 @@
+@rooturl = https://mcpxreg.org
+
+### You can see the web interface here: https://mcpxreg.org/mcpproviders
+
+###
+GET {{rooturl}}/registry
+Accept: application/json
+
+###
+GET {{rooturl}}/registry/mcpproviders
+Accept: application/json
+
+###
+GET {{rooturl}}/registry/mcpproviders/CodeLogicIncEngineering
+Accept: application/json
+
+
+###
+GET {{rooturl}}/registry/mcpproviders/CodeLogicIncEngineering/servers
+Accept: application/json
+
+
+###
+GET {{rooturl}}/registry/mcpproviders/CodeLogicIncEngineering/servers/codelogic-mcp-server
+Accept: application/json
+
+###
+GET {{rooturl}}/registry/mcpproviders/CodeLogicIncEngineering/servers/codelogic-mcp-server/meta
+Accept: application/json
+
+### Agents
+### Web site: https://clemensv.github.io/xregistry-a2a/
+
+GET https://clemensv.github.io/xregistry-a2a/registry
+Accept: application/json

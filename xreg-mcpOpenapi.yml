@@ -1,0 +1,518 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "xRegistry API",
+    "description": "WORK IN PROGRESS -- simplified xRegistry API for MCP servers. See spec sections (e.g. 'Registry Capabilities', 'Retrieving the Registry Model', 'Doc', etc.) for details.",
+    "version": "1.0-rc1"
+  },
+  "servers": [
+    {
+      "url": "https://mcpxreg.org/registry/mcpproviders/CodeLogicIncEngineering"
+    }
+  ],
+  "security": [
+    {
+      "api_key": []
+    }
+  ],
+  "paths": {
+    "/servers": {
+      "get": {
+        "operationId": "getMcpproviderServersAll",
+        "description": "Gets an optionally filtered collection of resources in a group. Supports query parameters 'inline', 'skip', 'top', 'filter', and 'doc'. (See spec: Registry Collections, Inline, Filter, and Resource Metadata vs Resource Document)",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/inline"
+          },
+          {
+            "in": "query",
+            "name": "skip",
+            "description": "The number of resources to skip (pagination).",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "top",
+            "description": "The number of resources to return (pagination).",
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          },
+          {
+            "$ref": "#/components/parameters/doc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The collection of resources (optionally filtered).",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/server"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/servers/{resourceid}": {
+      "get": {
+        "operationId": "getMcpproviderServer",
+        "description": "Gets the resource (default version). Supports $details view via the 'doc' query parameter. (See spec: Retrieving a Resource and Retrieving a Resource as Metadata)",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/resourceid"
+          },
+          {
+            "$ref": "#/components/parameters/inline"
+          },
+          {
+            "$ref": "#/components/parameters/filter"
+          },
+          {
+            "$ref": "#/components/parameters/doc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The resource (or a redirect if a RESOURCEurl is set).",
+            "headers": {
+              "resource-id": {
+                "$ref": "#/components/headers/resource-id"
+              },
+              "resource-version": {
+                "$ref": "#/components/headers/resource-version"
+              },
+              "resource-name": {
+                "$ref": "#/components/headers/resource-name"
+              },
+              "resource-self": {
+                "$ref": "#/components/headers/resource-self"
+              },
+              "resource-description": {
+                "$ref": "#/components/headers/resource-description"
+              },
+              "resource-documentation": {
+                "$ref": "#/components/headers/resource-documentation"
+              },
+              "resource-labels": {
+                "$ref": "#/components/headers/resource-labels"
+              },
+              "resource-createdat": {
+                "$ref": "#/components/headers/resource-createdat"
+              },
+              "resource-modifiedat": {
+                "$ref": "#/components/headers/resource-modifiedat"
+              },
+              "Content-Location": {
+                "description": "Permalink location of the returned version.",
+                "schema": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            },
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/server"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "api_key": {
+        "type": "apiKey",
+        "name": "code",
+        "in": "query"
+      }
+    },
+    "parameters": {
+      "resourceid": {
+        "name": "resourceid",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string"
+        },
+        "description": "The unique identifier of the resource."
+      },
+      "resource-description": {
+        "name": "resource-description",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "description": "The description attribute for a resource."
+      },
+      "resource-documentation": {
+        "name": "resource-documentation",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "format": "uri"
+        },
+        "description": "The documentation URL for a resource."
+      },
+      "resource-labels": {
+        "name": "resource-labels",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "description": "The labels attribute for a resource."
+      },
+      "specversion": {
+        "name": "specversion",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string"
+        },
+        "description": "The xRegistry spec version to use."
+      },
+      "inline": {
+        "name": "inline",
+        "in": "query",
+        "required": false,
+        "allowEmptyValue": true,
+        "schema": {
+          "type": "string"
+        },
+        "description": "Comma\u00e2\u20ac\u2018separated list of nested paths to inline (e.g. endpoints, endpoints.messages). See spec: Inline."
+      },
+      "filter": {
+        "name": "filter",
+        "in": "query",
+        "required": false,
+        "explode": true,
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": "Filter criterion(s) (see spec: Filter)."
+      },
+      "doc": {
+        "name": "doc",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "boolean"
+        },
+        "description": "If true, returns the document view (with relative URLs and default version data removed). See spec: Doc."
+      }
+    },
+    "headers": {
+      "resource-id": {
+        "description": "The resource identifier. MUST be percent\u00e2\u20ac\u2018encoded per xRegistry specifications (i.e. all non\u00e2\u20ac\u2018printable ASCII characters, spaces, quotes, and percent signs must be encoded).",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "resource-version": {
+        "description": "The resource version identifier. MUST be percent\u00e2\u20ac\u2018encoded per xRegistry specifications.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "resource-name": {
+        "description": "The resource name. MUST be percent\u00e2\u20ac\u2018encoded per xRegistry specifications.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "resource-self": {
+        "description": "The self URL of the resource. MUST be percent\u00e2\u20ac\u2018encoded per xRegistry specifications.",
+        "schema": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "resource-description": {
+        "description": "The resource description. MUST be percent\u00e2\u20ac\u2018encoded per xRegistry specifications.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "resource-documentation": {
+        "description": "The resource documentation URL. MUST be percent\u00e2\u20ac\u2018encoded per xRegistry specifications.",
+        "schema": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "resource-labels": {
+        "description": "Serialized resource labels. MUST be percent\u00e2\u20ac\u2018encoded per xRegistry specifications.",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "resource-createdat": {
+        "description": "The resource creation timestamp. MUST be percent\u00e2\u20ac\u2018encoded per xRegistry specifications.",
+        "schema": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "resource-modifiedat": {
+        "description": "The resource modification timestamp. MUST be percent\u00e2\u20ac\u2018encoded per xRegistry specifications.",
+        "schema": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "schemas": {
+      "server": {
+        "type": "object",
+        "properties": {
+          "serverid": {
+            "type": "string",
+            "description": "Opaque server instance identifier."
+          },
+          "name": {
+            "type": "string",
+            "description": "Unique reverse-DNS identifier of the repository."
+          },
+          "epoch": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Unix epoch when the manifest was generated."
+          },
+          "self": {
+            "type": "string",
+            "format": "uri",
+            "description": "Canonical URL of this manifest."
+          },
+          "xid": {
+            "type": "string",
+            "description": "Repository-relative path for this manifest."
+          },
+          "description": {
+            "type": "string",
+            "description": "Repository or server overview."
+          },
+          "documentation": {
+            "type": "string",
+            "format": "uri",
+            "description": "Reference documentation URI."
+          },
+          "labels": {
+            "type": "object",
+            "description": "Arbitrary key\u00e2\u20ac\u201cvalue metadata.",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "createdat": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO-8601 creation timestamp."
+          },
+          "modifiedat": {
+            "type": "string",
+            "format": "date-time",
+            "description": "ISO-8601 last modification timestamp."
+          },
+          "version_detail": {
+            "type": "object",
+            "properties": {
+              "version": {
+                "type": "string",
+                "description": "Semantic version number detail."
+              }
+            }
+          },
+          "registries": {
+            "type": "array",
+            "description": "Package registry metadata blocks.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "package_name": {
+                  "type": "string"
+                },
+                "license": {
+                  "type": "string"
+                },
+                "command_arguments": {
+                  "type": "object",
+                  "properties": {
+                    "sub_commands": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "named_arguments": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "positional_arguments": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "environment_variables": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "required": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    },
+                    "named_arguments": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "remotes": {
+            "type": "array",
+            "description": "Source\u00e2\u20ac\u2018code hosting locations.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "transporttype": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            }
+          },
+          "prompts": {
+            "type": "array",
+            "description": "Static prompt templates bundled with this server.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "arguments": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "required": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "tools": {
+            "type": "array",
+            "description": "Tool definitions invocable via the MCP runtime.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "inputschema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          },
+          "resources": {
+            "type": "array",
+            "description": "Data resources the server can expose or subscribe to.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uritemplate": {
+                  "type": "string",
+                  "format": "uri-template"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "mimetype": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
