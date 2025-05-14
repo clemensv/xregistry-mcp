@@ -3,6 +3,7 @@
         "mcpproviders": {
             "plural": "mcpproviders",
             "singular": "mcpprovider",
+            "description": "Registry of Model Context Protocol (MCP) servers and their capabilities, organized by provider.",
             "resources": {
                 "servers": {
                     "plural": "servers",
@@ -27,6 +28,7 @@
                         "version_detail": {
                             "name": "version_detail",
                             "type": "object",
+                            "description": "Version detail for the server.",
                             "attributes": {
                                 "version": {
                                     "name": "version",
@@ -44,15 +46,18 @@
                                 "attributes": {
                                     "name": {
                                         "name": "name",
-                                        "type": "string"
+                                        "type": "string",
+                                        "description": "Name of the registry."
                                     },
                                     "package_name": {
                                         "name": "package_name",
-                                        "type": "string"
+                                        "type": "string",
+                                        "description": "Name of the package."
                                     },
                                     "license": {
                                         "name": "license",
-                                        "type": "string"
+                                        "type": "string",
+                                        "description": "License of the package."
                                     },
                                     "command_arguments": {
                                         "name": "command_arguments",
@@ -136,11 +141,13 @@
                                 "attributes": {
                                     "transporttype": {
                                         "name": "transporttype",
-                                        "type": "string"
+                                        "type": "string",
+                                        "description": "Transport type of the remote."
                                     },
                                     "url": {
                                         "name": "url",
-                                        "type": "url"
+                                        "type": "url",
+                                        "description": "URL of the remote."
                                     }
                                 }
                             }
