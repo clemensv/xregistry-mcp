@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:05:16.215576123Z",
+  "createdat": "2025-05-15T12:19:11.644705631Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/StevenStavrakis/servers/obsidian-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:05:16.215576123Z",
+  "modifiedat": "2025-05-15T12:19:11.644705631Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/StevenStavrakis/servers/obsidian-mcp/meta",
   "serverid": "obsidian-mcp",

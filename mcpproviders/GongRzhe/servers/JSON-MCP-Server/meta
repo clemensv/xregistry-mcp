@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:01:48.193532946Z",
+  "createdat": "2025-05-15T12:18:43.091218656Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/JSON-MCP-Server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:01:48.193532946Z",
+  "modifiedat": "2025-05-15T12:18:43.091218656Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/JSON-MCP-Server/meta",
   "serverid": "JSON-MCP-Server",

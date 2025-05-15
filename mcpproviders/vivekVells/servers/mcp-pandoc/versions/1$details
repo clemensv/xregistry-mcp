@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:03:16.700370452Z",
+  "createdat": "2025-05-15T12:18:59.154581586Z",
   "description": "A Model Context Protocol server for document format conversion using pandoc. This server provides tools to transform content between different document formats while preserving formatting and structure.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T07:03:16.700370452Z",
+  "modifiedat": "2025-05-15T12:18:59.154581586Z",
   "name": "io.github.vivekVells/mcp-pandoc",
   "prompts": [],
   "registries": [

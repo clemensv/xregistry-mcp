@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:03:42.165386185Z",
+  "createdat": "2025-05-15T12:19:02.147390058Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/DMontgomery40/servers/deepseek-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:03:42.165386185Z",
+  "modifiedat": "2025-05-15T12:19:02.147390058Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/DMontgomery40/servers/deepseek-mcp-server/meta",
   "serverid": "deepseek-mcp-server",

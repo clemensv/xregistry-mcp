@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:01:33.515164914Z",
+  "createdat": "2025-05-15T12:18:36.479850261Z",
   "description": "A Model Context Protocol server that enables LLMs to interact with MongoDB databases. This server provides capabilities for inspecting collection schemas and executing MongoDB operations through a standardized interface.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/kiliczsh/servers/mcp-mongo-server/meta",
-  "modifiedat": "2025-05-14T07:01:33.515164914Z",
+  "modifiedat": "2025-05-15T12:18:36.479850261Z",
   "name": "io.github.kiliczsh/mcp-mongo-server",
   "prompts": [
     {

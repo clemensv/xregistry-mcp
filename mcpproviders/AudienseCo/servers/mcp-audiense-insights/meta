@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:06:17.257210885Z",
+  "createdat": "2025-05-15T12:19:16.66486077Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/AudienseCo/servers/mcp-audiense-insights/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:06:17.257210885Z",
+  "modifiedat": "2025-05-15T12:19:16.66486077Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/AudienseCo/servers/mcp-audiense-insights/meta",
   "serverid": "mcp-audiense-insights",

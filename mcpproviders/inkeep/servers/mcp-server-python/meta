@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:01:38.172510386Z",
+  "createdat": "2025-05-15T12:18:39.069548615Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/inkeep/servers/mcp-server-python/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:01:38.172510386Z",
+  "modifiedat": "2025-05-15T12:18:39.069548615Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/inkeep/servers/mcp-server-python/meta",
   "serverid": "mcp-server-python",

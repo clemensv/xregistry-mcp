@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:04:56.778752499Z",
+  "createdat": "2025-05-15T12:19:09.787776856Z",
   "description": "A Model Context Protocol server that builds iOS workspace/project that enables seamless workflow working with iOS projects in Visual Studio Code using extensions like Cline or Roo Code.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/ShenghaiWang/servers/xcodebuild/meta",
-  "modifiedat": "2025-05-14T07:04:56.778752499Z",
+  "modifiedat": "2025-05-15T12:19:09.787776856Z",
   "name": "io.github.ShenghaiWang/xcodebuild",
   "prompts": [],
   "registries": [

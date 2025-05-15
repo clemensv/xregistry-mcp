@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:01:46.748787239Z",
+  "createdat": "2025-05-15T12:18:42.50085887Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/ProgramComputer/servers/NASA-MCP-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:01:46.748787239Z",
+  "modifiedat": "2025-05-15T12:18:42.50085887Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/ProgramComputer/servers/NASA-MCP-server/meta",
   "serverid": "NASA-MCP-server",

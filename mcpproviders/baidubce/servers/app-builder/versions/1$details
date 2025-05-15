@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:05:54.235210429Z",
+  "createdat": "2025-05-15T12:19:14.874782394Z",
   "description": "This server provides MCP (Model Context Protocol) tools for interacting with Baidu AppBuilder applications. It supports both stdio and SSE (Server-Sent Events) protocols.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T07:05:54.235210429Z",
+  "modifiedat": "2025-05-15T12:19:14.874782394Z",
   "name": "io.github.baidubce/app-builder",
   "prompts": [],
   "registries": [

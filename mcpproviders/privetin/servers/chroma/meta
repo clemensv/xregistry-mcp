@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:04:31.856943693Z",
+  "createdat": "2025-05-15T12:19:07.542475817Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/privetin/servers/chroma/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:04:31.856943693Z",
+  "modifiedat": "2025-05-15T12:19:07.542475817Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/privetin/servers/chroma/meta",
   "serverid": "chroma",

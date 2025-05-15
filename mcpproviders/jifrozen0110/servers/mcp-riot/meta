@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:02:34.407815307Z",
+  "createdat": "2025-05-15T12:18:53.143148359Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/jifrozen0110/servers/mcp-riot/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:02:34.407815307Z",
+  "modifiedat": "2025-05-15T12:18:53.143148359Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/jifrozen0110/servers/mcp-riot/meta",
   "serverid": "mcp-riot",

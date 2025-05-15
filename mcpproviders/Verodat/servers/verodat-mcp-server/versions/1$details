@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:06:44.05935842Z",
+  "createdat": "2025-05-15T12:19:18.659884012Z",
   "description": "A Model Context Protocol (MCP) server implementation for Verodat, allowing AI models to interact with Verodat's data management capabilities through well-defined tools.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T07:06:44.05935842Z",
+  "modifiedat": "2025-05-15T12:19:18.659884012Z",
   "name": "io.github.Verodat/verodat-mcp-server",
   "prompts": [],
   "registries": [

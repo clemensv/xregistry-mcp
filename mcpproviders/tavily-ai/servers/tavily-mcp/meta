@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:01:58.373238246Z",
+  "createdat": "2025-05-15T12:18:46.007512779Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/tavily-ai/servers/tavily-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:01:58.373238246Z",
+  "modifiedat": "2025-05-15T12:18:46.007512779Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/tavily-ai/servers/tavily-mcp/meta",
   "serverid": "tavily-mcp",

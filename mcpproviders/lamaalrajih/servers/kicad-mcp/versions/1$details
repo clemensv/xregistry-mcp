@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:04:16.805260205Z",
+  "createdat": "2025-05-15T12:19:05.871831213Z",
   "description": "A Model Context Protocol (MCP) server for KiCad providing resources, tools, and prompts to interact with KiCad projects, schematics, BOMs, DRC checks, netlists, and circuit pattern recognition.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T07:04:16.805260205Z",
+  "modifiedat": "2025-05-15T12:19:05.871831213Z",
   "name": "io.github.lamaalrajih/kicad-mcp",
   "prompts": [
     {

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:01:40.285233884Z",
+  "createdat": "2025-05-15T12:18:39.962745314Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/langfuse/servers/mcp-server-langfuse/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:01:40.285233884Z",
+  "modifiedat": "2025-05-15T12:18:39.962745314Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/langfuse/servers/mcp-server-langfuse/meta",
   "serverid": "mcp-server-langfuse",

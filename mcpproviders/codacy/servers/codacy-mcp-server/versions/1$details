@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:06:10.181218833Z",
+  "createdat": "2025-05-15T12:19:16.104155328Z",
   "description": "MCP Server for the Codacy API, enabling access to repositories, files, quality, coverage, security and more.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T07:06:10.181218833Z",
+  "modifiedat": "2025-05-15T12:19:16.104155328Z",
   "name": "io.github.codacy/codacy-mcp-server",
   "prompts": [],
   "registries": [

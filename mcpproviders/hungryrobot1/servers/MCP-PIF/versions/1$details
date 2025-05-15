@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:01:30.642883409Z",
+  "createdat": "2025-05-15T12:18:34.245129039Z",
   "description": "This project implements the Model Context Protocol (MCP) as a practical embodiment of the Personal Intelligence Framework (PIF). Through structured tools and progressive interaction patterns, it creates spaces for meaningful development of understanding between humans and AI.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T07:01:30.642883409Z",
+  "modifiedat": "2025-05-15T12:18:34.245129039Z",
   "name": "io.github.hungryrobot1/MCP-PIF",
   "prompts": [],
   "registries": [

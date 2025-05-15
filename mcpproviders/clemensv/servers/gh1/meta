@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:04:53.084419224Z",
+  "createdat": "2025-05-15T12:19:09.473268239Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/clemensv/servers/gh1/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:04:53.084419224Z",
+  "modifiedat": "2025-05-15T12:19:09.473268239Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/clemensv/servers/gh1/meta",
   "serverid": "gh1",

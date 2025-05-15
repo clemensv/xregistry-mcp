@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:02:10.390543518Z",
+  "createdat": "2025-05-15T12:18:48.975537419Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/PaddleHQ/servers/paddle-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:02:10.390543518Z",
+  "modifiedat": "2025-05-15T12:18:48.975537419Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/PaddleHQ/servers/paddle-mcp-server/meta",
   "serverid": "paddle-mcp-server",

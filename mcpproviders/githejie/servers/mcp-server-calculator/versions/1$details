@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:03:32.937444856Z",
+  "createdat": "2025-05-15T12:19:01.134636436Z",
   "description": "A Model Context Protocol server for calculating. This server enables LLMs to use calculator for precise numerical calculations.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T07:03:32.937444856Z",
+  "modifiedat": "2025-05-15T12:19:01.134636436Z",
   "name": "io.github.githejie/mcp-server-calculator",
   "prompts": [],
   "registries": [

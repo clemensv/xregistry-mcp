@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:02:59.001690909Z",
+  "createdat": "2025-05-15T12:18:56.97088488Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/anshumax/servers/world_bank_mcp_server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:02:59.001690909Z",
+  "modifiedat": "2025-05-15T12:18:56.97088488Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/anshumax/servers/world_bank_mcp_server/meta",
   "serverid": "world_bank_mcp_server",

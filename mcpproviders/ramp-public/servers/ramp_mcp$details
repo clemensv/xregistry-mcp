@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:02:24.990591403Z",
+  "createdat": "2025-05-15T12:18:51.635443311Z",
   "description": "A Model Context Protocol server for retrieving and analyzing data or running tasks for Ramp using Developer API. Implements an ETL pipeline and ephemeral sqlite database in memory for analysis by an LLM.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/ramp-public/servers/ramp_mcp/meta",
-  "modifiedat": "2025-05-14T07:02:24.990591403Z",
+  "modifiedat": "2025-05-15T12:18:51.635443311Z",
   "name": "io.github.ramp-public/ramp_mcp",
   "prompts": [],
   "registries": [

@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:02:45.077694824Z",
+  "createdat": "2025-05-15T12:18:54.857334796Z",
   "description": "A suite of specialized MCP servers that help you get the most out of AWS, wherever you use MCP.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/awslabs/servers/mcp/meta",
-  "modifiedat": "2025-05-14T07:02:45.077694824Z",
+  "modifiedat": "2025-05-15T12:18:54.857334796Z",
   "name": "io.github.awslabs/mcp",
   "prompts": [],
   "registries": [

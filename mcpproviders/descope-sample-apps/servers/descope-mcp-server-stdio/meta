@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:01:30.743291115Z",
+  "createdat": "2025-05-15T12:18:34.342975642Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/descope-sample-apps/servers/descope-mcp-server-stdio/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:01:30.743291115Z",
+  "modifiedat": "2025-05-15T12:18:34.342975642Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/descope-sample-apps/servers/descope-mcp-server-stdio/meta",
   "serverid": "descope-mcp-server-stdio",

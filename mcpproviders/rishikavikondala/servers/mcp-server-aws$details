@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:03:38.137283278Z",
+  "createdat": "2025-05-15T12:19:01.698346181Z",
   "description": "A Model Context Protocol server implementation for AWS operations that currently supports S3 and DynamoDB services. All operations are automatically logged and can be accessed through the audit://aws-operations resource endpoint.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/rishikavikondala/servers/mcp-server-aws/meta",
-  "modifiedat": "2025-05-14T07:03:38.137283278Z",
+  "modifiedat": "2025-05-15T12:19:01.698346181Z",
   "name": "io.github.rishikavikondala/mcp-server-aws",
   "prompts": [],
   "registries": [

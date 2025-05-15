@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:01:45.850975Z",
+  "createdat": "2025-05-15T12:18:42.203130584Z",
   "description": "A Model Context Protocol server for Unity Catalog providing Unity Catalog Functions as MCP tools.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/ognis1205/servers/mcp-server-unitycatalog/meta",
-  "modifiedat": "2025-05-14T07:01:45.850975Z",
+  "modifiedat": "2025-05-15T12:18:42.203130584Z",
   "name": "io.github.ognis1205/mcp-server-unitycatalog",
   "prompts": [],
   "registries": [

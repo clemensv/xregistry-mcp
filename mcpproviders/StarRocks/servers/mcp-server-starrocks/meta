@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:01:36.984243545Z",
+  "createdat": "2025-05-15T12:18:38.449001235Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/StarRocks/servers/mcp-server-starrocks/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:01:36.984243545Z",
+  "modifiedat": "2025-05-15T12:18:38.449001235Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/StarRocks/servers/mcp-server-starrocks/meta",
   "serverid": "mcp-server-starrocks",

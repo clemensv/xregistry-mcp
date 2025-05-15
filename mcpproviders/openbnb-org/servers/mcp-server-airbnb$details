@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:03:53.884166783Z",
+  "createdat": "2025-05-15T12:19:03.384936275Z",
   "description": "MCP Server for searching Airbnb and get listing details.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/openbnb-org/servers/mcp-server-airbnb/meta",
-  "modifiedat": "2025-05-14T07:03:53.884166783Z",
+  "modifiedat": "2025-05-15T12:19:03.384936275Z",
   "name": "io.github.openbnb-org/mcp-server-airbnb",
   "prompts": [],
   "registries": [

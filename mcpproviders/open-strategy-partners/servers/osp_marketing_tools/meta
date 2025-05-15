@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:03:27.703217809Z",
+  "createdat": "2025-05-15T12:19:00.42388026Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/open-strategy-partners/servers/osp_marketing_tools/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:03:27.703217809Z",
+  "modifiedat": "2025-05-15T12:19:00.42388026Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/open-strategy-partners/servers/osp_marketing_tools/meta",
   "serverid": "osp_marketing_tools",

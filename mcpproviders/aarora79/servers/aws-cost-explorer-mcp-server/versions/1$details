@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:01:32.52142128Z",
+  "createdat": "2025-05-15T12:18:35.797919991Z",
   "description": "An MCP server for getting AWS spend data via Cost Explorer and Amazon Bedrock usage data via Model invocation logs in Amazon Cloud Watch through Anthropic's MCP (Model Control Protocol). It exposes AWS Cost Explorer API functionality to Claude Desktop, allowing natural language queries about AWS spend.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T07:01:32.52142128Z",
+  "modifiedat": "2025-05-15T12:18:35.797919991Z",
   "name": "io.github.aarora79/aws-cost-explorer-mcp-server",
   "prompts": [],
   "registries": [

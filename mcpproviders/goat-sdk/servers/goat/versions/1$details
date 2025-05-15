@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:06:36.60764476Z",
+  "createdat": "2025-05-15T12:19:18.14304653Z",
   "description": "GOAT MCP Server providing on-chain tools for EVM wallets including ETH transfers and ERC20 tokens like USDC.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T07:06:36.60764476Z",
+  "modifiedat": "2025-05-15T12:19:18.14304653Z",
   "name": "io.github.goat-sdk/goat",
   "prompts": [],
   "registries": [

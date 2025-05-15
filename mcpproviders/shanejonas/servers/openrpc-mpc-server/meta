@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:05:52.015638003Z",
+  "createdat": "2025-05-15T12:19:14.707987552Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/shanejonas/servers/openrpc-mpc-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:05:52.015638003Z",
+  "modifiedat": "2025-05-15T12:19:14.707987552Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/shanejonas/servers/openrpc-mpc-server/meta",
   "serverid": "openrpc-mpc-server",

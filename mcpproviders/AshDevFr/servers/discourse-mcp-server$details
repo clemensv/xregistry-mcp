@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:01:32.179699913Z",
+  "createdat": "2025-05-15T12:18:35.552362608Z",
   "description": "Node.js server implementing Model Context Protocol (MCP) for Discourse search operation.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/AshDevFr/servers/discourse-mcp-server/meta",
-  "modifiedat": "2025-05-14T07:01:32.179699913Z",
+  "modifiedat": "2025-05-15T12:18:35.552362608Z",
   "name": "io.github.AshDevFr/discourse-mcp-server",
   "prompts": [],
   "registries": [

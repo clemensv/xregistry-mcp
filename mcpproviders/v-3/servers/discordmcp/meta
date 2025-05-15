@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:02:02.792352236Z",
+  "createdat": "2025-05-15T12:18:47.046303454Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/v-3/servers/discordmcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:02:02.792352236Z",
+  "modifiedat": "2025-05-15T12:18:47.046303454Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/v-3/servers/discordmcp/meta",
   "serverid": "discordmcp",

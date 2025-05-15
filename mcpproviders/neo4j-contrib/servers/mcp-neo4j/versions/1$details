@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:01:32.689265989Z",
+  "createdat": "2025-05-15T12:18:35.91094045Z",
   "description": "Model Context Protocol (MCP) servers for managing context between large language models (LLMs) and Neo4j external systems, including natural language to Cypher queries, knowledge graph memory, and Neo4j Aura cloud service management.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T07:01:32.689265989Z",
+  "modifiedat": "2025-05-15T12:18:35.91094045Z",
   "name": "io.github.neo4j-contrib/mcp-neo4j",
   "prompts": [],
   "registries": [

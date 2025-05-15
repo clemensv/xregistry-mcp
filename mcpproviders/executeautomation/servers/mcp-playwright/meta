@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:01:32.438244896Z",
+  "createdat": "2025-05-15T12:18:35.736700648Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/executeautomation/servers/mcp-playwright/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:01:32.438244896Z",
+  "modifiedat": "2025-05-15T12:18:35.736700648Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/executeautomation/servers/mcp-playwright/meta",
   "serverid": "mcp-playwright",

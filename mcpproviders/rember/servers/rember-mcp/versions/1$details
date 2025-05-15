@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-14T07:04:38.763065988Z",
+  "createdat": "2025-05-15T12:19:08.188363446Z",
   "description": "Allow Claude to create flashcards for you with the official Model Context Protocol (MCP) for Rember. Rember helps you study and remember anything you care about by scheduling spaced repetition reviews.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-14T07:04:38.763065988Z",
+  "modifiedat": "2025-05-15T12:19:08.188363446Z",
   "name": "io.github.rember/rember-mcp",
   "prompts": [],
   "registries": [

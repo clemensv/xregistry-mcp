@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-14T07:03:03.185111706Z",
+  "createdat": "2025-05-15T12:18:57.46935988Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/amornpan/servers/py-mcp-mssql/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-14T07:03:03.185111706Z",
+  "modifiedat": "2025-05-15T12:18:57.46935988Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/amornpan/servers/py-mcp-mssql/meta",
   "serverid": "py-mcp-mssql",
