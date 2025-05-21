@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:38.613783086Z",
+  "createdat": "2025-05-21T10:33:50.618322166Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/gannonh/servers/firebase-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:38.613783086Z",
+  "modifiedat": "2025-05-21T10:33:50.618322166Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/gannonh/servers/firebase-mcp/meta",
   "serverid": "firebase-mcp",

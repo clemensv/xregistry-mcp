@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:18:37.763099461Z",
+  "createdat": "2025-05-21T10:34:07.295224367Z",
   "description": "A Model Context Protocol (MCP) server for the Discord API (JDA), allowing seamless integration of Discord Bot with MCP-compatible applications like Claude Desktop.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/SaseQ/servers/discord-mcp/meta",
-  "modifiedat": "2025-05-15T12:18:37.763099461Z",
+  "modifiedat": "2025-05-21T10:34:07.295224367Z",
   "name": "io.github.SaseQ/discord-mcp",
   "prompts": [],
   "registries": [

@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:18:59.004389988Z",
+  "createdat": "2025-05-21T10:33:39.437906825Z",
   "description": "A Model Context Protocol (MCP) server implementation that integrates with Vectorize for advanced Vector retrieval and text extraction.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/vectorize-io/servers/vectorize-mcp-server/meta",
-  "modifiedat": "2025-05-15T12:18:59.004389988Z",
+  "modifiedat": "2025-05-21T10:33:39.437906825Z",
   "name": "io.github.vectorize-io/vectorize-mcp-server",
   "prompts": [],
   "registries": [

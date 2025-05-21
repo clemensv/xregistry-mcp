@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:34.01624085Z",
+  "createdat": "2025-05-21T10:33:55.976302678Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/cr7258/servers/elasticsearch-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:34.01624085Z",
+  "modifiedat": "2025-05-21T10:33:55.976302678Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/cr7258/servers/elasticsearch-mcp-server/meta",
   "serverid": "elasticsearch-mcp-server",

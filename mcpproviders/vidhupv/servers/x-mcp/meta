@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:19:17.787061678Z",
+  "createdat": "2025-05-21T10:33:47.086831714Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/vidhupv/servers/x-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:19:17.787061678Z",
+  "modifiedat": "2025-05-21T10:33:47.086831714Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/vidhupv/servers/x-mcp/meta",
   "serverid": "x-mcp",

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:49.433926832Z",
+  "createdat": "2025-05-21T10:33:53.032187945Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/nkapila6/servers/mcp-local-rag/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:49.433926832Z",
+  "modifiedat": "2025-05-21T10:33:53.032187945Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/nkapila6/servers/mcp-local-rag/meta",
   "serverid": "mcp-local-rag",

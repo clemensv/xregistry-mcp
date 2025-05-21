@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:55.694245103Z",
+  "createdat": "2025-05-21T10:33:44.985886805Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/zcaceres/servers/easy-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:55.694245103Z",
+  "modifiedat": "2025-05-21T10:33:44.985886805Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/zcaceres/servers/easy-mcp/meta",
   "serverid": "easy-mcp",

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:43.555717571Z",
+  "createdat": "2025-05-21T10:34:12.551986922Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/aliyun/servers/alibabacloud-hologres-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:43.555717571Z",
+  "modifiedat": "2025-05-21T10:34:12.551986922Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/aliyun/servers/alibabacloud-hologres-mcp-server/meta",
   "serverid": "alibabacloud-hologres-mcp-server",

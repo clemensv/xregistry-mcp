@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:39.226585788Z",
+  "createdat": "2025-05-21T10:34:06.480508619Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/TencentEdgeOne/servers/edgeone-pages-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:39.226585788Z",
+  "modifiedat": "2025-05-21T10:34:06.480508619Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/TencentEdgeOne/servers/edgeone-pages-mcp/meta",
   "serverid": "edgeone-pages-mcp",

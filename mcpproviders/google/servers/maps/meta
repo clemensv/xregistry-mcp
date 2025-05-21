@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:54.197018836Z",
+  "createdat": "2025-05-21T10:34:15.691034328Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/google/servers/maps/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:54.197018836Z",
+  "modifiedat": "2025-05-21T10:34:15.691034328Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/google/servers/maps/meta",
   "serverid": "maps",

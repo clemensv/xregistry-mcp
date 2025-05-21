@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:18:44.257282127Z",
+  "createdat": "2025-05-21T10:34:12.737180179Z",
   "description": "A server implementation for Wikidata API using the Model Context Protocol (MCP). This project provides tools to interact with Wikidata, such as searching identifiers (entity and property), extracting metadata (label and description) and executing sparql query.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/zzaebok/servers/mcp-wikidata/meta",
-  "modifiedat": "2025-05-15T12:18:44.257282127Z",
+  "modifiedat": "2025-05-21T10:34:12.737180179Z",
   "name": "io.github.zzaebok/mcp-wikidata",
   "prompts": [],
   "registries": [

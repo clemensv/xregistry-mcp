@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:36.079594396Z",
+  "createdat": "2025-05-21T10:33:57.083694146Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/EduBase/servers/MCP/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:36.079594396Z",
+  "modifiedat": "2025-05-21T10:33:57.083694146Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/EduBase/servers/MCP/meta",
   "serverid": "MCP",

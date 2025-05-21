@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:44.352853665Z",
+  "createdat": "2025-05-21T10:34:00.970718822Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/syucream/servers/holaspirit-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:44.352853665Z",
+  "modifiedat": "2025-05-21T10:34:00.970718822Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/syucream/servers/holaspirit-mcp-server/meta",
   "serverid": "holaspirit-mcp-server",

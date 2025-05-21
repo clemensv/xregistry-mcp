@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:19:13.391429067Z",
+  "createdat": "2025-05-21T10:33:53.231676224Z",
   "description": "An MCP server that enables AI agents to control web browsers using browser-use.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/co-browser/servers/browser-use-mcp-server/meta",
-  "modifiedat": "2025-05-15T12:19:13.391429067Z",
+  "modifiedat": "2025-05-21T10:33:53.231676224Z",
   "name": "io.github.co-browser/browser-use-mcp-server",
   "prompts": [],
   "registries": [

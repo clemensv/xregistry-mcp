@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:18:50.918072738Z",
+  "createdat": "2025-05-21T10:33:44.787690549Z",
   "description": "This implementation provides a solid foundation for Redis integration through MCP. You can extend it further by adding more Redis commands as needed for your specific use case.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-15T12:18:50.918072738Z",
+  "modifiedat": "2025-05-21T10:33:44.787690549Z",
   "name": "io.github.prajwalnayak7/mcp-server-redis",
   "prompts": [],
   "registries": [

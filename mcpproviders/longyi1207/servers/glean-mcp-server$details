@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:19:18.312427454Z",
+  "createdat": "2025-05-21T10:34:13.534378407Z",
   "description": "An MCP server implementation that integrates the Glean API, providing the Search and Chat functions.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/longyi1207/servers/glean-mcp-server/meta",
-  "modifiedat": "2025-05-15T12:19:18.312427454Z",
+  "modifiedat": "2025-05-21T10:34:13.534378407Z",
   "name": "io.github.longyi1207/glean-mcp-server",
   "prompts": [],
   "registries": [

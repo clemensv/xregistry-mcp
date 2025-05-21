@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:37.177836797Z",
+  "createdat": "2025-05-21T10:34:10.059438661Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/jjsantos01/servers/qgis_mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:37.177836797Z",
+  "modifiedat": "2025-05-21T10:34:10.059438661Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/jjsantos01/servers/qgis_mcp/meta",
   "serverid": "qgis_mcp",

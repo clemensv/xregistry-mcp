@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:19:06.829574278Z",
+  "createdat": "2025-05-21T10:33:54.872254344Z",
   "description": "A comprehensive Model Context Protocol (MCP) server that provides blockchain services across multiple EVM-compatible networks. This server enables AI agents to interact with Ethereum, Optimism, Arbitrum, Base, Polygon, and many other EVM chains with a unified interface.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-15T12:19:06.829574278Z",
+  "modifiedat": "2025-05-21T10:33:54.872254344Z",
   "name": "io.github.mcpdotdirect/evm-mcp-server",
   "prompts": [],
   "registries": [

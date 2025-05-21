@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:18:56.299225576Z",
+  "createdat": "2025-05-21T10:33:40.32033396Z",
   "description": "A Model Context Protocol server for the Linear API providing integration with Linear's issue tracking system through MCP, allowing LLMs to interact with Linear issues.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-15T12:18:56.299225576Z",
+  "modifiedat": "2025-05-21T10:33:40.32033396Z",
   "name": "io.github.jerhadf/linear-mcp-server",
   "prompts": [
     {

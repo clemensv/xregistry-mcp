@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:18:47.64263047Z",
+  "createdat": "2025-05-21T10:33:54.640335226Z",
   "description": "An MCP server implementation that connects to a locally running Anki, providing card review and creation.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/scorzeth/servers/anki-mcp-server/meta",
-  "modifiedat": "2025-05-15T12:18:47.64263047Z",
+  "modifiedat": "2025-05-21T10:33:54.640335226Z",
   "name": "io.github.scorzeth/anki-mcp-server",
   "prompts": [],
   "registries": [

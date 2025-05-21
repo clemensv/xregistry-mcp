@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:50.787001335Z",
+  "createdat": "2025-05-21T10:34:18.924074319Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/RamXX/servers/mcp-tavily/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:50.787001335Z",
+  "modifiedat": "2025-05-21T10:34:18.924074319Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/RamXX/servers/mcp-tavily/meta",
   "serverid": "mcp-tavily",

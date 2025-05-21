@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:47.545540055Z",
+  "createdat": "2025-05-21T10:34:11.279798056Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/motherduckdb/servers/mcp-server-motherduck/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:47.545540055Z",
+  "modifiedat": "2025-05-21T10:34:11.279798056Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/motherduckdb/servers/mcp-server-motherduck/meta",
   "serverid": "mcp-server-motherduck",

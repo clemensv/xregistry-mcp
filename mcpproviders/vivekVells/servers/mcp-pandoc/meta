@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:59.154581586Z",
+  "createdat": "2025-05-21T10:33:43.14022004Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/vivekVells/servers/mcp-pandoc/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:59.154581586Z",
+  "modifiedat": "2025-05-21T10:33:43.14022004Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/vivekVells/servers/mcp-pandoc/meta",
   "serverid": "mcp-pandoc",

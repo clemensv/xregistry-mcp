@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:19:10.442664743Z",
+  "createdat": "2025-05-21T10:33:52.035146635Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/asusevski/servers/opendota-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:19:10.442664743Z",
+  "modifiedat": "2025-05-21T10:33:52.035146635Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/asusevski/servers/opendota-mcp-server/meta",
   "serverid": "opendota-mcp-server",

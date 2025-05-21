@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:45.677743173Z",
+  "createdat": "2025-05-21T10:34:12.405607966Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/magnetai/servers/mcp-free-usdc-transfer/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:45.677743173Z",
+  "modifiedat": "2025-05-21T10:34:12.405607966Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/magnetai/servers/mcp-free-usdc-transfer/meta",
   "serverid": "mcp-free-usdc-transfer",

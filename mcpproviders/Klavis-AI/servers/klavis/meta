@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:45.771537187Z",
+  "createdat": "2025-05-21T10:33:53.747164864Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/Klavis-AI/servers/klavis/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:45.771537187Z",
+  "modifiedat": "2025-05-21T10:33:53.747164864Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/Klavis-AI/servers/klavis/meta",
   "serverid": "klavis",

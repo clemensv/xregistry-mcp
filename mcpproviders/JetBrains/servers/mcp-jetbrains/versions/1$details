@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:18:36.992410994Z",
+  "createdat": "2025-05-21T10:34:19.449398406Z",
   "description": "You can interact with an JetBrains IntelliJ IDE and its features through this MCP (Model Context Protocol) server. The server provides access to various IDE tools and functionalities. All requests should be formatted as JSON objects according to the Model Context Protocol specification.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-15T12:18:36.992410994Z",
+  "modifiedat": "2025-05-21T10:34:19.449398406Z",
   "name": "io.github.JetBrains/mcp-jetbrains",
   "prompts": [],
   "registries": [

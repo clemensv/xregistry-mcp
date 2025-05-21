@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:19:04.745569801Z",
+  "createdat": "2025-05-21T10:34:11.9045157Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/ChristophEnglisch/servers/keycloak-model-context-protocol/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:19:04.745569801Z",
+  "modifiedat": "2025-05-21T10:34:11.9045157Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/ChristophEnglisch/servers/keycloak-model-context-protocol/meta",
   "serverid": "keycloak-model-context-protocol",

@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:37.579058625Z",
+  "createdat": "2025-05-21T10:33:49.914505259Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/tadata-org/servers/fastapi_mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:37.579058625Z",
+  "modifiedat": "2025-05-21T10:33:49.914505259Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/tadata-org/servers/fastapi_mcp/meta",
   "serverid": "fastapi_mcp",

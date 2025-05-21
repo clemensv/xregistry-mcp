@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:34.970476497Z",
+  "createdat": "2025-05-21T10:33:42.402187742Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/pab1it0/servers/adx-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:34.970476497Z",
+  "modifiedat": "2025-05-21T10:33:42.402187742Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/pab1it0/servers/adx-mcp-server/meta",
   "serverid": "adx-mcp-server",

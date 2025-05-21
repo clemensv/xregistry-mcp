@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:19:09.322717994Z",
+  "createdat": "2025-05-21T10:33:46.449733063Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/clemensv/servers/postgres/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:19:09.322717994Z",
+  "modifiedat": "2025-05-21T10:33:46.449733063Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/clemensv/servers/postgres/meta",
   "serverid": "postgres",

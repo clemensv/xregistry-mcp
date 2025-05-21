@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:18:41.685183622Z",
+  "createdat": "2025-05-21T10:33:39.16748004Z",
   "description": "Build dynamic Agent memory using scalable, modular ECL (Extract, Cognify, Load) pipelines.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/topoteretes/servers/cognee/meta",
-  "modifiedat": "2025-05-15T12:18:41.685183622Z",
+  "modifiedat": "2025-05-21T10:33:39.16748004Z",
   "name": "io.github.topoteretes/cognee",
   "prompts": [],
   "registries": [

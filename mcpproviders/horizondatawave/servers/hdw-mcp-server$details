@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:19:04.375948701Z",
+  "createdat": "2025-05-21T10:34:06.970451128Z",
   "description": "A Model Context Protocol (MCP) server that provides comprehensive access to LinkedIn data and functionalities using the HorizonDataWave API, enabling not only data retrieval but also robust management of user accounts.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/horizondatawave/servers/hdw-mcp-server/meta",
-  "modifiedat": "2025-05-15T12:19:04.375948701Z",
+  "modifiedat": "2025-05-21T10:34:06.970451128Z",
   "name": "io.github.horizondatawave/hdw-mcp-server",
   "prompts": [],
   "registries": [],

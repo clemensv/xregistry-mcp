@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:19:05.2165481Z",
+  "createdat": "2025-05-21T10:34:19.105359824Z",
   "description": "An MCP server that provides integration between Neo4j graph database and Claude Desktop, enabling graph database operations through natural language interactions.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/da-okazaki/servers/mcp-neo4j-server/meta",
-  "modifiedat": "2025-05-15T12:19:05.2165481Z",
+  "modifiedat": "2025-05-21T10:34:19.105359824Z",
   "name": "io.github.da-okazaki/mcp-neo4j-server",
   "prompts": [],
   "registries": [

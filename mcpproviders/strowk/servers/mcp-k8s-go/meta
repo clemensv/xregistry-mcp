@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:56.847191606Z",
+  "createdat": "2025-05-21T10:33:40.22626858Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/strowk/servers/mcp-k8s-go/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:56.847191606Z",
+  "modifiedat": "2025-05-21T10:33:40.22626858Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/strowk/servers/mcp-k8s-go/meta",
   "serverid": "mcp-k8s-go",

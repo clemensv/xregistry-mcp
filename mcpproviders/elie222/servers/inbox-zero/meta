@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:54.072784025Z",
+  "createdat": "2025-05-21T10:33:47.401422346Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/elie222/servers/inbox-zero/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:54.072784025Z",
+  "modifiedat": "2025-05-21T10:33:47.401422346Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/elie222/servers/inbox-zero/meta",
   "serverid": "inbox-zero",

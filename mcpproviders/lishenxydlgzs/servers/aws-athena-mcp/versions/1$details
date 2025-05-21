@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:18:40.478227124Z",
+  "createdat": "2025-05-21T10:33:51.079060331Z",
   "description": "A Model Context Protocol (MCP) server for running AWS Athena queries. This server enables AI assistants to execute SQL queries against your AWS Athena databases and retrieve results.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-15T12:18:40.478227124Z",
+  "modifiedat": "2025-05-21T10:33:51.079060331Z",
   "name": "io.github.lishenxydlgzs/aws-athena-mcp",
   "prompts": [],
   "registries": [

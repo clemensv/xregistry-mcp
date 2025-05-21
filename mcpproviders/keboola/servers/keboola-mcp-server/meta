@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:39.686734186Z",
+  "createdat": "2025-05-21T10:33:55.171857865Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/keboola/servers/keboola-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:39.686734186Z",
+  "modifiedat": "2025-05-21T10:33:55.171857865Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/keboola/servers/keboola-mcp-server/meta",
   "serverid": "keboola-mcp-server",

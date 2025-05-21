@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:19:15.235833118Z",
+  "createdat": "2025-05-21T10:33:53.537881196Z",
   "description": "MCP-Amadeus is a community-developed Model Context Protocol (MCP) server that integrates with the Amadeus Flight Offers Search API to provide flight search capabilities through natural language interfaces. Built for use with MCP-compatible clients (e.g., Claude Desktop).",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/donghyun-chae/servers/mcp-amadeus/meta",
-  "modifiedat": "2025-05-15T12:19:15.235833118Z",
+  "modifiedat": "2025-05-21T10:33:53.537881196Z",
   "name": "io.github.donghyun-chae/mcp-amadeus",
   "prompts": [],
   "registries": [

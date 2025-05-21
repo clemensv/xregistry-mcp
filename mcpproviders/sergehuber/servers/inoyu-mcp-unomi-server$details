@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:18:59.975889837Z",
+  "createdat": "2025-05-21T10:34:01.228694908Z",
   "description": "A Model Context Protocol server enabling Claude to maintain user context through Apache Unomi profile management.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/sergehuber/servers/inoyu-mcp-unomi-server/meta",
-  "modifiedat": "2025-05-15T12:18:59.975889837Z",
+  "modifiedat": "2025-05-21T10:34:01.228694908Z",
   "name": "io.github.sergehuber/inoyu-mcp-unomi-server",
   "prompts": [],
   "registries": [

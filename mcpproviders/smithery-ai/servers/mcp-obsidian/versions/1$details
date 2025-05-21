@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:19:06.376070589Z",
+  "createdat": "2025-05-21T10:33:41.859119818Z",
   "description": "Connector to allow Claude Desktop (or any MCP client) to read and search any directory containing Markdown notes (such as an Obsidian vault).",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-15T12:19:06.376070589Z",
+  "modifiedat": "2025-05-21T10:33:41.859119818Z",
   "name": "io.github.smithery-ai/mcp-obsidian",
   "prompts": [],
   "registries": [

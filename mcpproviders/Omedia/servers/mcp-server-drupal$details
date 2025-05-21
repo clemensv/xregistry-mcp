@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:18:51.292248875Z",
+  "createdat": "2025-05-21T10:33:39.754496575Z",
   "description": "A typescript based companion Model Context Protocol (MCP) server for the Drupal MCP module that works with the STDIO transport.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/Omedia/servers/mcp-server-drupal/meta",
-  "modifiedat": "2025-05-15T12:18:51.292248875Z",
+  "modifiedat": "2025-05-21T10:33:39.754496575Z",
   "name": "io.github.Omedia/mcp-server-drupal",
   "prompts": [],
   "registries": [

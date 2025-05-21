@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:19:08.037543959Z",
+  "createdat": "2025-05-21T10:34:08.641137682Z",
   "description": "The Maton Agent Toolkit enables popular agent frameworks including Model Context Protocol (MCP) to integrate with Maton APIs through function calling. The library is not exhaustive of the entire Maton API. It includes support for Typescript.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/maton-ai/servers/agent-toolkit/meta",
-  "modifiedat": "2025-05-15T12:19:08.037543959Z",
+  "modifiedat": "2025-05-21T10:34:08.641137682Z",
   "name": "io.github.maton-ai/agent-toolkit",
   "prompts": [],
   "registries": [

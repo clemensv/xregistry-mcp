@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:19:10.288837445Z",
+  "createdat": "2025-05-21T10:33:50.985736324Z",
   "description": "This is a Model Context Protocol (MCP) server implementation for Xero. It provides a bridge between the MCP protocol and Xero's API, allowing for standardized access to Xero's accounting and business features.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-15T12:19:10.288837445Z",
+  "modifiedat": "2025-05-21T10:33:50.985736324Z",
   "name": "io.github.XeroAPI/xero-mcp-server",
   "prompts": [],
   "registries": [

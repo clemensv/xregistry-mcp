@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:18:36.375877439Z",
+  "createdat": "2025-05-21T10:34:14.321655037Z",
   "description": "A server implementation for Naver OpenAPI using the Model Context Protocol (MCP). This project provides tools to interact with various Naver services, such as searching blogs, news, books, and more.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/pfldy2850/servers/py-mcp-naver/meta",
-  "modifiedat": "2025-05-15T12:18:36.375877439Z",
+  "modifiedat": "2025-05-21T10:34:14.321655037Z",
   "name": "io.github.pfldy2850/py-mcp-naver",
   "prompts": [],
   "registries": [

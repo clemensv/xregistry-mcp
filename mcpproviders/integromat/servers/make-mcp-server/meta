@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:46.248724664Z",
+  "createdat": "2025-05-21T10:33:55.867680552Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/integromat/servers/make-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:46.248724664Z",
+  "modifiedat": "2025-05-21T10:33:55.867680552Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/integromat/servers/make-mcp-server/meta",
   "serverid": "make-mcp-server",

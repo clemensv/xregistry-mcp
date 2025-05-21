@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-15T12:18:41.776731329Z",
+  "createdat": "2025-05-21T10:33:54.416563314Z",
   "description": "A Model Context Protocol (MCP) server implementation for Salesforce integration, allowing LLMs to interact with Salesforce data through SOQL queries and SOSL searches.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/smn2gnt/servers/MCP-Salesforce/meta",
-  "modifiedat": "2025-05-15T12:18:41.776731329Z",
+  "modifiedat": "2025-05-21T10:33:54.416563314Z",
   "name": "io.github.smn2gnt/MCP-Salesforce",
   "prompts": [],
   "registries": [

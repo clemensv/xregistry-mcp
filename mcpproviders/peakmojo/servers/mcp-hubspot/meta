@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:40.048937446Z",
+  "createdat": "2025-05-21T10:34:03.780903686Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/peakmojo/servers/mcp-hubspot/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:40.048937446Z",
+  "modifiedat": "2025-05-21T10:34:03.780903686Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/peakmojo/servers/mcp-hubspot/meta",
   "serverid": "mcp-hubspot",

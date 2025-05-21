@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:19:06.068087663Z",
+  "createdat": "2025-05-21T10:34:09.91210923Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/AI-Agent-Hub/servers/ai-agent-marketplace-index-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:19:06.068087663Z",
+  "modifiedat": "2025-05-21T10:34:09.91210923Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/AI-Agent-Hub/servers/ai-agent-marketplace-index-mcp/meta",
   "serverid": "ai-agent-marketplace-index-mcp",

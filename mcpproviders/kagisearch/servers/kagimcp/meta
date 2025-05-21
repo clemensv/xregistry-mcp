@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:39.148997979Z",
+  "createdat": "2025-05-21T10:33:40.731528209Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/kagisearch/servers/kagimcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:39.148997979Z",
+  "modifiedat": "2025-05-21T10:33:40.731528209Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/kagisearch/servers/kagimcp/meta",
   "serverid": "kagimcp",

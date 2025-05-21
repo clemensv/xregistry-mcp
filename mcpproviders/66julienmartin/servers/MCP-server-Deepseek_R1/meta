@@ -1,11 +1,11 @@
 {
   "compatibility": "none",
-  "createdat": "2025-05-15T12:18:43.942233378Z",
+  "createdat": "2025-05-21T10:33:46.28728048Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/66julienmartin/servers/MCP-server-Deepseek_R1/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-15T12:18:43.942233378Z",
+  "modifiedat": "2025-05-21T10:33:46.28728048Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/66julienmartin/servers/MCP-server-Deepseek_R1/meta",
   "serverid": "MCP-server-Deepseek_R1",
