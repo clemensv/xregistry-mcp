@@ -1,11 +1,10 @@
 {
-  "compatibility": "none",
-  "createdat": "2025-05-21T10:33:48.354307536Z",
+  "createdat": "2026-06-10T06:32:18.735731419Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/bigcodegen/servers/mcp-neovim-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-21T10:33:48.354307536Z",
+  "modifiedat": "2026-06-10T06:32:18.735731419Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/bigcodegen/servers/mcp-neovim-server/meta",
   "serverid": "mcp-neovim-server",

@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-21T10:33:40.088200553Z",
+  "createdat": "2026-06-10T06:32:03.822641802Z",
   "description": "A Model Context Protocol server for document Q\u0026A powered by Langflow",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/Langflow-DOC-QA-SERVER/meta",
-  "modifiedat": "2025-05-21T10:33:40.088200553Z",
+  "modifiedat": "2026-06-10T06:32:03.822641802Z",
   "name": "io.github.GongRzhe/Langflow-DOC-QA-SERVER",
   "prompts": [],
   "registries": [

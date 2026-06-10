@@ -1,0 +1,247 @@
+{
+  "groups": {
+    "mcpproviders": {
+      "description": "Registry of Model Context Protocol (MCP) servers and their capabilities, organized by provider.",
+      "plural": "mcpproviders",
+      "resources": {
+        "servers": {
+          "attributes": {
+            "description": {
+              "description": "Repository or server overview.",
+              "name": "description",
+              "type": "string"
+            },
+            "name": {
+              "description": "Unique reverse-DNS identifier of the repository.",
+              "name": "name",
+              "type": "string"
+            },
+            "prompts": {
+              "description": "Static prompt templates bundled with this server.",
+              "item": {
+                "attributes": {
+                  "arguments": {
+                    "item": {
+                      "attributes": {
+                        "description": {
+                          "name": "description",
+                          "type": "string"
+                        },
+                        "name": {
+                          "name": "name",
+                          "type": "string"
+                        },
+                        "required": {
+                          "name": "required",
+                          "type": "boolean"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "name": "arguments",
+                    "type": "array"
+                  },
+                  "description": {
+                    "name": "description",
+                    "type": "string"
+                  },
+                  "name": {
+                    "name": "name",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "name": "prompts",
+              "type": "array"
+            },
+            "registries": {
+              "description": "Package registry metadata blocks.",
+              "item": {
+                "attributes": {
+                  "command_arguments": {
+                    "attributes": {
+                      "environment_variables": {
+                        "item": {
+                          "attributes": {
+                            "description": {
+                              "name": "description",
+                              "type": "string"
+                            },
+                            "name": {
+                              "name": "name",
+                              "type": "string"
+                            },
+                            "required": {
+                              "name": "required",
+                              "type": "boolean"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "name": "environment_variables",
+                        "type": "array"
+                      },
+                      "named_arguments": {
+                        "item": {
+                          "type": "string"
+                        },
+                        "name": "named_arguments",
+                        "type": "array"
+                      },
+                      "positional_arguments": {
+                        "item": {
+                          "type": "string"
+                        },
+                        "name": "positional_arguments",
+                        "type": "array"
+                      },
+                      "sub_commands": {
+                        "item": {
+                          "attributes": {
+                            "description": {
+                              "name": "description",
+                              "type": "string"
+                            },
+                            "name": {
+                              "name": "name",
+                              "type": "string"
+                            },
+                            "named_arguments": {
+                              "item": {
+                                "type": "string"
+                              },
+                              "name": "named_arguments",
+                              "type": "array"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "name": "sub_commands",
+                        "type": "array"
+                      }
+                    },
+                    "name": "command_arguments",
+                    "type": "object"
+                  },
+                  "license": {
+                    "description": "License of the package.",
+                    "name": "license",
+                    "type": "string"
+                  },
+                  "name": {
+                    "description": "Name of the registry.",
+                    "name": "name",
+                    "type": "string"
+                  },
+                  "package_name": {
+                    "description": "Name of the package.",
+                    "name": "package_name",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "name": "registries",
+              "type": "array"
+            },
+            "remotes": {
+              "description": "Source‑code hosting locations.",
+              "item": {
+                "attributes": {
+                  "transporttype": {
+                    "description": "Transport type of the remote.",
+                    "name": "transporttype",
+                    "type": "string"
+                  },
+                  "url": {
+                    "description": "URL of the remote.",
+                    "name": "url",
+                    "type": "url"
+                  }
+                },
+                "type": "object"
+              },
+              "name": "remotes",
+              "type": "array"
+            },
+            "repo_ref": {
+              "description": "Repository reference for the server.",
+              "name": "repo_ref",
+              "type": "string"
+            },
+            "resources": {
+              "description": "Data resources the server can expose or subscribe to.",
+              "item": {
+                "attributes": {
+                  "description": {
+                    "name": "description",
+                    "type": "string"
+                  },
+                  "mimetype": {
+                    "name": "mimetype",
+                    "type": "string"
+                  },
+                  "name": {
+                    "name": "name",
+                    "type": "string"
+                  },
+                  "uritemplate": {
+                    "name": "uritemplate",
+                    "type": "uritemplate"
+                  }
+                },
+                "type": "object"
+              },
+              "name": "resources",
+              "type": "array"
+            },
+            "tools": {
+              "description": "Tool definitions invocable via the MCP runtime.",
+              "item": {
+                "attributes": {
+                  "description": {
+                    "name": "description",
+                    "type": "string"
+                  },
+                  "inputschema": {
+                    "name": "inputschema",
+                    "type": "any"
+                  },
+                  "name": {
+                    "name": "name",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "name": "tools",
+              "type": "array"
+            },
+            "version_detail": {
+              "attributes": {
+                "version": {
+                  "description": "Semantic version number detail.",
+                  "name": "version",
+                  "type": "string"
+                }
+              },
+              "description": "Version detail for the server.",
+              "name": "version_detail",
+              "type": "object"
+            }
+          },
+          "hasdocument": false,
+          "labels": {},
+          "maxversions": 0,
+          "plural": "servers",
+          "setdefaultversionsticky": false,
+          "setversionid": false,
+          "singleversionroot": true,
+          "singular": "server"
+        }
+      },
+      "singular": "mcpprovider"
+    }
+  }
+}

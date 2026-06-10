@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-21T10:34:15.892037718Z",
+  "createdat": "2026-06-10T06:32:31.392996234Z",
   "description": "Lingo.dev MCP Server providing AI-powered localization tools via Model Context Protocol.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/lingodotdev/servers/lingo.dev/meta",
-  "modifiedat": "2025-05-21T10:34:15.892037718Z",
+  "modifiedat": "2026-06-10T06:32:31.392996234Z",
   "name": "io.github.lingodotdev/lingo",
   "prompts": [],
   "registries": [

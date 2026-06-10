@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-21T10:33:40.418532622Z",
+  "createdat": "2026-06-10T06:32:22.328907732Z",
   "description": "This MCP server connects Claude to real-time NS (Nederlandse Spoorwegen) travel information, making it your perfect companion for navigating the Netherlands by train.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-21T10:33:40.418532622Z",
+  "modifiedat": "2026-06-10T06:32:22.328907732Z",
   "name": "io.github.r-huijts/ns-mcp-server",
   "prompts": [],
   "registries": [

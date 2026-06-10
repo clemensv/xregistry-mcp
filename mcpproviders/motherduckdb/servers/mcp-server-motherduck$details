@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-21T10:34:11.279798056Z",
+  "createdat": "2026-06-10T06:32:06.545904161Z",
   "description": "An MCP server implementation that interacts with DuckDB and MotherDuck databases, providing SQL analytics capabilities to AI Assistants and IDEs.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/motherduckdb/servers/mcp-server-motherduck/meta",
-  "modifiedat": "2025-05-21T10:34:11.279798056Z",
+  "modifiedat": "2026-06-10T06:32:06.545904161Z",
   "name": "io.github.motherduckdb/mcp-server-motherduck",
   "prompts": [
     {

@@ -1,11 +1,10 @@
 {
-  "compatibility": "none",
-  "createdat": "2025-05-21T10:33:42.852164046Z",
+  "createdat": "2026-06-10T06:32:06.491841283Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/githejie/servers/mcp-server-calculator/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-21T10:33:42.852164046Z",
+  "modifiedat": "2026-06-10T06:32:06.491841283Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/githejie/servers/mcp-server-calculator/meta",
   "serverid": "mcp-server-calculator",

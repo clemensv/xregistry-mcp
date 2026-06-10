@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-21T10:33:45.385425095Z",
+  "createdat": "2026-06-10T06:32:06.759095327Z",
   "description": "A Model Context Protocol (MCP) server for interacting with Astra DB. MCP extends the capabilities of Large Language Models (LLMs) by allowing them to interact with external systems as agents.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/datastax/servers/astra-db-mcp/meta",
-  "modifiedat": "2025-05-21T10:33:45.385425095Z",
+  "modifiedat": "2026-06-10T06:32:06.759095327Z",
   "name": "io.github.datastax/astra-db-mcp",
   "prompts": [],
   "registries": [

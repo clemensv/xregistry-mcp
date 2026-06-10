@@ -1,11 +1,10 @@
 {
-  "compatibility": "none",
-  "createdat": "2025-05-21T10:33:47.003046571Z",
+  "createdat": "2026-06-10T06:32:11.012240981Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/ruixingshi/servers/deepseek-thinker-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-21T10:33:47.003046571Z",
+  "modifiedat": "2026-06-10T06:32:11.012240981Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/ruixingshi/servers/deepseek-thinker-mcp/meta",
   "serverid": "deepseek-thinker-mcp",

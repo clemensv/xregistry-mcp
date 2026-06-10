@@ -9,6 +9,7 @@
     "registryid": {
       "name": "registryid",
       "type": "string",
+      "matchcase": true,
       "readonly": true,
       "immutable": true,
       "required": true
@@ -45,6 +46,10 @@
       "name": "documentation",
       "type": "url"
     },
+    "icon": {
+      "name": "icon",
+      "type": "url"
+    },
     "labels": {
       "name": "labels",
       "type": "map",
@@ -74,6 +79,17 @@
     },
     "model": {
       "name": "model",
+      "type": "object",
+      "readonly": true,
+      "attributes": {
+        "*": {
+          "name": "*",
+          "type": "any"
+        }
+      }
+    },
+    "modelsource": {
+      "name": "modelsource",
       "type": "object",
       "attributes": {
         "*": {
@@ -118,6 +134,7 @@
         "mcpproviderid": {
           "name": "mcpproviderid",
           "type": "string",
+          "matchcase": true,
           "immutable": true,
           "required": true
         },
@@ -153,6 +170,10 @@
           "name": "documentation",
           "type": "url"
         },
+        "icon": {
+          "name": "icon",
+          "type": "url"
+        },
         "labels": {
           "name": "labels",
           "type": "map",
@@ -169,6 +190,32 @@
           "name": "modifiedat",
           "type": "timestamp",
           "required": true
+        },
+        "deprecated": {
+          "name": "deprecated",
+          "type": "object",
+          "attributes": {
+            "alternative": {
+              "name": "alternative",
+              "type": "url"
+            },
+            "documentation": {
+              "name": "documentation",
+              "type": "url"
+            },
+            "effective": {
+              "name": "effective",
+              "type": "timestamp"
+            },
+            "removal": {
+              "name": "removal",
+              "type": "timestamp"
+            },
+            "*": {
+              "name": "*",
+              "type": "any"
+            }
+          }
         },
         "serversurl": {
           "name": "serversurl",
@@ -205,17 +252,24 @@
           "setversionid": false,
           "setdefaultversionsticky": false,
           "hasdocument": false,
+          "versionmode": "manual",
           "singleversionroot": true,
+          "validateformat": false,
+          "validatecompatibility": false,
+          "strictvalidation": false,
+          "consistentformat": false,
           "attributes": {
             "serverid": {
               "name": "serverid",
               "type": "string",
+              "matchcase": true,
               "immutable": true,
               "required": true
             },
             "versionid": {
               "name": "versionid",
               "type": "string",
+              "matchcase": true,
               "immutable": true,
               "required": true
             },
@@ -260,6 +314,10 @@
               "name": "documentation",
               "type": "url"
             },
+            "icon": {
+              "name": "icon",
+              "type": "url"
+            },
             "labels": {
               "name": "labels",
               "type": "map",
@@ -280,11 +338,36 @@
             "ancestor": {
               "name": "ancestor",
               "type": "string",
+              "matchcase": true,
               "required": true
             },
             "contenttype": {
               "name": "contenttype",
               "type": "string"
+            },
+            "format": {
+              "name": "format",
+              "type": "string"
+            },
+            "formatvalidated": {
+              "name": "formatvalidated",
+              "type": "boolean",
+              "readonly": true
+            },
+            "formatvalidatedreason": {
+              "name": "formatvalidatedreason",
+              "type": "string",
+              "readonly": true
+            },
+            "compatibilityvalidated": {
+              "name": "compatibilityvalidated",
+              "type": "boolean",
+              "readonly": true
+            },
+            "compatibilityvalidatedreason": {
+              "name": "compatibilityvalidatedreason",
+              "type": "string",
+              "readonly": true
             },
             "prompts": {
               "name": "prompts",
@@ -499,6 +582,29 @@
                   "description": "Semantic version number detail."
                 }
               }
+            }
+          },
+          "resourceattributes": {
+            "serverid": {
+              "name": "serverid",
+              "type": "string",
+              "matchcase": true,
+              "immutable": true,
+              "required": true
+            },
+            "self": {
+              "name": "self",
+              "type": "url",
+              "readonly": true,
+              "immutable": true,
+              "required": true
+            },
+            "xid": {
+              "name": "xid",
+              "type": "xid",
+              "readonly": true,
+              "immutable": true,
+              "required": true
             },
             "metaurl": {
               "name": "metaurl",
@@ -548,6 +654,7 @@
             "serverid": {
               "name": "serverid",
               "type": "string",
+              "matchcase": true,
               "immutable": true,
               "required": true
             },
@@ -575,6 +682,13 @@
               "readonly": true,
               "required": true
             },
+            "labels": {
+              "name": "labels",
+              "type": "map",
+              "item": {
+                "type": "string"
+              }
+            },
             "createdat": {
               "name": "createdat",
               "type": "timestamp",
@@ -596,7 +710,6 @@
               "name": "compatibility",
               "type": "string",
               "enum": [
-                "none",
                 "backward",
                 "backward_transitive",
                 "forward",
@@ -604,18 +717,7 @@
                 "full",
                 "full_transitive"
               ],
-              "strict": false,
-              "required": true,
-              "default": "none"
-            },
-            "compatibilityauthority": {
-              "name": "compatibilityauthority",
-              "type": "string",
-              "enum": [
-                "external",
-                "server"
-              ],
-              "strict": false
+              "strict": true
             },
             "deprecated": {
               "name": "deprecated",
@@ -625,8 +727,8 @@
                   "name": "alternative",
                   "type": "url"
                 },
-                "docs": {
-                  "name": "docs",
+                "documentation": {
+                  "name": "documentation",
                   "type": "url"
                 },
                 "effective": {
@@ -646,6 +748,7 @@
             "defaultversionid": {
               "name": "defaultversionid",
               "type": "string",
+              "matchcase": true,
               "required": true
             },
             "defaultversionurl": {

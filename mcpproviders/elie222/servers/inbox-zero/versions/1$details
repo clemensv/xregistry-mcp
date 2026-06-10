@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-21T10:33:47.401422346Z",
+  "createdat": "2026-06-10T06:32:30.758873362Z",
   "description": "AI email assistant MCP server providing email management tools such as reply tracking and follow-up reminders.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-21T10:33:47.401422346Z",
+  "modifiedat": "2026-06-10T06:32:30.758873362Z",
   "name": "io.github.elie222/inbox-zero",
   "prompts": [],
   "registries": [

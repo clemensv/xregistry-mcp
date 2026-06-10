@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-21T10:33:45.472507058Z",
+  "createdat": "2026-06-10T06:32:10.69329664Z",
   "description": "Server to upload, edit, search, and generate videos using Video Jungle and LLM integration with custom vj:// URI scheme and video editing tools.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-21T10:33:45.472507058Z",
+  "modifiedat": "2026-06-10T06:32:10.69329664Z",
   "name": "io.github.burningion/video-editing-mcp",
   "prompts": [],
   "registries": [

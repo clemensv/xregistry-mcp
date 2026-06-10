@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-21T10:33:42.538359925Z",
+  "createdat": "2026-06-10T06:32:10.529648198Z",
   "description": "A CLI tool built in Rust for assisting with code-related tasks, capable of running as a Model Context Protocol server providing tools and resources to LLMs running in an MCP client.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/stippi/servers/code-assistant/meta",
-  "modifiedat": "2025-05-21T10:33:42.538359925Z",
+  "modifiedat": "2026-06-10T06:32:10.529648198Z",
   "name": "io.github.stippi/code-assistant",
   "prompts": [],
   "registries": [

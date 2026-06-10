@@ -1,11 +1,10 @@
 {
-  "compatibility": "none",
-  "createdat": "2025-05-21T10:33:49.995980004Z",
+  "createdat": "2026-06-10T06:32:20.063488378Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/21st-dev/servers/magic-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-21T10:33:49.995980004Z",
+  "modifiedat": "2026-06-10T06:32:20.063488378Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/21st-dev/servers/magic-mcp/meta",
   "serverid": "magic-mcp",

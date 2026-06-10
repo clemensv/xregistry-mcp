@@ -1,11 +1,10 @@
 {
-  "compatibility": "none",
-  "createdat": "2025-05-21T10:34:06.614236286Z",
+  "createdat": "2026-06-10T06:32:17.351192752Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/domdomegg/servers/airtable-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-21T10:34:06.614236286Z",
+  "modifiedat": "2026-06-10T06:32:17.351192752Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/domdomegg/servers/airtable-mcp-server/meta",
   "serverid": "airtable-mcp-server",

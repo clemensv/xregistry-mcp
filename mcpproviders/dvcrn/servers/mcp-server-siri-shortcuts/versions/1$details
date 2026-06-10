@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2025-05-21T10:34:09.196086365Z",
+  "createdat": "2026-06-10T06:32:08.304995977Z",
   "description": "This MCP server provides access to Siri shortcuts functionality via the Model Context Protocol (MCP). It allows listing, opening, and running shortcuts from the macOS Shortcuts app.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2025-05-21T10:34:09.196086365Z",
+  "modifiedat": "2026-06-10T06:32:08.304995977Z",
   "name": "io.github.dvcrn/mcp-server-siri-shortcuts",
   "prompts": [],
   "registries": [

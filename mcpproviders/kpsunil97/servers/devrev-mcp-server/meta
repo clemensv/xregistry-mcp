@@ -1,11 +1,10 @@
 {
-  "compatibility": "none",
-  "createdat": "2025-05-21T10:33:46.370959919Z",
+  "createdat": "2026-06-10T06:32:12.991094314Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/kpsunil97/servers/devrev-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-21T10:33:46.370959919Z",
+  "modifiedat": "2026-06-10T06:32:12.991094314Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/kpsunil97/servers/devrev-mcp-server/meta",
   "serverid": "devrev-mcp-server",

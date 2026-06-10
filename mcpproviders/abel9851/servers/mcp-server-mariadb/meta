@@ -1,11 +1,10 @@
 {
-  "compatibility": "none",
-  "createdat": "2025-05-21T10:34:03.119814927Z",
+  "createdat": "2026-06-10T06:32:20.146485975Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/abel9851/servers/mcp-server-mariadb/versions/1",
   "epoch": 1,
-  "modifiedat": "2025-05-21T10:34:03.119814927Z",
+  "modifiedat": "2026-06-10T06:32:20.146485975Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/abel9851/servers/mcp-server-mariadb/meta",
   "serverid": "mcp-server-mariadb",
