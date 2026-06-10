@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:04.557300288Z",
+  "createdat": "2026-06-10T07:39:50.264867375Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/nspady/servers/google-calendar-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:04.557300288Z",
+  "modifiedat": "2026-06-10T07:39:50.264867375Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/nspady/servers/google-calendar-mcp/meta",
   "serverid": "google-calendar-mcp",

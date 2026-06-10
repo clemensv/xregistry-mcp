@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:31.494394303Z",
+  "createdat": "2026-06-10T07:40:18.928386363Z",
   "description": "A plug-and-play MCP tool server to send BNB, transfer BEP-20 tokens, deploy tokens, and interact with smart contracts on the Binance Smart Chain (BSC) — built for Claude Desktop, AI agents, and developers.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2026-06-10T06:32:31.494394303Z",
+  "modifiedat": "2026-06-10T07:40:18.928386363Z",
   "name": "io.github.TermiX-official/bsc-mcp",
   "prompts": [],
   "registries": [

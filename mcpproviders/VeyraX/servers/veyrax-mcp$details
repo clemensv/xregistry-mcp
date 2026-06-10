@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:28.605241418Z",
+  "createdat": "2026-06-10T07:40:15.851642707Z",
   "description": "VeyraX MCP is an MCP server providing a unified connection to access all your tools in any MCP-compatible environment.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/VeyraX/servers/veyrax-mcp/meta",
-  "modifiedat": "2026-06-10T06:32:28.605241418Z",
+  "modifiedat": "2026-06-10T07:40:15.851642707Z",
   "name": "io.github.VeyraX/veyrax-mcp",
   "prompts": [],
   "registries": [

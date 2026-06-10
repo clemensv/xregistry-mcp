@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:20.621844875Z",
+  "createdat": "2026-06-10T07:40:07.373053179Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/mamertofabian/servers/elevenlabs-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:20.621844875Z",
+  "modifiedat": "2026-06-10T07:40:07.373053179Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/mamertofabian/servers/elevenlabs-mcp-server/meta",
   "serverid": "elevenlabs-mcp-server",

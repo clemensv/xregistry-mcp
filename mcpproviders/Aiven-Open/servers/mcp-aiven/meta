@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:33.385465578Z",
+  "createdat": "2026-06-10T07:40:20.976977953Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/Aiven-Open/servers/mcp-aiven/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:33.385465578Z",
+  "modifiedat": "2026-06-10T07:40:20.976977953Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/Aiven-Open/servers/mcp-aiven/meta",
   "serverid": "mcp-aiven",

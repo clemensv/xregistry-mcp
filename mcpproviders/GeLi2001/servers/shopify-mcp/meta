@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:18.861090035Z",
+  "createdat": "2026-06-10T07:40:05.481999732Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/GeLi2001/servers/shopify-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:18.861090035Z",
+  "modifiedat": "2026-06-10T07:40:05.481999732Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/GeLi2001/servers/shopify-mcp/meta",
   "serverid": "shopify-mcp",

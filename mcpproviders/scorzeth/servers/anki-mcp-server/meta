@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:20.833638884Z",
+  "createdat": "2026-06-10T07:40:07.594769869Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/scorzeth/servers/anki-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:20.833638884Z",
+  "modifiedat": "2026-06-10T07:40:07.594769869Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/scorzeth/servers/anki-mcp-server/meta",
   "serverid": "anki-mcp-server",

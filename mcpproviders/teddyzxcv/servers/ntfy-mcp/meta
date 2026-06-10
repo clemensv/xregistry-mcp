@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:10.762958358Z",
+  "createdat": "2026-06-10T07:39:56.870417646Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/teddyzxcv/servers/ntfy-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:10.762958358Z",
+  "modifiedat": "2026-06-10T07:39:56.870417646Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/teddyzxcv/servers/ntfy-mcp/meta",
   "serverid": "ntfy-mcp",

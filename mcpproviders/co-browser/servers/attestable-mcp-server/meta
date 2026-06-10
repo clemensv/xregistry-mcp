@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:23.202471664Z",
+  "createdat": "2026-06-10T07:40:10.081557075Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/co-browser/servers/attestable-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:23.202471664Z",
+  "modifiedat": "2026-06-10T07:40:10.081557075Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/co-browser/servers/attestable-mcp-server/meta",
   "serverid": "attestable-mcp-server",

@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:35.584233251Z",
+  "createdat": "2026-06-10T07:40:23.328879934Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/inkeep/servers/mcp-server-python/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:35.584233251Z",
+  "modifiedat": "2026-06-10T07:40:23.328879934Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/inkeep/servers/mcp-server-python/meta",
   "serverid": "mcp-server-python",

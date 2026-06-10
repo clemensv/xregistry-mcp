@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:18.10438889Z",
+  "createdat": "2026-06-10T07:40:04.681862116Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/adenot/servers/mcp-google-search/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:18.10438889Z",
+  "modifiedat": "2026-06-10T07:40:04.681862116Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/adenot/servers/mcp-google-search/meta",
   "serverid": "mcp-google-search",

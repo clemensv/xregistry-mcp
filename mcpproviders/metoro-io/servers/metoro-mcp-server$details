@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:07.104053485Z",
+  "createdat": "2026-06-10T07:39:52.945377811Z",
   "description": "The Metoro MCP (Model Context Protocol) Server allows interaction with Kubernetes clusters via the Claude Desktop App by exposing Metoro's APIs to an LLM.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/metoro-io/servers/metoro-mcp-server/meta",
-  "modifiedat": "2026-06-10T06:32:07.104053485Z",
+  "modifiedat": "2026-06-10T07:39:52.945377811Z",
   "name": "io.github.metoro-io/metoro-mcp-server",
   "prompts": [],
   "registries": [

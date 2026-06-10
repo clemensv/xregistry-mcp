@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:25.334184309Z",
+  "createdat": "2026-06-10T07:40:12.377585877Z",
   "description": "A Model Context Protocol server that provides access to MySQL databases. This server enables LLMs to inspect database schemas and execute SQL queries.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/benborla/servers/mcp-server-mysql/meta",
-  "modifiedat": "2026-06-10T06:32:25.334184309Z",
+  "modifiedat": "2026-06-10T07:40:12.377585877Z",
   "name": "io.github.benborla/mcp-server-mysql",
   "prompts": [],
   "registries": [

@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:10.063995496Z",
+  "createdat": "2026-06-10T07:39:56.121298736Z",
   "description": "A Model Context Protocol (MCP) server for Microsoft Bing Search API integration, allowing AI assistants to perform web, news, and image searches.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/leehanchung/servers/bing-search-mcp/meta",
-  "modifiedat": "2026-06-10T06:32:10.063995496Z",
+  "modifiedat": "2026-06-10T07:39:56.121298736Z",
   "name": "io.github.leehanchung/bing-search-mcp",
   "prompts": [],
   "registries": [

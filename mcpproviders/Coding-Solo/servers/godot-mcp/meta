@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:17.445846563Z",
+  "createdat": "2026-06-10T07:40:03.989849974Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/Coding-Solo/servers/godot-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:17.445846563Z",
+  "modifiedat": "2026-06-10T07:40:03.989849974Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/Coding-Solo/servers/godot-mcp/meta",
   "serverid": "godot-mcp",

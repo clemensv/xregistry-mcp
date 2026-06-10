@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:15.29797066Z",
+  "createdat": "2026-06-10T07:40:01.736305541Z",
   "description": "A Model Context Protocol (MCP) server implementation for Apache Airflow, enabling seamless integration with MCP clients. This project provides a standardized way to interact with Apache Airflow through the Model Context Protocol.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/yangkyeongmo/servers/mcp-server-apache-airflow/meta",
-  "modifiedat": "2026-06-10T06:32:15.29797066Z",
+  "modifiedat": "2026-06-10T07:40:01.736305541Z",
   "name": "io.github.yangkyeongmo/mcp-server-apache-airflow",
   "prompts": [],
   "registries": [

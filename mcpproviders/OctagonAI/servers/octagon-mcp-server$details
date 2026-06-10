@@ -1,12 +1,12 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:32.799636472Z",
+  "createdat": "2026-06-10T07:40:20.349286459Z",
   "description": "The Octagon MCP server provides specialized AI-powered financial research and analysis by integrating with the Octagon Market Intelligence API, enabling users to easily analyze and extract detailed insights from public filings, earnings call transcripts, financial metrics, stock market data, and extensive private market transactions within Claude Desktop and other popular MCP clients.",
   "documentation": "https://docs.octagonagents.com",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/OctagonAI/servers/octagon-mcp-server/meta",
-  "modifiedat": "2026-06-10T06:32:32.799636472Z",
+  "modifiedat": "2026-06-10T07:40:20.349286459Z",
   "name": "io.github.OctagonAI/octagon-mcp-server",
   "prompts": [],
   "registries": [

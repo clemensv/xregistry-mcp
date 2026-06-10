@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:04.975125476Z",
+  "createdat": "2026-06-10T07:39:50.706637564Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/oceanbase/servers/mcp-oceanbase/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:04.975125476Z",
+  "modifiedat": "2026-06-10T07:39:50.706637564Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/oceanbase/servers/mcp-oceanbase/meta",
   "serverid": "mcp-oceanbase",

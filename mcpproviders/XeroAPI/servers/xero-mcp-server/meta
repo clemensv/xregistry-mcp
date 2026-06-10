@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:23.604958802Z",
+  "createdat": "2026-06-10T07:40:10.513518747Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/XeroAPI/servers/xero-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:23.604958802Z",
+  "modifiedat": "2026-06-10T07:40:10.513518747Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/XeroAPI/servers/xero-mcp-server/meta",
   "serverid": "xero-mcp-server",

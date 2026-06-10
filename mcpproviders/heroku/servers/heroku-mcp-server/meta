@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:07.704112893Z",
+  "createdat": "2026-06-10T07:39:53.579348789Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/heroku/servers/heroku-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:07.704112893Z",
+  "modifiedat": "2026-06-10T07:39:53.579348789Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/heroku/servers/heroku-mcp-server/meta",
   "serverid": "heroku-mcp-server",

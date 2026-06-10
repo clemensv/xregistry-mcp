@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:27.897345693Z",
+  "createdat": "2026-06-10T07:40:15.096460882Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/Kong/servers/mcp-konnect/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:27.897345693Z",
+  "modifiedat": "2026-06-10T07:40:15.096460882Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/Kong/servers/mcp-konnect/meta",
   "serverid": "mcp-konnect",

@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:09.616494872Z",
+  "createdat": "2026-06-10T07:39:55.653384876Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/CircleCI-Public/servers/mcp-server-circleci/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:09.616494872Z",
+  "modifiedat": "2026-06-10T07:39:55.653384876Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/CircleCI-Public/servers/mcp-server-circleci/meta",
   "serverid": "mcp-server-circleci",

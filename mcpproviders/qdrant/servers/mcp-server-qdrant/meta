@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:09.866491686Z",
+  "createdat": "2026-06-10T07:39:55.908234297Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/qdrant/servers/mcp-server-qdrant/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:09.866491686Z",
+  "modifiedat": "2026-06-10T07:39:55.908234297Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/qdrant/servers/mcp-server-qdrant/meta",
   "serverid": "mcp-server-qdrant",

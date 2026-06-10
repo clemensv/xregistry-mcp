@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:18.345584295Z",
+  "createdat": "2026-06-10T07:40:04.936439543Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/clemensv/servers/postgres/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:18.345584295Z",
+  "modifiedat": "2026-06-10T07:40:04.936439543Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/clemensv/servers/postgres/meta",
   "serverid": "postgres",

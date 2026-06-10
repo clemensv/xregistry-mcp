@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:04.658358497Z",
+  "createdat": "2026-06-10T07:39:50.36626734Z",
   "description": "gotoHuman makes it easy to add human approvals to AI agents and agentic workflows. A fully-managed async human-in-the-loop workflow with a customizable approval UI. Enjoy built-in auth, webhooks, notifications, team features, and an evolving training dataset.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2026-06-10T06:32:04.658358497Z",
+  "modifiedat": "2026-06-10T07:39:50.36626734Z",
   "name": "io.github.gotohuman/gotohuman-mcp-server",
   "prompts": [],
   "registries": [

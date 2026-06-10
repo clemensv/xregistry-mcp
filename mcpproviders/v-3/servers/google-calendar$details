@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:27.506866675Z",
+  "createdat": "2026-06-10T07:40:14.677732093Z",
   "description": "This MCP server allows Claude to interact with your Google Calendar, enabling capabilities like listing events, creating meetings, and finding free time slots.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/v-3/servers/google-calendar/meta",
-  "modifiedat": "2026-06-10T06:32:27.506866675Z",
+  "modifiedat": "2026-06-10T07:40:14.677732093Z",
   "name": "io.github.v-3/google-calendar",
   "prompts": [],
   "registries": [

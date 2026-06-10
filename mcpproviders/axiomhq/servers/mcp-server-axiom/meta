@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:05.524005423Z",
+  "createdat": "2026-06-10T07:39:51.263107508Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/axiomhq/servers/mcp-server-axiom/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:05.524005423Z",
+  "modifiedat": "2026-06-10T07:39:51.263107508Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/axiomhq/servers/mcp-server-axiom/meta",
   "serverid": "mcp-server-axiom",

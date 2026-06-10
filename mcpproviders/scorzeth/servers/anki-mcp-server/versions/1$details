@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:20.833638884Z",
+  "createdat": "2026-06-10T07:40:07.594769869Z",
   "description": "An MCP server implementation that connects to a locally running Anki, providing card review and creation.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2026-06-10T06:32:20.833638884Z",
+  "modifiedat": "2026-06-10T07:40:07.594769869Z",
   "name": "io.github.scorzeth/anki-mcp-server",
   "prompts": [],
   "registries": [

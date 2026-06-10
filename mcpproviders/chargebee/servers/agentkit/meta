@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:33.816407776Z",
+  "createdat": "2026-06-10T07:40:21.427009397Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/chargebee/servers/agentkit/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:33.816407776Z",
+  "modifiedat": "2026-06-10T07:40:21.427009397Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/chargebee/servers/agentkit/meta",
   "serverid": "agentkit",

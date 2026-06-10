@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:05.938434582Z",
+  "createdat": "2026-06-10T07:39:51.698044626Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/momentohq/servers/mcp-momento/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:05.938434582Z",
+  "modifiedat": "2026-06-10T07:39:51.698044626Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/momentohq/servers/mcp-momento/meta",
   "serverid": "mcp-momento",

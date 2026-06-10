@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:05.853268143Z",
+  "createdat": "2026-06-10T07:39:51.610719865Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/codacy/servers/codacy-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:05.853268143Z",
+  "modifiedat": "2026-06-10T07:39:51.610719865Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/codacy/servers/codacy-mcp-server/meta",
   "serverid": "codacy-mcp-server",

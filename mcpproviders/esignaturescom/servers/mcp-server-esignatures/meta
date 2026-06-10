@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:05.155691821Z",
+  "createdat": "2026-06-10T07:39:50.896078735Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/esignaturescom/servers/mcp-server-esignatures/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:05.155691821Z",
+  "modifiedat": "2026-06-10T07:39:50.896078735Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/esignaturescom/servers/mcp-server-esignatures/meta",
   "serverid": "mcp-server-esignatures",

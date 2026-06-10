@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:08.218932117Z",
+  "createdat": "2026-06-10T07:39:54.148559846Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/sakce/servers/mcp-server-monday/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:08.218932117Z",
+  "modifiedat": "2026-06-10T07:39:54.148559846Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/sakce/servers/mcp-server-monday/meta",
   "serverid": "mcp-server-monday",

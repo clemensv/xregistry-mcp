@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:23.00404844Z",
+  "createdat": "2026-06-10T07:40:09.86305978Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/browserbase/servers/mcp-server-browserbase/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:23.00404844Z",
+  "modifiedat": "2026-06-10T07:40:09.86305978Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/browserbase/servers/mcp-server-browserbase/meta",
   "serverid": "mcp-server-browserbase",

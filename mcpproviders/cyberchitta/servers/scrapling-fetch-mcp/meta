@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:21.382610485Z",
+  "createdat": "2026-06-10T07:40:08.185562013Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/cyberchitta/servers/scrapling-fetch-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:21.382610485Z",
+  "modifiedat": "2026-06-10T07:40:08.185562013Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/cyberchitta/servers/scrapling-fetch-mcp/meta",
   "serverid": "scrapling-fetch-mcp",

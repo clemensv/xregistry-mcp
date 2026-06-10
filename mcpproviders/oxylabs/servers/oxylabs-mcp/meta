@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:11.080343876Z",
+  "createdat": "2026-06-10T07:39:57.208902896Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/oxylabs/servers/oxylabs-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:11.080343876Z",
+  "modifiedat": "2026-06-10T07:39:57.208902896Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/oxylabs/servers/oxylabs-mcp/meta",
   "serverid": "oxylabs-mcp",

@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:15.382492938Z",
+  "createdat": "2026-06-10T07:40:01.822846727Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/JexinSam/servers/mssql_mcp_server/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:15.382492938Z",
+  "modifiedat": "2026-06-10T07:40:01.822846727Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/JexinSam/servers/mssql_mcp_server/meta",
   "serverid": "mssql_mcp_server",

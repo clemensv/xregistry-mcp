@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:22.620655848Z",
+  "createdat": "2026-06-10T07:40:09.532179618Z",
   "description": "A MCP(Model Context Protocol) server that accesses to Lightdash. This server provides MCP-compatible access to Lightdash's API, allowing AI assistants to interact with your Lightdash data through a standardized interface.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/syucream/servers/lightdash-mcp-server/meta",
-  "modifiedat": "2026-06-10T06:32:22.620655848Z",
+  "modifiedat": "2026-06-10T07:40:09.532179618Z",
   "name": "io.github.syucream/lightdash-mcp-server",
   "prompts": [],
   "registries": [

@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:06.017345121Z",
+  "createdat": "2026-06-10T07:39:51.784509937Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/deepfates/servers/mcp-replicate/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:06.017345121Z",
+  "modifiedat": "2026-06-10T07:39:51.784509937Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/deepfates/servers/mcp-replicate/meta",
   "serverid": "mcp-replicate",

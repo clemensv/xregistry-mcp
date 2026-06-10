@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:21.77736254Z",
+  "createdat": "2026-06-10T07:40:08.604309877Z",
   "description": "An MCP server to interact with a Tinybird Workspace from any MCP client. Supports querying Tinybird Data Sources, getting results from Tinybird API Endpoints, and pushing Datafiles. Supports both SSE and STDIO modes.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/tinybirdco/servers/mcp-tinybird/meta",
-  "modifiedat": "2026-06-10T06:32:21.77736254Z",
+  "modifiedat": "2026-06-10T07:40:08.604309877Z",
   "name": "io.github.tinybirdco/mcp-tinybird",
   "prompts": [
     {

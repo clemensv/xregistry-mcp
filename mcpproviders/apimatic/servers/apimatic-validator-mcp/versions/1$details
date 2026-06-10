@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:31.875853712Z",
+  "createdat": "2026-06-10T07:40:19.347651831Z",
   "description": "This repository provides a Model Context Protocol (MCP) Server for validating OpenAPI specifications using APIMatic. The server processes OpenAPI files and returns validation summaries by leveraging APIMatic’s API.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2026-06-10T06:32:31.875853712Z",
+  "modifiedat": "2026-06-10T07:40:19.347651831Z",
   "name": "io.github.apimatic/apimatic-validator-mcp",
   "prompts": [],
   "registries": [

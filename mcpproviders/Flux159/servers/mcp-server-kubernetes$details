@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:19.51872131Z",
+  "createdat": "2026-06-10T07:40:06.186909275Z",
   "description": "MCP Server that can connect to a Kubernetes cluster and manage it.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/Flux159/servers/mcp-server-kubernetes/meta",
-  "modifiedat": "2026-06-10T06:32:19.51872131Z",
+  "modifiedat": "2026-06-10T07:40:06.186909275Z",
   "name": "io.github.Flux159/mcp-server-kubernetes",
   "prompts": [],
   "registries": [

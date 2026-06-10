@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:35.456994301Z",
+  "createdat": "2026-06-10T07:40:23.189771692Z",
   "description": "A protocol server that enables interaction with Atlan services through function calling. Provides tools for asset search, and retrieval using pyatlan.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/atlanhq/servers/agent-toolkit/meta",
-  "modifiedat": "2026-06-10T06:32:35.456994301Z",
+  "modifiedat": "2026-06-10T07:40:23.189771692Z",
   "name": "io.github.atlanhq/agent-toolkit",
   "prompts": [],
   "registries": [

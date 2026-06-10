@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:05.938434582Z",
+  "createdat": "2026-06-10T07:39:51.698044626Z",
   "description": "A simple Model Context Protocol (MCP) server implementation for Momento Cache.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2026-06-10T06:32:05.938434582Z",
+  "modifiedat": "2026-06-10T07:39:51.698044626Z",
   "name": "io.github.momentohq/mcp-momento",
   "prompts": [],
   "registries": [

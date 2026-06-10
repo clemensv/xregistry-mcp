@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:23.783998361Z",
+  "createdat": "2026-06-10T07:40:10.705630817Z",
   "description": "Model Context Protocol (MCP) Server for Langfuse Prompt Management. This server allows access and management of Langfuse prompts through the MCP protocol, implementing the MCP Prompts specification for prompt discovery and retrieval.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2026-06-10T06:32:23.783998361Z",
+  "modifiedat": "2026-06-10T07:40:10.705630817Z",
   "name": "io.github.langfuse/mcp-server-langfuse",
   "prompts": [],
   "registries": [

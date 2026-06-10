@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:34.014498632Z",
+  "createdat": "2026-06-10T07:40:21.641465202Z",
   "description": "Hyperbrowser's Model Context Protocol (MCP) Server providing tools to scrape, extract structured data, and crawl webpages, with access to general purpose browser agents.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/hyperbrowserai/servers/mcp/meta",
-  "modifiedat": "2026-06-10T06:32:34.014498632Z",
+  "modifiedat": "2026-06-10T07:40:21.641465202Z",
   "name": "io.github.hyperbrowserai/mcp",
   "prompts": [],
   "registries": [

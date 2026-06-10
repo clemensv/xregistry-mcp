@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:03.971080003Z",
+  "createdat": "2026-06-10T07:39:49.650209056Z",
   "description": "A Travel Planner Model Context Protocol (MCP) server implementation for interacting with Google Maps and travel planning services. This server enables LLMs to perform travel-related tasks such as location search, place details lookup, and travel time calculations.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/GongRzhe/servers/TRAVEL-PLANNER-MCP-Server/meta",
-  "modifiedat": "2026-06-10T06:32:03.971080003Z",
+  "modifiedat": "2026-06-10T07:39:49.650209056Z",
   "name": "io.github.GongRzhe/TRAVEL-PLANNER-MCP-Server",
   "prompts": [],
   "registries": [

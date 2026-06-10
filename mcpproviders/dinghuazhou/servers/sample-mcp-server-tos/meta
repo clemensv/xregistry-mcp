@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:13.541471114Z",
+  "createdat": "2026-06-10T07:39:59.88067028Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/dinghuazhou/servers/sample-mcp-server-tos/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:13.541471114Z",
+  "modifiedat": "2026-06-10T07:39:59.88067028Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/dinghuazhou/servers/sample-mcp-server-tos/meta",
   "serverid": "sample-mcp-server-tos",

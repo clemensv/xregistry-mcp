@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:06.545904161Z",
+  "createdat": "2026-06-10T07:39:52.350682998Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/motherduckdb/servers/mcp-server-motherduck/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:06.545904161Z",
+  "modifiedat": "2026-06-10T07:39:52.350682998Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/motherduckdb/servers/mcp-server-motherduck/meta",
   "serverid": "mcp-server-motherduck",

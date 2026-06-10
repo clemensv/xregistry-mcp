@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:13.217659759Z",
+  "createdat": "2026-06-10T07:39:59.530319658Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/chaindead/servers/telegram-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:13.217659759Z",
+  "modifiedat": "2026-06-10T07:39:59.530319658Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/chaindead/servers/telegram-mcp/meta",
   "serverid": "telegram-mcp",

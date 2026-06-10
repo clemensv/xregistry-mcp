@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:26.201670498Z",
+  "createdat": "2026-06-10T07:40:13.317940569Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/gannonh/servers/firebase-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:26.201670498Z",
+  "modifiedat": "2026-06-10T07:40:13.317940569Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/gannonh/servers/firebase-mcp/meta",
   "serverid": "firebase-mcp",

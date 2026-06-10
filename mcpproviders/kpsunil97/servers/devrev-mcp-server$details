@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:12.991094314Z",
+  "createdat": "2026-06-10T07:39:59.291590879Z",
   "description": "A Model Context Protocol server for DevRev. It is used to search and retrieve information using the DevRev APIs.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/kpsunil97/servers/devrev-mcp-server/meta",
-  "modifiedat": "2026-06-10T06:32:12.991094314Z",
+  "modifiedat": "2026-06-10T07:39:59.291590879Z",
   "name": "io.github.kpsunil97/devrev-mcp-server",
   "prompts": [],
   "registries": [

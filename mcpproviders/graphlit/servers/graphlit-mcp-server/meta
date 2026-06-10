@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:10.145774361Z",
+  "createdat": "2026-06-10T07:39:56.209003364Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/graphlit/servers/graphlit-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:10.145774361Z",
+  "modifiedat": "2026-06-10T07:39:56.209003364Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/graphlit/servers/graphlit-mcp-server/meta",
   "serverid": "graphlit-mcp-server",

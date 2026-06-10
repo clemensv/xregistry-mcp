@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:29.048503884Z",
+  "createdat": "2026-06-10T07:40:16.313090356Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/kukapay/servers/cryptopanic-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:29.048503884Z",
+  "modifiedat": "2026-06-10T07:40:16.313090356Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/kukapay/servers/cryptopanic-mcp-server/meta",
   "serverid": "cryptopanic-mcp-server",

@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:11.807986165Z",
+  "createdat": "2026-06-10T07:39:58.003390444Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/mark3labs/servers/mcp-filesystem-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:11.807986165Z",
+  "modifiedat": "2026-06-10T07:39:58.003390444Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/mark3labs/servers/mcp-filesystem-server/meta",
   "serverid": "mcp-filesystem-server",

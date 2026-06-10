@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:09.283218636Z",
+  "createdat": "2026-06-10T07:39:55.281953711Z",
   "description": "Model Context Protocol server for NASA APIs",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/ProgramComputer/servers/NASA-MCP-server/meta",
-  "modifiedat": "2026-06-10T06:32:09.283218636Z",
+  "modifiedat": "2026-06-10T07:39:55.281953711Z",
   "name": "io.github.ProgramComputer/NASA-MCP-server",
   "prompts": [],
   "registries": [

@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:11.547056391Z",
+  "createdat": "2026-06-10T07:39:57.720827005Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/longyi1207/servers/glean-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:11.547056391Z",
+  "modifiedat": "2026-06-10T07:39:57.720827005Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/longyi1207/servers/glean-mcp-server/meta",
   "serverid": "glean-mcp-server",

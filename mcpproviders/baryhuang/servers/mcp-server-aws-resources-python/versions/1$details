@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:23.985659006Z",
+  "createdat": "2026-06-10T07:40:10.920315947Z",
   "description": "A Model Context Protocol (MCP) server implementation that provides running generated python code to query any AWS resources through boto3.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2026-06-10T06:32:23.985659006Z",
+  "modifiedat": "2026-06-10T07:40:10.920315947Z",
   "name": "io.github.baryhuang/mcp-server-aws-resources-python",
   "prompts": [],
   "registries": [

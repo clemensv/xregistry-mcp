@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:06.989479354Z",
+  "createdat": "2026-06-10T07:39:52.82822703Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/redis/servers/mcp-redis-cloud/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:06.989479354Z",
+  "modifiedat": "2026-06-10T07:39:52.82822703Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/redis/servers/mcp-redis-cloud/meta",
   "serverid": "mcp-redis-cloud",

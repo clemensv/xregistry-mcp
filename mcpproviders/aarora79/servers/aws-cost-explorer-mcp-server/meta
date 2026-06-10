@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:20.337999757Z",
+  "createdat": "2026-06-10T07:40:07.071915357Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/aarora79/servers/aws-cost-explorer-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:20.337999757Z",
+  "modifiedat": "2026-06-10T07:40:07.071915357Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/aarora79/servers/aws-cost-explorer-mcp-server/meta",
   "serverid": "aws-cost-explorer-mcp-server",

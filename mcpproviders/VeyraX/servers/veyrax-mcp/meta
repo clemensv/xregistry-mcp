@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:28.605241418Z",
+  "createdat": "2026-06-10T07:40:15.851642707Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/VeyraX/servers/veyrax-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:28.605241418Z",
+  "modifiedat": "2026-06-10T07:40:15.851642707Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/VeyraX/servers/veyrax-mcp/meta",
   "serverid": "veyrax-mcp",

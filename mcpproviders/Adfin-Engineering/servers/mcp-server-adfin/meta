@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:29.895782401Z",
+  "createdat": "2026-06-10T07:40:17.190544937Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/Adfin-Engineering/servers/mcp-server-adfin/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:29.895782401Z",
+  "modifiedat": "2026-06-10T07:40:17.190544937Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/Adfin-Engineering/servers/mcp-server-adfin/meta",
   "serverid": "mcp-server-adfin",

@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:03.671014718Z",
+  "createdat": "2026-06-10T07:39:49.348728608Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/pfldy2850/servers/py-mcp-naver/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:03.671014718Z",
+  "modifiedat": "2026-06-10T07:39:49.348728608Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/pfldy2850/servers/py-mcp-naver/meta",
   "serverid": "py-mcp-naver",

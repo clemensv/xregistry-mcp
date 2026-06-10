@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:11.622247751Z",
+  "createdat": "2026-06-10T07:39:57.802016857Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/ChristianHinge/servers/dicom-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:11.622247751Z",
+  "modifiedat": "2026-06-10T07:39:57.802016857Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/ChristianHinge/servers/dicom-mcp/meta",
   "serverid": "dicom-mcp",

@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:04.343312115Z",
+  "createdat": "2026-06-10T07:39:50.034926737Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/geropl/servers/linear-mcp-go/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:04.343312115Z",
+  "modifiedat": "2026-06-10T07:39:50.034926737Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/geropl/servers/linear-mcp-go/meta",
   "serverid": "linear-mcp-go",

@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:04.343312115Z",
+  "createdat": "2026-06-10T07:39:50.034926737Z",
   "description": "A Model Context Protocol (MCP) server for Linear, written in Go. This server provides tools for interacting with the Linear API through the MCP protocol.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2026-06-10T06:32:04.343312115Z",
+  "modifiedat": "2026-06-10T07:39:50.034926737Z",
   "name": "io.github.geropl/linear-mcp-go",
   "prompts": [],
   "registries": [

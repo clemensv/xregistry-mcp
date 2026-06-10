@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:05.303745642Z",
+  "createdat": "2026-06-10T07:39:51.039523821Z",
   "description": "Enables integration with Stripe APIs through function calling, supporting multiple agent frameworks including Model Context Protocol (MCP).",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/stripe/servers/agent-toolkit/meta",
-  "modifiedat": "2026-06-10T06:32:05.303745642Z",
+  "modifiedat": "2026-06-10T07:39:51.039523821Z",
   "name": "io.github.stripe/agent-toolkit",
   "prompts": [],
   "registries": [],

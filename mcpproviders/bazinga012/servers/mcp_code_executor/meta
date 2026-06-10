@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:19.778112634Z",
+  "createdat": "2026-06-10T07:40:06.474443962Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/bazinga012/servers/mcp_code_executor/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:19.778112634Z",
+  "modifiedat": "2026-06-10T07:40:06.474443962Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/bazinga012/servers/mcp_code_executor/meta",
   "serverid": "mcp_code_executor",

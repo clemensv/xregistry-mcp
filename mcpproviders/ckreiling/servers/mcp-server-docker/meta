@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:04.401510317Z",
+  "createdat": "2026-06-10T07:39:50.100116068Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/ckreiling/servers/mcp-server-docker/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:04.401510317Z",
+  "modifiedat": "2026-06-10T07:39:50.100116068Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/ckreiling/servers/mcp-server-docker/meta",
   "serverid": "mcp-server-docker",

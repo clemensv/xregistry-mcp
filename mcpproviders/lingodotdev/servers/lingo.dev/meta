@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:31.392996234Z",
+  "createdat": "2026-06-10T07:40:18.816936346Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/lingodotdev/servers/lingo.dev/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:31.392996234Z",
+  "modifiedat": "2026-06-10T07:40:18.816936346Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/lingodotdev/servers/lingo.dev/meta",
   "serverid": "lingo.dev",

@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:21.77736254Z",
+  "createdat": "2026-06-10T07:40:08.604309877Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/tinybirdco/servers/mcp-tinybird/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:21.77736254Z",
+  "modifiedat": "2026-06-10T07:40:08.604309877Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/tinybirdco/servers/mcp-tinybird/meta",
   "serverid": "mcp-tinybird",

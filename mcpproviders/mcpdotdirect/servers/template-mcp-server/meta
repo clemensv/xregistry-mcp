@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:34.708753986Z",
+  "createdat": "2026-06-10T07:40:22.392899393Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/mcpdotdirect/servers/template-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:34.708753986Z",
+  "modifiedat": "2026-06-10T07:40:22.392899393Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/mcpdotdirect/servers/template-mcp-server/meta",
   "serverid": "template-mcp-server",

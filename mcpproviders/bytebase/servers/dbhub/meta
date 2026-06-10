@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:20.425137181Z",
+  "createdat": "2026-06-10T07:40:07.16572163Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/bytebase/servers/dbhub/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:20.425137181Z",
+  "modifiedat": "2026-06-10T07:40:07.16572163Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/bytebase/servers/dbhub/meta",
   "serverid": "dbhub",

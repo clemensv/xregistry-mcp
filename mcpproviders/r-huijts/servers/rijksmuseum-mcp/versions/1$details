@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:22.472107009Z",
+  "createdat": "2026-06-10T07:40:09.369820785Z",
   "description": "A Model Context Protocol (MCP) server that provides access to the Rijksmuseum's collection through natural language interactions. This server enables AI models to explore, analyze, and interact with artworks and collections from the Rijksmuseum.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2026-06-10T06:32:22.472107009Z",
+  "modifiedat": "2026-06-10T07:40:09.369820785Z",
   "name": "io.github.r-huijts/rijksmuseum-mcp",
   "prompts": [],
   "registries": [

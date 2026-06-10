@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:23.520156407Z",
+  "createdat": "2026-06-10T07:40:10.423710936Z",
   "description": "A Python bridge for interacting with the macOS Messages app using MCP (Multiple Context Protocol).",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/carterlasalle/servers/mac_messages_mcp/meta",
-  "modifiedat": "2026-06-10T06:32:23.520156407Z",
+  "modifiedat": "2026-06-10T07:40:10.423710936Z",
   "name": "io.github.carterlasalle/mac_messages_mcp",
   "prompts": [],
   "registries": [

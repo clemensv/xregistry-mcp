@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:21.013417724Z",
+  "createdat": "2026-06-10T07:40:07.791073522Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/needle-ai/servers/needle-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:21.013417724Z",
+  "modifiedat": "2026-06-10T07:40:07.791073522Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/needle-ai/servers/needle-mcp/meta",
   "serverid": "needle-mcp",

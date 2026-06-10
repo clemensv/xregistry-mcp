@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:20.621844875Z",
+  "createdat": "2026-06-10T07:40:07.373053179Z",
   "description": "A Model Context Protocol (MCP) server that integrates with ElevenLabs text-to-speech API, featuring both a server component and a sample web-based MCP Client (SvelteKit) for managing voice generation tasks.",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2026-06-10T06:32:20.621844875Z",
+  "modifiedat": "2026-06-10T07:40:07.373053179Z",
   "name": "io.github.mamertofabian/elevenlabs-mcp-server",
   "prompts": [],
   "registries": [

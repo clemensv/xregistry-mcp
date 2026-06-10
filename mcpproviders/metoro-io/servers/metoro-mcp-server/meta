@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:07.104053485Z",
+  "createdat": "2026-06-10T07:39:52.945377811Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/metoro-io/servers/metoro-mcp-server/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:07.104053485Z",
+  "modifiedat": "2026-06-10T07:39:52.945377811Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/metoro-io/servers/metoro-mcp-server/meta",
   "serverid": "metoro-mcp-server",

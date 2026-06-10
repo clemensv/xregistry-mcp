@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:06.440939451Z",
+  "createdat": "2026-06-10T07:39:52.2410188Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/AI-QL/servers/chat-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:06.440939451Z",
+  "modifiedat": "2026-06-10T07:39:52.2410188Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/AI-QL/servers/chat-mcp/meta",
   "serverid": "chat-mcp",

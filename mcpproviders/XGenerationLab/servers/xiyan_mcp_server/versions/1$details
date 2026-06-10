@@ -1,10 +1,10 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:32.702887046Z",
+  "createdat": "2026-06-10T07:40:20.245463843Z",
   "description": "A Model Context Protocol (MCP) server that enables natural language queries to databases powered by XiYan-SQL, SOTA of text-to-sql on open benchmarks",
   "epoch": 1,
   "isdefault": true,
-  "modifiedat": "2026-06-10T06:32:32.702887046Z",
+  "modifiedat": "2026-06-10T07:40:20.245463843Z",
   "name": "io.github.XGenerationLab/xiyan_mcp_server",
   "prompts": [],
   "registries": [

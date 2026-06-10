@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:07.22630443Z",
+  "createdat": "2026-06-10T07:39:53.071184292Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/lishenxydlgzs/servers/aws-athena-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:07.22630443Z",
+  "modifiedat": "2026-06-10T07:39:53.071184292Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/lishenxydlgzs/servers/aws-athena-mcp/meta",
   "serverid": "aws-athena-mcp",

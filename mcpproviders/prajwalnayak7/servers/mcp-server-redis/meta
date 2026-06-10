@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:22.101462331Z",
+  "createdat": "2026-06-10T07:40:08.958099239Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/prajwalnayak7/servers/mcp-server-redis/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:22.101462331Z",
+  "modifiedat": "2026-06-10T07:40:08.958099239Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/prajwalnayak7/servers/mcp-server-redis/meta",
   "serverid": "mcp-server-redis",

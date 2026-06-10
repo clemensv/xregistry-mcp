@@ -1,11 +1,11 @@
 {
   "ancestor": "1",
-  "createdat": "2026-06-10T06:32:26.57347514Z",
+  "createdat": "2026-06-10T07:40:13.717768113Z",
   "description": "A Model Context Protocol (MCP) server implementation for YouTube, enabling AI language models to interact with YouTube content through a standardized interface.",
   "epoch": 1,
   "isdefault": true,
   "metaurl": "https://mcpxreg.org/mcpproviders/ZubeidHendricks/servers/youtube-mcp-server/meta",
-  "modifiedat": "2026-06-10T06:32:26.57347514Z",
+  "modifiedat": "2026-06-10T07:40:13.717768113Z",
   "name": "io.github.ZubeidHendricks/youtube-mcp-server",
   "prompts": [],
   "registries": [

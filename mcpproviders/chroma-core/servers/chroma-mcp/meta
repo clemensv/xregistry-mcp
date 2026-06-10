@@ -1,10 +1,10 @@
 {
-  "createdat": "2026-06-10T06:32:11.209510834Z",
+  "createdat": "2026-06-10T07:39:57.350765233Z",
   "defaultversionid": "1",
   "defaultversionsticky": false,
   "defaultversionurl": "https://mcpxreg.org/mcpproviders/chroma-core/servers/chroma-mcp/versions/1",
   "epoch": 1,
-  "modifiedat": "2026-06-10T06:32:11.209510834Z",
+  "modifiedat": "2026-06-10T07:39:57.350765233Z",
   "readonly": false,
   "self": "https://mcpxreg.org/mcpproviders/chroma-core/servers/chroma-mcp/meta",
   "serverid": "chroma-mcp",
