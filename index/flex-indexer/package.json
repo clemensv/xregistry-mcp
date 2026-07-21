@@ -11,7 +11,7 @@
       "flexsearch": "^0.7.31"
     },
     "devDependencies": {
-      "serve": "^14.2.0"
+      "serve": "^14.2.6"
     }
   }
   
