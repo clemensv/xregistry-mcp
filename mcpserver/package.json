@@ -21,8 +21,8 @@
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.0",
     "express": "^5.2.1",
-    "zod": "^3.23.8",
-    "zod-to-json-schema": "^3.23.5",
+    "zod": "^4.6.7",
+    "zod-to-json-schema": "^3.25.2",
     "node-fetch": "^3.3.0",
     "flexsearch": "^0.7.31"
   },
